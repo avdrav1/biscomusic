@@ -143,3 +143,25 @@ li.cur .t{color:var(--accent);text-shadow:0 0 8px var(--accent)}
   .vol,.eq,.wide{display:none}.controls{gap:10px}button{padding:12px 20px}button.ghost{padding:10px 14px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* Vote for what's next */
+.vote h2{margin-top:28px}
+.vclose{color:var(--accent);letter-spacing:.06em;text-transform:none;font-size:13px;font-variant-numeric:tabular-nums}
+.vote.closed .vclose{color:var(--accent2)}
+.vlist li{grid-template-columns:1fr 92px auto;align-items:center;gap:12px}
+.vlist .s{font-weight:600}
+.vlist .meter{display:flex;align-items:center;gap:6px;height:22px}
+.vlist .meter i{display:block;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--accent-deep),var(--accent));box-shadow:0 0 8px rgba(93,255,58,.5);transition:width .4s}
+.vlist .meter b{font-size:13px;color:var(--text);font-variant-numeric:tabular-nums;min-width:1.5em}
+.vlist li.lead .meter i{background:linear-gradient(90deg,var(--violet),var(--accent2));box-shadow:0 0 10px rgba(226,104,255,.6)}
+.vlist li.mine{background:linear-gradient(90deg,rgba(93,255,58,.12),transparent)}
+.vlist li.blocked .s{opacity:.55}
+.vbtn{min-width:96px;min-height:44px;padding:8px 14px;font-size:13px}
+li.mine .vbtn{border-color:var(--accent);color:var(--accent)}
+.vbtn:disabled{opacity:.6;cursor:default}
+.vlist li.top{background:linear-gradient(90deg,rgba(226,104,255,.10),transparent)}
+.vall{margin-top:10px;width:100%;min-height:44px}
+#vcat h3{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
+li.upnext.open .s{color:var(--accent2)}
+li.later{opacity:.75}
+@media(max-width:480px){.vlist li{grid-template-columns:1fr auto;grid-template-areas:"s b" "m b"}.vlist .s{grid-area:s}.vlist .meter{grid-area:m;height:14px}.vlist .vbtn{grid-area:b;min-width:84px}}

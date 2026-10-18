@@ -5,6 +5,8 @@
 #   ./moderate.sh hide 42         hide comment 42
 #   ./moderate.sh unhide 42       show it again
 #   ./moderate.sh hide-author 42  hide every comment from whoever posted 42 (same IP)
+#   ./moderate.sh station         what's on air, what's next, and this round's votes
+#   ./moderate.sh skip            end the current track now (votes cast so far still count)
 set -euo pipefail
 cd "$(dirname "$0")"
 DB=biscomusic-comments
@@ -14,7 +16,7 @@ changed() { sql "$1" | jq -r '"\(.[0].meta.changes) comment(s) updated"'; }
 
 cmd=${1:-list}
 arg=${2:-}
-if [[ "$cmd" != list ]] && ! [[ "$arg" =~ ^[0-9]+$ ]]; then echo "Need a comment id, e.g. ./moderate.sh $cmd 42"; exit 1; fi
+if [[ "$cmd" =~ ^(hide|unhide|hide-author)$ ]] && ! [[ "$arg" =~ ^[0-9]+$ ]]; then echo "Need a comment id, e.g. ./moderate.sh $cmd 42"; exit 1; fi
 
 case "$cmd" in
   list)
@@ -26,5 +28,20 @@ case "$cmd" in
   hide)        changed "UPDATE comments SET hidden = 1 WHERE id = $arg" ;;
   unhide)      changed "UPDATE comments SET hidden = 0 WHERE id = $arg" ;;
   hide-author) changed "UPDATE comments SET hidden = 1 WHERE ip_hash = (SELECT ip_hash FROM comments WHERE id = $arg)" ;;
-  *) sed -n '2,7p' "$0"; exit 1 ;;
+  station)
+    sql "SELECT round, track, datetime(started_at / 1000, 'unixepoch') AS since, next_track, next_source, next_votes,
+                (SELECT group_concat(track || ' x' || n, ', ') FROM (SELECT track, COUNT(*) AS n FROM votes
+                   WHERE round = station.round GROUP BY track ORDER BY n DESC)) AS votes
+         FROM station" |
+      jq -r '.[0].results[] | "Round \(.round): \(.track) since \(.since) UTC\nNext: \(.next_track // "not locked yet") \(if .next_source then "(" + .next_source + ")" else "" end)\nVotes: \(.votes // "none")"' ;;
+  skip)
+    # Make the current track end now; the next /api/station request locks the next pick and moves on.
+    track=$(sql "SELECT track FROM station" | jq -r '.[0].results[0].track')
+    dur=$(jq -r --arg t "audio/$track.mp3" '.tracks[] | select(.file == $t) | .duration' schedule.json)
+    [ -n "$dur" ] || dur=0
+    started=$(python3 -c "import time; print(int(time.time() * 1000 - $dur * 1000))")
+    sql "UPDATE station SET version = version + 1, started_at = $started, next_track = NULL, next_source = NULL,
+         next_votes = NULL, next_cursor = NULL" | jq -r '"Skipped \"'"$track"'\" (\(.[0].meta.changes) row)"'
+    curl -s -o /dev/null https://biscomusic.com/api/station ;;
+  *) sed -n '2,9p' "$0"; exit 1 ;;
 esac

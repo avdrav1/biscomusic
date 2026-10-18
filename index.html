@@ -43,7 +43,7 @@
     <div class="msong" id="msong"></div>
     <div class="show" id="mshow"></div>
     <div class="pop" id="mcomment" hidden></div>
-    <div class="row"><span class="mwhen" id="mwhen"></span><button class="stop" id="mclose">Dismiss</button></div>
+    <div class="row"><span class="mwhen" id="mwhen"></span><button class="ghost" id="mvote" hidden>🗳 Vote to play it next</button><button class="stop" id="mclose">Dismiss</button></div>
   </section>
 
   <section class="now">
@@ -63,6 +63,13 @@
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
     <div class="pops" id="pops" aria-live="polite"></div>
+  </section>
+
+  <section class="vote" id="vote" hidden aria-labelledby="vtitle">
+    <h2 class="split"><span id="vtitle">Vote for what's next</span><span class="vclose" id="vclose"></span></h2>
+    <ol class="vlist" id="vtop"></ol>
+    <button class="ghost vall" id="vall" aria-expanded="false" aria-controls="vcat">Browse all tracks</button>
+    <div id="vcat" hidden></div>
   </section>
 
   <form class="cform" id="cform" hidden>
@@ -92,6 +99,7 @@
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="a" preload="auto"></audio>
 <audio id="b" preload="auto"></audio>
+<script src="static/station.js"></script>
 <script>
 const $ = id => document.getElementById(id);
 const decks = [$('a'), $('b')];
@@ -102,12 +110,45 @@ const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600),
 const showLine = t => { const d = new Date(t.date+'T12:00:00'); return `${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})} · ${t.venue} · ${t.city}`; };
 const jamLine = t => t.jam ? `Jam ${t.jam}` : '';
 
+// What's on air. On biscomusic.com that's the station state from /api/station (listener votes,
+// else the rotation); with no API (server.py) it's the old clock loop over schedule.json.
+let ST = null, stationTimers = [], lastFetch = 0;
+const indexOfTrack = id => S.tracks.findIndex(t => trackId(t) === id);
+
 function live() {
+  if (ST && ST.i >= 0) {
+    const t = S.tracks[ST.i];
+    let i = ST.i, offset = (Date.now() - ST.started_at) / 1000;
+    if (offset >= t.duration) {
+      if (ST.nextI >= 0) { offset = Math.min(offset - t.duration, S.tracks[ST.nextI].duration); i = ST.nextI; }
+      else offset = t.duration;   // hold here until we hear what's next
+      refreshStationSoon();
+    }
+    return { i, offset };
+  }
   const pos = ((Date.now() - Date.parse(S.epoch)) / 1000) % total;
   let i = starts.findIndex((s, k) => pos < s + S.tracks[k].duration);
   if (i < 0) i = 0;
   return { i, offset: pos - starts[i], pos };
 }
+
+function setStation(v) {
+  const prev = ST;
+  ST = { ...v, i: indexOfTrack(v.track), nextI: v.next ? indexOfTrack(v.next.track) : -1 };
+  if (ST.i < 0) { ST = null; return; }   // schedule and station disagree (mid-deploy): use the clock
+  stationTimers.forEach(clearTimeout);
+  const at = ms => setTimeout(fetchStation, Math.max(500, ms - Date.now()));
+  stationTimers = [at(ST.lock_at + 1000), at(ST.end_at + 500)];
+  if (!prev || prev.round !== ST.round || prev.next?.track !== ST.next?.track) shownIdx = -1;   // redraw Coming up
+  renderVote();
+  if (listening && !prev && live().i !== curIdx) tune();   // first answer overrides the clock guess
+}
+
+async function fetchStation() {
+  lastFetch = Date.now();
+  try { const r = await fetch('/api/station'); if (r.ok) setStation(await r.json()); } catch (e) {}
+}
+function refreshStationSoon() { if (Date.now() - lastFetch > 2000) fetchStation(); }
 
 function render() {
   const { i, offset } = live();
@@ -118,11 +159,12 @@ function render() {
     $('jam').textContent = jamLine(t);
     $('show').textContent = showLine(t);
     document.title = `${t.song} · Biscuits Jam Radio`;
-    renderNext(i, offset);
     if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({
       title: t.song + (t.jam ? ` (jam ${t.jam})` : ''), artist: 'The Disco Biscuits', album: showLine(t),
       artwork: [{ src: '/static/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/static/icon-192.png', sizes: '192x192', type: 'image/png' }] });
   }
+  renderNext(i, offset);
+  renderVoteClock();
   const el = listening && audio.currentTime && curIdx === i ? audio.currentTime : offset;
   $('prog').style.width = (100 * el / t.duration) + '%';
   $('bar').setAttribute('aria-valuemax', Math.round(t.duration));
@@ -137,15 +179,45 @@ function render() {
   }
 }
 
+const clockAt = ms => new Date(ms).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+const songHtml = (t, extra = '') => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<small>${showLine(t)}${extra}</small>`;
+
+let nextKey = '';
 function renderNext(i, offset) {
-  const now = Date.now(); let at = now + (S.tracks[i].duration - offset) * 1000;
-  const rows = [`<li class="cur"><span class="t">NOW</span><span class="s">${S.tracks[i].song}${S.tracks[i].jam?` <span class="jam">· jam ${S.tracks[i].jam}</span>`:''}<small>${showLine(S.tracks[i])}</small></span><span class="d">${fmt(S.tracks[i].duration)}</span></li>`];
-  for (let k = 1; k <= 8; k++) {
-    const t = S.tracks[(i + k) % S.tracks.length];
-    const clock = new Date(at).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-    rows.push(`<li><span class="t">${clock}</span><span class="s">${t.song}${t.jam?` <span class="jam">· jam ${t.jam}</span>`:''}<small>${showLine(t)}</small></span><span class="d">${fmt(t.duration)}</span></li>`);
-    at += t.duration * 1000;
+  const now = Date.now(), cur = S.tracks[i];
+  const rows = [`<li class="cur"><span class="t">NOW</span><span class="s">${songHtml(cur)}</span><span class="d">${fmt(cur.duration)}</span></li>`];
+  let key = 'clock:' + i;
+  if (!ST) {
+    let at = now + (cur.duration - offset) * 1000;
+    for (let k = 1; k <= 8; k++) {
+      const t = S.tracks[(i + k) % S.tracks.length];
+      rows.push(`<li><span class="t">${clockAt(at)}</span><span class="s">${songHtml(t)}</span><span class="d">${fmt(t.duration)}</span></li>`);
+      at += t.duration * 1000;
+    }
+  } else if (i !== ST.i) {
+    key = 'waiting:' + i;   // we've rolled into the next track; the next poll brings the new round
+  } else {
+    const endAt = ST.end_at;
+    if (ST.next && ST.nextI >= 0) {
+      const t = S.tracks[ST.nextI];
+      const how = ST.next.source === 'vote' ? ` · 🗳 voted in (${ST.next.votes} vote${ST.next.votes === 1 ? '' : 's'})` : ' · in rotation';
+      rows.push(`<li class="upnext"><span class="t">${clockAt(endAt)}</span><span class="s">${songHtml(t, how)}</span><span class="d">${fmt(t.duration)}</span></li>`);
+      key = `locked:${ST.round}:${ST.next.track}`;
+    } else {
+      const lead = ST.tally[0] ? S.tracks[indexOfTrack(ST.tally[0][0])] : null;
+      const leadTxt = lead ? `Leading: ${lead.song}${lead.jam ? ` (jam ${lead.jam})` : ''} with ${ST.tally[0][1]}` : 'No votes yet: the rotation picks';
+      const closes = Math.max(0, (ST.lock_at - now) / 1000);
+      rows.push(`<li class="upnext open"><span class="t">${clockAt(endAt)}</span><span class="s">Your vote decides<small>${leadTxt} · voting closes in ${fmt(closes)}</small></span><span class="d">🗳</span></li>`);
+      key = `open:${ST.round}:${Math.floor(closes)}:${JSON.stringify(ST.tally[0] || '')}`;
+    }
+    for (const id of ST.rotation.slice(0, 6)) {
+      const t = S.tracks[indexOfTrack(id)];
+      if (t) rows.push(`<li class="later"><span class="t">later</span><span class="s">${songHtml(t, ' · in rotation')}</span><span class="d">${fmt(t.duration)}</span></li>`);
+    }
+    key += ':' + ST.rotation.join();
   }
+  if (key === nextKey) return;
+  nextKey = key;
   $('next').innerHTML = rows.join('');
 }
 
@@ -187,8 +259,11 @@ async function tune() {
 }
 
 // Track ended: start the cued spare right away; fall back to a normal tune if it isn't ready.
+const nextIndex = () => !ST ? (curIdx + 1) % S.tracks.length : curIdx === ST.i ? ST.nextI : -1;
+
 async function handoff() {
-  const n = (curIdx + 1) % S.tracks.length, next = spare();
+  const n = nextIndex(), next = spare();
+  if (n < 0) { await fetchStation(); return tune(); }   // ended before we heard what's next
   if (cued !== n || next.readyState < 3) return tune();
   const old = audio, g = ++gen;
   audio = next; curIdx = n; cued = -1;
@@ -198,8 +273,8 @@ async function handoff() {
 
 function preloadNext() {
   if (!listening || audio.paused || !audio.duration) return;
-  const n = (curIdx + 1) % S.tracks.length;
-  if (cued === n || audio.duration - audio.currentTime > PRELOAD_SECONDS) return;
+  const n = nextIndex();
+  if (n < 0 || cued === n || audio.duration - audio.currentTime > PRELOAD_SECONDS) return;
   const d = spare(); d.src = S.tracks[n].file; d.preload = 'auto'; d.load(); cued = n;
 }
 
@@ -233,6 +308,13 @@ $('vol').oninput = e => decks.forEach(d => d.volume = e.target.value);
 setInterval(() => {
   if (!listening || audio.paused || audio.seeking || curIdx < 0) return;
   const { i, offset, pos } = live();
+  if (ST) {
+    if (i === curIdx) { if (Math.abs(audio.currentTime - offset) > 2) audio.currentTime = offset; return; }
+    const finishing = curIdx === ST.i && i === ST.nextI && audio.duration - audio.currentTime < 3;   // handoff is due
+    const early = curIdx === ST.nextI && i === ST.i;                                               // handed off a moment early
+    if (!finishing && !early) tune();
+    return;
+  }
   let d = pos - (starts[curIdx] + audio.currentTime);
   if (d > total / 2) d -= total; else if (d < -total / 2) d += total;
   if (Math.abs(d) <= 2) return;
@@ -443,6 +525,102 @@ $('ccancel').onclick = closeComment;
 $('cform').onsubmit = postComment;
 $('cbody').oninput = e => $('ccount').textContent = `${e.target.value.length}/280`;
 
+// Vote panel: the leaders up top, the whole catalog (grouped by show) behind "Browse all tracks".
+// Rows are built once; counts and button states update in place so a tap is never lost to a redraw.
+let voteRows = null;
+const trackLabel = t => `${t.song}${t.jam ? ` (jam ${t.jam})` : ''}`;
+
+function voteRow(t) {
+  const li = document.createElement('li'); li.dataset.track = trackId(t);
+  const s = document.createElement('span'); s.className = 's';
+  const name = document.createElement('span'); name.textContent = trackLabel(t);
+  const sub = document.createElement('small'); sub.textContent = `${fmt(t.duration)} · ${t.venue}`;
+  s.append(name, sub);
+  const meter = document.createElement('span'); meter.className = 'meter';
+  const bar = document.createElement('i'); const n = document.createElement('b');
+  meter.append(bar, n);
+  const btn = document.createElement('button'); btn.className = 'ghost vbtn';
+  btn.onclick = () => castVote(trackId(t));
+  li.append(s, meter, btn);
+  return li;
+}
+
+function buildVoteCatalog() {
+  voteRows = new Map();
+  const shows = new Map();
+  for (const t of S.tracks) {
+    const k = t.date + t.venue;
+    if (!shows.has(k)) shows.set(k, { t, list: [] });
+    const row = voteRow(t); shows.get(k).list.push(row); voteRows.set(trackId(t), row);
+  }
+  $('vcat').replaceChildren(...[...shows.values()].flatMap(({ t, list }) => {
+    const h = document.createElement('h3'); h.textContent = showLine(t);
+    const ol = document.createElement('ol'); ol.className = 'vlist'; ol.append(...list);
+    return [h, ol];
+  }));
+  $('vall').textContent = `Browse all ${S.tracks.length} tracks`;
+}
+
+function updateVoteRow(li, counts, max, mine) {
+  const id = li.dataset.track, n = counts.get(id) || 0, why = Station.blocked(ST, id);
+  li.classList.toggle('mine', mine === id);
+  li.classList.toggle('lead', n > 0 && n === max);
+  li.classList.toggle('blocked', !!why);
+  li.querySelector('.meter i').style.width = max ? (100 * n / max) + '%' : '0';
+  li.querySelector('.meter b').textContent = n ? n : '';
+  const btn = li.querySelector('.vbtn');
+  btn.disabled = !!why;
+  btn.textContent = why || (mine === id ? '✓ Voted' : 'Vote');
+  btn.setAttribute('aria-label', why ? `${trackLabel(S.tracks[indexOfTrack(id)])}: ${why}` : `Vote for ${trackLabel(S.tracks[indexOfTrack(id)])}`);
+}
+
+function renderVote() {
+  if (!ST) { $('vote').hidden = true; return; }
+  if (!voteRows) buildVoteCatalog();
+  $('vote').hidden = false;
+  const counts = new Map(ST.tally), max = ST.tally.length ? ST.tally[0][1] : 0, mine = Station.myVote(ST.round);
+  for (const li of voteRows.values()) updateVoteRow(li, counts, max, mine);
+  // Leaders up top (or, with no votes, what the rotation would play).
+  const top = ST.next ? [ST.next.track] : ST.tally.length ? ST.tally.slice(0, 3).map(([id]) => id) : ST.rotation.slice(0, 1);
+  const key = top.join() + '|' + (ST.next ? 'locked' : ST.tally.length ? 'votes' : 'rotation');
+  if ($('vtop').dataset.k !== key) {
+    $('vtop').dataset.k = key;
+    $('vtop').replaceChildren(...top.map(id => {
+      const t = S.tracks[indexOfTrack(id)]; if (!t) return document.createTextNode('');
+      const li = voteRow(t); li.classList.add('top');
+      if (!ST.next && !ST.tally.length) li.querySelector('small').textContent += ' · plays next unless you vote';
+      return li;
+    }));
+  }
+  for (const li of $('vtop').children) if (li.dataset.track) updateVoteRow(li, counts, max, mine);
+  renderVoteClock();
+}
+
+function renderVoteClock() {
+  if (!ST) return;
+  const left = (ST.lock_at - Date.now()) / 1000;
+  const next = ST.next && S.tracks[ST.nextI];
+  $('vclose').textContent = next ? `Locked in: ${trackLabel(next)}` : left > 0 ? `closes in ${fmt(left)}` : 'closing…';
+  if (left <= 0 && !ST.next && !$('vote').classList.contains('closed')) { $('vote').classList.add('closed'); renderVote(); }
+  else if (left > 0) $('vote').classList.remove('closed');
+}
+
+async function castVote(track) {
+  if (!ST) return;
+  const t = S.tracks[indexOfTrack(track)];
+  const { view, error, stale } = await Station.vote(ST.round, track);
+  if (error) { toast(error); if (stale) fetchStation(); return; }
+  setStation(view);
+  toast(`🗳 Voted for ${trackLabel(t)}`);
+}
+
+$('vall').onclick = () => {
+  const open = $('vcat').hidden;
+  $('vcat').hidden = !open;
+  $('vall').setAttribute('aria-expanded', open);
+  $('vall').textContent = open ? 'Hide the catalog' : `Browse all ${S.tracks.length} tracks`;
+};
+
 // Shared moments: /?m=<track>@<seconds>[&c=<comment id>] opens with a card counting down to when it airs.
 const M = (() => {
   const q = new URLSearchParams(location.search);
@@ -497,12 +675,24 @@ function renderMoment() {
   const now = live();
   const playingIt = now.i === M.i && now.offset >= M.pos && now.offset - M.pos < POP_SECONDS;
   $('mwhen').classList.toggle('now', playingIt);
+  $('mvote').hidden = true;
   if (playingIt) { $('mwhen').textContent = listening ? '🔥 You\'re hearing it right now' : '🔥 On air right now. Tune in!'; return; }
+  if (ST) {
+    const id = M.track, why = Station.blocked(ST, id);
+    if (id === ST.track) $('mwhen').textContent = M.pos > now.offset ? `On air now. That moment is ${fmt(M.pos - now.offset)} away` : 'On air now, but that moment has passed';
+    else if (ST.next?.track === id) $('mwhen').textContent = '🔥 Up next!';
+    else if (why === 'Played recently') $('mwhen').textContent = 'Played recently. Vote for it again soon';
+    else if (why) $('mwhen').textContent = 'Voting for the next slot opens in a moment';
+    else if (Station.myVote(ST.round) === id) $('mwhen').textContent = '✓ You voted for it';
+    else { $('mwhen').textContent = ''; $('mvote').hidden = false; }
+    return;
+  }
   const wait = ((starts[M.i] + M.pos - now.pos) % total + total) % total;
   const at = new Date(Date.now() + wait * 1000).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
   $('mwhen').textContent = wait < 3600 ? `Airs in ${fmt(wait)} (at ${at})` : `Airs again at ${at}, in ${fmt(wait)}`;
 }
 
+$('mvote').onclick = () => M && castVote(M.track);
 $('mclose').onclick = () => { $('moment').hidden = true; history.replaceState(null, '', location.pathname); };
 $('share').onclick = () => { const { i, el } = heard(); shareMoment(S.tracks[i], el); };
 
@@ -511,6 +701,7 @@ fetch('schedule.json').then(r => r.json()).then(data => {
   S.tracks.forEach(t => { starts.push(total); total += t.duration; });
   initMoment();
   render(); setInterval(render, 1000);
+  fetchStation().then(() => { if (ST) setInterval(() => document.visibilityState === 'visible' || listening ? fetchStation() : null, 10000); });
   fetch('/api/config').then(r => r.ok ? r.json() : null).then(cfg => {
     if (!cfg || !cfg.comments) return;
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
