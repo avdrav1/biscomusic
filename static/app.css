@@ -155,6 +155,16 @@ li.mine .vbtn{border-color:var(--accent);color:var(--accent)}
 .vbtn:disabled{opacity:.6;cursor:default}
 .vlist li.top{background:linear-gradient(90deg,rgba(226,104,255,.10),transparent)}
 .vall{margin-top:10px;width:100%;min-height:44px}
+.vbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.vbtns .vall{flex:1 1 220px;width:auto;margin-top:0}
+a.nom{display:inline-flex;align-items:center;justify-content:center;gap:.45em;padding:10px 16px;border-radius:999px;font:500 14px var(--font);letter-spacing:.02em;
+  color:var(--text);text-decoration:none;background:rgba(226,104,255,.08);border:1px solid rgba(226,104,255,.45)}
+a.nom:hover{border-color:var(--accent2);box-shadow:0 0 16px rgba(226,104,255,.3)}
+a.nom .i{width:18px;height:18px;color:var(--accent2)}
+.snom{color:var(--dim);font-size:13px;margin:14px 0 0;text-align:center}
+.snom a{color:var(--accent2);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.snom a:hover{text-decoration:underline}
+.snom .i{width:14px;height:14px}
 #vcat h3{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
 li.upnext.open .s{color:var(--accent2)}
 li.later{opacity:.75}

@@ -74,7 +74,10 @@
     <h2 class="split"><span id="vtitle">Vote for what's next</span><span class="vclose" id="vclose"></span></h2>
     <ol class="vlist" id="vtop"></ol>
     <div class="vtry" id="vtry" hidden><span class="label">Try</span></div>
-    <button class="ghost vall" id="vreq" aria-haspopup="dialog"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><span>Request a track</span></button>
+    <div class="vbtns">
+      <button class="ghost vall" id="vreq" aria-haspopup="dialog"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><span>Request a track</span></button>
+      <a class="ghost vall nom" href="/nominate"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-big-up"/></svg><span>Nominate jams to add</span></a>
+    </div>
   </section>
 
   <dialog class="sheet" id="sheet" aria-labelledby="stitle">
@@ -95,6 +98,7 @@
       <p class="scount" id="scount" aria-live="polite"></p>
       <ol class="vlist" id="slist"></ol>
       <button class="ghost vall" id="smore" hidden>Show more</button>
+      <p class="snom">Not on the station yet? <a id="snom" href="/nominate">Nominate it from every show on Nugs <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></p>
     </div>
   </dialog>
 
@@ -819,6 +823,7 @@ function renderSheet() {
     clear.onclick = () => { $('sq').value = ''; SHEET.q = ''; SHEET.shown = PAGE; renderSheet(); $('sq').focus(); };
     $('scount').append(clear);
   }
+  $('snom').href = '/nominate' + (SHEET.q.trim() ? '?q=' + encodeURIComponent(SHEET.q.trim()) : '');   // carry the search over
   $('smore').hidden = n <= SHEET.shown;
   $('smore').textContent = `Show more (${n - SHEET.shown} left)`;
   updateSheetRows();
