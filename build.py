@@ -78,6 +78,40 @@ def content_hash(path):
             h.update(chunk)
     return h.hexdigest()[:10]
 
+NUGS_CATALOG = os.path.join(SHOWS, 'nugs', 'catalog.json')   # from nugs/fetch_catalog.py
+NOT_A_SONG = re.compile(r'^(crowd|intros?|banter|tuning|encore break|soundcheck|setbreak\b.*)$', re.I)
+
+def song_key(title):
+    return re.sub(r'[^a-z0-9]', '', title.lower())
+
+def nominees(tracks):
+    """site/nominees.json: every song performance on Nugs, for the nominations page.
+    Compact: shows as [nugs id, date, venue, city]; tracks as [nugs track id, show index, title, seconds, on air].
+    "on air" = a jam from that performance is already on the station (same date + song)."""
+    try:
+        with open(NUGS_CATALOG) as f:
+            catalog = json.load(f)
+    except FileNotFoundError:
+        print('  no nugs/catalog.json, skipping nominations')
+        return None
+    on_air = {(t['date'], song_key(t['song'])) for t in tracks}
+    shows, out = [], []
+    for s in catalog:
+        if s['type'] != 'Show' or not s['date']:
+            continue    # studio albums
+        songs = [t for t in s['tracks'] if not NOT_A_SONG.match(t['title'].strip())]
+        if not songs:
+            continue
+        place = ', '.join(p for p in (s['city'], s['state']) if p)
+        shows.append([s['container_id'], s['date'], s['venue'], place])
+        out += [[t['track_id'], len(shows) - 1, t['title'], t['seconds'],
+                 int((s['date'], song_key(t['title'])) in on_air)] for t in songs]
+    data = {'shows': shows, 'tracks': out}
+    with open(os.path.join(SITE, 'nominees.json'), 'w') as f:
+        json.dump(data, f, separators=(',', ':'))
+    print(f'  {len(out)} performances from {len(shows)} shows up for nomination')
+    return data
+
 def main():
     os.makedirs(AUDIO, exist_ok=True)
     old = {}
@@ -131,8 +165,9 @@ def main():
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
-    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg')}
-    for page in ('index.html', 'best.html'):
+    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js')}
+    nominees(tracks)
+    for page in ('index.html', 'best.html', 'nominate.html'):
         with open(os.path.join(HERE, page)) as f:
             html = f.read()
         for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"

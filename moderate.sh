@@ -7,6 +7,7 @@
 #   ./moderate.sh hide-author 42  hide every comment from whoever posted 42 (same IP)
 #   ./moderate.sh station         what's on air, what's next, and this round's votes
 #   ./moderate.sh skip            end the current track now (votes cast so far still count)
+#   ./moderate.sh nominations 50  most-wanted performances from /nominate (default 30)
 set -euo pipefail
 cd "$(dirname "$0")"
 DB=biscomusic-comments
@@ -43,5 +44,13 @@ case "$cmd" in
     sql "UPDATE station SET version = version + 1, started_at = $started, next_track = NULL, next_source = NULL,
          next_votes = NULL, next_cursor = NULL" | jq -r '"Skipped \"'"$track"'\" (\(.[0].meta.changes) row)"'
     curl -s -o /dev/null https://biscomusic.com/api/station ;;
-  *) sed -n '2,9p' "$0"; exit 1 ;;
+  nominations)
+    # Votes live in D1 by Nugs track id; names and dates come from the built site/nominees.json.
+    [[ "$arg" =~ ^[0-9]+$ ]] || arg=30
+    sql "SELECT track, COUNT(*) AS n FROM nominations GROUP BY track ORDER BY n DESC LIMIT $arg" |
+      jq -r --slurpfile cat site/nominees.json '
+        ($cat[0].tracks | map({key: (.[0] | tostring), value: .}) | from_entries) as $t |
+        .[0].results[] | $t[.track | tostring] as $x | $cat[0].shows[$x[1]] as $s |
+        "\(.n) votes  \($s[1])  \($x[2]) (\($x[3] / 60 | floor) min)  \($s[2]), \($s[3])  https://play.nugs.net/release/\($s[0])"' ;;
+  *) sed -n '2,10p' "$0"; exit 1 ;;
 esac
