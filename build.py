@@ -3,7 +3,7 @@
 
 Converts any FLAC without an MP3 yet (192k), then writes:
   schedule.json       local paths (audio/...), used by server.py
-  site/schedule.json  R2 URLs, deployed to Cloudflare Pages with site/index.html and site/static/
+  site/schedule.json  R2 URLs, deployed to Cloudflare Pages with the pages and site/static/
 """
 import json, os, re, shutil, subprocess, sys
 
@@ -74,7 +74,8 @@ def main():
     remote = dict(local, tracks=[dict(t, file=R2_URL + t['file'][len('audio/'):]) for t in tracks])
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
-    shutil.copy(os.path.join(HERE, 'index.html'), SITE)
+    for page in ('index.html', 'best.html'):
+        shutil.copy(os.path.join(HERE, page), SITE)
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
 

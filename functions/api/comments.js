@@ -1,8 +1,9 @@
 // Comments pinned to a moment in a track.
 //   GET  /api/comments?track=2026-09-01-02-jam1   -> { comments: [...] }
+//   GET  /api/comments?id=42                      -> { comment }  (for shared links)
 //   POST /api/comments  { track, pos, nickname?, body, token }
 
-import { TRACK_RE, json, findTrack, ipHash } from '../_shared.js';
+import { TRACK_RE, json, findTrack, ipHash, getComment } from '../_shared.js';
 
 const MAX_BODY = 280;
 const MAX_NICK = 24;
@@ -10,7 +11,12 @@ const PER_MINUTE = 5;
 const PER_HOUR = 30;
 
 export async function onRequestGet({ request, env }) {
-  const track = new URL(request.url).searchParams.get('track') || '';
+  const params = new URL(request.url).searchParams;
+  if (params.has('id')) {
+    const comment = await getComment(env, params.get('id'));
+    return comment ? json({ comment }) : json({ error: 'Not found' }, 404);
+  }
+  const track = params.get('track') || '';
   if (!TRACK_RE.test(track)) return json({ error: 'Unknown track' }, 400);
   const { results } = await env.DB.prepare(
     'SELECT id, pos, nickname, body, created_at FROM comments WHERE track = ? AND hidden = 0 ORDER BY pos LIMIT 500'

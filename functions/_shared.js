@@ -14,6 +14,21 @@ export async function findTrack(env, request, track) {
   return schedule.tracks.find(t => t.file.split('/').pop() === track + '.mp3');
 }
 
+// A visible comment by id, or null.
+export async function getComment(env, id) {
+  if (!/^\d{1,12}$/.test(String(id))) return null;
+  return env.DB.prepare('SELECT id, track, pos, nickname, body, created_at FROM comments WHERE id = ? AND hidden = 0')
+    .bind(Number(id)).first();
+}
+
+// "2026-09-26-04-jam2@312" -> { track, pos }, or null.
+export function parseMoment(m) {
+  const match = /^(\d{4}-\d{2}-\d{2}-\d{2}(?:-jam\d+)?)@(\d{1,5})$/.exec(String(m || ''));
+  return match && { track: match[1], pos: Number(match[2]) };
+}
+
+export const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
+
 export async function ipHash(env, request) {
   const ip = request.headers.get('CF-Connecting-IP') || '';
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(env.IP_SALT + ip));
