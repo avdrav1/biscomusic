@@ -1,0 +1,303 @@
+{
+ "station": "Biscuits Jam Radio",
+ "epoch": "2026-01-01T00:00:00Z",
+ "tracks": [
+  {
+   "file": "audio/2026-09-01-02-jam1.mp3",
+   "song": "The Safety Dance",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 398.629
+  },
+  {
+   "file": "audio/2026-09-01-03-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 463.151
+  },
+  {
+   "file": "audio/2026-09-01-04-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 837.329
+  },
+  {
+   "file": "audio/2026-09-01-05-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 390.034
+  },
+  {
+   "file": "audio/2026-09-01-05-jam2.mp3",
+   "song": "Country Royale",
+   "jam": 2,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 415.033
+  },
+  {
+   "file": "audio/2026-09-01-08-jam1.mp3",
+   "song": "Spaga's Last Stand",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 429.531
+  },
+  {
+   "file": "audio/2026-09-01-09-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 374.047
+  },
+  {
+   "file": "audio/2026-09-01-09-jam2.mp3",
+   "song": "Save The Robots",
+   "jam": 2,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 553.639
+  },
+  {
+   "file": "audio/2026-09-01-10-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 570.749
+  },
+  {
+   "file": "audio/2026-09-01-11-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 763.115
+  },
+  {
+   "file": "audio/2026-09-01-13-jam1.mp3",
+   "song": "The Champions",
+   "jam": 1,
+   "date": "2026-09-01",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 444.029
+  },
+  {
+   "file": "audio/2026-09-26-01-jam1.mp3",
+   "song": "Dream Journal",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 525.035
+  },
+  {
+   "file": "audio/2026-09-26-02-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 567.223
+  },
+  {
+   "file": "audio/2026-09-26-03-jam1.mp3",
+   "song": "Svenghali",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 322.534
+  },
+  {
+   "file": "audio/2026-09-26-04-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 292.545
+  },
+  {
+   "file": "audio/2026-09-26-04-jam2.mp3",
+   "song": "Rivers",
+   "jam": 2,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 534.047
+  },
+  {
+   "file": "audio/2026-09-26-04-jam3.mp3",
+   "song": "Rivers",
+   "jam": 3,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 540.029
+  },
+  {
+   "file": "audio/2026-09-26-07-jam1.mp3",
+   "song": "42",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 181.551
+  },
+  {
+   "file": "audio/2026-09-26-08-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 254.041
+  },
+  {
+   "file": "audio/2026-09-26-08-jam2.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 2,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 699.037
+  },
+  {
+   "file": "audio/2026-09-26-09-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 292.545
+  },
+  {
+   "file": "audio/2026-09-26-09-jam2.mp3",
+   "song": "Run Like Hell",
+   "jam": 2,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 314.932
+  },
+  {
+   "file": "audio/2026-09-26-12-jam1.mp3",
+   "song": "Morph Dusseldorf",
+   "jam": 1,
+   "date": "2026-09-26",
+   "venue": "The Sylvee",
+   "city": "Madison, WI",
+   "duration": 420.049
+  },
+  {
+   "file": "audio/2026-10-03-02-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 326.426
+  },
+  {
+   "file": "audio/2026-10-03-03-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 301.531
+  },
+  {
+   "file": "audio/2026-10-03-03-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 255.033
+  },
+  {
+   "file": "audio/2026-10-03-04-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 293.042
+  },
+  {
+   "file": "audio/2026-10-03-04-jam2.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 2,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 565.447
+  },
+  {
+   "file": "audio/2026-10-03-05-jam1.mp3",
+   "song": "The Wormhole",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 247.301
+  },
+  {
+   "file": "audio/2026-10-03-06-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 393.038
+  },
+  {
+   "file": "audio/2026-10-03-08-jam1.mp3",
+   "song": "Big Wrecking Ball",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 487.837
+  },
+  {
+   "file": "audio/2026-10-03-09-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 592.536
+  },
+  {
+   "file": "audio/2026-10-03-10-jam1.mp3",
+   "song": "Morph Dusseldorf",
+   "jam": 1,
+   "date": "2026-10-03",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 423.027
+  }
+ ]
+}

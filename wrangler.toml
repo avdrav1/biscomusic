@@ -1,0 +1,15 @@
+# Pages config for biscomusic.com (player in site/, API in functions/)
+name = "biscomusic"
+pages_build_output_dir = "site"
+compatibility_date = "2026-10-01"
+
+[vars]
+TURNSTILE_SITEKEY = "0x4AAAAAAFaOzv8ZzvI9DrtV"
+# Comma-separated words that block a comment (case-insensitive)
+BLOCKED_WORDS = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "biscomusic-comments"
+database_id = "9c78ac95-b530-464f-9559-b7285eb9dae5"
+migrations_dir = "migrations"

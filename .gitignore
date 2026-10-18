@@ -1,0 +1,11 @@
+# Generated from the FLACs by build.py (and kept in R2)
+audio/
+# Build output deployed to Pages
+site/
+# Which MP3s are already in R2 (local cache; deploy.sh rechecks the bucket)
+.r2-uploaded
+# Wrangler local state and local-only dev vars
+.wrangler/
+.dev.vars
+.DS_Store
+art/.icon.html

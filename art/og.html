@@ -1,0 +1,29 @@
+<!doctype html>
+<!-- Source for static/og.png (1200x630 link preview). Regenerate with art/render.sh -->
+<html><head><meta charset="utf-8"><style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:radial-gradient(900px 500px at 15% -10%,#2a1d63 0,transparent 60%),radial-gradient(800px 500px at 110% 20%,#0f4a48 0,transparent 55%),#0b0d14;
+  color:#e8ecf5;font-family:-apple-system,system-ui,"Segoe UI",sans-serif;position:relative}
+.wrap{position:absolute;left:84px;top:92px;right:84px}
+.live{display:inline-flex;align-items:center;gap:12px;font-size:22px;font-weight:700;letter-spacing:.14em;color:#ff4d6d;border:2px solid #5a2030;padding:8px 18px;border-radius:999px}
+.live i{width:12px;height:12px;border-radius:50%;background:#ff4d6d}
+h1{font-size:92px;line-height:1;margin:36px 0 26px;letter-spacing:.01em;font-weight:800;white-space:nowrap}
+h1 span{color:#4de1c1}
+p{font-size:34px;line-height:1.35;color:#aab2c8;margin:0;max-width:900px}
+.heat{position:absolute;left:84px;right:84px;bottom:64px;height:76px;display:flex;align-items:flex-end;gap:5px}
+.heat b{flex:1;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#4de1c1,#a77bff)}
+.url{position:absolute;right:84px;top:100px;font-size:26px;color:#8b93a8;letter-spacing:.04em}
+</style></head><body>
+<div class="url">biscomusic.com</div>
+<div class="wrap">
+  <div class="live"><i></i>ON AIR</div>
+  <h1>BISCUITS <span>JAM</span> RADIO</h1>
+  <p>Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.</p>
+</div>
+<div class="heat" id="heat"></div>
+<script>
+// Fixed "heat map" silhouette, so the image is the same every render
+const h = [8,10,14,12,18,26,40,58,72,64,48,30,20,16,14,18,24,34,52,78,96,100,88,70,52,38,28,22,18,16,20,30,46,62,74,66,50,36,24,16,12,10,14,22,34,48,60,54,42,30,22,16,12,10,8,8];
+h.forEach((v, i) => { const b = document.createElement('b'); b.style.height = v + '%'; b.style.opacity = .35 + .65 * v / 100; heat.append(b); });
+</script>
+</body></html>
