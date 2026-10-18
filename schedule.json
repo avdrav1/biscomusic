@@ -3,6 +3,501 @@
  "epoch": "2026-01-01T00:00:00Z",
  "tracks": [
   {
+   "file": "audio/2026-05-24-01-jam1.mp3",
+   "song": "Mishawaka Jam",
+   "jam": 1,
+   "date": "2026-05-24",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 450.0
+  },
+  {
+   "file": "audio/2026-05-24-06-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-05-24",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 262.5
+  },
+  {
+   "file": "audio/2026-05-24-17-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2026-05-24",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 375.0
+  },
+  {
+   "file": "audio/2026-06-11-02-jam1.mp3",
+   "song": "Caves Of The East",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 583.367
+  },
+  {
+   "file": "audio/2026-06-11-03-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 645.0
+  },
+  {
+   "file": "audio/2026-06-11-04-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 614.0
+  },
+  {
+   "file": "audio/2026-06-11-05-jam1.mp3",
+   "song": "Tempest",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 373.476
+  },
+  {
+   "file": "audio/2026-06-11-08-jam1.mp3",
+   "song": "Basis For A Day",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 457.5
+  },
+  {
+   "file": "audio/2026-06-11-09-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 223.0
+  },
+  {
+   "file": "audio/2026-06-11-12-jam1.mp3",
+   "song": "Aceetobee",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 375.0
+  },
+  {
+   "file": "audio/2026-06-11-13-jam1.mp3",
+   "song": "Neck Romancer",
+   "jam": 1,
+   "date": "2026-06-11",
+   "venue": "The Paramount",
+   "city": "Huntington, NY",
+   "duration": 179.0
+  },
+  {
+   "file": "audio/2026-06-12-02-jam1.mp3",
+   "song": "Three Wishes",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 209.0
+  },
+  {
+   "file": "audio/2026-06-12-04-jam1.mp3",
+   "song": "Voices Insane",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 617.783
+  },
+  {
+   "file": "audio/2026-06-12-05-jam1.mp3",
+   "song": "Freeze",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 233.0
+  },
+  {
+   "file": "audio/2026-06-12-09-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 284.0
+  },
+  {
+   "file": "audio/2026-06-12-09-jam2.mp3",
+   "song": "Save The Robots",
+   "jam": 2,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 457.6
+  },
+  {
+   "file": "audio/2026-06-12-10-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 646.0
+  },
+  {
+   "file": "audio/2026-06-12-11-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2026-06-12",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 419.0
+  },
+  {
+   "file": "audio/2026-08-07-02-jam1.mp3",
+   "song": "The Overture",
+   "jam": 1,
+   "date": "2026-08-07",
+   "venue": "Telluride Jazz Festival",
+   "city": "Telluride, CO",
+   "duration": 269.0
+  },
+  {
+   "file": "audio/2026-08-07-03-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2026-08-07",
+   "venue": "Telluride Jazz Festival",
+   "city": "Telluride, CO",
+   "duration": 262.5
+  },
+  {
+   "file": "audio/2026-08-07-04-jam1.mp3",
+   "song": "Running into the Night",
+   "jam": 1,
+   "date": "2026-08-07",
+   "venue": "Telluride Jazz Festival",
+   "city": "Telluride, CO",
+   "duration": 262.5
+  },
+  {
+   "file": "audio/2026-08-29-02-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 239.0
+  },
+  {
+   "file": "audio/2026-08-29-02-jam2.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 2,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 198.8
+  },
+  {
+   "file": "audio/2026-08-29-03-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 240.05
+  },
+  {
+   "file": "audio/2026-08-29-04-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 239.0
+  },
+  {
+   "file": "audio/2026-08-29-05-jam1.mp3",
+   "song": "Another Spin",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 158.0
+  },
+  {
+   "file": "audio/2026-08-29-08-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 223.0
+  },
+  {
+   "file": "audio/2026-08-29-09-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 119.0
+  },
+  {
+   "file": "audio/2026-08-29-11-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 441.0
+  },
+  {
+   "file": "audio/2026-08-29-12-jam1.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 1,
+   "date": "2026-08-29",
+   "venue": "Variety Playhouse",
+   "city": "Atlanta, GA",
+   "duration": 360.0
+  },
+  {
+   "file": "audio/2026-08-30-02-jam1.mp3",
+   "song": "More U Know",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 540.0
+  },
+  {
+   "file": "audio/2026-08-30-04-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 397.0
+  },
+  {
+   "file": "audio/2026-08-30-05-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 378.2
+  },
+  {
+   "file": "audio/2026-08-30-09-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 644.256
+  },
+  {
+   "file": "audio/2026-08-30-10-jam1.mp3",
+   "song": "Freeze",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 616.5
+  },
+  {
+   "file": "audio/2026-08-30-10-jam2.mp3",
+   "song": "Freeze",
+   "jam": 2,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 313.177
+  },
+  {
+   "file": "audio/2026-08-30-11-jam1.mp3",
+   "song": "Photograph",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 339.0
+  },
+  {
+   "file": "audio/2026-08-30-11-jam2.mp3",
+   "song": "Photograph",
+   "jam": 2,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 427.5
+  },
+  {
+   "file": "audio/2026-08-30-12-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 89.0
+  },
+  {
+   "file": "audio/2026-08-30-14-jam1.mp3",
+   "song": "Morph Dusseldorf",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 396.5
+  },
+  {
+   "file": "audio/2026-08-30-15-jam1.mp3",
+   "song": "Neck Romancer",
+   "jam": 1,
+   "date": "2026-08-30",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 291.5
+  },
+  {
+   "file": "audio/2026-08-31-02-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 637.5
+  },
+  {
+   "file": "audio/2026-08-31-02-jam2.mp3",
+   "song": "Who's In Charge",
+   "jam": 2,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 570.278
+  },
+  {
+   "file": "audio/2026-08-31-03-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 1309.164
+  },
+  {
+   "file": "audio/2026-08-31-04-jam1.mp3",
+   "song": "Tempest",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 224.0
+  },
+  {
+   "file": "audio/2026-08-31-05-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 239.0
+  },
+  {
+   "file": "audio/2026-08-31-07-jam1.mp3",
+   "song": "Better in Doses",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 360.0
+  },
+  {
+   "file": "audio/2026-08-31-07-jam2.mp3",
+   "song": "Better in Doses",
+   "jam": 2,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 495.0
+  },
+  {
+   "file": "audio/2026-08-31-07-jam3.mp3",
+   "song": "Better in Doses",
+   "jam": 3,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 501.0
+  },
+  {
+   "file": "audio/2026-08-31-08-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 562.5
+  },
+  {
+   "file": "audio/2026-08-31-08-jam2.mp3",
+   "song": "Run Like Hell",
+   "jam": 2,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 765.0
+  },
+  {
+   "file": "audio/2026-08-31-09-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 529.5
+  },
+  {
+   "file": "audio/2026-08-31-09-jam2.mp3",
+   "song": "Mindless Dribble",
+   "jam": 2,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 315.0
+  },
+  {
+   "file": "audio/2026-08-31-10-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 51.5
+  },
+  {
+   "file": "audio/2026-08-31-10-jam2.mp3",
+   "song": "To Be Continued",
+   "jam": 2,
+   "date": "2026-08-31",
+   "venue": "Third Room",
+   "city": "Asheville, NC",
+   "duration": 420.0
+  },
+  {
    "file": "audio/2026-09-01-02-jam1.mp3",
    "song": "The Safety Dance",
    "jam": 1,
@@ -100,6 +595,348 @@
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
    "duration": 444.0
+  },
+  {
+   "file": "audio/2026-09-02-02-jam1.mp3",
+   "song": "Loose Change",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 327.383
+  },
+  {
+   "file": "audio/2026-09-02-03-jam1.mp3",
+   "song": "Space Train",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 562.5
+  },
+  {
+   "file": "audio/2026-09-02-03-jam2.mp3",
+   "song": "Space Train",
+   "jam": 2,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 622.5
+  },
+  {
+   "file": "audio/2026-09-02-04-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 397.5
+  },
+  {
+   "file": "audio/2026-09-02-05-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 336.6
+  },
+  {
+   "file": "audio/2026-09-02-06-jam1.mp3",
+   "song": "In The End We Have Forever",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 269.185
+  },
+  {
+   "file": "audio/2026-09-02-09-jam1.mp3",
+   "song": "Hope",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 734.0
+  },
+  {
+   "file": "audio/2026-09-02-11-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 647.274
+  },
+  {
+   "file": "audio/2026-09-02-12-jam1.mp3",
+   "song": "Cyclone",
+   "jam": 1,
+   "date": "2026-09-02",
+   "venue": "The Charleston Pour House",
+   "city": "Charleston, SC",
+   "duration": 583.6
+  },
+  {
+   "file": "audio/2026-09-23-02-jam1.mp3",
+   "song": "Big Wrecking Ball",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 116.0
+  },
+  {
+   "file": "audio/2026-09-23-03-jam1.mp3",
+   "song": "Photograph",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 139.0
+  },
+  {
+   "file": "audio/2026-09-23-03-jam2.mp3",
+   "song": "Photograph",
+   "jam": 2,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 224.0
+  },
+  {
+   "file": "audio/2026-09-23-04-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 89.0
+  },
+  {
+   "file": "audio/2026-09-23-05-jam1.mp3",
+   "song": "Spectacle",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 129.0
+  },
+  {
+   "file": "audio/2026-09-23-06-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 198.0
+  },
+  {
+   "file": "audio/2026-09-23-09-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 359.3
+  },
+  {
+   "file": "audio/2026-09-23-10-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 365.681
+  },
+  {
+   "file": "audio/2026-09-23-11-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 44.0
+  },
+  {
+   "file": "audio/2026-09-23-12-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 314.0
+  },
+  {
+   "file": "audio/2026-09-23-12-jam2.mp3",
+   "song": "Astronaut",
+   "jam": 2,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 385.7
+  },
+  {
+   "file": "audio/2026-09-23-13-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 240.0
+  },
+  {
+   "file": "audio/2026-09-23-14-jam1.mp3",
+   "song": "Risky Business",
+   "jam": 1,
+   "date": "2026-09-23",
+   "venue": "Saint Andrew's Hall",
+   "city": "Detroit, MI",
+   "duration": 422.498
+  },
+  {
+   "file": "audio/2026-09-24-02-jam1.mp3",
+   "song": "The Champions",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 198.0
+  },
+  {
+   "file": "audio/2026-09-24-03-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 408.0
+  },
+  {
+   "file": "audio/2026-09-24-04-jam1.mp3",
+   "song": "Gangster",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 374.0
+  },
+  {
+   "file": "audio/2026-09-24-06-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 286.0
+  },
+  {
+   "file": "audio/2026-09-24-06-jam2.mp3",
+   "song": "Save The Robots",
+   "jam": 2,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 179.0
+  },
+  {
+   "file": "audio/2026-09-24-08-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 238.0
+  },
+  {
+   "file": "audio/2026-09-24-09-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 490.975
+  },
+  {
+   "file": "audio/2026-09-24-13-jam1.mp3",
+   "song": "Mirrors",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 394.781
+  },
+  {
+   "file": "audio/2026-09-24-15-jam1.mp3",
+   "song": "Feeling Twisted",
+   "jam": 1,
+   "date": "2026-09-24",
+   "venue": "Bogart's",
+   "city": "Cincinnati, OH",
+   "duration": 555.0
+  },
+  {
+   "file": "audio/2026-09-25-02-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 346.5
+  },
+  {
+   "file": "audio/2026-09-25-02-jam2.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 2,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 90.0
+  },
+  {
+   "file": "audio/2026-09-25-03-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 503.0
+  },
+  {
+   "file": "audio/2026-09-25-04-jam1.mp3",
+   "song": "Tempest",
+   "jam": 1,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 568.0
+  },
+  {
+   "file": "audio/2026-09-25-04-jam2.mp3",
+   "song": "Tempest",
+   "jam": 2,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 222.4
+  },
+  {
+   "file": "audio/2026-09-25-05-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 185.6
+  },
+  {
+   "file": "audio/2026-09-25-06-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2026-09-25",
+   "venue": "Nocturnal Valley Music & Arts Festival",
+   "city": "French Village, MO",
+   "duration": 749.087
   },
   {
    "file": "audio/2026-09-26-01-jam1.mp3",
@@ -210,6 +1047,69 @@
    "duration": 420.0
   },
   {
+   "file": "audio/2026-10-02-02-jam1.mp3",
+   "song": "Story Of The World",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 584.0
+  },
+  {
+   "file": "audio/2026-10-02-03-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 541.5
+  },
+  {
+   "file": "audio/2026-10-02-05-jam1.mp3",
+   "song": "Caves Of The East",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 425.351
+  },
+  {
+   "file": "audio/2026-10-02-06-jam1.mp3",
+   "song": "Freeze",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 508.501
+  },
+  {
+   "file": "audio/2026-10-02-09-jam1.mp3",
+   "song": "Space Train",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 674.6
+  },
+  {
+   "file": "audio/2026-10-02-10-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 303.0
+  },
+  {
+   "file": "audio/2026-10-02-12-jam1.mp3",
+   "song": "Dino Baby",
+   "jam": 1,
+   "date": "2026-10-02",
+   "venue": "Tropicana Showroom",
+   "city": "Atlantic City, NJ",
+   "duration": 299.0
+  },
+  {
    "file": "audio/2026-10-03-02-jam1.mp3",
    "song": "The Deal",
    "jam": 1,
@@ -298,6 +1198,402 @@
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
    "duration": 423.0
+  },
+  {
+   "file": "audio/2026-10-08-03-jam1.mp3",
+   "song": "Loose Change",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 598.3
+  },
+  {
+   "file": "audio/2026-10-08-04-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 299.0
+  },
+  {
+   "file": "audio/2026-10-08-04-jam2.mp3",
+   "song": "No Recollection",
+   "jam": 2,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 547.5
+  },
+  {
+   "file": "audio/2026-10-08-05-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 178.0
+  },
+  {
+   "file": "audio/2026-10-08-06-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 238.0
+  },
+  {
+   "file": "audio/2026-10-08-08-jam1.mp3",
+   "song": "Resurrection",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 500.0
+  },
+  {
+   "file": "audio/2026-10-08-09-jam1.mp3",
+   "song": "Tourists (Rocket Ship)",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 509.0
+  },
+  {
+   "file": "audio/2026-10-08-10-jam1.mp3",
+   "song": "Sound One",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 269.3
+  },
+  {
+   "file": "audio/2026-10-08-11-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 420.0
+  },
+  {
+   "file": "audio/2026-10-08-11-jam2.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 2,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 363.0
+  },
+  {
+   "file": "audio/2026-10-08-12-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 253.0
+  },
+  {
+   "file": "audio/2026-10-08-13-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-10-08",
+   "venue": "Paramount Theatre",
+   "city": "Rutland, VT",
+   "duration": 238.0
+  },
+  {
+   "file": "audio/2026-10-09-03-jam1.mp3",
+   "song": "Dream Journal",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 361.0
+  },
+  {
+   "file": "audio/2026-10-09-03-jam2.mp3",
+   "song": "Dream Journal",
+   "jam": 2,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 464.153
+  },
+  {
+   "file": "audio/2026-10-09-04-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 777.4
+  },
+  {
+   "file": "audio/2026-10-09-05-jam1.mp3",
+   "song": "Tricycle",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 450.0
+  },
+  {
+   "file": "audio/2026-10-09-06-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 315.0
+  },
+  {
+   "file": "audio/2026-10-09-10-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 300.0
+  },
+  {
+   "file": "audio/2026-10-09-10-jam2.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 2,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 315.0
+  },
+  {
+   "file": "audio/2026-10-09-11-jam1.mp3",
+   "song": "Jigsaw Earth",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 209.0
+  },
+  {
+   "file": "audio/2026-10-09-11-jam2.mp3",
+   "song": "Jigsaw Earth",
+   "jam": 2,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 189.0
+  },
+  {
+   "file": "audio/2026-10-09-13-jam1.mp3",
+   "song": "Hot Air Balloon",
+   "jam": 1,
+   "date": "2026-10-09",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 174.0
+  },
+  {
+   "file": "audio/2026-10-10-03-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 424.0
+  },
+  {
+   "file": "audio/2026-10-10-03-jam2.mp3",
+   "song": "Simulations",
+   "jam": 2,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 819.0
+  },
+  {
+   "file": "audio/2026-10-10-04-jam1.mp3",
+   "song": "Another Spin",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 138.0
+  },
+  {
+   "file": "audio/2026-10-10-04-jam2.mp3",
+   "song": "Another Spin",
+   "jam": 2,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 382.5
+  },
+  {
+   "file": "audio/2026-10-10-10-jam1.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 292.5
+  },
+  {
+   "file": "audio/2026-10-10-10-jam2.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 2,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 307.5
+  },
+  {
+   "file": "audio/2026-10-10-11-jam1.mp3",
+   "song": "Running into the Night",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 337.0
+  },
+  {
+   "file": "audio/2026-10-10-11-jam2.mp3",
+   "song": "Running into the Night",
+   "jam": 2,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 372.2
+  },
+  {
+   "file": "audio/2026-10-10-12-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 219.0
+  },
+  {
+   "file": "audio/2026-10-10-13-jam1.mp3",
+   "song": "Basis For A Day",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 569.0
+  },
+  {
+   "file": "audio/2026-10-10-14-jam1.mp3",
+   "song": "Cyclone",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 338.0
+  },
+  {
+   "file": "audio/2026-10-10-16-jam1.mp3",
+   "song": "Big Wrecking Ball",
+   "jam": 1,
+   "date": "2026-10-10",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 274.5
+  },
+  {
+   "file": "audio/2026-10-11-01-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 811.0
+  },
+  {
+   "file": "audio/2026-10-11-02-jam1.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 270.0
+  },
+  {
+   "file": "audio/2026-10-11-03-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 329.0
+  },
+  {
+   "file": "audio/2026-10-11-04-jam1.mp3",
+   "song": "Aceetobee",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 199.0
+  },
+  {
+   "file": "audio/2026-10-11-09-jam1.mp3",
+   "song": "One Chance To Save The World",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 384.798
+  },
+  {
+   "file": "audio/2026-10-11-10-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 569.0
+  },
+  {
+   "file": "audio/2026-10-11-10-jam2.mp3",
+   "song": "Mindless Dribble",
+   "jam": 2,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 449.1
+  },
+  {
+   "file": "audio/2026-10-11-11-jam1.mp3",
+   "song": "Dino Baby",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 299.0
+  },
+  {
+   "file": "audio/2026-10-11-12-jam1.mp3",
+   "song": "Hymn",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 337.0
+  },
+  {
+   "file": "audio/2026-10-11-14-jam1.mp3",
+   "song": "Story Of The World",
+   "jam": 1,
+   "date": "2026-10-11",
+   "venue": "Westcott Theater",
+   "city": "Syracuse, NY",
+   "duration": 298.0
   }
  ]
 }

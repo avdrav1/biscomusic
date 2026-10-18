@@ -33,7 +33,8 @@ for mp3 in audio/*.mp3; do
   grep -qxF "$key $sum" "$UPLOADED" && continue
   # Same content already in R2 (R2's ETag is the MD5)? Then just record it.
   # The ?v= keeps the edge cache from answering with an older copy.
-  etag=$(curl -sfI "$AUDIO_URL/$key?v=$sum" | tr -d '\r"' | awk 'tolower($1)=="etag:"{print $2}')
+  # (a new file 404s here; that must not stop the script under set -e/pipefail)
+  etag=$( (curl -sfI "$AUDIO_URL/$key?v=$sum" || true) | tr -d '\r"' | awk 'tolower($1)=="etag:"{print $2}')
   if [ "$etag" != "$sum" ]; then
     echo "  $key"
     wrangler r2 object put "$BUCKET/$key" --file "$mp3" --remote \
