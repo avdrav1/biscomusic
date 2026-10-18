@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Best moments · Biscuits Jam Radio</title>
-<meta name="description" content="The most 🔥'd and talked-about moments on Biscuits Jam Radio, and when each one airs next.">
+<meta name="description" content="The most-loved and most talked-about moments on Biscuits Jam Radio. Vote to hear one again.">
 <meta name="theme-color" content="#030604">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
@@ -16,13 +16,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Biscuits Jam Radio">
 <meta property="og:title" content="Best moments · Biscuits Jam Radio">
-<meta property="og:description" content="The most 🔥'd and talked-about moments on the station, and when each one airs next.">
+<meta property="og:description" content="The most-loved and most talked-about moments on the station. Vote to hear one again.">
 <meta property="og:url" content="https://biscomusic.com/best">
 <meta property="og:image" content="https://biscomusic.com/static/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="static/fonts/monoton-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="static/app.css">
+<meta name="icons" content="static/icons.svg">
 <style>
 .best li{grid-template-columns:44px 1fr auto;align-items:start;padding:14px}
 .best .rank{font-size:22px;font-weight:700;color:var(--dim);font-variant-numeric:tabular-nums}
@@ -46,11 +47,11 @@
 <main class="wrap">
   <header>
     <h1>BISCUITS <span>JAM</span> RADIO</h1>
-    <a class="back" href="/">← <span class="wide">Back to the </span>radio</a>
+    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
   </header>
 
   <h2>Best moments</h2>
-  <p class="intro">The most 🔥'd and talked-about 15 seconds on the station. Want to hear one again? Vote for it to play next.</p>
+  <p class="intro">The most-loved and most talked-about 15 seconds on the station. Want to hear one again? Vote for it to play next.</p>
   <ol class="best" id="list"><li><span class="empty">Loading…</span></li></ol>
 </main>
 <div class="toast" id="toast" role="status" hidden></div>
@@ -64,8 +65,8 @@ const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls)
 
 let S, starts = new Map(), total = 0, moments = [], ST = null, toastTimer;
 
-function toast(msg) {
-  $('toast').textContent = msg; $('toast').hidden = false;
+function toast(msg, ic) {
+  $('toast').replaceChildren(...(ic ? [icon(ic)] : []), msg); $('toast').hidden = false;
   clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true, 2200);
 }
 
@@ -79,14 +80,20 @@ function wait(m) {
 }
 
 function render() {
-  if (!moments.length) return message('No reactions yet. Tap 🔥 while you listen and the best moments will show up here.');
+  if (!moments.length) return message('No reactions yet. Tap the flame while you listen and the best moments will show up here.');
   $('list').replaceChildren(...moments.map((m, k) => {
     const li = el('li');
     const s = el('span', 's');
     const a = el('a', null, `${m.song}${m.jam ? ` (jam ${m.jam})` : ''} @ ${fmt(m.pos)}`);
     a.href = `/?m=${m.track}@${m.pos}` + (m.comment ? `&c=${m.comment.id}` : '');
     s.append(a, el('small', null, showLine(m)));
-    s.append(el('span', 'stats', [m.fire && `🔥 ${m.fire}`, m.comments && `💬 ${m.comments}`].filter(Boolean).join('  ·  ')));
+    const stats = el('span', 'stats');
+    for (const [n, ic, label] of [[m.fire, 'flame', 'reactions'], [m.comments, 'message-circle', 'comments']]) {
+      if (!n) continue;
+      const c = el('span', 'chip' + (ic === 'flame' ? ' hot' : '')); c.append(icon(ic), String(n)); c.title = `${n} ${label}`;
+      stats.append(c);
+    }
+    s.append(stats);
     if (m.comment) {
       const q = el('span', 'quote');
       q.append(el('b', null, m.comment.nickname || 'anonymous'), document.createTextNode(': ' + m.comment.body));
@@ -115,7 +122,7 @@ function tick() {
       const off = (Date.now() - ST.started_at) / 1000;
       onAir = true; text = off < m.pos ? `on air · in ${fmt(m.pos - off)}` : 'on air now';
     } else if (ST.next?.track === m.track) { onAir = true; text = 'up next!'; }
-    else if (Station.myVote(ST.round) === m.track) text = '✓ you voted';
+    else if (Station.myVote(ST.round) === m.track) text = 'you voted';
     else { const why = Station.blocked(ST, m.track); if (why) text = why.toLowerCase(); else canVote = true; }
     w.classList.toggle('now', onAir);
     status.textContent = text; status.hidden = canVote; btn.hidden = !canVote;
@@ -126,7 +133,7 @@ async function vote(m) {
   if (!ST) return;
   const { view, error, stale } = await Station.vote(ST.round, m.track);
   if (error) { toast(error); if (stale) ST = await Station.get(); }
-  else { ST = view; toast(`🗳 Voted for ${m.song}${m.jam ? ` (jam ${m.jam})` : ''}. Head back to hear it!`); }
+  else { ST = view; toast(`Voted for ${m.song}${m.jam ? ` (jam ${m.jam})` : ''}. Head back to hear it!`, 'vote'); }
   tick();
 }
 

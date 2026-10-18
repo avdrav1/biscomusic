@@ -11,7 +11,8 @@ const schedule = {
 const catalog = catalogOf(schedule);
 const T0 = Date.parse('2026-10-18T12:00:00Z');
 const start = (track = 't0', cursor = 0) =>
-  ({ version: 3, round: 1, track, started_at: T0, cursor, next_track: null, next_source: null, next_votes: null, next_cursor: null });
+  ({ version: 3, round: 1, track, started_at: T0, cursor, cursor_track: `t${cursor}`,
+     next_track: null, next_source: null, next_votes: null, next_cursor: null, next_cursor_track: null });
 const vote = (track, at = T0 + 1000) => ({ track, created_at: at });
 
 test('catalog ids ignore the ?v= cache-buster', () => {
@@ -120,4 +121,24 @@ test('view: voting window, tally and the rotation preview', () => {
   assert.equal(lv.voting_open, false);
   assert.deepEqual(lv.next, { track: 't5', source: 'vote', votes: 1 });
   assert.deepEqual(rotationPreview(locked, catalog, ['t0'], 3), ['t1', 't2', 't3']);
+});
+
+test('adding older shows (catalog indexes shift) does not make the rotation jump', () => {
+  // On air t3, rotation at t3. Then five older tracks are added at the front of the catalog.
+  const s0 = { ...start('t3', 3), cursor_track: 't3' };
+  const grown = [...Array.from({ length: 5 }, (_, i) => ({ id: `old${i}`, duration: 100 })), ...catalog];
+  const out = advance(s0, grown, [], ['t3'], T0 + 100_000);
+  assert.equal(out.state.track, 't4', 'still continues after t3, not after whatever is at index 3 now');
+  assert.equal(out.state.cursor_track, 't4');
+  assert.equal(out.state.cursor, 9);
+});
+
+test('rows saved before cursor_track existed still work (falls back to the index)', () => {
+  const { cursor_track, next_cursor_track, ...legacy } = start('t3', 3);   // a row from before migration 0005
+  const backfill = advance(legacy, catalog, [], ['t3'], T0 + 1);
+  assert.equal(backfill.changed, true, 'the first request writes cursor_track once');
+  assert.equal(backfill.state.cursor_track, 't3');
+  const out = advance(legacy, catalog, [], ['t3'], T0 + 100_000);
+  assert.equal(out.state.track, 't4');
+  assert.equal(out.state.cursor_track, 't4');
 });

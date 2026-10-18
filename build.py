@@ -97,12 +97,12 @@ def main():
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
-    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js')}
+    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg')}
     for page in ('index.html', 'best.html'):
         with open(os.path.join(HERE, page)) as f:
             html = f.read()
-        for f, v in versioned.items():
-            html = html.replace(f'"{f}"', f'"{v}"')
+        for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"
+            html = re.sub(re.escape(f) + r'(?=["#])', v, html)
         with open(os.path.join(SITE, page), 'w') as f:
             f.write(html)
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)

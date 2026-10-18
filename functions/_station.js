@@ -19,12 +19,19 @@ export function seedFromClock(schedule, catalog, now) {
   let i = 0;
   while (pos >= catalog[i].duration) { pos -= catalog[i].duration; i++; }
   return {
-    version: 0, round: 1, track: catalog[i].id, started_at: Math.round(now - pos * 1000), cursor: i,
-    next_track: null, next_source: null, next_votes: null, next_cursor: null,
+    version: 0, round: 1, track: catalog[i].id, started_at: Math.round(now - pos * 1000), cursor: i, cursor_track: catalog[i].id,
+    next_track: null, next_source: null, next_votes: null, next_cursor: null, next_cursor_track: null,
   };
 }
 
 const indexOf = (catalog, id) => catalog.findIndex(t => t.id === id);
+
+// The rotation's place, by track id when we have it (indexes shift when older shows are added).
+// If that track left the catalog, fall back to the stored index.
+function place(catalog, id, index) {
+  const i = id != null ? indexOf(catalog, id) : -1;
+  return i >= 0 ? i : Math.min(Math.max(index ?? 0, 0), catalog.length - 1);
+}
 
 // Who can be picked next: not the current track or the last RECENT played (unless that leaves nothing).
 export function eligible(catalog, recent) {
@@ -62,7 +69,7 @@ export function rotationNext(catalog, cursor, recent, skip = []) {
 // The next few rotation picks after the locked/expected next one (for "Coming up").
 export function rotationPreview(state, catalog, recent, count = 5) {
   const out = [], seen = [...recent];
-  let cursor = state.next_track != null ? state.next_cursor : state.cursor;
+  let cursor = state.next_track != null ? place(catalog, state.next_cursor_track, state.next_cursor) : place(catalog, state.cursor_track, state.cursor);
   if (state.next_track != null) seen.unshift(state.next_track);
   for (let k = 0; k < count; k++) {
     const i = rotationNext(catalog, cursor, seen);
@@ -76,6 +83,9 @@ export function rotationPreview(state, catalog, recent, count = 5) {
 // plays to record, and the updated recent list.
 export function advance(state, catalog, votes, recent, now) {
   const s = { ...state }, plays = [];
+  s.cursor = place(catalog, s.cursor_track, s.cursor);
+  s.cursor_track = catalog[s.cursor].id;
+  if (s.next_track != null) { s.next_cursor = place(catalog, s.next_cursor_track, s.next_cursor); s.next_cursor_track = catalog[s.next_cursor].id; }
   recent = [...recent];
   let roundVotes = votes;
   for (let guard = 0; guard < 100_000; guard++) {
@@ -85,21 +95,22 @@ export function advance(state, catalog, votes, recent, now) {
     if (s.next_track == null && now >= end - LOCK_MS) {
       const allowed = eligible(catalog, recent);
       const [top] = tally(roundVotes, allowed, catalog, s.cursor);
-      if (top) Object.assign(s, { next_track: top[0], next_source: 'vote', next_votes: top[1], next_cursor: s.cursor });
+      if (top) Object.assign(s, { next_track: top[0], next_source: 'vote', next_votes: top[1], next_cursor: s.cursor, next_cursor_track: s.cursor_track });
       else {
         const i = rotationNext(catalog, s.cursor, recent);
-        Object.assign(s, { next_track: catalog[i].id, next_source: 'rotation', next_votes: 0, next_cursor: i });
+        Object.assign(s, { next_track: catalog[i].id, next_source: 'rotation', next_votes: 0, next_cursor: i, next_cursor_track: catalog[i].id });
       }
     }
     if (now < end) break;
 
     plays.push({ round: s.round + 1, track: s.next_track, started_at: end, source: s.next_source, votes: s.next_votes });
     recent.unshift(s.next_track);
-    Object.assign(s, { round: s.round + 1, track: s.next_track, started_at: end, cursor: s.next_cursor,
-                       next_track: null, next_source: null, next_votes: null, next_cursor: null });
+    Object.assign(s, { round: s.round + 1, track: s.next_track, started_at: end, cursor: s.next_cursor, cursor_track: s.next_cursor_track,
+                       next_track: null, next_source: null, next_votes: null, next_cursor: null, next_cursor_track: null });
     roundVotes = [];   // nobody could vote for rounds that hadn't started
   }
-  return { state: s, plays: plays.slice(-RECENT * 2), recent: recent.slice(0, RECENT * 2), changed: plays.length > 0 || s.next_track !== state.next_track };
+  const moved = s.cursor !== state.cursor || s.cursor_track !== state.cursor_track;   // e.g. the catalog grew
+  return { state: s, plays: plays.slice(-RECENT * 2), recent: recent.slice(0, RECENT * 2), changed: plays.length > 0 || s.next_track !== state.next_track || moved };
 }
 
 // Public view of the state for the player.
@@ -124,7 +135,7 @@ export function view(state, catalog, votes, recent, now) {
 
 // ---- D1 ----
 
-const COLS = 'version, round, track, started_at, cursor, next_track, next_source, next_votes, next_cursor';
+const COLS = 'version, round, track, started_at, cursor, next_track, next_source, next_votes, next_cursor, cursor_track, next_cursor_track';
 
 async function load(env) {
   const [st, rec] = await env.DB.batch([
@@ -148,8 +159,8 @@ export async function getStation(env, request, now = Date.now()) {
     let { state, recent } = await load(env);
     if (!state) {
       const seed = seedFromClock(sched, catalog, now);
-      const r = await env.DB.prepare(`INSERT OR IGNORE INTO station (id, ${COLS}) VALUES (1, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL)`)
-        .bind(seed.version, seed.round, seed.track, seed.started_at, seed.cursor).run();
+      const r = await env.DB.prepare(`INSERT OR IGNORE INTO station (id, ${COLS}) VALUES (1, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, ?, NULL)`)
+        .bind(seed.version, seed.round, seed.track, seed.started_at, seed.cursor, seed.cursor_track).run();
       if (r.meta.changes) await env.DB.prepare("INSERT OR IGNORE INTO plays (round, track, started_at, source) VALUES (?, ?, ?, 'seed')")
         .bind(seed.round, seed.track, seed.started_at).run();
       continue;   // re-read whichever seed won
@@ -159,9 +170,10 @@ export async function getStation(env, request, now = Date.now()) {
     if (out.changed) {
       const s = out.state;
       const w = await env.DB.prepare(
-        `UPDATE station SET version = version + 1, round = ?, track = ?, started_at = ?, cursor = ?,
-           next_track = ?, next_source = ?, next_votes = ?, next_cursor = ? WHERE id = 1 AND version = ?`
-      ).bind(s.round, s.track, s.started_at, s.cursor, s.next_track, s.next_source, s.next_votes, s.next_cursor, state.version).run();
+        `UPDATE station SET version = version + 1, round = ?, track = ?, started_at = ?, cursor = ?, cursor_track = ?,
+           next_track = ?, next_source = ?, next_votes = ?, next_cursor = ?, next_cursor_track = ? WHERE id = 1 AND version = ?`
+      ).bind(s.round, s.track, s.started_at, s.cursor, s.cursor_track, s.next_track, s.next_source, s.next_votes, s.next_cursor,
+             s.next_cursor_track, state.version).run();
       if (!w.meta.changes) continue;   // someone else advanced it first; start over from their state
       if (out.plays.length) await env.DB.batch(out.plays.map(p =>
         env.DB.prepare('INSERT OR IGNORE INTO plays (round, track, started_at, source, votes) VALUES (?, ?, ?, ?, ?)')

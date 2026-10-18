@@ -1,4 +1,4 @@
-// Best moments across the station: 15-second windows ranked by 🔥 + comments (a comment counts double).
+// Best moments across the station: 15-second windows ranked by reactions + comments (a comment counts double).
 //   GET /api/best -> { moments: [{ track, pos, fire, comments, comment, song, jam, date, venue, city }] }
 // Cached for a minute so the page doesn't rescan the tables on every visit.
 

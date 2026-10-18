@@ -165,3 +165,63 @@ li.mine .vbtn{border-color:var(--accent);color:var(--accent)}
 li.upnext.open .s{color:var(--accent2)}
 li.later{opacity:.75}
 @media(max-width:480px){.vlist li{grid-template-columns:1fr auto;grid-template-areas:"s b" "m b"}.vlist .s{grid-area:s}.vlist .meter{grid-area:m;height:14px}.vlist .vbtn{grid-area:b;min-width:84px}}
+
+/* Icons (Lucide sprite, static/icons.svg) and chips */
+.i{width:1.15em;height:1.15em;flex:none;vertical-align:-.2em}
+button,.chip,.toast,.mwhen,h2.split a,.back{display:inline-flex;align-items:center;gap:.45em}
+button{justify-content:center}
+button.fire .i{width:20px;height:20px;color:#ff9d3a;filter:drop-shadow(0 0 6px rgba(255,140,40,.55))}
+button.ghost .i{width:18px;height:18px}
+.cl .sh .i{width:15px;height:15px}
+.chip{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;line-height:1;padding:4px 8px;border-radius:999px;
+  color:var(--accent);border:1px solid rgba(93,255,58,.35);background:rgba(93,255,58,.07);vertical-align:1px;white-space:nowrap}
+.chip .i{width:12px;height:12px}
+.chip.hot{color:var(--accent2);border-color:rgba(226,104,255,.45);background:rgba(226,104,255,.08)}
+li .d .i{color:var(--accent2);width:18px;height:18px}
+.flame .i{width:26px;height:26px;color:#ff9d3a;filter:drop-shadow(0 0 8px rgba(255,140,40,.8))}
+.mwhen .i,.toast .i{width:16px;height:16px;color:var(--accent)}
+.back .i{width:16px;height:16px}
+.stats{display:flex;gap:6px;margin-top:6px}
+
+/* Ballot extras */
+.vtry{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
+.vtry .label{margin-right:4px}
+.chipbtn{min-height:44px;padding:8px 14px;border-radius:999px;font:500 13px var(--font);letter-spacing:.02em;text-transform:none;
+  color:var(--text);background:rgba(93,255,58,.06);border:1px solid var(--line);box-shadow:none}
+.chipbtn:hover{border-color:rgba(93,255,58,.55)}
+.chipbtn .i{width:15px;height:15px;color:var(--accent)}
+.chipbtn[aria-checked="true"]{color:#031203;background:var(--accent);border-color:var(--accent);box-shadow:0 0 16px rgba(93,255,58,.45)}
+.chipbtn[aria-checked="true"] .i{color:#031203}
+.linkbtn{all:unset;cursor:pointer;color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.linkbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Request sheet: centred panel on desktop, bottom sheet on phones */
+dialog.sheet{padding:0;border:1px solid var(--line);border-radius:22px;background:var(--card-solid);color:var(--text);
+  width:min(680px,calc(100% - 32px));max-width:none;max-height:min(84vh,820px);overflow:hidden;
+  box-shadow:0 0 0 1px rgba(93,255,58,.08),0 30px 120px -20px rgba(93,255,58,.35)}
+dialog.sheet[open]{display:flex;flex-direction:column;animation:sheetin .22s ease-out}
+dialog.sheet::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
+@keyframes sheetin{from{opacity:0;transform:translateY(16px)}}
+.sheet-head{display:flex;align-items:center;gap:12px;padding:18px 18px 6px}
+.sheet-head h2{margin:0;font-size:13px;color:var(--text)}
+.sheet-head .vclose{margin-left:auto}
+.iconbtn{width:44px;height:44px;padding:0;border-radius:50%}
+.search{display:flex;align-items:center;gap:10px;margin:8px 18px 4px;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:rgba(0,0,0,.45)}
+.search:focus-within{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 0 18px rgba(93,255,58,.25)}
+.search .i{color:var(--dim)}
+.search input{flex:1;min-width:0;min-height:46px;border:0;outline:none;background:transparent;color:var(--text);font:16px var(--font)}
+.search input::placeholder{color:var(--dim)}
+.chips{display:flex;gap:8px;padding:10px 18px 12px;overflow-x:auto;scrollbar-width:none;flex:none}
+.chips::-webkit-scrollbar{display:none}
+.chips .chipbtn{flex:none}
+.sheet-body{overflow-y:auto;padding:0 18px 18px;overscroll-behavior:contain}
+.scount{color:var(--dim);font-size:13px;margin:4px 0 10px}
+.sheet .toast{position:sticky;bottom:12px;left:auto;transform:none;margin:0 auto 12px;width:max-content;max-width:calc(100% - 36px)}
+@media(max-width:480px){
+  dialog.sheet{width:100%;max-height:86vh;margin:auto 0 0;border-radius:22px 22px 0 0;border-bottom:0}
+  dialog.sheet[open]{animation:sheetup .25s ease-out}
+  dialog.sheet::before{content:"";display:block;width:40px;height:4px;border-radius:2px;background:var(--line);margin:10px auto 0;flex:none}
+  .sheet-head{padding-top:10px}
+  .sheet-head .vclose{font-size:12px}
+}
+@keyframes sheetup{from{transform:translateY(100%)}}

@@ -1,4 +1,15 @@
 // Shared by index.html and best.html: talking to the voting station (functions/api/station.js, vote.js).
+// Lucide icon from the sprite (its versioned URL comes from <meta name="icons">).
+const ICONS = document.querySelector('meta[name="icons"]')?.content || 'static/icons.svg';
+window.icon = (name, cls = 'i') => {
+  const ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg'), use = document.createElementNS(ns, 'use');
+  svg.setAttribute('class', cls); svg.setAttribute('aria-hidden', 'true');
+  use.setAttribute('href', `${ICONS}#${name}`); svg.append(use);
+  return svg;
+};
+// Same, as markup for HTML strings.
+window.iconHtml = (name, cls = 'i') => `<svg class="${cls}" aria-hidden="true"><use href="${ICONS}#${name}"/></svg>`;
+
 window.Station = {
   // The current station view, or null when there's no API (local server.py).
   async get() {

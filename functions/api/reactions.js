@@ -1,4 +1,4 @@
-// 🔥 reactions, counted per 5-second slice of a track (one per listener per slice).
+// Flame reactions, counted per 5-second slice of a track (one per listener per slice).
 //   GET  /api/reactions?track=2026-09-01-02-jam1   -> { bucket: 5, counts: [[slice, n], ...] }
 //   POST /api/reactions  { track, pos }             -> { counted }
 
