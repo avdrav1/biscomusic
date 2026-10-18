@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Biscuits Jam Radio</title>
 <meta name="description" content="Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment — react and comment as it plays.">
-<meta name="theme-color" content="#0b0d14">
+<meta name="theme-color" content="#030604">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
 <link rel="manifest" href="/static/manifest.webmanifest">
@@ -26,9 +26,12 @@
 <meta name="twitter:title" content="Biscuits Jam Radio">
 <meta name="twitter:description" content="Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.">
 <meta name="twitter:image" content="https://biscomusic.com/static/og.png">
+<link rel="preload" href="static/fonts/monoton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="static/app.css">
 </head>
 <body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <main class="wrap">
   <header>
     <h1>BISCUITS <span>JAM</span> RADIO</h1>
@@ -295,16 +298,20 @@ function drawHeat(t, el) {
   if (cv.width !== Math.round(W * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
   const g = cv.getContext('2d');
   g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
-  const css = getComputedStyle(document.documentElement);
-  const grad = g.createLinearGradient(0, 0, W, 0);
-  grad.addColorStop(0, css.getPropertyValue('--accent').trim()); grad.addColorStop(1, css.getPropertyValue('--live').trim());
-  const max = Math.sqrt(Math.max(...C.heat.values())), w = Math.max(2, W * C.bucket / t.duration - 1);
+  // Laser green, turning magenta for the hottest slices; played slices glow, upcoming ones are dimmed.
+  const css = getComputedStyle(document.documentElement), color = v => css.getPropertyValue(v).trim();
+  const green = g.createLinearGradient(0, 0, 0, H), hot = g.createLinearGradient(0, 0, 0, H);
+  green.addColorStop(0, color('--accent')); green.addColorStop(1, color('--accent-deep'));
+  hot.addColorStop(0, color('--accent2')); hot.addColorStop(1, color('--violet'));
+  const peak = Math.max(...C.heat.values()), max = Math.sqrt(peak), w = Math.max(2, W * C.bucket / t.duration - 1);
   for (const [b, n] of C.heat) {
-    const h = Math.max(3, H * Math.sqrt(n) / max), x = W * b * C.bucket / t.duration;
-    g.globalAlpha = b * C.bucket <= el ? 1 : 0.35;
-    g.fillStyle = grad; g.fillRect(x, H - h, w, h);
+    const h = Math.max(3, H * Math.sqrt(n) / max), x = W * b * C.bucket / t.duration, played = b * C.bucket <= el;
+    const isHot = peak >= 3 && n >= peak * 0.66;
+    g.globalAlpha = played ? 1 : 0.35;
+    g.shadowColor = isHot ? color('--accent2') : color('--accent'); g.shadowBlur = played ? 8 : 0;
+    g.fillStyle = isHot ? hot : green; g.fillRect(x, H - h, w, h);
   }
-  g.globalAlpha = 1;
+  g.globalAlpha = 1; g.shadowBlur = 0;
 }
 
 function react() {

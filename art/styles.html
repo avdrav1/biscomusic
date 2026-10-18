@@ -1,0 +1,164 @@
+<!doctype html>
+<!-- Design exploration: "laser show" theme + font options. Not deployed (art/ isn't part of site/). -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laser theme · font options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Exo+2:wght@400;500;600;700&family=Unbounded:wght@400;600;800&family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Monoton&family=Chakra+Petch:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Palette sampled from the Disco Biscuits laser photo */
+:root{
+  --bg:#030604; --text:#eafbe6; --dim:#8fa59a; --line:rgba(93,255,58,.18);
+  --laser:#5dff3a; --laser-deep:#1f7a12; --magenta:#e268ff; --violet:#9b5cff; --ice:#6fd6ff; --live:#ff4d8d;
+  --card:rgba(8,16,10,.72);
+  --display:'Orbitron',sans-serif; --body:'Exo 2',sans-serif; --mono:var(--body);
+  --logo:var(--display); --logo-size:22px; --logo-track:.12em; --logo-weight:900;
+  --song-size:30px; --song-weight:700; --song-track:.02em; --label-track:.2em;
+}
+[data-font="unbounded"]{--display:'Unbounded',sans-serif;--body:'Sora',sans-serif;--logo-weight:800;--logo-track:.04em;--song-weight:800;--song-track:0}
+[data-font="terminal"]{--display:'Space Grotesk',sans-serif;--body:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;--logo:'JetBrains Mono',monospace;--logo-weight:600;--logo-track:.08em;--song-size:32px;--song-weight:700;--song-track:-.01em}
+[data-font="neon"]{--display:'Chakra Petch',sans-serif;--body:'Chakra Petch',sans-serif;--logo:'Monoton',cursive;--logo-weight:400;--logo-size:34px;--logo-track:.04em;--song-weight:700;--song-track:.01em}
+/* Monoton's tube lines blur under a heavy glow; keep it tight */
+[data-font="neon"] .logo{text-shadow:none}
+[data-font="neon"] .logo span{text-shadow:0 0 4px var(--laser),0 0 14px rgba(93,255,58,.6)}
+
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--text);font:15px/1.5 var(--body);min-height:100vh;overflow-x:hidden;
+  background:
+    radial-gradient(600px 260px at 22% 62%,rgba(226,104,255,.22),transparent 70%),
+    radial-gradient(600px 260px at 78% 60%,rgba(155,92,255,.20),transparent 70%),
+    radial-gradient(500px 200px at 12% 4%,rgba(111,214,255,.14),transparent 70%),
+    radial-gradient(500px 200px at 88% 4%,rgba(111,214,255,.14),transparent 70%),
+    var(--bg)}
+
+/* Laser fans: thin beams from emitters along the stage line, fading upward */
+.lasers{position:fixed;inset:0;pointer-events:none;z-index:0;mix-blend-mode:screen;opacity:.55}
+.lasers i{position:absolute;bottom:-4%;width:160vmax;height:110vmax;left:var(--x);transform:translateX(-50%) rotate(var(--r,0deg));transform-origin:50% 100%;
+  background:repeating-conic-gradient(from 0deg at 50% 100%,transparent 0deg 2.6deg,var(--c,rgba(93,255,58,.8)) 2.6deg 2.8deg);
+  clip-path:polygon(50% 100%,0 0,100% 0);
+  -webkit-mask-image:radial-gradient(ellipse 55% 100% at 50% 100%,#000 0%,rgba(0,0,0,.55) 45%,transparent 95%);
+  mask-image:radial-gradient(ellipse 55% 100% at 50% 100%,#000 0%,rgba(0,0,0,.55) 45%,transparent 95%);
+  animation:sweep 9s ease-in-out infinite alternate}
+.lasers i:nth-child(1){--x:30%;--r:-6deg;animation-delay:-2s}
+.lasers i:nth-child(2){--x:50%;--r:0deg;--c:rgba(93,255,58,.9)}
+.lasers i:nth-child(3){--x:70%;--r:6deg;animation-delay:-5s}
+.lasers i:nth-child(4){--x:50%;--c:rgba(226,104,255,.35);--r:3deg;animation-duration:13s}
+@keyframes sweep{to{transform:translateX(-50%) rotate(calc(var(--r,0deg) + 5deg))}}
+.scan{position:fixed;inset:0;pointer-events:none;z-index:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
+
+.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:28px 16px 64px}
+
+/* Font switcher */
+.picker{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:28px}
+.picker button{all:unset;cursor:pointer;background:rgba(8,16,10,.6);border:1px solid var(--line);border-radius:14px;padding:12px 12px 10px;backdrop-filter:blur(8px)}
+.picker button[aria-pressed="true"]{border-color:var(--laser);box-shadow:0 0 0 1px var(--laser),0 0 24px rgba(93,255,58,.35)}
+.picker b{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--laser);font-family:'JetBrains Mono',monospace;font-weight:600}
+.picker .spec{display:block;font-size:19px;margin:6px 0 2px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.picker small{color:var(--dim);font-size:12px;font-family:'JetBrains Mono',monospace}
+.picker:focus-within button:focus-visible{outline:2px solid var(--laser);outline-offset:2px}
+
+/* Player mock in the new theme */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;gap:12px}
+.logo{font-family:var(--logo);font-weight:var(--logo-weight);font-size:var(--logo-size);letter-spacing:var(--logo-track);margin:0;line-height:1.1;
+  text-shadow:0 0 18px rgba(93,255,58,.35)}
+.logo span{color:var(--laser);text-shadow:0 0 6px var(--laser),0 0 22px rgba(93,255,58,.8),0 0 48px rgba(93,255,58,.45)}
+.live{display:inline-flex;align-items:center;gap:8px;font:600 11px/1 var(--mono);letter-spacing:.18em;color:var(--live);border:1px solid rgba(255,77,141,.45);padding:7px 11px;border-radius:999px;box-shadow:0 0 16px rgba(255,77,141,.25) inset;white-space:nowrap}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--live);box-shadow:0 0 10px var(--live);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.25}}
+
+.now{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;backdrop-filter:blur(14px);
+  box-shadow:0 0 0 1px rgba(93,255,58,.05),0 30px 80px -30px rgba(93,255,58,.35),inset 0 1px 0 rgba(255,255,255,.04)}
+.now::before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(120deg,rgba(93,255,58,.7),transparent 30%,transparent 70%,rgba(226,104,255,.6));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.label{font:500 11px/1 var(--mono);letter-spacing:var(--label-track);text-transform:uppercase;color:var(--dim)}
+.label .count{color:var(--laser);margin-left:6px}
+.song{font-family:var(--display);font-size:var(--song-size);font-weight:var(--song-weight);letter-spacing:var(--song-track);margin:10px 0 4px;line-height:1.1}
+.jam{color:var(--magenta);font-weight:600;text-shadow:0 0 14px rgba(226,104,255,.5)}
+.show{color:var(--dim)}
+.heat{display:flex;align-items:flex-end;gap:2px;height:24px;margin-top:20px}
+.heat b{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(var(--laser),var(--laser-deep));opacity:.35}
+.heat b.p{opacity:1;box-shadow:0 0 8px rgba(93,255,58,.6)}
+.heat b.hot{background:linear-gradient(var(--magenta),var(--violet))}
+.bar{height:4px;background:rgba(93,255,58,.12);border-radius:2px;margin:3px 0 6px;position:relative}
+.bar div{height:100%;width:38%;border-radius:2px;background:linear-gradient(90deg,var(--laser),var(--magenta));box-shadow:0 0 12px var(--laser)}
+.bar div::after{content:"";position:absolute;left:38%;top:50%;width:10px;height:10px;border-radius:50%;background:#fff;transform:translate(-50%,-50%);box-shadow:0 0 10px #fff,0 0 22px var(--laser)}
+.times{display:flex;justify-content:space-between;font:12px var(--mono);color:var(--dim);font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;align-items:center}
+.btn{font:700 14px var(--display);letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:12px 24px;cursor:pointer;border:0;color:#031203;
+  background:var(--laser);box-shadow:0 0 0 1px rgba(255,255,255,.2) inset,0 0 24px rgba(93,255,58,.55),0 0 60px rgba(93,255,58,.25)}
+.ghost{font:500 14px var(--body);color:var(--text);background:rgba(93,255,58,.06);border:1px solid var(--line);border-radius:999px;padding:11px 16px;cursor:pointer}
+.pop{margin-top:16px;background:rgba(226,104,255,.08);border:1px solid rgba(226,104,255,.35);border-radius:12px;padding:9px 12px;font-size:14px}
+.pop small{font-family:var(--mono);color:var(--dim);margin-right:6px}
+.pop b{color:var(--magenta)}
+h2{font:500 12px var(--mono);letter-spacing:var(--label-track);text-transform:uppercase;color:var(--dim);margin:30px 0 10px;display:flex;justify-content:space-between}
+h2 a{color:var(--laser);text-decoration:none;letter-spacing:.04em;text-transform:none}
+ol{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(8,16,10,.55);backdrop-filter:blur(10px)}
+li{display:grid;grid-template-columns:72px 1fr auto;gap:12px;padding:11px 14px;border-top:1px solid var(--line);align-items:baseline}
+li:first-child{border-top:0}
+li .t,li .d{font:13px var(--mono);color:var(--dim);font-variant-numeric:tabular-nums}
+li .s{font-family:var(--display);font-weight:600;letter-spacing:var(--song-track)}
+li .s small{display:block;font:12px var(--body);color:var(--dim);letter-spacing:0}
+li.cur{background:linear-gradient(90deg,rgba(93,255,58,.12),transparent)}
+li.cur .t{color:var(--laser);text-shadow:0 0 8px var(--laser)}
+.note{color:var(--dim);font-size:12px;margin-top:22px}
+@media(max-width:560px){.picker{grid-template-columns:repeat(2,1fr)}.song{font-size:calc(var(--song-size) * .8)}.logo{font-size:calc(var(--logo-size) * .8)}li{grid-template-columns:58px 1fr auto}.ghost .wide{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body data-font="orbitron">
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="scan" aria-hidden="true"></div>
+
+<main class="wrap">
+  <div class="picker" role="group" aria-label="Font options">
+    <button data-pick="orbitron" aria-pressed="true"><b>A · Laser Grid</b><span class="spec" style="font:900 19px Orbitron;letter-spacing:.08em">JAM RADIO</span><small>Orbitron + Exo 2</small></button>
+    <button data-pick="unbounded" aria-pressed="false"><b>B · Rave Poster</b><span class="spec" style="font:800 19px Unbounded">Jam Radio</span><small>Unbounded + Sora</small></button>
+    <button data-pick="terminal" aria-pressed="false"><b>C · Control Room</b><span class="spec" style="font:600 18px 'JetBrains Mono'">JAM_RADIO</span><small>Space Grotesk + JetBrains Mono</small></button>
+    <button data-pick="neon" aria-pressed="false"><b>D · Neon Tube</b><span class="spec" style="font:400 19px Monoton">JAM RADIO</span><small>Monoton + Chakra Petch</small></button>
+  </div>
+
+  <header>
+    <h1 class="logo">BISCUITS <span>JAM</span> RADIO</h1>
+    <div class="live"><i></i>ON AIR</div>
+  </header>
+
+  <section class="now">
+    <div class="label">Now playing<span class="count">· 23 listening</span></div>
+    <div class="song">Rivers</div>
+    <div><span class="jam">Jam 2</span></div>
+    <div class="show">Sep 26, 2026 · The Sylvee · Madison, WI</div>
+    <div class="heat" id="heat"></div>
+    <div class="bar"><div></div></div>
+    <div class="times"><span>3:22</span><span>-5:32</span></div>
+    <div class="controls">
+      <button class="btn">■ Stop</button>
+      <button class="ghost" aria-label="React with fire">🔥</button>
+      <button class="ghost">💬<span class="wide"> Comment</span></button>
+      <button class="ghost" aria-label="Share">🔗</button>
+    </div>
+    <div class="pop"><small>3:14</small><b>spacebird</b>: the build into this peak is unreal</div>
+  </section>
+
+  <h2>Coming up <a href="#">Best moments →</a></h2>
+  <ol>
+    <li class="cur"><span class="t">NOW</span><span class="s">Rivers <span class="jam">· jam 2</span><small>Sep 26, 2026 · The Sylvee · Madison, WI</small></span><span class="d">8:54</span></li>
+    <li><span class="t">10:59 AM</span><span class="s">Rivers <span class="jam">· jam 3</span><small>Sep 26, 2026 · The Sylvee · Madison, WI</small></span><span class="d">9:00</span></li>
+    <li><span class="t">11:08 AM</span><span class="s">42 <span class="jam">· jam 1</span><small>Sep 26, 2026 · The Sylvee · Madison, WI</small></span><span class="d">3:01</span></li>
+  </ol>
+  <p class="note">Every listener hears the same moment of the broadcast.</p>
+</main>
+<script>
+const h = [2,3,2,4,6,9,14,10,7,5,4,3,3,5,8,12,18,24,20,15,9,6,4,3,2,3,5,7,6,4,3,2,2,4,8,13,17,12,8,5,3,2,2,3,2,2];
+document.getElementById('heat').append(...h.map((v, i) => { const b = document.createElement('b'); b.style.height = (100 * v / 24) + '%'; b.className = (i < 18 ? 'p' : '') + (v > 15 ? ' hot' : ''); return b; }));
+document.querySelectorAll('[data-pick]').forEach(b => b.onclick = () => {
+  document.body.dataset.font = b.dataset.pick;
+  document.querySelectorAll('[data-pick]').forEach(x => x.setAttribute('aria-pressed', x === b));
+});
+</script>
+</body>
+</html>

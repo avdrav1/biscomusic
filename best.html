@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Best moments · Biscuits Jam Radio</title>
 <meta name="description" content="The most 🔥'd and talked-about moments on Biscuits Jam Radio, and when each one airs next.">
-<meta name="theme-color" content="#0b0d14">
+<meta name="theme-color" content="#030604">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
 <link rel="manifest" href="/static/manifest.webmanifest">
@@ -20,15 +20,17 @@
 <meta property="og:url" content="https://biscomusic.com/best">
 <meta property="og:image" content="https://biscomusic.com/static/og.png">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="static/fonts/monoton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="static/app.css">
 <style>
 .best li{grid-template-columns:44px 1fr auto;align-items:start;padding:14px}
-.best .rank{font-size:20px;font-weight:750;color:var(--dim);font-variant-numeric:tabular-nums}
-.best li:nth-child(-n+3) .rank{color:var(--accent)}
+.best .rank{font-size:22px;font-weight:700;color:var(--dim);font-variant-numeric:tabular-nums}
+.best li:nth-child(-n+3) .rank{color:var(--accent);text-shadow:0 0 10px rgba(93,255,58,.7)}
 .best .s a{color:var(--text);text-decoration:none;font-weight:600}
 .best .s a:hover{color:var(--accent)}
 .best .stats{display:block;font-size:13px;color:var(--dim);margin-top:4px}
-.best .quote{display:block;margin-top:8px;font-size:14px;background:#1b2236;border:1px solid var(--line);border-radius:10px;padding:6px 10px}
+.best .quote{display:block;margin-top:8px;font-size:14px;font-weight:400;background:rgba(226,104,255,.08);border:1px solid rgba(226,104,255,.35);border-radius:10px;padding:6px 10px}
 .best .quote b{color:var(--accent2);font-weight:600}
 .best .when{font-size:12px;color:var(--accent);text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .best .when.now{color:var(--live)}
@@ -39,6 +41,7 @@
 </style>
 </head>
 <body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <main class="wrap">
   <header>
     <h1>BISCUITS <span>JAM</span> RADIO</h1>

@@ -10,7 +10,7 @@ shot() { "$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device
 icon() {
   local size=$1 scale=$2 out=$3
   cat > .icon.html <<EOF
-<html><body style="margin:0;background:#0b0d14;display:grid;place-items:center;width:${size}px;height:${size}px">
+<html><body style="margin:0;background:#030604;display:grid;place-items:center;width:${size}px;height:${size}px">
 <img src="../static/favicon.svg" style="width:calc(${size}px * ${scale});height:calc(${size}px * ${scale})"></body></html>
 EOF
   shot .icon.html "$size" "$out"

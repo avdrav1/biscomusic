@@ -96,8 +96,14 @@ def main():
                                  for t in tracks])
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
+    # Browsers may keep static/ files for hours, so point the deployed pages at a versioned stylesheet.
+    css = 'static/app.css'
+    css_v = f'{css}?v={content_hash(os.path.join(HERE, css))}'
     for page in ('index.html', 'best.html'):
-        shutil.copy(os.path.join(HERE, page), SITE)
+        with open(os.path.join(HERE, page)) as f:
+            html = f.read()
+        with open(os.path.join(SITE, page), 'w') as f:
+            f.write(html.replace(f'href="{css}"', f'href="{css_v}"'))
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
 
