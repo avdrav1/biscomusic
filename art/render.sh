@@ -4,13 +4,23 @@ set -euo pipefail
 cd "$(dirname "$0")"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 shot() { "$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
-  --window-size="$2" --screenshot="$3" "file://$PWD/$1" 2>/dev/null; }
+  --window-size="$2,$2" --screenshot="$3" "file://$PWD/$1" 2>/dev/null; }
 
-shot og.html 1200,630 ../static/og.png
-# Apple touch icon: the favicon SVG at 180px (iOS adds its own rounded corners)
-cat > .icon.html <<EOF
-<html><body style="margin:0;background:#0b0d14"><img src="../static/favicon.svg" style="width:180px;height:180px;display:block"></body></html>
+# The favicon SVG at a given size; `scale` < 1 pads it for maskable icons (Android crops to a circle/squircle).
+icon() {
+  local size=$1 scale=$2 out=$3
+  cat > .icon.html <<EOF
+<html><body style="margin:0;background:#0b0d14;display:grid;place-items:center;width:${size}px;height:${size}px">
+<img src="../static/favicon.svg" style="width:calc(${size}px * ${scale});height:calc(${size}px * ${scale})"></body></html>
 EOF
-shot .icon.html 180,180 ../static/apple-touch-icon.png
+  shot .icon.html "$size" "$out"
+}
+
+"$CHROME" --headless=new --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+  --window-size=1200,630 --screenshot=../static/og.png "file://$PWD/og.html" 2>/dev/null
+icon 180 1   ../static/apple-touch-icon.png   # iOS adds its own rounded corners
+icon 192 1   ../static/icon-192.png
+icon 512 1   ../static/icon-512.png
+icon 512 0.7 ../static/icon-maskable-512.png  # logo inside the 80% safe zone
 rm .icon.html
 ls -l ../static

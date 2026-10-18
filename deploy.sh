@@ -8,7 +8,7 @@ cd "$(dirname "$0")"
 BUCKET=biscomusic-audio
 PROJECT=biscomusic
 AUDIO_URL=https://audio.biscomusic.com
-UPLOADED=.r2-uploaded   # keys already in R2, one per line
+UPLOADED=.r2-uploaded   # "<key> <md5>" for each file known to be in R2
 wrangler() { npx --yes wrangler@4 "$@"; }
 
 for tool in ffmpeg ffprobe python3 curl; do
@@ -24,20 +24,24 @@ if ! wrangler r2 bucket list 2>/dev/null | grep -qw "$BUCKET"; then
   wrangler r2 bucket create "$BUCKET"
 fi
 
-echo "Uploading new audio..."
+echo "Uploading new and changed audio..."
 touch "$UPLOADED"
 new=0
 for mp3 in audio/*.mp3; do
   key=$(basename "$mp3")
-  grep -qxF "$key" "$UPLOADED" && continue
-  # Already in R2 (e.g. uploaded from another machine)? Then just record it.
-  if ! curl -sfI -o /dev/null "$AUDIO_URL/$key"; then
+  sum=$(md5 -q "$mp3" 2>/dev/null || md5sum "$mp3" | cut -d' ' -f1)
+  grep -qxF "$key $sum" "$UPLOADED" && continue
+  # Same content already in R2 (R2's ETag is the MD5)? Then just record it.
+  # The ?v= keeps the edge cache from answering with an older copy.
+  etag=$(curl -sfI "$AUDIO_URL/$key?v=$sum" | tr -d '\r"' | awk 'tolower($1)=="etag:"{print $2}')
+  if [ "$etag" != "$sum" ]; then
     echo "  $key"
     wrangler r2 object put "$BUCKET/$key" --file "$mp3" --remote \
       --content-type audio/mpeg --cache-control "public, max-age=2592000" >/dev/null
     new=$((new + 1))
   fi
-  echo "$key" >> "$UPLOADED"
+  awk -v k="$key" '$1 != k' "$UPLOADED" > "$UPLOADED.tmp"
+  echo "$key $sum" >> "$UPLOADED.tmp" && mv "$UPLOADED.tmp" "$UPLOADED"
 done
 echo "  $new uploaded"
 

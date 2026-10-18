@@ -8,6 +8,11 @@
 <meta name="theme-color" content="#0b0d14">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jam Radio">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Biscuits Jam Radio">
 <meta property="og:title" content="Biscuits Jam Radio">
@@ -24,7 +29,7 @@
 <link rel="stylesheet" href="static/app.css">
 </head>
 <body>
-<div class="wrap">
+<main class="wrap">
   <header>
     <h1>BISCUITS <span>JAM</span> RADIO</h1>
     <div class="live" id="live"><i></i>ON AIR</div>
@@ -44,23 +49,23 @@
     <div><span class="jam" id="jam"></span></div>
     <div class="show" id="show"></div>
     <canvas id="heat" hidden aria-hidden="true"></canvas>
-    <div class="bar" id="bar"><div id="prog"></div></div>
+    <div class="bar" id="bar" role="progressbar" aria-label="Track progress" aria-valuemin="0"><div id="prog"></div></div>
     <div class="times"><span id="el">0:00</span><span id="rem"></span></div>
     <div class="controls">
-      <button id="tune">▶ Tune in</button>
+      <button id="tune" aria-label="Tune in">▶ Tune in</button>
       <label class="label vol">Vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
       <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire">🔥</button>
-      <button class="ghost" id="cbtn" hidden>💬<span class="wide"> Comment</span></button>
+      <button class="ghost" id="cbtn" hidden aria-label="Comment on this moment">💬<span class="wide"> Comment</span></button>
       <button class="ghost" id="share" hidden title="Share this moment" aria-label="Share this moment">🔗</button>
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
-    <div class="pops" id="pops"></div>
+    <div class="pops" id="pops" aria-live="polite"></div>
   </section>
 
   <form class="cform" id="cform" hidden>
     <div class="label" id="cat">Comment at 0:00</div>
-    <input id="cnick" maxlength="24" placeholder="Nickname (optional)" autocomplete="nickname">
-    <textarea id="cbody" maxlength="280" placeholder="What's happening in the jam?" required></textarea>
+    <input id="cnick" maxlength="24" aria-label="Nickname (optional)" placeholder="Nickname (optional)" autocomplete="nickname">
+    <textarea id="cbody" maxlength="280" aria-label="Your comment" placeholder="What's happening in the jam?" required></textarea>
     <div id="ts"></div>
     <div class="row">
       <button type="submit" id="cpost">Post</button>
@@ -79,7 +84,7 @@
   <ol id="next"></ol>
 
   <p class="note">Every listener hears the same moment of the broadcast. Stopping and tuning back in drops you at the live point, just like radio.</p>
-</div>
+</main>
 
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="a" preload="auto"></audio>
@@ -111,14 +116,22 @@ function render() {
     $('show').textContent = showLine(t);
     document.title = `${t.song} · Biscuits Jam Radio`;
     renderNext(i, offset);
-    if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: t.song + (t.jam ? ` (jam ${t.jam})` : ''), artist: 'The Disco Biscuits', album: showLine(t) });
+    if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({
+      title: t.song + (t.jam ? ` (jam ${t.jam})` : ''), artist: 'The Disco Biscuits', album: showLine(t),
+      artwork: [{ src: '/static/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/static/icon-192.png', sizes: '192x192', type: 'image/png' }] });
   }
   const el = listening && audio.currentTime && curIdx === i ? audio.currentTime : offset;
   $('prog').style.width = (100 * el / t.duration) + '%';
+  $('bar').setAttribute('aria-valuemax', Math.round(t.duration));
+  $('bar').setAttribute('aria-valuenow', Math.round(el));
+  $('bar').setAttribute('aria-valuetext', `${fmt(el)} of ${fmt(t.duration)}`);
   $('el').textContent = fmt(el);
   $('rem').textContent = '-' + fmt(t.duration - el);
   if (C.on) renderComments(i, el);
   renderMoment();
+  if (listening && navigator.mediaSession?.setPositionState) {
+    try { navigator.mediaSession.setPositionState({ duration: t.duration, position: Math.min(el, t.duration), playbackRate: 1 }); } catch (e) {}
+  }
 }
 
 function renderNext(i, offset) {
@@ -187,8 +200,8 @@ function preloadNext() {
   const d = spare(); d.src = S.tracks[n].file; d.preload = 'auto'; d.load(); cued = n;
 }
 
-function start() { listening = true; $('tune').textContent = '■ Stop'; $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
-function stop() { listening = false; gen++; decks.forEach(clear); cued = -1; curIdx = -1; $('tune').textContent = '▶ Tune in'; $('tune').className = ''; $('live').classList.remove('on'); $('eq').classList.remove('on'); heartbeat(true); }
+function start() { listening = true; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; $('tune').textContent = '■ Stop'; $('tune').setAttribute('aria-label', 'Stop'); $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
+function stop() { listening = false; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'none'; gen++; decks.forEach(clear); cued = -1; curIdx = -1; $('tune').textContent = '▶ Tune in'; $('tune').setAttribute('aria-label', 'Tune in'); $('tune').className = ''; $('live').classList.remove('on'); $('eq').classList.remove('on'); heartbeat(true); }
 
 decks.forEach(d => {
   d.addEventListener('ended', e => listening && e.target === audio && handoff());
@@ -201,6 +214,15 @@ decks.forEach(d => {
   d.volume = 0.9;
 });
 $('tune').onclick = () => listening ? stop() : start();
+
+// Lock screen / headset / car controls. It's radio: pause stops, play rejoins the live point, no seeking.
+if ('mediaSession' in navigator) {
+  const ms = navigator.mediaSession, set = (a, f) => { try { ms.setActionHandler(a, f); } catch (e) {} };
+  set('play', () => { if (!listening) start(); });
+  set('pause', () => { if (listening) stop(); });
+  set('stop', () => { if (listening) stop(); });
+  ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach(a => set(a, null));
+}
 $('vol').oninput = e => decks.forEach(d => d.volume = e.target.value);
 
 // Drift correction: stay within 2s of the live point
@@ -247,7 +269,7 @@ async function pollListeners() {
   try { const r = await fetch('/api/presence'); if (r.ok) showListeners((await r.json()).listening); } catch (e) {}
 }
 addEventListener('pagehide', () => listening && heartbeat(true));
-const trackId = t => t.file.split('/').pop().replace(/\.mp3$/, '');
+const trackId = t => t.file.split('/').pop().split('?')[0].replace(/\.mp3$/, '');   // drop ?v=<hash>
 const store = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } },
                 set: (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} } };
 
@@ -347,7 +369,7 @@ function renderComments(i, el) {
         const tm = document.createElement('span'); tm.className = 't'; tm.textContent = fmt(c.pos);
         const s = commentNode('span', c, 's'); s.firstChild.remove();
         const sh = document.createElement('button'); sh.className = 'sh'; sh.textContent = '🔗';
-        sh.title = sh.ariaLabel = 'Share this comment';
+        sh.title = 'Share this comment'; sh.setAttribute('aria-label', sh.title);
         sh.onclick = () => shareMoment(t, c.pos, c);
         li.append(tm, s, sh); return li;
       }));

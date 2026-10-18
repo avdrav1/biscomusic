@@ -8,6 +8,11 @@
 <meta name="theme-color" content="#0b0d14">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="static/apple-touch-icon.png">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jam Radio">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Biscuits Jam Radio">
 <meta property="og:title" content="Best moments · Biscuits Jam Radio">
@@ -34,7 +39,7 @@
 </style>
 </head>
 <body>
-<div class="wrap">
+<main class="wrap">
   <header>
     <h1>BISCUITS <span>JAM</span> RADIO</h1>
     <a class="back" href="/">← <span class="wide">Back to the </span>radio</a>
@@ -43,12 +48,12 @@
   <h2>Best moments</h2>
   <p class="intro">The most 🔥'd and talked-about 15 seconds on the station. Everything loops, so each one airs again soon.</p>
   <ol class="best" id="list"><li><span class="empty">Loading…</span></li></ol>
-</div>
+</main>
 <script>
 const $ = id => document.getElementById(id);
 const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = String(s%60).padStart(2,'0'); return h ? `${h}:${String(m).padStart(2,'0')}:${x}` : `${m}:${x}`; };
 const showLine = t => { const d = new Date(t.date+'T12:00:00'); return `${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})} · ${t.venue} · ${t.city}`; };
-const trackId = t => t.file.split('/').pop().replace(/\.mp3$/, '');
+const trackId = t => t.file.split('/').pop().split('?')[0].replace(/\.mp3$/, '');   // drop ?v=<hash>
 const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
 
 let S, starts = new Map(), total = 0, moments = [];

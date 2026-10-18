@@ -8,10 +8,13 @@ export const json = (data, status = 200) =>
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
 
-// The schedule entry for a track id (mp3 name without .mp3), or undefined if it isn't on the air.
+// A schedule entry's track id: the mp3 name without .mp3 (or the ?v=<hash> on R2 URLs).
+export const trackIdOf = t => t.file.split('/').pop().split('?')[0].replace(/\.mp3$/, '');
+
+// The schedule entry for a track id, or undefined if it isn't on the air.
 export async function findTrack(env, request, track) {
   const schedule = await env.ASSETS.fetch(new URL('/schedule.json', request.url)).then(r => r.json());
-  return schedule.tracks.find(t => t.file.split('/').pop() === track + '.mp3');
+  return schedule.tracks.find(t => trackIdOf(t) === track);
 }
 
 // A visible comment by id, or null.

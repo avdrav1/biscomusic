@@ -2,7 +2,7 @@
 //   GET /api/best -> { moments: [{ track, pos, fire, comments, comment, song, jam, date, venue, city }] }
 // Cached for a minute so the page doesn't rescan the tables on every visit.
 
-import { json } from '../_shared.js';
+import { json, trackIdOf } from '../_shared.js';
 
 const WINDOW = 15;      // seconds (3 reaction slices)
 const TOP = 25;
@@ -29,7 +29,7 @@ export async function onRequestGet({ request, env, waitUntil }) {
   talk.results.forEach(r => { const m = get(r.track, r.w); m.comments = r.n; m.first = r.first; });
 
   const schedule = await env.ASSETS.fetch(new URL('/schedule.json', request.url)).then(r => r.json());
-  const tracks = new Map(schedule.tracks.map(t => [t.file.split('/').pop().replace(/\.mp3$/, ''), t]));
+  const tracks = new Map(schedule.tracks.map(t => [trackIdOf(t), t]));
 
   const top = [...byKey.values()]
     .filter(m => tracks.has(m.track))

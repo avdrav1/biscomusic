@@ -2,7 +2,7 @@
 audio/
 # Build output deployed to Pages
 site/
-# Which MP3s are already in R2 (local cache; deploy.sh rechecks the bucket)
+# Which MP3s (and versions) are already in R2; a local cache, deploy.sh rechecks R2 ETags
 .r2-uploaded
 # Wrangler local state and local-only dev vars
 .wrangler/
