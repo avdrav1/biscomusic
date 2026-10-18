@@ -6,13 +6,18 @@ Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), th
   site/schedule.json  R2 URLs (?v=<content hash>, so re-encoded files bypass caches),
                       deployed to Cloudflare Pages with the pages and site/static/
 """
-import hashlib, json, os, re, shutil, subprocess, sys
+import base64, hashlib, json, math, os, re, shutil, subprocess, sys
+from array import array
+from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SHOWS = os.path.dirname(HERE)
 AUDIO = os.path.join(HERE, 'audio')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
+WAVES = os.path.join(HERE, 'waves')
+WAVE_BARS = 200
+WAVE_RANGE_DB = 8           # loudness range the timeline shows, below each track's peak
 # Every jam at the same perceived loudness: -14 LUFS integrated, peaks under -1 dBTP.
 LOUDNORM = 'I=-14:TP=-1:LRA=11'
 
@@ -42,6 +47,29 @@ def convert(flac, mp3):
         '-ar', rate, '-codec:a', 'libmp3lame', '-b:a', '192k',
         '-map_metadata', '0', '-id3v2_version', '3', tmp)
     os.replace(tmp, mp3)
+
+def waveform(mp3):
+    """The player's timeline: WAVE_BARS loudness levels (RMS, 0-255) as base64 in waves/<id>.txt."""
+    out = os.path.join(WAVES, os.path.basename(mp3)[:-4] + '.txt')
+    if os.path.exists(out) and os.path.getmtime(out) >= os.path.getmtime(mp3):
+        return False
+    pcm = subprocess.run(['ffmpeg', '-v', 'error', '-i', mp3, '-ac', '1', '-ar', '4000', '-f', 's16le', '-'],
+                         check=True, capture_output=True).stdout
+    samples = array('h'); samples.frombytes(pcm[:len(pcm) // 2 * 2])
+    per = max(1, len(samples) // WAVE_BARS)
+    rms = []
+    for b in range(WAVE_BARS):
+        chunk = samples[b * per:(b + 1) * per]
+        rms.append(math.sqrt(sum(x * x for x in chunk) / len(chunk)) if chunk else 0.0)
+    # Jams are mixed loud and steady, so a linear scale draws a flat wall. Scale in dB below the
+    # track's loudest moment instead: a 3 dB dip reads as a visibly lower bar, a breakdown drops clearly.
+    db = [20 * math.log10(max(r, 1.0)) for r in rms]
+    top = max(db)
+    levels = bytes(round(255 * min(1.0, max(0.06, (d - (top - WAVE_RANGE_DB)) / WAVE_RANGE_DB))) for d in db)
+    with open(out + '.part', 'w') as f:
+        f.write(base64.b64encode(levels).decode())
+    os.replace(out + '.part', out)
+    return True
 
 def content_hash(path):
     h = hashlib.md5()
@@ -91,6 +119,12 @@ def main():
     with open(os.path.join(HERE, 'schedule.json'), 'w') as f:
         json.dump(local, f, indent=1)
 
+    os.makedirs(WAVES, exist_ok=True)
+    with ThreadPoolExecutor(6) as pool:
+        made = sum(pool.map(waveform, [os.path.join(HERE, t['file']) for t in tracks]))
+    if made:
+        print(f'  {made} waveform(s) drawn')
+
     os.makedirs(SITE, exist_ok=True)
     remote = dict(local, tracks=[dict(t, file=R2_URL + t['file'][len('audio/'):] + '?v=' + content_hash(os.path.join(HERE, t['file'])))
                                  for t in tracks])
@@ -106,6 +140,7 @@ def main():
         with open(os.path.join(SITE, page), 'w') as f:
             f.write(html)
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
+    shutil.copytree(WAVES, os.path.join(SITE, 'waves'), dirs_exist_ok=True)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
 
 if __name__ == '__main__':

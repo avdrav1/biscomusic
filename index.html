@@ -52,8 +52,12 @@
     <div class="song" id="song">Loading…</div>
     <div><span class="jam" id="jam"></span></div>
     <div class="show" id="show"></div>
-    <canvas id="heat" hidden aria-hidden="true"></canvas>
-    <div class="bar" id="bar" role="progressbar" aria-label="Track progress" aria-valuemin="0"><div id="prog"></div></div>
+    <div class="timeline" id="timeline">
+      <div class="flames" id="flames"></div>
+      <div class="wavebox" id="bar" role="progressbar" aria-label="Track progress" aria-valuemin="0"><canvas id="wave" aria-hidden="true"></canvas></div>
+      <div class="avatars" id="avatars"></div>
+      <div class="tcard" id="tcard" role="tooltip" hidden></div>
+    </div>
     <div class="times"><span id="el">0:00</span><span id="rem"></span></div>
     <div class="controls">
       <button id="tune" aria-label="Tune in"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Tune in</span></button>
@@ -163,6 +167,7 @@ function setStation(v) {
   stationTimers = [at(ST.lock_at + 1000), at(ST.end_at + 500)];
   if (!prev || prev.round !== ST.round || prev.next?.track !== ST.next?.track) shownIdx = -1;   // redraw Coming up
   renderVote();
+  if (ST.nextI >= 0 && !waves.has(ST.next.track)) loadWave(S.tracks[ST.nextI]);   // no blank timeline at the handoff
   if (listening && !prev && live().i !== curIdx) tune();   // first answer overrides the clock guess
 }
 
@@ -188,7 +193,7 @@ function render() {
   renderNext(i, offset);
   renderVoteClock();
   const el = listening && audio.currentTime && curIdx === i ? audio.currentTime : offset;
-  $('prog').style.width = (100 * el / t.duration) + '%';
+  drawTimeline(t, el);
   $('bar').setAttribute('aria-valuemax', Math.round(t.duration));
   $('bar').setAttribute('aria-valuenow', Math.round(el));
   $('bar').setAttribute('aria-valuetext', `${fmt(el)} of ${fmt(t.duration)}`);
@@ -395,29 +400,166 @@ async function loadMoments(track) {
   if (r) { C.bucket = r.bucket; C.heat = new Map(r.counts); }
 }
 
-function drawHeat(t, el) {
-  const cv = $('heat');
-  cv.hidden = !C.heat.size;
-  if (cv.hidden) return;
+// ---- Timeline: the track's waveform, with flames and comments on it (SoundCloud-style) ----
+// Waveforms are 200 loudness levels per track, drawn by build.py into waves/<id>.txt.
+const waves = new Map();   // track id -> Uint8Array | null (missing) | 'loading'
+function loadWave(t) {
+  const id = trackId(t), v = t.file.split('?v=')[1];
+  waves.set(id, 'loading');
+  fetch(`waves/${id}.txt` + (v ? `?v=${v}` : ''))
+    .then(r => r.ok ? r.text() : Promise.reject())
+    .then(b64 => waves.set(id, Uint8Array.from(atob(b64.trim()), ch => ch.charCodeAt(0))))
+    .catch(() => waves.set(id, null));
+}
+
+// Flames per waveform bar (C.heat holds 5-second buckets for the current track).
+function heatPerBar(t, n) {
+  const out = new Float32Array(n);
+  if (!C.heat.size || trackId(t) !== C.track) return out;
+  for (const [b, cnt] of C.heat) out[Math.min(n - 1, Math.floor(((b + 0.5) * C.bucket / t.duration) * n))] += cnt;
+  return out;
+}
+
+function drawTimeline(t, el) {
+  const cv = $('wave'), id = trackId(t);
+  if (!waves.has(id)) loadWave(t);
+  const lv = waves.get(id);
   const dpr = window.devicePixelRatio || 1, W = cv.clientWidth, H = cv.clientHeight;
-  if (cv.width !== Math.round(W * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+  if (!W || !H) return;
+  if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
   const g = cv.getContext('2d');
   g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, W, H);
-  // Laser green, turning magenta for the hottest slices; played slices glow, upcoming ones are dimmed.
   const css = getComputedStyle(document.documentElement), color = v => css.getPropertyValue(v).trim();
-  const green = g.createLinearGradient(0, 0, 0, H), hot = g.createLinearGradient(0, 0, 0, H);
-  green.addColorStop(0, color('--accent')); green.addColorStop(1, color('--accent-deep'));
-  hot.addColorStop(0, color('--accent2')); hot.addColorStop(1, color('--violet'));
-  const peak = Math.max(...C.heat.values()), max = Math.sqrt(peak), w = Math.max(2, W * C.bucket / t.duration - 1);
-  for (const [b, n] of C.heat) {
-    const h = Math.max(3, H * Math.sqrt(n) / max), x = W * b * C.bucket / t.duration, played = b * C.bucket <= el;
-    const isHot = peak >= 3 && n >= peak * 0.66;
-    g.globalAlpha = played ? 1 : 0.35;
-    g.shadowColor = isHot ? color('--accent2') : color('--accent'); g.shadowBlur = played ? 8 : 0;
-    g.fillStyle = isHot ? hot : green; g.fillRect(x, H - h, w, h);
+  const n = Math.max(24, Math.floor(W / 3)), bw = W / n, px = Math.min(W, W * el / t.duration);
+  const heat = heatPerBar(t, n), heatMax = Math.max(...heat);
+  const played = g.createLinearGradient(0, 0, 0, H);
+  played.addColorStop(0, color('--accent')); played.addColorStop(1, color('--accent-deep'));
+  for (let j = 0; j < n; j++) {
+    let level = 0.1;   // flat baseline while the waveform loads (or if it's missing)
+    if (lv instanceof Uint8Array) {
+      const a = Math.floor(j * lv.length / n), b = Math.max(a + 1, Math.floor((j + 1) * lv.length / n));
+      let sum = 0; for (let k = a; k < b; k++) sum += lv[k];
+      level = sum / (b - a) / 255;
+    }
+    const h = Math.max(2, level * H), x = j * bw, isPlayed = x + bw / 2 <= px;
+    g.globalAlpha = isPlayed ? 1 : 0.3;
+    g.fillStyle = isPlayed ? played : color('--dim');
+    g.fillRect(x, H - h, Math.max(1, bw - 1), h);
+    if (heat[j] && heatMax) {   // flames tint the bar magenta
+      g.globalAlpha = (isPlayed ? 0.9 : 0.55) * Math.sqrt(heat[j] / heatMax);
+      g.fillStyle = color('--accent2');
+      g.fillRect(x, H - h, Math.max(1, bw - 1), h);
+    }
   }
-  g.globalAlpha = 1; g.shadowBlur = 0;
+  g.globalAlpha = 1;
+  g.fillStyle = '#fff'; g.shadowColor = color('--accent'); g.shadowBlur = 10;
+  g.fillRect(Math.max(0, px - 1), 0, 2, H);
+  g.shadowBlur = 0;
+  renderMarkers(t, el, W);
 }
+
+const AV_COLORS = ['#5dff3a', '#e268ff', '#9b5cff', '#6fd6ff', '#ffb84d', '#ff4d8d'];
+const avColor = name => { let h = 0; for (const ch of name || '?') h = (h * 31 + ch.charCodeAt(0)) >>> 0; return AV_COLORS[h % AV_COLORS.length]; };
+const initials = name => name ? name.trim().split(/\s+/).slice(0, 2).map(w => [...w][0]).join('').toUpperCase() : '?';
+const commentsAround = list => list.length === 1 ? `${list[0].nickname || 'anonymous'} at ${fmt(list[0].pos)}: ${list[0].body}` : `${list.length} comments around ${fmt(list[0].pos)}`;
+
+// Peaks in the flame buckets: at least 2 flames and half the track's best; 15 s apart; at most 6.
+function flamePeaks() {
+  const top = Math.max(0, ...C.heat.values()), picked = [];
+  for (const [b, cnt] of [...C.heat].sort((a, b) => b[1] - a[1])) {
+    if (cnt < 2 || cnt < top / 2 || picked.length >= 6) break;
+    if (picked.some(p => Math.abs(p.b - b) * C.bucket < 15)) continue;
+    picked.push({ b, cnt });
+  }
+  return picked;
+}
+
+let markersKey = '';
+function renderMarkers(t, el, W) {
+  const id = trackId(t), dur = t.duration;
+  const list = trackId(t) === C.track ? C.list : [];
+  const key = [id, Math.round(W), list.map(c => c.id).join('.'), [...C.heat].join(';')].join('|');
+  if (key !== markersKey) {
+    markersKey = key;
+    hideCard();
+    // Flames
+    $('flames').replaceChildren(...(trackId(t) === C.track ? flamePeaks() : []).map(({ b, cnt }) => {
+      const pos = (b + 0.5) * C.bucket, m = document.createElement('button');
+      m.className = 'fmark'; m.style.left = (100 * pos / dur) + '%'; m.dataset.pos = pos;
+      m.append(icon('flame'), Object.assign(document.createElement('b'), { textContent: cnt }));
+      m.setAttribute('aria-label', `${cnt} flames at ${fmt(pos)}`);
+      m._card = () => cardFlames(cnt, pos);
+      return m;
+    }));
+    // Comments, grouped when their avatars would overlap
+    const groups = [];
+    for (const c of [...list].sort((a, b) => a.pos - b.pos)) {
+      const x = W * c.pos / dur, last = groups[groups.length - 1];
+      if (last && x - last.x < 24) last.list.push(c); else groups.push({ x, list: [c] });
+    }
+    $('avatars').replaceChildren(...groups.map(gr => {
+      const first = gr.list[0], m = document.createElement('button');
+      m.className = 'av'; m.style.left = (100 * first.pos / dur) + '%'; m.dataset.pos = first.pos;
+      const face = document.createElement('span'); face.className = 'face';
+      face.textContent = initials(first.nickname); face.style.setProperty('--c', avColor(first.nickname));
+      m.append(face);
+      if (gr.list.length > 1) m.append(Object.assign(document.createElement('b'), { textContent: gr.list.length }));
+      m.setAttribute('aria-label', commentsAround(gr.list));
+      m._card = () => cardComments(gr.list);
+      return m;
+    }));
+    for (const m of [...$('flames').children, ...$('avatars').children]) wireMarker(m);
+  }
+  for (const m of [...$('flames').children, ...$('avatars').children]) m.classList.toggle('past', Number(m.dataset.pos) <= el);
+}
+
+// The card that shows a marker's comments (or flame count).
+let cardFor = null, cardPinned = false;
+function cardComments(list) {
+  const out = list.slice(0, 3).map(c => {
+    const row = document.createElement('div'); row.className = 'trow';
+    const face = document.createElement('span'); face.className = 'face'; face.textContent = initials(c.nickname); face.style.setProperty('--c', avColor(c.nickname));
+    const txt = document.createElement('div');
+    const who = document.createElement('b'); who.textContent = c.nickname || 'anonymous';
+    const at = document.createElement('small'); at.textContent = fmt(c.pos);
+    const body = document.createElement('p'); body.textContent = c.body;
+    txt.append(who, at, body); row.append(face, txt);
+    return row;
+  });
+  if (list.length > 3) out.push(Object.assign(document.createElement('small'), { className: 'more', textContent: `and ${list.length - 3} more in the list below` }));
+  return out;
+}
+function cardFlames(cnt, pos) {
+  const row = document.createElement('div'); row.className = 'trow';
+  const txt = document.createElement('div');
+  txt.append(Object.assign(document.createElement('b'), { textContent: `${cnt} listener${cnt === 1 ? '' : 's'} lit this up` }),
+             Object.assign(document.createElement('small'), { textContent: fmt(pos) }));
+  row.append(icon('flame', 'i big'), txt);
+  return [row];
+}
+function showCard(m, pin) {
+  const card = $('tcard'), box = $('timeline').getBoundingClientRect(), r = m.getBoundingClientRect();
+  card.replaceChildren(...m._card());
+  card.classList.toggle('above', m.classList.contains('av'));
+  card.hidden = false; cardFor = m; cardPinned = !!pin;
+  const w = card.offsetWidth, x = r.left + r.width / 2 - box.left;
+  card.style.left = Math.min(Math.max(0, x - w / 2), box.width - w) + 'px';
+  m.setAttribute('aria-describedby', 'tcard');
+}
+function hideCard() {
+  if (cardFor) cardFor.removeAttribute('aria-describedby');
+  $('tcard').hidden = true; cardFor = null; cardPinned = false;
+}
+function wireMarker(m) {
+  m.addEventListener('mouseenter', () => { if (!cardPinned) showCard(m); });
+  m.addEventListener('mouseleave', () => { if (!cardPinned && cardFor === m) hideCard(); });
+  m.addEventListener('focus', () => showCard(m));
+  m.addEventListener('blur', () => { if (cardFor === m && !cardPinned) hideCard(); });
+  m.addEventListener('click', e => { e.stopPropagation(); cardFor === m && cardPinned ? hideCard() : showCard(m, true); });
+}
+document.addEventListener('click', e => { if (cardFor && !$('tcard').contains(e.target)) hideCard(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && cardFor) { const m = cardFor; hideCard(); m.focus(); } });
+new ResizeObserver(() => { if (S) render(); }).observe($('timeline'));
 
 function react() {
   const { i, el } = heard(), track = trackId(S.tracks[i]), b = Math.floor(el / C.bucket);
@@ -446,7 +588,6 @@ function commentNode(tag, c, cls) {
 function renderComments(i, el) {
   const t = S.tracks[i], id = trackId(t);
   if (id !== C.track) { C.track = id; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(id); }
-  drawHeat(t, el);
 
   const pops = C.list.filter(c => c.pos <= el && el - c.pos < POP_SECONDS).slice(-3);
   const key = id + '|' + Math.floor(el) + '|' + C.list.length;
@@ -459,12 +600,6 @@ function renderComments(i, el) {
     $('pops').replaceChildren(...pops.map(c => commentNode('div', c, 'pop')));
   }
 
-  $('bar').querySelectorAll('.tick').forEach(n => n.remove());
-  C.list.forEach(c => {
-    const n = document.createElement('span'); n.className = 'tick';
-    n.style.left = (100 * c.pos / t.duration) + '%'; n.title = fmt(c.pos);
-    $('bar').append(n);
-  });
 
   if (!C.list.length) {
     $('clist').dataset.k = '';

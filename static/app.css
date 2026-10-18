@@ -65,12 +65,6 @@ h1 span{color:var(--accent);text-shadow:0 0 4px var(--accent),0 0 14px rgba(93,2
 .jam{color:var(--accent2);font-weight:600;text-shadow:0 0 14px rgba(226,104,255,.45)}
 .show{color:var(--dim)}
 
-#heat{display:block;width:100%;height:24px;margin-top:18px}
-.bar{height:4px;background:rgba(93,255,58,.12);border-radius:2px;margin:20px 0 6px;position:relative}
-#heat+.bar{margin-top:3px}
-.bar #prog{height:100%;width:0;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));box-shadow:0 0 12px rgba(93,255,58,.8);transition:width .5s linear;position:relative}
-.bar #prog::after{content:"";position:absolute;right:-5px;top:50%;width:10px;height:10px;border-radius:50%;background:#fff;transform:translateY(-50%);box-shadow:0 0 10px #fff,0 0 22px var(--accent)}
-.bar .tick{position:absolute;top:-3px;width:2px;height:10px;background:var(--accent2);box-shadow:0 0 6px var(--accent2);margin-left:-1px;border-radius:1px}
 .times{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
 
 .controls{display:flex;align-items:center;gap:12px;margin-top:20px;flex-wrap:wrap}
@@ -225,3 +219,36 @@ dialog.sheet::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
   .sheet-head .vclose{font-size:12px}
 }
 @keyframes sheetup{from{transform:translateY(100%)}}
+
+/* Timeline: waveform with flames above and comment avatars below (SoundCloud-style) */
+.timeline{position:relative;margin:16px 0 6px}
+.flames{position:relative;height:24px}
+.wavebox{position:relative;height:64px}
+#wave{display:block;width:100%;height:100%}
+.avatars{position:relative;height:28px;margin-top:4px}
+.fmark,.av{position:absolute;width:44px;height:44px;padding:0;margin:0;transform:translateX(-50%);
+  background:none;border:0;box-shadow:none;border-radius:50%;color:inherit;letter-spacing:0;text-transform:none}
+.fmark{top:-10px;flex-direction:column;gap:0;justify-content:flex-end;padding-bottom:6px}
+.fmark .i{width:18px;height:18px;color:#ff9d3a;filter:drop-shadow(0 0 6px rgba(255,140,40,.7));opacity:.55}
+.fmark b{position:absolute;top:2px;left:28px;font-size:10px;color:var(--text);opacity:.6}
+.fmark.past .i,.fmark.past b,.fmark:hover .i,.fmark:focus-visible .i{opacity:1}
+.av{top:-8px}
+.face{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;flex:none;
+  font:700 10px/1 var(--font);color:#031203;background:var(--c,#5dff3a);box-shadow:0 0 0 2px var(--card-solid),0 0 10px color-mix(in srgb,var(--c,#5dff3a) 60%,transparent)}
+.av .face{opacity:.45;transition:opacity .3s,transform .2s}
+.av.past .face{opacity:1}
+.av:hover .face,.av:focus-visible .face{opacity:1;transform:scale(1.15)}
+.av b{position:absolute;top:4px;right:4px;min-width:16px;height:16px;padding:0 4px;border-radius:8px;font-size:10px;line-height:16px;
+  background:var(--accent2);color:#14051a;box-shadow:0 0 8px rgba(226,104,255,.6)}
+.fmark:focus-visible,.av:focus-visible{outline:2px solid var(--accent);outline-offset:-6px}
+.tcard{position:absolute;z-index:5;top:28px;width:min(280px,100%);background:var(--card-solid);border:1px solid var(--accent2);border-radius:14px;
+  padding:10px 12px;box-shadow:0 12px 40px rgba(0,0,0,.6),0 0 24px rgba(226,104,255,.25);animation:popin .15s ease-out}
+.tcard.above{top:auto;bottom:34px}
+.trow{display:flex;gap:10px;align-items:flex-start}
+.trow+.trow{margin-top:10px}
+.trow b{font-weight:600;color:var(--accent2);margin-right:6px}
+.trow small{color:var(--dim);font-variant-numeric:tabular-nums}
+.trow p{margin:2px 0 0;font-size:14px;line-height:1.35;overflow-wrap:anywhere}
+.trow .i.big{width:22px;height:22px;color:#ff9d3a}
+.tcard .more{display:block;margin-top:8px;color:var(--dim)}
+@media(max-width:480px){.wavebox{height:52px}}
