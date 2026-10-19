@@ -73,13 +73,13 @@ def waveform(mp3):
 
 def service_worker(versioned):
     """site/sw.js: the source with this build's version and the files to keep offline."""
-    pages = ['/', '/best', '/nominate']
+    pages = ['/', '/best', '/nominate', '/install']
     fonts = sorted('/static/fonts/' + f for f in os.listdir(os.path.join(HERE, 'static', 'fonts')) if f.endswith('.woff2'))
     files = ['/' + v for v in versioned.values()] + fonts + [
         '/static/favicon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png',
         '/static/manifest.webmanifest', '/schedule.json']
     h = hashlib.md5()
-    for f in ('index.html', 'best.html', 'nominate.html', 'sw.js', 'static/manifest.webmanifest'):
+    for f in ('index.html', 'best.html', 'nominate.html', 'install.html', 'sw.js', 'static/manifest.webmanifest'):
         h.update(open(os.path.join(HERE, f), 'rb').read())
     h.update(json.dumps(files).encode())
     with open(os.path.join(HERE, 'sw.js')) as f:
@@ -185,7 +185,7 @@ def main():
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
     versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js')}
     nominees(tracks)
-    for page in ('index.html', 'best.html', 'nominate.html'):
+    for page in ('index.html', 'best.html', 'nominate.html', 'install.html'):
         with open(os.path.join(HERE, page)) as f:
             html = f.read()
         for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"

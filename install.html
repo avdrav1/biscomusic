@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get the app · Biscuits Jam Radio</title>
+<meta name="description" content="Install Biscuits Jam Radio on your iPhone, iPad, Android, Mac or Windows PC. Opens like an app and keeps playing from your lock screen.">
+<meta name="theme-color" content="#030604">
+<link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/apple-touch-icon.png">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jam Radio">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biscuits Jam Radio">
+<meta property="og:title" content="Get the app · Biscuits Jam Radio">
+<meta property="og:description" content="Install Biscuits Jam Radio on iPhone, iPad, Android, Mac or Windows. No app store needed.">
+<meta property="og:url" content="https://biscomusic.com/install">
+<meta property="og:image" content="https://biscomusic.com/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="static/fonts/monoton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="static/app.css">
+<meta name="icons" content="static/icons.svg">
+<style>
+.back{color:var(--accent);text-decoration:none;font-size:14px}
+.intro{color:var(--dim);margin:0 0 16px}
+.page .chips{padding:0 0 16px;flex-wrap:wrap}
+.done{color:var(--accent);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.done .i{width:20px;height:20px}
+.how h3{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;margin:22px 0 10px}
+.how h3 .you{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#031203;background:var(--accent);padding:3px 8px;border-radius:999px}
+.how .tip{color:var(--dim);font-size:14px;margin:10px 0 0}
+.how kbd{font:inherit;font-weight:600;color:var(--text);white-space:nowrap}
+</style>
+</head>
+<body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<main class="wrap page">
+  <header>
+    <div class="brand">
+      <h1>BISCUITS <span>JAM</span> RADIO</h1>
+      <p class="tagline">All jams, no butter!</p>
+    </div>
+    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+  </header>
+
+  <h2>Get the app</h2>
+  <p class="intro">Jam Radio installs straight from your browser, no app store needed. It gets its own icon, opens full-screen, and keeps playing with controls on your lock screen.</p>
+  <p class="done" id="done" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg>You're already in the app. Enjoy the jams.</p>
+  <p id="now-wrap" hidden><button id="install-now" data-install><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg>Install Jam Radio</button></p>
+
+  <div class="chips" role="radiogroup" aria-label="Your device">
+    <button class="chipbtn" role="radio" aria-checked="false" data-os="ios"><svg class="i" aria-hidden="true"><use href="static/icons.svg#smartphone"/></svg>iPhone &amp; iPad</button>
+    <button class="chipbtn" role="radio" aria-checked="false" data-os="android"><svg class="i" aria-hidden="true"><use href="static/icons.svg#smartphone"/></svg>Android</button>
+    <button class="chipbtn" role="radio" aria-checked="false" data-os="mac"><svg class="i" aria-hidden="true"><use href="static/icons.svg#laptop"/></svg>Mac</button>
+    <button class="chipbtn" role="radio" aria-checked="false" data-os="windows"><svg class="i" aria-hidden="true"><use href="static/icons.svg#monitor"/></svg>Windows</button>
+  </div>
+
+  <section class="how" data-os="ios" hidden>
+    <h3 data-browser="safari chrome edge firefox">Safari, Chrome or Edge</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#share"/></svg><span>Tap the <kbd>Share</kbd> button (bottom toolbar in Safari, address bar in Chrome and Edge)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Scroll down and tap <kbd>Add to Home Screen</kbd></span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Leave <kbd>Open as Web App</kbd> on and tap <kbd>Add</kbd></span></li>
+    </ol>
+    <p class="tip">Don't see Add to Home Screen? Tap <kbd>Edit Actions</kbd> at the bottom of the share sheet and add it.</p>
+  </section>
+
+  <section class="how" data-os="android" hidden>
+    <h3 data-browser="chrome edge">Chrome</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>Tap the <kbd>⋮</kbd> menu (or the Install button above, when it shows)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add to Home screen</kbd>, then <kbd>Install</kbd></span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Jam Radio shows up with your other apps</span></li>
+    </ol>
+    <h3 data-browser="samsung">Samsung Internet</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Tap the install icon in the address bar, or open the <kbd>≡</kbd> menu</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add page to</kbd>, then <kbd>Home screen</kbd></span></li>
+    </ol>
+    <h3 data-browser="firefox">Firefox</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>Tap the <kbd>⋮</kbd> menu</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add app to Home screen</kbd> (or <kbd>Install</kbd>)</span></li>
+    </ol>
+  </section>
+
+  <section class="how" data-os="mac" hidden>
+    <h3 data-browser="safari">Safari</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#share"/></svg><span>In the menu bar, choose <kbd>File</kbd> › <kbd>Add to Dock…</kbd> (or use the Share button)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Click <kbd>Add</kbd>. Jam Radio is in your Dock and Launchpad</span></li>
+    </ol>
+    <p class="tip">Needs macOS Sonoma or newer.</p>
+    <h3 data-browser="chrome">Chrome</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the install icon at the right end of the address bar (or the Install button above)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>⋮</kbd> › <kbd>Cast, save, and share</kbd> › <kbd>Install page as app…</kbd></span></li>
+    </ol>
+    <h3 data-browser="edge">Edge</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the <kbd>App available</kbd> icon in the address bar, or <kbd>…</kbd> › <kbd>Apps</kbd> › <kbd>Install this site as an app</kbd></span></li>
+    </ol>
+    <h3 data-browser="firefox">Firefox</h3>
+    <p class="tip">Firefox on Mac can't install web apps yet. Open biscomusic.com in Safari or Chrome and follow the steps above.</p>
+  </section>
+
+  <section class="how" data-os="windows" hidden>
+    <h3 data-browser="edge">Edge</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the <kbd>App available</kbd> icon in the address bar (or the Install button above)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>…</kbd> › <kbd>Apps</kbd> › <kbd>Install this site as an app</kbd></span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Tick <kbd>Pin to taskbar</kbd> and <kbd>Pin to Start</kbd> if you like, then <kbd>Allow</kbd></span></li>
+    </ol>
+    <h3 data-browser="chrome">Chrome</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the install icon at the right end of the address bar (or the Install button above)</span></li>
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>⋮</kbd> › <kbd>Cast, save, and share</kbd> › <kbd>Install page as app…</kbd></span></li>
+    </ol>
+    <h3 data-browser="firefox">Firefox</h3>
+    <ol class="steps">
+      <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Click the <kbd>Add to taskbar</kbd> icon in the address bar (Firefox 143 or newer)</span></li>
+    </ol>
+  </section>
+
+  <p class="note">Updates arrive by themselves: the app always plays the live broadcast, and new jams show up as soon as they're added.</p>
+</main>
+
+<script src="static/station.js"></script>
+<script src="static/pwa.js"></script>
+<script>
+(() => {
+  const { os, browser, standalone } = window.pwa;
+  document.getElementById('done').hidden = !standalone;
+  const tabs = document.querySelectorAll('.chips [data-os]');
+  const show = which => {
+    tabs.forEach(t => t.setAttribute('aria-checked', String(t.dataset.os === which)));
+    document.querySelectorAll('section.how').forEach(s => { s.hidden = s.dataset.os !== which; });
+  };
+  tabs.forEach(t => t.onclick = () => show(t.dataset.os));
+  show(os === 'other' ? 'ios' : os);
+  // Point out the section for the browser they're using right now.
+  for (const h of document.querySelectorAll(`section.how[data-os="${os}"] h3[data-browser]`)) {
+    if (h.dataset.browser.split(' ').includes(browser)) { h.append(Object.assign(document.createElement('span'), { className: 'you', textContent: 'Your browser' })); break; }
+  }
+})();
+</script>
+</body>
+</html>
