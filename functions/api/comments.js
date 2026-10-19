@@ -3,7 +3,7 @@
 //   GET  /api/comments?id=42                      -> { comment }  (for shared links)
 //   POST /api/comments  { track, pos, nickname?, body, token }
 
-import { TRACK_RE, json, findTrack, ipHash, getComment } from '../_shared.js';
+import { TRACK_RE, json, findTrack, ipHash, getComment, momentsKey } from '../_shared.js';
 
 const MAX_BODY = 280;
 const MAX_NICK = 24;
@@ -24,7 +24,7 @@ export async function onRequestGet({ request, env }) {
   return json({ comments: results });
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   let input;
   try { input = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
 
@@ -56,6 +56,7 @@ export async function onRequestPost({ request, env }) {
   const row = await env.DB.prepare(
     'INSERT INTO comments (track, pos, nickname, body, created_at, ip_hash) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, pos, nickname, body, created_at'
   ).bind(track, Math.round(pos * 10) / 10, nickname, body, now, author).first();
+  waitUntil(caches.default.delete(momentsKey(request, track)));
   return json({ comment: row }, 201);
 }
 

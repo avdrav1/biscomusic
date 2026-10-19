@@ -400,12 +400,10 @@ function heard() {
 }
 
 async function loadMoments(track) {
-  const q = '?track=' + encodeURIComponent(track);
-  const [c, r] = await Promise.all(['/api/comments', '/api/reactions'].map(u =>
-    fetch(u + q).then(res => res.ok ? res.json() : null).catch(() => null)));
-  if (track !== C.track) return;
-  if (c) { C.list = c.comments; C.shown = ''; }
-  if (r) { C.bucket = r.bucket; C.heat = new Map(r.counts); }
+  const m = await fetch('/api/moments?track=' + encodeURIComponent(track)).then(res => res.ok ? res.json() : null).catch(() => null);
+  if (!m || track !== C.track) return;
+  C.list = m.comments; C.shown = '';
+  C.bucket = m.bucket; C.heat = new Map(m.counts);
 }
 
 // ---- Timeline: the track's waveform, with flames and comments on it (SoundCloud-style) ----
@@ -943,15 +941,31 @@ fetch('schedule.json').then(r => r.json()).then(data => {
   S.tracks.forEach(t => { starts.push(total); total += t.duration; });
   initMoment();
   render(); setInterval(render, 1000);
-  fetchStation().then(() => { if (ST) { loadStats(); setInterval(loadStats, 60000); } if (ST) setInterval(() => document.visibilityState === 'visible' || listening ? fetchStation() : null, 10000); });
+  // Poll only while the page is on screen. A tab playing in the background still hands off on time:
+  // setStation() schedules a fetch for the vote lock and the track's end (plus a check once a minute).
+  const visible = () => document.visibilityState === 'visible';
+  fetchStation().then(() => {
+    if (!ST) return;
+    loadStats(); setInterval(() => visible() && loadStats(), 60000);
+    setInterval(() => visible() && fetchStation(), 10000);
+    setInterval(() => !visible() && listening && fetchStation(), 60000);   // safety net if a scheduled fetch failed
+  });
   fetch('/api/config').then(r => r.ok ? r.json() : null).then(cfg => {
     if (!cfg || !cfg.comments) return;
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
     $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false; $('talk').hidden = false;
     render();
-    setInterval(() => { if (C.track && document.visibilityState === 'visible') loadMoments(C.track); }, 10000);
+    setInterval(() => { if (C.track && visible()) loadMoments(C.track); }, 20000);
     pollListeners(); setInterval(pollListeners, 60000);
   }).catch(() => {});
+  // Back on screen after a while: catch up now instead of waiting for the next poll.
+  let hiddenAt = 0;
+  document.addEventListener('visibilitychange', () => {
+    if (!visible()) { hiddenAt = Date.now(); return; }
+    if (Date.now() - hiddenAt < 10000) return;
+    if (ST) fetchStation();
+    if (C.on && C.track) loadMoments(C.track);
+  });
 });
 </script>
 </body>

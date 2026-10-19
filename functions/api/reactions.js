@@ -2,7 +2,7 @@
 //   GET  /api/reactions?track=2026-09-01-02-jam1   -> { bucket: 5, counts: [[slice, n], ...] }
 //   POST /api/reactions  { track, pos }             -> { counted }
 
-import { TRACK_RE, json, findTrack, ipHash } from '../_shared.js';
+import { TRACK_RE, json, findTrack, ipHash, momentsKey } from '../_shared.js';
 
 const BUCKET = 5;
 const PER_MINUTE = 20;
@@ -16,7 +16,7 @@ export async function onRequestGet({ request, env }) {
   return json({ bucket: BUCKET, counts: results.map(r => [r.bucket, r.n]) });
 }
 
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   let input;
   try { input = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
   const track = String(input.track || '');
@@ -36,5 +36,6 @@ export async function onRequestPost({ request, env }) {
   const r = await env.DB.prepare(
     'INSERT OR IGNORE INTO reactions (track, bucket, ip_hash, created_at) VALUES (?, ?, ?, ?)'
   ).bind(track, Math.floor(pos / BUCKET), who, now).run();
+  if (r.meta.changes) waitUntil(caches.default.delete(momentsKey(request, track)));
   return json({ counted: r.meta.changes > 0 });
 }

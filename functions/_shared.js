@@ -8,6 +8,10 @@ export const json = (data, status = 200) =>
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
 
+// The edge-cache key for /api/moments of a track (comments.js and reactions.js clear it on a post).
+export const momentsKey = (request, track) =>
+  new Request(new URL('/api/moments?track=' + encodeURIComponent(track), request.url).toString());
+
 // A schedule entry's track id: the mp3 name without .mp3 (or the ?v=<hash> on R2 URLs).
 export const trackIdOf = t => t.file.split('/').pop().split('?')[0].replace(/\.mp3$/, '');
 
