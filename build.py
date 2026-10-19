@@ -71,6 +71,24 @@ def waveform(mp3):
     os.replace(out + '.part', out)
     return True
 
+def service_worker(versioned):
+    """site/sw.js: the source with this build's version and the files to keep offline."""
+    pages = ['/', '/best', '/nominate']
+    fonts = sorted('/static/fonts/' + f for f in os.listdir(os.path.join(HERE, 'static', 'fonts')) if f.endswith('.woff2'))
+    files = ['/' + v for v in versioned.values()] + fonts + [
+        '/static/favicon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png',
+        '/static/manifest.webmanifest', '/schedule.json']
+    h = hashlib.md5()
+    for f in ('index.html', 'best.html', 'nominate.html', 'sw.js', 'static/manifest.webmanifest'):
+        h.update(open(os.path.join(HERE, f), 'rb').read())
+    h.update(json.dumps(files).encode())
+    with open(os.path.join(HERE, 'sw.js')) as f:
+        src = f.read()
+    src = src.replace("const VERSION = 'dev';", f"const VERSION = '{h.hexdigest()[:10]}';", 1)
+    src = src.replace('const PRECACHE = [];', 'const PRECACHE = ' + json.dumps(pages + files, indent=1) + ';', 1)
+    with open(os.path.join(SITE, 'sw.js'), 'w') as f:
+        f.write(src)
+
 def content_hash(path):
     h = hashlib.md5()
     with open(path, 'rb') as f:
@@ -165,7 +183,7 @@ def main():
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
-    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js')}
+    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js')}
     nominees(tracks)
     for page in ('index.html', 'best.html', 'nominate.html'):
         with open(os.path.join(HERE, page)) as f:
@@ -176,6 +194,7 @@ def main():
             f.write(html)
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
     shutil.copytree(WAVES, os.path.join(SITE, 'waves'), dirs_exist_ok=True)
+    service_worker(versioned)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
 
 if __name__ == '__main__':

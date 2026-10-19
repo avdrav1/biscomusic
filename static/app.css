@@ -262,3 +262,19 @@ dialog.sheet::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
 .trow .i.big{width:22px;height:22px;color:#ff9d3a}
 .tcard .more{display:block;margin-top:8px;color:var(--dim)}
 @media(max-width:480px){.wavebox{height:52px}}
+
+/* Installable app: install card, offline banner, iPhone steps */
+.install{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:12px 14px;border-radius:16px;
+  background:linear-gradient(135deg,rgba(93,255,58,.10),rgba(226,104,255,.08));border:1px solid rgba(93,255,58,.35)}
+.install .i.big{width:28px;height:28px;color:var(--accent);flex:none;filter:drop-shadow(0 0 8px rgba(93,255,58,.5))}
+.install-text{flex:1;min-width:0;display:flex;flex-direction:column}
+.install-text b{font-weight:600}
+.install-text small{color:var(--dim);font-size:13px}
+.install button:not(.iconbtn){padding:10px 16px;font-size:13px;white-space:nowrap}
+.offline{display:flex;align-items:center;gap:10px;margin:0 0 16px;padding:10px 14px;border-radius:12px;font-size:14px;
+  color:var(--text);background:rgba(255,77,141,.10);border:1px solid rgba(255,77,141,.45)}
+.offline .i{color:var(--live);width:18px;height:18px}
+.ios-help .steps{list-style:none;margin:6px 18px 22px;padding:0;border:0;background:none;display:grid;gap:12px}
+.ios-help .steps li{display:flex;align-items:center;gap:14px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;grid-template-columns:none}
+.ios-help .steps .i{width:24px;height:24px;color:var(--accent);flex:none}
+@media(max-width:480px){.install{flex-wrap:wrap}.install-text{flex-basis:calc(100% - 100px)}.install button:not(.iconbtn){flex:1}}
