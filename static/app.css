@@ -43,13 +43,22 @@ body{margin:0;color:var(--text);font:16px/1.45 var(--font);min-height:100vh;over
 .lasers::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
 
 .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 16px 64px}
+/* A dark veil over the lasers behind the content, so text that isn't on a card (headings, the tagline,
+   links) keeps 4.5:1 contrast when a beam passes behind it (WCAG 1.4.3). Lasers stay full strength
+   outside the column. */
+.wrap::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:rgba(3,6,4,.6);
+  box-shadow:0 0 60px 30px rgba(3,6,4,.6)}
 header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:24px}
-/* Heavy letters, as big as fit on one line beside the ON AIR pill / back link: "BISCUITS JAM RADIO" is
-   12.1em wide in Archivo Black, so 100cqw / 12.25 of the brand box. static/oil.js fills them with moving oil.
+/* Right of the name: the ON AIR pill or back link, with the pause-animations button under it */
+.hside{display:flex;flex-direction:column;align-items:flex-end;gap:8px;flex:none}
+.hside .motion{width:32px;height:32px;padding:0;border-radius:50%}
+/* Heavy letters, as big as fit on one line beside the pill / back link: "BISCUITS JAM RADIO" is 12.1em wide
+   in Archivo Black, so 100cqw / 12.25 of the brand box. The rem floor makes it grow with text zoom
+   (WCAG 1.4.4), wrapping when it no longer fits. static/oil.js fills the letters with moving oil.
    Browsers without container units get the older two-line size. */
 .brand{flex:1;min-width:0;container-type:inline-size}
 h1{font:400 clamp(40px,10vw,68px)/1 var(--logo);letter-spacing:.01em;margin:0}
-@supports (width:1cqw){h1{font-size:min(68px,100cqw / 12.25);white-space:nowrap}}
+@supports (width:1cqw){h1{font-size:max(.875rem,min(68px,100cqw / 12.25))}}
 h1 span{color:var(--accent);text-shadow:0 0 4px var(--accent),0 0 14px rgba(93,255,58,.6)}
 .tagline{margin:6px 0 0;font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--dim)}
 .live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--dim);border:1px solid var(--line);padding:7px 11px;border-radius:999px;white-space:nowrap}
@@ -142,12 +151,19 @@ li.cur .t{color:var(--accent);text-shadow:0 0 8px var(--accent)}
 @keyframes rise{to{transform:translate(var(--dx),-90px) scale(1.4);opacity:0}}
 
 [hidden]{display:none!important}
+/* Text for screen readers only */
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* Busy buttons stay focusable (aria-disabled), so keyboard focus isn't lost while a request runs */
+button[aria-disabled="true"]{opacity:.6;cursor:progress}
 @media(max-width:480px){
   .song{font-size:26px}li{grid-template-columns:60px 1fr auto}
   .vol,.eq,.wide{display:none}.controls{gap:10px}button{padding:12px 20px}button.ghost{padding:10px 14px}
 }
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+/* Decorative motion stops when animations are paused (static/a11y.js) or, until someone chooses, when the
+   system asks for reduced motion */
+html.still *,html.still *::before,html.still *::after{animation:none!important;transition:none!important}
+@media(prefers-reduced-motion:reduce){html:not(.moving) *,html:not(.moving) *::before,html:not(.moving) *::after{animation:none!important;transition:none!important}}
 
 /* Vote for what's next */
 .vote h2{margin-top:28px}

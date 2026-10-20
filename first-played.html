@@ -179,7 +179,10 @@ body.playing main{padding-bottom:130px}
       <h1 data-oil>BISCUITS <span>JAM</span> RADIO</h1>
       <p class="tagline">All jams, no butter!</p>
     </div>
-    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+    <div class="hside">
+      <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+    </div>
   </header>
 
   <h2>First time played</h2>
@@ -240,6 +243,7 @@ body.playing main{padding-bottom:130px}
 
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
+<script src="static/a11y.js"></script>
 <script src="static/oil.js"></script>
 <script type="module">
 import { loadSongs, bip, fmtDate, playsText, sinceText } from "./static/songs.js";
@@ -395,6 +399,18 @@ function buildHist() {
   h.addEventListener('pointercancel', () => { drag = null; shade(st.from, st.to); });
   // Pointers are handled above; keyboard activation (Enter/Space) arrives as a click with detail 0.
   h.addEventListener('click', e => { const b = e.target.closest('.yb'); if (b && e.detail === 0) pickYear(+b.dataset.y); });
+  // Keyboard: the chart is one Tab stop; arrow keys, Home and End move between years, Enter or Space picks.
+  // (The From/To selects set the same range, with full-size targets.)
+  const bars = [...h.children], roam = b => bars.forEach(x => { x.tabIndex = x === b ? 0 : -1; });
+  roam(bars[0]);
+  h.addEventListener('focusin', e => { const b = e.target.closest('.yb'); if (b) roam(b); });
+  h.addEventListener('keydown', e => {
+    const i = bars.indexOf(e.target.closest('.yb')), last = bars.length - 1;
+    const j = { ArrowLeft: i - 1, ArrowRight: i + 1, ArrowUp: i + 1, ArrowDown: i - 1, Home: 0, End: last }[e.key];
+    if (i < 0 || j === undefined) return;
+    e.preventDefault();
+    bars[Math.max(0, Math.min(last, j))].focus();
+  });
 }
 
 function shade(from, to) {
@@ -420,8 +436,9 @@ function renderHist() {
     b.querySelector('.yn').textContent = m.n || '';
     bar.style.height = `${(m.n / max) * 100}%`;
     bar.replaceChildren(...kinds.filter(k => m[k]).map(k => { const i = el('i', `k-${k}`); i.style.flexGrow = m[k]; return i; }));
-    const label = `${y}: ${plural(m.n, 'debut')}`;
-    b.setAttribute('aria-label', label); b.title = label;
+    // The name starts with what the bar shows (its count and '97), so voice control can say it (WCAG 2.5.3)
+    const label = `${m.n ? `${m.n} ` : ''}'${String(y).slice(2)}: ${plural(m.n, 'debut')} in ${y}`;
+    b.setAttribute('aria-label', label); b.title = `${y}: ${plural(m.n, 'debut')}`;
   }
   shade(st.from, st.to);
 }
@@ -450,12 +467,14 @@ function buildBand() {
 function tile(s) {
   const b = el('button', `tile k-${s.kind}`); b.type = 'button'; b.dataset.slug = s.slug;
   const tx = el('span', 'tx');
-  tx.append(el('span', 'tt', s.title), el('small', null, `${shortDate(s.date)} · ${s.venue}`));
+  // The name is the visible text (title, then date · venue) followed by details only screen readers get,
+  // so voice control can say what it sees (WCAG 2.5.3)
+  tx.append(el('span', 'tt', s.title), el('small', null, `${shortDate(s.date)} · ${s.venue}`),
+    el('span', 'sr', `: ${KIND[s.kind][0].toLowerCase()}, first played ${fmtDate(s.date)}, ${where(s)}`));
   const marks = el('span', 'marks');
   if (s.debut) marks.append(icon('play', s.debut.how === 'later' ? 'i later' : 'i'));
   if (jams.get(s.slug)) marks.append(icon('radio', 'i onair'));
   b.append(tx, marks);
-  b.setAttribute('aria-label', `${s.title}: ${KIND[s.kind][0].toLowerCase()}, first played ${fmtDate(s.date)}, ${where(s)}`);
   if (playing?.song === s) b.classList.add('playing');
   return b;
 }
@@ -489,7 +508,7 @@ function render() {
     : `${plural(n, 'song')} · debuted at ${plural(shows, 'show')}, ${Y0}–${Y1}`;
   $('reset').hidden = !active();
   $('csv').title = active() ? `Download the ${plural(n, 'matching song')} as CSV` : `Download all ${plural(n, 'song')} as CSV`;
-  $('csv').setAttribute('aria-label', $('csv').title);
+  $('csv').setAttribute('aria-label', `Download CSV: ${active() ? `the ${plural(n, 'matching song')}` : `all ${plural(n, 'song')}`}`);
   $('csv').disabled = !n;
   saveUrl();
 }
@@ -607,7 +626,7 @@ function fillSheet(s) {
   if (n) {
     const a = el('a', 'nom'); a.href = `/?request=${encodeURIComponent(s.slug)}`;
     a.append(icon('radio'), `${plural(n, 'jam')} on Jam Radio`);
-    a.setAttribute('aria-label', `${plural(n, 'jam')} of ${s.title} on Jam Radio: request one`);
+    a.setAttribute('aria-label', `${plural(n, 'jam')} on Jam Radio: request one of ${s.title}`);
     links.append(a);
   }
   const b = ext(bip(C, 'songs', s.slug), 'Song history on BIP', 'bipl'); b.append(icon('external-link', 'i ext'));

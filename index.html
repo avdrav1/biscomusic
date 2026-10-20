@@ -39,7 +39,10 @@
       <h1 data-oil>BISCUITS <span>JAM</span> RADIO</h1>
       <p class="tagline">All jams, no butter!</p>
     </div>
-    <div class="live" id="live"><i></i>ON AIR</div>
+    <div class="hside">
+      <div class="live" id="live"><i></i>ON AIR</div>
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+    </div>
   </header>
 
   <section class="moment" id="moment" hidden>
@@ -170,6 +173,7 @@
 <audio id="kaudio" preload="none"></audio>
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
+<script src="static/a11y.js"></script>
 <script src="static/oil.js"></script>
 <script>
 const $ = id => document.getElementById(id);
@@ -701,15 +705,21 @@ function openComment() {
   $('cbody').focus();
   loadTurnstile(); renderTurnstile();
 }
-function closeComment() { $('cform').hidden = true; $('cbody').value = ''; $('ccount').textContent = '0/280'; C.draft = null; }
+// Focus goes back to the Comment button if it was in the form, so keyboard users aren't dropped (WCAG 2.4.3)
+function closeComment() {
+  const hadFocus = $('cform').contains(document.activeElement);
+  $('cform').hidden = true; $('cbody').value = ''; $('ccount').textContent = '0/280'; C.draft = null;
+  if (hadFocus) $('cbtn').focus();
+}
 
 async function postComment(e) {
   e.preventDefault();
   const body = $('cbody').value.trim();
-  if (!body || !C.draft) return;
+  if (!body || !C.draft || $('cpost').getAttribute('aria-disabled') === 'true') return;
   const nickname = $('cnick').value.trim();
   store.set('nickname', nickname);
-  $('cpost').disabled = true; $('cmsg').textContent = C.token ? '' : 'Checking…';
+  // aria-disabled, not disabled: a disabled Post button would drop keyboard focus to the page (WCAG 2.4.3)
+  $('cpost').setAttribute('aria-disabled', 'true'); $('cmsg').textContent = C.token ? '' : 'Checking…';
   try {
     await tokenReady();
     const r = await fetch('/api/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -721,7 +731,7 @@ async function postComment(e) {
   } catch (err) {
     $('cmsg').textContent = 'Couldn\'t post. Try again.';
   } finally {
-    $('cpost').disabled = false;
+    $('cpost').removeAttribute('aria-disabled');
     C.token = null; if (window.turnstile && C.widget !== null) turnstile.reset(C.widget);
   }
 }
@@ -730,6 +740,7 @@ $('fire').onclick = react;
 $('cbtn').onclick = () => $('cform').hidden ? openComment() : closeComment();
 $('ccancel').onclick = closeComment;
 $('cform').onsubmit = postComment;
+$('cform').addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); closeComment(); } });
 $('cbody').oninput = e => $('ccount').textContent = `${e.target.value.length}/280`;
 
 // Vote panel: a short ballot (the leaders, or the rotation's pick) plus a few one-tap suggestions.
@@ -778,6 +789,8 @@ function renderVote() {
   if (!ST) { $('vote').hidden = true; return; }
   $('vote').hidden = false;
   const { counts, max, mine } = voteState();
+  // Re-rendering the ballot must not drop keyboard focus (WCAG 2.4.3): note which track had it
+  const focusTrack = $('vote').contains(document.activeElement) ? document.activeElement.closest('[data-track]')?.dataset.track || '' : null;
   const top = ST.next ? [ST.next.track] : ST.tally.length ? ST.tally.slice(0, 3).map(([id]) => id) : ST.rotation.slice(0, 1);
   const key = top.join() + '|' + (ST.next ? 'locked' : ST.tally.length ? 'votes' : 'rotation');
   if ($('vtop').dataset.k !== key) {
@@ -800,12 +813,18 @@ function renderVote() {
     $('vtry').replaceChildren($('vtry').firstElementChild, ...tries.map(id => {
       const t = S.tracks[indexOfTrack(id)], b = document.createElement('button');
       b.className = 'chipbtn'; b.textContent = trackLabel(t); b.setAttribute('aria-label', `Vote for ${trackLabel(t)}`);
+      b.dataset.track = id;
       b.onclick = () => castVote(id);
       return b;
     }));
   }
   $('vtry').hidden = !tries.length || !!ST.next;
   if ($('sheet').open) updateSheetRows();
+  if (focusTrack !== null && !$('vote').contains(document.activeElement)) {
+    const li = focusTrack && $('vtop').querySelector(`li[data-track="${CSS.escape(focusTrack)}"]`);
+    const own = li?.querySelector('.vbtn:not(:disabled)');
+    (own || $('vtop').querySelector('.vbtn:not(:disabled)') || $('vreq')).focus();
+  }
   renderVoteClock();
 }
 
@@ -1005,7 +1024,7 @@ function renderFacts(t) {
   $('fhist').href = '/first-played?song=' + encodeURIComponent(s.slug);
   $('fhist').setAttribute('aria-label', `${s.title}: song history`);
   $('fbip').href = SL.bip(SONGS, 'songs', s.slug);
-  $('fbip').setAttribute('aria-label', `${s.title} on discobiscuits.net (opens in a new tab)`);
+  $('fbip').setAttribute('aria-label', `On BIP: ${s.title} on discobiscuits.net (opens in a new tab)`);
   $('ftopline').hidden = !s.top.length;
   $('ftop').replaceChildren(...s.top.slice(0, 3).map((v, k) => topRow(s, v, k + 1)));
   const d = s.debut, l = s.latest && s.latest.url !== d?.url ? s.latest : null;   // a song played once: its latest is its debut
@@ -1037,6 +1056,7 @@ function playClip(s, c, kind) {
   $('kseek').max = 0; $('kseek').value = 0;
   $('ktime').textContent = `0:00 / ${c.length}`;
   $('kclip').hidden = false;
+  $('kplay').focus();   // land on the player that just opened
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({ title: `${s.title} (${$('kkind').textContent.toLowerCase()})`, artist: 'The Disco Biscuits', album: at, artwork: ARTWORK });
     msSet('seekto', e => { kaudio.currentTime = e.seekTime; });
@@ -1049,8 +1069,10 @@ function playClip(s, c, kind) {
 function closeClip(resume) {
   if (!K.on) return;
   K.on = false;
+  const hadFocus = $('kclip').contains(document.activeElement);
   clear(kaudio);
   $('kclip').hidden = true;
+  if (hadFocus) $('tune').focus();   // not lost on <body> when the player disappears (WCAG 2.4.3)
   if ('mediaSession' in navigator) {
     msSet('seekto', null);
     navigator.mediaSession.playbackState = 'none';

@@ -44,7 +44,10 @@
       <h1 data-oil>BISCUITS <span>JAM</span> RADIO</h1>
       <p class="tagline">All jams, no butter!</p>
     </div>
-    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+    <div class="hside">
+      <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+    </div>
   </header>
 
   <h2>Get the app</h2>
@@ -131,6 +134,7 @@
 
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
+<script src="static/a11y.js"></script>
 <script src="static/oil.js"></script>
 <script>
 (() => {

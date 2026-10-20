@@ -7,7 +7,7 @@
 // seconds, but for as long as the radio plays.
 // The real text stays in the page for layout, selection and screen readers; it turns transparent only
 // once WebGL is running (text-shadow glows stay), and a canvas over it paints the letters at the positions
-// the browser laid out. Without WebGL the text is plain. With prefers-reduced-motion it's a still frame.
+// the browser laid out. Without WebGL the text is plain. With animations paused (static/a11y.js) it's a still frame.
 function oilText(el) {
   const PAD = 10;          // CSS px of canvas around the text box, for glyphs that overhang their line box
   const SWIRL_PX = 90;     // CSS px per shader unit: the size of the swirls, the same for one line or two
@@ -183,8 +183,7 @@ function oilText(el) {
     mouse = [(e.clientX - r.left) * dpr, (r.bottom - e.clientY) * dpr];
   }, { passive: true });
 
-  const start = performance.now();
-  let left = null, top = null;
+  let time = 0, last = 0, left = null, top = null;
   function draw() {
     // Follow the text if something before it moves it (its size changes come via relayout)
     if (el.offsetLeft !== left || el.offsetTop !== top) {
@@ -193,22 +192,29 @@ function oilText(el) {
       canvas.style.left = `${left - PAD}px`;
       canvas.style.top = `${top - PAD}px`;
     }
-    gl.uniform1f(uTime, still.matches ? 0 : (performance.now() - start) / 1000);
+    gl.uniform1f(uTime, time);
     gl.uniform2f(uMouse, mouse[0], mouse[1]);
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }
 
-  // Animate only while the text is on screen (requestAnimationFrame already stops in hidden tabs).
-  const still = matchMedia('(prefers-reduced-motion: reduce)');
+  // Animate only while the text is on screen and animations aren't paused (static/a11y.js); a pause
+  // freezes the frame where it is. requestAnimationFrame already stops in hidden tabs.
+  const still = () => document.documentElement.classList.contains('still');
   let onScreen = true, frame = 0;
-  const loop = () => { draw(); frame = requestAnimationFrame(loop); };
+  const loop = now => {
+    time += Math.min(0.1, (now - last) / 1000);
+    last = now;
+    draw();
+    frame = requestAnimationFrame(loop);
+  };
   const run = () => {
     cancelAnimationFrame(frame);
     frame = 0;
-    if (onScreen && !still.matches) frame = requestAnimationFrame(loop);
+    last = performance.now();
+    if (onScreen && !still()) frame = requestAnimationFrame(loop);
   };
   new IntersectionObserver(([e]) => { onScreen = e.isIntersecting; run(); }).observe(canvas);
-  still.addEventListener('change', run);
+  document.addEventListener('motionchange', run);
 
   let pending = 0;
   const relayout = () => { cancelAnimationFrame(pending); pending = requestAnimationFrame(layout); };

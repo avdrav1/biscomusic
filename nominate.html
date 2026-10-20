@@ -57,7 +57,10 @@
       <h1 data-oil>BISCUITS <span>JAM</span> RADIO</h1>
       <p class="tagline">All jams, no butter!</p>
     </div>
-    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+    <div class="hside">
+      <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+    </div>
   </header>
 
   <h2>Nominate jams</h2>
@@ -81,6 +84,7 @@
 <div class="toast" id="toast" role="status" hidden></div>
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
+<script src="static/a11y.js"></script>
 <script src="static/oil.js"></script>
 <script type="module">
 import { load, search } from "./static/nominees.js";
@@ -123,7 +127,7 @@ function row(t) {
   } else {
     const up = el('button', 'ghost up');
     up.setAttribute('aria-pressed', mine.has(t.id));
-    up.setAttribute('aria-label', `Upvote ${t.title}, ${showLine(t.show)}`);
+    up.setAttribute('aria-label', upLabel(t, votes.get(t.id) || 0));
     up.append(icon('arrow-big-up'), el('b', null, String(votes.get(t.id) || 0)));
     up.disabled = !online;
     up.onclick = () => toggle(t, up);
@@ -154,16 +158,21 @@ function render() {
   $('more').textContent = `Show more (${(n - shown).toLocaleString()} left)`;
 }
 
+// Starts with the count the button shows, so voice control can say what it sees (WCAG 2.5.3).
+const upLabel = (t, n) => `${n} ${n === 1 ? 'vote' : 'votes'}: upvote ${t.title}, ${showLine(t.show)}`;
+
 async function toggle(t, btn) {
   const on = !mine.has(t.id), before = votes.get(t.id) || 0;
   // Optimistic: flip it now, undo if the server says no.
   const set = (isOn, count) => {
     isOn ? mine.add(t.id) : mine.delete(t.id); votes.set(t.id, count);
-    btn.setAttribute('aria-pressed', isOn); btn.querySelector('b').textContent = count;
+    btn.setAttribute('aria-pressed', isOn); btn.querySelector('b').textContent = count; btn.setAttribute('aria-label', upLabel(t, count));
     btn.closest('li').classList.toggle('mine', isOn);
   };
+  if (btn.getAttribute('aria-disabled') === 'true') return;
   set(on, Math.max(0, before + (on ? 1 : -1)));
-  btn.disabled = true;
+  // aria-disabled, not disabled: a disabled button drops keyboard focus to the page (WCAG 2.4.3)
+  btn.setAttribute('aria-disabled', 'true');
   try {
     const r = await fetch('/api/nominations', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ track: t.id, on }) });
     const body = await r.json();
@@ -172,7 +181,7 @@ async function toggle(t, btn) {
     if (on) toast(`Nominated ${t.title} (${t.show.date})`, 'arrow-big-up');
   } catch (e) {
     set(!on, before); toast(e.message);
-  } finally { btn.disabled = false; }
+  } finally { btn.removeAttribute('aria-disabled'); }
 }
 
 let timer;
