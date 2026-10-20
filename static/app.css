@@ -63,9 +63,9 @@ h1 span{color:var(--accent);text-shadow:0 0 4px var(--accent),0 0 14px rgba(93,2
 .count{color:var(--accent);margin-left:6px}
 .count::before{content:"· ";color:var(--dim)}
 .song{font-size:32px;font-weight:700;letter-spacing:.01em;margin:10px 0 4px;line-height:1.1}
-/* static/oil.js paints the title's letters on a canvas over it; the text itself stays for layout and selection */
-.song.oil{color:transparent}
-.song.oil::selection{color:transparent;background:rgba(93,255,58,.3)}
+/* static/oil.js paints [data-oil] letters on a canvas over them; the text itself stays for layout and selection */
+.oil,.oil *{color:transparent}
+.oil::selection,.oil *::selection{color:transparent;background:rgba(93,255,58,.3)}
 .oil-canvas{position:absolute;pointer-events:none}
 .jam{color:var(--accent2);font-weight:600;text-shadow:0 0 14px rgba(226,104,255,.45)}
 .show{color:var(--dim)}

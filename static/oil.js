@@ -1,13 +1,14 @@
-// The Now playing title in moving oil-slick colours: simplex noise posterized into iridescent rings with
-// dark oil between them (a WebGL shader after an "Oil Spill" Three.js sketch), drawn only inside the letters.
+// Oil-slick colours moving inside the letters of every [data-oil] element (the radio's name in the page
+// headers): simplex noise posterized into iridescent rings with dark oil between them, a WebGL shader
+// after an "Oil Spill" Three.js sketch.
 // The sketch's noise had a typo (dot(v, ...) for dot(i, ...)) that zeroed it more and more as time grew:
 // its six-pass swirl warp never moved anything, and after about a minute the whole picture went flat green.
 // This uses the correct noise and leaves out the warp, which renders what the sketch showed in its first
 // seconds, but for as long as the radio plays.
 // The real text stays in the page for layout, selection and screen readers; it turns transparent only
-// once WebGL is running, and a canvas over it paints the letters at the positions the browser laid out.
-// Without WebGL the title is plain text. With prefers-reduced-motion it's a still frame.
-window.oilText = el => {
+// once WebGL is running (text-shadow glows stay), and a canvas over it paints the letters at the positions
+// the browser laid out. Without WebGL the text is plain. With prefers-reduced-motion it's a still frame.
+function oilText(el) {
   const PAD = 10;          // CSS px of canvas around the text box, for glyphs that overhang their line box
   const SWIRL_PX = 90;     // CSS px per shader unit: the size of the swirls, the same for one line or two
   const canvas = document.createElement('canvas');
@@ -133,7 +134,7 @@ window.oilText = el => {
   gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);   // canvas rows run top down, GL textures bottom up
   const mask = document.createElement('canvas'), ctx = mask.getContext('2d');
 
-  el.after(canvas);   // a sibling, so setting the title's textContent leaves it alone
+  el.after(canvas);   // a sibling, so replacing the element's text leaves it alone
   el.classList.add('oil');
 
   // Paint the letters into the mask exactly where the browser put them: one glyph at a time, from the
@@ -149,16 +150,16 @@ window.oilText = el => {
     canvas.width = mask.width = width;
     canvas.height = mask.height = height;
 
-    const style = getComputedStyle(el);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
-    ctx.font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
     ctx.fillStyle = '#fff';
     ctx.textBaseline = 'alphabetic';
-    const ascent = ctx.measureText('Hg').fontBoundingBoxAscent;
     const range = document.createRange();
-    for (const node of el.childNodes) {
-      if (node.nodeType !== Node.TEXT_NODE) continue;
+    const texts = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let node; (node = texts.nextNode());) {
+      const style = getComputedStyle(node.parentElement);   // a <span> inside may have its own font
+      ctx.font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
+      const ascent = ctx.measureText('Hg').fontBoundingBoxAscent;
       let offset = 0;
       for (const ch of node.data) {
         range.setStart(node, offset);
@@ -185,7 +186,7 @@ window.oilText = el => {
   const start = performance.now();
   let left = null, top = null;
   function draw() {
-    // Follow the title if something above it in the card moves it (its size changes come via relayout)
+    // Follow the text if something before it moves it (its size changes come via relayout)
     if (el.offsetLeft !== left || el.offsetTop !== top) {
       left = el.offsetLeft;
       top = el.offsetTop;
@@ -197,7 +198,7 @@ window.oilText = el => {
     gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
   }
 
-  // Animate only while the title is on screen (requestAnimationFrame already stops in hidden tabs).
+  // Animate only while the text is on screen (requestAnimationFrame already stops in hidden tabs).
   const still = matchMedia('(prefers-reduced-motion: reduce)');
   let onScreen = true, frame = 0;
   const loop = () => { draw(); frame = requestAnimationFrame(loop); };
@@ -224,4 +225,6 @@ window.oilText = el => {
 
   layout();
   run();
-};
+}
+
+document.querySelectorAll('[data-oil]').forEach(oilText);
