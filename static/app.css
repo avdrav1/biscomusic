@@ -265,6 +265,35 @@ dialog.sheet::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
 .tcard .more{display:block;margin-top:8px;color:var(--dim)}
 @media(max-width:480px){.wavebox{height:52px}}
 
+/* The song behind the jam: its history and a player for its debut / latest recording */
+.facts{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.fhead{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px}
+.fhead a{color:var(--accent);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:4px;min-height:32px}
+.fhead a:hover{text-decoration:underline}
+.fhead a .i{width:14px;height:14px}
+.fline{margin:4px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:14px}
+.fline .label{flex:none;width:52px}
+.fline>span:last-child{flex:1;min-width:0}
+.fline .chip{margin-right:6px}
+.frow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+.frow button.ghost{min-height:44px;padding:8px 14px;font-size:14px}
+.frow button.ghost .i{width:15px;height:15px;color:var(--accent)}
+.fbip{margin-left:auto;display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--dim);font-size:13px;text-decoration:none}
+.fbip:hover{color:var(--accent);text-decoration:underline}
+.fbip .i{width:14px;height:14px}
+.kclip{margin-top:16px;padding:12px 16px 14px;border-radius:16px;border:1px solid rgba(226,104,255,.45);background:linear-gradient(135deg,rgba(226,104,255,.10),rgba(8,30,14,.4));animation:popin .25s ease-out}
+.kclip .fhead .label{color:var(--accent2)}
+.kclip .fhead .iconbtn{margin:-4px -8px -4px 0}
+.ksong{font-size:20px;font-weight:700;line-height:1.2}
+.kwhere{margin:2px 0 0;color:var(--dim);font-size:14px}
+.kctl{display:flex;align-items:center;gap:12px;margin-top:10px}
+.kctl .iconbtn{flex:none}
+.kctl input[type=range]{flex:1;width:auto;min-width:0;accent-color:var(--accent2)}
+.ktime{font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.kclip .frow button.stop{padding:10px 18px;font-size:13px}
+li .s small.hint{color:rgba(226,104,255,.85)}
+.songchips{padding-top:0}
+
 /* Installable app: install card, offline banner, install steps */
 .install{display:flex;align-items:center;gap:12px;margin:0 0 16px;padding:12px 14px;border-radius:16px;
   background:linear-gradient(135deg,rgba(93,255,58,.10),rgba(226,104,255,.08));border:1px solid rgba(93,255,58,.35)}

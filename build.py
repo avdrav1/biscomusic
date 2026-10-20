@@ -2,13 +2,18 @@
 """Build the station from the show folders next to radio/.
 
 Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), then writes:
-  schedule.json       local paths (audio/...), used by server.py
+  schedule.json       local paths (audio/...), used by server.py; each track carries its song's BIP slug
   site/schedule.json  R2 URLs (?v=<content hash>, so re-encoded files bypass caches),
                       deployed to Cloudflare Pages with the pages and site/static/
+  site/clips.json     archive.org recordings of every song's debut and latest version (see archive.py),
+                      for the song facts on the radio and the /first-played timeline
 """
-import base64, hashlib, json, math, os, re, shutil, subprocess, sys
+import base64, hashlib, json, math, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
 from array import array
 from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime, timezone
+
+import archive, bip
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SHOWS = os.path.dirname(HERE)
@@ -16,6 +21,8 @@ AUDIO = os.path.join(HERE, 'audio')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
 WAVES = os.path.join(HERE, 'waves')
+# Deployed pages (Pages serves best.html at /best); index.html first.
+PAGES = ('index.html', 'best.html', 'nominate.html', 'install.html', 'first-played.html')
 WAVE_BARS = 200
 WAVE_RANGE_DB = 8           # loudness range the timeline shows, below each track's peak
 # Every jam at the same perceived loudness: -14 LUFS integrated, peaks under -1 dBTP.
@@ -73,13 +80,13 @@ def waveform(mp3):
 
 def service_worker(versioned):
     """site/sw.js: the source with this build's version and the files to keep offline."""
-    pages = ['/', '/best', '/nominate', '/install']
+    pages = ['/' if p == 'index.html' else '/' + p.removesuffix('.html') for p in PAGES]
     fonts = sorted('/static/fonts/' + f for f in os.listdir(os.path.join(HERE, 'static', 'fonts')) if f.endswith('.woff2'))
     files = ['/' + v for v in versioned.values()] + fonts + [
         '/static/favicon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png',
         '/static/manifest.webmanifest', '/schedule.json']
     h = hashlib.md5()
-    for f in ('index.html', 'best.html', 'nominate.html', 'install.html', 'sw.js', 'static/manifest.webmanifest'):
+    for f in PAGES + ('sw.js', 'static/manifest.webmanifest'):
         h.update(open(os.path.join(HERE, f), 'rb').read())
     h.update(json.dumps(files).encode())
     with open(os.path.join(HERE, 'sw.js')) as f:
@@ -130,6 +137,65 @@ def nominees(tracks):
     print(f'  {len(out)} performances from {len(shows)} shows up for nomination')
     return data
 
+BIP_API = 'https://discobiscuits.net/api/songs'
+# Station titles (from the FLAC names) that BIP spells differently, as BIP song slugs.
+BIP_ALIASES = {'More U Know': 'more-you-know', 'The Safety Dance': 'safety-dance',
+               'Mishawaka Jam': 'mishawaka-improv-jam'}
+
+def bip_catalog():
+    """Every song on BIP, with its debut and last show (about 2 MB)."""
+    with urllib.request.urlopen(urllib.request.Request(BIP_API, headers=bip.UA), timeout=60) as r:
+        return json.load(r)
+
+def link_songs(tracks, catalog):
+    """Give each track its song's BIP slug, the key of /api/songs and clips.json."""
+    slugs = {s['slug'] for s in catalog}
+    by_title = {song_key(s['title']): s['slug'] for s in catalog}
+    missing = set()
+    for t in tracks:
+        slug = BIP_ALIASES.get(t['song']) or by_title.get(song_key(t['song']))
+        if slug in slugs:
+            t['slug'] = slug
+        else:
+            missing.add(t['song'])
+    if missing:
+        print(f'  not on BIP (add to BIP_ALIASES): {", ".join(sorted(missing))}')
+
+def bip_place(venue):
+    """"Philadelphia, PA" in the US, "London, United Kingdom" elsewhere (as functions/_songs.js)."""
+    venue = venue or {}
+    region = venue.get('state') if (venue.get('country') or '') in ('', 'United States') else venue.get('country')
+    return ', '.join(p for p in (venue.get('city'), region) if p)
+
+def clips(catalog):
+    """site/clips.json: { built, clips: { slug: { debut, latest } } }, recordings found by archive.py.
+    A clip: { url, item, track, length, how, date, show, venue, place }; the show is the one it was taped at."""
+    songs = [s for s in catalog if s.get('firstPlayedShow')]
+    debut, latest, _ = archive.find_audio([
+        {'slug': s['slug'], 'id': s['id'], 'title': s['title'], 'date': s['firstPlayedShow']['date'],
+         'show_id': s['firstPlayedShow']['id'], 'last_show': (s.get('lastPlayedShow') or s['firstPlayedShow'])['slug'],
+         'plays': s.get('timesPlayed') or 0}
+        for s in songs])
+
+    def clip(hit, song):
+        first = song['firstPlayedShow']
+        out = {'url': f"https://archive.org/download/{hit['id']}/{urllib.parse.quote(hit['file'])}",
+               'item': hit['id'], 'track': hit['track'], 'length': hit['length'], 'how': hit['how'],
+               # "title" and "setlist" clips are from the debut, the others say which show they're from
+               'date': first['date'], 'show': first['slug'],
+               'venue': (first.get('venue') or {}).get('name') or 'Unknown venue', 'place': bip_place(first.get('venue'))}
+        out.update({k: hit[k] for k in ('date', 'show', 'venue', 'place') if k in hit})
+        return out
+
+    out = {}
+    for s in songs:
+        found = {k: clip(v[s['slug']], s) for k, v in (('debut', debut), ('latest', latest)) if s['slug'] in v}
+        if found:
+            out[s['slug']] = found
+    with open(os.path.join(SITE, 'clips.json'), 'w') as f:
+        json.dump({'built': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'clips': out}, f, separators=(',', ':'))
+    print(f'  archive.org: {len(debut)} of {len(songs)} songs have a debut clip, {len(latest)} a newer latest one')
+
 def main():
     os.makedirs(AUDIO, exist_ok=True)
     old = {}
@@ -167,6 +233,17 @@ def main():
     if not tracks:
         sys.exit('No FLAC tracks found next to radio/')
 
+    try:
+        catalog = bip_catalog()
+        link_songs(tracks, catalog)
+    except OSError as e:   # BIP down: the radio still deploys, with the song links of the last build
+        catalog = None
+        print(f'  BIP unreachable ({e}): keeping song links and clips.json from the last build')
+        before = {t['file']: t['slug'] for t in meta.get('tracks', []) if t.get('slug')}
+        for t in tracks:
+            if t['file'] in before:
+                t['slug'] = before[t['file']]
+
     local = {'station': meta['station'], 'epoch': meta['epoch'], 'tracks': tracks}
     with open(os.path.join(HERE, 'schedule.json'), 'w') as f:
         json.dump(local, f, indent=1)
@@ -183,9 +260,14 @@ def main():
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
-    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js')}
+    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js', 'static/songs.js')}
     nominees(tracks)
-    for page in ('index.html', 'best.html', 'nominate.html', 'install.html'):
+    if catalog:
+        try:
+            clips(catalog)
+        except OSError as e:
+            print(f'  archive.org unreachable ({e}): keeping clips.json from the last build')
+    for page in PAGES:
         with open(os.path.join(HERE, page)) as f:
             html = f.read()
         for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"

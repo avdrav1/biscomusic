@@ -11,3 +11,6 @@ waves/
 .dev.vars
 .DS_Store
 art/.icon.html
+# archive.org listings and BIP performance lists for clips.json (archive.py)
+.cache/
+__pycache__/

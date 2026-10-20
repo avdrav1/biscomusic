@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>First time played · Biscuits Jam Radio</title>
+<meta name="description" content="Every Disco Biscuits song on the night it debuted. Hear the first performance and the latest, see how often each song has been played since, and request its jams on Biscuits Jam Radio.">
+<meta name="theme-color" content="#030604">
+<link rel="icon" href="static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="static/apple-touch-icon.png">
+<link rel="manifest" href="/static/manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Jam Radio">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biscuits Jam Radio">
+<meta property="og:title" content="First time played · Biscuits Jam Radio">
+<meta property="og:description" content="Every Disco Biscuits song on the night it debuted. Hear the first performance next to the latest one.">
+<meta property="og:url" content="https://biscomusic.com/first-played">
+<meta property="og:image" content="https://biscomusic.com/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="static/fonts/monoton-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="static/app.css">
+<meta name="icons" content="static/icons.svg">
+<style>
+.back{color:var(--accent);text-decoration:none;font-size:14px}
+.intro{color:var(--dim);margin:0 0 16px}
+.status{color:var(--dim);font-size:15px}
+.status a,.about a,.facts a,.rec a,.by a{color:var(--accent);text-decoration:none}
+.status a:hover,.about a:hover,.facts a:hover,.rec a:hover,.by a:hover{text-decoration:underline}
+
+/* Song kinds (tiles, histogram, chips) */
+.k-original{--k:var(--accent)}.k-cover{--k:var(--ice)}.k-improvisation{--k:var(--accent2)}.k-mashup{--k:#ff9d3a}.k-unknown{--k:var(--dim)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--k);box-shadow:0 0 6px var(--k);flex:none}
+
+/* Filters */
+.page .search{margin:0}
+.fgroup{margin-top:14px}
+.fgroup>.label{display:block;margin-bottom:6px}
+.fchips{display:flex;flex-wrap:wrap;gap:8px}
+.chipbtn .n{color:var(--dim);font-weight:500;font-variant-numeric:tabular-nums}
+.chipbtn[aria-checked="true"] .n{color:#031203;opacity:.7}
+.chipbtn[aria-checked="true"] .sw{box-shadow:0 0 0 1px #031203}
+.frow{display:grid;grid-template-columns:minmax(0,1fr) 120px 120px;gap:10px;margin-top:14px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+select{min-height:44px;width:100%;padding:0 12px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.45);color:var(--text);font:16px var(--font)}
+select:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 1px var(--accent),0 0 16px rgba(93,255,58,.25)}
+option{background:var(--card-solid);color:var(--text)}
+
+/* Debuts per year: one stacked bar per year, coloured by kind; click a year or drag across for a range */
+.hist{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:2px;margin-top:18px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.yb{display:grid;grid-template-rows:14px 72px 16px;padding:0;margin:0;border:0;border-radius:4px;background:none;box-shadow:none;color:var(--dim);
+  font:500 10px var(--font);letter-spacing:0;text-transform:none;min-width:0;cursor:pointer}
+.yb .yn{font-variant-numeric:tabular-nums;align-self:end;text-align:center}
+.yb .bw{display:flex;flex-direction:column;justify-content:flex-end;height:72px}
+.yb .bar{display:flex;flex-direction:column-reverse;min-height:0;border-radius:2px 2px 0 0;overflow:hidden;transition:opacity .15s}
+.yb .bar i{display:block;flex:1 1 0;min-height:1px;background:var(--k)}
+.yb .yl{font-size:11px;white-space:nowrap;align-self:end;text-align:center;overflow:visible}
+.yb:hover .bar{filter:brightness(1.35)}
+.yb.out .bar{opacity:.22}
+.yb.sel .yl{color:var(--accent)}
+.yb:focus-visible{outline-offset:0}
+.band{position:relative;height:20px;margin-top:4px;border-top:1px solid var(--line)}
+.band span{position:absolute;top:0;bottom:0;border-left:1px solid rgba(93,255,58,.35);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);padding:3px 0 0 5px;white-space:nowrap}
+.band span.end{display:flex;justify-content:flex-end;padding:3px 0 0}
+.band span.gap{background:repeating-linear-gradient(135deg,rgba(143,165,154,.35) 0 2px,transparent 2px 5px);border-left:0;padding:0}
+.band small{font-weight:400;letter-spacing:.04em;text-transform:none}
+.hint{color:var(--dim);font-size:12px;margin:4px 0 0}
+
+.countrow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:18px 0 6px}
+.countrow .scount{margin:0 auto 0 0}
+.countrow button{min-height:40px;padding:8px 14px;font-size:13px}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--dim);margin:0 0 6px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend .i{width:14px;height:14px}
+
+/* The timeline: a section per year, a tile per song */
+.yr h3{position:sticky;top:0;z-index:2;display:flex;align-items:baseline;gap:10px;margin:0;padding:14px 2px 8px;
+  background:linear-gradient(var(--bg) 75%,transparent);font-size:22px;font-weight:700;font-variant-numeric:tabular-nums}
+.yr h3 .y{color:var(--accent);text-shadow:0 0 10px rgba(93,255,58,.55)}
+.yr h3 .n{font-size:13px;font-weight:500;color:var(--dim)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:6px}
+button.tile{display:flex;align-items:flex-start;justify-content:flex-start;gap:8px;width:100%;min-height:52px;padding:8px 10px 8px 12px;border-radius:12px;text-align:left;
+  font:600 14px/1.25 var(--font);letter-spacing:0;text-transform:none;color:var(--text);background:rgba(8,16,10,.72);border:1px solid var(--line);
+  box-shadow:inset 3px 0 0 var(--k)}
+button.tile:hover{border-color:rgba(93,255,58,.5);background:rgba(16,32,20,.85)}
+button.tile.playing{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--k),0 0 16px rgba(93,255,58,.3)}
+.tile .tx{flex:1;min-width:0;display:flex;flex-direction:column}
+.tile .tt{overflow-wrap:anywhere}
+.tile small{color:var(--dim);font-size:12px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.tile .marks{display:flex;gap:4px;padding-top:2px}
+.tile .marks .i,.legend .i{color:var(--accent)}
+.i.later{color:var(--dim)!important}
+.i.onair{color:var(--accent2)!important}
+.empty{color:var(--dim);padding:20px 0}
+
+/* Song sheet */
+.sheet-head .label{display:inline-flex;align-items:center;gap:8px}
+.sheet-head .close{margin-left:auto}
+.sheet h2.song{font-size:28px;color:var(--text);letter-spacing:.01em;text-transform:none;margin:4px 0 2px}
+.by{color:var(--dim);margin:0 0 4px}
+.facts{display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px 12px;margin:14px 0 4px}
+.facts dt{color:var(--dim);font-size:13px;padding-top:1px}
+.facts dd{margin:0}
+.facts small{color:var(--dim);font-size:13px}
+.sheet h3{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin:20px 0 8px}
+.recs{display:grid;gap:10px}
+.rec{display:grid;gap:6px;padding:12px 14px;border-radius:14px;border:1px solid var(--line);background:rgba(0,0,0,.3)}
+.rec.on{border-color:rgba(93,255,58,.6);box-shadow:0 0 18px rgba(93,255,58,.15)}
+.rec p{margin:0;font-size:14px}
+.rec .how,.rec .track,.note{color:var(--dim);font-size:13px}
+.rec .hear{justify-self:start;padding:10px 18px;font-size:13px;margin:2px 0 4px}
+.rec .hear.alt{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent),0 0 14px rgba(93,255,58,.2)}
+.rec .track .i,.links .i.ext{width:13px;height:13px}
+.prog{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--dim);font-variant-numeric:tabular-nums}
+.prog input{flex:1;min-width:0;width:auto;margin:0;height:24px}
+.rec .prog{display:none}
+.rec.on .prog{display:flex}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.links a{min-height:44px}
+a.bipl{display:inline-flex;align-items:center;gap:.45em;padding:10px 16px;border-radius:999px;font:500 14px var(--font);color:var(--text);text-decoration:none;
+  background:rgba(93,255,58,.06);border:1px solid var(--line)}
+a.bipl:hover{border-color:rgba(93,255,58,.5)}
+a.bipl .i{color:var(--accent);width:16px;height:16px}
+.night{display:flex;flex-wrap:wrap;gap:6px}
+.night button{min-height:36px;padding:6px 12px;font:500 13px var(--font);letter-spacing:0;text-transform:none;color:var(--text);
+  background:rgba(93,255,58,.06);border:1px solid var(--line);box-shadow:none;gap:6px}
+.night button:hover{border-color:rgba(93,255,58,.5)}
+
+/* Player: one shared <audio>, docked at the bottom while a recording is loaded */
+.player{position:fixed;left:0;right:0;bottom:0;z-index:15;background:rgba(8,16,10,.96);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border-top:1px solid var(--line);box-shadow:0 -12px 40px -12px rgba(93,255,58,.3)}
+.pin{max-width:760px;margin:0 auto;padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:grid;
+  grid-template-columns:44px minmax(0,1fr) minmax(0,1.1fr) 44px;grid-template-areas:"pp np prog x";gap:4px 14px;align-items:center}
+.pin #pp{grid-area:pp}.pin .np{grid-area:np;min-width:0}.pin .prog{grid-area:prog}.pin #np-close{grid-area:x}
+.npt{display:block;max-width:100%;padding:0;background:none;border:0;box-shadow:none;color:var(--text);font:600 15px var(--font);letter-spacing:0;text-transform:none;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.npt:hover{color:var(--accent)}
+.np small{display:block;color:var(--dim);font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.np small.err{color:var(--live)}
+.np small a{color:var(--accent)}
+body.playing main{padding-bottom:130px}
+
+/* About */
+.about p{color:var(--dim);font-size:14px;margin:0 0 10px}
+.eras li{grid-template-columns:110px 1fr auto;align-items:baseline}
+.eras .d{white-space:nowrap}
+@media(max-width:640px){
+  .yb .yn{visibility:hidden}
+  .yb:not(.l5) .yl{visibility:hidden}
+  .band small{display:none}
+  .pin{grid-template-columns:44px minmax(0,1fr) 44px;grid-template-areas:"pp np x" "prog prog prog";padding-top:8px}
+}
+@media(max-width:480px){
+  .frow{grid-template-columns:1fr 1fr}
+  .frow .field:first-child{grid-column:1/-1}
+  .sheet h2.song{font-size:24px}
+  .facts{grid-template-columns:92px minmax(0,1fr)}
+  .tiles{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .eras li{grid-template-columns:1fr auto;grid-template-areas:"s d" "t t";row-gap:4px}
+  .eras .s{grid-area:s}.eras .t{grid-area:t}.eras .d{grid-area:d}
+}
+</style>
+</head>
+<body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<main class="wrap page">
+  <header>
+    <div class="brand">
+      <h1>BISCUITS <span>JAM</span> RADIO</h1>
+      <p class="tagline">All jams, no butter!</p>
+    </div>
+    <a class="back" href="/"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-left"/></svg><span class="wide">Back to the </span>radio</a>
+  </header>
+
+  <h2>First time played</h2>
+  <p class="intro">Every Disco Biscuits song, placed on the night it debuted. Tap a song to hear its first performance next to its latest, see how often it's been played since, and find its jams on the radio.</p>
+  <p class="status" id="status" role="status">Loading every song…</p>
+
+  <div id="app" hidden>
+    <label class="search"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><input id="q" type="search" placeholder="Search song titles" aria-label="Search song titles" autocomplete="off" spellcheck="false"></label>
+    <div class="fgroup" role="group" aria-labelledby="era-l"><span class="label" id="era-l">Era</span><div class="fchips" id="eras"></div></div>
+    <div class="fgroup" role="group" aria-labelledby="kind-l"><span class="label" id="kind-l">Type</span><div class="fchips" id="kinds"></div></div>
+    <div class="frow">
+      <label class="field"><span class="label">Songwriter</span><select id="by"></select></label>
+      <label class="field"><span class="label">From</span><select id="from"></select></label>
+      <label class="field"><span class="label">To</span><select id="to"></select></label>
+    </div>
+
+    <div class="hist" id="hist" role="group" aria-label="Debuts per year"></div>
+    <div class="band" id="band" aria-hidden="true"></div>
+    <p class="hint">Tap a year to see its debuts, tap it again for all years. Drag across the bars for a range.</p>
+
+    <div class="countrow">
+      <p class="scount" id="count" aria-live="polite"></p>
+      <button class="ghost" id="reset" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#rotate-ccw"/></svg>Reset</button>
+      <button class="ghost" id="csv"><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg>Download CSV</button>
+    </div>
+    <p class="legend" id="legend"></p>
+    <div id="timeline"></div>
+
+    <h2>About the data</h2>
+    <div class="about">
+      <p>Songs, debuts, play counts and setlists come from the <a id="bip-link" href="https://discobiscuits.net/songs" target="_blank" rel="noopener">Biscuits Internet Project</a>, the fan-run database of every show. <span id="fresh"></span></p>
+      <p id="tapers">Recordings stream from the <a href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">Disco Biscuits collection</a> on archive.org, shared by the tapers who recorded the shows. Where a debut wasn't taped, you hear the earliest recording that exists.</p>
+      <p>A fan project with no affiliation with the band.</p>
+    </div>
+    <h2>Eras</h2>
+    <ol class="eras" id="eratable"></ol>
+  </div>
+</main>
+
+<div class="player" id="player" hidden>
+  <div class="pin">
+    <button class="iconbtn" id="pp" aria-label="Pause"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+    <div class="np"><button class="npt" id="np-song"></button><small id="np-meta"></small><small id="np-where"></small></div>
+    <div class="prog" id="np-prog"></div>
+    <button class="ghost iconbtn" id="np-close" aria-label="Stop and close the player"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button>
+  </div>
+</div>
+
+<dialog class="sheet" id="sheet" aria-labelledby="d-title">
+  <div class="sheet-head">
+    <span class="label" id="d-kind"></span>
+    <button class="ghost iconbtn close" id="d-close" aria-label="Close"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button>
+  </div>
+  <div class="sheet-body" id="d-body"></div>
+</dialog>
+<audio id="audio" preload="none"></audio>
+
+<script src="static/station.js"></script>
+<script src="static/pwa.js"></script>
+<script type="module">
+import { loadSongs, bip, fmtDate, playsText, sinceText } from "./static/songs.js";
+
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+const ext = (href, text, cls) => { const a = el('a', cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; };
+
+const KIND = { original: ['Original', 'Originals'], cover: ['Cover', 'Covers'], improvisation: ['Improvisation', 'Improvisations'], mashup: ['Mashup', 'Mashups'], unknown: ['Unknown', 'Unknown'] };
+const ERAS = ['Sammy', 'Allen', 'Marlon', 'Between'];
+const NONE = '-';   // songwriter filter value: songs with no songwriter listed
+const eraLabel = e => (e === 'Between' ? 'Between eras' : e);
+const norm = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[‘’`]/g, "'").toLowerCase().trim();
+const plural = (n, one, many = one + 's') => `${n.toLocaleString('en-US')} ${n === 1 ? one : many}`;
+const clock = s => { s = Math.max(0, Math.floor(s || 0)); return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`; };
+const shortDate = iso => new Date(iso + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'UTC' });
+const where = x => [x.venue, x.place].filter(Boolean).join(', ');
+const dayAfter = iso => new Date(Date.parse(iso + 'T12:00:00Z') + 864e5).toISOString().slice(0, 10);
+const dayBefore = iso => new Date(Date.parse(iso + 'T12:00:00Z') - 864e5).toISOString().slice(0, 10);
+
+let C, songs, Y0, Y1, kinds, eras, perYear, haveClips = false, filtered = [], cur = null, playing = null;
+const jams = new Map();   // song slug -> jams of it on the station
+const st = { q: '', qText: '', eras: new Set(), kinds: new Set(), by: '', from: null, to: null };
+
+// ---------- filtering ----------
+function matches(s, skip) {
+  if (skip !== 'era' && st.eras.size && !st.eras.has(s.era)) return false;
+  if (skip !== 'kind' && st.kinds.size && !st.kinds.has(s.kind)) return false;
+  if (skip !== 'by' && st.by && (st.by === NONE ? s.authors.length : !s.names.includes(st.by))) return false;
+  if (skip !== 'range' && ((st.from && s.year < st.from) || (st.to && s.year > st.to))) return false;
+  if (st.q && !s.key.includes(st.q)) return false;
+  return true;
+}
+const active = () => !!(st.q || st.eras.size || st.kinds.size || st.by || st.from || st.to);
+
+// Filters (and the open song) live in the URL so a view can be shared: ?era=Marlon&kind=cover&song=...
+function saveUrl() {
+  const p = new URLSearchParams();
+  if (st.qText) p.set('q', st.qText);
+  if (st.eras.size) p.set('era', [...st.eras].join(','));
+  if (st.kinds.size) p.set('kind', [...st.kinds].join(','));
+  if (st.by) p.set('by', st.by);
+  if (st.from) p.set('from', st.from);
+  if (st.to) p.set('to', st.to);
+  if (cur) p.set('song', cur.slug);
+  const qs = p.toString().replace(/%2C/g, ',');
+  history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+}
+
+function readUrl() {
+  const p = new URLSearchParams(location.search);
+  st.qText = $('q').value = p.get('q') || ''; st.q = norm(st.qText);
+  for (const e of (p.get('era') || '').split(',')) if (eras.includes(e)) st.eras.add(e);
+  for (const k of (p.get('kind') || '').split(',')) if (kinds.includes(k)) st.kinds.add(k);
+  const by = p.get('by') || '';
+  if (by === NONE || songs.some(s => s.names.includes(by))) st.by = by;
+  const year = v => (+v >= Y0 && +v <= Y1 ? +v : null);
+  st.from = year(p.get('from')); st.to = year(p.get('to'));
+  if (st.from && st.to && st.from > st.to) [st.from, st.to] = [st.to, st.from];
+  return p.get('song');
+}
+
+// ---------- controls ----------
+function chips(box, keys, set, label, kindSwatch) {
+  for (const k of keys) {
+    const b = el('button', 'chipbtn'); b.type = 'button'; b.dataset.k = k;
+    b.setAttribute('role', 'checkbox');
+    if (kindSwatch) b.append(el('i', `sw k-${k}`));
+    b.append(el('span', null, label(k)), el('b', 'n'));
+    b.onclick = () => { set.has(k) ? set.delete(k) : set.add(k); render(); };
+    box.append(b);
+  }
+}
+
+function eraTitle(name) {
+  const e = C.eras.find(x => x.name === name);
+  if (!e) return 'Debuts during a drummer change, between two eras';
+  return `${e.drummer} on drums, ${eraDates(e)}`;
+}
+const eraDates = e => (e.start ? `${fmtDate(e.start)} – ${e.end ? fmtDate(e.end) : 'today'}` : `through ${fmtDate(e.end)}`);
+// The drummer changes: [first day without a drummer, last day before the next era].
+function eraGaps() {
+  const out = [];
+  C.eras.forEach((e, k) => { const n = C.eras[k + 1]; if (n && e.end && n.start && dayAfter(e.end) < n.start) out.push([dayAfter(e.end), dayBefore(n.start)]); });
+  return out;
+}
+
+function updateChips(box, set, key, skip) {
+  for (const b of box.children) {
+    const n = songs.reduce((a, s) => a + (s[key] === b.dataset.k && matches(s, skip) ? 1 : 0), 0);
+    b.setAttribute('aria-checked', set.has(b.dataset.k));
+    b.querySelector('.n').textContent = n;
+  }
+}
+
+function updateSongwriters() {
+  const n = new Map(); let none = 0, all = 0;
+  for (const s of songs) {
+    if (!matches(s, 'by')) continue;
+    all++; if (!s.authors.length) none++;
+    for (const a of s.names) n.set(a, (n.get(a) || 0) + 1);
+  }
+  if (st.by && st.by !== NONE && !n.has(st.by)) n.set(st.by, 0);
+  const sel = $('by');
+  sel.replaceChildren(new Option(`All songwriters (${all})`, ''),
+    ...[...n].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, c]) => new Option(`${name} (${c})`, name)));
+  if (none || st.by === NONE) sel.append(new Option(`No songwriter listed (${none})`, NONE));
+  sel.value = st.by;
+}
+
+function yearSelects() {
+  for (const [id, any] of [['from', 'Any year'], ['to', 'Any year']]) {
+    const sel = $(id);
+    sel.append(new Option(any, ''));
+    for (let y = Y0; y <= Y1; y++) sel.append(new Option(y, y));
+    sel.onchange = () => {
+      st[id] = +sel.value || null;
+      if (st.from && st.to && st.from > st.to) { if (id === 'from') st.to = st.from; else st.from = st.to; }
+      render();
+    };
+  }
+}
+const setRange = (a, b) => { st.from = a; st.to = b; render(); };
+// A year on its own, or back to all years when it's already the whole range.
+const pickYear = y => (st.from === y && st.to === y ? setRange(null, null) : setRange(y, y));
+
+// ---------- debuts per year ----------
+function buildHist() {
+  const h = $('hist');
+  h.style.setProperty('--n', Y1 - Y0 + 1);
+  for (let y = Y0; y <= Y1; y++) {
+    const b = el('button', 'yb' + (y % 5 ? '' : ' l5')); b.type = 'button'; b.dataset.y = y;
+    const bw = el('span', 'bw'); bw.append(el('span', 'bar'));
+    b.append(el('span', 'yn'), bw, el('span', 'yl', `'${String(y).slice(2)}`));
+    h.append(b);
+  }
+  let drag = null;
+  const yearAt = x => { const r = h.getBoundingClientRect(); return Math.min(Y1, Math.max(Y0, Y0 + Math.floor((x - r.left) / r.width * (Y1 - Y0 + 1)))); };
+  h.addEventListener('pointerdown', e => { if (e.button === 0 && e.target.closest('.yb')) drag = { a: yearAt(e.clientX), b: null }; });
+  h.addEventListener('pointermove', e => {
+    if (!drag) return;
+    const y = yearAt(e.clientX);
+    if (drag.b === null && y === drag.a) return;
+    if (drag.b === null) h.setPointerCapture(e.pointerId);
+    drag.b = y; shade(Math.min(drag.a, y), Math.max(drag.a, y));
+  });
+  h.addEventListener('pointerup', () => {
+    if (!drag) return;
+    const { a, b } = drag; drag = null;
+    if (b === null) pickYear(a); else setRange(Math.min(a, b), Math.max(a, b));
+  });
+  // A vertical swipe hands the gesture to page scrolling (touch-action: pan-y), which cancels the pointer.
+  h.addEventListener('pointercancel', () => { drag = null; shade(st.from, st.to); });
+  // Pointers are handled above; keyboard activation (Enter/Space) arrives as a click with detail 0.
+  h.addEventListener('click', e => { const b = e.target.closest('.yb'); if (b && e.detail === 0) pickYear(+b.dataset.y); });
+}
+
+function shade(from, to) {
+  for (const b of $('hist').children) {
+    const y = +b.dataset.y, inside = (!from || y >= from) && (!to || y <= to), ranged = !!(from || to);
+    b.classList.toggle('out', !inside);
+    b.classList.toggle('sel', ranged && inside);
+    b.setAttribute('aria-pressed', ranged && inside);
+  }
+}
+
+function renderHist() {
+  const per = new Map();
+  for (const s of songs) {
+    if (!matches(s, 'range')) continue;
+    const m = per.get(s.year) || { n: 0 };
+    m[s.kind] = (m[s.kind] || 0) + 1; m.n++;
+    per.set(s.year, m);
+  }
+  const max = Math.max(1, ...[...per.values()].map(m => m.n));
+  for (const b of $('hist').children) {
+    const y = +b.dataset.y, m = per.get(y) || { n: 0 }, bar = b.querySelector('.bar');
+    b.querySelector('.yn').textContent = m.n || '';
+    bar.style.height = `${(m.n / max) * 100}%`;
+    bar.replaceChildren(...kinds.filter(k => m[k]).map(k => { const i = el('i', `k-${k}`); i.style.flexGrow = m[k]; return i; }));
+    const label = `${y}: ${plural(m.n, 'debut')}`;
+    b.setAttribute('aria-label', label); b.title = label;
+  }
+  shade(st.from, st.to);
+}
+
+// Era boundaries under the bars, positioned by date within the years.
+function buildBand() {
+  const span = Y1 + 1 - Y0;
+  const at = iso => { const y = +iso.slice(0, 4), d0 = Date.UTC(y, 0, 1), d1 = Date.UTC(y + 1, 0, 1); return ((y - Y0) + (Date.parse(iso) - d0) / (d1 - d0)) / span * 100; };
+  const box = $('band'), list = C.eras;
+  list.forEach((e, k) => {
+    const a = e.start ? at(e.start) : 0, b = e.end ? at(dayAfter(e.end)) : 100;
+    const seg = el('span', k === list.length - 1 && b - a < 15 ? 'end' : null);
+    seg.style.left = a + '%'; seg.style.width = (b - a) + '%';
+    seg.append(e.name, el('small', null, `\u00a0· ${e.drummer}`));
+    seg.title = `${e.name} era · ${eraTitle(e.name)}`;
+    box.append(seg);
+  });
+  for (const [from, to] of eraGaps()) {
+    const a = at(from), g = el('span', 'gap');
+    g.style.left = a + '%'; g.style.width = (at(dayAfter(to)) - a) + '%'; g.title = 'Between eras';
+    box.append(g);
+  }
+}
+
+// ---------- timeline ----------
+function tile(s) {
+  const b = el('button', `tile k-${s.kind}`); b.type = 'button'; b.dataset.slug = s.slug;
+  const tx = el('span', 'tx');
+  tx.append(el('span', 'tt', s.title), el('small', null, `${shortDate(s.date)} · ${s.venue}`));
+  const marks = el('span', 'marks');
+  if (s.debut) marks.append(icon('play', s.debut.how === 'later' ? 'i later' : 'i'));
+  if (jams.get(s.slug)) marks.append(icon('radio', 'i onair'));
+  b.append(tx, marks);
+  b.setAttribute('aria-label', `${s.title}: ${KIND[s.kind][0].toLowerCase()}, first played ${fmtDate(s.date)}, ${where(s)}`);
+  if (playing?.song === s) b.classList.add('playing');
+  return b;
+}
+
+function renderTimeline() {
+  if (!filtered.length) return $('timeline').replaceChildren(el('p', 'empty', 'No songs match. Try fewer filters.'));
+  const groups = new Map();
+  for (const s of filtered) { if (!groups.has(s.year)) groups.set(s.year, []); groups.get(s.year).push(s); }
+  $('timeline').replaceChildren(...[...groups].map(([y, list]) => {
+    const sec = el('section', 'yr'), h = el('h3'), total = perYear.get(y), id = `y${y}`;
+    h.id = id; sec.setAttribute('aria-labelledby', id);
+    h.append(el('span', 'y', y), el('span', 'n', list.length === total ? plural(total, 'debut') : `${list.length} of ${plural(total, 'debut')}`));
+    const grid = el('div', 'tiles');
+    grid.append(...list.map(tile));
+    sec.append(h, grid);
+    return sec;
+  }));
+}
+
+function render() {
+  filtered = songs.filter(s => matches(s));
+  updateChips($('eras'), st.eras, 'era', 'era');
+  updateChips($('kinds'), st.kinds, 'kind', 'kind');
+  updateSongwriters();
+  $('from').value = st.from || ''; $('to').value = st.to || '';
+  renderHist();
+  renderTimeline();
+  const n = filtered.length, shows = new Set(filtered.map(s => s.show)).size;
+  $('count').textContent = active()
+    ? `${n.toLocaleString('en-US')} of ${plural(songs.length, 'song')} match${n ? ` · debuted at ${plural(shows, 'show')}` : ''}`
+    : `${plural(n, 'song')} · debuted at ${plural(shows, 'show')}, ${Y0}–${Y1}`;
+  $('reset').hidden = !active();
+  $('csv').title = active() ? `Download the ${plural(n, 'matching song')} as CSV` : `Download all ${plural(n, 'song')} as CSV`;
+  $('csv').setAttribute('aria-label', $('csv').title);
+  $('csv').disabled = !n;
+  saveUrl();
+}
+
+// ---------- song sheet ----------
+const HEAR = { debut: 'Hear the debut', later: 'Hear the earliest recording', latest: 'Hear the latest' };
+const hearKey = (s, which) => (which === 'latest' ? 'latest' : s.debut.how === 'later' ? 'later' : 'debut');
+
+function howText(s, which) {
+  const c = s[which];
+  if (which === 'latest') {
+    return c.show === s.last.show ? 'From the last time it was played.'
+      : `It was last played ${fmtDate(s.last.date)}, but no tape of that show on archive.org has it, so this is the newest recording that does.`;
+  }
+  if (c.how === 'later') return `The debut (${fmtDate(s.date)}) wasn't taped, so this is the earliest recording that exists.`;
+  if (c.how === 'setlist') return 'The debut itself. The taper didn\'t title this track as the song; it sits exactly where BIP\'s setlist puts it.';
+  return 'The debut itself, from the taper\'s recording.';
+}
+
+function progress() {
+  const p = el('div', 'prog'), r = el('input');
+  r.type = 'range'; r.min = 0; r.max = 1000; r.step = 1; r.value = 0; r.setAttribute('aria-label', 'Seek');
+  r.oninput = () => { if (audio.duration) audio.currentTime = (r.value / 1000) * audio.duration; };
+  p.append(el('span', 't0', '0:00'), r, el('span', 't1', ''));
+  return p;
+}
+
+function recCard(s, which) {
+  const c = s[which], key = `${s.slug}:${which}`, kind = hearKey(s, which);
+  const box = el('div', 'rec'); box.dataset.key = key;
+  const btn = el('button', kind === 'debut' ? 'hear' : 'hear alt'); btn.type = 'button';
+  btn.dataset.key = key; btn.dataset.label = HEAR[kind];
+  btn.onclick = () => play(s, which);
+  const when = el('p');
+  when.append(el('b', null, fmtDate(c.date)), ' · ', ext(bip(C, 'shows', c.show), c.venue), c.place ? `, ${c.place}` : '');
+  const track = el('p', 'track');
+  const ia = ext(`https://archive.org/details/${encodeURIComponent(c.item)}`, 'archive.org'); ia.append(' ', icon('external-link'));
+  track.append(`Taper's track: “${c.track}”${c.length ? ` · ${c.length}` : ''} · `, ia);
+  box.append(el('span', 'label', kind === 'latest' ? 'Latest recording' : kind === 'later' ? 'Earliest recording' : 'The debut'),
+    btn, when, el('p', 'how', howText(s, which)), track, progress());
+  return box;
+}
+
+function fact(dl, term, ...nodes) { const dd = el('dd'); dd.append(...nodes); dl.append(el('dt', null, term), dd); }
+
+function fillSheet(s) {
+  const kindLabel = $('d-kind');
+  kindLabel.replaceChildren(el('i', `sw k-${s.kind}`), `${KIND[s.kind][0]} · ${eraLabel(s.era)}`);
+  const body = $('d-body'), title = el('h2', 'song', s.title);
+  title.id = 'd-title';
+  const by = el('p', 'by');
+  if (s.authors.length) { by.append('by '); s.authors.forEach((a, k) => by.append(k ? ', ' : '', ext(bip(C, a.href), a.name))); }
+  else by.textContent = 'No songwriter listed';
+
+  const dl = el('dl', 'facts');
+  fact(dl, 'First played', el('b', null, fmtDate(s.date)), el('br'), ext(bip(C, 'shows', s.show), s.venue), s.place ? `, ${s.place}` : '');
+  const era = C.eras.find(e => e.name === s.era);
+  fact(dl, 'Era', era ? `${s.era} era · ${era.drummer} on drums` : 'Between eras, during a drummer change');
+  fact(dl, 'Times played', playsText(s));
+  if (s.last.show === s.show) fact(dl, 'Last played', 'Only at its debut', el('br'), el('small', null, `That was ${sinceText(s)}`));
+  else fact(dl, 'Last played', el('b', null, fmtDate(s.last.date)), el('br'), ext(bip(C, 'shows', s.last.show), s.last.venue),
+    s.last.place ? `, ${s.last.place}` : '', el('br'), el('small', null, sinceText(s) === 'last show' ? 'At the most recent show' : sinceText(s)[0].toUpperCase() + sinceText(s).slice(1)));
+
+  const parts = [title, by, dl, el('h3', null, 'Recordings')];
+  if (!haveClips) parts.push(el('p', 'note', 'Recordings aren\'t available right now. Try again later.'));
+  else if (!s.debut && !s.latest) parts.push(el('p', 'note', 'No recording of this song on archive.org yet.'));
+  else {
+    const recs = el('div', 'recs');
+    if (s.debut) recs.append(recCard(s, 'debut'));
+    if (s.latest) recs.append(recCard(s, 'latest'));
+    parts.push(recs);
+    if (!s.latest && s.debut && s.plays > 1 && s.debut.show !== s.last.show) parts.push(el('p', 'note', 'No newer recording on archive.org has a track titled as this song.'));
+  }
+
+  const links = el('div', 'links'), n = jams.get(s.slug);
+  if (n) {
+    const a = el('a', 'nom'); a.href = `/?request=${encodeURIComponent(s.slug)}`;
+    a.append(icon('radio'), `${plural(n, 'jam')} on Jam Radio`);
+    a.setAttribute('aria-label', `${plural(n, 'jam')} of ${s.title} on Jam Radio: request one`);
+    links.append(a);
+  }
+  const b = ext(bip(C, 'songs', s.slug), 'Song history on BIP', 'bipl'); b.append(icon('external-link', 'i ext'));
+  links.append(b);
+  parts.push(links);
+
+  const night = songs.filter(o => o.show === s.show && o !== s);
+  if (night.length) {
+    const box = el('div', 'night');
+    for (const o of night) { const nb = el('button', null); nb.type = 'button'; nb.append(el('i', `sw k-${o.kind}`), o.title); nb.onclick = () => open(o.slug); box.append(nb); }
+    parts.push(el('h3', null, `Also debuted that night (${night.length})`), box);
+  }
+  body.replaceChildren(...parts);
+}
+
+function open(slug) {
+  const s = C.bySlug.get(slug);
+  if (!s) return;
+  cur = s;
+  fillSheet(s);
+  if (!$('sheet').open) $('sheet').showModal();
+  $('d-body').scrollTop = 0;
+  sync(); saveUrl();
+}
+
+// ---------- playback: one <audio> for the whole page ----------
+const audio = $('audio');
+
+function play(s, which) {
+  const key = `${s.slug}:${which}`;
+  if (playing?.key === key && !playing.error) { if (audio.paused) audio.play().catch(() => {}); else audio.pause(); return; }
+  playing = { key, song: s, which, clip: s[which], error: false };
+  audio.src = s[which].url;
+  audio.play().catch(() => {});
+  $('player').hidden = false; document.body.classList.add('playing');
+  sync();
+}
+
+function stop() {
+  audio.pause(); audio.removeAttribute('src'); audio.load();
+  playing = null; $('player').hidden = true; document.body.classList.remove('playing');
+  sync();
+}
+
+function sync() {
+  const key = playing?.key, on = !!playing && !audio.paused;
+  for (const b of document.querySelectorAll('button.hear')) {
+    const mine = b.dataset.key === key;
+    b.replaceChildren(icon(mine && on ? 'pause' : 'play'), mine && on ? 'Pause' : mine && audio.currentTime > 0 && !audio.ended ? 'Resume' : b.dataset.label);
+    b.closest('.rec').classList.toggle('on', mine);
+  }
+  for (const t of document.querySelectorAll('button.tile.playing')) t.classList.remove('playing');
+  if (!playing) return;
+  document.querySelector(`button.tile[data-slug="${CSS.escape(playing.song.slug)}"]`)?.classList.add('playing');
+  const { song: s, clip: c, which } = playing, kind = hearKey(s, which);
+  $('pp').replaceChildren(icon(on ? 'pause' : 'play'));
+  $('pp').setAttribute('aria-label', on ? 'Pause' : 'Play');
+  $('np-song').textContent = s.title;
+  $('np-song').setAttribute('aria-label', `${s.title}: show the song`);
+  const label = kind === 'latest' ? 'Latest recording' : kind === 'later' ? 'Earliest recording (the debut wasn\'t taped)' : 'The debut';
+  const meta = $('np-meta');
+  meta.classList.toggle('err', playing.error);
+  if (playing.error) {
+    meta.replaceChildren('archive.org didn\'t serve this file. ', ext(`https://archive.org/details/${encodeURIComponent(c.item)}`, 'Open the recording'));
+  } else meta.textContent = `${label} · ${fmtDate(c.date)}`;
+  $('np-where').textContent = `${where(c)} · track “${c.track}”`;
+  $('np-where').title = $('np-where').textContent;
+  tick();
+}
+
+function tick() {
+  if (!playing) return;
+  const d = audio.duration, t = audio.currentTime, len = Number.isFinite(d) && d ? clock(d) : playing.clip.length || '';
+  for (const p of [$('np-prog'), document.querySelector(`.rec[data-key="${CSS.escape(playing.key)}"] .prog`)]) {
+    if (!p) continue;
+    const r = p.querySelector('input');
+    if (document.activeElement !== r) r.value = d ? Math.round((t / d) * 1000) : 0;
+    r.setAttribute('aria-valuetext', `${clock(t)} of ${len}`);
+    p.querySelector('.t0').textContent = clock(t);
+    p.querySelector('.t1').textContent = len;
+  }
+}
+
+$('np-prog').replaceWith(Object.assign(progress(), { id: 'np-prog' }));
+for (const ev of ['play', 'pause', 'ended', 'playing']) audio.addEventListener(ev, sync);
+for (const ev of ['timeupdate', 'durationchange', 'seeked']) audio.addEventListener(ev, tick);
+audio.addEventListener('error', () => { if (playing && audio.getAttribute('src')) { playing.error = true; sync(); } });
+$('pp').onclick = () => playing && play(playing.song, playing.which);
+$('np-close').onclick = stop;
+$('np-song').onclick = () => playing && open(playing.song.slug);
+
+// ---------- CSV ----------
+const SOURCE = { title: 'debut', setlist: 'debut (by setlist position)', later: 'earliest later recording' };
+const cell = v => { v = v == null ? '' : String(v); return /[",\r\n]|^\s|\s$/.test(v) ? `"${v.replace(/"/g, '""')}"` : v; };
+
+function csv(list) {
+  const rows = [['song', 'type', 'authors', 'first_played', 'era', 'venue', 'location', 'times_played', 'show_url', 'song_url',
+    'last_played', 'last_venue', 'last_location', 'last_show_url', 'shows_since_last_played',
+    'audio_url', 'audio_source', 'audio_date', 'latest_audio_url', 'latest_audio_date']];
+  for (const s of list) {
+    const a = s.debut, l = s.latest;
+    rows.push([s.title, s.kind, s.names.join('; '), s.date, s.era, s.venue, s.place, s.plays, bip(C, 'shows', s.show), bip(C, 'songs', s.slug),
+      s.last.date, s.last.venue, s.last.place, bip(C, 'shows', s.last.show), s.since,
+      a?.url, a && SOURCE[a.how], a?.date, l?.url, l?.date]);
+  }
+  return rows.map(r => r.map(cell).join(',')).join('\r\n') + '\r\n';
+}
+
+$('csv').onclick = () => {
+  const url = URL.createObjectURL(new Blob([csv(filtered)], { type: 'text/csv;charset=utf-8' }));
+  const a = el('a'); a.href = url; a.download = 'songs_first_played.csv';
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+};
+
+// ---------- start ----------
+function about() {
+  const fetched = new Date(C.fetched);
+  if (!isNaN(fetched)) $('fresh').textContent = `BIP data as of ${fetched.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}.`;
+  $('bip-link').href = bip(C, 'songs');
+  if (haveClips) {
+    const debut = songs.filter(s => s.debut && s.debut.how !== 'later').length, later = songs.filter(s => s.debut?.how === 'later').length;
+    $('tapers').append(` ${debut} songs have their debut on tape; ${later} more have a later recording.`);
+  }
+  const counts = new Map(ERAS.map(e => [e, songs.filter(s => s.era === e).length]));
+  const rows = C.eras.map(e => [e.name, e.drummer, eraDates(e), counts.get(e.name)]);
+  const gaps = eraGaps().map(([a, b]) => `${fmtDate(a)} – ${fmtDate(b)}`);
+  if (counts.get('Between') || gaps.length) rows.push(['Between eras', 'Drummer changes', gaps.join('; '), counts.get('Between')]);
+  $('eratable').replaceChildren(...rows.map(([name, drummer, dates, n]) => {
+    const li = el('li'), s = el('span', 's', name);
+    s.append(el('small', null, drummer));
+    li.append(s, el('span', 't', dates), el('span', 'd', plural(n || 0, 'debut')));
+    return li;
+  }));
+  $('legend').replaceChildren(...[
+    [icon('play'), 'Debut on tape'], [icon('play', 'i later'), 'Earliest recording'], [icon('radio', 'i onair'), 'On Jam Radio'],
+  ].filter((_, k) => haveClips || k === 2).map(([i, t]) => { const s = el('span'); s.append(i, t); return s; }));
+}
+
+const [data, schedule] = await Promise.all([
+  loadSongs(),
+  fetch('schedule.json').then(r => (r.ok ? r.json() : null)).catch(() => null),
+]);
+if (!data) {
+  $('status').replaceChildren('The song catalog isn\'t available right now. Try again in a bit, or browse it on the ',
+    ext('https://discobiscuits.net/songs', 'Biscuits Internet Project'), '.');
+} else {
+  C = data; songs = C.songs;
+  for (const s of songs) { s.year = +s.date.slice(0, 4); s.key = norm(s.title); s.names = s.authors.map(a => a.name); }
+  for (const t of schedule?.tracks || []) if (t.slug) jams.set(t.slug, (jams.get(t.slug) || 0) + 1);
+  haveClips = songs.some(s => s.debut || s.latest);
+  Y0 = Math.min(...songs.map(s => s.year)); Y1 = Math.max(...songs.map(s => s.year));
+  perYear = new Map(); for (const s of songs) perYear.set(s.year, (perYear.get(s.year) || 0) + 1);
+  kinds = Object.keys(KIND).filter(k => songs.some(s => s.kind === k));
+  eras = ERAS.filter(e => songs.some(s => s.era === e));
+  chips($('eras'), eras, st.eras, eraLabel, false);
+  for (const b of $('eras').children) b.title = eraTitle(b.dataset.k);
+  chips($('kinds'), kinds, st.kinds, k => KIND[k][1], true);
+  yearSelects(); buildHist(); buildBand(); about();
+  const song = readUrl();
+  let timer;
+  $('q').oninput = () => { clearTimeout(timer); timer = setTimeout(() => { st.qText = $('q').value; st.q = norm(st.qText); render(); }, 120); };
+  $('by').onchange = () => { st.by = $('by').value; render(); };
+  $('reset').onclick = () => { st.q = st.qText = $('q').value = ''; st.eras.clear(); st.kinds.clear(); st.by = ''; st.from = st.to = null; render(); };
+  $('timeline').onclick = e => { const t = e.target.closest('.tile'); if (t) open(t.dataset.slug); };
+  $('d-close').onclick = () => $('sheet').close();
+  $('sheet').addEventListener('close', () => { cur = null; saveUrl(); });
+  $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });
+  $('status').hidden = true; $('app').hidden = false;
+  render();
+  if (song) open(song);
+}
+</script>
+</body>
+</html>

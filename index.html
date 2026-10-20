@@ -71,6 +71,30 @@
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
     <div class="pops" id="pops" aria-live="polite"></div>
+    <div class="facts" id="facts" role="group" aria-labelledby="ftitle" hidden>
+      <div class="fhead"><span class="label" id="ftitle">About the song</span><a id="fhist" href="/first-played">Song history <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></div>
+      <p class="fline"><span class="label">Debut</span><span id="fdebut"></span></p>
+      <p class="fline"><span class="label">Live</span><span id="flive"></span></p>
+      <div class="frow">
+        <button class="ghost" id="hdebut" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Hear the debut</span></button>
+        <button class="ghost" id="hlatest" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Hear the latest</span></button>
+        <a class="fbip" id="fbip" href="https://discobiscuits.net" target="_blank" rel="noopener">On BIP <svg class="i" aria-hidden="true"><use href="static/icons.svg#external-link"/></svg></a>
+      </div>
+    </div>
+    <div class="kclip" id="kclip" role="region" aria-labelledby="kkind" hidden>
+      <div class="fhead"><span class="label" id="kkind">The debut</span><button class="ghost iconbtn" id="kx" aria-label="Close the player"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button></div>
+      <div class="ksong" id="ksong"></div>
+      <p class="kwhere" id="kwhere"></p>
+      <div class="kctl">
+        <button class="ghost iconbtn" id="kplay" aria-label="Pause"><svg class="i" aria-hidden="true"><use href="static/icons.svg#pause"/></svg></button>
+        <input type="range" id="kseek" min="0" max="0" step="1" value="0" aria-label="Position in the recording">
+        <span class="ktime" id="ktime">0:00</span>
+      </div>
+      <div class="frow">
+        <button class="stop" id="kback"><svg class="i" aria-hidden="true"><use href="static/icons.svg#radio"/></svg><span>Back to the radio</span></button>
+        <a class="fbip" id="ksrc" href="https://archive.org" target="_blank" rel="noopener">Tape on archive.org <svg class="i" aria-hidden="true"><use href="static/icons.svg#external-link"/></svg></a>
+      </div>
+    </div>
   </section>
 
   <section class="vote" id="vote" hidden aria-labelledby="vtitle">
@@ -93,9 +117,19 @@
     <div class="chips" role="radiogroup" aria-label="Shortcuts">
       <button class="chipbtn" role="radio" aria-checked="true" data-f="all">All</button>
       <button class="chipbtn" role="radio" aria-checked="false" data-f="hot"><svg class="i" aria-hidden="true"><use href="static/icons.svg#trending-up"/></svg>Hot</button>
-      <button class="chipbtn" role="radio" aria-checked="false" data-f="stale"><svg class="i" aria-hidden="true"><use href="static/icons.svg#history"/></svg>Not played lately</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-f="stale"><svg class="i" aria-hidden="true"><use href="static/icons.svg#history"/></svg>Not aired lately</button>
       <button class="chipbtn" role="radio" aria-checked="false" data-f="long"><svg class="i" aria-hidden="true"><use href="static/icons.svg#clock"/></svg>Long jams</button>
       <button class="chipbtn" role="radio" aria-checked="false" data-f="latest"><svg class="i" aria-hidden="true"><use href="static/icons.svg#radio"/></svg>Latest show</button>
+    </div>
+    <div class="chips songchips" id="songchips" role="radiogroup" aria-label="Song filters" hidden>
+      <button class="chipbtn" role="radio" aria-checked="true" data-sf="any">Any song</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="Sammy" title="Songs that debuted with Sam Altman on drums">Sammy era</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="Allen" title="Songs that debuted with Allen Aucoin on drums">Allen era</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="Marlon" title="Songs that debuted with Marlon Lewis on drums">Marlon era</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="original">Originals</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="cover">Covers</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="rare" title="Songs the band has played live fewer than 30 times"><svg class="i" aria-hidden="true"><use href="static/icons.svg#gem"/></svg>Rarities</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-sf="overdue" title="Songs the band hasn't played in its last 10 shows or more"><svg class="i" aria-hidden="true"><use href="static/icons.svg#hourglass"/></svg>Not played live lately</button>
     </div>
     <div class="sheet-body">
       <p class="scount" id="scount" aria-live="polite"></p>
@@ -126,12 +160,13 @@
   <h2 class="split">Coming up <a href="/nominate">Nominate jams to add <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></h2>
   <ol id="next"></ol>
 
-  <p class="note">Every listener hears the same moment of the broadcast. Stopping and tuning back in drops you at the live point, just like radio. <a href="/install">Get the app</a> for iPhone, Android, Mac or Windows.</p>
+  <p class="note">Every listener hears the same moment of the broadcast. Stopping and tuning back in drops you at the live point, just like radio. <a href="/install">Get the app</a> for iPhone, Android, Mac or Windows. Where it all began: <a href="/first-played">the first time they played every song</a>.</p>
 </main>
 
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="a" preload="auto"></audio>
 <audio id="b" preload="auto"></audio>
+<audio id="kaudio" preload="none"></audio>
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
 <script>
@@ -185,6 +220,12 @@ async function fetchStation() {
 }
 function refreshStationSoon() { if (Date.now() - lastFetch > 2000) fetchStation(); }
 
+const ARTWORK = [{ src: '/static/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/static/icon-192.png', sizes: '192x192', type: 'image/png' }];
+function setRadioMeta(t) {
+  if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({
+    title: t.song + (t.jam ? ` (jam ${t.jam})` : ''), artist: 'The Disco Biscuits', album: showLine(t), artwork: ARTWORK });
+}
+
 function render() {
   const { i, offset } = live();
   const t = S.tracks[i];
@@ -194,9 +235,8 @@ function render() {
     $('jam').textContent = jamLine(t);
     $('show').textContent = showLine(t);
     document.title = `${t.song} · Biscuits Jam Radio`;
-    if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({
-      title: t.song + (t.jam ? ` (jam ${t.jam})` : ''), artist: 'The Disco Biscuits', album: showLine(t),
-      artwork: [{ src: '/static/icon-512.png', sizes: '512x512', type: 'image/png' }, { src: '/static/icon-192.png', sizes: '192x192', type: 'image/png' }] });
+    if (!K.on) setRadioMeta(t);   // a clip owns the lock screen until it's closed
+    renderFacts(t);
   }
   renderNext(i, offset);
   renderVoteClock();
@@ -314,7 +354,7 @@ function preloadNext() {
 }
 
 function setTune(ic, label) { $('tune').replaceChildren(icon(ic), Object.assign(document.createElement('span'), { textContent: label })); $('tune').setAttribute('aria-label', label); }
-function start() { listening = true; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; setTune('square', 'Stop'); $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
+function start() { closeClip(); listening = true; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; setTune('square', 'Stop'); $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
 function stop() { listening = false; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'none'; gen++; decks.forEach(clear); cued = -1; curIdx = -1; setTune('play', 'Tune in'); $('tune').className = ''; $('live').classList.remove('on'); $('eq').classList.remove('on'); heartbeat(true); }
 
 decks.forEach(d => {
@@ -330,14 +370,15 @@ decks.forEach(d => {
 $('tune').onclick = () => listening ? stop() : start();
 
 // Lock screen / headset / car controls. It's radio: pause stops, play rejoins the live point, no seeking.
+// While a song clip plays (see playClip), they play, pause and seek the clip instead.
+const msSet = (a, f) => { try { navigator.mediaSession.setActionHandler(a, f); } catch (e) {} };
 if ('mediaSession' in navigator) {
-  const ms = navigator.mediaSession, set = (a, f) => { try { ms.setActionHandler(a, f); } catch (e) {} };
-  set('play', () => { if (!listening) start(); });
-  set('pause', () => { if (listening) stop(); });
-  set('stop', () => { if (listening) stop(); });
-  ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach(a => set(a, null));
+  msSet('play', () => { if (K.on) $('kaudio').play().catch(() => {}); else if (!listening) start(); });
+  msSet('pause', () => { if (K.on) $('kaudio').pause(); else if (listening) stop(); });
+  msSet('stop', () => { if (K.on) closeClip(); else if (listening) stop(); });
+  ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach(a => msSet(a, null));
 }
-$('vol').oninput = e => decks.forEach(d => d.volume = e.target.value);
+$('vol').oninput = e => [...decks, $('kaudio')].forEach(d => d.volume = e.target.value);
 
 // Drift correction: stay within 2s of the live point
 // (compares positions across the whole broadcast, so a handoff a moment early isn't undone)
@@ -786,9 +827,20 @@ async function castVote(track) {
 }
 
 // ---- Request sheet: search + shortcuts over the whole catalog ----
-const SHEET = { filter: 'all', q: '', shown: 0, rows: new Map(), hay: null, list: [] };
+// filter: the shortcut; song: the song filter (needs the song catalog); slug: just one song's jams (/?request=<slug>).
+const SHEET = { filter: 'all', song: 'any', slug: '', q: '', shown: 0, rows: new Map(), hay: null, byId: null, list: [] };
 const PAGE = 40;
 const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+
+// Song filters, from each jam's song (by its BIP slug): when it debuted, whose it is, how often the band plays it.
+const RARE_PLAYS = 30, OVERDUE_SHOWS = 10;
+const SONG_FILTERS = {
+  Sammy: s => s.era === 'Sammy', Allen: s => s.era === 'Allen', Marlon: s => s.era === 'Marlon',
+  original: s => s.kind === 'original', cover: s => s.kind === 'cover',
+  rare: s => s.plays < RARE_PLAYS, overdue: s => s.since >= OVERDUE_SHOWS,
+};
+const SONG_ORDER = { rare: (a, b) => a.plays - b.plays, overdue: (a, b) => b.since - a.since };   // when no shortcut picks the order
+const songOf = id => SONGS && SONGS.bySlug.get(SHEET.byId.get(id)?.slug);
 
 // Track ids ordered for a shortcut (search is applied on top).
 function rankBy(filter) {
@@ -805,10 +857,30 @@ function rankBy(filter) {
 
 function sheetResults() {
   // Every typed word must start a word in the track's text ("26" finds "Sep 26", not "2026").
-  if (!SHEET.hay) SHEET.hay = new Map(S.tracks.map(t => [trackId(t),
-    norm(`${t.song} jam ${t.jam || ''} ${t.venue} ${t.city} ${t.date} ${shortDate(t)}`).split(/[\s,·]+/).filter(Boolean)]));
+  if (!SHEET.hay) {
+    SHEET.byId = new Map(S.tracks.map(t => [trackId(t), t]));
+    SHEET.hay = new Map(S.tracks.map(t => [trackId(t),
+      norm(`${t.song} jam ${t.jam || ''} ${t.venue} ${t.city} ${t.date} ${shortDate(t)}`).split(/[\s,·]+/).filter(Boolean)]));
+  }
   const words = norm(SHEET.q).split(/[\s,]+/).filter(Boolean);
-  return rankBy(SHEET.filter).filter(id => { const toks = SHEET.hay.get(id); return words.every(w => toks.some(k => k.startsWith(w))); });
+  let ids = rankBy(SHEET.filter).filter(SHEET.slug
+    ? id => SHEET.byId.get(id).slug === SHEET.slug
+    : id => { const toks = SHEET.hay.get(id); return words.every(w => toks.some(k => k.startsWith(w))); });
+  const keep = SONGS && SONG_FILTERS[SHEET.song], order = SONG_ORDER[SHEET.song];
+  if (keep) {
+    ids = ids.filter(id => { const s = songOf(id); return s && keep(s); });
+    if (order && SHEET.filter === 'all') ids.sort((a, b) => order(songOf(a), songOf(b)));   // stable: newest first within a tie
+  }
+  return ids;
+}
+
+// "Debut 2003 · 98 plays · last 3 shows ago" under a sheet row.
+function songHint(li, id) {
+  const s = songOf(id);
+  let h = li.querySelector('.hint');
+  if (!s) { h?.remove(); return; }
+  if (!h) { h = Object.assign(document.createElement('small'), { className: 'hint' }); li.querySelector('.s').append(h); }
+  h.textContent = `Debut ${s.date.slice(0, 4)} · ${s.plays.toLocaleString('en-US')} play${s.plays === 1 ? '' : 's'} · ${s.since === 0 ? 'played last show' : 'last ' + SL.sinceText(s)}`;
 }
 
 function renderSheet() {
@@ -816,13 +888,21 @@ function renderSheet() {
   const n = SHEET.list.length, shown = SHEET.list.slice(0, SHEET.shown);
   $('slist').replaceChildren(...shown.map(id => {
     if (!SHEET.rows.has(id)) SHEET.rows.set(id, voteRow(S.tracks[indexOfTrack(id)]));
-    return SHEET.rows.get(id);
+    const li = SHEET.rows.get(id);
+    if (SONGS) songHint(li, id);
+    return li;
   }));
   const empty = { hot: 'No reactions yet. Tap the flame while you listen.', long: 'No jams over 15 minutes yet.' }[SHEET.filter];
-  $('scount').replaceChildren(n ? `${n} track${n === 1 ? '' : 's'}` : SHEET.q ? `No matches for “${SHEET.q}”. ` : (empty || 'Nothing here yet.'));
-  if (!n && SHEET.q) {
-    const clear = document.createElement('button'); clear.className = 'linkbtn'; clear.textContent = 'Clear search';
-    clear.onclick = () => { $('sq').value = ''; SHEET.q = ''; SHEET.shown = PAGE; renderSheet(); $('sq').focus(); };
+  const songPicked = SONGS && SHEET.song !== 'any';
+  const onlySong = SHEET.slug && !songPicked && SHEET.filter === 'all';   // /?request=<slug> for a song with no jams here
+  $('scount').replaceChildren(n ? `${n} track${n === 1 ? '' : 's'}` : onlySong ? `No jams of ${SHEET.q} on the station yet. `
+    : SHEET.q ? `No matches for “${SHEET.q}”. ` : songPicked ? 'No jams on the station match that song filter yet. ' : (empty || 'Nothing here yet.'));
+  if (!n && (SHEET.q || songPicked)) {
+    const clear = document.createElement('button'); clear.className = 'linkbtn';
+    clear.textContent = SHEET.q ? 'Clear search' : 'Show every song';
+    clear.onclick = SHEET.q
+      ? () => { $('sq').value = ''; SHEET.q = ''; SHEET.slug = ''; SHEET.shown = PAGE; renderSheet(); $('sq').focus(); }
+      : () => pickChip('sf', 'any');
     $('scount').append(clear);
   }
   $('snom').href = '/nominate' + (SHEET.q.trim() ? '?q=' + encodeURIComponent(SHEET.q.trim()) : '');   // carry the search over
@@ -850,13 +930,139 @@ let searchTimer;
 $('vreq').onclick = openSheet;
 $('sclose').onclick = () => $('sheet').close();
 $('sheet').addEventListener('click', e => { if (e.target === $('sheet')) $('sheet').close(); });   // tap the backdrop
-$('sq').oninput = () => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { SHEET.q = $('sq').value; SHEET.shown = PAGE; renderSheet(); }, 100); };
+$('sq').oninput = () => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { SHEET.q = $('sq').value; SHEET.slug = ''; SHEET.shown = PAGE; renderSheet(); }, 100); };
 $('smore').onclick = () => { SHEET.shown += PAGE; renderSheet(); };
-document.querySelectorAll('.chipbtn[data-f]').forEach(b => b.onclick = () => {
-  SHEET.filter = b.dataset.f; SHEET.shown = PAGE;
-  document.querySelectorAll('.chipbtn[data-f]').forEach(x => x.setAttribute('aria-checked', x === b));
+// Shortcut (data-f) and song filter (data-sf) chips: one of each, combined with the search.
+function pickChip(kind, value) {
+  if (kind === 'f') SHEET.filter = value; else SHEET.song = value;
+  SHEET.shown = PAGE;
+  document.querySelectorAll(`.chipbtn[data-${kind}]`).forEach(x => x.setAttribute('aria-checked', x.dataset[kind] === value));
   renderSheet();
+}
+document.querySelectorAll('.chipbtn[data-f]').forEach(b => b.onclick = () => pickChip('f', b.dataset.f));
+document.querySelectorAll('.chipbtn[data-sf]').forEach(b => b.onclick = () => pickChip('sf', b.dataset.sf));
+
+// /?request=<slug> (the /first-played timeline links here): the request sheet, showing just that song's jams.
+async function openRequest(slug) {
+  const p = new URLSearchParams(location.search); p.delete('request');
+  history.replaceState(null, '', location.pathname + (p.size ? '?' + p : '') + location.hash);
+  if (!ST) return;
+  const t = S.tracks.find(x => x.slug === slug);
+  const title = t ? t.song : (await songsReady, SONGS?.bySlug.get(slug)?.title) || slug.replace(/-/g, ' ');
+  SHEET.filter = 'all'; SHEET.song = 'any';
+  document.querySelectorAll('.chipbtn[data-f], .chipbtn[data-sf]').forEach(x => x.setAttribute('aria-checked', x.dataset.f === 'all' || x.dataset.sf === 'any'));
+  $('sq').value = SHEET.q = title; SHEET.slug = slug;
+  if ($('sheet').open) { SHEET.shown = PAGE; renderSheet(); } else openSheet();
+}
+
+// ---- The song behind the jam: its history from BIP and its debut/latest on archive.org (static/songs.js) ----
+let SONGS = null, SL = null;   // the catalog ({ eras, songs, bySlug, … }, null if unavailable) and the songs.js helpers
+const songsReady = import("./static/songs.js").then(async m => { SL = m; SONGS = await m.loadSongs(); }).catch(() => {});
+const venueOf = x => /^unknown (venue|location)$/i.test(x.venue || '') ? '' : x.venue || '';   // BIP's placeholders
+const where = x => [venueOf(x), x.place].filter(Boolean).join(', ') || 'venue unknown';
+const chipEl = (text, title) => Object.assign(document.createElement('span'), { className: 'chip', textContent: text, title: title || '' });
+
+function renderFacts(t) {
+  const s = SONGS && t.slug ? SONGS.bySlug.get(t.slug) : null;
+  $('facts').hidden = !s;
+  if (!s) return;
+  const era = SONGS.eras.find(e => e.name === s.era);
+  const extra = [chipEl(s.era === 'Between' ? 'Between drummers' : `${s.era} era`, era ? `${era.drummer} on drums` : '')];
+  if (s.kind === 'cover') extra.push(chipEl('Cover', s.authors.length ? 'Written by ' + s.authors.map(a => a.name).join(', ') : ''));
+  else if (s.kind === 'improvisation' || s.kind === 'mashup') extra.push(chipEl(s.kind === 'mashup' ? 'Mashup' : 'Improv'));
+  const nb = x => x.replace(/ /g, '\u00a0');   // wrap between facts, not inside a date or "4 shows ago"
+  $('fdebut').replaceChildren(`${nb(SL.fmtDate(s.date))} · ${where(s)} `, ...extra);
+  $('flive').textContent = s.plays === 1 ? 'Played once, at the debut'
+    : `${SL.playsText(s)} · last ${nb(SL.fmtDate(s.last.date))}, ${nb(s.since === 0 ? 'at the latest show' : SL.sinceText(s))}`;
+  $('fhist').href = '/first-played?song=' + encodeURIComponent(s.slug);
+  $('fhist').setAttribute('aria-label', `${s.title}: song history`);
+  $('fbip').href = SL.bip(SONGS, 'songs', s.slug);
+  $('fbip').setAttribute('aria-label', `${s.title} on discobiscuits.net (opens in a new tab)`);
+  const d = s.debut, l = s.latest && s.latest.url !== d?.url ? s.latest : null;   // a song played once: its latest is its debut
+  $('hdebut').hidden = !d; $('hlatest').hidden = !l;
+  if (d) $('hdebut').lastChild.textContent = d.how === 'later' ? 'Hear the earliest tape' : 'Hear the debut';
+  $('hdebut').onclick = () => playClip(s, 'debut');
+  $('hlatest').onclick = () => playClip(s, 'latest');
+}
+
+// A clip takes over from the radio like stopping does (so the resync logic stands down), and the lock
+// screen controls it until it's closed. "Back to the radio" (or the clip ending, if you were tuned in)
+// rejoins the live point. Radio and clip never play together: start() closes the clip.
+const K = { on: false, resume: false };
+const kaudio = $('kaudio');
+
+function playClip(s, which) {
+  const c = s[which];
+  if (K.on && kaudio.getAttribute('src') === c.url) { kaudio.play().catch(() => {}); return; }
+  if (!K.on) K.resume = listening;
+  if (listening) stop();
+  K.on = true;
+  const later = which === 'debut' && c.how === 'later';
+  $('kkind').textContent = which === 'latest' ? 'Latest performance' : later ? 'Earliest recording' : 'The debut';
+  $('ksong').textContent = s.title;
+  const at = `${SL.fmtDate(c.date)} · ${where(c)}`;
+  $('kwhere').textContent = later ? `The debut (${[SL.fmtDate(s.date), venueOf(s)].filter(Boolean).join(', ')}) wasn't taped. This is the earliest recording that exists: ${at}.` : at;
+  $('ksrc').href = 'https://archive.org/details/' + encodeURIComponent(c.item);
+  $('ksrc').title = c.track;
+  $('kseek').max = 0; $('kseek').value = 0;
+  $('ktime').textContent = `0:00 / ${c.length}`;
+  $('kclip').hidden = false;
+  if ('mediaSession' in navigator) {
+    navigator.mediaSession.metadata = new MediaMetadata({ title: `${s.title} (${$('kkind').textContent.toLowerCase()})`, artist: 'The Disco Biscuits', album: at, artwork: ARTWORK });
+    msSet('seekto', e => { kaudio.currentTime = e.seekTime; });
+  }
+  kaudio.volume = $('vol').value;
+  kaudio.src = c.url;
+  kaudio.play().catch(e => { if (e.name === 'NotAllowedError') kplayIcon(); });
+}
+
+function closeClip(resume) {
+  if (!K.on) return;
+  K.on = false;
+  clear(kaudio);
+  $('kclip').hidden = true;
+  if ('mediaSession' in navigator) {
+    msSet('seekto', null);
+    navigator.mediaSession.playbackState = 'none';
+    try { navigator.mediaSession.setPositionState(); } catch (e) {}
+    if (S) setRadioMeta(S.tracks[live().i]);
+  }
+  if (resume) start();
+}
+
+function kplayIcon() {
+  const playing = !kaudio.paused, ended = kaudio.ended;
+  const label = playing ? 'Pause' : ended ? 'Play again' : 'Play';
+  $('kplay').replaceChildren(icon(playing ? 'pause' : ended ? 'rotate-ccw' : 'play'));
+  $('kplay').setAttribute('aria-label', label);
+  $('kplay').title = label;
+}
+function kprogress() {
+  const cur = kaudio.currentTime || 0, dur = kaudio.duration;
+  if (!Number.isFinite(dur)) return;
+  $('kseek').max = Math.floor(dur); $('kseek').value = Math.floor(cur);
+  $('kseek').setAttribute('aria-valuetext', `${fmt(cur)} of ${fmt(dur)}`);
+  $('ktime').textContent = `${fmt(cur)} / ${fmt(dur)}`;
+  if (navigator.mediaSession?.setPositionState) try { navigator.mediaSession.setPositionState({ duration: dur, position: Math.min(cur, dur), playbackRate: 1 }); } catch (e) {}
+}
+
+kaudio.addEventListener('play', () => { if (!K.on) return; kplayIcon(); if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; });
+kaudio.addEventListener('pause', () => { if (!K.on) return; kplayIcon(); if (navigator.mediaSession) navigator.mediaSession.playbackState = 'paused'; });
+kaudio.addEventListener('timeupdate', () => K.on && kprogress());
+kaudio.addEventListener('durationchange', () => K.on && kprogress());
+kaudio.addEventListener('ended', () => {
+  if (!K.on) return;
+  if (K.resume) { closeClip(true); toast('Back on the radio', 'radio'); }
+  else kplayIcon();
 });
+kaudio.addEventListener('error', () => {
+  if (!K.on || !kaudio.getAttribute('src')) return;
+  kplayIcon(); toast('Couldn’t load that recording from archive.org');
+});
+$('kplay').onclick = () => kaudio.paused ? kaudio.play().catch(() => {}) : kaudio.pause();
+$('kseek').oninput = e => { kaudio.currentTime = Number(e.target.value); };
+$('kback').onclick = () => closeClip(true);
+$('kx').onclick = () => closeClip(false);
 
 // Shared moments: /?m=<track>@<seconds>[&c=<comment id>] opens with a card counting down to when it airs.
 const M = (() => {
@@ -941,10 +1147,18 @@ fetch('schedule.json').then(r => r.json()).then(data => {
   S.tracks.forEach(t => { starts.push(total); total += t.duration; });
   initMoment();
   render(); setInterval(render, 1000);
+  songsReady.then(() => {
+    if (!SONGS) return;
+    $('songchips').hidden = false;
+    renderFacts(S.tracks[live().i]);
+    if ($('sheet').open) renderSheet();
+  });
   // Poll only while the page is on screen. A tab playing in the background still hands off on time:
   // setStation() schedules a fetch for the vote lock and the track's end (plus a check once a minute).
   const visible = () => document.visibilityState === 'visible';
+  const request = new URLSearchParams(location.search).get('request');
   fetchStation().then(() => {
+    if (request) openRequest(request);
     if (!ST) return;
     loadStats(); setInterval(() => visible() && loadStats(), 60000);
     setInterval(() => visible() && fetchStation(), 10000);
