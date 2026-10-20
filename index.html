@@ -170,8 +170,10 @@
 <audio id="kaudio" preload="none"></audio>
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
+<script src="static/oil.js"></script>
 <script>
 const $ = id => document.getElementById(id);
+oilText($('song'));
 const decks = [$('a'), $('b')];
 let audio = decks[0];
 let S, starts = [], total = 0, listening = false, curIdx = -1, shownIdx = -1;   // curIdx: on the deck; shownIdx: on screen
