@@ -15,10 +15,14 @@ No guessing beyond that: a wrong clip is worse than none.
 A fourth, independent pass finds the "latest" clip: the newest show BIP lists the song at that has a
 recording with a track titled as the song (the "later" rule, walked newest first).
 
+`top_versions` ranks every performance of a song by its ratings on BIP and archive.org (see ratings.py)
+and finds a "top" clip of each of the best (the same rule again, at that one show).
+
 Per-item file listings are cached in .cache/ia/ (items are effectively immutable once their MP3s are
 derived and titled; a listing added in the last 30 days without titled audio is not cached). Each song's BIP performance list is cached
-in .cache/bip/ until its last-played show or play count changes. Delete .cache/ to force a refresh.
-The collection index and the BIP song catalog are fetched fresh on every build.
+in .cache/bip/ until its last-played show or play count changes, or for RATINGS_DAYS (listeners keep
+rating old performances). Delete .cache/ to force a refresh.
+The collection index (with archive.org's review averages) and the BIP song catalog are fetched fresh on every build.
 """
 import difflib
 import functools
@@ -33,6 +37,7 @@ from datetime import date, timedelta
 from pathlib import Path
 
 import bip
+import ratings
 
 COLLECTION = "DiscoBiscuits"
 UA = bip.UA
@@ -41,6 +46,7 @@ PERF_CACHE = CACHE.parent / "bip"
 AUDIO_FORMATS = ("VBR MP3", "MP3", "64Kbps MP3")  # browser-playable derivatives, best first
 WORKERS = 8
 FRESH_DAYS = 30  # an untitled or underived item this new may still be in progress; don't cache it
+RATINGS_DAYS = 7  # refetch a song's performances (and so their BIP ratings) at least this often
 
 
 def _get_json(url: str) -> dict:
@@ -48,18 +54,23 @@ def _get_json(url: str) -> dict:
         return json.load(r)
 
 
+@functools.cache  # per build: find_audio and top_versions both walk it
 def items_by_date() -> dict:
-    """date -> [{identifier, downloads}] for every item in the collection, most downloaded first.
+    """date -> [{identifier, downloads, rating, reviews}] for every item in the collection, most downloaded first.
+    `rating` is the item's average review (1-5 stars) over `reviews` reviews; reviews without stars don't count.
     Ties (every fresh upload has 0 downloads) go by identifier: the search API's order isn't stable, and
     an unstable pick would change the build, and so commit, on every run."""
     q = urllib.parse.urlencode([
         ("q", f"collection:{COLLECTION}"), ("fl[]", "identifier"), ("fl[]", "date"), ("fl[]", "downloads"),
-        ("rows", "20000"), ("output", "json"),
+        ("fl[]", "avg_rating"), ("fl[]", "num_reviews"), ("rows", "20000"), ("output", "json"),
     ])
     out: dict = {}
     for d in _get_json(f"https://archive.org/advancedsearch.php?{q}")["response"]["docs"]:
         if d.get("date"):
-            out.setdefault(d["date"][:10], []).append({"identifier": d["identifier"], "downloads": d.get("downloads") or 0})
+            rated = (d.get("avg_rating") or 0) > 0   # items whose reviews all lack stars average 0
+            out.setdefault(d["date"][:10], []).append({
+                "identifier": d["identifier"], "downloads": d.get("downloads") or 0,
+                "rating": d["avg_rating"] if rated else None, "reviews": (d.get("num_reviews") or 0) if rated else 0})
     for items in out.values():
         items.sort(key=lambda it: (-it["downloads"], it["identifier"]))
     return out
@@ -99,15 +110,16 @@ def item_tracks(identifier: str) -> list:
 
 
 def performances(song: dict) -> list:
-    """bip.song_performances, cached until the song's last-played show or play count changes."""
+    """bip.song_performances, cached until the song's last-played show or play count changes, or RATINGS_DAYS pass."""
     key = f"{song['last_show']}|{song['plays']}"
     path = PERF_CACHE / f"{song['slug']}.json"
+    fresh = (date.today() - timedelta(days=RATINGS_DAYS)).isoformat()
     if path.exists():
         cached = json.loads(path.read_text())
-        if cached["key"] == key:
+        if cached["key"] == key and cached.get("fetched", "") > fresh:   # no "fetched": cached before ratings were kept
             return cached["perfs"]
     perfs = bip.song_performances(song["slug"])
-    _write_json(path, {"key": key, "perfs": perfs})
+    _write_json(path, {"key": key, "fetched": date.today().isoformat(), "perfs": perfs})
     return perfs
 
 
@@ -319,3 +331,33 @@ def find_audio(songs: list) -> tuple:
     with ThreadPoolExecutor(WORKERS) as ex:
         latest = {slug: hit for slug, hit in ex.map(latest_pass, todo) if hit and hit["date"] != first_date.get(slug)}
     return found, latest, recordings
+
+
+def top_versions(songs: list, n: int = 3) -> dict:
+    """songs as for find_audio. -> {slug: [version]}, the n best rated versions of each song played more than
+    once (ratings.rank), each with `clip`: a "top" audio dict of that performance, or None if none is taped."""
+    by_date = items_by_date()
+
+    def perfs_of(s):
+        try:
+            return s["slug"], performances(s)
+        except Exception as e:
+            print(f"ratings skipped {s['slug']}: {e}")
+            return s["slug"], []
+
+    todo = {s["slug"]: s for s in songs if s["plays"] > 1}
+    with ThreadPoolExecutor(WORKERS) as ex:
+        perfs = dict(ex.map(perfs_of, todo.values()))
+    top = ratings.rank(perfs, ratings.show_ratings(by_date), n)
+
+    def clip_of(job):
+        slug, version = job
+        try:
+            version["clip"] = _perf_hit(todo[slug], version, by_date, "top")
+        except Exception as e:
+            print(f"top-version recording search skipped {slug} {version['date']}: {e}")
+            version["clip"] = None
+
+    with ThreadPoolExecutor(WORKERS) as ex:
+        list(ex.map(clip_of, [(slug, v) for slug, vs in top.items() for v in vs]))
+    return top

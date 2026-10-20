@@ -63,18 +63,24 @@ def _find(node, key):
 
 
 def song_performances(slug: str) -> list:
-    """Every show BIP lists the song at: [{date, show, venue, city, state, country}], oldest first.
-    A song played twice in one night (a sandwich) is one entry."""
+    """Every show BIP lists the song at: [{date, show, venue, city, state, country, rating, ratings, all_timer}],
+    oldest first. `rating` is the mean of `ratings` listener votes (1-5 stars; None when unrated) and
+    `all_timer` is BIP's own flag. A song played twice in one night (a sandwich) is one entry: the more-rated one."""
     perfs = _find(_get_data(f"/songs/{slug}"), "performances") or []
     by_show = {}
     for p in perfs:
         show = (p or {}).get("show") or {}
-        if not show.get("date") or show.get("slug") in by_show:
+        if not show.get("date"):
+            continue
+        ratings = p.get("ratingsCount") or 0
+        before = by_show.get(show.get("slug"))
+        if before and before["ratings"] >= ratings:
             continue
         venue = p.get("venue") or {}
         by_show[show.get("slug")] = {
             "date": show["date"][:10], "show": show.get("slug"), "venue": venue.get("name") or "Unknown venue",
             "city": venue.get("city") or "", "state": venue.get("state") or "", "country": venue.get("country") or "",
+            "rating": p.get("rating") if ratings else None, "ratings": ratings, "all_timer": bool(p.get("allTimer")),
         }
     return sorted(by_show.values(), key=lambda x: x["date"])
 

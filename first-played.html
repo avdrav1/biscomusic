@@ -118,6 +118,13 @@ button.tile.playing{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--k)
 .prog input{flex:1;min-width:0;width:auto;margin:0;height:24px}
 .rec .prog{display:none}
 .rec.on .prog{display:flex}
+.tops{border:0;border-radius:0;background:none;overflow:visible}
+.tops .rec{grid-template-columns:none;align-items:normal;gap:6px;padding:12px 14px;border:1px solid var(--line)}
+.tops .rec.on{border-color:rgba(93,255,58,.6)}
+.top .label{display:flex;align-items:center;gap:10px;color:var(--accent);font-weight:600}
+.top .label .chip{letter-spacing:.06em}
+.rates{display:flex;flex-wrap:wrap;gap:2px 16px;color:var(--text)}
+.rates span{white-space:nowrap}
 .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 .links a{min-height:44px}
 a.bipl{display:inline-flex;align-items:center;gap:.45em;padding:10px 16px;border-radius:999px;font:500 14px var(--font);color:var(--text);text-decoration:none;
@@ -205,6 +212,7 @@ body.playing main{padding-bottom:130px}
     <div class="about">
       <p>Songs, debuts, play counts and setlists come from the <a id="bip-link" href="https://discobiscuits.net/songs" target="_blank" rel="noopener">Biscuits Internet Project</a>, the fan-run database of every show. <span id="fresh"></span></p>
       <p id="tapers">Recordings stream from the <a href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">Disco Biscuits collection</a> on archive.org, shared by the tapers who recorded the shows. Where a debut wasn't taped, you hear the earliest recording that exists.</p>
+      <p id="ranking" hidden><b>How versions are ranked.</b> Top rated versions combine BIP listeners' star ratings of each performance with archive.org reviews of the whole night's recordings. Each site's ratings are compared against that site's own average, more votes count more, and archive.org counts half because it rates the whole show and the tape, not just the song.</p>
       <p>A fan project with no affiliation with the band.</p>
     </div>
     <h2>Eras</h2>
@@ -486,11 +494,13 @@ function render() {
 }
 
 // ---------- song sheet ----------
-const HEAR = { debut: 'Hear the debut', later: 'Hear the earliest recording', latest: 'Hear the latest' };
-const hearKey = (s, which) => (which === 'latest' ? 'latest' : s.debut.how === 'later' ? 'later' : 'debut');
+const HEAR = { debut: 'Hear the debut', later: 'Hear the earliest recording', latest: 'Hear the latest', top: 'Hear this version' };
+// which: 'debut', 'latest', or 'top0'..'top2' (one of the song's top rated versions)
+const clipOf = (s, which) => (which.startsWith('top') ? s.top[+which.slice(3)]?.clip : s[which]);
+const hearKey = (s, which) => (which.startsWith('top') ? 'top' : which === 'latest' ? 'latest' : s.debut.how === 'later' ? 'later' : 'debut');
 
 function howText(s, which) {
-  const c = s[which];
+  const c = clipOf(s, which);
   if (which === 'latest') {
     return c.show === s.last.show ? 'From the last time it was played.'
       : `It was last played ${fmtDate(s.last.date)}, but no tape of that show on archive.org has it, so this is the newest recording that does.`;
@@ -508,19 +518,51 @@ function progress() {
   return p;
 }
 
-function recCard(s, which) {
-  const c = s[which], key = `${s.slug}:${which}`, kind = hearKey(s, which);
-  const box = el('div', 'rec'); box.dataset.key = key;
+function hearButton(s, which) {
+  const key = `${s.slug}:${which}`, kind = hearKey(s, which);
   const btn = el('button', kind === 'debut' ? 'hear' : 'hear alt'); btn.type = 'button';
   btn.dataset.key = key; btn.dataset.label = HEAR[kind];
   btn.onclick = () => play(s, which);
+  return btn;
+}
+
+function whenLine(x) {
   const when = el('p');
-  when.append(el('b', null, fmtDate(c.date)), ' · ', ext(bip(C, 'shows', c.show), c.venue), c.place ? `, ${c.place}` : '');
+  when.append(el('b', null, fmtDate(x.date)), ' · ', ext(bip(C, 'shows', x.show), x.venue), x.place ? `, ${x.place}` : '');
+  return when;
+}
+
+function trackLine(c) {
   const track = el('p', 'track');
   const ia = ext(`https://archive.org/details/${encodeURIComponent(c.item)}`, 'archive.org'); ia.append(' ', icon('external-link'));
   track.append(`Taper's track: “${c.track}”${c.length ? ` · ${c.length}` : ''} · `, ia);
+  return track;
+}
+
+function recCard(s, which) {
+  const c = clipOf(s, which), kind = hearKey(s, which);
+  const box = el('div', 'rec'); box.dataset.key = `${s.slug}:${which}`;
   box.append(el('span', 'label', kind === 'latest' ? 'Latest recording' : kind === 'later' ? 'Earliest recording' : 'The debut'),
-    btn, when, el('p', 'how', howText(s, which)), track, progress());
+    hearButton(s, which), whenLine(c), el('p', 'how', howText(s, which)), trackLine(c), progress());
+  return box;
+}
+
+// "★4.9" from a 1-5 mean
+const stars = r => `★${r.toFixed(1)}`;
+
+// One of the song's best rated performances: who rated it, and its recording when one was found.
+function topCard(s, v, k) {
+  const which = `top${k}`;
+  const box = el('li', 'rec top'); box.dataset.key = `${s.slug}:${which}`;
+  const head = el('span', 'label', `#${k + 1}`);
+  if (v.all_timer) { const b = el('span', 'chip hot'); b.append(icon('gem'), 'All-timer'); b.title = 'BIP lists this as an all-timer'; head.append(b); }
+  const rates = el('p', 'rates');
+  if (v.bip) rates.append(el('span', null, `BIP ${stars(v.bip.rating)} · ${plural(v.bip.votes, 'vote')}`));
+  if (v.ia) rates.append(el('span', null, `archive.org ${stars(v.ia.rating)} · ${plural(v.ia.reviews, 'review')} of the show`));
+  box.append(head, whenLine(v), rates);
+  if (v.clip) box.append(hearButton(s, which), trackLine(v.clip), progress());
+  else box.append(el('p', 'how', 'No recording of this version on archive.org.'));
+  box.setAttribute('aria-label', `Number ${k + 1}: ${fmtDate(v.date)}, ${v.venue}`);
   return box;
 }
 
@@ -553,6 +595,11 @@ function fillSheet(s) {
     if (s.latest) recs.append(recCard(s, 'latest'));
     parts.push(recs);
     if (!s.latest && s.debut && s.plays > 1 && s.debut.show !== s.last.show) parts.push(el('p', 'note', 'No newer recording on archive.org has a track titled as this song.'));
+  }
+  if (s.top.length) {
+    const tops = el('ol', 'recs tops');
+    tops.append(...s.top.map((v, k) => topCard(s, v, k)));
+    parts.push(el('h3', null, 'Top rated versions'), tops);
   }
 
   const links = el('div', 'links'), n = jams.get(s.slug);
@@ -589,10 +636,10 @@ function open(slug) {
 const audio = $('audio');
 
 function play(s, which) {
-  const key = `${s.slug}:${which}`;
+  const key = `${s.slug}:${which}`, clip = clipOf(s, which);
   if (playing?.key === key && !playing.error) { if (audio.paused) audio.play().catch(() => {}); else audio.pause(); return; }
-  playing = { key, song: s, which, clip: s[which], error: false };
-  audio.src = s[which].url;
+  playing = { key, song: s, which, clip, error: false };
+  audio.src = clip.url;
   audio.play().catch(() => {});
   $('player').hidden = false; document.body.classList.add('playing');
   sync();
@@ -619,7 +666,7 @@ function sync() {
   $('pp').setAttribute('aria-label', on ? 'Pause' : 'Play');
   $('np-song').textContent = s.title;
   $('np-song').setAttribute('aria-label', `${s.title}: show the song`);
-  const label = kind === 'latest' ? 'Latest recording' : kind === 'later' ? 'Earliest recording (the debut wasn\'t taped)' : 'The debut';
+  const label = kind === 'top' ? `Top rated version #${+which.slice(3) + 1}` : kind === 'latest' ? 'Latest recording' : kind === 'later' ? 'Earliest recording (the debut wasn\'t taped)' : 'The debut';
   const meta = $('np-meta');
   meta.classList.toggle('err', playing.error);
   if (playing.error) {
@@ -658,12 +705,14 @@ const cell = v => { v = v == null ? '' : String(v); return /[",\r\n]|^\s|\s$/.te
 function csv(list) {
   const rows = [['song', 'type', 'authors', 'first_played', 'era', 'venue', 'location', 'times_played', 'show_url', 'song_url',
     'last_played', 'last_venue', 'last_location', 'last_show_url', 'shows_since_last_played',
-    'audio_url', 'audio_source', 'audio_date', 'latest_audio_url', 'latest_audio_date']];
+    'audio_url', 'audio_source', 'audio_date', 'latest_audio_url', 'latest_audio_date',
+    'top1_date', 'top1_show_url', 'top2_date', 'top2_show_url', 'top3_date', 'top3_show_url']];
   for (const s of list) {
     const a = s.debut, l = s.latest;
     rows.push([s.title, s.kind, s.names.join('; '), s.date, s.era, s.venue, s.place, s.plays, bip(C, 'shows', s.show), bip(C, 'songs', s.slug),
       s.last.date, s.last.venue, s.last.place, bip(C, 'shows', s.last.show), s.since,
-      a?.url, a && SOURCE[a.how], a?.date, l?.url, l?.date]);
+      a?.url, a && SOURCE[a.how], a?.date, l?.url, l?.date,
+      ...[0, 1, 2].flatMap(k => (s.top[k] ? [s.top[k].date, bip(C, 'shows', s.top[k].show)] : ['', '']))]);
   }
   return rows.map(r => r.map(cell).join(',')).join('\r\n') + '\r\n';
 }
@@ -680,6 +729,7 @@ function about() {
   const fetched = new Date(C.fetched);
   if (!isNaN(fetched)) $('fresh').textContent = `BIP data as of ${fetched.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}.`;
   $('bip-link').href = bip(C, 'songs');
+  $('ranking').hidden = !songs.some(s => s.top.length);
   if (haveClips) {
     const debut = songs.filter(s => s.debut && s.debut.how !== 'later').length, later = songs.filter(s => s.debut?.how === 'later').length;
     $('tapers').append(` ${debut} songs have their debut on tape; ${later} more have a later recording.`);

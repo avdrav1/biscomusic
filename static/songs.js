@@ -3,9 +3,13 @@
 
 // -> { fetched, site, eras, songs, bySlug } or null when there's no API (local server.py) or BIP is down.
 // Each song: { slug, title, kind, authors: [{ name, href }], date, show, venue, place, era, plays,
-//              last: { date, show, venue, place }, since, debut: Clip|null, latest: Clip|null }
+//              last: { date, show, venue, place }, since, debut: Clip|null, latest: Clip|null, top: [Version] }
 // Clip: { url, item, track, length, how, date, show, venue, place }; how is "title" or "setlist" (the
-// debut itself), "later" (the debut wasn't taped: earliest recording that exists) or "latest".
+// debut itself), "later" (the debut wasn't taped: earliest recording that exists), "latest" or "top".
+// Version: one of the song's best rated performances, best first (up to 3, none if it was played once or
+// nobody rated it): { date, show, venue, place, score, bip: { rating, votes }|null,
+// ia: { rating, reviews }|null, all_timer, clip: Clip|null }. bip rates this performance; ia rates the
+// whole night's recordings on archive.org (sound included). score ranks them (see ratings.py).
 export async function loadSongs() {
   const get = url => fetch(url).then(r => (r.ok ? r.json() : null)).catch(() => null);
   const [catalog, clips] = await Promise.all([get('/api/songs'), get('/clips.json')]);
@@ -15,7 +19,10 @@ export async function loadSongs() {
 
 export function join(catalog, clips) {
   const byClip = clips?.clips || {};
-  const songs = catalog.songs.map(s => ({ ...s, debut: byClip[s.slug]?.debut || null, latest: byClip[s.slug]?.latest || null }));
+  const songs = catalog.songs.map(s => {
+    const c = byClip[s.slug] || {};
+    return { ...s, debut: c.debut || null, latest: c.latest || null, top: c.top || [] };
+  });
   return { ...catalog, songs, bySlug: new Map(songs.map(s => [s.slug, s])) };
 }
 

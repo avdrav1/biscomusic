@@ -168,14 +168,17 @@ def bip_place(venue):
     return ', '.join(p for p in (venue.get('city'), region) if p)
 
 def clips(catalog):
-    """site/clips.json: { built, clips: { slug: { debut, latest } } }, recordings found by archive.py.
-    A clip: { url, item, track, length, how, date, show, venue, place }; the show is the one it was taped at."""
+    """site/clips.json: { built, clips: { slug: { debut, latest, top } } }, recordings found by archive.py.
+    A clip: { url, item, track, length, how, date, show, venue, place }; the show is the one it was taped at.
+    top: the song's best rated versions (ratings.py), best first:
+      [{ date, show, venue, place, score, bip: { rating, votes }|null, ia: { rating, reviews }|null, all_timer, clip|null }]"""
     songs = [s for s in catalog if s.get('firstPlayedShow')]
-    debut, latest, _ = archive.find_audio([
-        {'slug': s['slug'], 'id': s['id'], 'title': s['title'], 'date': s['firstPlayedShow']['date'],
-         'show_id': s['firstPlayedShow']['id'], 'last_show': (s.get('lastPlayedShow') or s['firstPlayedShow'])['slug'],
-         'plays': s.get('timesPlayed') or 0}
-        for s in songs])
+    wanted = [{'slug': s['slug'], 'id': s['id'], 'title': s['title'], 'date': s['firstPlayedShow']['date'],
+               'show_id': s['firstPlayedShow']['id'], 'last_show': (s.get('lastPlayedShow') or s['firstPlayedShow'])['slug'],
+               'plays': s.get('timesPlayed') or 0}
+              for s in songs]
+    debut, latest, _ = archive.find_audio(wanted)
+    top = archive.top_versions(wanted)
 
     def clip(hit, song):
         first = song['firstPlayedShow']
@@ -187,14 +190,23 @@ def clips(catalog):
         out.update({k: hit[k] for k in ('date', 'show', 'venue', 'place') if k in hit})
         return out
 
+    def version(v, song):
+        return {'date': v['date'], 'show': v['show'], 'venue': v['venue'], 'place': bip_place(v),
+                'score': v['score'], 'bip': v['bip'], 'ia': v['ia'], 'all_timer': v['all_timer'],
+                'clip': clip(v['clip'], song) if v['clip'] else None}
+
     out = {}
     for s in songs:
         found = {k: clip(v[s['slug']], s) for k, v in (('debut', debut), ('latest', latest)) if s['slug'] in v}
+        if s['slug'] in top:
+            found['top'] = [version(v, s) for v in top[s['slug']]]
         if found:
             out[s['slug']] = found
     with open(os.path.join(SITE, 'clips.json'), 'w') as f:
         json.dump({'built': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'clips': out}, f, separators=(',', ':'))
     print(f'  archive.org: {len(debut)} of {len(songs)} songs have a debut clip, {len(latest)} a newer latest one')
+    print(f'  ratings: {len(top)} songs have rated versions, '
+          f'{sum(1 for vs in top.values() for v in vs if v["clip"])} of their top versions are taped')
 
 def main():
     os.makedirs(AUDIO, exist_ok=True)
