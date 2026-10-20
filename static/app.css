@@ -1,12 +1,12 @@
 /* Biscuits Jam Radio: shared by index.html and best.html
    "Laser show" theme: palette sampled from a Disco Biscuits laser photo.
-   Fonts: Monoton (logo) + Chakra Petch (everything else), self-hosted, SIL OFL (see fonts/). */
+   Fonts: Archivo Black (logo) + Chakra Petch (everything else), self-hosted, SIL OFL (see fonts/). */
 
 @font-face{font-family:'Chakra Petch';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/chakra-petch-400.woff2) format('woff2')}
 @font-face{font-family:'Chakra Petch';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/chakra-petch-500.woff2) format('woff2')}
 @font-face{font-family:'Chakra Petch';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/chakra-petch-600.woff2) format('woff2')}
 @font-face{font-family:'Chakra Petch';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/chakra-petch-700.woff2) format('woff2')}
-@font-face{font-family:'Monoton';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/monoton-400.woff2) format('woff2')}
+@font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/archivo-black-400.woff2) format('woff2')}
 
 :root{
   --bg:#030604; --card:rgba(8,16,10,.84); --card-solid:#08100a; --line:rgba(93,255,58,.18); --text:#eafbe6; --dim:#8fa59a;
@@ -15,7 +15,7 @@
   --ice:#6fd6ff;                                    /* chandeliers */
   --live:#ff4d8d;
   --font:'Chakra Petch',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --logo:'Monoton','Chakra Petch',sans-serif;
+  --logo:'Archivo Black','Chakra Petch',sans-serif;
 }
 *{box-sizing:border-box}
 html{background:var(--bg)}
@@ -43,8 +43,9 @@ body{margin:0;color:var(--text);font:16px/1.45 var(--font);min-height:100vh;over
 .lasers::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px)}
 
 .wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:30px 16px 64px}
-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}
-h1{font:400 34px/1.1 var(--logo);letter-spacing:.04em;margin:0}
+header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:24px}
+/* Heavy letters at poster size: static/oil.js fills them with moving oil */
+h1{font:400 clamp(40px,10vw,68px)/1 var(--logo);letter-spacing:.01em;margin:0}
 h1 span{color:var(--accent);text-shadow:0 0 4px var(--accent),0 0 14px rgba(93,255,58,.6)}
 .tagline{margin:6px 0 0;font-size:13px;font-weight:500;letter-spacing:.12em;color:var(--dim)}
 .live{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--dim);border:1px solid var(--line);padding:7px 11px;border-radius:999px;white-space:nowrap}
@@ -139,7 +140,7 @@ li.cur .t{color:var(--accent);text-shadow:0 0 8px var(--accent)}
 [hidden]{display:none!important}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media(max-width:480px){
-  h1{font-size:27px}.song{font-size:26px}li{grid-template-columns:60px 1fr auto}
+  .song{font-size:26px}li{grid-template-columns:60px 1fr auto}
   .vol,.eq,.wide{display:none}.controls{gap:10px}button{padding:12px 20px}button.ghost{padding:10px 14px}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
