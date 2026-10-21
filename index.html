@@ -66,7 +66,7 @@
     </div>
     <div class="times"><span id="el">0:00</span><span id="rem"></span></div>
     <div class="controls">
-      <button id="tune" aria-label="Tune in"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Tune in</span></button>
+      <button id="tune" aria-label="Tune in" aria-keyshortcuts="Space"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Tune in</span></button>
       <label class="label vol">Vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
       <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire"><svg class="i" aria-hidden="true"><use href="static/icons.svg#flame"/></svg></button>
       <button class="ghost" id="cbtn" hidden aria-label="Comment on this moment"><svg class="i" aria-hidden="true"><use href="static/icons.svg#message-circle"/></svg><span class="wide">Comment</span></button>
@@ -74,17 +74,7 @@
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
     <div class="pops" id="pops" aria-live="polite"></div>
-    <div class="facts" id="facts" role="group" aria-labelledby="ftitle" hidden>
-      <div class="fhead"><span class="label" id="ftitle">About the song</span><a id="fhist" href="/first-played">Song history <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></div>
-      <p class="fline"><span class="label">Debut</span><span id="fdebut"></span></p>
-      <p class="fline"><span class="label">Live</span><span id="flive"></span></p>
-      <div class="fline" id="ftopline" hidden><span class="label" id="ftoplabel">Top rated</span><ol class="ftop" id="ftop" aria-labelledby="ftoplabel"></ol></div>
-      <div class="frow">
-        <button class="ghost" id="hdebut" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Hear the debut</span></button>
-        <button class="ghost" id="hlatest" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Hear the latest</span></button>
-        <a class="fbip" id="fbip" href="https://discobiscuits.net" target="_blank" rel="noopener">On BIP <svg class="i" aria-hidden="true"><use href="static/icons.svg#external-link"/></svg></a>
-      </div>
-    </div>
+    <p class="about" id="facts" hidden><span id="fsum"></span> <a id="fhist" href="/first-played">Song history <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></p>
     <div class="kclip" id="kclip" role="region" aria-labelledby="kkind" hidden>
       <div class="fhead"><span class="label" id="kkind">The debut</span><button class="ghost iconbtn" id="kx" aria-label="Close the player"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button></div>
       <div class="ksong" id="ksong"></div>
@@ -98,16 +88,6 @@
         <button class="stop" id="kback"><svg class="i" aria-hidden="true"><use href="static/icons.svg#radio"/></svg><span>Back to the radio</span></button>
         <a class="fbip" id="ksrc" href="https://archive.org" target="_blank" rel="noopener">Tape on archive.org <svg class="i" aria-hidden="true"><use href="static/icons.svg#external-link"/></svg></a>
       </div>
-    </div>
-  </section>
-
-  <section class="vote" id="vote" hidden aria-labelledby="vtitle">
-    <h2 class="split"><span id="vtitle">Vote for what's next</span><span class="vclose" id="vclose"></span></h2>
-    <ol class="vlist" id="vtop"></ol>
-    <div class="vtry" id="vtry" hidden><span class="label">Try</span></div>
-    <div class="vbtns">
-      <button class="ghost vall" id="vreq" aria-haspopup="dialog"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><span>Request a track</span></button>
-      <a class="ghost vall nom" href="/nominate"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-big-up"/></svg><span>Nominate jams to add</span></a>
     </div>
   </section>
 
@@ -157,14 +137,27 @@
   </form>
 
   <section id="talk" hidden>
-    <h2 class="split">Moments in this track <a href="/best">Best moments <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></h2>
+    <h2>Moments in this track</h2>
     <ol class="cl" id="clist"></ol>
   </section>
 
-  <h2 class="split">Coming up <a href="/nominate">Nominate jams to add <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></h2>
-  <ol id="next"></ol>
+  <!-- Up next: with voting, the next slot's contenders (vote rows) and then the rotation; without, the clock's next tracks -->
+  <section class="upnext" id="vote" aria-labelledby="vtitle">
+    <h2 class="split"><span id="vtitle">Up next</span><span class="vclose" id="vclose" hidden></span></h2>
+    <div class="ubox">
+      <ol class="vlist" id="vtop" hidden></ol>
+      <p class="usub" id="nsub" hidden>Then, from the rotation</p>
+      <ol id="next"></ol>
+    </div>
+    <button class="ghost vall" id="vreq" aria-haspopup="dialog" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><span>Request a track</span></button>
+  </section>
 
-  <p class="note">Every listener hears the same moment of the broadcast. Stopping and tuning back in drops you at the live point, just like radio. <a href="/install">Get the app</a> for iPhone, Android, Mac or Windows. Where it all began: <a href="/first-played">the first time they played every song</a>.</p>
+  <nav class="foot" aria-label="More">
+    <a href="/best">Best moments</a>
+    <a href="/first-played">First time played</a>
+    <a href="/nominate">Nominate jams</a>
+    <a href="/install">Get the app</a>
+  </nav>
 </main>
 
 <!-- Everything besides the radio opens in this panel over it, so the music never stops (see "Panels" below).
@@ -175,7 +168,7 @@
       <h2 id="ptitle"></h2>
       <button class="ghost iconbtn" id="pclose" aria-label="Close"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button>
     </div>
-    <div class="sheet-body" id="pbody">
+    <div class="sheet-body" id="pbody" tabindex="-1" autofocus>
 
       <section class="route" data-route="best" hidden>
         <p class="intro">The most-loved and most talked-about 15 seconds on the station. Want to hear one again? Vote for it to play next.</p>
@@ -279,7 +272,7 @@
           </ol>
         </section>
 
-        <p class="note">Updates arrive by themselves: the app always plays the live broadcast, and new jams show up as soon as they're added.</p>
+        <p class="note">It's radio: every listener hears the same moment of the broadcast, and stopping and tuning back in drops you at the live point. Updates arrive by themselves, and new jams show up as soon as they're added.</p>
       </section>
 
       <section class="route fp" data-route="first-played" hidden>
@@ -441,44 +434,38 @@ function render() {
 }
 
 const clockAt = ms => new Date(ms).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-// The show's date and venue are shown once above its run of tracks (renderNext), and read with each row.
-const songHtml = (t, extra = '') => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<span class="sr">, ${showLine(t)}</span>${extra ? `<small>${extra}</small>` : ''}`;
-const nextRow = (t, cls, when, extra) => ({ show: showLine(t), html: `<li${cls ? ` class="${cls}"` : ''}><span class="t">${when}</span><span class="s">${songHtml(t, extra)}</span><span class="d">${fmt(t.duration)}</span></li>` });
+// Up next. Without voting: the clock's next tracks and when each starts. With voting, the next slot's
+// contenders are the vote rows above this list (renderVote), and this is the rotation after them: no times,
+// since votes decide what plays when. A show's date and venue are shown once above its run of tracks, and
+// read with each row.
+const songHtml = t => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<span class="sr">, ${showLine(t)}</span>`;
+const nextRow = (t, when) => ({ show: showLine(t), html: `<li${when ? '' : ' class="later"'}>${when ? `<span class="t">${when}</span>` : ''}<span class="s">${songHtml(t)}</span><span class="d">${fmt(t.duration)}</span></li>` });
+// The next slot's contenders: what's locked in, else the leaders, else the rotation's pick.
+const ballotTracks = () => ST.next ? [ST.next.track] : ST.tally.length ? ST.tally.slice(0, 3).map(([id]) => id) : ST.rotation.slice(0, 1);
 
 let nextKey = '';
 function renderNext(i, offset) {
-  const now = Date.now(), cur = S.tracks[i];
-  const rows = [nextRow(cur, 'cur', 'NOW')];
-  let key = 'clock:' + i;
+  const rows = [];
+  let key;
   if (!ST) {
-    let at = now + (cur.duration - offset) * 1000;
+    const cur = S.tracks[i];
+    let at = Date.now() + (cur.duration - offset) * 1000;
     for (let k = 1; k <= 8; k++) {
       const t = S.tracks[(i + k) % S.tracks.length];
-      rows.push(nextRow(t, '', clockAt(at)));
+      rows.push(nextRow(t, clockAt(at)));
       at += t.duration * 1000;
     }
-  } else if (i !== ST.i) {
-    key = 'waiting:' + i;   // we've rolled into the next track; the next poll brings the new round
+    key = 'clock:' + i;
   } else {
-    const endAt = ST.end_at;
-    if (ST.next && ST.nextI >= 0) {
-      const t = S.tracks[ST.nextI];
-      const how = ST.next.source === 'vote' ? ` <span class="chip hot">${iconHtml('vote')}${ST.next.votes} vote${ST.next.votes === 1 ? '' : 's'}</span>` : ' <span class="chip">in rotation</span>';
-      rows.push(nextRow(t, 'upnext', clockAt(endAt), how));
-      key = `locked:${ST.round}:${ST.next.track}`;
-    } else {
-      const lead = ST.tally[0] ? S.tracks[indexOfTrack(ST.tally[0][0])] : null;
-      const leadTxt = lead ? `Leading: ${lead.song}${lead.jam ? ` (jam ${lead.jam})` : ''} with ${ST.tally[0][1]}` : 'No votes yet: the rotation picks';
-      const closes = Math.max(0, (ST.lock_at - now) / 1000);
-      rows.push({ show: null, html: `<li class="upnext open"><span class="t">${clockAt(endAt)}</span><span class="s">Your vote decides<small>${leadTxt} · voting closes in ${fmt(closes)}</small></span><span class="d">${iconHtml('vote')}</span></li>` });
-      key = `open:${ST.round}:${Math.floor(closes)}:${JSON.stringify(ST.tally[0] || '')}`;
-    }
-    for (const id of ST.rotation.slice(0, 6)) {
+    if (i !== ST.i) return;   // rolled into the next track; the next poll brings the new round
+    const ballot = ballotTracks();
+    for (const id of ST.rotation.filter(id => !ballot.includes(id)).slice(0, 5)) {
       const t = S.tracks[indexOfTrack(id)];
-      if (t) rows.push(nextRow(t, 'later', 'later', ' <span class="chip">in rotation</span>'));
+      if (t) rows.push(nextRow(t));
     }
-    key += ':' + ST.rotation.join();
+    key = `rotation:${ballot}:${ST.rotation}`;
   }
+  $('nsub').hidden = !ST || !rows.length;
   if (key === nextKey) return;
   nextKey = key;
   let prev = null;
@@ -561,6 +548,16 @@ decks.forEach(d => {
   d.volume = 0.9;
 });
 $('tune').onclick = () => listening ? stop() : start();
+
+// Space plays and pauses, as in any player: tunes in or stops, or pauses the song clip playing instead.
+// Left alone while typing, and on controls Space already presses (a focused Tune in toggles by itself).
+document.addEventListener('keydown', e => {
+  if (e.code !== 'Space' || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || !S) return;
+  if (e.target.closest?.('input, textarea, select, button, a[href], summary, [contenteditable], [role="button"], [role="radio"], [role="checkbox"], [role="slider"], [role="tab"]')) return;
+  e.preventDefault();   // and don't scroll the page
+  if (K.on) { if (kaudio.paused) kaudio.play().catch(() => {}); else kaudio.pause(); }
+  else if (listening) stop(); else start();
+});
 
 // Lock screen / headset / car controls. It's radio: pause stops, play rejoins the live point, no seeking.
 // While a song clip plays (see playClip), they play, pause and seek the clip instead.
@@ -840,30 +837,24 @@ function renderComments(i, el) {
     $('pops').dataset.k = popKey;
     $('pops').replaceChildren(...pops.map(c => commentNode('div', c, 'pop')));
   }
-
-
-  if (!C.list.length) {
-    $('clist').dataset.k = '';
-    const li = document.createElement('li'); const s = document.createElement('span');
-    s.className = 'empty'; s.textContent = 'No comments on this track yet. Be the first.';
-    li.append(s); $('clist').replaceChildren(li);
-  } else {
-    // Rebuild only when the comments change (so a click isn't lost mid-render); mark played ones each tick.
-    const listKey = id + ':' + C.list.map(c => c.id).join();
-    if ($('clist').dataset.k !== listKey) {
-      $('clist').dataset.k = listKey;
-      $('clist').replaceChildren(...C.list.map(c => {
-        const li = document.createElement('li'); li.dataset.pos = c.pos;
-        const tm = document.createElement('span'); tm.className = 't'; tm.textContent = fmt(c.pos);
-        const s = commentNode('span', c, 's'); s.firstChild.remove();
-        const sh = document.createElement('button'); sh.className = 'sh'; sh.append(icon('link-2'));
-        sh.title = 'Share this comment'; sh.setAttribute('aria-label', sh.title);
-        sh.onclick = () => shareMoment(t, c.pos, c);
-        li.append(tm, s, sh); return li;
-      }));
-    }
-    for (const li of $('clist').children) li.classList.toggle('past', Number(li.dataset.pos) <= el);
+  // The list only shows once the track has comments (their faces are on the timeline too).
+  $('talk').hidden = !C.list.length;
+  if (!C.list.length) { $('clist').dataset.k = ''; return; }
+  // Rebuild only when the comments change (so a click isn't lost mid-render); mark played ones each tick.
+  const listKey = id + ':' + C.list.map(c => c.id).join();
+  if ($('clist').dataset.k !== listKey) {
+    $('clist').dataset.k = listKey;
+    $('clist').replaceChildren(...C.list.map(c => {
+      const li = document.createElement('li'); li.dataset.pos = c.pos;
+      const tm = document.createElement('span'); tm.className = 't'; tm.textContent = fmt(c.pos);
+      const s = commentNode('span', c, 's'); s.firstChild.remove();
+      const sh = document.createElement('button'); sh.className = 'sh'; sh.append(icon('link-2'));
+      sh.title = 'Share this comment'; sh.setAttribute('aria-label', sh.title);
+      sh.onclick = () => shareMoment(t, c.pos, c);
+      li.append(tm, s, sh); return li;
+    }));
   }
+  for (const li of $('clist').children) li.classList.toggle('past', Number(li.dataset.pos) <= el);
 }
 
 function loadTurnstile() {
@@ -931,7 +922,7 @@ $('cform').onsubmit = postComment;
 $('cform').addEventListener('keydown', e => { if (e.key === 'Escape') { e.preventDefault(); closeComment(); } });
 $('cbody').oninput = e => $('ccount').textContent = `${e.target.value.length}/280`;
 
-// Vote panel: a short ballot (the leaders, or the rotation's pick) plus a few one-tap suggestions.
+// The ballot: the next slot's contenders at the top of Up next (the leaders, or the rotation's pick).
 // The whole catalog lives in the request sheet (search + shortcuts), so the page stays short as the
 // library grows. Rows are built once and updated in place so a tap is never lost to a redraw.
 const trackLabel = t => `${t.song}${t.jam ? ` (jam ${t.jam})` : ''}`;
@@ -974,12 +965,12 @@ function updateVoteRow(li, counts, max, mine) {
 const voteState = () => ({ counts: new Map(ST.tally), max: ST.tally.length ? ST.tally[0][1] : 0, mine: Station.myVote(ST.round) });
 
 function renderVote() {
-  if (!ST) { $('vote').hidden = true; return; }
-  $('vote').hidden = false;
+  $('vtop').hidden = $('vreq').hidden = $('vclose').hidden = !ST;
+  if (!ST) return;
   const { counts, max, mine } = voteState();
   // Re-rendering the ballot must not drop keyboard focus (WCAG 2.4.3): note which track had it
   const focusTrack = $('vote').contains(document.activeElement) ? document.activeElement.closest('[data-track]')?.dataset.track || '' : null;
-  const top = ST.next ? [ST.next.track] : ST.tally.length ? ST.tally.slice(0, 3).map(([id]) => id) : ST.rotation.slice(0, 1);
+  const top = ballotTracks();
   const key = top.join() + '|' + (ST.next ? 'locked' : ST.tally.length ? 'votes' : 'rotation');
   if ($('vtop').dataset.k !== key) {
     $('vtop').dataset.k = key;
@@ -992,21 +983,6 @@ function renderVote() {
   }
   for (const li of $('vtop').children) if (li.dataset.track) updateVoteRow(li, counts, max, mine);
 
-  // "Try": three hot tracks you could vote for right now (or ones that haven't played in a while).
-  const pool = [...rankBy('hot'), ...rankBy('stale')];
-  const tries = [...new Set(pool)].filter(id => !Station.blocked(ST, id) && !top.includes(id) && id !== mine).slice(0, 3);
-  const tkey = tries.join();
-  if ($('vtry').dataset.k !== tkey) {
-    $('vtry').dataset.k = tkey;
-    $('vtry').replaceChildren($('vtry').firstElementChild, ...tries.map(id => {
-      const t = S.tracks[indexOfTrack(id)], b = document.createElement('button');
-      b.className = 'chipbtn'; b.textContent = trackLabel(t); b.setAttribute('aria-label', `Vote for ${trackLabel(t)}`);
-      b.dataset.track = id;
-      b.onclick = () => castVote(id);
-      return b;
-    }));
-  }
-  $('vtry').hidden = !tries.length || !!ST.next;
   if ($('sheet').open) updateSheetRows();
   if (focusTrack !== null && !$('vote').contains(document.activeElement)) {
     const li = focusTrack && $('vtop').querySelector(`li[data-track="${CSS.escape(focusTrack)}"]`);
@@ -1164,62 +1140,22 @@ async function openRequest(slug) {
   if ($('sheet').open) { SHEET.shown = PAGE; renderSheet(); } else openSheet();
 }
 
-// ---- The song behind the jam: its history from BIP and its debut/latest on archive.org (static/songs.js) ----
+// ---- The song behind the jam: one line from BIP's history (static/songs.js); "Song history" opens its sheet ----
 let SONGS = null, SL = null;   // the catalog ({ eras, songs, bySlug, … }, null if unavailable) and the songs.js helpers
 const songsReady = import("./static/songs.js").then(async m => { SL = m; SONGS = await m.loadSongs(); }).catch(() => {});
 const venueOf = x => /^unknown (venue|location)$/i.test(x.venue || '') ? '' : x.venue || '';   // BIP's placeholders
 const where = x => [venueOf(x), x.place].filter(Boolean).join(', ') || 'venue unknown';
-const chipEl = (text, title) => Object.assign(document.createElement('span'), { className: 'chip', textContent: text, title: title || '' });
-const nb = x => x.replace(/ /g, '\u00a0');   // wrap between facts, not inside a date or "4 shows ago"
-const stars = r => `★${r.toFixed(1)}`;
 
-// One of the song's top rated versions: plays in the clip player if it was taped, else opens the show on BIP.
-// bip rates this performance; ia rates the whole night's recordings, so it reads as a show rating.
-function topRow(s, v, rank) {
-  const li = document.createElement('li');
-  const when = SL.fmtDate(v.date), short = [venueOf(v), (v.place || '').split(',')[0]].filter(Boolean).join(', ') || 'venue unknown';
-  const go = v.clip ? document.createElement('button') : Object.assign(document.createElement('a'), { href: SL.bip(SONGS, 'shows', v.show), target: '_blank', rel: 'noopener' });
-  go.className = 'ftgo';
-  go.append(icon(v.clip ? 'play' : 'external-link'), Object.assign(document.createElement('b'), { textContent: nb(when) }), ` ${short}`);
-  go.setAttribute('aria-label', v.clip ? `Play top rated #${rank}: ${when}, ${where(v)}`
-    : `Top rated #${rank}: ${when}, ${where(v)}. No recording on archive.org; the show on discobiscuits.net (opens in a new tab)`);
-  if (v.clip) go.onclick = () => playClip(s, v.clip, rank);
-  else go.title = 'Not on archive.org: see the show on discobiscuits.net';
-  const rate = document.createElement('small'); rate.className = 'ftrate';
-  if (v.all_timer) { const c = chipEl('All-timer', 'An all-timer on BIP'); c.classList.add('hot'); rate.append(c, ' '); }
-  const hint = (text, title) => Object.assign(document.createElement('span'), { textContent: text, title });
-  const n = (k, one) => `${k} ${one}${k === 1 ? '' : 's'}`;
-  const hints = [];
-  if (v.bip) hints.push(hint(nb(`${stars(v.bip.rating)} BIP (${v.bip.votes})`), `This version: ${v.bip.rating.toFixed(1)} out of 5 from ${n(v.bip.votes, 'BIP listener')}`));
-  if (v.ia) hints.push(hint(`${stars(v.ia.rating)} show on archive.org\u00a0(${v.ia.reviews})`,
-    `The whole night's recordings, sound included: ${v.ia.rating.toFixed(1)} out of 5 from ${n(v.ia.reviews, 'archive.org review')}`));
-  hints.forEach((h, k) => rate.append(...(k ? [' · '] : []), h));
-  li.append(go, rate);
-  return li;
-}
-
+// "Debuted Aug 23, 2025 · played 11 times". The sheet (First time played) has the rest, and plays the
+// debut, the latest and the top rated versions.
 function renderFacts(t) {
   const s = SONGS && t.slug ? SONGS.bySlug.get(t.slug) : null;
   $('facts').hidden = !s;
   if (!s) return;
-  const era = SONGS.eras.find(e => e.name === s.era);
-  const extra = [chipEl(s.era === 'Between' ? 'Between drummers' : `${s.era} era`, era ? `${era.drummer} on drums` : '')];
-  if (s.kind === 'cover') extra.push(chipEl('Cover', s.authors.length ? 'Written by ' + s.authors.map(a => a.name).join(', ') : ''));
-  else if (s.kind === 'improvisation' || s.kind === 'mashup') extra.push(chipEl(s.kind === 'mashup' ? 'Mashup' : 'Improv'));
-  $('fdebut').replaceChildren(`${nb(SL.fmtDate(s.date))} · ${where(s)} `, ...extra);
-  $('flive').textContent = s.plays === 1 ? 'Played once, at the debut'
-    : `${SL.playsText(s)} · last ${nb(SL.fmtDate(s.last.date))}, ${nb(s.since === 0 ? 'at the latest show' : SL.sinceText(s))}`;
+  $('fsum').textContent = s.plays === 1 ? `Played once, at its debut on ${SL.fmtDate(s.date)}`
+    : `Debuted ${SL.fmtDate(s.date)} · played ${s.plays.toLocaleString('en-US')} times`;
   $('fhist').href = '/first-played?song=' + encodeURIComponent(s.slug);
-  $('fhist').setAttribute('aria-label', `${s.title}: song history`);
-  $('fbip').href = SL.bip(SONGS, 'songs', s.slug);
-  $('fbip').setAttribute('aria-label', `On BIP: ${s.title} on discobiscuits.net (opens in a new tab)`);
-  $('ftopline').hidden = !s.top.length;
-  $('ftop').replaceChildren(...s.top.slice(0, 3).map((v, k) => topRow(s, v, k + 1)));
-  const d = s.debut, l = s.latest && s.latest.url !== d?.url ? s.latest : null;   // a song played once: its latest is its debut
-  $('hdebut').hidden = !d; $('hlatest').hidden = !l;
-  if (d) $('hdebut').lastChild.textContent = d.how === 'later' ? 'Hear the earliest tape' : 'Hear the debut';
-  $('hdebut').onclick = () => playClip(s, d, 'debut');
-  $('hlatest').onclick = () => playClip(s, l, 'latest');
+  $('fhist').setAttribute('aria-label', `${s.title}: song history and recordings`);
 }
 
 // A clip takes over from the radio like stopping does (so the resync logic stands down), and the lock
@@ -1411,7 +1347,7 @@ const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
   fetch('/api/config').then(r => r.ok ? r.json() : null).then(cfg => {
     if (!cfg || !cfg.comments) return;
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
-    $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false; $('talk').hidden = false;
+    $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false;
     render();
     setInterval(() => { if (C.track && visible()) loadMoments(C.track); }, 20000);
     pollListeners(); setInterval(pollListeners, 60000);

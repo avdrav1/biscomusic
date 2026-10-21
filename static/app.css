@@ -125,13 +125,12 @@ li .t{color:var(--dim);font-variant-numeric:tabular-nums;font-size:13px}
 li .s{font-weight:600}
 li .s small{color:var(--dim);display:block;font-size:12px;font-weight:400}
 li .d{color:var(--dim);font-size:13px;font-variant-numeric:tabular-nums}
-li.cur{background:linear-gradient(90deg,rgba(93,255,58,.12),transparent)}
-li.cur .t{color:var(--accent)}
 li .jam{color:var(--dim);font-weight:500}
-/* Coming up: a show's date and venue once, above its run of tracks */
+/* Up next: a show's date and venue once, above its run of tracks */
 #next li{padding-block:9px}
 #next li.grp{display:block;padding:12px 14px 4px;font-size:12px;letter-spacing:.04em;color:var(--dim);background:rgba(0,0,0,.25)}
 #next li.grp+li{border-top:0}
+#next li.later{grid-template-columns:1fr auto}
 .cl li{grid-template-columns:72px 1fr auto}
 .cl li.past .t{color:var(--accent)}
 .cl .s{font-weight:400}
@@ -139,7 +138,6 @@ li .jam{color:var(--dim);font-weight:500}
 .cl .sh{background:none;box-shadow:none;border:0;padding:0 4px;font-size:14px;opacity:.5;cursor:pointer}
 .cl .sh:hover{opacity:1}
 .note{color:var(--dim);font-size:12px;margin-top:24px}
-.note a{color:var(--accent)}
 
 /* Shared-moment card */
 .moment{padding:18px 20px;margin-bottom:16px;background:linear-gradient(135deg,rgba(40,18,60,.85),rgba(8,30,14,.85))}
@@ -169,10 +167,16 @@ button[aria-disabled="true"]{opacity:.6;cursor:progress}
 html.still *,html.still *::before,html.still *::after{animation:none!important;transition:none!important}
 @media(prefers-reduced-motion:reduce){html:not(.moving) *,html:not(.moving) *::before,html:not(.moving) *::after{animation:none!important;transition:none!important}}
 
-/* Vote for what's next */
-.vote h2{margin-top:28px}
+/* Up next: the ballot rows (with voting) and the list after them share one box */
+.upnext h2{margin-top:28px}
 .vclose{color:var(--accent);letter-spacing:.06em;text-transform:none;font-size:13px;font-variant-numeric:tabular-nums}
-.vote.closed .vclose{color:var(--accent2)}
+.upnext.closed .vclose{color:var(--accent2)}
+.ubox{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:rgba(8,16,10,.7)}
+.ubox ol{border:0;border-radius:0;background:none}
+.ubox ol+.usub{border-top:1px solid var(--line)}
+#pbody:focus{outline:none}   /* focused when a panel opens, so Space reaches the player; not a control */
+.usub{margin:0;padding:10px 14px 0;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);background:rgba(0,0,0,.25)}
+.usub+ol li:first-child.grp{padding-top:6px}
 .vlist li{grid-template-columns:1fr 92px auto;align-items:center;gap:12px}
 .vlist .s{font-weight:600}
 .vlist .meter{display:flex;align-items:center;gap:6px;height:22px}
@@ -186,8 +190,6 @@ li.mine .vbtn{border-color:var(--accent);color:var(--accent)}
 .vbtn:disabled{opacity:.6;cursor:default}
 .vlist li.top{background:linear-gradient(90deg,rgba(226,104,255,.10),transparent)}
 .vall{margin-top:10px;width:100%;min-height:44px}
-.vbtns{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-.vbtns .vall{flex:1 1 220px;width:auto;margin-top:0}
 a.nom{display:inline-flex;align-items:center;justify-content:center;gap:.45em;padding:10px 16px;border-radius:999px;font:500 14px var(--font);letter-spacing:.02em;
   color:var(--text);text-decoration:none;background:rgba(226,104,255,.08);border:1px solid rgba(226,104,255,.45)}
 a.nom:hover{border-color:var(--accent2);box-shadow:0 0 16px rgba(226,104,255,.3)}
@@ -197,8 +199,7 @@ a.nom .i{width:18px;height:18px;color:var(--accent2)}
 .snom a:hover{text-decoration:underline}
 .snom .i{width:14px;height:14px}
 #vcat h3{font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
-li.upnext.open .s{color:var(--accent2)}
-li.later{opacity:.75}
+
 @media(max-width:480px){.vlist li{grid-template-columns:1fr auto;grid-template-areas:"s b" "m b"}.vlist .s{grid-area:s}.vlist .meter{grid-area:m;height:14px}.vlist .vbtn{grid-area:b;min-width:84px}}
 
 /* Icons (Lucide sprite, static/icons.svg) and chips */
@@ -217,9 +218,6 @@ li .d .i{color:var(--accent2);width:18px;height:18px}
 .mwhen .i,.toast .i{width:16px;height:16px;color:var(--accent)}
 .stats{display:flex;gap:6px;margin-top:6px}
 
-/* Ballot extras */
-.vtry{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:12px}
-.vtry .label{margin-right:4px}
 .chipbtn{min-height:44px;padding:8px 14px;border-radius:999px;font:500 13px var(--font);letter-spacing:.02em;text-transform:none;
   color:var(--text);background:rgba(93,255,58,.06);border:1px solid var(--line);box-shadow:none}
 .chipbtn:hover{border-color:rgba(93,255,58,.55)}
@@ -293,32 +291,21 @@ dialog.sheet::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
 .tcard .more{display:block;margin-top:8px;color:var(--dim)}
 @media(max-width:480px){.wavebox{height:52px}}
 
-/* The song behind the jam: its history and a player for its debut / latest recording */
-.facts{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+/* The song behind the jam: one line, and a player for a song clip (playClip) */
+.about{margin:16px 0 0;padding-top:12px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:14px;color:var(--dim)}
+.about a{color:var(--accent);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.about a:hover{text-decoration:underline}
+.about a .i{width:14px;height:14px}
 .fhead{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px}
-.fhead a{color:var(--accent);text-decoration:none;font-size:13px;display:inline-flex;align-items:center;gap:4px;min-height:32px}
-.fhead a:hover{text-decoration:underline}
-.fhead a .i{width:14px;height:14px}
-.fline{margin:4px 0 0;display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:14px}
-.fline .label{flex:none;width:52px}
-.fline>span:last-child{flex:1;min-width:0}
-.fline .chip{margin-right:6px}
-.ftop{flex:1;min-width:0;border:0;border-radius:0;background:none;overflow:visible;display:grid;gap:2px}
-.ftop li{display:block;position:relative;padding:0 0 0 19px;border:0}
-.ftgo{all:unset;box-sizing:border-box;cursor:pointer;display:block;padding:4px 0 2px;color:var(--text);font-size:14px}
-.ftgo b{font-weight:600;margin-right:6px}
-.ftgo .i{position:absolute;left:0;top:8px;width:13px;height:13px;color:var(--accent)}
-a.ftgo .i{color:var(--dim)}
-.ftgo:hover{color:var(--accent)}
-.ftgo:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-.ftrate{display:block;margin-bottom:4px;color:var(--dim);font-size:12px}
-.ftrate .chip{font-size:10px;padding:3px 6px}
 .frow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
-.frow button.ghost{min-height:44px;padding:8px 14px;font-size:14px}
-.frow button.ghost .i{width:15px;height:15px;color:var(--accent)}
 .fbip{margin-left:auto;display:inline-flex;align-items:center;gap:4px;min-height:44px;color:var(--dim);font-size:13px;text-decoration:none}
 .fbip:hover{color:var(--accent);text-decoration:underline}
 .fbip .i{width:14px;height:14px}
+
+/* Footer: the rest of the station */
+.foot{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 20px;margin-top:28px;font-size:14px}
+.foot a{color:var(--accent);text-decoration:none;min-height:24px}
+.foot a:hover{text-decoration:underline}
 .kclip{margin-top:16px;padding:12px 16px 14px;border-radius:16px;border:1px solid rgba(226,104,255,.45);background:linear-gradient(135deg,rgba(226,104,255,.10),rgba(8,30,14,.4));animation:popin .25s ease-out}
 .kclip .fhead .label{color:var(--accent2)}
 .kclip .fhead .iconbtn{margin:-4px -8px -4px 0}
@@ -495,7 +482,7 @@ dialog.panel::backdrop{background:rgba(1,3,2,.72);backdrop-filter:blur(3px)}
 .fp .sheet-head .close{margin-left:auto}
 .sheet.fp h2.song{font-size:28px;color:var(--text);letter-spacing:.01em;text-transform:none;margin:4px 0 2px}
 .fp .by{color:var(--dim);margin:0 0 4px}
-.fp .facts{display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px 12px;margin:14px 0 4px}
+.fp .facts{display:grid;grid-template-columns:104px minmax(0,1fr);gap:8px 12px;margin:14px 0 4px;padding-top:14px;border-top:1px solid var(--line)}
 .fp .facts dt{color:var(--dim);font-size:13px;padding-top:1px}
 .fp .facts dd{margin:0}
 .fp .facts small{color:var(--dim);font-size:13px}
