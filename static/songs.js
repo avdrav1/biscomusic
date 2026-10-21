@@ -1,4 +1,4 @@
-// Shared by index.html and first-played.html: every Disco Biscuits song's debut and history
+// Loaded by the radio (index.html), which hands it to the First time played panel: every Disco Biscuits song's debut and history
 // (/api/songs, live from BIP) joined with its archive.org recordings (/clips.json, made by build.py).
 
 // -> { fetched, site, eras, songs, bySlug } or null when there's no API (local server.py) or BIP is down.

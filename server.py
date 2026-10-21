@@ -1,9 +1,17 @@
 #!/usr/bin/env python3
-"""Static file server with HTTP Range support, so the radio can seek into tracks."""
+"""Static file server with HTTP Range support, so the radio can seek into tracks.
+Addresses with no file behind them and no extension (/best, /first-played) get the radio page, which opens
+the panel named by the address, as Pages does with the files build.py writes."""
 import os, re, sys, socket
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
 class RangeHandler(SimpleHTTPRequestHandler):
+    def translate_path(self, path):
+        p = super().translate_path(path)
+        if not os.path.exists(p) and not os.path.splitext(p)[1]:
+            return super().translate_path('/index.html')
+        return p
+
     def send_head(self):
         path = self.translate_path(self.path)
         rng = self.headers.get('Range')

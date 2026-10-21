@@ -21,8 +21,23 @@ AUDIO = os.path.join(HERE, 'audio')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
 WAVES = os.path.join(HERE, 'waves')
-# Deployed pages (Pages serves best.html at /best); index.html first.
-PAGES = ('index.html', 'best.html', 'nominate.html', 'install.html', 'first-played.html')
+# The radio's panels (index.html, "Panels"). Each address gets the radio page with its own link preview
+# (Pages serves best.html at /best); the page opens the panel from its address.
+# name: (title, description, og:description)
+PANELS = {
+    'best': ('Best moments',
+             'The most-loved and most talked-about moments on Biscuits Jam Radio. Vote to hear one again.',
+             'The most-loved and most talked-about moments on the station. Vote to hear one again.'),
+    'nominate': ('Nominate jams',
+                 'Search every Disco Biscuits show on Nugs and upvote the jams you want on Biscuits Jam Radio.',
+                 'Search every Disco Biscuits show on Nugs and upvote the jams you want on the station.'),
+    'install': ('Get the app',
+                'Install Biscuits Jam Radio on your iPhone, iPad, Android, Mac or Windows PC. Opens like an app and keeps playing from your lock screen.',
+                'Install Biscuits Jam Radio on iPhone, iPad, Android, Mac or Windows. No app store needed.'),
+    'first-played': ('First time played',
+                     'Every Disco Biscuits song on the night it debuted. Hear the first performance and the latest, see how often each song has been played since, and request its jams on Biscuits Jam Radio.',
+                     'Every Disco Biscuits song on the night it debuted. Hear the first performance next to the latest one.'),
+}
 WAVE_BARS = 200
 WAVE_RANGE_DB = 8           # loudness range the timeline shows, below each track's peak
 # Every jam at the same perceived loudness: -14 LUFS integrated, peaks under -1 dBTP.
@@ -80,13 +95,13 @@ def waveform(mp3):
 
 def service_worker(versioned):
     """site/sw.js: the source with this build's version and the files to keep offline."""
-    pages = ['/' if p == 'index.html' else '/' + p.removesuffix('.html') for p in PAGES]
+    pages = ['/']   # offline, sw.js answers a panel's address with this page too
     fonts = sorted('/static/fonts/' + f for f in os.listdir(os.path.join(HERE, 'static', 'fonts')) if f.endswith('.woff2'))
     files = ['/' + v for v in versioned.values()] + fonts + [
         '/static/favicon.svg', '/static/icon-192.png', '/static/icon-512.png', '/static/apple-touch-icon.png',
         '/static/manifest.webmanifest', '/schedule.json']
     h = hashlib.md5()
-    for f in PAGES + ('sw.js', 'static/manifest.webmanifest'):
+    for f in ('index.html', 'sw.js', 'static/manifest.webmanifest'):
         h.update(open(os.path.join(HERE, f), 'rb').read())
     h.update(json.dumps(files).encode())
     with open(os.path.join(HERE, 'sw.js')) as f:
@@ -272,24 +287,44 @@ def main():
     with open(os.path.join(SITE, 'schedule.json'), 'w') as f:
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
-    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js', 'static/songs.js', 'static/oil.js', 'static/a11y.js')}
+    versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in (
+        'static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js', 'static/songs.js',
+        'static/oil.js', 'static/a11y.js', 'static/best.js', 'static/nominate.js', 'static/install.js', 'static/first-played.js')}
     nominees(tracks)
     if catalog:
         try:
             clips(catalog)
         except OSError as e:
             print(f'  archive.org unreachable ({e}): keeping clips.json from the last build')
-    for page in PAGES:
-        with open(os.path.join(HERE, page)) as f:
-            html = f.read()
-        for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"
-            html = re.sub(re.escape(f) + r'(?=["#])', v, html)
-        with open(os.path.join(SITE, page), 'w') as f:
-            f.write(html)
+    with open(os.path.join(HERE, 'index.html')) as f:
+        html = f.read()
+    for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"
+        html = re.sub(re.escape(f) + r'(?=["#])', v, html)
+    with open(os.path.join(SITE, 'index.html'), 'w') as f:
+        f.write(html)
+    for name in PANELS:
+        with open(os.path.join(SITE, name + '.html'), 'w') as f:
+            f.write(panel_page(html, name))
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
     shutil.copytree(WAVES, os.path.join(SITE, 'waves'), dirs_exist_ok=True)
     service_worker(versioned)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
+
+def panel_page(html, name):
+    """The radio page as served at /<name>: the panel's title and description in its link preview."""
+    title, description, og = PANELS[name]
+    full = f'{title} · Biscuits Jam Radio'
+    for pattern, value in ((r'(<title>)[^<]*(</title>)', full),
+                           (r'(<meta name="description" content=")[^"]*(")', description),
+                           (r'(<meta property="og:title" content=")[^"]*(")', full),
+                           (r'(<meta name="twitter:title" content=")[^"]*(")', full),
+                           (r'(<meta property="og:description" content=")[^"]*(")', og),
+                           (r'(<meta name="twitter:description" content=")[^"]*(")', og),
+                           (r'(<meta property="og:url" content=")[^"]*(")', f'https://biscomusic.com/{name}')):
+        html, n = re.subn(pattern, lambda m: m[1] + value + m[2], html, count=1)
+        if not n:
+            sys.exit(f'index.html has no {pattern!r} to set for /{name}')
+    return html
 
 if __name__ == '__main__':
     main()

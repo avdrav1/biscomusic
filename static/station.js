@@ -1,4 +1,4 @@
-// Shared by index.html and best.html: talking to the voting station (functions/api/station.js, vote.js).
+// Shared by the radio (index.html) and its panels: talking to the voting station (functions/api/station.js, vote.js).
 // Lucide icon from the sprite (its versioned URL comes from <meta name="icons">).
 const ICONS = document.querySelector('meta[name="icons"]')?.content || 'static/icons.svg';
 window.icon = (name, cls = 'i') => {

@@ -1,5 +1,5 @@
-// Nominations page logic (pure, no DOM): search and sort the Nugs catalog from nominees.json.
-// Used by nominate.html and tests/nominees.test.mjs.
+// Nominations logic (pure, no DOM): search and sort the Nugs catalog from nominees.json.
+// Used by static/nominate.js (the /nominate panel) and tests/nominees.test.mjs.
 
 // "M.E.M.P.H.I.S." -> "memphis", "Bogart's" -> "bogarts"; keeps / and - for dates.
 const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ.'’]/g, '').replace(/[^a-z0-9/-]+/g, ' ');

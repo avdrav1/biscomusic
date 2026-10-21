@@ -32,7 +32,7 @@
 <meta name="icons" content="static/icons.svg">
 </head>
 <body>
-<div class="lasers" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i></div>
 <main class="wrap">
   <header>
     <div class="brand">
@@ -167,6 +167,185 @@
   <p class="note">Every listener hears the same moment of the broadcast. Stopping and tuning back in drops you at the live point, just like radio. <a href="/install">Get the app</a> for iPhone, Android, Mac or Windows. Where it all began: <a href="/first-played">the first time they played every song</a>.</p>
 </main>
 
+<!-- Everything besides the radio opens in this panel over it, so the music never stops (see "Panels" below).
+     The dialog fills the viewport: the card in the middle, the player strip along the bottom. -->
+<dialog class="panel" id="panel" aria-labelledby="ptitle">
+  <div class="pcard">
+    <div class="sheet-head">
+      <h2 id="ptitle"></h2>
+      <button class="ghost iconbtn" id="pclose" aria-label="Close"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button>
+    </div>
+    <div class="sheet-body" id="pbody">
+
+      <section class="route" data-route="best" hidden>
+        <p class="intro">The most-loved and most talked-about 15 seconds on the station. Want to hear one again? Vote for it to play next.</p>
+        <ol class="best" id="b-list"><li><span class="empty">Loading…</span></li></ol>
+      </section>
+
+      <section class="route r-nominate" data-route="nominate" hidden>
+        <p class="intro">Every Disco Biscuits show on Nugs, song by song. Upvote the performances you want on the station; the most-wanted get cut and added next.</p>
+        <label class="search"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><input id="n-q" type="search" placeholder="Song, venue, city or date" aria-label="Search performances" autocomplete="off" spellcheck="false"></label>
+        <div class="chips">
+          <span role="radiogroup" aria-label="Sort" style="display:contents">
+            <button class="chipbtn" role="radio" aria-checked="true" data-sort="top"><svg class="i" aria-hidden="true"><use href="static/icons.svg#trending-up"/></svg>Most wanted</button>
+            <button class="chipbtn" role="radio" aria-checked="false" data-sort="long"><svg class="i" aria-hidden="true"><use href="static/icons.svg#clock"/></svg>Longest</button>
+            <button class="chipbtn" role="radio" aria-checked="false" data-sort="new">Newest</button>
+            <button class="chipbtn" role="radio" aria-checked="false" data-sort="old">Oldest</button>
+          </span>
+          <button class="chipbtn" role="checkbox" aria-checked="false" id="n-long">20+ min</button>
+          <button class="chipbtn" role="checkbox" aria-checked="false" id="n-minef"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-big-up"/></svg>My picks</button>
+        </div>
+        <p class="offline" id="n-offline" hidden>Voting works on biscomusic.com. You can still browse here.</p>
+        <p class="scount" id="n-count" aria-live="polite"></p>
+        <ol class="noms" id="n-list"><li><span class="empty">Loading the catalog…</span></li></ol>
+        <button class="ghost more" id="n-more" hidden>Show more</button>
+      </section>
+
+      <section class="route r-install" data-route="install" hidden>
+        <p class="intro">Jam Radio installs straight from your browser, no app store needed. It gets its own icon, opens full-screen, and keeps playing with controls on your lock screen.</p>
+        <p class="done" id="i-done" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg>You're already in the app. Enjoy the jams.</p>
+        <p id="i-now" hidden><button data-install><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg>Install Jam Radio</button></p>
+        <div class="chips" role="radiogroup" aria-label="Your device">
+          <button class="chipbtn" role="radio" aria-checked="false" data-os="ios"><svg class="i" aria-hidden="true"><use href="static/icons.svg#smartphone"/></svg>iPhone &amp; iPad</button>
+          <button class="chipbtn" role="radio" aria-checked="false" data-os="android"><svg class="i" aria-hidden="true"><use href="static/icons.svg#smartphone"/></svg>Android</button>
+          <button class="chipbtn" role="radio" aria-checked="false" data-os="mac"><svg class="i" aria-hidden="true"><use href="static/icons.svg#laptop"/></svg>Mac</button>
+          <button class="chipbtn" role="radio" aria-checked="false" data-os="windows"><svg class="i" aria-hidden="true"><use href="static/icons.svg#monitor"/></svg>Windows</button>
+        </div>
+
+        <section class="how" data-os="ios" hidden>
+          <h3 data-browser="safari chrome edge firefox">Safari, Chrome or Edge</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#share"/></svg><span>Tap the <kbd>Share</kbd> button (bottom toolbar in Safari, address bar in Chrome and Edge)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Scroll down and tap <kbd>Add to Home Screen</kbd></span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Leave <kbd>Open as Web App</kbd> on and tap <kbd>Add</kbd></span></li>
+          </ol>
+          <p class="tip">Don't see Add to Home Screen? Tap <kbd>Edit Actions</kbd> at the bottom of the share sheet and add it.</p>
+        </section>
+
+        <section class="how" data-os="android" hidden>
+          <h3 data-browser="chrome edge">Chrome</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>Tap the <kbd>⋮</kbd> menu (or the Install button above, when it shows)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add to Home screen</kbd>, then <kbd>Install</kbd></span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Jam Radio shows up with your other apps</span></li>
+          </ol>
+          <h3 data-browser="samsung">Samsung Internet</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Tap the install icon in the address bar, or open the <kbd>≡</kbd> menu</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add page to</kbd>, then <kbd>Home screen</kbd></span></li>
+          </ol>
+          <h3 data-browser="firefox">Firefox</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>Tap the <kbd>⋮</kbd> menu</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Tap <kbd>Add app to Home screen</kbd> (or <kbd>Install</kbd>)</span></li>
+          </ol>
+        </section>
+
+        <section class="how" data-os="mac" hidden>
+          <h3 data-browser="safari">Safari</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#share"/></svg><span>In the menu bar, choose <kbd>File</kbd> › <kbd>Add to Dock…</kbd> (or use the Share button)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Click <kbd>Add</kbd>. Jam Radio is in your Dock and Launchpad</span></li>
+          </ol>
+          <p class="tip">Needs macOS Sonoma or newer.</p>
+          <h3 data-browser="chrome">Chrome</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the install icon at the right end of the address bar (or the Install button above)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>⋮</kbd> › <kbd>Cast, save, and share</kbd> › <kbd>Install page as app…</kbd></span></li>
+          </ol>
+          <h3 data-browser="edge">Edge</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the <kbd>App available</kbd> icon in the address bar, or <kbd>…</kbd> › <kbd>Apps</kbd> › <kbd>Install this site as an app</kbd></span></li>
+          </ol>
+          <h3 data-browser="firefox">Firefox</h3>
+          <p class="tip">Firefox on Mac can't install web apps yet. Open biscomusic.com in Safari or Chrome and follow the steps above.</p>
+        </section>
+
+        <section class="how" data-os="windows" hidden>
+          <h3 data-browser="edge">Edge</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the <kbd>App available</kbd> icon in the address bar (or the Install button above)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>…</kbd> › <kbd>Apps</kbd> › <kbd>Install this site as an app</kbd></span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg><span>Tick <kbd>Pin to taskbar</kbd> and <kbd>Pin to Start</kbd> if you like, then <kbd>Allow</kbd></span></li>
+          </ol>
+          <h3 data-browser="chrome">Chrome</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the install icon at the right end of the address bar (or the Install button above)</span></li>
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#ellipsis-vertical"/></svg><span>No icon? <kbd>⋮</kbd> › <kbd>Cast, save, and share</kbd> › <kbd>Install page as app…</kbd></span></li>
+          </ol>
+          <h3 data-browser="firefox">Firefox</h3>
+          <ol class="steps">
+            <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#square-plus"/></svg><span>Click the <kbd>Add to taskbar</kbd> icon in the address bar (Firefox 143 or newer)</span></li>
+          </ol>
+        </section>
+
+        <p class="note">Updates arrive by themselves: the app always plays the live broadcast, and new jams show up as soon as they're added.</p>
+      </section>
+
+      <section class="route fp" data-route="first-played" hidden>
+        <p class="intro">Every Disco Biscuits song, placed on the night it debuted. Tap a song to hear its first performance next to its latest, see how often it's been played since, and find its jams on the radio.</p>
+        <p class="status" id="fp-status" role="status">Loading every song…</p>
+
+        <div id="fp-app" hidden>
+          <label class="search"><svg class="i" aria-hidden="true"><use href="static/icons.svg#search"/></svg><input id="fp-q" type="search" placeholder="Search song titles" aria-label="Search song titles" autocomplete="off" spellcheck="false"></label>
+          <div class="fgroup" role="group" aria-labelledby="fp-era-l"><span class="label" id="fp-era-l">Era</span><div class="fchips" id="fp-eras"></div></div>
+          <div class="fgroup" role="group" aria-labelledby="fp-kind-l"><span class="label" id="fp-kind-l">Type</span><div class="fchips" id="fp-kinds"></div></div>
+          <div class="frow">
+            <label class="field"><span class="label">Songwriter</span><select id="fp-by"></select></label>
+            <label class="field"><span class="label">From</span><select id="fp-from"></select></label>
+            <label class="field"><span class="label">To</span><select id="fp-to"></select></label>
+          </div>
+
+          <div class="hist" id="fp-hist" role="group" aria-label="Debuts per year"></div>
+          <div class="band" id="fp-band" aria-hidden="true"></div>
+          <p class="hint">Tap a year to see its debuts, tap it again for all years. Drag across the bars for a range.</p>
+
+          <div class="countrow">
+            <p class="scount" id="fp-count" aria-live="polite"></p>
+            <button class="ghost" id="fp-reset" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#rotate-ccw"/></svg>Reset</button>
+            <button class="ghost" id="fp-csv"><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg>Download CSV</button>
+          </div>
+          <p class="legend" id="fp-legend"></p>
+          <div id="fp-timeline"></div>
+
+          <h2>About the data</h2>
+          <div class="about">
+            <p>Songs, debuts, play counts and setlists come from the <a id="fp-bip-link" href="https://discobiscuits.net/songs" target="_blank" rel="noopener">Biscuits Internet Project</a>, the fan-run database of every show. <span id="fp-fresh"></span></p>
+            <p id="fp-tapers">Recordings stream from the <a href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">Disco Biscuits collection</a> on archive.org, shared by the tapers who recorded the shows. Where a debut wasn't taped, you hear the earliest recording that exists.</p>
+            <p id="fp-ranking" hidden><b>How versions are ranked.</b> Top rated versions combine BIP listeners' star ratings of each performance with archive.org reviews of the whole night's recordings. Each site's ratings are compared against that site's own average, more votes count more, and archive.org counts half because it rates the whole show and the tape, not just the song.</p>
+            <p>A fan project with no affiliation with the band.</p>
+          </div>
+          <h2>Eras</h2>
+          <ol class="eras" id="fp-eratable"></ol>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- The radio (or a song clip) while a panel is open: what's playing, stop / tune in, volume -->
+  <div class="strip" id="strip" role="region" aria-label="Player">
+    <div class="xbar" aria-hidden="true"><i id="xprog"></i></div>
+    <div class="xin">
+      <button class="iconbtn" id="xplay" aria-label="Tune in"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg></button>
+      <div class="xnow"><span class="xsong" id="xsong"></span><small id="xsub"></small></div>
+      <input type="range" id="xseek" min="0" max="0" step="1" value="0" aria-label="Position in the recording" hidden>
+      <button class="stop" id="xback" aria-label="Back to the radio" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#radio"/></svg><span class="wide">Back to the radio</span></button>
+      <span class="live" id="xlive"><i></i>ON AIR</span>
+      <label class="label vol">Vol <input type="range" id="xvol" min="0" max="1" step="0.01" value="0.9"></label>
+    </div>
+  </div>
+</dialog>
+
+<!-- First time played: a song's details, over its panel -->
+<dialog class="sheet fp" id="fp-sheet" aria-labelledby="fp-d-title">
+  <div class="sheet-head">
+    <span class="label" id="fp-d-kind"></span>
+    <button class="ghost iconbtn close" id="fp-d-close" aria-label="Close"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button>
+  </div>
+  <div class="sheet-body" id="fp-d-body"></div>
+</dialog>
+
 <div class="toast" id="toast" role="status" hidden></div>
 <audio id="a" preload="auto"></audio>
 <audio id="b" preload="auto"></audio>
@@ -240,7 +419,7 @@ function render() {
     $('song').textContent = t.song;
     $('jam').textContent = jamLine(t);
     $('show').textContent = showLine(t);
-    document.title = `${t.song} · Biscuits Jam Radio`;
+    setTitle();
     if (!K.on) setRadioMeta(t);   // a clip owns the lock screen until it's closed
     renderFacts(t);
   }
@@ -255,24 +434,27 @@ function render() {
   $('rem').textContent = '-' + fmt(t.duration - el);
   if (C.on) renderComments(i, el);
   renderMoment();
+  renderStrip();
   if (listening && navigator.mediaSession?.setPositionState) {
     try { navigator.mediaSession.setPositionState({ duration: t.duration, position: Math.min(el, t.duration), playbackRate: 1 }); } catch (e) {}
   }
 }
 
 const clockAt = ms => new Date(ms).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
-const songHtml = (t, extra = '') => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<small>${showLine(t)}${extra}</small>`;
+// The show's date and venue are shown once above its run of tracks (renderNext), and read with each row.
+const songHtml = (t, extra = '') => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<span class="sr">, ${showLine(t)}</span>${extra ? `<small>${extra}</small>` : ''}`;
+const nextRow = (t, cls, when, extra) => ({ show: showLine(t), html: `<li${cls ? ` class="${cls}"` : ''}><span class="t">${when}</span><span class="s">${songHtml(t, extra)}</span><span class="d">${fmt(t.duration)}</span></li>` });
 
 let nextKey = '';
 function renderNext(i, offset) {
   const now = Date.now(), cur = S.tracks[i];
-  const rows = [`<li class="cur"><span class="t">NOW</span><span class="s">${songHtml(cur)}</span><span class="d">${fmt(cur.duration)}</span></li>`];
+  const rows = [nextRow(cur, 'cur', 'NOW')];
   let key = 'clock:' + i;
   if (!ST) {
     let at = now + (cur.duration - offset) * 1000;
     for (let k = 1; k <= 8; k++) {
       const t = S.tracks[(i + k) % S.tracks.length];
-      rows.push(`<li><span class="t">${clockAt(at)}</span><span class="s">${songHtml(t)}</span><span class="d">${fmt(t.duration)}</span></li>`);
+      rows.push(nextRow(t, '', clockAt(at)));
       at += t.duration * 1000;
     }
   } else if (i !== ST.i) {
@@ -282,24 +464,29 @@ function renderNext(i, offset) {
     if (ST.next && ST.nextI >= 0) {
       const t = S.tracks[ST.nextI];
       const how = ST.next.source === 'vote' ? ` <span class="chip hot">${iconHtml('vote')}${ST.next.votes} vote${ST.next.votes === 1 ? '' : 's'}</span>` : ' <span class="chip">in rotation</span>';
-      rows.push(`<li class="upnext"><span class="t">${clockAt(endAt)}</span><span class="s">${songHtml(t, how)}</span><span class="d">${fmt(t.duration)}</span></li>`);
+      rows.push(nextRow(t, 'upnext', clockAt(endAt), how));
       key = `locked:${ST.round}:${ST.next.track}`;
     } else {
       const lead = ST.tally[0] ? S.tracks[indexOfTrack(ST.tally[0][0])] : null;
       const leadTxt = lead ? `Leading: ${lead.song}${lead.jam ? ` (jam ${lead.jam})` : ''} with ${ST.tally[0][1]}` : 'No votes yet: the rotation picks';
       const closes = Math.max(0, (ST.lock_at - now) / 1000);
-      rows.push(`<li class="upnext open"><span class="t">${clockAt(endAt)}</span><span class="s">Your vote decides<small>${leadTxt} · voting closes in ${fmt(closes)}</small></span><span class="d">${iconHtml('vote')}</span></li>`);
+      rows.push({ show: null, html: `<li class="upnext open"><span class="t">${clockAt(endAt)}</span><span class="s">Your vote decides<small>${leadTxt} · voting closes in ${fmt(closes)}</small></span><span class="d">${iconHtml('vote')}</span></li>` });
       key = `open:${ST.round}:${Math.floor(closes)}:${JSON.stringify(ST.tally[0] || '')}`;
     }
     for (const id of ST.rotation.slice(0, 6)) {
       const t = S.tracks[indexOfTrack(id)];
-      if (t) rows.push(`<li class="later"><span class="t">later</span><span class="s">${songHtml(t, ' <span class="chip">in rotation</span>')}</span><span class="d">${fmt(t.duration)}</span></li>`);
+      if (t) rows.push(nextRow(t, 'later', 'later', ' <span class="chip">in rotation</span>'));
     }
     key += ':' + ST.rotation.join();
   }
   if (key === nextKey) return;
   nextKey = key;
-  $('next').innerHTML = rows.join('');
+  let prev = null;
+  $('next').innerHTML = rows.map(r => {
+    const head = r.show && r.show !== prev ? `<li class="grp" aria-hidden="true">${r.show}</li>` : '';
+    prev = r.show;
+    return head + r.html;
+  }).join('');
 }
 
 // Two decks: `audio` is on air, the spare preloads the next track so the handoff is gapless.
@@ -359,7 +546,7 @@ function preloadNext() {
   const d = spare(); d.src = S.tracks[n].file; d.preload = 'auto'; d.load(); cued = n;
 }
 
-function setTune(ic, label) { $('tune').replaceChildren(icon(ic), Object.assign(document.createElement('span'), { textContent: label })); $('tune').setAttribute('aria-label', label); }
+function setTune(ic, label) { $('tune').replaceChildren(icon(ic), Object.assign(document.createElement('span'), { textContent: label })); $('tune').setAttribute('aria-label', label); renderStrip(); }
 function start() { closeClip(); listening = true; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; setTune('square', 'Stop'); $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
 function stop() { listening = false; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'none'; gen++; decks.forEach(clear); cued = -1; curIdx = -1; setTune('play', 'Tune in'); $('tune').className = ''; $('live').classList.remove('on'); $('eq').classList.remove('on'); heartbeat(true); }
 
@@ -384,7 +571,8 @@ if ('mediaSession' in navigator) {
   msSet('stop', () => { if (K.on) closeClip(); else if (listening) stop(); });
   ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach(a => msSet(a, null));
 }
-$('vol').oninput = e => [...decks, $('kaudio')].forEach(d => d.volume = e.target.value);
+function setVolume(v) { [...decks, kaudio].forEach(d => d.volume = v); $('vol').value = $('xvol').value = v; }
+$('vol').oninput = $('xvol').oninput = e => setVolume(e.target.value);
 
 // Drift correction: stay within 2s of the live point
 // (compares positions across the whole broadcast, so a handoff a moment early isn't undone)
@@ -966,7 +1154,7 @@ document.querySelectorAll('.chipbtn[data-sf]').forEach(b => b.onclick = () => pi
 // /?request=<slug> (the /first-played timeline links here): the request sheet, showing just that song's jams.
 async function openRequest(slug) {
   const p = new URLSearchParams(location.search); p.delete('request');
-  history.replaceState(null, '', location.pathname + (p.size ? '?' + p : '') + location.hash);
+  history.replaceState(history.state, '', location.pathname + (p.size ? '?' + p : '') + location.hash);
   if (!ST) return;
   const t = S.tracks.find(x => x.slug === slug);
   const title = t ? t.song : (await songsReady, SONGS?.bySlug.get(slug)?.title) || slug.replace(/-/g, ' ');
@@ -1056,7 +1244,7 @@ function playClip(s, c, kind) {
   $('kseek').max = 0; $('kseek').value = 0;
   $('ktime').textContent = `0:00 / ${c.length}`;
   $('kclip').hidden = false;
-  $('kplay').focus();   // land on the player that just opened
+  if (!$('panel').open) $('kplay').focus();   // land on the player that just opened (in a panel, the strip shows it)
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({ title: `${s.title} (${$('kkind').textContent.toLowerCase()})`, artist: 'The Disco Biscuits', album: at, artwork: ARTWORK });
     msSet('seekto', e => { kaudio.currentTime = e.seekTime; });
@@ -1102,6 +1290,7 @@ kaudio.addEventListener('play', () => { if (!K.on) return; kplayIcon(); if (navi
 kaudio.addEventListener('pause', () => { if (!K.on) return; kplayIcon(); if (navigator.mediaSession) navigator.mediaSession.playbackState = 'paused'; });
 kaudio.addEventListener('timeupdate', () => K.on && kprogress());
 kaudio.addEventListener('durationchange', () => K.on && kprogress());
+for (const ev of ['play', 'pause', 'timeupdate', 'durationchange', 'emptied']) kaudio.addEventListener(ev, renderStrip);
 kaudio.addEventListener('ended', () => {
   if (!K.on) return;
   if (K.resume) { closeClip(true); toast('Back on the radio', 'radio'); }
@@ -1117,11 +1306,12 @@ $('kback').onclick = () => closeClip(true);
 $('kx').onclick = () => closeClip(false);
 
 // Shared moments: /?m=<track>@<seconds>[&c=<comment id>] opens with a card counting down to when it airs.
-const M = (() => {
-  const q = new URLSearchParams(location.search);
+// In-app links to /?m=… (Best moments) show it the same way (see "Panels").
+const parseMoment = q => {
   const m = /^(\d{4}-\d{2}-\d{2}-\d{2}(?:-jam\d+)?)@(\d{1,5})$/.exec(q.get('m') || '');
   return m && { track: m[1], pos: Number(m[2]), commentId: q.get('c'), i: -1 };
-})();
+};
+let M = parseMoment(new URLSearchParams(location.search));
 
 function momentUrl(t, pos, c) {
   return `${location.origin}/?m=${trackId(t)}@${Math.floor(pos)}` + (c ? `&c=${c.id}` : '');
@@ -1140,7 +1330,9 @@ async function shareMoment(t, pos, c) {
 
 let toastTimer;
 function toast(msg, ic) {
-  ($('sheet').open ? $('sheet') : document.body).append($('toast'));
+  // Inside the topmost open dialog, or it would sit under the dialog's backdrop
+  const top = ['fp-sheet', 'sheet', 'panel'].map($).find(d => d.open);
+  (top || document.body).append($('toast'));
   $('toast').replaceChildren(...(ic ? [icon(ic)] : []), msg); $('toast').hidden = false;
   clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true, 2200);
 }
@@ -1149,7 +1341,7 @@ function initMoment() {
   if (!M) return;
   M.i = S.tracks.findIndex(t => trackId(t) === M.track);
   const t = S.tracks[M.i];
-  $('moment').hidden = false;
+  $('moment').hidden = false; $('mcomment').hidden = true; $('mshow').textContent = '';
   if (!t || M.pos > t.duration) {
     $('msong').textContent = 'This moment isn\'t on the air anymore';
     $('mwhen').textContent = '';
@@ -1191,10 +1383,10 @@ function renderMoment() {
 }
 
 $('mvote').onclick = () => M && castVote(M.track);
-$('mclose').onclick = () => { $('moment').hidden = true; history.replaceState(null, '', location.pathname); };
+$('mclose').onclick = () => { $('moment').hidden = true; history.replaceState(history.state, '', location.pathname); };
 $('share').onclick = () => { const { i, el } = heard(); shareMoment(S.tracks[i], el); };
 
-fetch('schedule.json').then(r => r.json()).then(data => {
+const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
   S = data;
   S.tracks.forEach(t => { starts.push(total); total += t.duration; });
   initMoment();
@@ -1233,6 +1425,128 @@ fetch('schedule.json').then(r => r.json()).then(data => {
     if (C.on && C.track) loadMoments(C.track);
   });
 });
+
+// ---- Panels: everything besides the radio opens over it, so the music never stops ----
+// /best, /nominate, /install and /first-played are this page with that panel open (build.py gives each
+// address its own link preview). Links to them, and to /?m=… and /?request=…, are followed here without
+// leaving the page, and Back undoes them. A panel's code (static/<route>.js) loads the first time it opens:
+// init(host) -> { open(params), close() }, both optional; open gets the address's query each time.
+const ROUTES = {
+  best: { title: 'Best moments', prefix: 'b-', load: () => import("./static/best.js") },
+  nominate: { title: 'Nominate jams', prefix: 'n-', wide: true, load: () => import("./static/nominate.js") },
+  install: { title: 'Get the app', prefix: 'i-', load: () => import("./static/install.js") },
+  'first-played': { title: 'First time played', prefix: 'fp-', wide: true, load: () => import("./static/first-played.js") },
+};
+const routeOf = path => { const r = path.replace(/^\/+|\/+$|\.html$/g, ''); return Object.hasOwn(ROUTES, r) ? r : ''; };
+const panels = {};   // route -> promise of its controller
+let route = '';      // the open panel, '' for none
+
+// What a panel gets from the radio. Its element ids start with its prefix; host.$('list') is #b-list.
+function hostFor(r) {
+  const { prefix } = ROUTES[r];
+  return {
+    root: document.querySelector(`.route[data-route="${r}"]`),
+    $: id => document.getElementById(prefix + id), prefix,
+    fmt, showLine, trackId, toast, castVote,
+    ready: scheduleReady, schedule: () => S, station: () => ST,
+    songs: async () => { await songsReady; return SONGS && { catalog: SONGS, lib: SL }; },
+    nominees: () => import("./static/nominees.js"),
+    clip: { audio: kaudio, on: () => K.on, play: playClip },   // song clips play in place of the radio
+    // The panel's own state in the address, so it can be shared; ignored once the panel has closed
+    setQuery(q) {
+      if (route !== r) return;
+      const s = q.toString().replace(/%2C/g, ',');
+      history.replaceState(history.state, '', location.pathname + (s ? '?' + s : ''));
+    },
+  };
+}
+const panelFor = r => panels[r] ||= ROUTES[r].load().then(m => m.init(hostFor(r))).catch(e => {
+  delete panels[r]; console.error(e); toast('Couldn’t load that. Check your connection.'); return null;
+});
+
+function setTitle() {
+  document.title = route ? `${ROUTES[route].title} · Biscuits Jam Radio` : S ? `${S.tracks[live().i].song} · Biscuits Jam Radio` : 'Biscuits Jam Radio';
+}
+
+// Show what the address says: a panel, or the radio (with a shared moment or the request sheet on it).
+async function sync() {
+  const url = new URL(location.href), r = routeOf(url.pathname), was = route;
+  leaving = false;
+  for (const d of document.querySelectorAll('dialog[open]')) if (d !== $('panel')) d.close();
+  if (was && was !== r) panels[was]?.then(p => p?.close?.());
+  route = r;
+  if (!r) {
+    if ($('panel').open) $('panel').close();
+    setTitle();
+    const m = parseMoment(url.searchParams);
+    if (m) { M = m; if (S) { initMoment(); render(); } scrollTo(0, 0); }
+    if (url.searchParams.has('request')) openRequest(url.searchParams.get('request'));
+    return;
+  }
+  for (const s of document.querySelectorAll('.route')) s.hidden = s.dataset.route !== r;
+  $('ptitle').textContent = ROUTES[r].title;
+  $('panel').classList.toggle('wide', !!ROUTES[r].wide);
+  if (was !== r) $('pbody').scrollTop = 0;
+  if (!$('panel').open) $('panel').showModal();
+  setTitle(); renderStrip();
+  const p = await panelFor(r);
+  if (route === r) p?.open?.(url.searchParams);
+}
+
+document.addEventListener('click', e => {
+  const a = e.target.closest?.('a[href]');
+  if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute('download')) return;
+  const url = new URL(a.href), q = url.searchParams;
+  if (url.origin !== location.origin || !(routeOf(url.pathname) || (url.pathname === '/' && (q.has('m') || q.has('request'))))) return;
+  e.preventDefault();
+  history.pushState({ app: true }, '', url.pathname + url.search);
+  sync();
+});
+addEventListener('popstate', sync);
+
+// ×, Escape or a tap beside the card: back to where the link was followed, or to the radio when the page
+// was opened on a panel's address. The panel itself closes in sync(), once the address says so.
+let leaving = false;   // a Back is on its way (a second × mustn't go back twice)
+function leavePanel() {
+  if (leaving || !routeOf(location.pathname)) return;
+  leaving = true;
+  if (history.state?.app) history.back();
+  else { history.replaceState(null, '', '/'); sync(); }
+}
+$('panel').addEventListener('cancel', e => { e.preventDefault(); leavePanel(); });
+$('pclose').onclick = leavePanel;
+$('panel').addEventListener('click', e => { if (e.target === $('panel')) leavePanel(); });
+
+// The strip under a panel: the radio, or the song clip playing in its place (playClip).
+function setIconBtn(b, ic, label) {
+  if (b.dataset.ic !== ic) { b.dataset.ic = ic; b.replaceChildren(icon(ic)); }
+  b.setAttribute('aria-label', label); b.title = label;
+}
+function renderStrip() {
+  if (!S || !$('panel').open) return;
+  $('xseek').hidden = $('xback').hidden = !K.on; $('xlive').hidden = K.on;
+  if (K.on) {
+    const cur = kaudio.currentTime || 0, dur = kaudio.duration, known = Number.isFinite(dur) && dur > 0;
+    setIconBtn($('xplay'), kaudio.paused ? 'play' : 'pause', kaudio.paused ? 'Play' : 'Pause');
+    $('xsong').textContent = $('ksong').textContent;
+    $('xsub').textContent = `${$('kkind').textContent} · ${$('ktime').textContent}`;
+    if (known && document.activeElement !== $('xseek')) { $('xseek').max = Math.floor(dur); $('xseek').value = Math.floor(cur); }
+    $('xseek').setAttribute('aria-valuetext', $('ktime').textContent);
+    $('xprog').style.width = known ? `${100 * cur / dur}%` : '0';
+    return;
+  }
+  const { i, el } = heard(), t = S.tracks[i];
+  setIconBtn($('xplay'), listening ? 'square' : 'play', listening ? 'Stop' : 'Tune in');
+  $('xsong').textContent = t.song + (t.jam ? ` · jam ${t.jam}` : '');
+  $('xsub').textContent = showLine(t);
+  $('xprog').style.width = `${100 * Math.min(1, el / t.duration)}%`;
+  $('xlive').classList.toggle('on', listening);
+}
+$('xplay').onclick = () => K.on ? (kaudio.paused ? kaudio.play().catch(() => {}) : kaudio.pause()) : listening ? stop() : start();
+$('xseek').oninput = e => { kaudio.currentTime = Number(e.target.value); };
+$('xback').onclick = () => closeClip(true);
+
+if (routeOf(location.pathname)) sync();
 </script>
 </body>
 </html>
