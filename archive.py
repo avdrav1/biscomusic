@@ -60,17 +60,28 @@ def items_by_date() -> dict:
     `rating` is the item's average review (1-5 stars) over `reviews` reviews; reviews without stars don't count.
     Ties (every fresh upload has 0 downloads) go by identifier: the search API's order isn't stable, and
     an unstable pick would change the build, and so commit, on every run."""
-    q = urllib.parse.urlencode([
-        ("q", f"collection:{COLLECTION}"), ("fl[]", "identifier"), ("fl[]", "date"), ("fl[]", "downloads"),
-        ("fl[]", "avg_rating"), ("fl[]", "num_reviews"), ("rows", "20000"), ("output", "json"),
-    ])
     out: dict = {}
-    for d in _get_json(f"https://archive.org/advancedsearch.php?{q}")["response"]["docs"]:
-        if d.get("date"):
-            rated = (d.get("avg_rating") or 0) > 0   # items whose reviews all lack stars average 0
-            out.setdefault(d["date"][:10], []).append({
-                "identifier": d["identifier"], "downloads": d.get("downloads") or 0,
-                "rating": d["avg_rating"] if rated else None, "reviews": (d.get("num_reviews") or 0) if rated else 0})
+    # A page at a time, sorted so pages don't overlap: the search errors on one big request (rows=20000).
+    page, seen, total = 1, 0, 1
+    while seen < total:
+        q = urllib.parse.urlencode([
+            ("q", f"collection:{COLLECTION}"), ("fl[]", "identifier"), ("fl[]", "date"), ("fl[]", "downloads"),
+            ("fl[]", "avg_rating"), ("fl[]", "num_reviews"), ("sort[]", "identifier asc"), ("rows", "1000"),
+            ("page", str(page)), ("output", "json"),
+        ])
+        res = _get_json(f"https://archive.org/advancedsearch.php?{q}")
+        if "response" not in res:
+            raise OSError(f"archive.org search: {res.get('error', res)}")
+        docs, total = res["response"]["docs"], res["response"]["numFound"]
+        if not docs:
+            break
+        seen += len(docs); page += 1
+        for d in docs:
+            if d.get("date"):
+                rated = (d.get("avg_rating") or 0) > 0   # items whose reviews all lack stars average 0
+                out.setdefault(d["date"][:10], []).append({
+                    "identifier": d["identifier"], "downloads": d.get("downloads") or 0,
+                    "rating": d["avg_rating"] if rated else None, "reviews": (d.get("num_reviews") or 0) if rated else 0})
     for items in out.values():
         items.sort(key=lambda it: (-it["downloads"], it["identifier"]))
     return out

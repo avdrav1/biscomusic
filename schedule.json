@@ -9,7 +9,8 @@
    "date": "2026-05-24",
    "venue": "The Mishawaka",
    "city": "Bellvue, CO",
-   "duration": 450.0
+   "duration": 450.0,
+   "slug": "mishawaka-improv-jam"
   },
   {
    "file": "audio/2026-05-24-06-jam1.mp3",
@@ -18,7 +19,8 @@
    "date": "2026-05-24",
    "venue": "The Mishawaka",
    "city": "Bellvue, CO",
-   "duration": 262.5
+   "duration": 262.5,
+   "slug": "little-lai"
   },
   {
    "file": "audio/2026-05-24-17-jam1.mp3",
@@ -27,7 +29,8 @@
    "date": "2026-05-24",
    "venue": "The Mishawaka",
    "city": "Bellvue, CO",
-   "duration": 375.0
+   "duration": 375.0,
+   "slug": "confrontation"
   },
   {
    "file": "audio/2026-06-11-02-jam1.mp3",
@@ -36,7 +39,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 583.367
+   "duration": 583.367,
+   "slug": "caves-of-the-east"
   },
   {
    "file": "audio/2026-06-11-03-jam1.mp3",
@@ -45,7 +49,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 645.0
+   "duration": 645.0,
+   "slug": "minions"
   },
   {
    "file": "audio/2026-06-11-04-jam1.mp3",
@@ -54,7 +59,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 614.0
+   "duration": 614.0,
+   "slug": "orch-theme"
   },
   {
    "file": "audio/2026-06-11-05-jam1.mp3",
@@ -63,7 +69,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 373.476
+   "duration": 373.476,
+   "slug": "tempest"
   },
   {
    "file": "audio/2026-06-11-08-jam1.mp3",
@@ -72,7 +79,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 457.5
+   "duration": 457.5,
+   "slug": "basis-for-a-day"
   },
   {
    "file": "audio/2026-06-11-09-jam1.mp3",
@@ -81,7 +89,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 223.0
+   "duration": 223.0,
+   "slug": "i-man"
   },
   {
    "file": "audio/2026-06-11-12-jam1.mp3",
@@ -90,7 +99,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 375.0
+   "duration": 375.0,
+   "slug": "aceetobee"
   },
   {
    "file": "audio/2026-06-11-13-jam1.mp3",
@@ -99,7 +109,8 @@
    "date": "2026-06-11",
    "venue": "The Paramount",
    "city": "Huntington, NY",
-   "duration": 179.0
+   "duration": 179.0,
+   "slug": "neck-romancer"
   },
   {
    "file": "audio/2026-06-12-02-jam1.mp3",
@@ -108,7 +119,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 209.0
+   "duration": 209.0,
+   "slug": "three-wishes"
   },
   {
    "file": "audio/2026-06-12-04-jam1.mp3",
@@ -117,7 +129,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 617.783
+   "duration": 617.783,
+   "slug": "voices-insane"
   },
   {
    "file": "audio/2026-06-12-05-jam1.mp3",
@@ -126,7 +139,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 233.0
+   "duration": 233.0,
+   "slug": "freeze"
   },
   {
    "file": "audio/2026-06-12-09-jam1.mp3",
@@ -135,7 +149,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 284.0
+   "duration": 284.0,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-06-12-09-jam2.mp3",
@@ -144,7 +159,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 457.6
+   "duration": 457.6,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-06-12-10-jam1.mp3",
@@ -153,7 +169,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 646.0
+   "duration": 646.0,
+   "slug": "we-like-to-party"
   },
   {
    "file": "audio/2026-06-12-11-jam1.mp3",
@@ -162,7 +179,8 @@
    "date": "2026-06-12",
    "venue": "Levitt Pavilion",
    "city": "Westport, CT",
-   "duration": 419.0
+   "duration": 419.0,
+   "slug": "astronaut"
   },
   {
    "file": "audio/2026-08-07-02-jam1.mp3",
@@ -171,7 +189,8 @@
    "date": "2026-08-07",
    "venue": "Telluride Jazz Festival",
    "city": "Telluride, CO",
-   "duration": 269.0
+   "duration": 269.0,
+   "slug": "the-overture"
   },
   {
    "file": "audio/2026-08-07-03-jam1.mp3",
@@ -180,7 +199,8 @@
    "date": "2026-08-07",
    "venue": "Telluride Jazz Festival",
    "city": "Telluride, CO",
-   "duration": 262.5
+   "duration": 262.5,
+   "slug": "minions"
   },
   {
    "file": "audio/2026-08-07-04-jam1.mp3",
@@ -189,7 +209,8 @@
    "date": "2026-08-07",
    "venue": "Telluride Jazz Festival",
    "city": "Telluride, CO",
-   "duration": 262.5
+   "duration": 262.5,
+   "slug": "running"
   },
   {
    "file": "audio/2026-08-29-02-jam1.mp3",
@@ -198,7 +219,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 239.0
+   "duration": 239.0,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-08-29-02-jam2.mp3",
@@ -207,7 +229,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 198.8
+   "duration": 198.8,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-08-29-03-jam1.mp3",
@@ -216,7 +239,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 240.05
+   "duration": 240.05,
+   "slug": "minions"
   },
   {
    "file": "audio/2026-08-29-04-jam1.mp3",
@@ -225,7 +249,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 239.0
+   "duration": 239.0,
+   "slug": "the-deal"
   },
   {
    "file": "audio/2026-08-29-05-jam1.mp3",
@@ -234,7 +259,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 158.0
+   "duration": 158.0,
+   "slug": "another-spin"
   },
   {
    "file": "audio/2026-08-29-08-jam1.mp3",
@@ -243,7 +269,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 223.0
+   "duration": 223.0,
+   "slug": "crickets"
   },
   {
    "file": "audio/2026-08-29-09-jam1.mp3",
@@ -252,7 +279,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 119.0
+   "duration": 119.0,
+   "slug": "little-lai"
   },
   {
    "file": "audio/2026-08-29-11-jam1.mp3",
@@ -261,7 +289,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 441.0
+   "duration": 441.0,
+   "slug": "trap-door"
   },
   {
    "file": "audio/2026-08-29-12-jam1.mp3",
@@ -270,7 +299,8 @@
    "date": "2026-08-29",
    "venue": "Variety Playhouse",
    "city": "Atlanta, GA",
-   "duration": 360.0
+   "duration": 360.0,
+   "slug": "pimp-blue-rikki"
   },
   {
    "file": "audio/2026-08-30-02-jam1.mp3",
@@ -279,7 +309,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 540.0
+   "duration": 540.0,
+   "slug": "more-you-know"
   },
   {
    "file": "audio/2026-08-30-04-jam1.mp3",
@@ -288,7 +319,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 397.0
+   "duration": 397.0,
+   "slug": "caterpillar"
   },
   {
    "file": "audio/2026-08-30-05-jam1.mp3",
@@ -297,7 +329,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 378.2
+   "duration": 378.2,
+   "slug": "simulations"
   },
   {
    "file": "audio/2026-08-30-09-jam1.mp3",
@@ -306,7 +339,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 644.256
+   "duration": 644.256,
+   "slug": "little-shimmy-in-a-conga-line"
   },
   {
    "file": "audio/2026-08-30-10-jam1.mp3",
@@ -315,7 +349,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 616.5
+   "duration": 616.5,
+   "slug": "freeze"
   },
   {
    "file": "audio/2026-08-30-10-jam2.mp3",
@@ -324,7 +359,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 313.177
+   "duration": 313.177,
+   "slug": "freeze"
   },
   {
    "file": "audio/2026-08-30-11-jam1.mp3",
@@ -333,7 +369,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 339.0
+   "duration": 339.0,
+   "slug": "photograph"
   },
   {
    "file": "audio/2026-08-30-11-jam2.mp3",
@@ -342,7 +379,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 427.5
+   "duration": 427.5,
+   "slug": "photograph"
   },
   {
    "file": "audio/2026-08-30-12-jam1.mp3",
@@ -351,7 +389,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 89.0
+   "duration": 89.0,
+   "slug": "little-shimmy-in-a-conga-line"
   },
   {
    "file": "audio/2026-08-30-14-jam1.mp3",
@@ -360,7 +399,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 396.5
+   "duration": 396.5,
+   "slug": "morph-dusseldorf"
   },
   {
    "file": "audio/2026-08-30-15-jam1.mp3",
@@ -369,7 +409,8 @@
    "date": "2026-08-30",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 291.5
+   "duration": 291.5,
+   "slug": "neck-romancer"
   },
   {
    "file": "audio/2026-08-31-02-jam1.mp3",
@@ -378,7 +419,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 637.5
+   "duration": 637.5,
+   "slug": "who-s-in-charge"
   },
   {
    "file": "audio/2026-08-31-02-jam2.mp3",
@@ -387,7 +429,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 570.278
+   "duration": 570.278,
+   "slug": "who-s-in-charge"
   },
   {
    "file": "audio/2026-08-31-03-jam1.mp3",
@@ -396,7 +439,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 1309.164
+   "duration": 1309.164,
+   "slug": "orch-theme"
   },
   {
    "file": "audio/2026-08-31-04-jam1.mp3",
@@ -405,7 +449,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 224.0
+   "duration": 224.0,
+   "slug": "tempest"
   },
   {
    "file": "audio/2026-08-31-05-jam1.mp3",
@@ -414,7 +459,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 239.0
+   "duration": 239.0,
+   "slug": "digital-buddha"
   },
   {
    "file": "audio/2026-08-31-07-jam1.mp3",
@@ -423,7 +469,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 360.0
+   "duration": 360.0,
+   "slug": "better-in-doses"
   },
   {
    "file": "audio/2026-08-31-07-jam2.mp3",
@@ -432,7 +479,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 495.0
+   "duration": 495.0,
+   "slug": "better-in-doses"
   },
   {
    "file": "audio/2026-08-31-07-jam3.mp3",
@@ -441,7 +489,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 501.0
+   "duration": 501.0,
+   "slug": "better-in-doses"
   },
   {
    "file": "audio/2026-08-31-08-jam1.mp3",
@@ -450,7 +499,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 562.5
+   "duration": 562.5,
+   "slug": "run-like-hell"
   },
   {
    "file": "audio/2026-08-31-08-jam2.mp3",
@@ -459,7 +509,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 765.0
+   "duration": 765.0,
+   "slug": "run-like-hell"
   },
   {
    "file": "audio/2026-08-31-09-jam1.mp3",
@@ -468,7 +519,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 529.5
+   "duration": 529.5,
+   "slug": "mindless-dribble"
   },
   {
    "file": "audio/2026-08-31-09-jam2.mp3",
@@ -477,7 +529,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 315.0
+   "duration": 315.0,
+   "slug": "mindless-dribble"
   },
   {
    "file": "audio/2026-08-31-10-jam1.mp3",
@@ -486,7 +539,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 51.5
+   "duration": 51.5,
+   "slug": "to-be-continued"
   },
   {
    "file": "audio/2026-08-31-10-jam2.mp3",
@@ -495,7 +549,8 @@
    "date": "2026-08-31",
    "venue": "Third Room",
    "city": "Asheville, NC",
-   "duration": 420.0
+   "duration": 420.0,
+   "slug": "to-be-continued"
   },
   {
    "file": "audio/2026-09-01-02-jam1.mp3",
@@ -504,7 +559,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 398.578
+   "duration": 398.578,
+   "slug": "safety-dance"
   },
   {
    "file": "audio/2026-09-01-03-jam1.mp3",
@@ -513,7 +569,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 463.1
+   "duration": 463.1,
+   "slug": "spacebirdmatingcall"
   },
   {
    "file": "audio/2026-09-01-04-jam1.mp3",
@@ -522,7 +579,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 837.3
+   "duration": 837.3,
+   "slug": "above-the-waves"
   },
   {
    "file": "audio/2026-09-01-05-jam1.mp3",
@@ -531,7 +589,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 390.0
+   "duration": 390.0,
+   "slug": "country-royale"
   },
   {
    "file": "audio/2026-09-01-05-jam2.mp3",
@@ -540,7 +599,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 415.0
+   "duration": 415.0,
+   "slug": "country-royale"
   },
   {
    "file": "audio/2026-09-01-08-jam1.mp3",
@@ -549,7 +609,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 429.5
+   "duration": 429.5,
+   "slug": "spaga-s-last-stand"
   },
   {
    "file": "audio/2026-09-01-09-jam1.mp3",
@@ -558,7 +619,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 374.0
+   "duration": 374.0,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-09-01-09-jam2.mp3",
@@ -567,7 +629,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 553.6
+   "duration": 553.6,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-09-01-10-jam1.mp3",
@@ -576,7 +639,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 570.7
+   "duration": 570.7,
+   "slug": "no-recollection"
   },
   {
    "file": "audio/2026-09-01-11-jam1.mp3",
@@ -585,7 +649,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 763.083
+   "duration": 763.083,
+   "slug": "humuhumunukunukuapuaa"
   },
   {
    "file": "audio/2026-09-01-13-jam1.mp3",
@@ -594,7 +659,8 @@
    "date": "2026-09-01",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 444.0
+   "duration": 444.0,
+   "slug": "the-champions"
   },
   {
    "file": "audio/2026-09-02-02-jam1.mp3",
@@ -603,7 +669,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 327.383
+   "duration": 327.383,
+   "slug": "loose-change"
   },
   {
    "file": "audio/2026-09-02-03-jam1.mp3",
@@ -612,7 +679,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 562.5
+   "duration": 562.5,
+   "slug": "space-train"
   },
   {
    "file": "audio/2026-09-02-03-jam2.mp3",
@@ -621,7 +689,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 622.5
+   "duration": 622.5,
+   "slug": "space-train"
   },
   {
    "file": "audio/2026-09-02-04-jam1.mp3",
@@ -630,7 +699,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 397.5
+   "duration": 397.5,
+   "slug": "we-like-to-party"
   },
   {
    "file": "audio/2026-09-02-05-jam1.mp3",
@@ -639,7 +709,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 336.6
+   "duration": 336.6,
+   "slug": "helicopters"
   },
   {
    "file": "audio/2026-09-02-06-jam1.mp3",
@@ -648,7 +719,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 269.185
+   "duration": 269.185,
+   "slug": "in-the-end-we-have-forever"
   },
   {
    "file": "audio/2026-09-02-09-jam1.mp3",
@@ -657,7 +729,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 734.0
+   "duration": 734.0,
+   "slug": "hope"
   },
   {
    "file": "audio/2026-09-02-11-jam1.mp3",
@@ -666,7 +739,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 647.274
+   "duration": 647.274,
+   "slug": "confrontation"
   },
   {
    "file": "audio/2026-09-02-12-jam1.mp3",
@@ -675,7 +749,8 @@
    "date": "2026-09-02",
    "venue": "The Charleston Pour House",
    "city": "Charleston, SC",
-   "duration": 583.6
+   "duration": 583.6,
+   "slug": "cyclone"
   },
   {
    "file": "audio/2026-09-23-02-jam1.mp3",
@@ -684,7 +759,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 116.0
+   "duration": 116.0,
+   "slug": "big-wrecking-ball"
   },
   {
    "file": "audio/2026-09-23-03-jam1.mp3",
@@ -693,7 +769,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 139.0
+   "duration": 139.0,
+   "slug": "photograph"
   },
   {
    "file": "audio/2026-09-23-03-jam2.mp3",
@@ -702,7 +779,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 224.0
+   "duration": 224.0,
+   "slug": "photograph"
   },
   {
    "file": "audio/2026-09-23-04-jam1.mp3",
@@ -711,7 +789,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 89.0
+   "duration": 89.0,
+   "slug": "simulations"
   },
   {
    "file": "audio/2026-09-23-05-jam1.mp3",
@@ -720,7 +799,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 129.0
+   "duration": 129.0,
+   "slug": "spectacle"
   },
   {
    "file": "audio/2026-09-23-06-jam1.mp3",
@@ -729,7 +809,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 198.0
+   "duration": 198.0,
+   "slug": "abraxas"
   },
   {
    "file": "audio/2026-09-23-09-jam1.mp3",
@@ -738,7 +819,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 359.3
+   "duration": 359.3,
+   "slug": "rock-candy"
   },
   {
    "file": "audio/2026-09-23-10-jam1.mp3",
@@ -747,7 +829,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 365.681
+   "duration": 365.681,
+   "slug": "scars-of-the-brave"
   },
   {
    "file": "audio/2026-09-23-11-jam1.mp3",
@@ -756,7 +839,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 44.0
+   "duration": 44.0,
+   "slug": "spacebirdmatingcall"
   },
   {
    "file": "audio/2026-09-23-12-jam1.mp3",
@@ -765,7 +849,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 314.0
+   "duration": 314.0,
+   "slug": "astronaut"
   },
   {
    "file": "audio/2026-09-23-12-jam2.mp3",
@@ -774,7 +859,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 385.7
+   "duration": 385.7,
+   "slug": "astronaut"
   },
   {
    "file": "audio/2026-09-23-13-jam1.mp3",
@@ -783,7 +869,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 240.0
+   "duration": 240.0,
+   "slug": "spacebirdmatingcall"
   },
   {
    "file": "audio/2026-09-23-14-jam1.mp3",
@@ -792,7 +879,8 @@
    "date": "2026-09-23",
    "venue": "Saint Andrew's Hall",
    "city": "Detroit, MI",
-   "duration": 422.498
+   "duration": 422.498,
+   "slug": "risky-business"
   },
   {
    "file": "audio/2026-09-24-02-jam1.mp3",
@@ -801,7 +889,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 198.0
+   "duration": 198.0,
+   "slug": "the-champions"
   },
   {
    "file": "audio/2026-09-24-03-jam1.mp3",
@@ -810,7 +899,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 408.0
+   "duration": 408.0,
+   "slug": "to-be-continued"
   },
   {
    "file": "audio/2026-09-24-04-jam1.mp3",
@@ -819,7 +909,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 374.0
+   "duration": 374.0,
+   "slug": "gangster"
   },
   {
    "file": "audio/2026-09-24-06-jam1.mp3",
@@ -828,7 +919,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 286.0
+   "duration": 286.0,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-09-24-06-jam2.mp3",
@@ -837,7 +929,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 179.0
+   "duration": 179.0,
+   "slug": "save-the-robots"
   },
   {
    "file": "audio/2026-09-24-08-jam1.mp3",
@@ -846,7 +939,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 238.0
+   "duration": 238.0,
+   "slug": "country-royale"
   },
   {
    "file": "audio/2026-09-24-09-jam1.mp3",
@@ -855,7 +949,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 490.975
+   "duration": 490.975,
+   "slug": "trap-door"
   },
   {
    "file": "audio/2026-09-24-13-jam1.mp3",
@@ -864,7 +959,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 394.781
+   "duration": 394.781,
+   "slug": "mirrors"
   },
   {
    "file": "audio/2026-09-24-15-jam1.mp3",
@@ -873,7 +969,8 @@
    "date": "2026-09-24",
    "venue": "Bogart's",
    "city": "Cincinnati, OH",
-   "duration": 555.0
+   "duration": 555.0,
+   "slug": "feeling-twisted"
   },
   {
    "file": "audio/2026-09-25-02-jam1.mp3",
@@ -882,7 +979,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 346.5
+   "duration": 346.5,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-09-25-02-jam2.mp3",
@@ -891,7 +989,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 90.0
+   "duration": 90.0,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-09-25-03-jam1.mp3",
@@ -900,7 +999,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 503.0
+   "duration": 503.0,
+   "slug": "minions"
   },
   {
    "file": "audio/2026-09-25-04-jam1.mp3",
@@ -909,7 +1009,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 568.0
+   "duration": 568.0,
+   "slug": "tempest"
   },
   {
    "file": "audio/2026-09-25-04-jam2.mp3",
@@ -918,7 +1019,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 222.4
+   "duration": 222.4,
+   "slug": "tempest"
   },
   {
    "file": "audio/2026-09-25-05-jam1.mp3",
@@ -927,7 +1029,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 185.6
+   "duration": 185.6,
+   "slug": "no-recollection"
   },
   {
    "file": "audio/2026-09-25-06-jam1.mp3",
@@ -936,7 +1039,8 @@
    "date": "2026-09-25",
    "venue": "Nocturnal Valley Music & Arts Festival",
    "city": "French Village, MO",
-   "duration": 749.087
+   "duration": 749.087,
+   "slug": "orch-theme"
   },
   {
    "file": "audio/2026-09-26-01-jam1.mp3",
@@ -945,7 +1049,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 525.0
+   "duration": 525.0,
+   "slug": "dream-journal"
   },
   {
    "file": "audio/2026-09-26-02-jam1.mp3",
@@ -954,7 +1059,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 567.186
+   "duration": 567.186,
+   "slug": "helicopters"
   },
   {
    "file": "audio/2026-09-26-03-jam1.mp3",
@@ -963,7 +1069,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 322.5
+   "duration": 322.5,
+   "slug": "svenghali"
   },
   {
    "file": "audio/2026-09-26-04-jam1.mp3",
@@ -972,7 +1079,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 292.5
+   "duration": 292.5,
+   "slug": "rivers"
   },
   {
    "file": "audio/2026-09-26-04-jam2.mp3",
@@ -981,7 +1089,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 534.0
+   "duration": 534.0,
+   "slug": "rivers"
   },
   {
    "file": "audio/2026-09-26-04-jam3.mp3",
@@ -990,7 +1099,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 540.0
+   "duration": 540.0,
+   "slug": "rivers"
   },
   {
    "file": "audio/2026-09-26-07-jam1.mp3",
@@ -999,7 +1109,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 181.5
+   "duration": 181.5,
+   "slug": "42"
   },
   {
    "file": "audio/2026-09-26-08-jam1.mp3",
@@ -1008,7 +1119,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 254.0
+   "duration": 254.0,
+   "slug": "ring-the-doorbell-twice"
   },
   {
    "file": "audio/2026-09-26-08-jam2.mp3",
@@ -1017,7 +1129,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 699.0
+   "duration": 699.0,
+   "slug": "ring-the-doorbell-twice"
   },
   {
    "file": "audio/2026-09-26-09-jam1.mp3",
@@ -1026,7 +1139,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 292.5
+   "duration": 292.5,
+   "slug": "run-like-hell"
   },
   {
    "file": "audio/2026-09-26-09-jam2.mp3",
@@ -1035,7 +1149,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 314.9
+   "duration": 314.9,
+   "slug": "run-like-hell"
   },
   {
    "file": "audio/2026-09-26-12-jam1.mp3",
@@ -1044,7 +1159,8 @@
    "date": "2026-09-26",
    "venue": "The Sylvee",
    "city": "Madison, WI",
-   "duration": 420.0
+   "duration": 420.0,
+   "slug": "morph-dusseldorf"
   },
   {
    "file": "audio/2026-10-02-02-jam1.mp3",
@@ -1053,7 +1169,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 584.0
+   "duration": 584.0,
+   "slug": "story-of-the-world"
   },
   {
    "file": "audio/2026-10-02-03-jam1.mp3",
@@ -1062,7 +1179,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 541.5
+   "duration": 541.5,
+   "slug": "twisted-in-the-road"
   },
   {
    "file": "audio/2026-10-02-05-jam1.mp3",
@@ -1071,7 +1189,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 425.351
+   "duration": 425.351,
+   "slug": "caves-of-the-east"
   },
   {
    "file": "audio/2026-10-02-06-jam1.mp3",
@@ -1080,7 +1199,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 508.501
+   "duration": 508.501,
+   "slug": "freeze"
   },
   {
    "file": "audio/2026-10-02-09-jam1.mp3",
@@ -1089,7 +1209,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 674.6
+   "duration": 674.6,
+   "slug": "space-train"
   },
   {
    "file": "audio/2026-10-02-10-jam1.mp3",
@@ -1098,7 +1219,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 303.0
+   "duration": 303.0,
+   "slug": "i-man"
   },
   {
    "file": "audio/2026-10-02-12-jam1.mp3",
@@ -1107,7 +1229,8 @@
    "date": "2026-10-02",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 299.0
+   "duration": 299.0,
+   "slug": "dino-baby"
   },
   {
    "file": "audio/2026-10-03-02-jam1.mp3",
@@ -1116,7 +1239,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 326.4
+   "duration": 326.4,
+   "slug": "the-deal"
   },
   {
    "file": "audio/2026-10-03-03-jam1.mp3",
@@ -1125,7 +1249,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 301.5
+   "duration": 301.5,
+   "slug": "crickets"
   },
   {
    "file": "audio/2026-10-03-03-jam2.mp3",
@@ -1134,7 +1259,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 255.0
+   "duration": 255.0,
+   "slug": "crickets"
   },
   {
    "file": "audio/2026-10-03-04-jam1.mp3",
@@ -1143,7 +1269,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 293.0
+   "duration": 293.0,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-10-03-04-jam2.mp3",
@@ -1152,7 +1279,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 565.397
+   "duration": 565.397,
+   "slug": "m-e-m-p-h-i-s"
   },
   {
    "file": "audio/2026-10-03-05-jam1.mp3",
@@ -1161,7 +1289,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 247.257
+   "duration": 247.257,
+   "slug": "wormhole"
   },
   {
    "file": "audio/2026-10-03-06-jam1.mp3",
@@ -1170,7 +1299,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 393.0
+   "duration": 393.0,
+   "slug": "confrontation"
   },
   {
    "file": "audio/2026-10-03-08-jam1.mp3",
@@ -1179,7 +1309,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 487.8
+   "duration": 487.8,
+   "slug": "big-wrecking-ball"
   },
   {
    "file": "audio/2026-10-03-09-jam1.mp3",
@@ -1188,7 +1319,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 592.5
+   "duration": 592.5,
+   "slug": "trap-door"
   },
   {
    "file": "audio/2026-10-03-10-jam1.mp3",
@@ -1197,7 +1329,8 @@
    "date": "2026-10-03",
    "venue": "Tropicana Showroom",
    "city": "Atlantic City, NJ",
-   "duration": 423.0
+   "duration": 423.0,
+   "slug": "morph-dusseldorf"
   },
   {
    "file": "audio/2026-10-08-03-jam1.mp3",
@@ -1206,7 +1339,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 598.3
+   "duration": 598.3,
+   "slug": "loose-change"
   },
   {
    "file": "audio/2026-10-08-04-jam1.mp3",
@@ -1215,7 +1349,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 299.0
+   "duration": 299.0,
+   "slug": "no-recollection"
   },
   {
    "file": "audio/2026-10-08-04-jam2.mp3",
@@ -1224,7 +1359,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 547.5
+   "duration": 547.5,
+   "slug": "no-recollection"
   },
   {
    "file": "audio/2026-10-08-05-jam1.mp3",
@@ -1233,7 +1369,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 178.0
+   "duration": 178.0,
+   "slug": "to-be-continued"
   },
   {
    "file": "audio/2026-10-08-06-jam1.mp3",
@@ -1242,7 +1379,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 238.0
+   "duration": 238.0,
+   "slug": "house-dog-party-favor"
   },
   {
    "file": "audio/2026-10-08-08-jam1.mp3",
@@ -1251,7 +1389,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 500.0
+   "duration": 500.0,
+   "slug": "resurrection"
   },
   {
    "file": "audio/2026-10-08-09-jam1.mp3",
@@ -1260,7 +1399,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 509.0
+   "duration": 509.0,
+   "slug": "tourists-rocket-ship"
   },
   {
    "file": "audio/2026-10-08-10-jam1.mp3",
@@ -1269,7 +1409,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 269.3
+   "duration": 269.3,
+   "slug": "sound-one"
   },
   {
    "file": "audio/2026-10-08-11-jam1.mp3",
@@ -1278,7 +1419,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 420.0
+   "duration": 420.0,
+   "slug": "ring-the-doorbell-twice"
   },
   {
    "file": "audio/2026-10-08-11-jam2.mp3",
@@ -1287,7 +1429,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 363.0
+   "duration": 363.0,
+   "slug": "ring-the-doorbell-twice"
   },
   {
    "file": "audio/2026-10-08-12-jam1.mp3",
@@ -1296,7 +1439,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 253.0
+   "duration": 253.0,
+   "slug": "astronaut"
   },
   {
    "file": "audio/2026-10-08-13-jam1.mp3",
@@ -1305,7 +1449,8 @@
    "date": "2026-10-08",
    "venue": "Paramount Theatre",
    "city": "Rutland, VT",
-   "duration": 238.0
+   "duration": 238.0,
+   "slug": "little-lai"
   },
   {
    "file": "audio/2026-10-09-03-jam1.mp3",
@@ -1314,7 +1459,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 361.0
+   "duration": 361.0,
+   "slug": "dream-journal"
   },
   {
    "file": "audio/2026-10-09-03-jam2.mp3",
@@ -1323,7 +1469,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 464.153
+   "duration": 464.153,
+   "slug": "dream-journal"
   },
   {
    "file": "audio/2026-10-09-04-jam1.mp3",
@@ -1332,7 +1479,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 777.4
+   "duration": 777.4,
+   "slug": "spacebirdmatingcall"
   },
   {
    "file": "audio/2026-10-09-05-jam1.mp3",
@@ -1341,7 +1489,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 450.0
+   "duration": 450.0,
+   "slug": "tricycle"
   },
   {
    "file": "audio/2026-10-09-06-jam1.mp3",
@@ -1350,7 +1499,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 315.0
+   "duration": 315.0,
+   "slug": "who-s-in-charge"
   },
   {
    "file": "audio/2026-10-09-10-jam1.mp3",
@@ -1359,7 +1509,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 300.0
+   "duration": 300.0,
+   "slug": "scars-of-the-brave"
   },
   {
    "file": "audio/2026-10-09-10-jam2.mp3",
@@ -1368,7 +1519,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 315.0
+   "duration": 315.0,
+   "slug": "scars-of-the-brave"
   },
   {
    "file": "audio/2026-10-09-11-jam1.mp3",
@@ -1377,7 +1529,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 209.0
+   "duration": 209.0,
+   "slug": "jigsaw-earth"
   },
   {
    "file": "audio/2026-10-09-11-jam2.mp3",
@@ -1386,7 +1539,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 189.0
+   "duration": 189.0,
+   "slug": "jigsaw-earth"
   },
   {
    "file": "audio/2026-10-09-13-jam1.mp3",
@@ -1395,7 +1549,8 @@
    "date": "2026-10-09",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 174.0
+   "duration": 174.0,
+   "slug": "hot-air-balloon"
   },
   {
    "file": "audio/2026-10-10-03-jam1.mp3",
@@ -1404,7 +1559,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 424.0
+   "duration": 424.0,
+   "slug": "simulations"
   },
   {
    "file": "audio/2026-10-10-03-jam2.mp3",
@@ -1413,7 +1569,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 819.0
+   "duration": 819.0,
+   "slug": "simulations"
   },
   {
    "file": "audio/2026-10-10-04-jam1.mp3",
@@ -1422,7 +1579,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 138.0
+   "duration": 138.0,
+   "slug": "another-spin"
   },
   {
    "file": "audio/2026-10-10-04-jam2.mp3",
@@ -1431,7 +1589,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 382.5
+   "duration": 382.5,
+   "slug": "another-spin"
   },
   {
    "file": "audio/2026-10-10-10-jam1.mp3",
@@ -1440,7 +1599,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 292.5
+   "duration": 292.5,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
   },
   {
    "file": "audio/2026-10-10-10-jam2.mp3",
@@ -1449,7 +1609,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 307.5
+   "duration": 307.5,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
   },
   {
    "file": "audio/2026-10-10-11-jam1.mp3",
@@ -1458,7 +1619,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 337.0
+   "duration": 337.0,
+   "slug": "running"
   },
   {
    "file": "audio/2026-10-10-11-jam2.mp3",
@@ -1467,7 +1629,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 372.2
+   "duration": 372.2,
+   "slug": "running"
   },
   {
    "file": "audio/2026-10-10-12-jam1.mp3",
@@ -1476,7 +1639,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 219.0
+   "duration": 219.0,
+   "slug": "run-like-hell"
   },
   {
    "file": "audio/2026-10-10-13-jam1.mp3",
@@ -1485,7 +1649,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 569.0
+   "duration": 569.0,
+   "slug": "basis-for-a-day"
   },
   {
    "file": "audio/2026-10-10-14-jam1.mp3",
@@ -1494,7 +1659,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 338.0
+   "duration": 338.0,
+   "slug": "cyclone"
   },
   {
    "file": "audio/2026-10-10-16-jam1.mp3",
@@ -1503,7 +1669,8 @@
    "date": "2026-10-10",
    "venue": "Town Ballroom",
    "city": "Buffalo, NY",
-   "duration": 274.5
+   "duration": 274.5,
+   "slug": "big-wrecking-ball"
   },
   {
    "file": "audio/2026-10-11-01-jam1.mp3",
@@ -1512,7 +1679,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 811.0
+   "duration": 811.0,
+   "slug": "we-like-to-party"
   },
   {
    "file": "audio/2026-10-11-02-jam1.mp3",
@@ -1521,7 +1689,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 270.0
+   "duration": 270.0,
+   "slug": "fire-will-exchange"
   },
   {
    "file": "audio/2026-10-11-03-jam1.mp3",
@@ -1530,7 +1699,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 329.0
+   "duration": 329.0,
+   "slug": "digital-buddha"
   },
   {
    "file": "audio/2026-10-11-04-jam1.mp3",
@@ -1539,7 +1709,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 199.0
+   "duration": 199.0,
+   "slug": "aceetobee"
   },
   {
    "file": "audio/2026-10-11-09-jam1.mp3",
@@ -1548,7 +1719,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 384.798
+   "duration": 384.798,
+   "slug": "a-chance-to-save-the-world"
   },
   {
    "file": "audio/2026-10-11-10-jam1.mp3",
@@ -1557,7 +1729,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 569.0
+   "duration": 569.0,
+   "slug": "mindless-dribble"
   },
   {
    "file": "audio/2026-10-11-10-jam2.mp3",
@@ -1566,7 +1739,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 449.1
+   "duration": 449.1,
+   "slug": "mindless-dribble"
   },
   {
    "file": "audio/2026-10-11-11-jam1.mp3",
@@ -1575,7 +1749,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 299.0
+   "duration": 299.0,
+   "slug": "dino-baby"
   },
   {
    "file": "audio/2026-10-11-12-jam1.mp3",
@@ -1584,7 +1759,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 337.0
+   "duration": 337.0,
+   "slug": "hymn"
   },
   {
    "file": "audio/2026-10-11-14-jam1.mp3",
@@ -1593,7 +1769,8 @@
    "date": "2026-10-11",
    "venue": "Westcott Theater",
    "city": "Syracuse, NY",
-   "duration": 298.0
+   "duration": 298.0,
+   "slug": "story-of-the-world"
   }
  ]
 }
