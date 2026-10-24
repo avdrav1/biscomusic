@@ -26,6 +26,7 @@ AUDIO = os.path.join(HERE, 'audio')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
 JAMS_URL = 'https://jams.biscomusic.com'
+HOME_URL = 'https://biscomusic.com'   # First time played's address (functions/_hosts.js)
 # Requests that skip functions/ (the host routing in _middleware.js): files every site shares or never routes.
 ROUTES = {'version': 1, 'include': ['/*'],
           'exclude': ['/static/*', '/waves/*', '/shows/*', '/schedule.json', '/clips.json', '/nominees.json', '/shows.json', '/shows-api.json', '/sw.js']}
@@ -348,7 +349,7 @@ def panel_page(html, name):
                            (r'(<meta name="twitter:title" content=")[^"]*(")', full),
                            (r'(<meta property="og:description" content=")[^"]*(")', og),
                            (r'(<meta name="twitter:description" content=")[^"]*(")', og),
-                           (r'(<meta property="og:url" content=")[^"]*(")', f'{JAMS_URL}/{name}')):
+                           (r'(<meta property="og:url" content=")[^"]*(")', f'{HOME_URL if name == "first-played" else JAMS_URL}/{name}')):
         html, n = re.subn(pattern, lambda m: m[1] + value + m[2], html, count=1)
         if not n:
             sys.exit(f'index.html has no {pattern!r} to set for /{name}')

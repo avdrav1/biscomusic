@@ -261,8 +261,8 @@ function renderVoteClock() {
 
 let toastTimer;
 function toast(msg, ic) {
-  // Inside the open sheet, or it would sit under the sheet's backdrop
-  ($('sheet').open ? $('sheet') : document.body).append($('toast'));
+  // Inside an open sheet, or it would sit under the sheet's backdrop
+  ([$('sheet'), $('best')].find(d => d.open) || document.body).append($('toast'));
   $('toast').replaceChildren(...(ic ? [icon(ic)] : []), msg); $('toast').hidden = false;
   clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').hidden = true, 2200);
 }
@@ -346,6 +346,92 @@ document.querySelectorAll('#sheet [data-f]').forEach(b => b.onclick = () => {
   document.querySelectorAll('#sheet [data-f]').forEach(x => x.setAttribute('aria-checked', String(x === b)));
   SHEET.order = b.dataset.f; SHEET.shown = PAGE; renderSheet();
 });
+
+// ---- Best moments (/best): the most-loved 15 seconds on the station (/api/shows/best), each with a vote for its show ----
+// A moment can't play on its own here, so each row says when its show is on, or offers a vote to put the show on next.
+const BEST = { moments: null, timer: 0 };
+const BEST_PATH = location.pathname.startsWith('/shows/') ? '/shows/best' : '/best';   // server.py serves this site at /shows/
+const ON_AIR = location.pathname.startsWith('/shows/') ? '/shows/' : '/';
+$('bopen').href = BEST_PATH;
+
+function bestMessage(text) { const li = el('li'); li.append(el('span', 'empty', text)); $('blist').replaceChildren(li); }
+
+async function loadBest() {
+  const best = await fetch('/api/shows/best').then(r => r.ok ? r.json() : null).catch(() => null);
+  if (!best) return bestMessage('Best moments need the station’s server, at shows.biscomusic.com.');
+  BEST.moments = best.moments.filter(m => showIndex(m.show) >= 0);
+  if (!BEST.moments.length) return bestMessage('No reactions yet. Tap the flame while you listen and the best moments will show up here.');
+  $('blist').replaceChildren(...BEST.moments.map((m, k) => {
+    const s = P.shows[showIndex(m.show)], title = m.title || `Track ${m.n + 1}`;
+    const li = el('li'); li.dataset.k = k;
+    const txt = el('span', 's');
+    txt.append(el('span', 't', `${title} @ ${fmt(m.pos)}`), el('small', null, `${showLine(s)}${s.vault ? ` · ${KIND[s.kind]} tape, from the vault` : ''}`));
+    const stats = el('span', 'stats');
+    for (const [n, ic, what] of [[m.fire, 'flame', 'reactions'], [m.comments, 'message-circle', 'comments']]) {
+      if (!n) continue;
+      const c = el('span', 'chip' + (ic === 'flame' ? ' hot' : '')); c.append(icon(ic), String(n)); c.title = `${n} ${what}`;
+      stats.append(c);
+    }
+    txt.append(stats);
+    if (m.comment) {
+      const q = el('span', 'quote');
+      q.append(el('b', null, m.comment.nickname || 'anonymous'), document.createTextNode(': ' + m.comment.body));
+      txt.append(q);
+    }
+    // Status cell: a Vote button (kept between ticks so a tap isn't lost) or a status line.
+    const w = el('span', 'when');
+    const btn = el('button', 'ghost vbtn', 'Vote'); btn.hidden = true;
+    btn.onclick = async () => { await castVote(m.show); tickBest(); };
+    btn.setAttribute('aria-label', `Vote for ${showLabel(s)} to play next`);
+    w.append(el('span', 'said'), btn);
+    li.append(el('span', 'rank', k + 1), txt, w);
+    return li;
+  }));
+  tickBest();
+}
+
+// When each moment's show is on: on air (counting down to the moment), locked in next, or a vote.
+function tickBest() {
+  if (!BEST.moments?.length) return;
+  const { i, offset } = live(), onShow = T[i].si;
+  for (const li of $('blist').children) {
+    const m = BEST.moments[li.dataset.k], si = showIndex(m.show), s = P.shows[si];
+    const status = li.querySelector('.said'), btn = li.querySelector('.vbtn');
+    let text = '', canVote = false, onAir = false;
+    if (si === onShow) {
+      const into = T[i].start - s.start + offset, at = T[s.first + m.n].start - s.start + m.pos;
+      onAir = true; text = into < at ? `on air · in ${fmt(at - into)}` : into < at + 15 ? 'on air now' : 'on air';
+    } else if (!ST) text = s.vault ? 'by request' : '';
+    else if (ST.next?.track === m.show) { onAir = true; text = 'up next!'; }
+    else if (ShowStation.myVote(ST.round) === m.show) text = 'you voted';
+    else { const why = ShowStation.blocked(ST, m.show); if (why) text = why.toLowerCase(); else canVote = true; }
+    li.querySelector('.when').classList.toggle('now', onAir);
+    // A Vote button that hides while focused hands focus to the close button, so keyboard users aren't dropped (WCAG 2.4.3)
+    const refocus = !canVote && document.activeElement === btn;
+    status.textContent = text; status.hidden = canVote; btn.hidden = !canVote;
+    if (refocus) $('bclose').focus();
+  }
+}
+
+// The sheet follows the address, so /best can be shared and Back closes it.
+function showBest(open) {
+  if (open && !$('best').open) {
+    if ($('sheet').open) $('sheet').close();
+    BEST.moments = null; bestMessage('Loading…');
+    $('best').showModal();
+    loadBest();
+    BEST.timer = setInterval(tickBest, 1000);
+  } else if (!open && $('best').open) $('best').close();
+}
+const atBest = () => location.pathname.replace(/\/+$/, '') === BEST_PATH;
+$('best').addEventListener('close', () => {
+  clearInterval(BEST.timer); BEST.timer = 0;
+  if (atBest()) history.pushState(null, '', ON_AIR + location.hash);
+});
+$('bopen').onclick = e => { if (!P) return; e.preventDefault(); history.pushState(null, '', BEST_PATH); showBest(true); };
+$('bclose').onclick = () => $('best').close();
+$('best').addEventListener('click', e => { if (e.target === $('best')) $('best').close(); });   // tap the backdrop
+addEventListener('popstate', () => P && showBest(atBest()));
 
 // ---- Flames and comments: pinned to a moment of a track, so they come back every time the show airs ----
 // A track's key is "<show id>/<track index>". One call loads a whole show's, so the show's timeline and track list
@@ -738,9 +824,9 @@ decks.forEach(d => {
 $('tune').onclick = () => listening ? stop() : start();
 $('vol').oninput = e => decks.forEach(d => { d.volume = e.target.value; });
 
-// Space plays and pauses, as in any player; left alone while typing, on controls Space already presses, and in the sheet.
+// Space plays and pauses, as in any player; left alone while typing, on controls Space already presses, and in the sheets.
 document.addEventListener('keydown', e => {
-  if (e.code !== 'Space' || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || !P || $('sheet').open) return;
+  if (e.code !== 'Space' || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || !P || $('sheet').open || $('best').open) return;
   if (e.target.closest?.('input, textarea, select, button, a[href], summary, [contenteditable], [role="radio"]')) return;
   e.preventDefault();
   if (listening) stop(); else start();
@@ -773,6 +859,7 @@ fetch('/shows.json').then(r => { if (!r.ok) throw new Error(r.status); return r.
   $('tune').disabled = false;
   render();
   setInterval(render, 1000);
+  if (atBest()) showBest(true);
   // Poll only while the page is on screen. A tab playing in the background still hands off on time:
   // setStation() schedules a fetch for the vote lock and the show's end (plus a check once a minute).
   const visible = () => document.visibilityState === 'visible';

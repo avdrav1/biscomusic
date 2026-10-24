@@ -14,13 +14,23 @@ test('old jam radio links on biscomusic.com move to jams, query intact', () => {
   assert.deepEqual(at('https://biscomusic.com/?m=2026-09-26-04-jam2@312&c=7'),
     { redirect: 'https://jams.biscomusic.com/?m=2026-09-26-04-jam2@312&c=7' });
   assert.deepEqual(at('https://biscomusic.com/?request'), { redirect: 'https://jams.biscomusic.com/?request' });
-  assert.deepEqual(at('https://biscomusic.com/first-played?song=42'), { redirect: 'https://jams.biscomusic.com/first-played?song=42' });
   assert.deepEqual(at('https://biscomusic.com/best/'), { redirect: 'https://jams.biscomusic.com/best/' });
 });
 
-test('shows.biscomusic.com plays the show radio at /, and sends jam pages to jams', () => {
+test('shows.biscomusic.com plays the show radio at / and /best (its own best moments), and sends jam pages to jams', () => {
   assert.deepEqual(at('https://shows.biscomusic.com/'), { asset: '/shows/' });
+  assert.deepEqual(at('https://shows.biscomusic.com/best'), { asset: '/shows/' });
+  assert.deepEqual(at('https://shows.biscomusic.com/best/'), { asset: '/shows/' });
   assert.deepEqual(at('https://shows.biscomusic.com/nominate'), { redirect: 'https://jams.biscomusic.com/nominate' });
+});
+
+test('First time played lives at biscomusic.com/first-played; the stations send its address there, query intact', () => {
+  assert.deepEqual(at('https://biscomusic.com/first-played'), { asset: '/first-played' });
+  assert.deepEqual(at('https://biscomusic.com/first-played?song=42'), { asset: '/first-played' });
+  assert.deepEqual(at('https://www.biscomusic.com/first-played/?song=42'), { redirect: 'https://biscomusic.com/first-played?song=42' });
+  assert.deepEqual(at('https://jams.biscomusic.com/first-played?song=42'), { redirect: 'https://biscomusic.com/first-played?song=42' });
+  assert.deepEqual(at('https://shows.biscomusic.com/first-played'), { redirect: 'https://biscomusic.com/first-played' });
+  assert.equal(at('https://abc123.biscomusic.pages.dev/first-played'), null);
 });
 
 test('the jam radio, the API and previews are served as they are', () => {

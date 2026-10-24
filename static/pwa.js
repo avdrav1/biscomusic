@@ -12,7 +12,10 @@
     : /firefox|fxios/i.test(ua) ? 'firefox' : /chrome|crios/i.test(ua) ? 'chrome' : /safari/i.test(ua) ? 'safari' : 'other';
   window.pwa = { os, browser, standalone };   // static/install.js picks the right steps from these
 
-  if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
+  // Not on biscomusic.com (First time played is served there): that domain is the station picker, not the app.
+  const home = /^(www\.)?biscomusic\.com$/.test(location.hostname);
+  if (home) document.querySelector('link[rel="manifest"]')?.remove();
+  if (!home && 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost')) {
     addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
   }
 
