@@ -114,7 +114,7 @@ function render() {
   if (i !== shownIdx) {
     shownIdx = i;
     $('song').textContent = titleOf(t);
-    document.title = `${titleOf(t)} · ${day(s.date)} · Biscuits Show Radio`;
+    document.title = `${titleOf(t)} · ${day(s.date)} · Show Radio`;
     if ('mediaSession' in navigator) navigator.mediaSession.metadata = new MediaMetadata({ title: titleOf(t), artist: 'The Disco Biscuits', album: showLine(s), artwork: ARTWORK });
     if (t.si !== shownShow) renderShow(t.si);
     [...$('tracks').children].forEach((li, n) => {

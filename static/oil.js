@@ -1,6 +1,7 @@
 // Oil-slick colours moving inside the letters of every [data-oil] element (the radio's name in the page
-// headers): simplex noise posterized into iridescent rings with dark oil between them, a WebGL shader
-// after an "Oil Spill" Three.js sketch.
+// headers): a few soft iridescent bands of simplex noise drifting over solid letters (pearl, and green for
+// a <span>), a WebGL shader after an "Oil Spill" Three.js sketch. The sketch's dark oil between the bands
+// broke the letters apart and made the name hard to read, so it's gone.
 // The sketch's noise had a typo (dot(v, ...) for dot(i, ...)) that zeroed it more and more as time grew:
 // its six-pass swirl warp never moved anything, and after about a minute the whole picture went flat green.
 // This uses the correct noise and leaves out the warp, which renders what the sketch showed in its first
@@ -79,7 +80,8 @@ function oilText(el) {
     }
 
     void main() {
-      float alpha = texture2D(uMask, vUv).a;
+      vec4 m = texture2D(uMask, vUv);
+      float alpha = m.a;
       if (alpha < 0.004) { gl_FragColor = vec4(0.0); return; }
 
       vec2 uv = (vUv * uResolution - 0.5 * uResolution) / uUnit;
@@ -90,15 +92,16 @@ function oilText(el) {
       float n = snoise(vec3(uv * 1.26, t * 0.8));
       float val = n * 0.5 + 0.5;
 
-      // Posterized bands with soft edges, iridescent ridges and dark oil troughs between them
-      float bands = 14.0;
+      // Solid letters with an oil sheen: pearl, or green where the mask says accent (red 0), and a few
+      // soft iridescent bands drifting over them. No dark troughs, so every stroke stays whole and readable.
+      vec3 base = mix(vec3(0.95, 0.99, 0.93), vec3(0.36, 1.0, 0.23), 1.0 - m.r);
+      float bands = 5.0;
       float scaled = val * bands;
-      float posterized = (floor(scaled) + smoothstep(0.75, 0.95, fract(scaled))) / bands;
+      float posterized = (floor(scaled) + smoothstep(0.6, 1.0, fract(scaled))) / bands;
       vec3 iridescence = oilPalette(posterized * 2.2 - t * 0.5);
-      float darkMask = smoothstep(0.15, 0.55, sin(scaled * 3.14159));
-      // Troughs lifted from the original near-black so the letters stay readable on the dark card
-      vec3 color = mix(vec3(0.24, 0.22, 0.3), iridescence, darkMask);
-      color += smoothstep(0.4, 0.0, abs(n)) * oilPalette(val + 0.2) * 0.25;   // sheen along the ridges
+      float film = smoothstep(0.2, 0.8, sin(scaled * 3.14159)) * 0.38;
+      vec3 color = mix(base, base * iridescence * 1.6, film);
+      color += smoothstep(0.3, 0.0, abs(n)) * 0.12;   // a highlight along the ridges
 
       gl_FragColor = vec4(color * alpha, alpha);
     }`;
@@ -152,12 +155,12 @@ function oilText(el) {
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, width, height);
-    ctx.fillStyle = '#fff';
     ctx.textBaseline = 'alphabetic';
     const range = document.createRange();
     const texts = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
     for (let node; (node = texts.nextNode());) {
       const style = getComputedStyle(node.parentElement);   // a <span> inside may have its own font
+      ctx.fillStyle = node.parentElement.closest('span') ? '#0f0' : '#fff';   // and is the accent colour
       ctx.font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`;
       const ascent = ctx.measureText('Hg').fontBoundingBoxAscent;
       let offset = 0;

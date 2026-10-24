@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>biscomusic · Disco Biscuits radio</title>
-<meta name="description" content="Two Disco Biscuits radio stations: Biscuits Jam Radio plays the jams, Biscuits Show Radio plays every full soundboard show on archive.org.">
+<meta name="description" content="Two Disco Biscuits radio stations: Jam Radio plays the jams, Show Radio plays every full soundboard show on archive.org.">
 <meta name="theme-color" content="#030604">
 <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="biscomusic">
 <meta property="og:title" content="biscomusic · Disco Biscuits radio">
-<meta property="og:description" content="Biscuits Jam Radio plays the jams. Biscuits Show Radio plays every full soundboard show, start to finish.">
+<meta property="og:description" content="Jam Radio plays the jams. Show Radio plays every full soundboard show, start to finish.">
 <meta property="og:url" content="https://biscomusic.com/">
 <meta property="og:image" content="https://jams.biscomusic.com/static/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -21,8 +21,6 @@
 <link rel="stylesheet" href="/static/app.css">
 <meta name="icons" content="/static/icons.svg">
 <style>
-/* "BISCOMUSIC" is 7.3em wide in Archivo Black: as big as fits beside the button (see app.css h1) */
-@supports (width:1cqw){h1{font-size:max(.875rem,min(68px,100cqw / 7.4))}}
 .stations{display:grid;gap:16px}
 a.station{display:block;padding:24px;color:inherit;text-decoration:none}
 a.station:hover{border-color:rgba(93,255,58,.5)}
@@ -50,17 +48,18 @@ a.station:hover .go{text-decoration:underline}
   <nav class="stations" aria-label="Stations">
     <a class="station now" href="https://jams.biscomusic.com/" data-local="/">
       <div class="label">The jams</div>
-      <div class="name">BISCUITS <span>JAM</span> RADIO</div>
+      <div class="name"><span>JAM</span> RADIO</div>
       <p>All jams, no butter! Disco Biscuits jams, broadcast around the clock. Vote for what plays next, react and comment as it plays.</p>
       <span class="go">Tune in <svg class="i" aria-hidden="true"><use href="/static/icons.svg#arrow-right"/></svg></span>
     </a>
     <a class="station now" href="https://shows.biscomusic.com/" data-local="/shows/">
       <div class="label">Whole shows</div>
-      <div class="name">BISCUITS <span>SHOW</span> RADIO</div>
+      <div class="name"><span>SHOW</span> RADIO</div>
       <p>Every full soundboard show on archive.org, start to finish, one show after another, and a vault of audience tapes you can request.</p>
       <span class="go">Tune in <svg class="i" aria-hidden="true"><use href="/static/icons.svg#arrow-right"/></svg></span>
     </a>
   </nav>
+  <p class="fine">Fan-run and unofficial. Not affiliated with the Disco Biscuits.</p>
 </main>
 <script src="/static/icon.js"></script>
 <script src="/static/a11y.js"></script>

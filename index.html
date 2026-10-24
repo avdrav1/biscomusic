@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Biscuits Jam Radio</title>
+<title>Jam Radio · biscomusic</title>
 <meta name="description" content="All jams, no butter! Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment — react and comment as it plays.">
 <meta name="theme-color" content="#030604">
 <link rel="icon" href="static/favicon.svg" type="image/svg+xml">
@@ -14,16 +14,16 @@
 <meta name="apple-mobile-web-app-title" content="Jam Radio">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Biscuits Jam Radio">
-<meta property="og:title" content="Biscuits Jam Radio">
+<meta property="og:site_name" content="biscomusic">
+<meta property="og:title" content="Jam Radio · biscomusic">
 <meta property="og:description" content="All jams, no butter! Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.">
 <meta property="og:url" content="https://jams.biscomusic.com/">
 <meta property="og:image" content="https://jams.biscomusic.com/static/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Biscuits Jam Radio: on air, with a heat map of the best moments">
+<meta property="og:image:alt" content="biscomusic Jam Radio: on air, with a heat map of the best moments">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Biscuits Jam Radio">
+<meta name="twitter:title" content="Jam Radio · biscomusic">
 <meta name="twitter:description" content="All jams, no butter! Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.">
 <meta name="twitter:image" content="https://jams.biscomusic.com/static/og.png">
 <link rel="preload" href="static/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -36,7 +36,8 @@
 <main class="wrap">
   <header>
     <div class="brand">
-      <h1 data-oil><a href="https://biscomusic.com/" data-local="/home.html" aria-label="Biscuits Jam Radio, all stations">BISCUITS <span>JAM</span> RADIO</a></h1>
+      <h1 data-oil><a href="https://biscomusic.com/" data-local="/home.html" aria-label="biscomusic, all stations">BISCO<span>MUSIC</span></a></h1>
+      <p class="dial">JAM RADIO</p>
       <p class="tagline">All jams, no butter!</p>
     </div>
     <div class="hside">
@@ -159,6 +160,7 @@
     <a href="/nominate">Nominate jams</a>
     <a href="/install">Get the app</a>
   </nav>
+  <p class="fine">Fan-run and unofficial. Not affiliated with the Disco Biscuits.</p>
 </main>
 
 <!-- Everything besides the radio opens in this panel over it, so the music never stops (see "Panels" below).
@@ -1259,9 +1261,9 @@ function momentUrl(t, pos, c) {
 
 async function shareMoment(t, pos, c) {
   const url = momentUrl(t, pos, c);
-  const text = c ? `“${c.body}” — ${t.song} @ ${fmt(pos)}` : `${t.song}${t.jam ? ` (jam ${t.jam})` : ''} @ ${fmt(pos)} on Biscuits Jam Radio`;
+  const text = c ? `“${c.body}” — ${t.song} @ ${fmt(pos)}` : `${t.song}${t.jam ? ` (jam ${t.jam})` : ''} @ ${fmt(pos)} on biscomusic Jam Radio`;
   if (navigator.share) {
-    try { await navigator.share({ title: 'Biscuits Jam Radio', text, url }); return; }
+    try { await navigator.share({ title: 'Jam Radio · biscomusic', text, url }); return; }
     catch (e) { if (e.name === 'AbortError') return; }
   }
   try { await navigator.clipboard.writeText(url); toast('Link copied', 'link-2'); }
@@ -1405,7 +1407,7 @@ const panelFor = r => panels[r] ||= ROUTES[r].load().then(m => m.init(hostFor(r)
 });
 
 function setTitle() {
-  document.title = route ? `${ROUTES[route].title} · Biscuits Jam Radio` : S ? `${S.tracks[live().i].song} · Biscuits Jam Radio` : 'Biscuits Jam Radio';
+  document.title = route ? `${ROUTES[route].title} · Jam Radio` : S ? `${S.tracks[live().i].song} · Jam Radio` : 'Jam Radio · biscomusic';
 }
 
 // Show what the address says: a panel, or the radio (with a shared moment or the request sheet on it).

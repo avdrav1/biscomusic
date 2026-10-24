@@ -35,16 +35,16 @@ WAVES = os.path.join(HERE, 'waves')
 # name: (title, description, og:description)
 PANELS = {
     'best': ('Best moments',
-             'The most-loved and most talked-about moments on Biscuits Jam Radio. Vote to hear one again.',
+             'The most-loved and most talked-about moments on Jam Radio. Vote to hear one again.',
              'The most-loved and most talked-about moments on the station. Vote to hear one again.'),
     'nominate': ('Nominate jams',
-                 'Search every Disco Biscuits show on Nugs and upvote the jams you want on Biscuits Jam Radio.',
+                 'Search every Disco Biscuits show on Nugs and upvote the jams you want on Jam Radio.',
                  'Search every Disco Biscuits show on Nugs and upvote the jams you want on the station.'),
     'install': ('Get the app',
-                'Install Biscuits Jam Radio on your iPhone, iPad, Android, Mac or Windows PC. Opens like an app and keeps playing from your lock screen.',
-                'Install Biscuits Jam Radio on iPhone, iPad, Android, Mac or Windows. No app store needed.'),
+                'Install biscomusic Jam Radio on your iPhone, iPad, Android, Mac or Windows PC. Opens like an app and keeps playing from your lock screen.',
+                'Install biscomusic Jam Radio on iPhone, iPad, Android, Mac or Windows. No app store needed.'),
     'first-played': ('First time played',
-                     'Every Disco Biscuits song on the night it debuted. Hear the first performance and the latest, see how often each song has been played since, and request its jams on Biscuits Jam Radio.',
+                     'Every Disco Biscuits song on the night it debuted. Hear the first performance and the latest, see how often each song has been played since, and request its jams on Jam Radio.',
                      'Every Disco Biscuits song on the night it debuted. Hear the first performance next to the latest one.'),
 }
 WAVE_BARS = 200
@@ -341,7 +341,7 @@ def other_sites(versioned):
 def panel_page(html, name):
     """The radio page as served at /<name>: the panel's title and description in its link preview."""
     title, description, og = PANELS[name]
-    full = f'{title} · Biscuits Jam Radio'
+    full = f'{title} · Jam Radio · biscomusic'
     for pattern, value in ((r'(<title>)[^<]*(</title>)', full),
                            (r'(<meta name="description" content=")[^"]*(")', description),
                            (r'(<meta property="og:title" content=")[^"]*(")', full),

@@ -1,7 +1,4 @@
-/* Biscuits Show Radio (shows/index.html), on top of app.css */
-
-/* "BISCUITS SHOW RADIO" is 13.15em wide in Archivo Black: as big as fits beside the pill (see app.css h1) */
-@supports (width:1cqw){h1{font-size:max(.875rem,min(68px,100cqw / 13.3))}}
+/* Show Radio (shows/index.html), on top of app.css */
 
 /* The show's timeline: one segment per track, as long as the track; played ones lit, the current one filling */
 .showbar{display:flex;gap:2px;height:14px;margin:18px 0 8px}
