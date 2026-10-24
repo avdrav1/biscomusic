@@ -1,6 +1,6 @@
 // Installable app: registers the service worker (sw.js), offers the browser's own install prompt on the
 // Install button of the /install panel when the browser has one, and shows a banner while offline.
-// Loaded by index.html after station.js (uses its icon() helper).
+// Loaded by index.html after icon.js (uses its icon() helper).
 (() => {
   const $el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
   const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;

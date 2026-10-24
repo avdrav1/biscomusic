@@ -17,15 +17,15 @@
 <meta property="og:site_name" content="Biscuits Jam Radio">
 <meta property="og:title" content="Biscuits Jam Radio">
 <meta property="og:description" content="All jams, no butter! Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.">
-<meta property="og:url" content="https://biscomusic.com/">
-<meta property="og:image" content="https://biscomusic.com/static/og.png">
+<meta property="og:url" content="https://jams.biscomusic.com/">
+<meta property="og:image" content="https://jams.biscomusic.com/static/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Biscuits Jam Radio: on air, with a heat map of the best moments">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Biscuits Jam Radio">
 <meta name="twitter:description" content="All jams, no butter! Disco Biscuits jams, broadcast around the clock. Everyone hears the same moment.">
-<meta name="twitter:image" content="https://biscomusic.com/static/og.png">
+<meta name="twitter:image" content="https://jams.biscomusic.com/static/og.png">
 <link rel="preload" href="static/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="static/app.css">
@@ -36,7 +36,7 @@
 <main class="wrap">
   <header>
     <div class="brand">
-      <h1 data-oil>BISCUITS <span>JAM</span> RADIO</h1>
+      <h1 data-oil><a href="https://biscomusic.com/" data-local="/home.html" aria-label="Biscuits Jam Radio, all stations">BISCUITS <span>JAM</span> RADIO</a></h1>
       <p class="tagline">All jams, no butter!</p>
     </div>
     <div class="hside">
@@ -153,6 +153,7 @@
   </section>
 
   <nav class="foot" aria-label="More">
+    <a href="https://biscomusic.com/" data-local="/home.html">All stations</a>
     <a href="/best">Best moments</a>
     <a href="/first-played">First time played</a>
     <a href="/nominate">Nominate jams</a>
@@ -188,7 +189,7 @@
           <button class="chipbtn" role="checkbox" aria-checked="false" id="n-long">20+ min</button>
           <button class="chipbtn" role="checkbox" aria-checked="false" id="n-minef"><svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-big-up"/></svg>My picks</button>
         </div>
-        <p class="offline" id="n-offline" hidden>Voting works on biscomusic.com. You can still browse here.</p>
+        <p class="offline" id="n-offline" hidden>Voting works on jams.biscomusic.com. You can still browse here.</p>
         <p class="scount" id="n-count" aria-live="polite"></p>
         <ol class="noms" id="n-list"><li><span class="empty">Loading the catalog…</span></li></ol>
         <button class="ghost more" id="n-more" hidden>Show more</button>
@@ -251,7 +252,7 @@
             <li><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg><span>Click the <kbd>App available</kbd> icon in the address bar, or <kbd>…</kbd> › <kbd>Apps</kbd> › <kbd>Install this site as an app</kbd></span></li>
           </ol>
           <h3 data-browser="firefox">Firefox</h3>
-          <p class="tip">Firefox on Mac can't install web apps yet. Open biscomusic.com in Safari or Chrome and follow the steps above.</p>
+          <p class="tip">Firefox on Mac can't install web apps yet. Open jams.biscomusic.com in Safari or Chrome and follow the steps above.</p>
         </section>
 
         <section class="how" data-os="windows" hidden>
@@ -343,12 +344,15 @@
 <audio id="a" preload="auto"></audio>
 <audio id="b" preload="auto"></audio>
 <audio id="kaudio" preload="none"></audio>
+<script src="static/icon.js"></script>
 <script src="static/station.js"></script>
 <script src="static/pwa.js"></script>
 <script src="static/a11y.js"></script>
 <script src="static/oil.js"></script>
 <script>
 const $ = id => document.getElementById(id);
+// Off biscomusic.com (server.py, a Pages preview) the other sites are paths of this one (as in static/shows.js).
+if (!/(^|\.)biscomusic\.com$/.test(location.hostname)) document.querySelectorAll('a[data-local]').forEach(a => { a.href = a.dataset.local; });
 const decks = [$('a'), $('b')];
 let audio = decks[0];
 let S, starts = [], total = 0, listening = false, curIdx = -1, shownIdx = -1;   // curIdx: on the deck; shownIdx: on screen
@@ -357,7 +361,7 @@ const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600),
 const showLine = t => { const d = new Date(t.date+'T12:00:00'); return `${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})} · ${t.venue} · ${t.city}`; };
 const jamLine = t => t.jam ? `Jam ${t.jam}` : '';
 
-// What's on air. On biscomusic.com that's the station state from /api/station (listener votes,
+// What's on air. On jams.biscomusic.com that's the station state from /api/station (listener votes,
 // else the rotation); with no API (server.py) it's the old clock loop over schedule.json.
 let ST = null, stationTimers = [], lastFetch = 0;
 const indexOfTrack = id => S.tracks.findIndex(t => trackId(t) === id);

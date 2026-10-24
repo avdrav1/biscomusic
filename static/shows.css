@@ -1,0 +1,23 @@
+/* Biscuits Show Radio (shows/index.html), on top of app.css */
+
+/* "BISCUITS SHOW RADIO" is 13.15em wide in Archivo Black: as big as fits beside the pill (see app.css h1) */
+@supports (width:1cqw){h1{font-size:max(.875rem,min(68px,100cqw / 13.3))}}
+
+/* The show's timeline: one segment per track, as long as the track; played ones lit, the current one filling */
+.showbar{display:flex;gap:2px;height:14px;margin:18px 0 8px}
+.showbar i{flex:1 1 0;min-width:2px;border-radius:3px;background:rgba(93,255,58,.14)}
+.showbar i.past{background:rgba(93,255,58,.5)}
+.showbar i.cur{background:linear-gradient(90deg,var(--accent) calc(var(--p,0) * 100%),rgba(93,255,58,.14) 0)}
+.times{gap:12px}
+.times #where{text-align:center}
+
+.status{margin:12px 0 0;font-size:13px;color:var(--live)}
+.about .links{display:inline-flex;flex-wrap:wrap;gap:4px 16px}
+
+/* This show's tracks: the time each starts into the show, the one on air marked */
+.setlist{margin:0 0 10px;font-size:14px;color:var(--dim)}
+.setlist b{color:var(--text);font-weight:600}
+.tracks li.past .s{color:var(--dim);font-weight:500}
+.tracks li.cur{background:rgba(93,255,58,.08);box-shadow:inset 3px 0 0 var(--accent)}
+.tracks li.cur .s{color:var(--accent)}
+.tracks .segue{color:var(--accent2)}

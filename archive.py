@@ -54,6 +54,24 @@ def _get_json(url: str) -> dict:
         return json.load(r)
 
 
+def search(fields: list) -> list:
+    """`fields` of every item in the collection.
+    A page at a time, sorted so pages don't overlap: the search errors on one big request (rows=20000)."""
+    docs, page, total = [], 1, 1
+    while len(docs) < total:
+        q = urllib.parse.urlencode([("q", f"collection:{COLLECTION}"), *(("fl[]", f) for f in fields),
+                                    ("sort[]", "identifier asc"), ("rows", "1000"), ("page", str(page)), ("output", "json")])
+        res = _get_json(f"https://archive.org/advancedsearch.php?{q}")
+        if "response" not in res:
+            raise OSError(f"archive.org search: {res.get('error', res)}")
+        total = res["response"]["numFound"]
+        if not res["response"]["docs"]:
+            break
+        docs += res["response"]["docs"]
+        page += 1
+    return docs
+
+
 @functools.cache  # per build: find_audio and top_versions both walk it
 def items_by_date() -> dict:
     """date -> [{identifier, downloads, rating, reviews}] for every item in the collection, most downloaded first.
@@ -61,27 +79,12 @@ def items_by_date() -> dict:
     Ties (every fresh upload has 0 downloads) go by identifier: the search API's order isn't stable, and
     an unstable pick would change the build, and so commit, on every run."""
     out: dict = {}
-    # A page at a time, sorted so pages don't overlap: the search errors on one big request (rows=20000).
-    page, seen, total = 1, 0, 1
-    while seen < total:
-        q = urllib.parse.urlencode([
-            ("q", f"collection:{COLLECTION}"), ("fl[]", "identifier"), ("fl[]", "date"), ("fl[]", "downloads"),
-            ("fl[]", "avg_rating"), ("fl[]", "num_reviews"), ("sort[]", "identifier asc"), ("rows", "1000"),
-            ("page", str(page)), ("output", "json"),
-        ])
-        res = _get_json(f"https://archive.org/advancedsearch.php?{q}")
-        if "response" not in res:
-            raise OSError(f"archive.org search: {res.get('error', res)}")
-        docs, total = res["response"]["docs"], res["response"]["numFound"]
-        if not docs:
-            break
-        seen += len(docs); page += 1
-        for d in docs:
-            if d.get("date"):
-                rated = (d.get("avg_rating") or 0) > 0   # items whose reviews all lack stars average 0
-                out.setdefault(d["date"][:10], []).append({
-                    "identifier": d["identifier"], "downloads": d.get("downloads") or 0,
-                    "rating": d["avg_rating"] if rated else None, "reviews": (d.get("num_reviews") or 0) if rated else 0})
+    for d in search(["identifier", "date", "downloads", "avg_rating", "num_reviews"]):
+        if d.get("date"):
+            rated = (d.get("avg_rating") or 0) > 0   # items whose reviews all lack stars average 0
+            out.setdefault(d["date"][:10], []).append({
+                "identifier": d["identifier"], "downloads": d.get("downloads") or 0,
+                "rating": d["avg_rating"] if rated else None, "reviews": (d.get("num_reviews") or 0) if rated else 0})
     for items in out.values():
         items.sort(key=lambda it: (-it["downloads"], it["identifier"]))
     return out

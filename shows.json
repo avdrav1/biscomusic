@@ -1,0 +1,5184 @@
+{
+ "station": "Biscuits Show Radio",
+ "epoch": "2026-10-23T00:00:00Z",
+ "shows": [
+  {
+   "show": "1997-02-05-club-metronome-burlington-vt",
+   "date": "1997-02-05",
+   "venue": "Club Metronome",
+   "place": "Burlington, VT",
+   "item": "db1997-02-05.sbd.nak.flac16",
+   "source": "SBD> Cassette",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Pygmy Twylyte, Pat and Dex, Aceetobee > Bernstein and Chasnoff, My Lady Survives, Basis for a Day, Morph Dusseldorf, Down to the Bottom, Nughuffer, Stone > The Devil's Waltz, Barfly"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1997-02-05.t01.sbd.flac16.mp3",
+     "duration": 463.68,
+     "segue": false
+    },
+    {
+     "title": "Shem Rah Boo",
+     "file": "db1997-02-05.t02.sbd.flac16.mp3",
+     "duration": 253.992,
+     "segue": true
+    },
+    {
+     "title": "Pat And Dex",
+     "file": "db1997-02-05.t03.sbd.flac16.mp3",
+     "duration": 487.584,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-02-05.t04.sbd.flac16.mp3",
+     "duration": 661.152,
+     "segue": true
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1997-02-05.t05.sbd.flac16.mp3",
+     "duration": 432.312,
+     "segue": false
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "db1997-02-05.t06.sbd.flac16.mp3",
+     "duration": 298.176,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1997-02-05.t07.sbd.flac16.mp3",
+     "duration": 879.696,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-02-05.t08.sbd.flac16.mp3",
+     "duration": 363.96,
+     "segue": false
+    },
+    {
+     "title": "Down To The Bottom",
+     "file": "db1997-02-05.t09.sbd.flac16.mp3",
+     "duration": 384.792,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-02-05.t10.sbd.flac16.mp3",
+     "duration": 395.544,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "db1997-02-05.t11.sbd.flac16.mp3",
+     "duration": 182.328,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1997-02-05.t12.sbd.flac16.mp3",
+     "duration": 279.744,
+     "segue": false
+    },
+    {
+     "title": "Barfly",
+     "file": "db1997-02-05.t13.sbd.flac16.mp3",
+     "duration": 386.664,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-02-08-middle-east-cambridge-ma",
+   "date": "1997-02-08",
+   "venue": "Middle East",
+   "place": "Cambridge, MA",
+   "item": "db1997-02-08.sbd.flac16",
+   "source": "SBD> Cassette > CD",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Barfly, Vassillios, Nughuffer > Pat and Dex > Down to the Bottom > Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Barfly",
+     "file": "db1997-02-08.t01.sbd.flac16.mp3",
+     "duration": 564.637,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1997-02-08.t02.sbd.flac16.mp3",
+     "duration": 325.773,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-02-08.t03.sbd.flac16.mp3",
+     "duration": 633.078,
+     "segue": true
+    },
+    {
+     "title": "Pat And Dex",
+     "file": "db1997-02-08.t04.sbd.flac16.mp3",
+     "duration": 458.971,
+     "segue": true
+    },
+    {
+     "title": "Down To The Bottom",
+     "file": "db1997-02-08.t05.sbd.flac16.mp3",
+     "duration": 422.426,
+     "segue": true
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-02-08.t06.sbd.flac16.mp3",
+     "duration": 324.571,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-03-01-cafe-210-west-state-college-pa",
+   "date": "1997-03-01",
+   "venue": "Cafe 210 West",
+   "place": "State College, PA",
+   "item": "db1997-03-01.sbd.flac24",
+   "source": "SBD> Cassette",
+   "rating": 4,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Pygmy Twylyte, Shem-Rah Boo > Boogie Stop Shuffle > Shem-Rah Boo > Aceetobee, Jamillia > Nughuffer > Vassillios, Morph Dusseldorf, Awol's Blues, Soul Sacrifice"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Banter",
+     "file": "db1997-03-01.t01.sbd.flac24.mp3",
+     "duration": 136.03,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1997-03-01.t02.sbd.flac24.mp3",
+     "duration": 571.92,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-03-01.t03.sbd.flac24.mp3",
+     "duration": 230.9,
+     "segue": true
+    },
+    {
+     "title": "Boogie Stop Shuffle",
+     "file": "db1997-03-01.t04.sbd.flac24.mp3",
+     "duration": 187.296,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-03-01.t05.sbd.flac24.mp3",
+     "duration": 83.11,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-03-01.t06.sbd.flac24.mp3",
+     "duration": 596.11,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-03-01.t07.sbd.flac24.mp3",
+     "duration": 859.16,
+     "segue": true
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-03-01.t08.sbd.flac24.mp3",
+     "duration": 496.7,
+     "segue": true
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1997-03-01.t09.sbd.flac24.mp3",
+     "duration": 354.43,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-03-01.t10.sbd.flac24.mp3",
+     "duration": 197.736,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1997-03-01.t11.sbd.flac24.mp3",
+     "duration": 118.18,
+     "segue": false
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1997-03-01.t12.sbd.flac24.mp3",
+     "duration": 679.54,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-03-22-valentine-s-albany-ny",
+   "date": "1997-03-22",
+   "venue": "Valentine's",
+   "place": "Albany, NY",
+   "item": "discob1997-03-22",
+   "source": "SBD > Master Cass (Maxell XLII) > CDR Master > EAC > FLAC16",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Mr. Don, South of the Border Pussy, Shem-Rah Boo, Aceetobee, Nughuffer, Jamillia"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Mr. Don",
+     "file": "db1997-03-22.t01.mp3",
+     "duration": 594.599,
+     "segue": false
+    },
+    {
+     "title": "South of the Border Pussy",
+     "file": "db1997-03-22.t02.mp3",
+     "duration": 299.755,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-03-22.t03.mp3",
+     "duration": 690.364,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-03-22.t04.mp3",
+     "duration": 535.98,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-03-22.t05.mp3",
+     "duration": 612.101,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-03-22.t06.mp3",
+     "duration": 100.807,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-04-12-iron-horse-music-hall-northampton-ma",
+   "date": "1997-04-12",
+   "venue": "Iron Horse Music Hall",
+   "place": "Northampton, MA",
+   "item": "db1997-04-12.flac16",
+   "source": "SBD > Tascam DA-P1",
+   "rating": 3.25,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Stone, Awol's Blues, Vassillios, Nughuffer, Basis for a Day, Morph Dusseldorf, Aceetobee"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Stone",
+     "file": "db1997-04-12d1t01.mp3",
+     "duration": 192.209,
+     "segue": true
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1997-04-12d1t02.mp3",
+     "duration": 359.549,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1997-04-12d1t03.mp3",
+     "duration": 331.468,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-04-12d1t04.mp3",
+     "duration": 517.93,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1997-04-12d1t05.mp3",
+     "duration": 1028.728,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-04-12d1t06.mp3",
+     "duration": 410.802,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-04-12d1t07.mp3",
+     "duration": 547.971,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-05-31-wetlands-preserve-new-york-ny",
+   "date": "1997-05-31",
+   "venue": "Wetlands Preserve",
+   "place": "New York, NY",
+   "item": "db1997-05-31.shnf",
+   "source": "DSBD",
+   "rating": 3.75,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "My Lady Survives, Vassillios > Pygmy Twylyte > Run Like Hell > Pat and Dex, Jamillia, Basis for a Day > I-Man > Basis for a Day > Aceetobee > Awol's Blues, Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "My Lady Survives",
+     "file": "db1997-05-31d1t01.mp3",
+     "duration": 340.088,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1997-05-31d1t02.mp3",
+     "duration": 386.821,
+     "segue": true
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1997-05-31d1t03.mp3",
+     "duration": 35.683,
+     "segue": true
+    },
+    {
+     "title": "Run Like Hell",
+     "file": "db1997-05-31d1t04.mp3",
+     "duration": 207.464,
+     "segue": true
+    },
+    {
+     "title": "Pat and Dex",
+     "file": "db1997-05-31d1t05.mp3",
+     "duration": 513.149,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-05-31d1t06.mp3",
+     "duration": 408.346,
+     "segue": false
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "db1997-05-31d1t07.mp3",
+     "duration": 830.616,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1997-05-31d1t08.mp3",
+     "duration": 582.06,
+     "segue": true
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "db1997-05-31d1t09.mp3",
+     "duration": 72.176,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-05-31d1t10.mp3",
+     "duration": 139.912,
+     "segue": true
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1997-05-31d1t11.mp3",
+     "duration": 392.777,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-05-31d1t12.mp3",
+     "duration": 483.082,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-07-13-sturtz-court-reading-pa",
+   "date": "1997-07-13",
+   "venue": "Sturtz Court",
+   "place": "Reading, PA",
+   "item": "db1997-07-13.sbd.flac16",
+   "source": "SBD",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Mr. Don, Jamillia, Shem-Rah Boo > Down to the Bottom, Boogie Stop Shuffle, Radiator, Morph Dusseldorf, My Lady Survives, Stone > The Devil's Waltz > South of the Border Pussy, Bernstein and Chasnoff"
+    ],
+    [
+     "Set 2",
+     "Little Betty Boop > Soul Sacrifice > Little Betty Boop, I-Man, Nughuffer"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Rainbow Song (Soundcheck)",
+     "file": "db1997-07-13.t01.flac16.mp3",
+     "duration": 424.072,
+     "segue": false
+    },
+    {
+     "title": "Mr. Don",
+     "file": "db1997-07-13.t02.flac16.mp3",
+     "duration": 587.076,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-07-13.t03.flac16.mp3",
+     "duration": 577.202,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-07-13.t04.flac16.mp3",
+     "duration": 887.223,
+     "segue": true
+    },
+    {
+     "title": "Down To The Bottom",
+     "file": "db1997-07-13.t05.flac16.mp3",
+     "duration": 653.218,
+     "segue": false
+    },
+    {
+     "title": "Boogie Stop Shuffle",
+     "file": "db1997-07-13.t06.flac16.mp3",
+     "duration": 489.848,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "db1997-07-13.t07.flac16.mp3",
+     "duration": 738.952,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-07-13.t08.flac16.mp3",
+     "duration": 382.642,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "db1997-07-13.t09.flac16.mp3",
+     "duration": 184.033,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1997-07-13.t10.flac16.mp3",
+     "duration": 805.564,
+     "segue": true
+    },
+    {
+     "title": "South Of The Border Pussy",
+     "file": "db1997-07-13.t11.flac16.mp3",
+     "duration": 344.242,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1997-07-13.t12.flac16.mp3",
+     "duration": 433.554,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1997-07-13.t13.flac16.mp3",
+     "duration": 424.072,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1997-07-13.t14.flac16.mp3",
+     "duration": 511.582,
+     "segue": true
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1997-07-13.t15.flac16.mp3",
+     "duration": 227.396,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1997-07-13.t16.flac16.mp3",
+     "duration": 1008.536,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1997-07-13.t17.flac16.mp3",
+     "duration": 749.061,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-12-02-theater-of-the-living-arts-philadelphia-pa",
+   "date": "1997-12-02",
+   "venue": "Theater of the Living Arts",
+   "place": "Philadelphia, PA",
+   "item": "db1997-12-02.sbd.flac16",
+   "source": "SBD->D8",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "What a Show, Little Betty Boop > Aceetobee, Shem-Rah Boo > Dance of the Sugar Plum Fairies, Jamillia, Morph Dusseldorf, Awol's Blues, M.E.M.P.H.I.S., I-Man, Pygmy Twylyte"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "What a Show",
+     "file": "db1997-12-02sbdd1t01.mp3",
+     "duration": 202.527,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1997-12-02sbdd1t02.mp3",
+     "duration": 1099.024,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-12-02sbdd1t03.mp3",
+     "duration": 538.802,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-12-02sbdd1t04.mp3",
+     "duration": 1084.473,
+     "segue": true
+    },
+    {
+     "title": "Dance of the Sugarplum Fairies(1)",
+     "file": "db1997-12-02sbdd1t05.mp3",
+     "duration": 206.811,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1997-12-02sbdd1t06.mp3",
+     "duration": 24.607,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-12-02sbdd1t07.mp3",
+     "duration": 435.905,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1997-12-02sbdd1t08.mp3",
+     "duration": 29.231,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorph",
+     "file": "db1997-12-02sbdd1t09.mp3",
+     "duration": 464.953,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1997-12-02sbdd2t01.mp3",
+     "duration": 557.035,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1997-12-02sbdd2t02.mp3",
+     "duration": 309.551,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1997-12-02sbdd2t03.mp3",
+     "duration": 737.933,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1997-12-02sbdd2t04.mp3",
+     "duration": 768.888,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-12-08-cafe-210-west-state-college-pa",
+   "date": "1997-12-08",
+   "venue": "Cafe 210 West",
+   "place": "State College, PA",
+   "item": "db1997-12-08.sbd.flac.24",
+   "source": "SBD > Sony D5",
+   "rating": 3.83,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Texas Pussy > Shem-Rah Boo > My Lady Survives, M.E.M.P.H.I.S., Jamillia > Trooper McCue > Soul Sacrifice > Trooper McCue > Jamillia"
+    ],
+    [
+     "Set 2",
+     "South of the Border Pussy, Vassillios > I-Man > Roadhouse Blues, Aceetobee"
+    ],
+    [
+     "Encore",
+     "Rainbow Song, Barfly"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Texas Pussy",
+     "file": "db1997-12-08.t01.sbd.flac24.mp3",
+     "duration": 463.584,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1997-12-08.t02.sbd.flac24.mp3",
+     "duration": 1115.52,
+     "segue": true
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "db1997-12-08.t03.sbd.flac24.mp3",
+     "duration": 450.168,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1997-12-08.t04.sbd.flac24.mp3",
+     "duration": 414.096,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-12-08.t05.sbd.flac24.mp3",
+     "duration": 432.024,
+     "segue": true
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1997-12-08.t06.sbd.flac24.mp3",
+     "duration": 790.8,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1997-12-08.t07.sbd.flac24.mp3",
+     "duration": 736.008,
+     "segue": true
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1997-12-08.t08.sbd.flac24.mp3",
+     "duration": 275.57,
+     "segue": true
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1997-12-08.t09.sbd.flac24.mp3",
+     "duration": 34.44,
+     "segue": false
+    },
+    {
+     "title": "South Of The Border Pussy",
+     "file": "db1997-12-08.t10.sbd.flac24.mp3",
+     "duration": 772.68,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1997-12-08.t11.sbd.flac24.mp3",
+     "duration": 1346.496,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1997-12-08.t12.sbd.flac24.mp3",
+     "duration": 1393.296,
+     "segue": true
+    },
+    {
+     "title": "Roadhouse Blues",
+     "file": "db1997-12-08.t13.sbd.flac24.mp3",
+     "duration": 1175.472,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-12-08.t14.sbd.flac24.mp3",
+     "duration": 949.2,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-12-12-bogie-s-albany-ny",
+   "date": "1997-12-12",
+   "venue": "Bogie's",
+   "place": "Albany, NY",
+   "item": "db1997-12-12.sbd.RM.flac24",
+   "source": "SBD > Sony D5",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Bernstein and Chasnoff, I-Man, Shem-Rah Boo, Aceetobee, Jamillia, Vassillios, Morph Dusseldorf, Little Betty Boop > Jam"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "01%20Bernstein%20and%20Chasnoff.mp3",
+     "duration": 424.296,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "02%20I-Man.mp3",
+     "duration": 768.792,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "03%20Shem-Rah%20Boo.mp3",
+     "duration": 771.456,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "04%20Aceetobee.mp3",
+     "duration": 732.648,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "05%20Jamillia.mp3",
+     "duration": 459.24,
+     "segue": false
+    },
+    {
+     "title": "Vassilios",
+     "file": "06%20Vassilios.mp3",
+     "duration": 379.104,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "07%20Morph%20Dusseldorf.mp3",
+     "duration": 408.456,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "08%20Little%20Betty%20Boop.mp3",
+     "duration": 471.096,
+     "segue": true
+    },
+    {
+     "title": "Disco Biscuits Ominous Seapod Jam",
+     "file": "09%20Disco%20Biscuits%20Ominous%20Seapod%20Jam.mp3",
+     "duration": 681.144,
+     "segue": true
+    },
+    {
+     "title": "Get Out My Life, Woman",
+     "file": "10%20Get%20Out%20My%20Life%2C%20Woman.mp3",
+     "duration": 287.16,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1997-12-29-khyber-pass-philadelphia-pa",
+   "date": "1997-12-29",
+   "venue": "Khyber Pass",
+   "place": "Philadelphia, PA",
+   "item": "db1997-12-29.sbd.eac.flac16",
+   "source": "DSBD>???>CD",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Frog Legs, Run Like Hell, Morph Dusseldorf, What a Show, M.E.M.P.H.I.S. > Little Betty Boop > Aceetobee, Rainbow Song, I-Man, Jamillia, Basis for a Day"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Banter",
+     "file": "db1997-12-29d1t01.mp3",
+     "duration": 62.354,
+     "segue": false
+    },
+    {
+     "title": "Frog Legs",
+     "file": "db1997-12-29d1t02.mp3",
+     "duration": 320.549,
+     "segue": true
+    },
+    {
+     "title": "Run Like Hell",
+     "file": "db1997-12-29d1t03.mp3",
+     "duration": 962.22,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1997-12-29d1t04.mp3",
+     "duration": 123.089,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1997-12-29d1t05.mp3",
+     "duration": 448.627,
+     "segue": false
+    },
+    {
+     "title": "What A Show",
+     "file": "db1997-12-29d1t06.mp3",
+     "duration": 472.007,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1997-12-29d1t07.mp3",
+     "duration": 797.44,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop (unf)",
+     "file": "db1997-12-29d2t01.mp3",
+     "duration": 1152.131,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1997-12-29d2t02.mp3",
+     "duration": 785.972,
+     "segue": false
+    },
+    {
+     "title": "Ban//ter",
+     "file": "db1997-12-29d2t03.mp3",
+     "duration": 185.861,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1997-12-29d2t04.mp3",
+     "duration": 897.045,
+     "segue": false
+    },
+    {
+     "title": "//Jamillia",
+     "file": "db1997-12-29d2t05.mp3",
+     "duration": 487.941,
+     "segue": false
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "db1997-12-29d2t06.mp3",
+     "duration": 1058.821,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-01-21-club-toast-burlington-vt",
+   "date": "1998-01-21",
+   "venue": "Club Toast",
+   "place": "Burlington, VT",
+   "item": "db1998-01-21.shnf",
+   "source": "Dat Soundboard",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Basis for a Day, Pat and Dex, Nughuffer > Barfly, Vassillios > Shem-Rah Boo, Aceetobee"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Intro",
+     "file": "db1998-01-21d1t01.mp3",
+     "duration": 97.75,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1998-01-21d1t02.mp3",
+     "duration": 1009.345,
+     "segue": false
+    },
+    {
+     "title": "Pat and Dex",
+     "file": "db1998-01-21d1t03.mp3",
+     "duration": 478.433,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1998-01-21d1t04.mp3",
+     "duration": 1050.227,
+     "segue": true
+    },
+    {
+     "title": "Barfly",
+     "file": "db1998-01-21d1t05.mp3",
+     "duration": 640.078,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-01-21d2t01.mp3",
+     "duration": 75.807,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-01-21d2t02.mp3",
+     "duration": 728.007,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-01-21d2t03.mp3",
+     "duration": 850.704,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-01-21d2t04.mp3",
+     "duration": 687.647,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-01-29-cafe-210-west-state-college-pa",
+   "date": "1998-01-29",
+   "venue": "Cafe 210 West",
+   "place": "State College, PA",
+   "item": "db1998-01-29.dsbd.flac16",
+   "source": "DSBD > Sony D8 > DAT",
+   "rating": 4,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Jam > Vassillios > Soul Sacrifice, Jamillia, Awol's Blues, Morph Dusseldorf"
+    ],
+    [
+     "Set 2",
+     "Texas Pussy > Mr. Don, Aceetobee > My Lady Survives, Radiator > Basis for a Day > Dance of the Sugar Plum Fairies > Basis for a Day"
+    ],
+    [
+     "Encore",
+     "Aceetobee"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Soundcheck Banter",
+     "file": "01%20Soundcheck%20Banter.mp3",
+     "duration": 384.81,
+     "segue": false
+    },
+    {
+     "title": "Shem Rah Boo Jam",
+     "file": "02%20Shem%20Rah%20Boo%20Jam.mp3",
+     "duration": 348.996,
+     "segue": true
+    },
+    {
+     "title": "Vassillios",
+     "file": "03%20Vassillios.mp3",
+     "duration": 1166.707,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "04%20Soul%20Sacrifice.mp3",
+     "duration": 707.579,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "05%20Jamillia.mp3",
+     "duration": 465.685,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "06%20Awols%20Blues.mp3",
+     "duration": 483.631,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "07%20Morph%20Dusseldorf.mp3",
+     "duration": 557.322,
+     "segue": false
+    },
+    {
+     "title": "Texas Pussy",
+     "file": "08%20Texas%20Pussy.mp3",
+     "duration": 429.531,
+     "segue": true
+    },
+    {
+     "title": "Mr. Don",
+     "file": "09%20Mr.%20Don.mp3",
+     "duration": 908.696,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "10%20Aceetobee.mp3",
+     "duration": 431.595,
+     "segue": true
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "11%20My%20Lady%20Survives.mp3",
+     "duration": 385.646,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "12%20Radiator.mp3",
+     "duration": 606.302,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "13%20Basis%20For%20A%20Day.mp3",
+     "duration": 585.587,
+     "segue": true
+    },
+    {
+     "title": "Dance Of The Sugarplum Fairies",
+     "file": "14%20Dance%20Of%20The%20Sugarplum%20Fairies.mp3",
+     "duration": 115.2,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "15%20Basis%20For%20A%20Day.mp3",
+     "duration": 626.103,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "16%20Aceetobee.mp3",
+     "duration": 531.435,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-02-04-hungry-charlie-s-syracuse-ny",
+   "date": "1998-02-04",
+   "venue": "Hungry Charlie's",
+   "place": "Syracuse, NY",
+   "item": "db1998-02-04.sbd.RM.flac24",
+   "source": "SBD > Sony D5",
+   "rating": 3.75,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Barfly, Bernstein and Chasnoff, Vassillios > Trooper McCue, Stone > The Devil's Waltz, Jamillia"
+    ],
+    [
+     "Set 2",
+     "Disco Bisquick > Shem-Rah Boo, My Lady Survives, Frog Legs, Basis for a Day, Rainbow Song, Aceetobee, M.E.M.P.H.I.S."
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Barfly",
+     "file": "01%20Barfly.mp3",
+     "duration": 344.712,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "02%20Bernstein%20and%20Chasnoff.mp3",
+     "duration": 621.504,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "03%20Vassillios.mp3",
+     "duration": 1115.52,
+     "segue": false
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "04%20Trooper%20McCue.mp3",
+     "duration": 474.072,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "05%20Banter.mp3",
+     "duration": 46.344,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "06%20Stone.mp3",
+     "duration": 185.952,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "07%20The%20Devils%20Waltz.mp3",
+     "duration": 174.792,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "08%20Jamillia.mp3",
+     "duration": 433.632,
+     "segue": false
+    },
+    {
+     "title": "Disco Bisquick",
+     "file": "09%20Disco%20Bisquick.mp3",
+     "duration": 184.08,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "10%20Shem-Rah%20Boo.mp3",
+     "duration": 1004.928,
+     "segue": false
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "11%20My%20Lady%20Survives.mp3",
+     "duration": 301.392,
+     "segue": false
+    },
+    {
+     "title": "Frog Legs",
+     "file": "12%20Frog%20Legs.mp3",
+     "duration": 271.272,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "13%20Basis%20For%20A%20Day.mp3",
+     "duration": 992.184,
+     "segue": false
+    },
+    {
+     "title": "Rainbow Song",
+     "file": "14%20Rainbow%20Song.mp3",
+     "duration": 180.264,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "15%20Aceetobee.mp3",
+     "duration": 688.224,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "16%20M.E.M.P.H.I.S..mp3",
+     "duration": 360.48,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-02-27-cafe-210-west-state-college-pa",
+   "date": "1998-02-27",
+   "venue": "Cafe 210 West",
+   "place": "State College, PA",
+   "item": "db1998-02-27.sbd.flac16",
+   "source": "SBD->D8",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Pat and Dex, Frog Legs, Pygmy Twylyte > Shem-Rah Boo, Little Shimmy in a Conga Line > I-Man"
+    ],
+    [
+     "Set 2",
+     "Mary Had a Little Lamb, Little Betty Boop, Blue Monk, M.E.M.P.H.I.S., Mindless Dribble"
+    ],
+    [
+     "Encore",
+     "Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Pat and Dex",
+     "file": "db1998-02-27sbdd1t01.mp3",
+     "duration": 677.982,
+     "segue": false
+    },
+    {
+     "title": "Frog Legs",
+     "file": "db1998-02-27sbdd1t02.mp3",
+     "duration": 372.062,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1998-02-27sbdd1t03.mp3",
+     "duration": 737.045,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-02-27sbdd1t04.mp3",
+     "duration": 1397.629,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-02-27sbdd2t01.mp3",
+     "duration": 101.773,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Conga Line",
+     "file": "db1998-02-27sbdd2t02.mp3",
+     "duration": 782.184,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-02-27sbdd2t03.mp3",
+     "duration": 983.98,
+     "segue": false
+    },
+    {
+     "title": "Mary Had a Little Lamb",
+     "file": "db1998-02-27sbdd2t04.mp3",
+     "duration": 295.471,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1998-02-27sbdd2t05.mp3",
+     "duration": 1988.023,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-02-27sbdd3t01.mp3",
+     "duration": 44.33,
+     "segue": false
+    },
+    {
+     "title": "Blue Monk",
+     "file": "db1998-02-27sbdd3t02.mp3",
+     "duration": 428.095,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1998-02-27sbdd3t03.mp3",
+     "duration": 485.433,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-02-27sbdd3t04.mp3",
+     "duration": 513.176,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-02-27sbdd3t05.mp3",
+     "duration": 270.184,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-02-27sbdd3t06.mp3",
+     "duration": 479.582,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-04-08-crowbar-state-college-pa",
+   "date": "1998-04-08",
+   "venue": "Crowbar",
+   "place": "State College, PA",
+   "item": "db1998-04-08.shnf",
+   "source": "SBD->DAT",
+   "rating": 3.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Frog Legs, I-Man > Aceetobee > Pygmy Twylyte > I-Man, Little Shimmy in a Conga Line, Shem-Rah Boo, Vassillios > Trooper McCue > Soul Sacrifice > Trooper McCue > Soul Sacrifice"
+    ],
+    [
+     "Encore",
+     "Jamillia"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Frog Legs",
+     "file": "db1998-04-08d1t01.mp3",
+     "duration": 264.072,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-04-08d1t02.mp3",
+     "duration": 818.808,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-04-08d1t03.mp3",
+     "duration": 1001.169,
+     "segue": true
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1998-04-08d1t04.mp3",
+     "duration": 790.073,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-04-08d1t05.mp3",
+     "duration": 96.444,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-04-08d1t06.mp3",
+     "duration": 127.007,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-04-08d1t07.mp3",
+     "duration": 855.641,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-04-08d2t01.mp3",
+     "duration": 929.306,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-04-08d2t02.mp3",
+     "duration": 37.851,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-04-08d2t03.mp3",
+     "duration": 1220.989,
+     "segue": true
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1998-04-08d2t04.mp3",
+     "duration": 323.291,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1998-04-08d2t05.mp3",
+     "duration": 127.06,
+     "segue": true
+    },
+    {
+     "title": "\"Funk Off\" Contest",
+     "file": "db1998-04-08d2t06.mp3",
+     "duration": 847.282,
+     "segue": true
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1998-04-08d2t07.mp3",
+     "duration": 287.791,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1998-04-08d2t08.mp3",
+     "duration": 54.23,
+     "segue": false
+    },
+    {
+     "title": "Crowd",
+     "file": "db1998-04-08d2t09.mp3",
+     "duration": 33.358,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-04-08d2t10.mp3",
+     "duration": 58.88,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1998-04-08d2t11.mp3",
+     "duration": 454.896,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-05-24-groovefest-merriweather-post-pavilion-columbia-md",
+   "date": "1998-05-24",
+   "venue": "GrooveFest, Merriweather Post Pavilion",
+   "place": "Columbia, MD",
+   "item": "db1998-05-24.sbd.flac16",
+   "source": "Soundboard > Sony SBM-1 > DA-P1",
+   "rating": 3.25,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Awol's Blues, Stone > The Devil's Waltz, M.E.M.P.H.I.S. > Magellan, Pygmy Twylyte, Jamillia, Little Shimmy in a Conga Line"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Awol\u2019s Blues",
+     "file": "db1998-05-24.sbd.t01.mp3",
+     "duration": 416.601,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "db1998-05-24.sbd.t02.mp3",
+     "duration": 189.91,
+     "segue": true
+    },
+    {
+     "title": "Devil\u2019s Waltz",
+     "file": "db1998-05-24.sbd.t03.mp3",
+     "duration": 482.952,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S",
+     "file": "db1998-05-24.sbd.t04.mp3",
+     "duration": 370.051,
+     "segue": true
+    },
+    {
+     "title": "Magellan",
+     "file": "db1998-05-24.sbd.t05.mp3",
+     "duration": 1037.61,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twlyte",
+     "file": "db1998-05-24.sbd.t06.mp3",
+     "duration": 1064.333,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1998-05-24.sbd.t07.mp3",
+     "duration": 444.656,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Congo Line",
+     "file": "db1998-05-24.sbd.t08.mp3",
+     "duration": 726.936,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-06-13-summer-sun-music-festival-cocheran-ga",
+   "date": "1998-06-13",
+   "venue": "Summer Sun Music Festival",
+   "place": "Cocheran, GA",
+   "item": "db1998-06-13.dsbd.flac16",
+   "source": "DSBD > D8",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Magellan, I-Man, Nughuffer, Stone > The Devil's Waltz > Norwegian Wood > The Devil's Waltz, Aceetobee, Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Magellan",
+     "file": "db1998-06-13-d1t01.mp3",
+     "duration": 970.266,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-06-13-d1t02.mp3",
+     "duration": 800.967,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1998-06-13-d1t03.mp3",
+     "duration": 1322.684,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "db1998-06-13-d1t04.mp3",
+     "duration": 191.112,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1998-06-13-d1t05.mp3",
+     "duration": 382.877,
+     "segue": true
+    },
+    {
+     "title": "Norwegian Wood",
+     "file": "db1998-06-13-d1t06.mp3",
+     "duration": 264.124,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1998-06-13-d1t07.mp3",
+     "duration": 177.972,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-06-13-d2t01.mp3",
+     "duration": 837.146,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-06-13-d2t02.mp3",
+     "duration": 403.931,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-06-30-higher-ground-s-burlington-vt",
+   "date": "1998-06-30",
+   "venue": "Higher Ground",
+   "place": "South Burlington, VT",
+   "item": "db1998-06-30",
+   "source": "SBD (most likely) > Sony PCM R500 > DAT",
+   "rating": 4,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "I-Man, Barfly, Shem-Rah Boo, Jamillia, Little Shimmy in a Conga Line"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "I-Man",
+     "file": "01%20I-Man.mp3",
+     "duration": 1445.381,
+     "segue": false
+    },
+    {
+     "title": "Barfly",
+     "file": "02%20Barfly.mp3",
+     "duration": 601.025,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "03%20Shem-Rah%20Boo.mp3",
+     "duration": 1124.754,
+     "segue": false
+    },
+    {
+     "title": "Jamilla",
+     "file": "04%20Jamilla.mp3",
+     "duration": 508.682,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy",
+     "file": "05%20Little%20Shimmy.mp3",
+     "duration": 1384.934,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-07-01-higher-ground-s-burlington-vt",
+   "date": "1998-07-01",
+   "venue": "Higher Ground",
+   "place": "South Burlington, VT",
+   "item": "db1998-07-01",
+   "source": "SBD (most likely) > Sony PCM R500 > DAT",
+   "rating": 4,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Morph Dusseldorf, Magellan, Wet, Little Betty Boop, Mr. Don, Mindless Dribble, Awol's Blues, Rainbow Song"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Morph Dusseldorf",
+     "file": "01%20Morph%20Dusseldorf.mp3",
+     "duration": 435.304,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "02%20Magellan.mp3",
+     "duration": 1088.549,
+     "segue": false
+    },
+    {
+     "title": "Wet",
+     "file": "03%20Wet.mp3",
+     "duration": 365.166,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "04%20Little%20Betty%20Boop.mp3",
+     "duration": 1082.305,
+     "segue": false
+    },
+    {
+     "title": "Mr. Don",
+     "file": "05%20Mr%20Don.mp3",
+     "duration": 1085.127,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "06%20Mindless%20Dribble.mp3",
+     "duration": 1018.018,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "07%20Awol%27s%20Blues.mp3",
+     "duration": 360.49,
+     "segue": false
+    },
+    {
+     "title": "Stage Announcements",
+     "file": "08%20Stage%20Announcements.mp3",
+     "duration": 129.515,
+     "segue": false
+    },
+    {
+     "title": "Rainbow Song",
+     "file": "09%20Rainbow%20Song.mp3",
+     "duration": 245.447,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-07-09-chelsea-s-columbus-oh",
+   "date": "1998-07-09",
+   "venue": "Chelsea's",
+   "place": "Columbus, OH",
+   "item": "db1998-07-09.shnf",
+   "source": "SBD->DAT",
+   "rating": 1.5,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Wet, Barfly, Magellan, Awol's Blues, Shem-Rah Boo"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "//Wet",
+     "file": "db1998-07-09t01.mp3",
+     "duration": 242.469,
+     "segue": false
+    },
+    {
+     "title": "Barfly",
+     "file": "db1998-07-09t02.mp3",
+     "duration": 585.456,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1998-07-09t03.mp3",
+     "duration": 986.201,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-07-09t04.mp3",
+     "duration": 100.441,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1998-07-09t05.mp3",
+     "duration": 356.153,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-07-09t06.mp3",
+     "duration": 1089.75,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-07-25-435-broadway-san-francisco-ca",
+   "date": "1998-07-25",
+   "venue": "435 Broadway",
+   "place": "San Francisco, CA",
+   "item": "db1998-07-25.sbd.flac16",
+   "source": "SBD > DAT @ 44.1",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Awol's Blues, Morph Dusseldorf, I-Man, M.E.M.P.H.I.S., Nughuffer"
+    ],
+    [
+     "Set 2",
+     "Vassillios > Shem-Rah Boo, Little Betty Boop, Run Like Hell > Mindless Dribble, The Chicken"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Awol's Blues",
+     "file": "db1998-07-25d1t01.mp3",
+     "duration": 362.475,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-07-25d1t02.mp3",
+     "duration": 515.683,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-07-25d1t03.mp3",
+     "duration": 847.125,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-07-25d1t04.mp3",
+     "duration": 47.02,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1998-07-25d1t05.mp3",
+     "duration": 527.726,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-07-25d1t06.mp3",
+     "duration": 60.63,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1998-07-25d1t07.mp3",
+     "duration": 1139.775,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-07-25d2t01.mp3",
+     "duration": 1090.534,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-07-25d2t02.mp3",
+     "duration": 979.67,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1998-07-25d2t03.mp3",
+     "duration": 1443.709,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-07-25d3t01.mp3",
+     "duration": 118.465,
+     "segue": false
+    },
+    {
+     "title": "Run Like Hell",
+     "file": "db1998-07-25d3t02.mp3",
+     "duration": 1449.038,
+     "segue": true
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-07-25d3t03.mp3",
+     "duration": 735.922,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-07-25d3t04.mp3",
+     "duration": 36.624,
+     "segue": false
+    },
+    {
+     "title": "The Chicken",
+     "file": "db1998-07-25d3t05.mp3",
+     "duration": 550.322,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-08-01-legends-lounge-las-vegas-nv",
+   "date": "1998-08-01",
+   "venue": "Legends Lounge",
+   "place": "Las Vegas, NV",
+   "item": "db1998-08-01.sbd.flac16",
+   "source": "SBD>D8",
+   "rating": 2.75,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Little Shimmy in a Conga Line, Vassillios > I-Man, Blue Monk, Don't Stop till You Get Enough"
+    ],
+    [
+     "Set 2",
+     "Pygmy Twylyte > M.E.M.P.H.I.S. > Aceetobee, Jamillia, Shem-Rah Boo, Boogie Stop Shuffle, Awol's Blues, Radiator"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-08-01sbdd1t01.mp3",
+     "duration": 857.6,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-01sbdd1t02.mp3",
+     "duration": 29.309,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-08-01sbdd1t03.mp3",
+     "duration": 1044.846,
+     "segue": true
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-08-01sbdd1t04.mp3",
+     "duration": 927.713,
+     "segue": false
+    },
+    {
+     "title": "Blue Monk",
+     "file": "db1998-08-01sbdd1t05.mp3",
+     "duration": 326.374,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-01sbdd1t06.mp3",
+     "duration": 183.432,
+     "segue": false
+    },
+    {
+     "title": "Don't Stop 'Til You Get Enough",
+     "file": "db1998-08-01sbdd1t07.mp3",
+     "duration": 340.297,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1998-08-01sbdd2t01.mp3",
+     "duration": 1274.227,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1998-08-01sbdd2t02.mp3",
+     "duration": 480.81,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-08-01sbdd2t03.mp3",
+     "duration": 968.072,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-01sbdd2t04.mp3",
+     "duration": 40.516,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1998-08-01sbdd3t01.mp3",
+     "duration": 432.353,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-08-01sbdd3t02.mp3",
+     "duration": 1073.162,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-01sbdd3t03.mp3",
+     "duration": 59.742,
+     "segue": false
+    },
+    {
+     "title": "Boogie Stop Shuffle",
+     "file": "db1998-08-01sbdd3t04.mp3",
+     "duration": 340.584,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1998-08-01sbdd3t05.mp3",
+     "duration": 358.374,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-01sbdd3t06.mp3",
+     "duration": 56.216,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "db1998-08-01sbdd3t07.mp3",
+     "duration": 616.673,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-08-02-legends-lounge-las-vegas-nv",
+   "date": "1998-08-02",
+   "venue": "Legends Lounge",
+   "place": "Las Vegas, NV",
+   "item": "db1998-08-02.sbd.flac16",
+   "source": "SBD>D8",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Magellan, Mindless Dribble, Basis for a Day, A Night in Tunisia, My Lady Survives, Trooper McCue, Soul Sacrifice, Pat and Dex"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Banter",
+     "file": "db1998-08-02sbdd1t01.mp3",
+     "duration": 35.5,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1998-08-02sbdd1t02.mp3",
+     "duration": 1004.669,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-08-02sbdd1t03.mp3",
+     "duration": 812.278,
+     "segue": false
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "db1998-08-02sbdd1t04.mp3",
+     "duration": 1527.536,
+     "segue": false
+    },
+    {
+     "title": "A Night In Tunisia",
+     "file": "db1998-08-02sbdd2t01.mp3",
+     "duration": 379.193,
+     "segue": false
+    },
+    {
+     "title": "Pat and Dex",
+     "file": "db1998-08-02sbdd2t02.mp3",
+     "duration": 518.87,
+     "segue": false
+    },
+    {
+     "title": "Trooper McCue (1)",
+     "file": "db1998-08-02sbdd2t03.mp3",
+     "duration": 487.262,
+     "segue": true
+    },
+    {
+     "title": "Soul Sacrifice",
+     "file": "db1998-08-02sbdd2t04.mp3",
+     "duration": 600.947,
+     "segue": false
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "db1998-08-02sbdd2t05.mp3",
+     "duration": 303.256,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-08-07-aggie-theatre-fort-collins-co",
+   "date": "1998-08-07",
+   "venue": "Aggie Theatre",
+   "place": "Fort Collins, CO",
+   "item": "db1998-08-07.flac",
+   "source": "DSBD",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Little Shimmy in a Conga Line > Run Like Hell > Little Shimmy in a Conga Line, Magellan, Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-08-07t01.mp3",
+     "duration": 1001.3,
+     "segue": true
+    },
+    {
+     "title": "Run Like Hell",
+     "file": "db1998-08-07t02.mp3",
+     "duration": 421.956,
+     "segue": true
+    },
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-08-07t03.mp3",
+     "duration": 387.944,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1998-08-07t04.mp3",
+     "duration": 999.053,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-08-07t05.mp3",
+     "duration": 586.475,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-08-28-wetlands-preserve-new-york-ny",
+   "date": "1998-08-28",
+   "venue": "Wetlands Preserve",
+   "place": "New York, NY",
+   "item": "db1998-08-28.shnf",
+   "source": "SBD->DAT",
+   "rating": 3.67,
+   "ratings": 6,
+   "setlist": [
+    [
+     "Set 1",
+     "Stone > The Devil's Waltz > Norwegian Wood > Once the Fiddler Paid > The Devil's Waltz, Mindless Dribble, Little Shimmy in a Conga Line, Ida Fith"
+    ],
+    [
+     "Set 2",
+     "Helicopters, News from Nowhere, Vassillios > Aceetobee, Bernstein and Chasnoff, Wet, All Blues, Morph Dusseldorf, Shem-Rah Boo, My Lady Survives"
+    ],
+    [
+     "Encore",
+     "Nughuffer"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Stone",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t01.mp3",
+     "duration": 203.99,
+     "segue": true
+    },
+    {
+     "title": "The Devil's Waltz->*",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t02.mp3",
+     "duration": 424.385,
+     "segue": false
+    },
+    {
+     "title": "Once The Fiddler Paid->#",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t03.mp3",
+     "duration": 386.847,
+     "segue": false
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t04.mp3",
+     "duration": 326.583,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t05.mp3",
+     "duration": 758.413,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t06.mp3",
+     "duration": 74.031,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t07.mp3",
+     "duration": 922.253,
+     "segue": false
+    },
+    {
+     "title": "Ida Fith#",
+     "file": "db1998-08-28d1.shnf/db1998-08-28d1t08.mp3",
+     "duration": 458.71,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t01.mp3",
+     "duration": 231.889,
+     "segue": false
+    },
+    {
+     "title": "Helicopters#",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t02.mp3",
+     "duration": 741.538,
+     "segue": false
+    },
+    {
+     "title": "News From Nowhere",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t03.mp3",
+     "duration": 277.656,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t04.mp3",
+     "duration": 1156.807,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t05.mp3",
+     "duration": 878.42,
+     "segue": false
+    },
+    {
+     "title": "Bernstein And Chasnoff",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t06.mp3",
+     "duration": 644.571,
+     "segue": false
+    },
+    {
+     "title": "Wet",
+     "file": "db1998-08-28d2.shnf/db1998-08-28d2t07.mp3",
+     "duration": 369.842,
+     "segue": false
+    },
+    {
+     "title": "All Blues",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t01.mp3",
+     "duration": 574.955,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t02.mp3",
+     "duration": 76.539,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t03.mp3",
+     "duration": 512.47,
+     "segue": false
+    },
+    {
+     "title": "Tuning/Banter",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t04.mp3",
+     "duration": 108.147,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t05.mp3",
+     "duration": 910.89,
+     "segue": false
+    },
+    {
+     "title": "My Lady Survives",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t06.mp3",
+     "duration": 326.792,
+     "segue": false
+    },
+    {
+     "title": "Crowd",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t07.mp3",
+     "duration": 75.886,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t08.mp3",
+     "duration": 258.168,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1998-08-28d3.shnf/db1998-08-28d3t09.mp3",
+     "duration": 1266.338,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-09-26-autumn-equinox-festival-wilmer-s-park-brandywine-md",
+   "date": "1998-09-26",
+   "venue": "Autumn Equinox Festival, Wilmer's Park",
+   "place": "Brandywine, MD",
+   "item": "db1998-09-26.flac16",
+   "source": "SBD> ?> SHN",
+   "rating": 4.7,
+   "ratings": 5,
+   "setlist": [
+    [
+     "Set 1",
+     "Helicopters > Magellan > Helicopters, Once the Fiddler Paid, Little Shimmy in a Conga Line"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Intro",
+     "file": "db1998-09-26d1t01.mp3",
+     "duration": 43.703,
+     "segue": false
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-09-26d1t02.mp3",
+     "duration": 531.801,
+     "segue": true
+    },
+    {
+     "title": "Magellan",
+     "file": "db1998-09-26d1t03.mp3",
+     "duration": 2222.106,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-09-26d1t04.mp3",
+     "duration": 247.536,
+     "segue": false
+    },
+    {
+     "title": "Crowd/Banter",
+     "file": "db1998-09-26d1t05.mp3",
+     "duration": 138.371,
+     "segue": false
+    },
+    {
+     "title": "Once the Fiddler Paid*",
+     "file": "db1998-09-26d1t06.mp3",
+     "duration": 477.91,
+     "segue": false
+    },
+    {
+     "title": "Crowd/Banter",
+     "file": "db1998-09-26d1t07.mp3",
+     "duration": 59.35,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Conga Line",
+     "file": "db1998-09-26d1t08.mp3",
+     "duration": 646.087,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-10-01-bessie-s-wilmington-nc",
+   "date": "1998-10-01",
+   "venue": "Bessie's",
+   "place": "Wilmington, NC",
+   "item": "db1998-10-01.shnf",
+   "source": "SBD",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Texas Pussy, I-Man, Vassillios > Shem-Rah Boo, M.E.M.P.H.I.S., Helicopters"
+    ],
+    [
+     "Set 2",
+     "Jam > Aceetobee, Little Shimmy in a Conga Line, Basis for a Day, 1999"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Texas Pussy",
+     "file": "db1998-10-01d1/db1998-10-01d1t01.mp3",
+     "duration": 286.145,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-01d1/db1998-10-01d1t02.mp3",
+     "duration": 55.223,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-10-01d1/db1998-10-01d1t03.mp3",
+     "duration": 917.864,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-10-01d1/db1998-10-01d1t04.mp3",
+     "duration": 830.119,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-10-01d1/db1998-10-01d1t05.mp3",
+     "duration": 1181.544,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-01d1/db1998-10-01d1t06.mp3",
+     "duration": 82.625,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1998-10-01d1/db1998-10-01d1t07.mp3",
+     "duration": 522.266,
+     "segue": false
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-10-01d2/db1998-10-01d2t01.mp3",
+     "duration": 1211.533,
+     "segue": false
+    },
+    {
+     "title": "Banter/Oh Oh Oh Oh Oh Jam*",
+     "file": "db1998-10-01d2/db1998-10-01d2t02.mp3",
+     "duration": 458.083,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-10-01d2/db1998-10-01d2t03.mp3",
+     "duration": 860.918,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-01d3/db1998-10-01d3t01.mp3",
+     "duration": 70.504,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1998-10-01d3/db1998-10-01d3t02.mp3",
+     "duration": 953.391,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1998-10-01d3/db1998-10-01d3t03.mp3",
+     "duration": 1688.424,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-01d3/db1998-10-01d3t04.mp3",
+     "duration": 118.753,
+     "segue": false
+    },
+    {
+     "title": "1999",
+     "file": "db1998-10-01d3/db1998-10-01d3t05.mp3",
+     "duration": 223.269,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-10-28-higher-ground-s-burlington-vt",
+   "date": "1998-10-28",
+   "venue": "Higher Ground",
+   "place": "South Burlington, VT",
+   "item": "db1998-10-28.shnf",
+   "source": "DSBD",
+   "rating": 3.5,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Magellan, Mulberry's Dream, Voices Insane, Awol's Blues, Smoothie King, Texas Pussy, Plan B, Vassillios > Aceetobee, Poncho the Cat, Morph Dusseldorf"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Magellan",
+     "file": "db98-10-28d1t1.mp3",
+     "duration": 981.42,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db98-10-28d1t2.mp3",
+     "duration": 418.795,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db98-10-28d1t3.mp3",
+     "duration": 111.412,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db98-10-28d1t4.mp3",
+     "duration": 515.971,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db98-10-28d1t5.mp3",
+     "duration": 146.965,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues*",
+     "file": "db98-10-28d1t6.mp3",
+     "duration": 526.341,
+     "segue": false
+    },
+    {
+     "title": "Smoothie King*",
+     "file": "db98-10-28d1t7.mp3",
+     "duration": 342.439,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db98-10-28d1t8.mp3",
+     "duration": 145.136,
+     "segue": false
+    },
+    {
+     "title": "Texas Pussy*",
+     "file": "db98-10-28d1t9.mp3",
+     "duration": 437.002,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db98-10-28d2t1.mp3",
+     "duration": 356.519,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db98-10-28d2t2.mp3",
+     "duration": 981.995,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db98-10-28d2t3.mp3",
+     "duration": 794.462,
+     "segue": false
+    },
+    {
+     "title": "Poncho The Cat",
+     "file": "db98-10-28d2t4.mp3",
+     "duration": 516.336,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorph",
+     "file": "db98-10-28d2t5.mp3",
+     "duration": 497.032,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-10-30-trocadero-philadelphia-pa",
+   "date": "1998-10-30",
+   "venue": "Trocadero",
+   "place": "Philadelphia, PA",
+   "item": "db1998-10-30.sbd.flac16",
+   "source": "SBD > Laptop",
+   "rating": 4.12,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Magellan, 1999, Shem-Rah Boo, Aquatic Ape, Plan B > Helicopters > Mindless Dribble, Rainbow Song, Voices Insane, Mr. Don > Helicopters"
+    ],
+    [
+     "Encore",
+     "Mulberry's Dream"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Magellan",
+     "file": "db1998-10-30d1t01.mp3",
+     "duration": 1014.883,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d1t02.mp3",
+     "duration": 108.513,
+     "segue": false
+    },
+    {
+     "title": "1999",
+     "file": "db1998-10-30d1t03.mp3",
+     "duration": 202.371,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-10-30d1t04.mp3",
+     "duration": 942.655,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d1t05.mp3",
+     "duration": 61.753,
+     "segue": false
+    },
+    {
+     "title": "Aquatic Ape",
+     "file": "db1998-10-30d1t06.mp3",
+     "duration": 570.358,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d2t01.mp3",
+     "duration": 54.021,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1998-10-30d2t02.mp3",
+     "duration": 406.465,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-10-30d2t03.mp3",
+     "duration": 749.453,
+     "segue": true
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-10-30d2t04.mp3",
+     "duration": 745.77,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d3t01.mp3",
+     "duration": 47.177,
+     "segue": false
+    },
+    {
+     "title": "Rainbow Song",
+     "file": "db1998-10-30d3t02.mp3",
+     "duration": 528.536,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d3t03.mp3",
+     "duration": 36.65,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1998-10-30d3t04.mp3",
+     "duration": 671.817,
+     "segue": false
+    },
+    {
+     "title": "Mr. Don",
+     "file": "db1998-10-30d3t05.mp3",
+     "duration": 863.216,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-10-30d3t06.mp3",
+     "duration": 446.38,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-10-30d3t07.mp3",
+     "duration": 73.482,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1998-10-30d3t08.mp3",
+     "duration": 481.646,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-12-03-chameleon-club-lancaster-pa",
+   "date": "1998-12-03",
+   "venue": "Chameleon Club",
+   "place": "Lancaster, PA",
+   "item": "db1998-12-03.flac16",
+   "source": "SBD->DAT",
+   "rating": 3,
+   "ratings": 1,
+   "setlist": [
+    [
+     "Set 1",
+     "Plan B > Helicopters > Aceetobee, M.E.M.P.H.I.S., Vassillios > Dance of the Sugar Plum Fairies > Vassillios > Helicopters"
+    ],
+    [
+     "Set 2",
+     "Bazaar Escape, Little Betty Boop > Mulberry's Dream, Three Wishes, Smoothie King, Pygmy Twylyte, Morph Dusseldorf"
+    ],
+    [
+     "Encore",
+     "Little Shimmy in a Conga Line > Nughuffer"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Tuning/Banter",
+     "file": "db1998-12-03d1t01.mp3",
+     "duration": 90.279,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1998-12-03d1t02.mp3",
+     "duration": 425.77,
+     "segue": true
+    },
+    {
+     "title": "Tuning/Jam",
+     "file": "db1998-12-03d1t03.mp3",
+     "duration": 218.122,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-12-03d1t04.mp3",
+     "duration": 862.276,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1998-12-03d1t05.mp3",
+     "duration": 906.58,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-03d1t06.mp3",
+     "duration": 65.672,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1998-12-03d1t07.mp3",
+     "duration": 429.349,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-03d1t08.mp3",
+     "duration": 37.251,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-12-03d1t09.mp3",
+     "duration": 347.716,
+     "segue": true
+    },
+    {
+     "title": "Dance Of The Sugar Plum Fairies",
+     "file": "db1998-12-03d1t10.mp3",
+     "duration": 97.384,
+     "segue": true
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1998-12-03d1t11.mp3",
+     "duration": 831.19,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1998-12-03d1t12.mp3",
+     "duration": 237.401,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-03d2t01.mp3",
+     "duration": 73.9,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1998-12-03d2t02.mp3",
+     "duration": 603.559,
+     "segue": false
+    },
+    {
+     "title": "Three Wishes (1)",
+     "file": "db1998-12-03d2t03.mp3",
+     "duration": 215.562,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop (2)",
+     "file": "db1998-12-03d2t04.mp3",
+     "duration": 1242.436,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1998-12-03d2t05.mp3",
+     "duration": 499.879,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-03d2t06.mp3",
+     "duration": 56.555,
+     "segue": false
+    },
+    {
+     "title": "Smoothie King",
+     "file": "db1998-12-03d2t07.mp3",
+     "duration": 228.571,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-03d2t08.mp3",
+     "duration": 27.324,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1998-12-03d2t09.mp3",
+     "duration": 870.896,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1998-12-03d2t10.mp3",
+     "duration": 626.338,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Conga Line (3)",
+     "file": "db1998-12-03d3t01.mp3",
+     "duration": 691.984,
+     "segue": true
+    },
+    {
+     "title": "Nughuffer (3)",
+     "file": "db1998-12-03d3t02.mp3",
+     "duration": 591.282,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1998-12-04-rec-room-towson-md",
+   "date": "1998-12-04",
+   "venue": "Rec Room",
+   "place": "Towson, MD",
+   "item": "db1998-12-04.shnf",
+   "source": "SBD > DAT",
+   "rating": 3.83,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Shem-Rah Boo, Bazaar Escape, Once the Fiddler Paid, I-Man > Pat and Dex, Three Wishes, Mindless Dribble, The Overture, Basis for a Day > Bernstein and Chasnoff > Basis for a Day"
+    ],
+    [
+     "Encore",
+     "Voices Insane, Barfly"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t01.mp3",
+     "duration": 933.93,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t02.mp3",
+     "duration": 129.881,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t03.mp3",
+     "duration": 614.426,
+     "segue": false
+    },
+    {
+     "title": "Once The Fiddler Paid",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t04.mp3",
+     "duration": 519.053,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t05.mp3",
+     "duration": 1657.313,
+     "segue": true
+    },
+    {
+     "title": "Pat And Dex",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t06.mp3",
+     "duration": 506.305,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t07.mp3",
+     "duration": 106.162,
+     "segue": false
+    },
+    {
+     "title": "Three Wishes",
+     "file": "db1998-12-04d1.shnf/db1998-12-04d1t08.mp3",
+     "duration": 222.589,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t01.mp3",
+     "duration": 1032.046,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t02.mp3",
+     "duration": 54.361,
+     "segue": false
+    },
+    {
+     "title": "The Overture",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t03.mp3",
+     "duration": 381.701,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t04.mp3",
+     "duration": 1397.917,
+     "segue": true
+    },
+    {
+     "title": "Bernstein And Chasnoff",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t05.mp3",
+     "duration": 246.126,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t06.mp3",
+     "duration": 392.647,
+     "segue": false
+    },
+    {
+     "title": "Crowd",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t07.mp3",
+     "duration": 79.099,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t08.mp3",
+     "duration": 150.256,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t09.mp3",
+     "duration": 514.377,
+     "segue": false
+    },
+    {
+     "title": "Barfly",
+     "file": "db1998-12-04d2.shnf/db1998-12-04d2t10.mp3",
+     "duration": 563.905,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-01-18-crowbar-state-college-pa",
+   "date": "1999-01-18",
+   "venue": "Crowbar",
+   "place": "State College, PA",
+   "item": "db1999-01-18.shnf",
+   "source": "SBD->D8",
+   "rating": 3.92,
+   "ratings": 13,
+   "setlist": [
+    [
+     "Set 1",
+     "Hot Air Balloon, Mindless Dribble > Bazaar Escape, Plan B, The Very Moon"
+    ],
+    [
+     "Set 2",
+     "Morph Dusseldorf, Above the Waves > Vassillios > Above the Waves, Mulberry's Dream, Shem-Rah Boo > Aceetobee"
+    ],
+    [
+     "Encore",
+     "Little Shimmy in a Conga Line > Pygmy Twylyte"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Hot Air Balloon",
+     "file": "db1999-01-18d1/db1999-01-18d1t01.mp3",
+     "duration": 856.189,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1999-01-18d1/db1999-01-18d1t02.mp3",
+     "duration": 1374.407,
+     "segue": true
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1999-01-18d1/db1999-01-18d1t03.mp3",
+     "duration": 582.191,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-01-18d1/db1999-01-18d1t04.mp3",
+     "duration": 76.434,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-01-18d1/db1999-01-18d1t05.mp3",
+     "duration": 443.638,
+     "segue": true
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-01-18d1/db1999-01-18d1t06.mp3",
+     "duration": 596.95,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1999-01-18d2/db1999-01-18d2t01.mp3",
+     "duration": 581.172,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-01-18d2/db1999-01-18d2t02.mp3",
+     "duration": 42.031,
+     "segue": false
+    },
+    {
+     "title": "Above The Waves",
+     "file": "db1999-01-18d2/db1999-01-18d2t03.mp3",
+     "duration": 1211.167,
+     "segue": true
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1999-01-18d2/db1999-01-18d2t04.mp3",
+     "duration": 1081.313,
+     "segue": true
+    },
+    {
+     "title": "Above The Waves",
+     "file": "db1999-01-18d2/db1999-01-18d2t05.mp3",
+     "duration": 427.494,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-01-18d2/db1999-01-18d2t06.mp3",
+     "duration": 67.971,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-01-18d3/db1999-01-18d3t01.mp3",
+     "duration": 519.262,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-01-18d3/db1999-01-18d3t02.mp3",
+     "duration": 64.836,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo->*",
+     "file": "db1999-01-18d3/db1999-01-18d3t03.mp3",
+     "duration": 147.304,
+     "segue": false
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1999-01-18d3/db1999-01-18d3t04.mp3",
+     "duration": 877.845,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-01-18d3/db1999-01-18d3t05.mp3",
+     "duration": 20.088,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy In A Conga Line",
+     "file": "db1999-01-18d3/db1999-01-18d3t06.mp3",
+     "duration": 753.136,
+     "segue": true
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-01-18d3/db1999-01-18d3t07.mp3",
+     "duration": 744.934,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-02-02-peasant-s-cafe-greenville-nc",
+   "date": "1999-02-02",
+   "venue": "Peasant's Cafe",
+   "place": "Greenville, NC",
+   "item": "db1999-02-02.shnf",
+   "source": "DSBD>D8",
+   "rating": 3.88,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Little Shimmy in a Conga Line, News from Nowhere, Vassillios > Helicopters, Jamillia"
+    ],
+    [
+     "Set 2",
+     "Shem-Rah Boo, Pat and Dex, Magellan, Mindless Dribble"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Little Shimmy in a Conga Line",
+     "file": "db1999-02-02d1/db1999-02-02d1t01.mp3",
+     "duration": 1205.838,
+     "segue": false
+    },
+    {
+     "title": "News From Nowhere",
+     "file": "db1999-02-02d1/db1999-02-02d1t02.mp3",
+     "duration": 279.066,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1999-02-02d1/db1999-02-02d1t03.mp3",
+     "duration": 1071.491,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1999-02-02d1/db1999-02-02d1t04.mp3",
+     "duration": 1147.089,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1999-02-02d1/db1999-02-02d1t05.mp3",
+     "duration": 465.058,
+     "segue": false
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1999-02-02d2/db1999-02-02d2t01.mp3",
+     "duration": 1264.274,
+     "segue": false
+    },
+    {
+     "title": "Pat & Dex",
+     "file": "db1999-02-02d2/db1999-02-02d2t02.mp3",
+     "duration": 560.536,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1999-02-02d2/db1999-02-02d2t03.mp3",
+     "duration": 1281.515,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1999-02-02d2/db1999-02-02d2t04.mp3",
+     "duration": 1103.256,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-02-03-the-brewery-raleigh-nc",
+   "date": "1999-02-03",
+   "venue": "The Brewery",
+   "place": "Raleigh, NC",
+   "item": "db1999-02-03.shnf",
+   "source": "Mono SBD",
+   "rating": 4.42,
+   "ratings": 6,
+   "setlist": [
+    [
+     "Set 1",
+     "Eulogy, Little Betty Boop, Bazaar Escape > Mulberry's Dream, Above the Waves, Hot Air Balloon, Radiator > Aceetobee, Plan B > Awol's Blues"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Eulogy",
+     "file": "db1999-02-03d1/db1999-02-03d1t01.mp3",
+     "duration": 448.601,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1999-02-03d1/db1999-02-03d1t02.mp3",
+     "duration": 924.735,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-02-03d1/db1999-02-03d1t03.mp3",
+     "duration": 90.358,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1999-02-03d1/db1999-02-03d1t04.mp3",
+     "duration": 618.762,
+     "segue": true
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-02-03d1/db1999-02-03d1t05.mp3",
+     "duration": 618.344,
+     "segue": false
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-02-03d2/db1999-02-03d2t01.mp3",
+     "duration": 2140.238,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-02-03d2/db1999-02-03d2t02.mp3",
+     "duration": 51.435,
+     "segue": false
+    },
+    {
+     "title": "Hot Air Balloon",
+     "file": "db1999-02-03d2/db1999-02-03d2t03.mp3",
+     "duration": 868.571,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-02-03d2/db1999-02-03d2t04.mp3",
+     "duration": 92.291,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "db1999-02-03d3/db1999-02-03d3t01.mp3",
+     "duration": 1301.76,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1999-02-03d3/db1999-02-03d3t02.mp3",
+     "duration": 960.862,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-02-03d3/db1999-02-03d3t03.mp3",
+     "duration": 409.234,
+     "segue": true
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1999-02-03d3/db1999-02-03d3t04.mp3",
+     "duration": 435.775,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-02-06-chameleon-club-atlanta-ga",
+   "date": "1999-02-06",
+   "venue": "Chameleon Club",
+   "place": "Atlanta, GA",
+   "item": "db1999-02-06.dsbd.eac.flac16",
+   "source": "DSBD>???>CD",
+   "rating": 3.5,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Morph Dusseldorf, Voices Insane > Eulogy, Little Betty Boop > Aceetobee, Mr. Don, Plan B, Helicopters, Awol's Blues"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1999-02-06d1t01.mp3",
+     "duration": 528.353,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1999-02-06d1t02.mp3",
+     "duration": 577.306,
+     "segue": true
+    },
+    {
+     "title": "Eulogy",
+     "file": "db1999-02-06d1t03.mp3",
+     "duration": 410.854,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop (unf)",
+     "file": "db1999-02-06d1t04.mp3",
+     "duration": 1391.464,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1999-02-06d1t05.mp3",
+     "duration": 978.077,
+     "segue": false
+    },
+    {
+     "title": "Mr. Don",
+     "file": "db1999-02-06d2t01.mp3",
+     "duration": 1249.019,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-02-06d2t02.mp3",
+     "duration": 76.878,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-02-06d2t03.mp3",
+     "duration": 395.572,
+     "segue": false
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1999-02-06d2t04.mp3",
+     "duration": 988.918,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1999-02-06d2t05.mp3",
+     "duration": 419.135,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-02-25-brookdale-lodge-brookdale-ca",
+   "date": "1999-02-25",
+   "venue": "Brookdale Lodge",
+   "place": "Brookdale, CA",
+   "item": "db1999-02-25RM.shnf",
+   "source": "PLAN C APPROVED / Digital SBD (@48khz)",
+   "rating": 4.28,
+   "ratings": 9,
+   "setlist": [
+    [
+     "Set 1",
+     "Magellan, Eulogy, Basis for a Day > Shem-Rah Boo"
+    ],
+    [
+     "Set 2",
+     "Bazaar Escape, Nughuffer > Basis for a Day, Rainbow Song, Once the Fiddler Paid, Pygmy Twylyte > Nughuffer, Awol's Blues, Plan B > Magellan Reprise"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "banter",
+     "file": "db1999-02-25d1RM/db1999-02-25d1t01.mp3",
+     "duration": 104.411,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1999-02-25d1RM/db1999-02-25d1t02.mp3",
+     "duration": 1331.174,
+     "segue": false
+    },
+    {
+     "title": "Eulogy",
+     "file": "db1999-02-25d1RM/db1999-02-25d1t03.mp3",
+     "duration": 424.699,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-02-25d1RM/db1999-02-25d1t04.mp3",
+     "duration": 1392.431,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1999-02-25d1RM/db1999-02-25d1t05.mp3",
+     "duration": 1495.353,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t01.mp3",
+     "duration": 590.211,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t02.mp3",
+     "duration": 1157.486,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t03.mp3",
+     "duration": 235.468,
+     "segue": false
+    },
+    {
+     "title": "Rainbow Song",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t04.mp3",
+     "duration": 254.798,
+     "segue": false
+    },
+    {
+     "title": "Once The Fiddler Paid",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t05.mp3",
+     "duration": 611.762,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t06.mp3",
+     "duration": 825.13,
+     "segue": true
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1999-02-25d2RM/db1999-02-25d2t07.mp3",
+     "duration": 540.238,
+     "segue": false
+    },
+    {
+     "title": "banter",
+     "file": "db1999-02-25d3RM/db1999-02-25d3t01.mp3",
+     "duration": 63.269,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1999-02-25d3RM/db1999-02-25d3t02.mp3",
+     "duration": 401.607,
+     "segue": false
+    },
+    {
+     "title": "banter",
+     "file": "db1999-02-25d3RM/db1999-02-25d3t03.mp3",
+     "duration": 27.402,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-02-25d3RM/db1999-02-25d3t04.mp3",
+     "duration": 540.656,
+     "segue": true
+    },
+    {
+     "title": "Magellan Reprise",
+     "file": "db1999-02-25d3RM/db1999-02-25d3t05.mp3",
+     "duration": 344.79,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-03-05-mount-tabor-pub-portland-or",
+   "date": "1999-03-05",
+   "venue": "Mount Tabor Pub",
+   "place": "Portland, OR",
+   "item": "db1999-03-05.shnf",
+   "source": "Digital Soundboard",
+   "rating": 4.25,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Morph Dusseldorf, M.E.M.P.H.I.S., Little Betty Boop > I-Man"
+    ],
+    [
+     "Set 2",
+     "Shem-Rah Boo, Plan B, Smoothie King, Little Shimmy in a Conga Line, Magellan > Magellan Reprise"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1999-03-05d1/db1999-03-05d1t01.mp3",
+     "duration": 679.732,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1999-03-05d1/db1999-03-05d1t02.mp3",
+     "duration": 1003.468,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1999-03-05d1/db1999-03-05d1t03.mp3",
+     "duration": 1630.851,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1999-03-05d1/db1999-03-05d1t04.mp3",
+     "duration": 1011.409,
+     "segue": false
+    },
+    {
+     "title": "Shem Rah Boo",
+     "file": "db1999-03-05d2/db1999-03-05d2t01.mp3",
+     "duration": 1213.806,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-03-05d2/db1999-03-05d2t02.mp3",
+     "duration": 499.148,
+     "segue": false
+    },
+    {
+     "title": "Smoothie King",
+     "file": "db1999-03-05d2/db1999-03-05d2t03.mp3",
+     "duration": 221.388,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Conga Line",
+     "file": "db1999-03-05d2/db1999-03-05d2t04.mp3",
+     "duration": 1199.856,
+     "segue": false
+    },
+    {
+     "title": "Magellan Reprise",
+     "file": "db1999-03-05d2/db1999-03-05d2t05.mp3",
+     "duration": 1234.913,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-03-06-good-times-eugene-or",
+   "date": "1999-03-06",
+   "venue": "Good Times",
+   "place": "Eugene, OR",
+   "item": "db1999-03-06.shnf",
+   "source": "SBD->D8",
+   "rating": 3.75,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "Mulberry's Dream, Bernstein and Chasnoff, The Very Moon, Pygmy Twylyte > Bad Love > Pygmy Twylyte, Frog Legs, Basis for a Day"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-03-06d1/db1999-03-06d1t01.mp3",
+     "duration": 596.715,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1999-03-06d1/db1999-03-06d1t02.mp3",
+     "duration": 1028.075,
+     "segue": false
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-03-06d1/db1999-03-06d1t03.mp3",
+     "duration": 694.073,
+     "segue": false
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-03-06d1/db1999-03-06d1t04.mp3",
+     "duration": 718.263,
+     "segue": false
+    },
+    {
+     "title": "Frog Legs",
+     "file": "db1999-03-06d2/db1999-03-06d2t01.mp3",
+     "duration": 417.411,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-03-06d2/db1999-03-06d2t02.mp3",
+     "duration": 1734.818,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-03-13-starlight-fort-collins-co",
+   "date": "1999-03-13",
+   "venue": "Starlight",
+   "place": "Fort Collins, CO",
+   "item": "db1999-03-13.shnf",
+   "source": "DSBD",
+   "rating": 4.75,
+   "ratings": 6,
+   "setlist": [
+    [
+     "Set 1",
+     "Pygmy Twylyte, M.E.M.P.H.I.S. > Shem-Rah Boo > Down to the Bottom, Jamillia"
+    ],
+    [
+     "Set 2",
+     "Above the Waves, Wet, Afro Blue, Aquatic Ape > Mindless Dribble, Bernstein and Chasnoff"
+    ],
+    [
+     "Encore",
+     "Mulberry's Dream"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-03-13d1/db1999-03-13d1t01.mp3",
+     "duration": 1075.644,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1999-03-13d1/db1999-03-13d1t02.mp3",
+     "duration": 1241.156,
+     "segue": true
+    },
+    {
+     "title": "Shem-Rah Boo",
+     "file": "db1999-03-13d1/db1999-03-13d1t03.mp3",
+     "duration": 1087.242,
+     "segue": true
+    },
+    {
+     "title": "Down to the Bottom",
+     "file": "db1999-03-13d1/db1999-03-13d1t04.mp3",
+     "duration": 861.597,
+     "segue": false
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1999-03-13d1/db1999-03-13d1t05.mp3",
+     "duration": 438.753,
+     "segue": false
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-03-13d2/db1999-03-13d2t01.mp3",
+     "duration": 1166.994,
+     "segue": false
+    },
+    {
+     "title": "Wet",
+     "file": "db1999-03-13d2/db1999-03-13d2t02.mp3",
+     "duration": 406.413,
+     "segue": false
+    },
+    {
+     "title": "Afro Blue",
+     "file": "db1999-03-13d2/db1999-03-13d2t03.mp3",
+     "duration": 539.951,
+     "segue": false
+    },
+    {
+     "title": "Aquatic Ape",
+     "file": "db1999-03-13d2/db1999-03-13d2t04.mp3",
+     "duration": 607.608,
+     "segue": true
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1999-03-13d2/db1999-03-13d2t05.mp3",
+     "duration": 1017.966,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1999-03-13d3/db1999-03-13d3t01.mp3",
+     "duration": 1049.417,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-03-13d3/db1999-03-13d3t02.mp3",
+     "duration": 634.044,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-03-14-quixote-s-true-blue-aurora-co",
+   "date": "1999-03-14",
+   "venue": "Quixote's True Blue",
+   "place": "Aurora, CO",
+   "item": "db1999-03-14.shnf",
+   "source": "DSBD",
+   "rating": 4.25,
+   "ratings": 2,
+   "setlist": [
+    [
+     "Set 1",
+     "The Overture, Once the Fiddler Paid, Trooper McCue > Aceetobee, Morph Dusseldorf"
+    ],
+    [
+     "Set 2",
+     "I-Man > Vassillios > Mr. Don > Aquatic Ape, Three Wishes, Mary Had a Little Lamb, Plan B > Norwegian Wood > Plan B, Helicopters, Smoothie King > Pat and Dex"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Banter",
+     "file": "db1999-03-14d1/db1999-03-14d1t01.mp3",
+     "duration": 39.105,
+     "segue": false
+    },
+    {
+     "title": "The Overture",
+     "file": "db1999-03-14d1/db1999-03-14d1t02.mp3",
+     "duration": 473.025,
+     "segue": false
+    },
+    {
+     "title": "Once the Fiddler Paid",
+     "file": "db1999-03-14d1/db1999-03-14d1t03.mp3",
+     "duration": 647.784,
+     "segue": false
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1999-03-14d1/db1999-03-14d1t04.mp3",
+     "duration": 1152.261,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1999-03-14d1/db1999-03-14d1t05.mp3",
+     "duration": 1029.825,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1999-03-14d1/db1999-03-14d1t06.mp3",
+     "duration": 605.78,
+     "segue": false
+    },
+    {
+     "title": "I-Man",
+     "file": "db1999-03-14d2/db1999-03-14d2t01.mp3",
+     "duration": 2390.857,
+     "segue": true
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1999-03-14d2/db1999-03-14d2t02.mp3",
+     "duration": 1158.922,
+     "segue": false
+    },
+    {
+     "title": "Mr. Don",
+     "file": "db1999-03-14d3/db1999-03-14d3t01.mp3",
+     "duration": 1170.286,
+     "segue": true
+    },
+    {
+     "title": "Aquatic Ape*",
+     "file": "db1999-03-14d3/db1999-03-14d3t02.mp3",
+     "duration": 244.402,
+     "segue": false
+    },
+    {
+     "title": "Three Wishes",
+     "file": "db1999-03-14d3/db1999-03-14d3t03.mp3",
+     "duration": 196.885,
+     "segue": false
+    },
+    {
+     "title": "Mary Had a Little Lamb",
+     "file": "db1999-03-14d3/db1999-03-14d3t04.mp3",
+     "duration": 463.36,
+     "segue": false
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-03-14d3/db1999-03-14d3t05.mp3",
+     "duration": 462.707,
+     "segue": true
+    },
+    {
+     "title": "Norwegian Wood",
+     "file": "db1999-03-14d3/db1999-03-14d3t06.mp3",
+     "duration": 577.515,
+     "segue": true
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-03-14d3/db1999-03-14d3t07.mp3",
+     "duration": 225.881,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1999-03-14d3/db1999-03-14d3t08.mp3",
+     "duration": 903.184,
+     "segue": false
+    },
+    {
+     "title": "Smoothie King",
+     "file": "db1999-03-14d4/db1999-03-14d4t01.mp3",
+     "duration": 251.847,
+     "segue": true
+    },
+    {
+     "title": "Pat & Dex",
+     "file": "db1999-03-14d4/db1999-03-14d4t02.mp3",
+     "duration": 558.498,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-03-25-small-planet-east-lansing-mi",
+   "date": "1999-03-25",
+   "venue": "Small Planet",
+   "place": "East Lansing, MI",
+   "item": "db1999-03-25.shnf",
+   "source": "SBD > Cass0 > SBM-1 > D8",
+   "rating": 4,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Pygmy Twylyte, Smoothie King, Little Shimmy in a Conga Line > Bernstein and Chasnoff, Once the Fiddler Paid, Little Betty Boop, Wet"
+    ],
+    [
+     "Set 2",
+     "Radiator, Bazaar Escape > Mulberry's Dream, Mary Had a Little Lamb, M.E.M.P.H.I.S. > Basis for a Day > Jamillia"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-03-25d1/db1999-03-25d1t01.mp3",
+     "duration": 856.346,
+     "segue": false
+    },
+    {
+     "title": "Smoothie King",
+     "file": "db1999-03-25d1/db1999-03-25d1t02.mp3",
+     "duration": 224.705,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Conga Line",
+     "file": "db1999-03-25d1/db1999-03-25d1t03.mp3",
+     "duration": 1094.217,
+     "segue": true
+    },
+    {
+     "title": "Bernstein & Chasnoff",
+     "file": "db1999-03-25d1/db1999-03-25d1t04.mp3",
+     "duration": 884.741,
+     "segue": false
+    },
+    {
+     "title": "Once The Fiddler Paid",
+     "file": "db1999-03-25d1/db1999-03-25d1t05.mp3",
+     "duration": 596.715,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1999-03-25d2/db1999-03-25d2t01.mp3",
+     "duration": 1063.158,
+     "segue": false
+    },
+    {
+     "title": "Wet",
+     "file": "db1999-03-25d2/db1999-03-25d2t02.mp3",
+     "duration": 250.567,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "db1999-03-25d2/db1999-03-25d2t03.mp3",
+     "duration": 877.61,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1999-03-25d2/db1999-03-25d2t04.mp3",
+     "duration": 650.136,
+     "segue": true
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-03-25d2/db1999-03-25d2t05.mp3",
+     "duration": 638.955,
+     "segue": false
+    },
+    {
+     "title": "Mary Had A Little Lamb",
+     "file": "db1999-03-25d3/db1999-03-25d3t01.mp3",
+     "duration": 372.532,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1999-03-25d3/db1999-03-25d3t02.mp3",
+     "duration": 1380.807,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-03-25d3/db1999-03-25d3t03.mp3",
+     "duration": 396.8,
+     "segue": true
+    },
+    {
+     "title": "Jamillia",
+     "file": "db1999-03-25d3/db1999-03-25d3t04.mp3",
+     "duration": 441.391,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-05-04-asheville-brewing-company-asheville-nc",
+   "date": "1999-05-04",
+   "venue": "Asheville Brewing Company",
+   "place": "Asheville, NC",
+   "item": "db1999-05-04.shnf",
+   "source": "DSBD",
+   "rating": 3.33,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Aceetobee, News from Nowhere, Radiator, Blue Monk, The Very Moon > Basis for a Day > The Very Moon"
+    ],
+    [
+     "Set 2",
+     "Bazaar Escape > Trooper McCue, Eulogy, Nughuffer, Above the Waves"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Aceetobee",
+     "file": "db1999-05-04d1/db1999-05-04d1t01.mp3",
+     "duration": 931.265,
+     "segue": false
+    },
+    {
+     "title": "News From Nowhere",
+     "file": "db1999-05-04d1/db1999-05-04d1t02.mp3",
+     "duration": 262.452,
+     "segue": false
+    },
+    {
+     "title": "Radiator",
+     "file": "db1999-05-04d1/db1999-05-04d1t03.mp3",
+     "duration": 1158.687,
+     "segue": false
+    },
+    {
+     "title": "Blue Monk",
+     "file": "db1999-05-04d1/db1999-05-04d1t04.mp3",
+     "duration": 398.341,
+     "segue": false
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-05-04d1/db1999-05-04d1t05.mp3",
+     "duration": 1351.34,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-05-04d1/db1999-05-04d1t06.mp3",
+     "duration": 293.512,
+     "segue": true
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-05-04d1/db1999-05-04d1t07.mp3",
+     "duration": 67.84,
+     "segue": false
+    },
+    {
+     "title": "Bazaar Escape*",
+     "file": "db1999-05-04d2/db1999-05-04d2t01.mp3",
+     "duration": 564.297,
+     "segue": true
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1999-05-04d2/db1999-05-04d2t02.mp3",
+     "duration": 952.424,
+     "segue": false
+    },
+    {
+     "title": "Eulogy",
+     "file": "db1999-05-04d2/db1999-05-04d2t03.mp3",
+     "duration": 410.854,
+     "segue": false
+    },
+    {
+     "title": "Nughuffer",
+     "file": "db1999-05-04d2/db1999-05-04d2t04.mp3",
+     "duration": 1140.898,
+     "segue": false
+    },
+    {
+     "title": "Above The Waves",
+     "file": "db1999-05-04d2/db1999-05-04d2t05.mp3",
+     "duration": 1073.528,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-05-14-stoned-monkey-huntington-wv",
+   "date": "1999-05-14",
+   "venue": "Stoned Monkey",
+   "place": "Huntington, WV",
+   "item": "db1999-05-14.shnf",
+   "source": "DSBD",
+   "rating": 3.75,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Mary Had a Little Lamb, Eulogy, The Very Moon > Pygmy Twylyte, Voices Insane"
+    ],
+    [
+     "Set 2",
+     "Vassillios > Basis for a Day > Bazaar Escape, Bernstein and Chasnoff > Basis for a Day"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Mary Had A Little Lamb",
+     "file": "db1999-05-14d1/db1999-05-14d1t01.mp3",
+     "duration": 305.371,
+     "segue": false
+    },
+    {
+     "title": "Eulogy",
+     "file": "db1999-05-14d1/db1999-05-14d1t02.mp3",
+     "duration": 418.612,
+     "segue": false
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-05-14d1/db1999-05-14d1t03.mp3",
+     "duration": 1443.683,
+     "segue": true
+    },
+    {
+     "title": "Pygmy Twylyte",
+     "file": "db1999-05-14d1/db1999-05-14d1t04.mp3",
+     "duration": 856.451,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1999-05-14d1/db1999-05-14d1t05.mp3",
+     "duration": 748.957,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1999-05-14d2/db1999-05-14d2t01.mp3",
+     "duration": 1123.448,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-05-14d2/db1999-05-14d2t02.mp3",
+     "duration": 357.669,
+     "segue": true
+    },
+    {
+     "title": "Bazaar Escape",
+     "file": "db1999-05-14d2/db1999-05-14d2t03.mp3",
+     "duration": 651.442,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1999-05-14d2/db1999-05-14d2t04.mp3",
+     "duration": 1367.641,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db1999-05-14d2/db1999-05-15d2t05.mp3",
+     "duration": 1134.42,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-06-19-gathering-of-the-vibes-seaside-park-bridgeport-ct",
+   "date": "1999-06-19",
+   "venue": "Gathering of the Vibes, Seaside Park",
+   "place": "Bridgeport, CT",
+   "item": "db1999-06-19.sbdrm.flac16",
+   "source": "SBD",
+   "rating": 3.5,
+   "ratings": 7,
+   "setlist": [
+    [
+     "Set 1",
+     "The Very Moon > Bernstein and Chasnoff, Above the Waves, Magellan"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "The Very Moon",
+     "file": "db1999-06-19.sbdrm.t01.mp3",
+     "duration": 915.696,
+     "segue": true
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1999-06-19.sbdrm.t02.mp3",
+     "duration": 887.066,
+     "segue": false
+    },
+    {
+     "title": "Above The Waves",
+     "file": "db1999-06-19.sbdrm.t03.mp3",
+     "duration": 1026.273,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1999-06-19.sbdrm.t04.mp3",
+     "duration": 1183.112,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-09-08-higher-ground-s-burlington-vt",
+   "date": "1999-09-08",
+   "venue": "Higher Ground",
+   "place": "South Burlington, VT",
+   "item": "db1999-09-08",
+   "source": "SBD > Sony PCM R500 > DAT",
+   "rating": 4.12,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Mindless Dribble > Helicopters > Mindless Dribble > I-Man > The Thieving Magpie > I-Man, Svenghali, Pilin' It High, The Very Moon > Helicopters, House Dog Party Favor"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "",
+     "file": "01%20dB1999.09.08.mp3",
+     "duration": 27.22,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "02%20dB1999.09.08.mp3",
+     "duration": 1575.602,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "03%20dB1999.09.08.mp3",
+     "duration": 1540.153,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "04%20dB1999.09.08.mp3",
+     "duration": 1096.908,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "05%20dB1999.09.08.mp3",
+     "duration": 1055.19,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "06%20dB1999.09.08.mp3",
+     "duration": 1736.255,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "07%20dB1999.09.08.mp3",
+     "duration": 1015.876,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-09-14-wilbert-s-cleveland-oh",
+   "date": "1999-09-14",
+   "venue": "Wilbert's",
+   "place": "Cleveland, OH",
+   "item": "db1999-09-14.shnf",
+   "source": "DSBD",
+   "rating": 4.1,
+   "ratings": 5,
+   "setlist": [
+    [
+     "Set 1",
+     "Voices Insane, Little Shimmy in a Conga Line > Basis for a Day, Trooper McCue, Wet"
+    ],
+    [
+     "Set 2",
+     "Pilin' It High, Above the Waves > Little Shimmy in a Conga Line, Barfly, Haleakala Crater > Above the Waves, Morph Dusseldorf, Once the Fiddler Paid"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Voices Insane",
+     "file": "db1999-09-14d1/db1999-09-14d1t01.mp3",
+     "duration": 783.464,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Congo Line",
+     "file": "db1999-09-14d1/db1999-09-14d1t02.mp3",
+     "duration": 1378.978,
+     "segue": false
+    },
+    {
+     "title": "Basis For a Day",
+     "file": "db1999-09-14d1/db1999-09-14d1t03.mp3",
+     "duration": 354.873,
+     "segue": false
+    },
+    {
+     "title": "Tuning/Banter",
+     "file": "db1999-09-14d1/db1999-09-14d1t04.mp3",
+     "duration": 103.758,
+     "segue": false
+    },
+    {
+     "title": "Trooper McCue",
+     "file": "db1999-09-14d1/db1999-09-14d1t05.mp3",
+     "duration": 920.869,
+     "segue": false
+    },
+    {
+     "title": "Wet",
+     "file": "db1999-09-14d1/db1999-09-14d1t06.mp3",
+     "duration": 636.813,
+     "segue": false
+    },
+    {
+     "title": "Pilin' It High",
+     "file": "db1999-09-14d2/db1999-09-14d2t01.mp3",
+     "duration": 281.287,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-09-14d3/db1999-09-14d3t01.mp3",
+     "duration": 70.74,
+     "segue": false
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-09-14d2/db1999-09-14d2t02.mp3",
+     "duration": 890.358,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "db1999-09-14d3/db1999-09-14d3t02.mp3",
+     "duration": 777.587,
+     "segue": false
+    },
+    {
+     "title": "Little Shimmy in a Congo Line",
+     "file": "db1999-09-14d2/db1999-09-14d2t03.mp3",
+     "duration": 233.718,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-09-14d3/db1999-09-14d3t03.mp3",
+     "duration": 174.08,
+     "segue": false
+    },
+    {
+     "title": "Barfly",
+     "file": "db1999-09-14d2/db1999-09-14d2t04.mp3",
+     "duration": 776.751,
+     "segue": false
+    },
+    {
+     "title": "Once the Fiddler Paid",
+     "file": "db1999-09-14d3/db1999-09-14d3t04.mp3",
+     "duration": 809.822,
+     "segue": false
+    },
+    {
+     "title": "Haleakala Crater",
+     "file": "db1999-09-14d2/db1999-09-14d2t05.mp3",
+     "duration": 1597.127,
+     "segue": false
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-09-14d2/db1999-09-14d2t06.mp3",
+     "duration": 373.708,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-09-20-pure-lounge-columbia-mo",
+   "date": "1999-09-20",
+   "venue": "Pure Lounge",
+   "place": "Columbia, MO",
+   "item": "db1999-09-20.archive.flac16",
+   "source": "DSBD > Tascam DAP-1 (48 KHz)",
+   "rating": 4,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "The Overture > Helicopters > The Overture, The Very Moon > Hot Air Balloon, Three Wishes"
+    ],
+    [
+     "Set 2",
+     "Down to the Bottom > Run Like Hell, Aceetobee, House Dog Party Favor"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "The Overture",
+     "file": "db1999-09-20d1/db1999-09-20d1t01.mp3",
+     "duration": 745.796,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1999-09-20d1/db1999-09-20d1t02.mp3",
+     "duration": 617.169,
+     "segue": true
+    },
+    {
+     "title": "The Overture",
+     "file": "db1999-09-20d1/db1999-09-20d1t03.mp3",
+     "duration": 268.904,
+     "segue": false
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-09-20d1/db1999-09-20d1t04.mp3",
+     "duration": 1119.425,
+     "segue": true
+    },
+    {
+     "title": "Hot Air Balloon",
+     "file": "db1999-09-20d1/db1999-09-20d1t05.mp3",
+     "duration": 980.924,
+     "segue": false
+    },
+    {
+     "title": "Three Wishes",
+     "file": "db1999-09-20d1/db1999-09-20d1t06.mp3",
+     "duration": 188.97,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-09-20d2/db1999-09-20d2t01.mp3",
+     "duration": 97.515,
+     "segue": false
+    },
+    {
+     "title": "lighting solo",
+     "file": "db1999-09-20d2/db1999-09-20d2t02.mp3",
+     "duration": 36.571,
+     "segue": false
+    },
+    {
+     "title": "Down to the Bottom",
+     "file": "db1999-09-20d2/db1999-09-20d2t03.mp3",
+     "duration": 774.191,
+     "segue": true
+    },
+    {
+     "title": "Run Like Hell",
+     "file": "db1999-09-20d2/db1999-09-20d2t04.mp3",
+     "duration": 1831.314,
+     "segue": true
+    },
+    {
+     "title": "Aceetobee",
+     "file": "db1999-09-20d2/db1999-09-20d2t05.mp3",
+     "duration": 1697.933,
+     "segue": false
+    },
+    {
+     "title": "Crowd/Banter",
+     "file": "db1999-09-20d3/db1999-09-20d3t01.mp3",
+     "duration": 112.3,
+     "segue": false
+    },
+    {
+     "title": "House Dog Party Favor",
+     "file": "db1999-09-20d3/db1999-09-20d3t02.mp3",
+     "duration": 1431.066,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-09-21-finnegan-s-pub-kansas-city-mo",
+   "date": "1999-09-21",
+   "venue": "Finnegan's Pub",
+   "place": "Kansas City, MO",
+   "item": "db1999-09-21.shnf",
+   "source": "DSBD",
+   "rating": 3.75,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Once the Fiddler Paid, Svenghali, Little Lai, Haleakala Crater, Above the Waves"
+    ],
+    [
+     "Set 2",
+     "Pilin' It High, Magellan, Vassillios > Voices Insane, Little Betty Boop"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Once the Fiddler Paid",
+     "file": "db1999-09-21d1/db1999-09-21d1t01.mp3",
+     "duration": 736.914,
+     "segue": false
+    },
+    {
+     "title": "Splattums",
+     "file": "db1999-09-21d1/db1999-09-21d1t02.mp3",
+     "duration": 957.962,
+     "segue": false
+    },
+    {
+     "title": "Little Lai",
+     "file": "db1999-09-21d1/db1999-09-21d1t03.mp3",
+     "duration": 788.245,
+     "segue": false
+    },
+    {
+     "title": "Haleakala Crater",
+     "file": "db1999-09-21d1/db1999-09-21d1t04.mp3",
+     "duration": 721.554,
+     "segue": false
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-09-21d1/db1999-09-21d1t05.mp3",
+     "duration": 1257.195,
+     "segue": false
+    },
+    {
+     "title": "Pilin' It High",
+     "file": "db1999-09-21d2/db1999-09-21d2t01.mp3",
+     "duration": 281.443,
+     "segue": false
+    },
+    {
+     "title": "Magellan",
+     "file": "db1999-09-21d2/db1999-09-21d2t02.mp3",
+     "duration": 1326.263,
+     "segue": false
+    },
+    {
+     "title": "Vassillios",
+     "file": "db1999-09-21d2/db1999-09-21d2t03.mp3",
+     "duration": 988.212,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1999-09-21d2/db1999-09-21d2t04.mp3",
+     "duration": 757.342,
+     "segue": false
+    },
+    {
+     "title": "Little Betty Boop",
+     "file": "db1999-09-21d2/db1999-09-21d2t05.mp3",
+     "duration": 905.404,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-09-24-fox-theatre-boulder-co",
+   "date": "1999-09-24",
+   "venue": "Fox Theatre",
+   "place": "Boulder, CO",
+   "item": "db1999-09-24.shnf",
+   "source": "Sound Board>Analog Cassette>DAT",
+   "rating": 4.17,
+   "ratings": 3,
+   "setlist": [
+    [
+     "Set 1",
+     "Plan B > Voices Insane, Mindless Dribble > Helicopters"
+    ],
+    [
+     "Set 2",
+     "Stone > The Devil's Waltz, Awol's Blues, Bernstein and Chasnoff, House Dog Party Favor, M.E.M.P.H.I.S. > The Thieving Magpie"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Plan B",
+     "file": "db1999-09-24d1/db1999-09-24d1t01.mp3",
+     "duration": 454.557,
+     "segue": false
+    },
+    {
+     "title": "Voices Insane",
+     "file": "db1999-09-24d1/db1999-09-24d1t02.mp3",
+     "duration": 838.269,
+     "segue": false
+    },
+    {
+     "title": "Awol's Blues",
+     "file": "db1999-09-24d1/db1999-09-24d1t03.mp3",
+     "duration": 419.082,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1999-09-24d2/db1999-09-24d2t01.mp3",
+     "duration": 2030.472,
+     "segue": false
+    },
+    {
+     "title": "Helicopters",
+     "file": "db1999-09-24d2/db1999-09-24d2t02.mp3",
+     "duration": 1085.597,
+     "segue": false
+    },
+    {
+     "title": "Stone",
+     "file": "db1999-09-24d2/db1999-09-24d2t03.mp3",
+     "duration": 182.387,
+     "segue": false
+    },
+    {
+     "title": "The Devil's Waltz",
+     "file": "db1999-09-24d2/db1999-09-24d2t04.mp3",
+     "duration": 730.906,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-09-24d2/db1999-09-24d2t05.mp3",
+     "duration": 66.247,
+     "segue": false
+    },
+    {
+     "title": "Bernstein and Chasnoff",
+     "file": "db1999-09-24d3/db1999-09-24d3t01.mp3",
+     "duration": 801.489,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db1999-09-24d3/db1999-09-24d3t02.mp3",
+     "duration": 202.057,
+     "segue": false
+    },
+    {
+     "title": "House Dawg Party Favor",
+     "file": "db1999-09-24d3/db1999-09-24d3t03.mp3",
+     "duration": 1450.58,
+     "segue": false
+    },
+    {
+     "title": "M.E.M.P.H.I.S.",
+     "file": "db1999-09-24d3/db1999-09-24d3t04.mp3",
+     "duration": 1598.563,
+     "segue": false
+    },
+    {
+     "title": "The Thieving Magpie",
+     "file": "db1999-09-24d3/db1999-09-24d3t05.mp3",
+     "duration": 294.818,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "1999-10-02-cafe-tomo-arcata-ca",
+   "date": "1999-10-02",
+   "venue": "Cafe Tomo",
+   "place": "Arcata, CA",
+   "item": "db1999-10-02.ck.flac16",
+   "source": "Digital Soundboard",
+   "rating": 4.36,
+   "ratings": 11,
+   "setlist": [
+    [
+     "Set 1",
+     "The Overture, Spaga > M.E.M.P.H.I.S. > Plan B, Hot Air Balloon, Mulberry's Dream"
+    ],
+    [
+     "Set 2",
+     "House Dog Party Favor, The Very Moon > Above the Waves > Spaga, Mindless Dribble > Morph Dusseldorf"
+    ],
+    [
+     "Encore",
+     "Rainbow Song"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "The Overture",
+     "file": "db1999-10-02d1/db1999-10-02d1t01.mp3",
+     "duration": 534.1,
+     "segue": false
+    },
+    {
+     "title": "tuning",
+     "file": "db1999-10-02d1/db1999-10-02d1t02.mp3",
+     "duration": 30.145,
+     "segue": false
+    },
+    {
+     "title": "Spaga",
+     "file": "db1999-10-02d1/db1999-10-02d1t03.mp3",
+     "duration": 667.272,
+     "segue": true
+    },
+    {
+     "title": "M.E.M.P.H.I.S*",
+     "file": "db1999-10-02d1/db1999-10-02d1t04.mp3",
+     "duration": 542.067,
+     "segue": true
+    },
+    {
+     "title": "Plan B",
+     "file": "db1999-10-02d1/db1999-10-02d1t05.mp3",
+     "duration": 689.528,
+     "segue": false
+    },
+    {
+     "title": "crowd",
+     "file": "db1999-10-02d1/db1999-10-02d1t06.mp3",
+     "duration": 30.015,
+     "segue": false
+    },
+    {
+     "title": "Hot Air Balloon",
+     "file": "db1999-10-02d1/db1999-10-02d1t07.mp3",
+     "duration": 1020.5,
+     "segue": false
+    },
+    {
+     "title": "crowd",
+     "file": "db1999-10-02d1/db1999-10-02d1t08.mp3",
+     "duration": 30.145,
+     "segue": false
+    },
+    {
+     "title": "Mulberry's Dream",
+     "file": "db1999-10-02d1/db1999-10-02d1t09.mp3",
+     "duration": 685.636,
+     "segue": false
+    },
+    {
+     "title": "House Dog Party Favor",
+     "file": "db1999-10-02d2/db1999-10-02d2t01.mp3",
+     "duration": 1696.209,
+     "segue": false
+    },
+    {
+     "title": "tuning",
+     "file": "db1999-10-02d2/db1999-10-02d2t02.mp3",
+     "duration": 60.343,
+     "segue": false
+    },
+    {
+     "title": "The Very Moon",
+     "file": "db1999-10-02d2/db1999-10-02d2t03.mp3",
+     "duration": 1226.031,
+     "segue": true
+    },
+    {
+     "title": "Basis Fakeout",
+     "file": "db1999-10-02d2/db1999-10-02d2t04.mp3",
+     "duration": 227.03,
+     "segue": true
+    },
+    {
+     "title": "Above the Waves",
+     "file": "db1999-10-02d2/db1999-10-02d2t05.mp3",
+     "duration": 639.295,
+     "segue": true
+    },
+    {
+     "title": "Spaga",
+     "file": "db1999-10-02d2/db1999-10-02d2t06.mp3",
+     "duration": 467.827,
+     "segue": false
+    },
+    {
+     "title": "banter",
+     "file": "db1999-10-02d3/db1999-10-02d3t01.mp3",
+     "duration": 78.08,
+     "segue": false
+    },
+    {
+     "title": "Mindless Dribble",
+     "file": "db1999-10-02d3/db1999-10-02d3t02.mp3",
+     "duration": 900.31,
+     "segue": true
+    },
+    {
+     "title": "Morph Dusseldorf*",
+     "file": "db1999-10-02d3/db1999-10-02d3t03.mp3",
+     "duration": 334.524,
+     "segue": false
+    },
+    {
+     "title": "banter",
+     "file": "db1999-10-02d3/db1999-10-02d3t04.mp3",
+     "duration": 99.971,
+     "segue": false
+    },
+    {
+     "title": "E: Rainbow Song",
+     "file": "db1999-10-02d3/db1999-10-02d3t05.mp3",
+     "duration": 215.066,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2001-05-11-the-fillmore-san-francisco-ca",
+   "date": "2001-05-11",
+   "venue": "The Fillmore",
+   "place": "San Francisco, CA",
+   "item": "db2001-05-11.flac16",
+   "source": "SBD > DA-P1",
+   "rating": 4,
+   "ratings": 5,
+   "setlist": [
+    [
+     "Set 1",
+     "Nughuffer, Shelby Rose, Basis for a Day > Helicopters > Basis for a Day, Spectacle"
+    ],
+    [
+     "Set 2",
+     "Home Again, Magellan > Jigsaw Earth > Magellan, And the Ladies Were the Rest of the Night, Little Lai"
+    ],
+    [
+     "Encore",
+     "Spacebirdmatingcall > Munchkin Invasion"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Nughuffer",
+     "file": "db2001-05-11d1t01.mp3",
+     "duration": 924.97,
+     "segue": false
+    },
+    {
+     "title": "Shelby Rose",
+     "file": "db2001-05-11d1t02.mp3",
+     "duration": 671.138,
+     "segue": false
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db2001-05-11d1t03.mp3",
+     "duration": 1263.282,
+     "segue": true
+    },
+    {
+     "title": "Helicopters (unf",
+     "file": "db2001-05-11d1t04.mp3",
+     "duration": 446.563,
+     "segue": true
+    },
+    {
+     "title": "Basis For A Day",
+     "file": "db2001-05-11d1t05.mp3",
+     "duration": 329.979,
+     "segue": false
+    },
+    {
+     "title": "Spectacle",
+     "file": "db2001-05-11d1t06.mp3",
+     "duration": 568.816,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db2001-05-11d2t01.mp3",
+     "duration": 82.547,
+     "segue": false
+    },
+    {
+     "title": "Home Again",
+     "file": "db2001-05-11d2t02.mp3",
+     "duration": 505.704,
+     "segue": true
+    },
+    {
+     "title": "Magellan",
+     "file": "db2001-05-11d2t03.mp3",
+     "duration": 928.758,
+     "segue": true
+    },
+    {
+     "title": "Jigsaw Earth",
+     "file": "db2001-05-11d2t04.mp3",
+     "duration": 1474.743,
+     "segue": true
+    },
+    {
+     "title": "Magellan",
+     "file": "db2001-05-11d2t05.mp3",
+     "duration": 469.656,
+     "segue": false
+    },
+    {
+     "title": "And the Ladies Were the Rest Of the Night",
+     "file": "db2001-05-11d2t06.mp3",
+     "duration": 682.998,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db2001-05-11d3t01.mp3",
+     "duration": 40.516,
+     "segue": false
+    },
+    {
+     "title": "Little Lai",
+     "file": "db2001-05-11d3t02.mp3",
+     "duration": 824.712,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db2001-05-11d3t03.mp3",
+     "duration": 74.005,
+     "segue": false
+    },
+    {
+     "title": "Spacebirdmatingcall",
+     "file": "db2001-05-11d3t04.mp3",
+     "duration": 828.578,
+     "segue": true
+    },
+    {
+     "title": "Munchkin Invasion",
+     "file": "db2001-05-11d3t05.mp3",
+     "duration": 784.901,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2001-06-28-roseland-ballroom-new-york-ny",
+   "date": "2001-06-28",
+   "venue": "Roseland Ballroom",
+   "place": "New York, NY",
+   "item": "db2001-06-28.flac16",
+   "source": "DSBD -> DA-P1 -> D8",
+   "rating": 1.5,
+   "ratings": 4,
+   "setlist": [
+    [
+     "Set 1",
+     "Three Days, Bring It on Home"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Banter",
+     "file": "db2001-06-28d1t01.mp3",
+     "duration": 101.721,
+     "segue": false
+    },
+    {
+     "title": "Three Days",
+     "file": "db2001-06-28d1t02.mp3",
+     "duration": 1066.867,
+     "segue": false
+    },
+    {
+     "title": "Banter",
+     "file": "db2001-06-28d1t03.mp3",
+     "duration": 54.178,
+     "segue": false
+    },
+    {
+     "title": "Bring It On Home",
+     "file": "db2001-06-28d1t04.mp3",
+     "duration": 894.198,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2001-09-06-higher-ground-s-burlington-vt",
+   "date": "2001-09-06",
+   "venue": "Higher Ground",
+   "place": "South Burlington, VT",
+   "item": "db2001-09-06",
+   "source": "SBD > Sony PCM R500 > DAT",
+   "rating": 4.33,
+   "ratings": 12,
+   "setlist": [
+    [
+     "Set 1",
+     "Confrontation, Spaga, Crickets, Bernstein and Chasnoff > Sound One > Bernstein and Chasnoff"
+    ],
+    [
+     "Set 2",
+     "Magellan > 7-11 > Magellan, Shelby Rose, Floodlights > Hope"
+    ],
+    [
+     "Encore",
+     "Coat"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "",
+     "file": "01%20tDB2001.09.06.mp3",
+     "duration": 878.629,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "02%20tDB2001.09.06.mp3",
+     "duration": 1277.257,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "03%20tDB2001.09.06.mp3",
+     "duration": 1802.867,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "04%20tDB2001.09.06.mp3",
+     "duration": 2084.598,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "05%20tDB2001.09.06.mp3",
+     "duration": 153.887,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "06%20tDB2001.09.06.mp3",
+     "duration": 1131.572,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "07%20tDB2001.09.06.mp3",
+     "duration": 1551.047,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "08%20tDB2001.09.06.mp3",
+     "duration": 1078.831,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "09%20tDB2001.09.06.mp3",
+     "duration": 1770.423,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2011-09-02-cricket-wireless-amphitheatre-chula-vista-ca",
+   "date": "2011-09-02",
+   "venue": "Cricket Wireless Amphitheatre",
+   "place": "Chula Vista, CA",
+   "item": "db2011-09-02.sbd.flac16",
+   "source": "SBD",
+   "rating": 3.3,
+   "ratings": 5,
+   "setlist": [
+    [
+     "Set 1",
+     "Pimp Blue Rikki, Helicopters > Pilin' It High > The Overture > Pilin' It High, Strobelights and Martinis > Helicopters"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Intro",
+     "file": "db110902d1_01_Intro.mp3",
+     "duration": 43.416,
+     "segue": false
+    },
+    {
+     "title": "Pimp Blue Rikkis",
+     "file": "db110902d1_02_Pimp_Blue_Rikkis.mp3",
+     "duration": 839.288,
+     "segue": false
+    },
+    {
+     "title": "Helicopters",
+     "file": "db110902d1_03_Helicopters.mp3",
+     "duration": 741.799,
+     "segue": true
+    },
+    {
+     "title": "Pilin' It Higher",
+     "file": "db110902d1_04_Pilin_It_Higher.mp3",
+     "duration": 433.476,
+     "segue": true
+    },
+    {
+     "title": "The Overture",
+     "file": "db110902d1_05_The_Overture.mp3",
+     "duration": 558.211,
+     "segue": true
+    },
+    {
+     "title": "Pilin' It Higher",
+     "file": "db110902d1_06_Pilin_It_Higher.mp3",
+     "duration": 160.34,
+     "segue": false
+    },
+    {
+     "title": "Strobelights and Martinis",
+     "file": "db110902d1_07_Strobelights_and_Martinis.mp3",
+     "duration": 632.294,
+     "segue": true
+    },
+    {
+     "title": "Helicopters",
+     "file": "db110902d1_08_Helicopters.mp3",
+     "duration": 140.434,
+     "segue": false
+    }
+   ]
+  }
+ ]
+}

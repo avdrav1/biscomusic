@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Static file server with HTTP Range support, so the radio can seek into tracks.
 Addresses with no file behind them and no extension (/best, /first-played) get the radio page, which opens
-the panel named by the address, as Pages does with the files build.py writes."""
+the panel named by the address, as Pages does with the files build.py writes.
+The other two sites of the deploy are paths here: /shows/ (Biscuits Show Radio) and /home.html (the station picker)."""
 import os, re, sys, socket
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 
@@ -63,6 +64,8 @@ if __name__ == '__main__':
     print('Biscuits Jam Radio is on the air')
     print(f'  This computer:  http://localhost:{port}')
     if ip: print(f'  Home network:   http://{ip}:{port}')
+    print(f'  Show radio:     http://localhost:{port}/shows/')
+    print(f'  Station picker: http://localhost:{port}/home.html')
     print('Press Ctrl+C to go off air.')
     try: ThreadingHTTPServer(('0.0.0.0', port), RangeHandler).serve_forever()
     except KeyboardInterrupt: pass

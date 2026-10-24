@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biscuits Show Radio</title>
+<meta name="description" content="Every full Disco Biscuits soundboard show on archive.org, start to finish, around the clock. Everyone hears the same moment.">
+<meta name="theme-color" content="#030604">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Biscuits Show Radio">
+<meta property="og:title" content="Biscuits Show Radio">
+<meta property="og:description" content="Every full Disco Biscuits soundboard show on archive.org, start to finish, around the clock.">
+<meta property="og:url" content="https://shows.biscomusic.com/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Biscuits Show Radio">
+<meta name="twitter:description" content="Every full Disco Biscuits soundboard show on archive.org, start to finish, around the clock.">
+<link rel="preload" href="/static/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/app.css">
+<link rel="stylesheet" href="/static/shows.css">
+<meta name="icons" content="/static/icons.svg">
+</head>
+<body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="wrap">
+  <header>
+    <div class="brand">
+      <h1 data-oil><a href="https://biscomusic.com/" data-local="/home.html" aria-label="Biscuits Show Radio, all stations">BISCUITS <span>SHOW</span> RADIO</a></h1>
+      <p class="tagline">Full soundboard shows, start to finish</p>
+    </div>
+    <div class="hside">
+      <div class="live" id="live"><i></i>ON AIR</div>
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#pause"/></svg></button>
+    </div>
+  </header>
+
+  <section class="now">
+    <div class="label">Now playing<span class="count" id="listeners" hidden></span></div>
+    <div class="song" id="song">Loading…</div>
+    <div class="show" id="show"></div>
+    <div class="showbar" id="bar" role="progressbar" aria-label="Show progress" aria-valuemin="0"></div>
+    <div class="times"><span id="el">0:00</span><span id="where"></span><span id="rem"></span></div>
+    <div class="controls">
+      <button id="tune" aria-label="Tune in" aria-keyshortcuts="Space" disabled><svg class="i" aria-hidden="true"><use href="/static/icons.svg#play"/></svg><span>Tune in</span></button>
+      <label class="label vol">Vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
+      <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
+    </div>
+    <p class="status" id="status" role="status" hidden>archive.org isn’t sending this tape right now. Trying again…</p>
+    <p class="about" id="about" hidden><span id="source"></span> <span class="links"><a id="bip" href="https://discobiscuits.net" target="_blank" rel="noopener"></a><a id="tape" href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">Tape on archive.org <svg class="i" aria-hidden="true"><use href="/static/icons.svg#external-link"/></svg></a></span></p>
+  </section>
+
+  <!-- Up next: with voting, the next slot's contenders (vote rows) and then the schedule; without, the clock's next shows -->
+  <section class="upnext" id="vote" aria-labelledby="ntitle">
+    <h2 class="split"><span id="ntitle">Coming up</span><span class="vclose" id="vclose" hidden></span></h2>
+    <div class="ubox">
+      <ol class="vlist" id="vtop" hidden></ol>
+      <p class="usub" id="nsub" hidden>Then, from the schedule</p>
+      <ol class="shows" id="next"></ol>
+    </div>
+    <button class="ghost vall" id="vreq" aria-haspopup="dialog" hidden><svg class="i" aria-hidden="true"><use href="/static/icons.svg#search"/></svg><span>Request a show</span></button>
+    <p class="note" id="count"></p>
+  </section>
+
+  <section aria-labelledby="ttitle">
+    <h2 id="ttitle">This show</h2>
+    <p class="setlist" id="setlist" hidden></p>
+    <ol class="tracks" id="tracks"></ol>
+  </section>
+
+  <dialog class="sheet" id="sheet" aria-labelledby="stitle">
+    <div class="sheet-head">
+      <h2 id="stitle">Request a show</h2>
+      <span class="vclose" id="sclock"></span>
+      <button class="ghost iconbtn" id="sclose" aria-label="Close"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#x"/></svg></button>
+    </div>
+    <label class="search"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#search"/></svg><input id="sq" type="search" placeholder="Search venues, cities, dates, songs" aria-label="Search the shows" autocomplete="off" spellcheck="false"></label>
+    <div class="chips" role="radiogroup" aria-label="Order">
+      <button class="chipbtn" role="radio" aria-checked="true" data-f="all">Oldest first</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-f="rated"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#trending-up"/></svg>Top rated</button>
+      <button class="chipbtn" role="radio" aria-checked="false" data-f="long"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#clock"/></svg>Longest</button>
+    </div>
+    <div class="sheet-body">
+      <p class="scount" id="scount" aria-live="polite"></p>
+      <ol class="vlist" id="slist"></ol>
+      <button class="ghost vall" id="smore" hidden>Show more</button>
+    </div>
+  </dialog>
+
+  <nav class="foot" aria-label="More">
+    <a href="https://biscomusic.com/" data-local="/home.html">All stations</a>
+    <a href="https://jams.biscomusic.com/" data-local="/">Biscuits Jam Radio</a>
+    <a href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">The tapes on archive.org</a>
+  </nav>
+</main>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<audio id="a" preload="auto"></audio>
+<audio id="b" preload="auto"></audio>
+<script src="/static/icon.js"></script>
+<script src="/static/station.js"></script>
+<script src="/static/a11y.js"></script>
+<script src="/static/oil.js"></script>
+<script src="/static/shows.js"></script>
+</body>
+</html>

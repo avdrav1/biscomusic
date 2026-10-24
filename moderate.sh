@@ -1,5 +1,5 @@
 #!/bin/bash
-# Moderate comments on biscomusic.com (live D1 database).
+# Moderate comments on jams.biscomusic.com (live D1 database).
 #   ./moderate.sh                 latest 30 comments
 #   ./moderate.sh list 100        latest 100
 #   ./moderate.sh hide 42         hide comment 42

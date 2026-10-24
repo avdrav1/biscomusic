@@ -1,16 +1,29 @@
 // What's on air, decided by listener votes, falling back to the catalog rotation.
 //
-// There's no server process: every /api/station request runs advance(), which locks in the next
-// track once voting closes (LOCK_MS before the end) and moves to it once the current track ends,
+// There's no server process: every station request runs advance(), which locks in the next
+// item once voting closes (LOCK_MS before the end) and moves to it once the current one ends,
 // fast-forwarding through any idle stretch. Writes use optimistic concurrency (version column).
+//
+// Two stations run on this code (STATIONS): the jam radio, where an item is one jam of schedule.json,
+// and the show radio, where an item is one whole show of shows.json. Each has its own D1 tables.
+// The code says "track" for an item throughout, as the tables do.
 
-import { trackIdOf } from './_shared.js';
+import { TRACK_RE, trackIdOf, json, ipHash } from './_shared.js';
 
 export const LOCK_MS = 45_000;     // voting closes this long before the end (the player preloads then)
 export const RECENT = 5;           // the current track and the N before it can't be voted for or rotated back in
 
 // Catalog in rotation order: [{ id, duration }] (seconds), from schedule.json.
 export const catalogOf = schedule => schedule.tracks.map(t => ({ id: trackIdOf(t), duration: t.duration }));
+// The show radio's catalog: every show of shows.json, oldest first, as long as its tracks together.
+export const showCatalogOf = program => program.shows.map(s => ({ id: s.show, duration: s.tracks.reduce((n, t) => n + t.duration, 0) }));
+
+// path: the station's API (its view is cached at the edge under path + '/station'); source: its catalog file.
+export const STATIONS = {
+  jams: { path: '/api', source: '/schedule.json', catalogOf, station: 'station', votes: 'votes', plays: 'plays', id: TRACK_RE },
+  shows: { path: '/api/shows', source: '/shows.json', catalogOf: showCatalogOf, station: 'show_station', votes: 'show_votes',
+           plays: 'show_plays', id: /^\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120}$/ },
+};
 
 // Where the old clock-only station would be right now, so switching to voting doesn't jump.
 export function seedFromClock(schedule, catalog, now) {
@@ -137,46 +150,46 @@ export function view(state, catalog, votes, recent, now) {
 
 const COLS = 'version, round, track, started_at, cursor, next_track, next_source, next_votes, next_cursor, cursor_track, next_cursor_track';
 
-async function load(env) {
+async function load(env, cfg) {
   const [st, rec] = await env.DB.batch([
-    env.DB.prepare(`SELECT ${COLS} FROM station WHERE id = 1`),
-    env.DB.prepare(`SELECT track FROM plays ORDER BY round DESC LIMIT ${RECENT * 2}`),
+    env.DB.prepare(`SELECT ${COLS} FROM ${cfg.station} WHERE id = 1`),
+    env.DB.prepare(`SELECT track FROM ${cfg.plays} ORDER BY round DESC LIMIT ${RECENT * 2}`),
   ]);
   return { state: st.results[0] || null, recent: rec.results.map(r => r.track) };
 }
 
-const roundVotes = (env, round) =>
-  env.DB.prepare('SELECT track, created_at FROM votes WHERE round = ?').bind(round).all().then(r => r.results);
+const roundVotes = (env, cfg, round) =>
+  env.DB.prepare(`SELECT track, created_at FROM ${cfg.votes} WHERE round = ?`).bind(round).all().then(r => r.results);
 
-async function schedule(env, request) {
-  return env.ASSETS.fetch(new URL('/schedule.json', request.url)).then(r => r.json());
+async function source(env, request, cfg) {
+  return env.ASSETS.fetch(new URL(cfg.source, request.url)).then(r => r.json());
 }
 
-// Current state (advanced to `now` and saved), plus everything the player needs.
-export async function getStation(env, request, now = Date.now()) {
-  const sched = await schedule(env, request), catalog = catalogOf(sched);
+// Current state of one station (STATIONS.jams by default), advanced to `now` and saved, plus everything the player needs.
+export async function getStation(env, request, now = Date.now(), cfg = STATIONS.jams) {
+  const sched = await source(env, request, cfg), catalog = cfg.catalogOf(sched);
   for (let attempt = 0; attempt < 4; attempt++) {
-    let { state, recent } = await load(env);
+    let { state, recent } = await load(env, cfg);
     if (!state) {
       const seed = seedFromClock(sched, catalog, now);
-      const r = await env.DB.prepare(`INSERT OR IGNORE INTO station (id, ${COLS}) VALUES (1, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, ?, NULL)`)
+      const r = await env.DB.prepare(`INSERT OR IGNORE INTO ${cfg.station} (id, ${COLS}) VALUES (1, ?, ?, ?, ?, ?, NULL, NULL, NULL, NULL, ?, NULL)`)
         .bind(seed.version, seed.round, seed.track, seed.started_at, seed.cursor, seed.cursor_track).run();
-      if (r.meta.changes) await env.DB.prepare("INSERT OR IGNORE INTO plays (round, track, started_at, source) VALUES (?, ?, ?, 'seed')")
+      if (r.meta.changes) await env.DB.prepare(`INSERT OR IGNORE INTO ${cfg.plays} (round, track, started_at, source) VALUES (?, ?, ?, 'seed')`)
         .bind(seed.round, seed.track, seed.started_at).run();
       continue;   // re-read whichever seed won
     }
-    const votes = await roundVotes(env, state.round);
+    const votes = await roundVotes(env, cfg, state.round);
     const out = advance(state, catalog, votes, recent, now);
     if (out.changed) {
       const s = out.state;
       const w = await env.DB.prepare(
-        `UPDATE station SET version = version + 1, round = ?, track = ?, started_at = ?, cursor = ?, cursor_track = ?,
+        `UPDATE ${cfg.station} SET version = version + 1, round = ?, track = ?, started_at = ?, cursor = ?, cursor_track = ?,
            next_track = ?, next_source = ?, next_votes = ?, next_cursor = ?, next_cursor_track = ? WHERE id = 1 AND version = ?`
       ).bind(s.round, s.track, s.started_at, s.cursor, s.cursor_track, s.next_track, s.next_source, s.next_votes, s.next_cursor,
              s.next_cursor_track, state.version).run();
       if (!w.meta.changes) continue;   // someone else advanced it first; start over from their state
       if (out.plays.length) await env.DB.batch(out.plays.map(p =>
-        env.DB.prepare('INSERT OR IGNORE INTO plays (round, track, started_at, source, votes) VALUES (?, ?, ?, ?, ?)')
+        env.DB.prepare(`INSERT OR IGNORE INTO ${cfg.plays} (round, track, started_at, source, votes) VALUES (?, ?, ?, ?, ?)`)
           .bind(p.round, p.track, p.started_at, p.source, p.votes)));
       s.version = state.version + 1;
       const fresh = s.round === state.round ? votes : [];
@@ -185,5 +198,52 @@ export async function getStation(env, request, now = Date.now()) {
     return { state, catalog, recent, votes, view: view(state, catalog, votes, recent, now) };
   }
   throw new Error('station is busy');
+}
+
+// ---- The API routes (functions/api/station.js and vote.js, and their shows/ twins) ----
+
+const CACHE_SECONDS = 2;
+
+// GET <path>/station -> view(). Every listener polls this, so it's cached at the edge for 2s
+// (the state itself advances lazily in getStation).
+export async function stationResponse({ request, env, waitUntil }, cfg) {
+  const cache = caches.default;
+  const key = new Request(new URL(`${cfg.path}/station`, request.url).toString());
+  const hit = await cache.match(key);
+  if (hit) return hit;
+
+  const { view: v } = await getStation(env, request, Date.now(), cfg);
+  const res = json(v);
+  res.headers.set('Cache-Control', `public, max-age=${CACHE_SECONDS}`);
+  waitUntil(cache.put(key, res.clone()));
+  return res;
+}
+
+// POST <path>/vote { round, track } -> view() with the fresh tally. One vote per listener (IP hash) per round;
+// voting again moves it.
+export async function voteResponse({ request, env }, cfg) {
+  let input;
+  try { input = await request.json(); } catch { return json({ error: 'Bad request' }, 400); }
+  const track = String(input.track || ''), round = Number(input.round);
+  if (!cfg.id.test(track) || !Number.isInteger(round)) return json({ error: 'Bad request' }, 400);
+
+  const now = Date.now();
+  const { state, catalog, recent } = await getStation(env, request, now, cfg);
+  if (round !== state.round) return json({ error: 'That round is over. Vote for the next one!' }, 409);
+  const v = view(state, catalog, [], recent, now);
+  if (!v.voting_open) return json({ error: 'Voting for this slot just closed' }, 409);
+  if (!catalog.some(t => t.id === track)) return json({ error: 'Unknown track' }, 400);
+  if (!eligible(catalog, recent).includes(track)) return json({ error: 'That one played recently. Pick another!' }, 400);
+
+  // One row per listener per round, so there's nothing to spam: voting again just moves it.
+  const voter = await ipHash(env, request);
+  // Keep the original time when re-voting for the same track (it's the tie-break); a new pick restarts it.
+  await env.DB.prepare(
+    `INSERT INTO ${cfg.votes} (round, voter, track, created_at) VALUES (?, ?, ?, ?)
+     ON CONFLICT (round, voter) DO UPDATE SET track = excluded.track, created_at = excluded.created_at
+     WHERE ${cfg.votes}.track != excluded.track`
+  ).bind(round, voter, track, now).run();
+
+  return json({ ...view(state, catalog, await roundVotes(env, cfg, round), recent, now), my_vote: track });
 }
 

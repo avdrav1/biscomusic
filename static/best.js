@@ -78,7 +78,7 @@ export function init({ $, fmt, showLine, trackId, ready, schedule, station, cast
 
   const loaded = Promise.all([ready, fetch('/api/best').then(r => r.ok ? r.json() : null).catch(() => null)]).then(([, best]) => {
     schedule().tracks.forEach(t => { starts.set(trackId(t), total); total += t.duration; });
-    if (!best) return message('Best moments are only available on biscomusic.com.');
+    if (!best) return message('Best moments are only available on jams.biscomusic.com.');
     moments = best.moments;
     render();
   });

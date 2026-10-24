@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>biscomusic · Disco Biscuits radio</title>
+<meta name="description" content="Two Disco Biscuits radio stations: Biscuits Jam Radio plays the jams, Biscuits Show Radio plays every full soundboard show on archive.org.">
+<meta name="theme-color" content="#030604">
+<link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="biscomusic">
+<meta property="og:title" content="biscomusic · Disco Biscuits radio">
+<meta property="og:description" content="Biscuits Jam Radio plays the jams. Biscuits Show Radio plays every full soundboard show, start to finish.">
+<meta property="og:url" content="https://biscomusic.com/">
+<meta property="og:image" content="https://jams.biscomusic.com/static/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://jams.biscomusic.com/static/og.png">
+<link rel="preload" href="/static/fonts/archivo-black-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/static/fonts/chakra-petch-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/static/app.css">
+<meta name="icons" content="/static/icons.svg">
+<style>
+/* "BISCOMUSIC" is 7.3em wide in Archivo Black: as big as fits beside the button (see app.css h1) */
+@supports (width:1cqw){h1{font-size:max(.875rem,min(68px,100cqw / 7.4))}}
+.stations{display:grid;gap:16px}
+a.station{display:block;padding:24px;color:inherit;text-decoration:none}
+a.station:hover{border-color:rgba(93,255,58,.5)}
+a.station:hover .go{text-decoration:underline}
+.station .name{font:400 clamp(24px,6vw,34px)/1.05 var(--logo);margin:10px 0 8px}
+.station .name span{color:var(--accent);text-shadow:0 0 4px var(--accent),0 0 14px rgba(93,255,58,.6)}
+.station p{margin:0;color:var(--dim)}
+.station .go{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--accent);font-weight:600}
+.station .go .i{width:16px;height:16px}
+</style>
+</head>
+<body>
+<div class="lasers" aria-hidden="true"><i></i><i></i><i></i></div>
+<main class="wrap">
+  <header>
+    <div class="brand">
+      <h1 data-oil>BISCO<span>MUSIC</span></h1>
+      <p class="tagline">Disco Biscuits radio, around the clock. Pick a station.</p>
+    </div>
+    <div class="hside">
+      <button class="ghost motion" id="motion" type="button" aria-pressed="false" aria-label="Pause animations"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#pause"/></svg></button>
+    </div>
+  </header>
+
+  <nav class="stations" aria-label="Stations">
+    <a class="station now" href="https://jams.biscomusic.com/" data-local="/">
+      <div class="label">The jams</div>
+      <div class="name">BISCUITS <span>JAM</span> RADIO</div>
+      <p>All jams, no butter! Disco Biscuits jams, broadcast around the clock. Vote for what plays next, react and comment as it plays.</p>
+      <span class="go">Tune in <svg class="i" aria-hidden="true"><use href="/static/icons.svg#arrow-right"/></svg></span>
+    </a>
+    <a class="station now" href="https://shows.biscomusic.com/" data-local="/shows/">
+      <div class="label">Whole shows</div>
+      <div class="name">BISCUITS <span>SHOW</span> RADIO</div>
+      <p>Every full soundboard show on archive.org, start to finish, one show after another.</p>
+      <span class="go">Tune in <svg class="i" aria-hidden="true"><use href="/static/icons.svg#arrow-right"/></svg></span>
+    </a>
+  </nav>
+</main>
+<script src="/static/icon.js"></script>
+<script src="/static/a11y.js"></script>
+<script src="/static/oil.js"></script>
+<script>
+// On biscomusic.com: the jam radio used to live here as an installed app; let go of its service worker.
+// Elsewhere (server.py, a Pages preview) the stations are paths of this site.
+if (/(^|\.)biscomusic\.com$/.test(location.hostname)) navigator.serviceWorker?.getRegistrations().then(rs => rs.forEach(r => r.unregister()));
+else document.querySelectorAll('a[data-local]').forEach(a => { a.href = a.dataset.local; });
+</script>
+</body>
+</html>

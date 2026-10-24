@@ -92,3 +92,17 @@ def show_setlist(show_id: str) -> list:
     order = {"S1": 1, "S2": 2, "S3": 3, "S4": 4, "E1": 9, "E2": 10, "E3": 11}
     tracks.sort(key=lambda t: (order.get(t.get("set"), 5), t.get("position") or 0))
     return [t["songId"] for t in tracks]
+
+
+def place(venue) -> str:
+    """"Philadelphia, PA" in the US, "London, United Kingdom" elsewhere (as functions/_songs.js)."""
+    venue = venue or {}
+    region = venue.get("state") if (venue.get("country") or "") in ("", "United States") else venue.get("country")
+    return ", ".join(p for p in (venue.get("city"), region) if p)
+
+
+def year_setlists(year: int) -> list:
+    """Every show of one year with its setlist (about 1 MB): BIP's /shows/year/<year> page data.
+    [{show: {slug, date, duration, averageRating, ratingsCount, ...}, venue: {name, city, state, country},
+      sets: [{label: "S1"|"S2"|"E1"..., tracks: [{segue: ">"|""|None, song: {title, slug}}]}]}]"""
+    return _find(_get_data(f"/shows/year/{year}"), "setlists") or []

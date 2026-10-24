@@ -7,19 +7,27 @@ Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), th
                       deployed to Cloudflare Pages with the pages and site/static/
   site/clips.json     archive.org recordings of every song's debut and latest version (see archive.py),
                       for the song facts on the radio and the /first-played timeline
+  site/shows.json     Biscuits Show Radio's program (shows.py), with shows/index.html and the station picker home.html
+
+One Pages deploy serves three sites by host name (functions/_middleware.js): the jam radio at jams.biscomusic.com,
+the show radio at shows.biscomusic.com, and the picker at biscomusic.com.
 """
 import base64, hashlib, json, math, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
 from array import array
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
-import archive, bip
+import archive, bip, shows
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SHOWS = os.path.dirname(HERE)
 AUDIO = os.path.join(HERE, 'audio')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
+JAMS_URL = 'https://jams.biscomusic.com'
+# Requests that skip functions/ (the host routing in _middleware.js): files every site shares or never routes.
+ROUTES = {'version': 1, 'include': ['/*'],
+          'exclude': ['/static/*', '/waves/*', '/shows/*', '/schedule.json', '/clips.json', '/nominees.json', '/shows.json', '/sw.js']}
 WAVES = os.path.join(HERE, 'waves')
 # The radio's panels (index.html, "Panels"). Each address gets the radio page with its own link preview
 # (Pages serves best.html at /best); the page opens the panel from its address.
@@ -176,12 +184,6 @@ def link_songs(tracks, catalog):
     if missing:
         print(f'  not on BIP (add to BIP_ALIASES): {", ".join(sorted(missing))}')
 
-def bip_place(venue):
-    """"Philadelphia, PA" in the US, "London, United Kingdom" elsewhere (as functions/_songs.js)."""
-    venue = venue or {}
-    region = venue.get('state') if (venue.get('country') or '') in ('', 'United States') else venue.get('country')
-    return ', '.join(p for p in (venue.get('city'), region) if p)
-
 def clips(catalog):
     """site/clips.json: { built, clips: { slug: { debut, latest, top } } }, recordings found by archive.py.
     A clip: { url, item, track, length, how, date, show, venue, place }; the show is the one it was taped at.
@@ -201,12 +203,12 @@ def clips(catalog):
                'item': hit['id'], 'track': hit['track'], 'length': hit['length'], 'how': hit['how'],
                # "title" and "setlist" clips are from the debut, the others say which show they're from
                'date': first['date'], 'show': first['slug'],
-               'venue': (first.get('venue') or {}).get('name') or 'Unknown venue', 'place': bip_place(first.get('venue'))}
+               'venue': (first.get('venue') or {}).get('name') or 'Unknown venue', 'place': bip.place(first.get('venue'))}
         out.update({k: hit[k] for k in ('date', 'show', 'venue', 'place') if k in hit})
         return out
 
     def version(v, song):
-        return {'date': v['date'], 'show': v['show'], 'venue': v['venue'], 'place': bip_place(v),
+        return {'date': v['date'], 'show': v['show'], 'venue': v['venue'], 'place': bip.place(v),
                 'score': v['score'], 'bip': v['bip'], 'ia': v['ia'], 'all_timer': v['all_timer'],
                 'clip': clip(v['clip'], song) if v['clip'] else None}
 
@@ -288,7 +290,7 @@ def main():
         json.dump(remote, f, indent=1)
     # Browsers may keep static/ files for hours, so point the deployed pages at versioned CSS/JS.
     versioned = {f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in (
-        'static/app.css', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js', 'static/songs.js',
+        'static/app.css', 'static/icon.js', 'static/station.js', 'static/icons.svg', 'static/nominees.js', 'static/pwa.js', 'static/songs.js',
         'static/oil.js', 'static/a11y.js', 'static/best.js', 'static/nominate.js', 'static/install.js', 'static/first-played.js')}
     nominees(tracks)
     if catalog:
@@ -297,9 +299,7 @@ def main():
         except OSError as e:
             print(f'  archive.org unreachable ({e}): keeping clips.json from the last build')
     with open(os.path.join(HERE, 'index.html')) as f:
-        html = f.read()
-    for f, v in versioned.items():   # "static/x" and "static/icons.svg#name"
-        html = re.sub(re.escape(f) + r'(?=["#])', v, html)
+        html = stamp(f.read(), versioned)
     with open(os.path.join(SITE, 'index.html'), 'w') as f:
         f.write(html)
     for name in PANELS:
@@ -308,7 +308,32 @@ def main():
     shutil.copytree(os.path.join(HERE, 'static'), os.path.join(SITE, 'static'), dirs_exist_ok=True)
     shutil.copytree(WAVES, os.path.join(SITE, 'waves'), dirs_exist_ok=True)
     service_worker(versioned)
+    other_sites(versioned)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
+
+def stamp(html, versioned):
+    """Point a page at the versioned static files: "static/x" and "static/icons.svg#name"."""
+    for f, v in versioned.items():
+        html = re.sub(re.escape(f) + r'(?=["#])', v, html)
+    return html
+
+def other_sites(versioned):
+    """The station picker (home.html) and Biscuits Show Radio (shows/index.html, playing shows.json), deployed with
+    the jam radio; functions/_middleware.js serves each on its own host name."""
+    try:
+        shows.build()
+    except OSError as e:   # archive.org or BIP down: the show radio keeps its last program
+        print(f'  shows: archive.org or BIP unreachable ({e}): keeping the last shows.json')
+    files = dict(versioned, **{f: f'{f}?v={content_hash(os.path.join(HERE, f))}' for f in ('static/shows.js', 'static/shows.css')})
+    for page in ('home.html', os.path.join('shows', 'index.html')):
+        with open(os.path.join(HERE, page)) as f:
+            html = stamp(f.read(), files)
+        os.makedirs(os.path.dirname(os.path.join(SITE, page)), exist_ok=True)
+        with open(os.path.join(SITE, page), 'w') as f:
+            f.write(html)
+    shutil.copy(os.path.join(HERE, 'shows.json'), os.path.join(SITE, 'shows.json'))
+    with open(os.path.join(SITE, '_routes.json'), 'w') as f:
+        json.dump(ROUTES, f, indent=1)
 
 def panel_page(html, name):
     """The radio page as served at /<name>: the panel's title and description in its link preview."""
@@ -320,7 +345,7 @@ def panel_page(html, name):
                            (r'(<meta name="twitter:title" content=")[^"]*(")', full),
                            (r'(<meta property="og:description" content=")[^"]*(")', og),
                            (r'(<meta name="twitter:description" content=")[^"]*(")', og),
-                           (r'(<meta property="og:url" content=")[^"]*(")', f'https://biscomusic.com/{name}')):
+                           (r'(<meta property="og:url" content=")[^"]*(")', f'{JAMS_URL}/{name}')):
         html, n = re.subn(pattern, lambda m: m[1] + value + m[2], html, count=1)
         if not n:
             sys.exit(f'index.html has no {pattern!r} to set for /{name}')

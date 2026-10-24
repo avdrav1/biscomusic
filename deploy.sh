@@ -1,6 +1,7 @@
 #!/bin/bash
-# Publish the station: new FLACs -> 192k MP3 -> R2 (audio.biscomusic.com),
-# rebuild the schedules, then redeploy the player to Pages (biscomusic.com).
+# Publish the stations: new FLACs -> 192k MP3 -> R2 (audio.biscomusic.com),
+# rebuild the schedules and the show radio's program, then redeploy to Pages: one deploy serves
+# jams.biscomusic.com, shows.biscomusic.com and the station picker at biscomusic.com (functions/_middleware.js).
 # Pages picks up functions/ (the comments API) and wrangler.toml (D1 binding) from here.
 set -euo pipefail
 cd "$(dirname "$0")"
