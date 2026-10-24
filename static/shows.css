@@ -21,3 +21,12 @@
 .tracks li.cur{background:rgba(93,255,58,.08);box-shadow:inset 3px 0 0 var(--accent)}
 .tracks li.cur .s{color:var(--accent)}
 .tracks .segue{color:var(--accent2)}
+
+/* Flames on the show timeline: each track's segment glows with its share of the show's flames (--h, 0 to 1) */
+.showbar i{box-shadow:inset 0 -3px 0 rgba(226,104,255,var(--h,0)),0 0 calc(var(--h,0) * 10px) rgba(226,104,255,calc(var(--h,0) * .6))}
+.tracks .hot{display:inline-flex;align-items:center;gap:2px;margin-left:8px;color:#ff9d3a;font-size:12px;font-weight:500;font-variant-numeric:tabular-nums}
+.tracks .hot .i{width:13px;height:13px}
+
+/* This track's timeline (with the comments API): flames above, bars rising where listeners lit it up, comment faces below */
+.timeline{margin:16px 0 2px}
+.timeline .heat{display:block;width:100%;height:28px}

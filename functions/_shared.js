@@ -1,6 +1,9 @@
 // Helpers shared by the API routes (files starting with _ aren't routes).
 
 export const TRACK_RE = /^\d{4}-\d{2}-\d{2}-\d{2}(-jam\d+)?$/;
+// The show radio: a show's id (its BIP slug, as in shows.json), and one of its tracks, "<show id>/<track index>".
+export const SHOW_RE = /^\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120}$/;
+export const SHOW_TRACK_RE = /^(\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120})\/(\d{1,3})$/;
 
 export const json = (data, status = 200) =>
   new Response(JSON.stringify(data), {
@@ -19,6 +22,21 @@ export const trackIdOf = t => t.file.split('/').pop().split('?')[0].replace(/\.m
 export async function findTrack(env, request, track) {
   const schedule = await env.ASSETS.fetch(new URL('/schedule.json', request.url)).then(r => r.json());
   return schedule.tracks.find(t => trackIdOf(t) === track);
+}
+
+// The edge-cache key for /api/shows/moments of a show (the show radio's comments and reactions clear it on a post).
+export const showMomentsKey = (request, show) =>
+  new Request(new URL('/api/shows/moments?show=' + encodeURIComponent(show), request.url).toString());
+
+// The show radio's track for "<show id>/<track index>" in shows.json, or undefined.
+export function showTrackOf(program, key) {
+  const m = SHOW_TRACK_RE.exec(String(key || ''));
+  return m ? program.shows.find(s => s.show === m[1])?.tracks[Number(m[2])] : undefined;
+}
+
+export async function findShowTrack(env, request, key) {
+  const program = await env.ASSETS.fetch(new URL('/shows.json', request.url)).then(r => r.json());
+  return showTrackOf(program, key);
 }
 
 // A visible comment by id, or null.

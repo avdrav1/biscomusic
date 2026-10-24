@@ -4,9 +4,9 @@
 // a flame clears the cached copy (in the poster's data center) so their own shows up right away.
 
 import { TRACK_RE, json, momentsKey } from '../_shared.js';
+import { BUCKET } from '../_moments.js';
 
 const CACHE_SECONDS = 10;
-const BUCKET = 5;   // seconds per flame slice, as in reactions.js
 
 export async function onRequestGet({ request, env, waitUntil }) {
   const track = new URL(request.url).searchParams.get('track') || '';

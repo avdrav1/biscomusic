@@ -8,7 +8,7 @@
 // and the show radio, where an item is one whole show of shows.json. Each has its own D1 tables.
 // The code says "track" for an item throughout, as the tables do.
 
-import { TRACK_RE, trackIdOf, json, ipHash } from './_shared.js';
+import { TRACK_RE, SHOW_RE, trackIdOf, json, ipHash } from './_shared.js';
 
 export const LOCK_MS = 45_000;     // voting closes this long before the end (the player preloads then)
 export const RECENT = 5;           // the current track and the N before it can't be voted for or rotated back in
@@ -22,7 +22,7 @@ export const showCatalogOf = program => program.shows.map(s => ({ id: s.show, du
 export const STATIONS = {
   jams: { path: '/api', source: '/schedule.json', catalogOf, station: 'station', votes: 'votes', plays: 'plays', id: TRACK_RE },
   shows: { path: '/api/shows', source: '/shows.json', catalogOf: showCatalogOf, station: 'show_station', votes: 'show_votes',
-           plays: 'show_plays', id: /^\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120}$/ },
+           plays: 'show_plays', id: SHOW_RE },
 };
 
 // Where the old clock-only station would be right now, so switching to voting doesn't jump.
