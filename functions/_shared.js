@@ -28,14 +28,14 @@ export async function findTrack(env, request, track) {
 export const showMomentsKey = (request, show) =>
   new Request(new URL('/api/shows/moments?show=' + encodeURIComponent(show), request.url).toString());
 
-// The show radio's track for "<show id>/<track index>" in shows.json, or undefined.
+// The show radio's track for "<show id>/<track index>" in shows.json (or the API's copy, shows-api.json), or undefined.
 export function showTrackOf(program, key) {
   const m = SHOW_TRACK_RE.exec(String(key || ''));
   return m ? program.shows.find(s => s.show === m[1])?.tracks[Number(m[2])] : undefined;
 }
 
 export async function findShowTrack(env, request, key) {
-  const program = await env.ASSETS.fetch(new URL('/shows.json', request.url)).then(r => r.json());
+  const program = await env.ASSETS.fetch(new URL('/shows-api.json', request.url)).then(r => r.json());
   return showTrackOf(program, key);
 }
 

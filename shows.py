@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Biscuits Show Radio's program: every full soundboard show in archive.org's DiscoBiscuits collection.
+"""Biscuits Show Radio's program: every full soundboard show in archive.org's DiscoBiscuits collection, plus a vault of
+full matrix and audience tapes of the shows from VAULT_YEARS that have no soundboard, played only when requested.
 
 A recording counts when
   soundboard  its `source` starts with the board: "SBD", "DSBD", "Soundboard", "Digital Soundboard", "FM SBD"...
@@ -8,11 +9,17 @@ A recording counts when
   full        it holds the show BIP lists for that date: at least FULL_SHARE of the setlist's songs are tracks
               titled as them (archive.py's matching, plus misspellings). An untitled recording is full when it runs
               at least FULL_SHARE of BIP's show length, or, when BIP has no length, has a track per setlist entry.
-One recording per show: the most downloaded full soundboard.
+  matrix      board + mics: "Matrix ...", or a board source with a "+" ("SBD + AKG C1000").
+  audience    anything else (a show from VAULT_YEARS only).
+One recording per show: a full soundboard if there is one, else a matrix, else an audience tape, the most downloaded
+of its kind. Soundboards are the schedule; matrix and audience shows are the vault (`vault`): the station never
+rotates them in (functions/_station.js), but listeners can vote for them. A show's recording shouldn't change once
+it's on the air: comments are pinned to "<show>/<track index>" (functions/_moments.js).
 
 Writes shows.json (committed, so a build with archive.org or BIP down keeps the last program), which build.py
 copies to site/shows.json for shows/index.html:
-  { station, epoch, shows: [{ show, date, venue, place, item, source, rating, ratings, setlist, tracks }] }
+  { station, epoch, shows: [{ show, date, venue, place, item, source, kind, vault?, rating, ratings, setlist, tracks }] }
+  kind     "sbd", "matrix" or "aud"; vault: true for the request-only shows (every kind but "sbd")
   setlist  [[set name, "Song > Song, Song"], ...] from BIP
   tracks   [{ title, file, duration, segue }]; play https://archive.org/download/<item>/<file>
 Shows run oldest first, back to back from `epoch`, so every listener hears the same moment. That needs each track's
@@ -34,6 +41,7 @@ OUT = Path(__file__).resolve().parent / "shows.json"
 STATION = "Biscuits Show Radio"
 EPOCH = "2026-10-23T00:00:00Z"
 FULL_SHARE = 0.85
+VAULT_YEARS = range(1998, 2002)   # matrix and audience tapes of these years' shows join the vault
 SECONDS_CACHE = archive.CACHE.parent / "mp3-seconds.json"
 
 _BOARD = re.compile(r"^\W*(source:\s*)?(plan c approved\s*/\s*)?((digital|analog|mono|fm|dat)\s*)*(d|fm)?(sbd|soundboard|sound board)\b", re.I)
@@ -44,6 +52,15 @@ _SETS = {"S1": "Set 1", "S2": "Set 2", "S3": "Set 3", "S4": "Set 4", "E1": "Enco
 def is_soundboard(source) -> bool:
     source = " ".join(source) if isinstance(source, list) else (source or "")
     return bool(_BOARD.search(source)) and not _MIXED.search(source)
+
+
+_MATRIX = re.compile(r"matrix|\b(d?sbd|soundboard)\b.*\+|\+.*\b(d?sbd|soundboard)\b", re.I)
+
+
+def kind(source) -> str:
+    """"sbd", "matrix" or "aud" (audience, or no source given)."""
+    text = " ".join(source) if isinstance(source, list) else (source or "")
+    return "sbd" if is_soundboard(text) else "matrix" if _MATRIX.search(text) else "aud"
 
 
 def seconds(length) -> float:
@@ -196,19 +213,22 @@ def program_tracks(item: str, tracks: list, setlist: dict, lengths: dict) -> lis
 
 def build() -> dict:
     """Find the shows and write shows.json. Raises OSError when archive.org or BIP can't be reached."""
-    boards = [d for d in archive.search(["identifier", "date", "source", "downloads"])
-              if d.get("date") and is_soundboard(d.get("source"))]
-    years = sorted({int(d["date"][:4]) for d in boards})
+    found = [d for d in archive.search(["identifier", "date", "source", "downloads"]) if d.get("date")]
+    for d in found:
+        d["kind"] = kind(d.get("source"))
+    candidates = [d for d in found if d["kind"] == "sbd" or int(d["date"][:4]) in VAULT_YEARS]
+    years = sorted({int(d["date"][:4]) for d in candidates})
     with ThreadPoolExecutor(archive.WORKERS) as pool:
         setlists = [s for year in pool.map(bip.year_setlists, years) for s in year]
-        listings = dict(zip((d["identifier"] for d in boards), pool.map(archive.item_tracks, (d["identifier"] for d in boards))))
+        listings = dict(zip((d["identifier"] for d in candidates), pool.map(archive.item_tracks, (d["identifier"] for d in candidates))))
     by_date: dict = {}
     for s in setlists:
         by_date.setdefault(s["show"]["date"][:10], []).append(s)
 
     chosen: dict = {}   # BIP show slug -> (recording, setlist)
     skipped = []
-    for d in sorted(boards, key=lambda d: (-(d.get("downloads") or 0), d["identifier"])):
+    rank = {"sbd": 0, "matrix": 1, "aud": 2}
+    for d in sorted(candidates, key=lambda d: (rank[d["kind"]], -(d.get("downloads") or 0), d["identifier"])):
         tracks = listings[d["identifier"]]
         if not tracks or not all(seconds(t["length"]) for t in tracks):
             skipped.append(d["identifier"])
@@ -230,16 +250,26 @@ def build() -> dict:
         shows.append({
             "show": s["show"]["slug"], "date": s["show"]["date"][:10],
             "venue": (s.get("venue") or {}).get("name") or "Unknown venue", "place": bip.place(s.get("venue")),
-            "item": d["identifier"], "source": " ".join(d["source"]) if isinstance(d["source"], list) else d["source"],
+            "item": d["identifier"], "source": (" ".join(d["source"]) if isinstance(d.get("source"), list) else d.get("source")) or "",
+            "kind": d["kind"], **({"vault": True} if d["kind"] != "sbd" else {}),
             "rating": round(s["show"]["averageRating"], 2) if rated else None, "ratings": rated,
             "setlist": setlist_text(s), "tracks": program_tracks(d["identifier"], listings[d["identifier"]], s, lengths),
         })
     program = {"station": STATION, "epoch": EPOCH, "shows": shows}
     OUT.write_text(json.dumps(program, indent=1) + "\n")
-    hours = sum(t["duration"] for sh in shows for t in sh["tracks"]) / 3600
-    print(f"  shows: {len(shows)} full soundboard shows, {hours:.1f} hours "
-          f"({len(boards)} soundboard recordings; {len(skipped)} partial, untimed or not on BIP)")
+    hours = lambda vault: sum(t["duration"] for sh in shows if sh.get("vault", False) == vault for t in sh["tracks"]) / 3600
+    vault = sum(1 for sh in shows if sh.get("vault"))
+    print(f"  shows: {len(shows) - vault} full soundboard shows, {hours(False):.1f} hours; vault: {vault} matrix and audience "
+          f"shows, {hours(True):.1f} hours ({len(candidates)} recordings; {len(skipped)} partial, untimed or not on BIP)")
     return program
+
+
+def api_program(program: dict) -> dict:
+    """What the API needs of the program (functions/_station.js, _shared.js): shows.json without the setlists, titles
+    and files, so each request parses a sixth of it. Same shape, so the functions read either file."""
+    return {"epoch": program["epoch"], "shows": [{"show": s["show"], **({"vault": True} if s.get("vault") else {}),
+                                                  "tracks": [{"duration": t["duration"]} for t in s["tracks"]]}
+                                                 for s in program["shows"]]}
 
 
 if __name__ == "__main__":

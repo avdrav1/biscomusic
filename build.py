@@ -8,6 +8,7 @@ Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), th
   site/clips.json     archive.org recordings of every song's debut and latest version (see archive.py),
                       for the song facts on the radio and the /first-played timeline
   site/shows.json     Biscuits Show Radio's program (shows.py), with shows/index.html and the station picker home.html
+  site/shows-api.json the program as the API reads it (shows.api_program: no setlists, titles or files)
 
 One Pages deploy serves three sites by host name (functions/_middleware.js): the jam radio at jams.biscomusic.com,
 the show radio at shows.biscomusic.com, and the picker at biscomusic.com.
@@ -27,7 +28,7 @@ R2_URL = 'https://audio.biscomusic.com/'
 JAMS_URL = 'https://jams.biscomusic.com'
 # Requests that skip functions/ (the host routing in _middleware.js): files every site shares or never routes.
 ROUTES = {'version': 1, 'include': ['/*'],
-          'exclude': ['/static/*', '/waves/*', '/shows/*', '/schedule.json', '/clips.json', '/nominees.json', '/shows.json', '/sw.js']}
+          'exclude': ['/static/*', '/waves/*', '/shows/*', '/schedule.json', '/clips.json', '/nominees.json', '/shows.json', '/shows-api.json', '/sw.js']}
 WAVES = os.path.join(HERE, 'waves')
 # The radio's panels (index.html, "Panels"). Each address gets the radio page with its own link preview
 # (Pages serves best.html at /best); the page opens the panel from its address.
@@ -332,6 +333,8 @@ def other_sites(versioned):
         with open(os.path.join(SITE, page), 'w') as f:
             f.write(html)
     shutil.copy(os.path.join(HERE, 'shows.json'), os.path.join(SITE, 'shows.json'))
+    with open(os.path.join(HERE, 'shows.json')) as f, open(os.path.join(SITE, 'shows-api.json'), 'w') as out:
+        json.dump(shows.api_program(json.load(f)), out, separators=(',', ':'))
     with open(os.path.join(SITE, '_routes.json'), 'w') as f:
         json.dump(ROUTES, f, indent=1)
 

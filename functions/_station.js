@@ -15,22 +15,25 @@ export const RECENT = 5;           // the current track and the N before it can'
 
 // Catalog in rotation order: [{ id, duration }] (seconds), from schedule.json.
 export const catalogOf = schedule => schedule.tracks.map(t => ({ id: trackIdOf(t), duration: t.duration }));
-// The show radio's catalog: every show of shows.json, oldest first, as long as its tracks together.
-export const showCatalogOf = program => program.shows.map(s => ({ id: s.show, duration: s.tracks.reduce((n, t) => n + t.duration, 0) }));
+// The show radio's catalog: every show of shows.json, oldest first, as long as its tracks together. Vault shows
+// (matrix and audience tapes, shows.py) play only when voted for: the rotation and the clock skip them.
+export const showCatalogOf = program => program.shows.map(s => ({ id: s.show, duration: s.tracks.reduce((n, t) => n + t.duration, 0), ...(s.vault && { vault: true }) }));
 
 // path: the station's API (its view is cached at the edge under path + '/station'); source: its catalog file.
 export const STATIONS = {
   jams: { path: '/api', source: '/schedule.json', catalogOf, station: 'station', votes: 'votes', plays: 'plays', id: TRACK_RE },
-  shows: { path: '/api/shows', source: '/shows.json', catalogOf: showCatalogOf, station: 'show_station', votes: 'show_votes',
+  shows: { path: '/api/shows', source: '/shows-api.json', catalogOf: showCatalogOf, station: 'show_station', votes: 'show_votes',
            plays: 'show_plays', id: SHOW_RE },
 };
 
-// Where the old clock-only station would be right now, so switching to voting doesn't jump.
+// Where the old clock-only station would be right now, so switching to voting doesn't jump. The clock runs over the
+// rotation only (no vault shows), as the player's does without the station.
 export function seedFromClock(schedule, catalog, now) {
-  const total = catalog.reduce((s, t) => s + t.duration, 0);
+  const rot = catalog.filter(t => !t.vault), total = rot.reduce((s, t) => s + t.duration, 0);
   let pos = ((now - Date.parse(schedule.epoch)) / 1000) % total;
-  let i = 0;
-  while (pos >= catalog[i].duration) { pos -= catalog[i].duration; i++; }
+  let k = 0;
+  while (pos >= rot[k].duration) { pos -= rot[k].duration; k++; }
+  const i = indexOf(catalog, rot[k].id);
   return {
     version: 0, round: 1, track: catalog[i].id, started_at: Math.round(now - pos * 1000), cursor: i, cursor_track: catalog[i].id,
     next_track: null, next_source: null, next_votes: null, next_cursor: null, next_cursor_track: null,
@@ -68,14 +71,15 @@ export function tally(votes, allowed, catalog, cursor) {
     .map(([track, t]) => [track, t.n, t.first]);
 }
 
-// The rotation's next pick after `cursor`, skipping anything played recently (or already chosen).
+// The rotation's next pick after `cursor`, skipping anything played recently (or already chosen) and the vault.
 export function rotationNext(catalog, cursor, recent, skip = []) {
   const ok = new Set(eligible(catalog, recent)), n = catalog.length;
   for (const s of skip) ok.delete(s);
   for (let k = 1; k <= n; k++) {
     const i = (cursor + k) % n;
-    if (ok.has(catalog[i].id)) return i;
+    if (ok.has(catalog[i].id) && !catalog[i].vault) return i;
   }
+  for (let k = 1; k <= n; k++) if (!catalog[(cursor + k) % n].vault) return (cursor + k) % n;
   return (cursor + 1) % n;
 }
 

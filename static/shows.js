@@ -1,13 +1,14 @@
 // Biscuits Show Radio (shows/index.html): every full soundboard show in shows.json (shows.py), played from
 // archive.org one whole show at a time. Listeners vote for the show after this one (functions/_station.js at
-// /api/shows); the winner plays in full, and with no votes the schedule (shows.json order, oldest first) goes on.
+// /api/shows); the winner plays in full, and with no votes the schedule (the soundboards, oldest first) goes on.
+// The vault (matrix and audience tapes, `vault` in shows.json) only plays when it wins a vote.
 // Without the API (server.py) it's the plain clock loop over shows.json. Everyone hears the same moment either way.
 // Listeners can drop flames and comments on a moment of a track (functions/_moments.js), as on the jam radio.
 // The audio engine is the jam radio's (index.html): two decks for gapless handoffs, drift correction.
 const $ = id => document.getElementById(id);
 const decks = [$('a'), $('b')];
 let audio = decks[0];
-let P, T = [], total = 0, epoch = 0;   // T: every track of every show in schedule order, `start` its place on the clock
+let P, T = [], ROT = [], total = 0, epoch = 0;   // T: every track of every show in shows.json order; ROT: the schedule (no vault), `clock` each one's start on it
 let listening = false, curIdx = -1, shownIdx = -1, shownShow = -1;
 
 const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = String(s % 60).padStart(2, '0'); return h ? `${h}:${String(m).padStart(2, '0')}:${x}` : `${m}:${x}`; };
@@ -25,14 +26,17 @@ if (!/(^|\.)biscomusic\.com$/.test(location.hostname)) document.querySelectorAll
 
 function program(p) {
   P = p; epoch = Date.parse(p.epoch); T = []; total = 0;
+  let at = 0;
   p.shows.forEach((s, si) => {
-    s.start = total; s.first = T.length;
+    s.start = at; s.first = T.length; s.si = si;
     s.tracks.forEach((t, n) => {
-      T.push({ ...t, si, n, start: total, url: `https://archive.org/download/${s.item}/${t.file}` });
-      total += t.duration;
+      T.push({ ...t, si, n, start: at, url: `https://archive.org/download/${s.item}/${t.file}` });
+      at += t.duration;
     });
-    s.length = total - s.start;
+    s.length = at - s.start;
   });
+  ROT = p.shows.filter(s => !s.vault);
+  for (const s of ROT) { s.clock = total; total += s.length; }
 }
 const showIndex = id => P.shows.findIndex(s => s.show === id);
 
@@ -60,17 +64,19 @@ function live() {
     return inShow(si, off);
   }
   const pos = (((Date.now() - epoch) / 1000) % total + total) % total;
-  let lo = 0, hi = T.length - 1;
-  while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (T[mid].start <= pos) lo = mid; else hi = mid - 1; }
-  return { i: lo, offset: pos - T[lo].start };
+  let lo = 0, hi = ROT.length - 1;
+  while (lo < hi) { const mid = (lo + hi + 1) >> 1; if (ROT[mid].clock <= pos) lo = mid; else hi = mid - 1; }
+  return inShow(ROT[lo].si, pos - ROT[lo].clock);
 }
+// The show after show si on the clock (the schedule's next; vault shows aren't on it).
+const clockNext = si => ROT[(ROT.indexOf(P.shows[si]) + 1) % ROT.length];
 
 // The track after track i on air: the next one of its show, else the first of the show after it (the clock's next,
 // or the station's locked-in next show; -1 while that isn't known yet).
 function nextIndex(i) {
   const t = T[i];
   if (t.n < P.shows[t.si].tracks.length - 1) return i + 1;
-  if (!ST) return (i + 1) % T.length;
+  if (!ST) return clockNext(t.si).first;
   return t.si === ST.si && ST.nextSi >= 0 ? P.shows[ST.nextSi].first : -1;
 }
 
@@ -139,7 +145,7 @@ function renderShow(si) {
   shownShow = si; heatKey = '';
   const s = P.shows[si];
   $('show').textContent = showLine(s);
-  $('source').textContent = `Soundboard: ${s.source}`;
+  $('source').textContent = `${KIND[s.kind || 'sbd']}: ${s.source || 'source not given'}`;
   $('tape').href = `https://archive.org/details/${s.item}`;
   $('bip').href = `https://discobiscuits.net/shows/${s.show}`;
   $('bip').replaceChildren(s.rating ? `★ ${s.rating.toFixed(1)} on BIP ` : 'Setlist on BIP ', icon('external-link'));
@@ -155,6 +161,7 @@ function renderShow(si) {
   $('setlist').innerHTML = untitled ? s.setlist.map(([set, songs]) => `<b>${esc(set)}:</b> ${esc(songs)}`).join('<br>') : '';
 }
 
+const KIND = { sbd: 'Soundboard', matrix: 'Matrix', aud: 'Audience' };
 const nextRow = (s, when) => `<li${when ? '' : ' class="later"'}>${when ? `<span class="t">${clockAt(when)}</span>` : ''}` +
   `<span class="s">${esc(showLabel(s))}<small>${esc(s.place)} · ${s.tracks.length} tracks</small></span><span class="d">${span(s.length)}</span></li>`;
 
@@ -165,8 +172,8 @@ function renderNext(si) {
   if (!ST) {
     const { i, offset } = heard(), s = P.shows[si];
     let at = Date.now() + (s.start + s.length - (T[i].start + offset)) * 1000;
-    for (let k = 1; k <= Math.min(6, P.shows.length - 1); k++) {
-      const n = P.shows[(si + k) % P.shows.length];
+    for (let k = 1, n = P.shows[si]; k <= Math.min(6, ROT.length - 1); k++) {
+      n = clockNext(n.si);
       rows.push(nextRow(n, at));
       at += n.length * 1000;
     }
@@ -180,7 +187,9 @@ function renderNext(si) {
   $('ntitle').textContent = ST ? `Up next at ${clockAt(ST.end_at)}` : 'Coming up';
   $('nsub').hidden = !ST || !rows.length;
   $('next').innerHTML = rows.join('');
-  $('count').textContent = `${P.shows.length} full soundboard shows · ${Math.round(total / 3600)} hours`;
+  const vault = P.shows.length - ROT.length;
+  $('count').textContent = `${ROT.length} full soundboard shows · ${Math.round(total / 3600)} hours` +
+    (vault ? ` · ${vault} more matrix and audience tapes in the vault, by request` : '');
 }
 
 // ---- Voting: the ballot at the top of Up next, and the request sheet over every show ----
@@ -192,7 +201,7 @@ const rated = s => s.rating ? ` · ★ ${s.rating.toFixed(1)}` : '';
 function voteRow(s) {
   const li = el('li'); li.dataset.track = s.show;
   const name = el('span', 's');
-  name.append(el('span', '', showLabel(s)), el('small', '', `${s.place} · ${s.tracks.length} tracks · ${span(s.length)}${rated(s)}`));
+  name.append(el('span', '', showLabel(s)), el('small', '', `${s.place} · ${s.tracks.length} tracks · ${span(s.length)}${rated(s)}${s.vault ? ` · ${KIND[s.kind]} tape` : ''}`));
   const meter = el('span', 'meter');
   meter.append(el('i'), el('b'));
   const btn = el('button', 'ghost vbtn');
@@ -277,6 +286,7 @@ function sheetResults() {
   SHEET.hay ||= new Map(P.shows.map(s => [s.show, words(`${s.venue} ${s.place} ${s.date} ${day(s.date)} ${s.setlist.map(x => x[1]).join(' ')}`)]));
   const q = words(SHEET.q);
   const all = P.shows.filter(s => { const toks = SHEET.hay.get(s.show); return q.every(w => toks.some(k => k.startsWith(w))); });
+  if (SHEET.order === 'vault') return all.filter(s => s.vault);
   if (SHEET.order === 'rated') return all.filter(s => s.rating).sort((a, b) => b.rating - a.rating || b.ratings - a.ratings);
   if (SHEET.order === 'long') return [...all].sort((a, b) => b.length - a.length);
   return all;
@@ -301,7 +311,7 @@ function renderSheet() {
     songHint(li, s);
     return li;
   }));
-  $('scount').replaceChildren(n ? `${n} show${n === 1 ? '' : 's'}` : SHEET.q ? `No shows match “${SHEET.q}”. ` : 'No rated shows yet.');
+  $('scount').replaceChildren(n ? `${n} show${n === 1 ? '' : 's'}` : SHEET.q ? `No shows match “${SHEET.q}”. ` : SHEET.order === 'vault' ? 'The vault is empty.' : 'No rated shows yet.');
   if (!n && SHEET.q) {
     const clear = el('button', 'linkbtn', 'Clear search');
     clear.onclick = () => { $('sq').value = SHEET.q = ''; SHEET.shown = PAGE; renderSheet(); $('sq').focus(); };
