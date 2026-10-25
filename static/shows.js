@@ -359,10 +359,10 @@ function bestMessage(text) { const li = el('li'); li.append(el('span', 'empty', 
 async function loadBest() {
   const best = await fetch('/api/shows/best').then(r => r.ok ? r.json() : null).catch(() => null);
   if (!best) return bestMessage('Best moments need the station’s server, at shows.biscomusic.com.');
-  BEST.moments = best.moments.filter(m => showIndex(m.show) >= 0);
+  BEST.moments = best.moments.filter(m => P.shows[showIndex(m.show)]?.tracks[m.n]);   // the page's program has the titles and venues
   if (!BEST.moments.length) return bestMessage('No reactions yet. Tap the flame while you listen and the best moments will show up here.');
   $('blist').replaceChildren(...BEST.moments.map((m, k) => {
-    const s = P.shows[showIndex(m.show)], title = m.title || `Track ${m.n + 1}`;
+    const s = P.shows[showIndex(m.show)], title = titleOf({ ...s.tracks[m.n], n: m.n });
     const li = el('li'); li.dataset.k = k;
     const txt = el('span', 's');
     txt.append(el('span', 't', `${title} @ ${fmt(m.pos)}`), el('small', null, `${showLine(s)}${s.vault ? ` · ${KIND[s.kind]} tape, from the vault` : ''}`));

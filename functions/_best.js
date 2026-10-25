@@ -2,7 +2,7 @@
 // The two stations share the comments and reactions tables; a show radio track has a "/" in it ("<show id>/<n>"),
 // a jam radio track doesn't, so each station counts only its own.
 //   GET /api/best        -> { moments: [{ track, pos, fire, comments, comment, song, jam, date, venue, city }] }
-//   GET /api/shows/best  -> { moments: [{ track, pos, fire, comments, comment, show, n, title, date, venue, place, vault }] }
+//   GET /api/shows/best  -> { moments: [{ track, pos, fire, comments, comment, show, n }] }   (the page has the rest in shows.json)
 // Cached for a minute so the page doesn't rescan the tables on every visit.
 
 import { json, trackIdOf } from './_shared.js';
@@ -23,7 +23,7 @@ export const BEST = {
   shows: {
     path: '/api/shows/best', mine: "track LIKE '%/%'",
     async tracks(env, request) {
-      const program = await env.ASSETS.fetch(new URL('/shows.json', request.url)).then(r => r.json());
+      const program = await env.ASSETS.fetch(new URL('/shows-api.json', request.url)).then(r => r.json());   // not the 2 MB shows.json
       return showTracks(program);
     },
   },
@@ -31,9 +31,7 @@ export const BEST = {
 
 export function showTracks(program) {
   const out = new Map();
-  for (const s of program.shows) s.tracks.forEach((t, n) => out.set(`${s.show}/${n}`, {
-    duration: t.duration, show: s.show, n, title: t.title || '', date: s.date, venue: s.venue, place: s.place, vault: !!s.vault,
-  }));
+  for (const s of program.shows) s.tracks.forEach((t, n) => out.set(`${s.show}/${n}`, { duration: t.duration, show: s.show, n }));
   return out;
 }
 

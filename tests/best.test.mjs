@@ -7,12 +7,10 @@ import { rank, showTracks, BEST } from '../functions/_best.js';
 const program = JSON.parse(readFileSync(new URL('../shows.json', import.meta.url)));
 const tracks = showTracks(program);
 
-test("every show radio track is in the show station's tracks, with what its best moments row shows", () => {
+test("every show radio track is in the show station's tracks", () => {
   const s = program.shows.find(x => x.vault), n = s.tracks.length - 1;
   assert.equal(tracks.size, program.shows.reduce((k, x) => k + x.tracks.length, 0));
-  assert.deepEqual(tracks.get(`${s.show}/${n}`), {
-    duration: s.tracks[n].duration, show: s.show, n, title: s.tracks[n].title || '', date: s.date, venue: s.venue, place: s.place, vault: true,
-  });
+  assert.deepEqual(tracks.get(`${s.show}/${n}`), { duration: s.tracks[n].duration, show: s.show, n });
 });
 
 test('a comment counts double, comments break ties, and tracks off the air are left out', () => {

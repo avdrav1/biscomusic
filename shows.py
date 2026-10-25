@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Biscuits Show Radio's program: every full soundboard show in archive.org's DiscoBiscuits collection, plus a vault of
-full matrix and audience tapes of the shows from VAULT_YEARS that have no soundboard, played only when requested.
+full matrix and audience tapes of every other show on archive.org (1997 to now), played only when requested.
 
 A recording counts when
   soundboard  its `source` starts with the board: "SBD", "DSBD", "Soundboard", "Digital Soundboard", "FM SBD"...
@@ -10,7 +10,7 @@ A recording counts when
               titled as them (archive.py's matching, plus misspellings). An untitled recording is full when it runs
               at least FULL_SHARE of BIP's show length, or, when BIP has no length, has a track per setlist entry.
   matrix      board + mics: "Matrix ...", or a board source with a "+" ("SBD + AKG C1000").
-  audience    anything else (a show from VAULT_YEARS only).
+  audience    anything else.
 One recording per show: a full soundboard if there is one, else a matrix, else an audience tape, the most downloaded
 of its kind. Soundboards are the schedule; matrix and audience shows are the vault (`vault`): the station never
 rotates them in (functions/_station.js), but listeners can vote for them. A show's recording shouldn't change once
@@ -41,7 +41,6 @@ OUT = Path(__file__).resolve().parent / "shows.json"
 STATION = "Biscuits Show Radio"
 EPOCH = "2026-10-23T00:00:00Z"
 FULL_SHARE = 0.85
-VAULT_YEARS = range(1998, 2002)   # matrix and audience tapes of these years' shows join the vault
 SECONDS_CACHE = archive.CACHE.parent / "mp3-seconds.json"
 
 _BOARD = re.compile(r"^\W*(source:\s*)?(plan c approved\s*/\s*)?((digital|analog|mono|fm|dat)\s*)*(d|fm)?(sbd|soundboard|sound board)\b", re.I)
@@ -216,7 +215,7 @@ def build() -> dict:
     found = [d for d in archive.search(["identifier", "date", "source", "downloads"]) if d.get("date")]
     for d in found:
         d["kind"] = kind(d.get("source"))
-    candidates = [d for d in found if d["kind"] == "sbd" or int(d["date"][:4]) in VAULT_YEARS]
+    candidates = found   # every recording: soundboards for the schedule, the rest for the vault
     years = sorted({int(d["date"][:4]) for d in candidates})
     with ThreadPoolExecutor(archive.WORKERS) as pool:
         setlists = [s for year in pool.map(bip.year_setlists, years) for s in year]
