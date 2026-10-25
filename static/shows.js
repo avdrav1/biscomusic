@@ -433,6 +433,41 @@ $('bclose').onclick = () => $('best').close();
 $('best').addEventListener('click', e => { if (e.target === $('best')) $('best').close(); });   // tap the backdrop
 addEventListener('popstate', () => P && showBest(atBest()));
 
+// ---- The jam radio's panels: First time played and Get the app (biscomusic.com/first-played, /install) ----
+// They open in a frame over this page, as they do over the jam radio, so the show keeps playing. The frame says when
+// to close, and when one of its song clips plays or stops: the show stops for the clip and comes back after.
+const AWAY = /^\/(first-played|install)\/?$/;
+let awayResume = false, awayBack = 0;   // the show stopped for a clip; the timer bringing it back
+document.addEventListener('click', e => {
+  const a = e.target.closest?.('a[href]');
+  if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target) return;
+  const url = new URL(a.href);
+  if (!AWAY.test(url.pathname) || !(url.origin === location.origin || /(^|\.)biscomusic\.com$/.test(url.hostname))) return;
+  e.preventDefault();
+  if ($('sheet').open) $('sheet').close();
+  $('away').setAttribute('aria-label', a.textContent); $('awayf').title = a.textContent;
+  $('awayf').src = url.href;
+  $('away').showModal();
+  history.pushState({ away: true }, '', location.href);   // so Back closes it
+});
+function closeAway() {
+  if (!$('away').open) return;
+  $('away').close();
+  $('awayf').src = 'about:blank';
+  clearTimeout(awayBack);
+  if (awayResume) { awayResume = false; start(); }
+  if (history.state?.away) history.back();
+}
+addEventListener('message', e => {
+  if (e.source !== $('awayf').contentWindow || !e.data) return;
+  if (e.data.close) closeAway();
+  // (A moment's grace before coming back: going from one clip to the next stops and plays.)
+  if (e.data.clip === 'play') { clearTimeout(awayBack); if (listening) { awayResume = true; stop(); } }
+  if (e.data.clip === 'stop' && awayResume) { clearTimeout(awayBack); awayBack = setTimeout(() => { if (awayResume) { awayResume = false; start(); } }, 500); }
+});
+$('away').addEventListener('cancel', e => { e.preventDefault(); closeAway(); });
+addEventListener('popstate', () => { if (!history.state?.away) closeAway(); });
+
 // ---- Flames and comments: pinned to a moment of a track, so they come back every time the show airs ----
 // A track's key is "<show id>/<track index>". One call loads a whole show's, so the show's timeline and track list
 // can light up where people loved it, and this track's own timeline gets its flames and comment faces.
@@ -824,9 +859,10 @@ decks.forEach(d => {
 $('tune').onclick = () => listening ? stop() : start();
 $('vol').oninput = e => decks.forEach(d => { d.volume = e.target.value; });
 
-// Space plays and pauses, as in any player; left alone while typing, on controls Space already presses, and in the sheets.
+// Space plays and pauses, as in any player; left alone while typing, on controls Space already presses, and in the sheets
+// (and in the jam radio's panels).
 document.addEventListener('keydown', e => {
-  if (e.code !== 'Space' || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || !P || $('sheet').open || $('best').open) return;
+  if (e.code !== 'Space' || e.repeat || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || !P || $('sheet').open || $('best').open || $('away').open) return;
   if (e.target.closest?.('input, textarea, select, button, a[href], summary, [contenteditable], [role="radio"]')) return;
   e.preventDefault();
   if (listening) stop(); else start();

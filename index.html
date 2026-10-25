@@ -203,6 +203,7 @@
 
       <section class="route r-install" data-route="install" hidden>
         <p class="intro">Jam Radio installs straight from your browser, no app store needed. It gets its own icon, opens full-screen, and keeps playing with controls on your lock screen.</p>
+        <p id="i-frame" hidden>Over Show Radio, these steps would install Show Radio's page. To install Jam Radio, <a href="https://jams.biscomusic.com/install" target="_blank" rel="noopener">open it in a new tab</a> and follow them there.</p>
         <p class="done" id="i-done" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#check"/></svg>You're already in the app. Enjoy the jams.</p>
         <p id="i-now" hidden><button data-install><svg class="i" aria-hidden="true"><use href="static/icons.svg#download"/></svg>Install Jam Radio</button></p>
         <div class="chips" role="radiogroup" aria-label="Your device">
@@ -1358,6 +1359,18 @@ const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
 });
 
 // ---- Panels: everything besides the radio opens over it, so the music never stops ----
+// Show Radio opens First time played and Get the app in a frame over its own page (static/shows.js, "The jam
+// radio's panels"). In there (EMBED) only the panel shows; closing it closes the frame, links off it go to the
+// whole jam radio, and a song clip tells Show Radio when it plays and stops, so the two never play together.
+const EMBED = window.parent !== window;
+if (EMBED) {
+  document.documentElement.classList.add('embed');
+  document.head.append(Object.assign(document.createElement('base'), { target: '_top' }));
+  $('i-frame').hidden = false;
+  kaudio.addEventListener('play', () => parent.postMessage({ clip: 'play' }, '*'));
+  for (const ev of ['pause', 'ended', 'emptied']) kaudio.addEventListener(ev, () => parent.postMessage({ clip: 'stop' }, '*'));
+}
+
 // /best, /nominate, /install and /first-played are this page with that panel open (build.py gives each
 // address its own link preview). Links to them, and to /?m=… and /?request=…, are followed here without
 // leaving the page, and Back undoes them. A panel's code (static/<route>.js) loads the first time it opens:
@@ -1436,8 +1449,9 @@ document.addEventListener('click', e => {
   }
   const q = url.searchParams;
   if (url.origin !== location.origin || !(routeOf(url.pathname) || (url.pathname === '/' && (q.has('m') || q.has('request'))))) return;
+  if (EMBED && !routeOf(url.pathname)) return;   // the radio: <base target="_top"> takes it to the jam radio itself
   e.preventDefault();
-  history.pushState({ app: true }, '', url.pathname + url.search);
+  history[EMBED ? 'replaceState' : 'pushState']({ app: true }, '', url.pathname + url.search);
   sync();
 });
 addEventListener('popstate', sync);
@@ -1446,6 +1460,7 @@ addEventListener('popstate', sync);
 // was opened on a panel's address. The panel itself closes in sync(), once the address says so.
 let leaving = false;   // a Back is on its way (a second × mustn't go back twice)
 function leavePanel() {
+  if (EMBED) { parent.postMessage({ close: true }, '*'); return; }
   if (leaving || !routeOf(location.pathname)) return;
   leaving = true;
   if (history.state?.app) history.back();
