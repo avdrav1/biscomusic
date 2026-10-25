@@ -39222,7 +39222,7 @@
     {
      "title": "The Very Moon",
      "file": "db2001-04-27akg481d3t01.mp3",
-     "duration": 1248.0,
+     "duration": 1248.235,
      "segue": true
     },
     {
@@ -46525,7 +46525,7 @@
     {
      "title": "Banter",
      "file": "db2002-03-04d1/db2002-03-04d1t01.mp3",
-     "duration": 53.0,
+     "duration": 53.525,
      "segue": false
     },
     {
@@ -46555,7 +46555,7 @@
     {
      "title": "Morph Dusseldorf",
      "file": "db2002-03-04d1/db2002-03-04d1t06.mp3",
-     "duration": 595.0,
+     "duration": 595.566,
      "segue": false
     },
     {
@@ -46627,7 +46627,7 @@
     {
      "title": "Confrontation",
      "file": "db2002-03-04d3/db2002-03-04d3t06.mp3",
-     "duration": 540.0,
+     "duration": 540.813,
      "segue": false
     }
    ]
@@ -76947,7 +76947,7 @@
     {
      "title": "Banter",
      "file": "db2006-04-23d1t01.mp3",
-     "duration": 94.0,
+     "duration": 94.616,
      "segue": false
     },
     {
@@ -77043,7 +77043,7 @@
     {
      "title": "Banter",
      "file": "db2006-04-23d1t07.mp3",
-     "duration": 93.0,
+     "duration": 93.623,
      "segue": false
     },
     {
@@ -94097,13 +94097,13 @@
     {
      "title": "Basis For A Day(ending)",
      "file": "db2008-06-07.MS.d1t06.mp3",
-     "duration": 253.0,
+     "duration": 253.989,
      "segue": false
     },
     {
      "title": "Munchkin Invasion",
      "file": "db2008-06-07.MS.d1t07.mp3",
-     "duration": 1006.0,
+     "duration": 1006.184,
      "segue": false
     },
     {
@@ -99811,7 +99811,7 @@
     {
      "title": "Above the Waves (mid)",
      "file": "db2009-04-24d2t05.mp3",
-     "duration": 1020.0,
+     "duration": 1020.97,
      "segue": true
     },
     {
@@ -128028,7 +128028,7 @@
     {
      "title": "Svenghali",
      "file": "07%20Svenghali.mp3",
-     "duration": 829.0,
+     "duration": 828.912,
      "segue": true
     },
     {
@@ -128064,7 +128064,7 @@
     {
      "title": "Encore Break",
      "file": "13%20Encore%20Break.mp3",
-     "duration": 151.0,
+     "duration": 151.296,
      "segue": false
     },
     {
@@ -128076,7 +128076,7 @@
     {
      "title": "Also Sprach Zarathustra",
      "file": "15%20Also%20Sprach%20Zarathustra.mp3",
-     "duration": 305.0,
+     "duration": 305.016,
      "segue": false
     }
    ]
@@ -129998,7 +129998,7 @@
     {
      "title": "House Dog Party Favor",
      "file": "db2025-06-19s3t06.mp3",
-     "duration": 186.0,
+     "duration": 185.784,
      "segue": false
     },
     {
@@ -133748,7 +133748,7 @@
     {
      "title": "Risky Business",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2004%20Risky%20Business.mp3",
-     "duration": 651.0,
+     "duration": 651.154,
      "segue": false
     },
     {
@@ -133772,7 +133772,7 @@
     {
      "title": "Rock Candy (1)",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2008%20Rock%20Candy%20%281%29.mp3",
-     "duration": 1001.0,
+     "duration": 1000.647,
      "segue": false
     },
     {
@@ -133802,7 +133802,7 @@
     {
      "title": "Story of the World",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2013%20Story%20of%20the%20World.mp3",
-     "duration": 743.0,
+     "duration": 743.34,
      "segue": false
     }
    ]
