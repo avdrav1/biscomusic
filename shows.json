@@ -39204,7 +39204,7 @@
     {
      "title": "Morph Dusseldorf",
      "file": "db2001-04-27akg481d1t06.mp3",
-     "duration": 263.0,
+     "duration": 263.758,
      "segue": false
     },
     {
@@ -46531,7 +46531,7 @@
     {
      "title": "The Tunnel",
      "file": "db2002-03-04d1/db2002-03-04d1t02.mp3",
-     "duration": 556.0,
+     "duration": 556.878,
      "segue": false
     },
     {
@@ -46543,7 +46543,7 @@
     {
      "title": "Helicopters",
      "file": "db2002-03-04d1/db2002-03-04d1t04.mp3",
-     "duration": 623.0,
+     "duration": 623.856,
      "segue": false
     },
     {
@@ -46585,7 +46585,7 @@
     {
      "title": "Banter",
      "file": "db2002-03-04d2/db2002-03-04d2t04.mp3",
-     "duration": 145.0,
+     "duration": 145.711,
      "segue": false
     },
     {
@@ -72857,7 +72857,7 @@
     {
      "title": "M.E.M.P.H.I.S.",
      "file": "db2005-03-21dpa4022d3t01.mp3",
-     "duration": 590.0,
+     "duration": 590.446,
      "segue": false
     }
    ]
@@ -76965,7 +76965,7 @@
     {
      "title": "Crystal Ball",
      "file": "db2006-04-23d1t02.mp3",
-     "duration": 529.0,
+     "duration": 529.267,
      "segue": false
     },
     {
@@ -76977,7 +76977,7 @@
     {
      "title": "Cyclone",
      "file": "db2006-04-23d3t02.mp3",
-     "duration": 541.0,
+     "duration": 541.518,
      "segue": false
     },
     {
@@ -76989,13 +76989,13 @@
     {
      "title": "Liquid Handcuffs",
      "file": "db2006-04-23d2t03.mp3",
-     "duration": 729.0,
+     "duration": 729.365,
      "segue": false
     },
     {
      "title": "Hot Air Balloon",
      "file": "db2006-04-23d3t03.mp3",
-     "duration": 1379.0,
+     "duration": 1379.944,
      "segue": false
     },
     {
@@ -77025,7 +77025,7 @@
     {
      "title": "Morph Dusseldorf",
      "file": "db2006-04-23d2t05.mp3",
-     "duration": 758.0,
+     "duration": 758.309,
      "segue": false
     },
     {
@@ -94091,7 +94091,7 @@
     {
      "title": "Vassillios",
      "file": "db2008-06-07.MS.d1t05.mp3",
-     "duration": 909.0,
+     "duration": 909.636,
      "segue": true
     },
     {
@@ -94109,7 +94109,7 @@
     {
      "title": "crowd",
      "file": "db2008-06-07.MS.d2t01.mp3",
-     "duration": 24.0,
+     "duration": 24.607,
      "segue": false
     },
     {
@@ -94133,7 +94133,7 @@
     {
      "title": "The Great Abyss",
      "file": "db2008-06-07.MS.d2t05.mp3",
-     "duration": 701.0,
+     "duration": 701.336,
      "segue": true
     },
     {
@@ -94145,7 +94145,7 @@
     {
      "title": "I-man",
      "file": "db2008-06-07.MS.d2t07.mp3",
-     "duration": 501.0,
+     "duration": 501.081,
      "segue": false
     },
     {
@@ -99757,7 +99757,7 @@
     {
      "title": "Crystal Ball",
      "file": "db2009-04-24d1t03.mp3",
-     "duration": 628.0,
+     "duration": 628.402,
      "segue": true
     },
     {
@@ -99781,7 +99781,7 @@
     {
      "title": "Uber Glue",
      "file": "db2009-04-24d1t07.mp3",
-     "duration": 341.0,
+     "duration": 341.316,
      "segue": false
     },
     {
@@ -99835,7 +99835,7 @@
     {
      "title": "Highwire",
      "file": "db2009-04-24d3t02.mp3",
-     "duration": 350.0,
+     "duration": 350.067,
      "segue": false
     },
     {
@@ -99847,7 +99847,7 @@
     {
      "title": "The Very Moon",
      "file": "db2009-04-24d3t04.mp3",
-     "duration": 908.0,
+     "duration": 908.434,
      "segue": true
     },
     {
@@ -109271,7 +109271,7 @@
     {
      "title": "banter",
      "file": "db2010-09-05akg481-16bitd1t01.mp3",
-     "duration": 70.0,
+     "duration": 70.635,
      "segue": false
     },
     {
@@ -109307,7 +109307,7 @@
     {
      "title": "Home Again (1)",
      "file": "db2010-09-05akg481-16bitd1t07.mp3",
-     "duration": 491.0,
+     "duration": 491.572,
      "segue": false
     },
     {
@@ -128010,7 +128010,7 @@
     {
      "title": "Nughuffer",
      "file": "04%20Nughuffer.mp3",
-     "duration": 491.0,
+     "duration": 490.896,
      "segue": true
     },
     {
@@ -128022,7 +128022,7 @@
     {
      "title": "Spraypaint",
      "file": "06%20Spraypaint.mp3",
-     "duration": 282.0,
+     "duration": 282.456,
      "segue": false
     },
     {
@@ -128070,7 +128070,7 @@
     {
      "title": "Pimp Blue Rikki",
      "file": "14%20Pimp%20Blue%20Rikki.mp3",
-     "duration": 488.0,
+     "duration": 488.4,
      "segue": false
     },
     {
@@ -133766,7 +133766,7 @@
     {
      "title": "Rivers",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2007%20Rivers.mp3",
-     "duration": 1589.0,
+     "duration": 1589.107,
      "segue": false
     },
     {
@@ -133790,7 +133790,7 @@
     {
      "title": "Fire Will Exchange",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2011%20Fire%20Will%20Exchange.mp3",
-     "duration": 992.0,
+     "duration": 991.974,
      "segue": false
     },
     {
