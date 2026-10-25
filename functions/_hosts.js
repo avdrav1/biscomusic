@@ -4,6 +4,7 @@
 //   biscomusic.com        the station picker (home.html) at /, and First time played (the jam radio's panel, a
 //                         page of its own for both stations) at /first-played; the jam radio's old addresses move to jams.
 // First time played lives only at biscomusic.com/first-played: its address on the stations sends you there.
+// Get the app's address is biscomusic.com/install, which sends you to jams (only there does the app install).
 // Any other host (a *.pages.dev preview) gets the files as they are, like jams.
 
 export const JAMS = 'jams.biscomusic.com';

@@ -162,7 +162,7 @@
     <a href="/best">Best moments</a>
     <a href="https://biscomusic.com/first-played" data-local="/first-played">First time played</a>
     <a href="/nominate">Nominate jams</a>
-    <a href="/install">Get the app</a>
+    <a href="https://biscomusic.com/install" data-local="/install">Get the app</a>
   </nav>
   <p class="fine">Fan-run and unofficial. Not affiliated with the Disco Biscuits.</p>
 </main>
@@ -1442,7 +1442,14 @@ async function sync() {
 document.addEventListener('click', e => {
   const a = e.target.closest?.('a[href]');
   if (!a || e.defaultPrevented || e.button || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute('download')) return;
-  const url = new URL(a.href), q = url.searchParams;
+  let url = new URL(a.href);
+  // Get the app's address is biscomusic.com/install, which sends you on to the jam radio, the only place the app
+  // installs: here it opens in place, and on biscomusic.com (First time played) the link is followed.
+  if (/^(www\.)?biscomusic\.com$/.test(url.hostname) && routeOf(url.pathname) === 'install') {
+    if (/^(www\.)?biscomusic\.com$/.test(location.hostname)) return;
+    url = new URL(url.pathname + url.search, location.origin);
+  }
+  const q = url.searchParams;
   if (url.origin !== location.origin || !(routeOf(url.pathname) || (url.pathname === '/' && (q.has('m') || q.has('request'))))) return;
   e.preventDefault();
   history.pushState({ app: true }, '', url.pathname + url.search);

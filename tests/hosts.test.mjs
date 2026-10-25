@@ -15,6 +15,7 @@ test('old jam radio links on biscomusic.com move to jams, query intact', () => {
     { redirect: 'https://jams.biscomusic.com/?m=2026-09-26-04-jam2@312&c=7' });
   assert.deepEqual(at('https://biscomusic.com/?request'), { redirect: 'https://jams.biscomusic.com/?request' });
   assert.deepEqual(at('https://biscomusic.com/best/'), { redirect: 'https://jams.biscomusic.com/best/' });
+  assert.deepEqual(at('https://biscomusic.com/install'), { redirect: 'https://jams.biscomusic.com/install' });
 });
 
 test('shows.biscomusic.com plays the show radio at / and /best (its own best moments), and sends jam pages to jams', () => {
