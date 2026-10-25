@@ -168,7 +168,7 @@
 </main>
 
 <!-- Everything besides the radio opens in this panel over it, so the music never stops (see "Panels" below).
-     The dialog fills the viewport: the card in the middle, the player strip along the bottom. -->
+     The dialog fills the viewport, with the card in the middle. -->
 <dialog class="panel" id="panel" aria-labelledby="ptitle">
   <div class="pcard">
     <div class="sheet-head">
@@ -322,19 +322,6 @@
 
     </div>
   </div>
-
-  <!-- The radio (or a song clip) while a panel is open: what's playing, stop / tune in, volume -->
-  <div class="strip" id="strip" role="region" aria-label="Player">
-    <div class="xbar" aria-hidden="true"><i id="xprog"></i></div>
-    <div class="xin">
-      <button class="iconbtn" id="xplay" aria-label="Tune in"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg></button>
-      <div class="xnow"><span class="xsong" id="xsong"></span><small id="xsub"></small></div>
-      <input type="range" id="xseek" min="0" max="0" step="1" value="0" aria-label="Position in the recording" hidden>
-      <button class="stop" id="xback" aria-label="Back to the radio" hidden><svg class="i" aria-hidden="true"><use href="static/icons.svg#radio"/></svg><span class="wide">Back to the radio</span></button>
-      <span class="live" id="xlive"><i></i>ON AIR</span>
-      <label class="label vol">Vol <input type="range" id="xvol" min="0" max="1" step="0.01" value="0.9"></label>
-    </div>
-  </div>
 </dialog>
 
 <!-- First time played: a song's details, over its panel -->
@@ -437,7 +424,6 @@ function render() {
   $('rem').textContent = '-' + fmt(t.duration - el);
   if (C.on) renderComments(i, el);
   renderMoment();
-  renderStrip();
   if (listening && navigator.mediaSession?.setPositionState) {
     try { navigator.mediaSession.setPositionState({ duration: t.duration, position: Math.min(el, t.duration), playbackRate: 1 }); } catch (e) {}
   }
@@ -543,7 +529,7 @@ function preloadNext() {
   const d = spare(); d.src = S.tracks[n].file; d.preload = 'auto'; d.load(); cued = n;
 }
 
-function setTune(ic, label) { $('tune').replaceChildren(icon(ic), Object.assign(document.createElement('span'), { textContent: label })); $('tune').setAttribute('aria-label', label); renderStrip(); }
+function setTune(ic, label) { $('tune').replaceChildren(icon(ic), Object.assign(document.createElement('span'), { textContent: label })); $('tune').setAttribute('aria-label', label); }
 function start() { closeClip(); listening = true; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'playing'; setTune('square', 'Stop'); $('tune').className = 'stop'; $('live').classList.add('on'); $('eq').classList.add('on'); tune(); heartbeat(); }
 function stop() { listening = false; if (navigator.mediaSession) navigator.mediaSession.playbackState = 'none'; gen++; decks.forEach(clear); cued = -1; curIdx = -1; setTune('play', 'Tune in'); $('tune').className = ''; $('live').classList.remove('on'); $('eq').classList.remove('on'); heartbeat(true); }
 
@@ -578,8 +564,8 @@ if ('mediaSession' in navigator) {
   msSet('stop', () => { if (K.on) closeClip(); else if (listening) stop(); });
   ['seekbackward', 'seekforward', 'seekto', 'previoustrack', 'nexttrack'].forEach(a => msSet(a, null));
 }
-function setVolume(v) { [...decks, kaudio].forEach(d => d.volume = v); $('vol').value = $('xvol').value = v; }
-$('vol').oninput = $('xvol').oninput = e => setVolume(e.target.value);
+function setVolume(v) { [...decks, kaudio].forEach(d => d.volume = v); $('vol').value = v; }
+$('vol').oninput = e => setVolume(e.target.value);
 
 // Drift correction: stay within 2s of the live point
 // (compares positions across the whole broadcast, so a handoff a moment early isn't undone)
@@ -1190,7 +1176,7 @@ function playClip(s, c, kind) {
   $('kseek').max = 0; $('kseek').value = 0;
   $('ktime').textContent = `0:00 / ${c.length}`;
   $('kclip').hidden = false;
-  if (!$('panel').open) $('kplay').focus();   // land on the player that just opened (in a panel, the strip shows it)
+  if (!$('panel').open) $('kplay').focus();   // land on the player that just opened (in a panel, the panel's own buttons play it)
   if ('mediaSession' in navigator) {
     navigator.mediaSession.metadata = new MediaMetadata({ title: `${s.title} (${$('kkind').textContent.toLowerCase()})`, artist: 'The Disco Biscuits', album: at, artwork: ARTWORK });
     msSet('seekto', e => { kaudio.currentTime = e.seekTime; });
@@ -1236,7 +1222,6 @@ kaudio.addEventListener('play', () => { if (!K.on) return; kplayIcon(); if (navi
 kaudio.addEventListener('pause', () => { if (!K.on) return; kplayIcon(); if (navigator.mediaSession) navigator.mediaSession.playbackState = 'paused'; });
 kaudio.addEventListener('timeupdate', () => K.on && kprogress());
 kaudio.addEventListener('durationchange', () => K.on && kprogress());
-for (const ev of ['play', 'pause', 'timeupdate', 'durationchange', 'emptied']) kaudio.addEventListener(ev, renderStrip);
 kaudio.addEventListener('ended', () => {
   if (!K.on) return;
   if (K.resume) { closeClip(true); toast('Back on the radio', 'radio'); }
@@ -1434,7 +1419,7 @@ async function sync() {
   $('panel').classList.toggle('wide', !!ROUTES[r].wide);
   if (was !== r) $('pbody').scrollTop = 0;
   if (!$('panel').open) $('panel').showModal();
-  setTitle(); renderStrip();
+  setTitle();
   const p = await panelFor(r);
   if (route === r) p?.open?.(url.searchParams);
 }
@@ -1469,35 +1454,6 @@ function leavePanel() {
 $('panel').addEventListener('cancel', e => { e.preventDefault(); leavePanel(); });
 $('pclose').onclick = leavePanel;
 $('panel').addEventListener('click', e => { if (e.target === $('panel')) leavePanel(); });
-
-// The strip under a panel: the radio, or the song clip playing in its place (playClip).
-function setIconBtn(b, ic, label) {
-  if (b.dataset.ic !== ic) { b.dataset.ic = ic; b.replaceChildren(icon(ic)); }
-  b.setAttribute('aria-label', label); b.title = label;
-}
-function renderStrip() {
-  if (!S || !$('panel').open) return;
-  $('xseek').hidden = $('xback').hidden = !K.on; $('xlive').hidden = K.on;
-  if (K.on) {
-    const cur = kaudio.currentTime || 0, dur = kaudio.duration, known = Number.isFinite(dur) && dur > 0;
-    setIconBtn($('xplay'), kaudio.paused ? 'play' : 'pause', kaudio.paused ? 'Play' : 'Pause');
-    $('xsong').textContent = $('ksong').textContent;
-    $('xsub').textContent = `${$('kkind').textContent} · ${$('ktime').textContent}`;
-    if (known && document.activeElement !== $('xseek')) { $('xseek').max = Math.floor(dur); $('xseek').value = Math.floor(cur); }
-    $('xseek').setAttribute('aria-valuetext', $('ktime').textContent);
-    $('xprog').style.width = known ? `${100 * cur / dur}%` : '0';
-    return;
-  }
-  const { i, el } = heard(), t = S.tracks[i];
-  setIconBtn($('xplay'), listening ? 'square' : 'play', listening ? 'Stop' : 'Tune in');
-  $('xsong').textContent = t.song + (t.jam ? ` · jam ${t.jam}` : '');
-  $('xsub').textContent = showLine(t);
-  $('xprog').style.width = `${100 * Math.min(1, el / t.duration)}%`;
-  $('xlive').classList.toggle('on', listening);
-}
-$('xplay').onclick = () => K.on ? (kaudio.paused ? kaudio.play().catch(() => {}) : kaudio.pause()) : listening ? stop() : start();
-$('xseek').oninput = e => { kaudio.currentTime = Number(e.target.value); };
-$('xback').onclick = () => closeClip(true);
 
 if (routeOf(location.pathname)) sync();
 </script>
