@@ -214,16 +214,27 @@ def bip_catalog():
     with urllib.request.urlopen(urllib.request.Request(BIP_API, headers=bip.UA), timeout=60) as r:
         return json.load(r)
 
-MIX_SHOW = ('date', 'venue', 'city', 'show', 'song', 'slug')   # what link_mixes sets on a mix's track
+MIX_SHOW = ('date', 'venue', 'city', 'show', 'song', 'slug')   # what link_shows sets on a mix's track
 
-def link_mixes(tracks):
-    """A mix's track whose title gives its date ("Caterpillar-Voices (2023-07-08)") gets that show from BIP:
+def link_shows(tracks):
+    """Give each track its show's BIP slug ("show"), which the player links to.
+    A show's jam: the show on its date (on a night with two, the one at its venue, else the one playing its song).
+    A mix's track whose title gives its date ("Caterpillar-Voices (2023-07-08)") gets that show from BIP:
     its date, venue, city and show (BIP's slug), and its first song's slug. When the title's every word named
     one of that night's songs, it reads as the setlist does ("Caterpillar > Voices Insane"); otherwise it keeps
     its own words, less the date. See mixes.py."""
     mix = [t for t in tracks if t.get('mix')]
-    years = {int(m[1][:4]) for t in mix if (m := mixes.DATE_RE.search(t['song']))}
+    jams = [t for t in tracks if not t.get('mix')]
+    years = {int(m[1][:4]) for t in mix if (m := mixes.DATE_RE.search(t['song']))} | {int(t['date'][:4]) for t in jams}
     by_date = mixes.shows_by_date(years)
+    for t in jams:
+        night = by_date.get(t['date'], [])
+        if len(night) > 1:
+            here = [s for s in night if song_key((s.get('venue') or {}).get('name') or '') == song_key(t['venue'])]
+            night = here or [s for s in night if song_key(t['song']) in {song_key(x['title']) for x in mixes.setlist_of(s)}] or night
+        if night:
+            t['show'] = night[0]['show']['slug']
+    print(f'  shows: {sum(1 for t in jams if t.get("show"))} of {len(jams)} show jams linked to their show on BIP')
     linked = 0
     for t in mix:
         r = mixes.resolve(t['song'], by_date)
@@ -354,7 +365,7 @@ def main():
 
     try:
         catalog = bip_catalog()
-        link_mixes(tracks)
+        link_shows(tracks)
         link_songs(tracks, catalog)
     except OSError as e:   # BIP down: the radio still deploys, with the song and show links of the last build
         catalog = None
@@ -364,8 +375,10 @@ def main():
             last = before.get(t['file'], {})
             if t.get('mix') and last.get('show'):
                 t.update({k: last[k] for k in MIX_SHOW if k in last})
-            elif last.get('slug'):
-                t['slug'] = last['slug']
+                continue
+            for k in ('slug', 'show'):
+                if last.get(k):
+                    t[k] = last[k]
 
     local = {'station': meta['station'], 'epoch': meta['epoch'], 'tracks': tracks}
     with open(os.path.join(HERE, 'schedule.json'), 'w') as f:

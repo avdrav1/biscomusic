@@ -352,12 +352,12 @@ let audio = decks[0];
 let S, starts = [], total = 0, listening = false, curIdx = -1, shownIdx = -1;   // curIdx: on the deck; shownIdx: on screen
 
 const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = String(s%60).padStart(2,'0'); return h ? `${h}:${String(m).padStart(2,'0')}:${x}` : `${m}:${x}`; };
-// A mix's track names its show once its title gave the date (build.py link_mixes); until then its date is only the mix's year.
+// A mix's track names its show once its title gave the date (build.py link_shows); until then its date is only the mix's year.
 const showLine = t => { if (t.mix && !t.show) return `Mix · ${t.mix}`;
   const d = new Date(t.date+'T12:00:00'); return `${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})} · ${t.venue} · ${t.city}`; };
 const jamLine = t => t.mix && t.show ? `From the mix ${t.mix}` : t.jam ? `Jam ${t.jam}` : '';
 const BIP_SHOW = slug => 'https://discobiscuits.net/shows/' + encodeURIComponent(slug);
-// The show line, linked to the show on BIP when the track knows it (a mix's track does)
+// The show line, linked to the show on BIP when the track knows it (build.py link_shows)
 function setShowLine(el, t) {
   if (!t.show) { el.textContent = showLine(t); return; }
   const a = document.createElement('a');

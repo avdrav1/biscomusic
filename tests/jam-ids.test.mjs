@@ -32,6 +32,11 @@ test("a mix's track names its show when its title gave one, else its mix, never 
   assert.ok(mix.filter(t => t.show).length > mix.length * 0.9, 'most mix tracks know their show');
 });
 
+test("every show's jam links to its show on BIP", () => {
+  for (const t of schedule.tracks.filter(t => !t.mix))
+    assert.match(t.show || '', new RegExp(`^${t.date}-[a-z0-9-]+$`), `${trackIdOf(t)}: show on its date`);
+});
+
 test('malformed ids are refused', () => {
   for (const id of ['', 'mix-', 'mix-a', 'mix-Best-01', 'mix-a/01', '2026-09-26', '2026-09-26-4', '../2026-09-26-04'])
     assert.ok(!TRACK_RE.test(id), id);
