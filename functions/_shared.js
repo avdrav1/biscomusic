@@ -1,6 +1,8 @@
 // Helpers shared by the API routes (files starting with _ aren't routes).
 
-export const TRACK_RE = /^\d{4}-\d{2}-\d{2}-\d{2}(-jam\d+)?$/;
+// A jam radio track: a show's jam, "<date>-<track>[-jam<n>]", or a mix's track, "mix-<mix slug>-<track>".
+const TRACK_ID = String.raw`\d{4}-\d{2}-\d{2}-\d{2}(?:-jam\d+)?|mix-[a-z0-9-]{1,120}-\d{2,3}`;
+export const TRACK_RE = new RegExp(`^(?:${TRACK_ID})$`);
 // The show radio: a show's id (its BIP slug, as in shows.json), and one of its tracks, "<show id>/<track index>".
 export const SHOW_RE = /^\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120}$/;
 export const SHOW_TRACK_RE = /^(\d{4}-\d{2}-\d{2}-[a-z0-9-]{1,120})\/(\d{1,3})$/;
@@ -48,9 +50,13 @@ export async function getComment(env, id) {
 
 // "2026-09-26-04-jam2@312" -> { track, pos }, or null.
 export function parseMoment(m) {
-  const match = /^(\d{4}-\d{2}-\d{2}-\d{2}(?:-jam\d+)?)@(\d{1,5})$/.exec(String(m || ''));
+  const match = new RegExp(`^(${TRACK_ID})@(\\d{1,5})$`).exec(String(m || ''));
   return match && { track: match[1], pos: Number(match[2]) };
 }
+
+// "Sep 26, 2026 · Venue · City, ST", or for a mix's track "Mix · <title>" (its date is only its year).
+export const showLine = t => t.mix ? `Mix · ${t.mix}`
+  : `${new Date(t.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} · ${t.venue} · ${t.city}`;
 
 export const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 

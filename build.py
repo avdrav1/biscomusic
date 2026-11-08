@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the station from the show folders next to radio/, and the jams listed in manifests/ (see manifest_tracks).
+"""Build the station from the show folders next to radio/, and the jams and mixes listed in manifests/ (see manifest_tracks).
 
 Converts any FLAC (or incoming/ MP3) without an MP3 in audio/ yet (192k, loudness-normalized to -14 LUFS), then writes:
   schedule.json       local paths (audio/...), used by server.py; each track carries its song's BIP slug
@@ -70,10 +70,18 @@ def split_place(place):
     parts = [p.strip() for p in place.split(',')]
     return ', '.join(parts[:-2]) or parts[0], ', '.join(parts[-2:])
 
+def mix_song(title):
+    """A mix track's title, which is its source file's: mostly "Song > Song (YYYY-MM-DD)", but a few kept the
+    taper's name, "db221110 03. 4th Of July" or "db220623d1 02 - Jam": those become "4th Of July (2022-11-10)"."""
+    m = re.match(r'db(\d\d)(\d\d)(\d\d)(?:d\d+)?\s+\d+\.?\s*(?:-\s*)?(.+)$', title)
+    return f'{m[4].strip()} (20{m[1]}-{m[2]}-{m[3]})' if m else re.sub(r'\s{2,}', ' > ', title)   # "Hope  Tamarin Alley": a lost ">"
+
 def manifest_tracks():
     """Jams that came already cut, as MP3s, with a manifest: manifests/<name>.csv lists them
-    (target = the audio/ key, kind, show_date, venue, song, track_no, jam_no, ...) and the files
-    themselves wait in incoming/<name>/ until converted. Mix rows (kind "mix") aren't on the station yet."""
+    (target, kind, show_date, venue, song, track_no, jam_no, ...) and the files themselves wait in
+    incoming/<name>/<target> until converted. A "show" row's target is its audio/ key. A "mix" row is a
+    track of a compilation (target mixes/<YYYY-01-01-mix-slug>/<NN>-jam1.mp3, venue "Mix <title>", the
+    date only its year): it goes on the air as audio/mix-<slug>-<NN>.mp3 with a "mix" title in place of a show."""
     if not os.path.isdir(MANIFESTS):
         return
     for name in sorted(os.listdir(MANIFESTS)):
@@ -81,13 +89,19 @@ def manifest_tracks():
             continue
         with open(os.path.join(MANIFESTS, name), newline='') as f:
             for r in csv.DictReader(f):
-                if r['kind'] != 'show':
-                    continue
+                src = os.path.join(INCOMING, name[:-4], r['target'])
                 num, jam = int(r['track_no']), int(r['jam_no']) if r['jam_no'] else None
-                venue, city = split_place(r['venue'])
-                yield r['target'], (os.path.join(INCOMING, name[:-4], r['target']),
-                                    {'_order': (r['show_date'], num, jam or 0), 'song': r['song'], 'jam': jam,
-                                     'date': r['show_date'], 'venue': venue, 'city': city})
+                if r['kind'] == 'show':
+                    venue, city = split_place(r['venue'])
+                    yield r['target'], (src, {'_order': (r['show_date'], '', num, jam or 0), 'song': r['song'], 'jam': jam,
+                                              'date': r['show_date'], 'venue': venue, 'city': city})
+                elif r['kind'] == 'mix':
+                    folder = r['target'].split('/')[1]
+                    slug = re.sub(r'^\d{4}-\d{2}-\d{2}-mix-', '', folder)
+                    title = re.sub(r'^Mix\s+', '', r['venue'])
+                    yield f'mix-{slug}-{num:02d}.mp3', (src, {'_order': (r['show_date'], folder, num, 0), 'song': mix_song(r['song']),
+                                                              'jam': None, 'date': r['show_date'], 'venue': title, 'city': '',
+                                                              'mix': title})
 
 def convert(flac, mp3):
     """Two-pass loudnorm: measure, then apply one linear gain (keeps the jam's dynamics).
@@ -99,8 +113,9 @@ def convert(flac, mp3):
     m = json.loads(out[out.rindex('{'):out.rindex('}') + 1])
     measured = (f"measured_I={m['input_i']}:measured_TP={m['input_tp']}:measured_LRA={m['input_lra']}"
                 f":measured_thresh={m['input_thresh']}:offset={m['target_offset']}:linear=true")
-    rate = run('ffprobe', '-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=sample_rate',
-               '-of', 'csv=p=0', flac).strip()
+    # just the number: for some MP3s ffprobe's csv ends the line with a stray comma ("48000,")
+    rate = re.match(r'\d+', run('ffprobe', '-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=sample_rate',
+                                 '-of', 'csv=p=0', flac).strip())[0]
     tmp = mp3 + '.part.mp3'
     run('ffmpeg', '-v', 'error', '-y', '-i', flac, '-vn', '-af', f'loudnorm={LOUDNORM}:{measured}',
         '-ar', rate, '-codec:a', 'libmp3lame', '-b:a', '192k',
@@ -289,7 +304,7 @@ def main():
             num, song, jam = int(t[1]), t[2], int(t[3]) if t[3] else None
             key = f'{date}-{num:02d}' + (f'-jam{jam}' if jam else '') + '.mp3'
             found[key] = (os.path.join(SHOWS, show, name),
-                          {'_order': (date, num, jam or 0), 'song': song, 'jam': jam, 'date': date, 'venue': venue, 'city': city})
+                          {'_order': (date, '', num, jam or 0), 'song': song, 'jam': jam, 'date': date, 'venue': venue, 'city': city})
     for key, track in manifest_tracks():
         found.setdefault(key, track)
 

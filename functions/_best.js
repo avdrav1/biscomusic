@@ -17,7 +17,7 @@ export const BEST = {
     path: '/api/best', mine: "track NOT LIKE '%/%'",
     async tracks(env, request) {
       const schedule = await env.ASSETS.fetch(new URL('/schedule.json', request.url)).then(r => r.json());
-      return new Map(schedule.tracks.map(t => [trackIdOf(t), { duration: t.duration, song: t.song, jam: t.jam, date: t.date, venue: t.venue, city: t.city }]));
+      return new Map(schedule.tracks.map(t => [trackIdOf(t), { duration: t.duration, song: t.song, jam: t.jam, date: t.date, venue: t.venue, city: t.city, mix: t.mix }]));
     },
   },
   shows: {
