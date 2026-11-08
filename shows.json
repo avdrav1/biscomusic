@@ -19309,8 +19309,8 @@
    "item": "db1999-03-13.shnf",
    "source": "DSBD",
    "kind": "sbd",
-   "rating": 4.75,
-   "ratings": 6,
+   "rating": 4.71,
+   "ratings": 7,
    "setlist": [
     [
      "Set 1",
@@ -19408,8 +19408,8 @@
    "item": "db1999-03-14.shnf",
    "source": "DSBD",
    "kind": "sbd",
-   "rating": 4.25,
-   "ratings": 2,
+   "rating": 4.5,
+   "ratings": 3,
    "setlist": [
     [
      "Set 1",
@@ -29346,8 +29346,8 @@
    "source": "??? (possible matrix/SBD recording) straight from the original Plan C vault",
    "kind": "matrix",
    "vault": true,
-   "rating": 3.36,
-   "ratings": 7,
+   "rating": 3.31,
+   "ratings": 8,
    "setlist": [
     [
      "Set 1",
@@ -33232,8 +33232,8 @@
    "source": "AKG 480ck61>V2>ADC20>DAP1",
    "kind": "aud",
    "vault": true,
-   "rating": 4.25,
-   "ratings": 10,
+   "rating": 4.14,
+   "ratings": 11,
    "setlist": [
     [
      "Set 1",
@@ -39174,7 +39174,7 @@
     {
      "title": "Radiator",
      "file": "db2001-04-27akg481d1t01.mp3",
-     "duration": 711.0,
+     "duration": 711.576,
      "segue": false
     },
     {
@@ -39186,13 +39186,13 @@
     {
      "title": "Home Again",
      "file": "db2001-04-27akg481d1t03.mp3",
-     "duration": 573.0,
+     "duration": 573.388,
      "segue": false
     },
     {
      "title": "Morph Dusseldorf",
      "file": "db2001-04-27akg481d1t04.mp3",
-     "duration": 490.0,
+     "duration": 490.606,
      "segue": true
     },
     {
@@ -46561,7 +46561,7 @@
     {
      "title": "House Dog Party Favor*",
      "file": "db2002-03-04d1/db2002-03-04d1t07.mp3",
-     "duration": 1021.0,
+     "duration": 1021.649,
      "segue": false
     },
     {
@@ -46579,7 +46579,7 @@
     {
      "title": "Shelby Rose",
      "file": "db2002-03-04d2/db2002-03-04d2t03.mp3",
-     "duration": 601.0,
+     "duration": 601.469,
      "segue": false
     },
     {
@@ -46591,7 +46591,7 @@
     {
      "title": "Floodlights*",
      "file": "db2002-03-04d2/db2002-03-04d2t05.mp3",
-     "duration": 159.0,
+     "duration": 159.269,
      "segue": false
     },
     {
@@ -46615,7 +46615,7 @@
     {
      "title": "Pilin' It High",
      "file": "db2002-03-04d3/db2002-03-04d3t04.mp3",
-     "duration": 392.0,
+     "duration": 392.516,
      "segue": false
     },
     {
@@ -77007,7 +77007,7 @@
     {
      "title": "Jigsaw Earth",
      "file": "db2006-04-23d2t04.mp3",
-     "duration": 875.0,
+     "duration": 875.285,
      "segue": false
     },
     {
@@ -77049,7 +77049,7 @@
     {
      "title": "Plan B",
      "file": "db2006-04-23d1t08.mp3",
-     "duration": 742.0,
+     "duration": 742.374,
      "segue": false
     }
    ]
@@ -89113,8 +89113,8 @@
    "source": "Schoeps mk41 (DIN) > kc5 > cmc6xt > Oade m148 > Mytek Stereo 192 > Tascam HD-P2 (24/96)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.66,
-   "ratings": 16,
+   "rating": 4.5,
+   "ratings": 17,
    "setlist": [
     [
      "Set 1",
@@ -89361,8 +89361,8 @@
    "source": "Schoeps MK4V (Balcony, DFC, ORTF) > KCY > VMS021B > Edirol R09 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.56,
-   "ratings": 36,
+   "rating": 4.57,
+   "ratings": 37,
    "setlist": [
     [
      "Set 1",
@@ -89457,8 +89457,8 @@
    "source": "{16 bit} MBHO ka500 > 603a > Lunatec V3 > Sonic AD2K+ > Microtrack @ 24/48",
    "kind": "aud",
    "vault": true,
-   "rating": 4.28,
-   "ratings": 18,
+   "rating": 4.21,
+   "ratings": 19,
    "setlist": [
     [
      "Set 1",
@@ -90101,8 +90101,8 @@
    "source": "Schoeps mk4 (ORTF) > kc5 > cmc6xt > Oade m148 > Mytek Stereo 192 > Tascam HD-P2 (24/96)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.37,
-   "ratings": 19,
+   "rating": 4.4,
+   "ratings": 20,
    "setlist": [
     [
      "Set 1",
@@ -97495,8 +97495,8 @@
    "source": "DPA 4021 (ORTF/FOB) > Oade m148 > Sony D50 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.75,
-   "ratings": 20,
+   "rating": 4.67,
+   "ratings": 21,
    "setlist": [
     [
      "Set 1",
@@ -97683,8 +97683,8 @@
    "source": "DPA 4021 (ORTF/FOB) > Oade m148 > Sony D50 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.5,
-   "ratings": 19,
+   "rating": 4.47,
+   "ratings": 20,
    "setlist": [
     [
      "Set 1",
@@ -99745,7 +99745,7 @@
     {
      "title": "Tuning",
      "file": "db2009-04-24d1t01.mp3",
-     "duration": 52.0,
+     "duration": 52.193,
      "segue": false
     },
     {
@@ -99817,7 +99817,7 @@
     {
      "title": "And the Ladies Were the Rest of the Night",
      "file": "db2009-04-24d2t06.mp3",
-     "duration": 309.0,
+     "duration": 309.002,
      "segue": false
     },
     {
@@ -99841,7 +99841,7 @@
     {
      "title": "Crowd/Banter",
      "file": "db2009-04-24d3t03.mp3",
-     "duration": 298.0,
+     "duration": 298.71,
      "segue": false
     },
     {
@@ -109259,8 +109259,8 @@
    "source": "(16bit)AKG480'sck61 (DIN Stereo) > Lunatec V2 (gain 25,rolloff2) > SONIC AD2k+ (24bit) (gain 18) [24/48] > Marantz PMD 661",
    "kind": "aud",
    "vault": true,
-   "rating": 3.95,
-   "ratings": 10,
+   "rating": 3.82,
+   "ratings": 11,
    "setlist": [
     [
      "Set 1",
@@ -109277,7 +109277,7 @@
     {
      "title": "Park Ave.",
      "file": "db2010-09-05akg481-16bitd1t02.mp3",
-     "duration": 430.0,
+     "duration": 430.655,
      "segue": false
     },
     {
@@ -109289,7 +109289,7 @@
     {
      "title": "Catalyst",
      "file": "db2010-09-05akg481-16bitd1t04.mp3",
-     "duration": 977.0,
+     "duration": 977.894,
      "segue": true
     },
     {
@@ -109301,7 +109301,7 @@
     {
      "title": "banter",
      "file": "db2010-09-05akg481-16bitd1t06.mp3",
-     "duration": 57.0,
+     "duration": 57.443,
      "segue": false
     },
     {
@@ -109346,7 +109346,7 @@
    "kind": "aud",
    "vault": true,
    "rating": 4.5,
-   "ratings": 9,
+   "ratings": 10,
    "setlist": [
     [
      "Set 1",
@@ -109463,8 +109463,8 @@
    "source": "Schoeps mk21 > kcy > Sonasax SX-M2 L/S > Sony PCM M-10",
    "kind": "aud",
    "vault": true,
-   "rating": 4.33,
-   "ratings": 12,
+   "rating": 4.23,
+   "ratings": 13,
    "setlist": [
     [
      "Set 1",
@@ -109679,8 +109679,8 @@
    "source": "Schoeps CCM4 (DIN) > Oade m248 > Edirol R44 (OCM) 24/96",
    "kind": "aud",
    "vault": true,
-   "rating": 4.14,
-   "ratings": 7,
+   "rating": 4,
+   "ratings": 8,
    "setlist": [
     [
      "Set 1",
@@ -109741,8 +109741,8 @@
    "source": "CA-CAFS(Omnis split 5') > STC-9000(+10db) > DR-07(LineIn, Vol@7) > WAV(24bit/48khz) > Audacity1.3.11b(amplified to -.01db, dithered) > WAV(16bit/44.1khz) > CD Wave Editor(tracked) > FLAC8(TLH), ~3' ROC, ~5' FOB, ~7.5' high",
    "kind": "aud",
    "vault": true,
-   "rating": 3.9,
-   "ratings": 10,
+   "rating": 3.77,
+   "ratings": 11,
    "setlist": [
     [
      "Set 1",
@@ -110134,7 +110134,7 @@
    "kind": "aud",
    "vault": true,
    "rating": 3.5,
-   "ratings": 6,
+   "ratings": 7,
    "setlist": [
     [
      "Set 1",
@@ -128220,8 +128220,8 @@
    "source": "AKG ck93 (hypers) > Zoom H6 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.26,
-   "ratings": 27,
+   "rating": 4.29,
+   "ratings": 28,
    "setlist": [
     [
      "Set 1",
@@ -128338,8 +128338,8 @@
    "source": "AKG ck93 (hypers) > Zoom H6 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.47,
-   "ratings": 29,
+   "rating": 4.42,
+   "ratings": 30,
    "setlist": [
     [
      "Set 1",
@@ -131018,8 +131018,8 @@
    "source": "Schoeps MK41v's (DINa/Vertical) > Nbob Actives > Naiant PFAs > Sonosax SX-M2D2 > Sound Devices MixPre 6 II Recording Format: Wav file, 32bit Float @ 48 kHz Sample Rate Location: FOB, LOC, 9 feet high, 25 feet from stage",
    "kind": "aud",
    "vault": true,
-   "rating": 4.39,
-   "ratings": 19,
+   "rating": 4.35,
+   "ratings": 20,
    "setlist": [
     [
      "Set 1",
@@ -131136,8 +131136,8 @@
    "source": "Schoeps MK41v's (DINa/Vertical) > Nbob Actives > Naiant PFAs > Sonosax SX-M2D2 > Sound Devices MixPre 6 II Recording Format: Wav file, 32bit Float @ 48 kHz Sample Rate Location: FOB, LOC, 8 feet high, 25 feet from stage",
    "kind": "aud",
    "vault": true,
-   "rating": 4.43,
-   "ratings": 22,
+   "rating": 4.41,
+   "ratings": 23,
    "setlist": [
     [
      "Set 1",
@@ -133736,13 +133736,13 @@
     {
      "title": "Spacebirdmatingcall (1)",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2002%20Spacebirdmatingcall%20%281%29.mp3",
-     "duration": 825.0,
+     "duration": 825.208,
      "segue": false
     },
     {
      "title": "To Be Continued",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2003%20To%20Be%20Continued.mp3",
-     "duration": 1235.0,
+     "duration": 1234.756,
      "segue": false
     },
     {
@@ -133754,7 +133754,7 @@
     {
      "title": "Spacebirdmatingcall (2)",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2005%20Spacebirdmatingcall%20%282%29.mp3",
-     "duration": 557.0,
+     "duration": 557.375,
      "segue": false
     },
     {
@@ -133778,7 +133778,7 @@
     {
      "title": "Munchkin Invasion",
      "file": "The%20Disco%20Biscuits%202026-04-24%20-%2009%20Munchkin%20Invasion.mp3",
-     "duration": 564.0,
+     "duration": 563.827,
      "segue": false
     },
     {
@@ -135370,8 +135370,8 @@
    "source": "DPA 4011A > Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 4.29,
-   "ratings": 17,
+   "rating": 4.33,
+   "ratings": 18,
    "setlist": [
     [
      "Set 1",
@@ -135470,8 +135470,8 @@
    "source": "Channels 1 & 2: Line Audio CM3 > Tascam DR-680 (24/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 3.82,
-   "ratings": 11,
+   "rating": 3.83,
+   "ratings": 12,
    "setlist": [
     [
      "Set 1",
@@ -135688,8 +135688,8 @@
    "source": "Schoeps mk4v (DINa) > kcy > Sonosax SX-M2/LS2 > Sony M10 (24/96)",
    "kind": "aud",
    "vault": true,
-   "rating": 3.12,
-   "ratings": 12,
+   "rating": 3.04,
+   "ratings": 14,
    "setlist": [
     [
      "Set 1",
@@ -135807,7 +135807,7 @@
    "kind": "aud",
    "vault": true,
    "rating": 3.96,
-   "ratings": 13,
+   "ratings": 14,
    "setlist": [
     [
      "Set 1",
@@ -135918,8 +135918,8 @@
    "source": "Sound Pro AT853 Cards -> Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 3.75,
-   "ratings": 12,
+   "rating": 3.73,
+   "ratings": 13,
    "setlist": [
     [
      "Set 1",
@@ -135976,8 +135976,8 @@
    "source": "DPA 6061 > Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 4.06,
-   "ratings": 17,
+   "rating": 4.05,
+   "ratings": 19,
    "setlist": [
     [
      "Set 1",
@@ -136078,8 +136078,8 @@
    "source": "DPA 4011A > Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 3.17,
-   "ratings": 12,
+   "rating": 3.31,
+   "ratings": 13,
    "setlist": [
     [
      "Set 1",
@@ -136307,6 +136307,454 @@
      "title": "And the Ladies Were the Rest of the Night",
      "file": "The%20Disco%20Biscuits%20-%202026-10-10%20Town%20Ballroom%20-%20Buffalo%2C%20NY%20-%2017%20And%20the%20Ladies%20Were%20the%20Rest%20of%20the%20Night.mp3",
      "duration": 162.84,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2026-10-28-capitol-center-for-the-arts-concord-nh",
+   "date": "2026-10-28",
+   "venue": "Capitol Center For The Arts",
+   "place": "Concord, NH",
+   "item": "db2026-10-28.elam260.tk62.sx-r4.flac",
+   "source": "Telefunken elam260.tk62(dina,@sbd) > sx-r4+(24/96)",
+   "kind": "matrix",
+   "vault": true,
+   "rating": 3.23,
+   "ratings": 11,
+   "setlist": [
+    [
+     "Set 1",
+     "Spaga's Last Stand, Spraypaint > Astronaut > Simulations > Astronaut > Spraypaint"
+    ],
+    [
+     "Set 2",
+     "Another Plan of Attack > House Dog Party Favor, Mirrors > Abraxas > In the End We Have Forever, Spy"
+    ],
+    [
+     "Encore",
+     "Twisted in the Road"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "",
+     "file": "01%20Tuning.mp3",
+     "duration": 79.056,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "02%20Spagas%20Last%20Stand.mp3",
+     "duration": 819.864,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "03%20Spraypaint.mp3",
+     "duration": 793.272,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "04%20Astronaut.mp3",
+     "duration": 645.336,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "05%20Simulations.mp3",
+     "duration": 735.12,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "06%20Astronaut.mp3",
+     "duration": 910.656,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "07%20Spraypaint.mp3",
+     "duration": 266.568,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "08%20Tuning.mp3",
+     "duration": 74.28,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "09%20Another%20Plan%20of%20Attack.mp3",
+     "duration": 1572.96,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "10%20House%20Dog%20Party%20Favor.mp3",
+     "duration": 1010.808,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "11%20Mirrors.mp3",
+     "duration": 1005.576,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "12%20Abraxas.mp3",
+     "duration": 726.0,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "13%20In%20the%20End%20We%20Have%20Forever.mp3",
+     "duration": 507.504,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "14%20Spy.mp3",
+     "duration": 738.0,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "15%20Encore%20Break.mp3",
+     "duration": 111.6,
+     "segue": false
+    },
+    {
+     "title": "",
+     "file": "16%20Twisted%20in%20the%20Road.mp3",
+     "duration": 538.608,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2026-10-29-infinity-music-hall-hartford-ct",
+   "date": "2026-10-29",
+   "venue": "Infinity Music Hall",
+   "place": "Hartford, CT",
+   "item": "db2026-10-29.tfm62.flac24",
+   "source": "Telefunken m62 (hypers @sbd) > MixPre6 II > WAV (32/48)",
+   "kind": "aud",
+   "vault": true,
+   "rating": 3.65,
+   "ratings": 10,
+   "setlist": [
+    [
+     "Set 1",
+     "Spectacle > Country Royale > Strobelights and Martinis > No Recollection > Spectacle"
+    ],
+    [
+     "Set 2",
+     "Shem-Rah Boo > Risky Business > Tempest > Bombs > Shem-Rah Boo > Three Wishes > Shem-Rah Boo, Save the Robots"
+    ],
+    [
+     "Encore",
+     "The Champions"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Spectacle",
+     "file": "01%20Spectacle.mp3",
+     "duration": 1595.616,
+     "segue": true
+    },
+    {
+     "title": "Country Royale",
+     "file": "02%20Country%20Royale.mp3",
+     "duration": 768.552,
+     "segue": true
+    },
+    {
+     "title": "Strobelights and Martinis",
+     "file": "03%20Strobelights%20and%20Martinis.mp3",
+     "duration": 596.16,
+     "segue": true
+    },
+    {
+     "title": "No Recollection",
+     "file": "04%20No%20Recollection.mp3",
+     "duration": 1049.976,
+     "segue": true
+    },
+    {
+     "title": "Spectacle",
+     "file": "05%20Spectacle.mp3",
+     "duration": 186.936,
+     "segue": false
+    },
+    {
+     "title": "Shem Rah Boo",
+     "file": "06%20Shem-Rah%20Boo.mp3",
+     "duration": 1104.456,
+     "segue": true
+    },
+    {
+     "title": "Risky Business",
+     "file": "07%20Risky%20Business.mp3",
+     "duration": 791.592,
+     "segue": true
+    },
+    {
+     "title": "Tempest",
+     "file": "08%20Tempest.mp3",
+     "duration": 810.72,
+     "segue": true
+    },
+    {
+     "title": "Bombs",
+     "file": "09%20Bombs.mp3",
+     "duration": 1034.664,
+     "segue": true
+    },
+    {
+     "title": "Shem Rah Boo",
+     "file": "10%20Shem-Rah%20Boo.mp3",
+     "duration": 203.088,
+     "segue": true
+    },
+    {
+     "title": "Three Wishes",
+     "file": "11%20Three%20Wishes.mp3",
+     "duration": 201.648,
+     "segue": true
+    },
+    {
+     "title": "Shem Rah Boo",
+     "file": "12%20Shem-Rah%20Boo.mp3",
+     "duration": 239.232,
+     "segue": false
+    },
+    {
+     "title": "Save the Robots",
+     "file": "13%20Save%20the%20Robots.mp3",
+     "duration": 962.544,
+     "segue": false
+    },
+    {
+     "title": "Encore Break",
+     "file": "14%20Encore%20Break.mp3",
+     "duration": 113.232,
+     "segue": false
+    },
+    {
+     "title": "The Champions",
+     "file": "15%20The%20Champions.mp3",
+     "duration": 725.064,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2026-10-30-the-palladium-worcester-ma",
+   "date": "2026-10-30",
+   "venue": "The Palladium",
+   "place": "Worcester, MA",
+   "item": "db2026-10-30.tfm62.flac24",
+   "source": "Telefunken m62 (hypers @sbd) > MixPre6 II > WAV (32/48)",
+   "kind": "aud",
+   "vault": true,
+   "rating": 4.19,
+   "ratings": 13,
+   "setlist": [
+    [
+     "Set 1",
+     "Dream Journal > Gangster > To Be Continued > Basis for a Day > And the Ladies Were the Rest of the Night"
+    ],
+    [
+     "Set 2",
+     "The Wormhole > Crickets > To Be Continued, And the Ladies Were the Rest of the Night > Dino Baby > Basis for a Day"
+    ],
+    [
+     "Encore",
+     "Running into the Night > Sabre Dance"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Dream Journal",
+     "file": "01%20Dream%20Journal.mp3",
+     "duration": 1241.712,
+     "segue": true
+    },
+    {
+     "title": "Gangster",
+     "file": "02%20Gangster.mp3",
+     "duration": 839.4,
+     "segue": true
+    },
+    {
+     "title": "To Be Continued",
+     "file": "03%20To%20Be%20Continued.mp3",
+     "duration": 979.032,
+     "segue": true
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "04%20Basis%20for%20a%20Day.mp3",
+     "duration": 1037.688,
+     "segue": true
+    },
+    {
+     "title": "And the Ladies Were the Rest of the Night",
+     "file": "05%20And%20the%20Ladies%20Were%20the%20Rest%20of%20the%20Night.mp3",
+     "duration": 241.44,
+     "segue": false
+    },
+    {
+     "title": "The Wormhole",
+     "file": "06%20The%20Wormhole.mp3",
+     "duration": 1352.736,
+     "segue": true
+    },
+    {
+     "title": "Crickets",
+     "file": "07%20Crickets.mp3",
+     "duration": 1174.368,
+     "segue": true
+    },
+    {
+     "title": "To Be Continued",
+     "file": "08%20To%20Be%20Continued.mp3",
+     "duration": 378.408,
+     "segue": false
+    },
+    {
+     "title": "And the Ladies Were the Rest of the Night",
+     "file": "09%20And%20the%20Ladies%20Were%20the%20Rest%20of%20the%20Night.mp3",
+     "duration": 660.816,
+     "segue": true
+    },
+    {
+     "title": "Dino Baby",
+     "file": "10%20Dino%20Baby.mp3",
+     "duration": 955.416,
+     "segue": true
+    },
+    {
+     "title": "Basis for a Day",
+     "file": "11%20Basis%20for%20a%20Day.mp3",
+     "duration": 195.984,
+     "segue": false
+    },
+    {
+     "title": "Encore Break",
+     "file": "12%20Encore%20Break.mp3",
+     "duration": 142.584,
+     "segue": false
+    },
+    {
+     "title": "Running Into the Night",
+     "file": "13%20Running%20Into%20the%20Night.mp3",
+     "duration": 408.072,
+     "segue": true
+    },
+    {
+     "title": "Sabre Dance",
+     "file": "14%20Sabre%20Dance.mp3",
+     "duration": 214.944,
+     "segue": false
+    }
+   ]
+  },
+  {
+   "show": "2026-10-31-the-palladium-worcester-ma",
+   "date": "2026-10-31",
+   "venue": "The Palladium",
+   "place": "Worcester, MA",
+   "item": "db2026-10-31.Worcester.Palladium",
+   "source": "DPA 4011A > Zoom F3",
+   "kind": "aud",
+   "vault": true,
+   "rating": 4.56,
+   "ratings": 16,
+   "setlist": [
+    [
+     "Set 1",
+     "Improvised Score to \u2018Beetlejuice\u2019"
+    ],
+    [
+     "Set 2",
+     "42 > Halloween Theme > Cyclone > Morph Dusseldorf, Shelby Rose"
+    ],
+    [
+     "Encore",
+     "Fire Will Exchange > 42"
+    ]
+   ],
+   "tracks": [
+    {
+     "title": "Crowd",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2001%20Crowd.mp3",
+     "duration": 76.68,
+     "segue": false
+    },
+    {
+     "title": "Beetlejuice Part 1",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2002%20Beetlejuice%20Part%201.mp3",
+     "duration": 3269.256,
+     "segue": false
+    },
+    {
+     "title": "Beetlejuice Part 2",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2003%20Beetlejuice%20Part%202.mp3",
+     "duration": 2212.56,
+     "segue": false
+    },
+    {
+     "title": "Crowd",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2004%20Crowd.mp3",
+     "duration": 61.68,
+     "segue": false
+    },
+    {
+     "title": "42",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2005%2042.mp3",
+     "duration": 928.08,
+     "segue": false
+    },
+    {
+     "title": "Halloween Theme",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2006%20Halloween%20Theme.mp3",
+     "duration": 806.592,
+     "segue": false
+    },
+    {
+     "title": "Cyclone",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2007%20Cyclone.mp3",
+     "duration": 643.92,
+     "segue": false
+    },
+    {
+     "title": "Morph Dusseldorf",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2008%20Morph%20Dusseldorf.mp3",
+     "duration": 1245.96,
+     "segue": false
+    },
+    {
+     "title": "Shelby Rose",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2009%20Shelby%20Rose.mp3",
+     "duration": 688.224,
+     "segue": false
+    },
+    {
+     "title": "Fire Will Exchange",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2010%20Fire%20Will%20Exchange.mp3",
+     "duration": 675.072,
+     "segue": false
+    },
+    {
+     "title": "42",
+     "file": "The%20Disco%20Biscuits%20-%202026-10-31%20%20-%20The%20Palladium%20-%20Worcester%2C%20MA%20%28DPA%204011A%29%20%5BFLAC24-96%5D/The%20Disco%20Biscuits%20-%202026-10-31%20The%20Palladium%20-%20Worcester%2C%20MA%20-%2011%2042.mp3",
+     "duration": 222.432,
      "segue": false
     }
    ]
