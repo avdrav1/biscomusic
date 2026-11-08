@@ -16,11 +16,20 @@ test('every track has a unique id the comment, flame and moment endpoints accept
   }
 });
 
-test("a mix's track names its mix, never its placeholder date", () => {
-  for (const t of schedule.tracks.filter(t => t.mix)) {
+test("a mix's track names its show when its title gave one, else its mix, never its placeholder date", () => {
+  const mix = schedule.tracks.filter(t => t.mix);
+  for (const t of mix) {
     assert.match(trackIdOf(t), /^mix-/);
-    assert.equal(showLine(t), `Mix · ${t.mix}`);
+    if (t.show) {
+      assert.match(t.show, new RegExp(`^${t.date}-`), `${t.song}: its show is on its date`);
+      assert.ok(t.venue && t.city, t.song);
+      assert.equal(showLine(t), showLine({ date: t.date, venue: t.venue, city: t.city }));
+    } else {
+      assert.equal(showLine(t), `Mix · ${t.mix}`);
+      assert.match(t.date, /-01-01$/);
+    }
   }
+  assert.ok(mix.filter(t => t.show).length > mix.length * 0.9, 'most mix tracks know their show');
 });
 
 test('malformed ids are refused', () => {

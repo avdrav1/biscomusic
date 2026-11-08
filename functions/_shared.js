@@ -54,8 +54,8 @@ export function parseMoment(m) {
   return match && { track: match[1], pos: Number(match[2]) };
 }
 
-// "Sep 26, 2026 · Venue · City, ST", or for a mix's track "Mix · <title>" (its date is only its year).
-export const showLine = t => t.mix ? `Mix · ${t.mix}`
+// "Sep 26, 2026 · Venue · City, ST", or for a mix's track not yet linked to its show "Mix · <title>" (its date is only its year).
+export const showLine = t => t.mix && !t.show ? `Mix · ${t.mix}`
   : `${new Date(t.date + 'T12:00:00Z').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })} · ${t.venue} · ${t.city}`;
 
 export const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;

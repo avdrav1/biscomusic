@@ -18,7 +18,7 @@ from array import array
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 
-import archive, bip, shows
+import archive, bip, mixes, shows
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SHOWS = os.path.dirname(HERE)
@@ -214,16 +214,40 @@ def bip_catalog():
     with urllib.request.urlopen(urllib.request.Request(BIP_API, headers=bip.UA), timeout=60) as r:
         return json.load(r)
 
+MIX_SHOW = ('date', 'venue', 'city', 'show', 'song', 'slug')   # what link_mixes sets on a mix's track
+
+def link_mixes(tracks):
+    """A mix's track whose title gives its date ("Caterpillar-Voices (2023-07-08)") gets that show from BIP:
+    its date, venue, city and show (BIP's slug), and its first song's slug. When the title's every word named
+    one of that night's songs, it reads as the setlist does ("Caterpillar > Voices Insane"); otherwise it keeps
+    its own words, less the date. See mixes.py."""
+    mix = [t for t in tracks if t.get('mix')]
+    years = {int(m[1][:4]) for t in mix if (m := mixes.DATE_RE.search(t['song']))}
+    by_date = mixes.shows_by_date(years)
+    linked = 0
+    for t in mix:
+        r = mixes.resolve(t['song'], by_date)
+        if not r:
+            continue
+        t.update(date=r['date'], venue=r['venue'], city=r['city'], show=r['show'],
+                 song=' > '.join(s['title'] for s in r['songs']) if r['whole'] else r['text'])
+        if r['songs']:
+            t['slug'] = r['songs'][0]['slug']
+        linked += 1
+    print(f'  mixes: {linked} of {len(mix)} tracks linked to their show, {sum(1 for t in mix if t.get("slug"))} to a song')
+
 def link_songs(tracks, catalog):
-    """Give each track its song's BIP slug, the key of /api/songs and clips.json."""
+    """Give each track its song's BIP slug, the key of /api/songs and clips.json (a mix's track may have it already)."""
     slugs = {s['slug'] for s in catalog}
     by_title = {song_key(s['title']): s['slug'] for s in catalog}
     missing = set()
     for t in tracks:
+        if t.get('slug') in slugs:
+            continue
         slug = BIP_ALIASES.get(t['song']) or by_title.get(song_key(t['song']))
         if slug in slugs:
             t['slug'] = slug
-        else:
+        elif not t.get('mix'):   # a mix's undated or unmatched titles ("Part 1", "Tetris") are expected
             missing.add(t['song'])
     if missing:
         print(f'  not on BIP (add to BIP_ALIASES): {", ".join(sorted(missing))}')
@@ -330,14 +354,18 @@ def main():
 
     try:
         catalog = bip_catalog()
+        link_mixes(tracks)
         link_songs(tracks, catalog)
-    except OSError as e:   # BIP down: the radio still deploys, with the song links of the last build
+    except OSError as e:   # BIP down: the radio still deploys, with the song and show links of the last build
         catalog = None
-        print(f'  BIP unreachable ({e}): keeping song links and clips.json from the last build')
-        before = {t['file']: t['slug'] for t in meta.get('tracks', []) if t.get('slug')}
+        print(f'  BIP unreachable ({e}): keeping song and show links and clips.json from the last build')
+        before = {t['file']: t for t in meta.get('tracks', [])}
         for t in tracks:
-            if t['file'] in before:
-                t['slug'] = before[t['file']]
+            last = before.get(t['file'], {})
+            if t.get('mix') and last.get('show'):
+                t.update({k: last[k] for k in MIX_SHOW if k in last})
+            elif last.get('slug'):
+                t['slug'] = last['slug']
 
     local = {'station': meta['station'], 'epoch': meta['epoch'], 'tracks': tracks}
     with open(os.path.join(HERE, 'schedule.json'), 'w') as f:

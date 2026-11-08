@@ -352,9 +352,18 @@ let audio = decks[0];
 let S, starts = [], total = 0, listening = false, curIdx = -1, shownIdx = -1;   // curIdx: on the deck; shownIdx: on screen
 
 const fmt = s => { s = Math.max(0, Math.floor(s)); const h = Math.floor(s/3600), m = Math.floor(s%3600/60), x = String(s%60).padStart(2,'0'); return h ? `${h}:${String(m).padStart(2,'0')}:${x}` : `${m}:${x}`; };
-const showLine = t => { if (t.mix) return `Mix · ${t.mix}`;   // a mix's track: its date is only the mix's year
+// A mix's track names its show once its title gave the date (build.py link_mixes); until then its date is only the mix's year.
+const showLine = t => { if (t.mix && !t.show) return `Mix · ${t.mix}`;
   const d = new Date(t.date+'T12:00:00'); return `${d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})} · ${t.venue} · ${t.city}`; };
-const jamLine = t => t.jam ? `Jam ${t.jam}` : '';
+const jamLine = t => t.mix && t.show ? `From the mix ${t.mix}` : t.jam ? `Jam ${t.jam}` : '';
+const BIP_SHOW = slug => 'https://discobiscuits.net/shows/' + encodeURIComponent(slug);
+// The show line, linked to the show on BIP when the track knows it (a mix's track does)
+function setShowLine(el, t) {
+  if (!t.show) { el.textContent = showLine(t); return; }
+  const a = document.createElement('a');
+  a.href = BIP_SHOW(t.show); a.target = '_blank'; a.rel = 'noopener'; a.textContent = showLine(t);
+  el.replaceChildren(a);
+}
 
 // What's on air. On jams.biscomusic.com that's the station state from /api/station (listener votes,
 // else the rotation); with no API (server.py) it's the old clock loop over schedule.json.
@@ -410,7 +419,7 @@ function render() {
     shownIdx = i;
     $('song').textContent = t.song;
     $('jam').textContent = jamLine(t);
-    $('show').textContent = showLine(t);
+    setShowLine($('show'), t);
     setTitle();
     if (!K.on) setRadioMeta(t);   // a clip owns the lock screen until it's closed
     renderFacts(t);
@@ -937,7 +946,7 @@ function voteRow(t) {
   const li = document.createElement('li'); li.dataset.track = trackId(t);
   const s = document.createElement('span'); s.className = 's';
   const name = document.createElement('span'); name.textContent = trackLabel(t);
-  const sub = document.createElement('small'); sub.textContent = `${t.mix ? `Mix · ${t.mix}` : `${shortDate(t)} · ${t.venue}`} · ${fmt(t.duration)}`;
+  const sub = document.createElement('small'); sub.textContent = `${t.mix && !t.show ? `Mix · ${t.mix}` : `${shortDate(t)} · ${t.venue}`} · ${fmt(t.duration)}`;
   s.append(name, sub);
   const meter = document.createElement('span'); meter.className = 'meter';
   meter.append(document.createElement('i'), document.createElement('b'));
@@ -1043,8 +1052,8 @@ function sheetResults() {
   if (!SHEET.hay) {
     SHEET.byId = new Map(S.tracks.map(t => [trackId(t), t]));
     SHEET.hay = new Map(S.tracks.map(t => [trackId(t),
-      norm(t.mix ? `${t.song} mix ${t.mix}`   // a mix's date is only its year: don't let it match day searches
-        : `${t.song} jam ${t.jam || ''} ${t.venue} ${t.city} ${t.date} ${shortDate(t)}`).split(/[\s,·]+/).filter(Boolean)]));
+      norm(t.mix && !t.show ? `${t.song} mix ${t.mix}`   // a placeholder date (only the mix's year) mustn't match day searches
+        : `${t.song} jam ${t.jam || ''} ${t.venue} ${t.city} ${t.date} ${shortDate(t)}${t.mix ? ` mix ${t.mix}` : ''}`).split(/[\s,·]+/).filter(Boolean)]));
   }
   const words = norm(SHEET.q).split(/[\s,]+/).filter(Boolean);
   let ids = rankBy(SHEET.filter).filter(SHEET.slug
