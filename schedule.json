@@ -3,6 +3,3126 @@
  "epoch": "2026-01-01T00:00:00Z",
  "tracks": [
   {
+   "file": "audio/2025-10-31-02-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 375.0,
+   "slug": "rock-candy"
+  },
+  {
+   "file": "audio/2025-10-31-03-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 315.0,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2025-10-31-03-jam2.mp3",
+   "song": "Country Royale",
+   "jam": 2,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 397.5,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2025-10-31-05-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 247.5,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2025-10-31-07-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 517.5,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2025-10-31-10-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2025-10-31",
+   "venue": "Hulaween",
+   "city": "Live Oak, FL",
+   "duration": 435.0,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2025-11-02-02-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 405.0,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2025-11-02-03-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 568.3,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2025-11-02-04-jam1.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 510.0,
+   "slug": "fire-will-exchange"
+  },
+  {
+   "file": "audio/2025-11-02-05-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 367.5,
+   "slug": "confrontation"
+  },
+  {
+   "file": "audio/2025-11-02-06-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 388.2,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-11-02-09-jam1.mp3",
+   "song": "Catalyst",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 450.0,
+   "slug": "catalyst"
+  },
+  {
+   "file": "audio/2025-11-02-10-jam1.mp3",
+   "song": "La Noche",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 277.5,
+   "slug": "la-noche"
+  },
+  {
+   "file": "audio/2025-11-02-10-jam2.mp3",
+   "song": "La Noche",
+   "jam": 2,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 382.5,
+   "slug": "la-noche"
+  },
+  {
+   "file": "audio/2025-11-02-11-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 690.0,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2025-11-02-14-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2025-11-02",
+   "venue": "Brooklyn Bowl Nashville",
+   "city": "Nashville, TN",
+   "duration": 285.0,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2025-11-05-02-jam1.mp3",
+   "song": "Svenghali",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 270.0,
+   "slug": "svenghali"
+  },
+  {
+   "file": "audio/2025-11-05-03-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 630.0,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2025-11-05-04-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 390.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2025-11-05-05-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 390.0,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-11-05-05-jam2.mp3",
+   "song": "Twisted in the Road",
+   "jam": 2,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 472.5,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-11-05-07-jam1.mp3",
+   "song": "Jigsaw Earth",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 645.0,
+   "slug": "jigsaw-earth"
+  },
+  {
+   "file": "audio/2025-11-05-08-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 292.5,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2025-11-05-09-jam1.mp3",
+   "song": "Risky Business",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 292.5,
+   "slug": "risky-business"
+  },
+  {
+   "file": "audio/2025-11-05-09-jam2.mp3",
+   "song": "Risky Business",
+   "jam": 2,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 412.501,
+   "slug": "risky-business"
+  },
+  {
+   "file": "audio/2025-11-05-11-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 420.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2025-11-05-12-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2025-11-05",
+   "venue": "Jefferson Theater",
+   "city": "Charlottesville, VA",
+   "duration": 390.0,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-11-06-02-jam1.mp3",
+   "song": "Magellan",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 375.0,
+   "slug": "magellan"
+  },
+  {
+   "file": "audio/2025-11-06-03-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 690.0,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2025-11-06-03-jam2.mp3",
+   "song": "Who's In Charge",
+   "jam": 2,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 600.0,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2025-11-06-04-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 705.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2025-11-06-05-jam1.mp3",
+   "song": "Shadow",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 307.5,
+   "slug": "shadow"
+  },
+  {
+   "file": "audio/2025-11-06-08-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 390.0,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-06-08-jam2.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 2,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 492.9,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-06-09-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 330.0,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2025-11-06-10-jam1.mp3",
+   "song": "Can't Decide",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 742.5,
+   "slug": "cant-decide"
+  },
+  {
+   "file": "audio/2025-11-06-14-jam1.mp3",
+   "song": "Falling 303",
+   "jam": 1,
+   "date": "2025-11-06",
+   "venue": "The NorVa",
+   "city": "Norfolk, VA",
+   "duration": 427.5,
+   "slug": "falling-303"
+  },
+  {
+   "file": "audio/2025-11-07-02-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 292.5,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2025-11-07-02-jam2.mp3",
+   "song": "Caterpillar",
+   "jam": 2,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 285.0,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2025-11-07-03-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 255.0,
+   "slug": "confrontation"
+  },
+  {
+   "file": "audio/2025-11-07-03-jam2.mp3",
+   "song": "Confrontation",
+   "jam": 2,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 615.0,
+   "slug": "confrontation"
+  },
+  {
+   "file": "audio/2025-11-07-04-jam1.mp3",
+   "song": "Freeze",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 652.5,
+   "slug": "freeze"
+  },
+  {
+   "file": "audio/2025-11-07-05-jam1.mp3",
+   "song": "The Wormhole",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 315.0,
+   "slug": "wormhole"
+  },
+  {
+   "file": "audio/2025-11-07-09-jam1.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 270.0,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2025-11-07-09-jam2.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 2,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 300.0,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2025-11-07-10-jam1.mp3",
+   "song": "Cyclone",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 277.5,
+   "slug": "cyclone"
+  },
+  {
+   "file": "audio/2025-11-07-11-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 240.0,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2025-11-07-11-jam2.mp3",
+   "song": "Above The Waves",
+   "jam": 2,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 270.0,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2025-11-07-12-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 495.0,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-11-07-14-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2025-11-07",
+   "venue": "The National",
+   "city": "Richmond, VA",
+   "duration": 240.0,
+   "slug": "rock-candy"
+  },
+  {
+   "file": "audio/2025-11-08-02-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 262.5,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2025-11-08-03-jam1.mp3",
+   "song": "Dream Journal",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 360.0,
+   "slug": "dream-journal"
+  },
+  {
+   "file": "audio/2025-11-08-04-jam1.mp3",
+   "song": "Portal To An Empty Head",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 510.1,
+   "slug": "portal-to-an-empty-head"
+  },
+  {
+   "file": "audio/2025-11-08-05-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 285.0,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2025-11-08-09-jam1.mp3",
+   "song": "La Noche",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 537.7,
+   "slug": "la-noche"
+  },
+  {
+   "file": "audio/2025-11-08-10-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 307.5,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2025-11-08-11-jam1.mp3",
+   "song": "Svenghali",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 358.0,
+   "slug": "svenghali"
+  },
+  {
+   "file": "audio/2025-11-08-13-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 352.5,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2025-11-08-14-jam1.mp3",
+   "song": "Neck Romancer",
+   "jam": 1,
+   "date": "2025-11-08",
+   "venue": "9_30 Club",
+   "city": "Washington, DC",
+   "duration": 292.5,
+   "slug": "neck-romancer"
+  },
+  {
+   "file": "audio/2025-11-14-02-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 285.0,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2025-11-14-03-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 330.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2025-11-14-03-jam2.mp3",
+   "song": "I-man",
+   "jam": 2,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 345.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2025-11-14-04-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 247.5,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2025-11-14-04-jam2.mp3",
+   "song": "The Deal",
+   "jam": 2,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 276.073,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2025-11-14-05-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 262.5,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2025-11-14-08-jam1.mp3",
+   "song": "Reactor",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 397.5,
+   "slug": "reactor"
+  },
+  {
+   "file": "audio/2025-11-14-09-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 667.5,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2025-11-14-10-jam1.mp3",
+   "song": "Bombs",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 644.6,
+   "slug": "bombs"
+  },
+  {
+   "file": "audio/2025-11-14-11-jam1.mp3",
+   "song": "Freeze",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 457.5,
+   "slug": "freeze"
+  },
+  {
+   "file": "audio/2025-11-14-11-jam2.mp3",
+   "song": "Freeze",
+   "jam": 2,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 427.793,
+   "slug": "freeze"
+  },
+  {
+   "file": "audio/2025-11-14-13-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 292.5,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-14-13-jam2.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 2,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 240.0,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-14-14-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2025-11-14",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 345.0,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2025-11-15-02-jam1.mp3",
+   "song": "Mirrors",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 397.5,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2025-11-15-02-jam2.mp3",
+   "song": "Mirrors",
+   "jam": 2,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 352.5,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2025-11-15-03-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 435.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2025-11-15-04-jam1.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 352.5,
+   "slug": "fire-will-exchange"
+  },
+  {
+   "file": "audio/2025-11-15-04-jam2.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 2,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 337.5,
+   "slug": "fire-will-exchange"
+  },
+  {
+   "file": "audio/2025-11-15-06-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 375.0,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-11-15-06-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 300.0,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-11-15-10-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 375.0,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-11-15-10-jam2.mp3",
+   "song": "Twisted in the Road",
+   "jam": 2,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 300.0,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-11-15-12-jam1.mp3",
+   "song": "In The End We Have Forever",
+   "jam": 1,
+   "date": "2025-11-15",
+   "venue": "Brooklyn Steel",
+   "city": "Brooklyn, NY",
+   "duration": 329.2,
+   "slug": "in-the-end-we-have-forever"
+  },
+  {
+   "file": "audio/2025-11-16-03-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 360.0,
+   "slug": "rock-candy"
+  },
+  {
+   "file": "audio/2025-11-16-04-jam1.mp3",
+   "song": "The Wormhole",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 375.0,
+   "slug": "wormhole"
+  },
+  {
+   "file": "audio/2025-11-16-05-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 247.5,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2025-11-16-06-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 270.0,
+   "slug": "minions"
+  },
+  {
+   "file": "audio/2025-11-16-09-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 491.567,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2025-11-16-14-jam1.mp3",
+   "song": "Neck Romancer",
+   "jam": 1,
+   "date": "2025-11-16",
+   "venue": "Sherman Theater",
+   "city": "Stroudsburg, PA",
+   "duration": 322.5,
+   "slug": "neck-romancer"
+  },
+  {
+   "file": "audio/2025-11-19-02-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 322.5,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-11-19-04-jam1.mp3",
+   "song": "Shadow",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 450.0,
+   "slug": "shadow"
+  },
+  {
+   "file": "audio/2025-11-19-06-jam1.mp3",
+   "song": "Shocked",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 270.0,
+   "slug": "shocked"
+  },
+  {
+   "file": "audio/2025-11-19-09-jam1.mp3",
+   "song": "Aceetobee",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 292.5,
+   "slug": "aceetobee"
+  },
+  {
+   "file": "audio/2025-11-19-10-jam1.mp3",
+   "song": "Munchkin Invasion",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 255.0,
+   "slug": "munchkin-invasion"
+  },
+  {
+   "file": "audio/2025-11-19-11-jam1.mp3",
+   "song": "Dream Journal",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 367.5,
+   "slug": "dream-journal"
+  },
+  {
+   "file": "audio/2025-11-19-11-jam2.mp3",
+   "song": "Dream Journal",
+   "jam": 2,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 382.5,
+   "slug": "dream-journal"
+  },
+  {
+   "file": "audio/2025-11-19-13-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2025-11-19",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 457.5,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2025-11-20-02-jam1.mp3",
+   "song": "Caves Of The East",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 592.5,
+   "slug": "caves-of-the-east"
+  },
+  {
+   "file": "audio/2025-11-20-03-jam1.mp3",
+   "song": "Home Again",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 330.0,
+   "slug": "home-again"
+  },
+  {
+   "file": "audio/2025-11-20-04-jam1.mp3",
+   "song": "The Great Abyss",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 532.5,
+   "slug": "the-great-abyss"
+  },
+  {
+   "file": "audio/2025-11-20-05-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 314.773,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2025-11-20-06-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 240.0,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2025-11-20-06-jam2.mp3",
+   "song": "Orch Theme",
+   "jam": 2,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 487.5,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2025-11-20-10-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 246.8,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2025-11-20-11-jam1.mp3",
+   "song": "Falling 303 x On Time",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 502.5,
+   "slug": "falling-303-x-on-time"
+  },
+  {
+   "file": "audio/2025-11-20-12-jam1.mp3",
+   "song": "Lunar Pursuit",
+   "jam": 1,
+   "date": "2025-11-20",
+   "venue": "Higher Ground",
+   "city": "South Burlington, VT",
+   "duration": 255.0,
+   "slug": "lunar-pursuit"
+  },
+  {
+   "file": "audio/2025-11-21-01-jam1.mp3",
+   "song": "42",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 558.6,
+   "slug": "42"
+  },
+  {
+   "file": "audio/2025-11-21-02-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 390.0,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-11-21-02-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 580.7,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-11-21-03-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 375.0,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2025-11-21-03-jam2.mp3",
+   "song": "No Recollection",
+   "jam": 2,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 254.6,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2025-11-21-04-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 360.0,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2025-11-21-05-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 360.0,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-21-05-jam2.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 2,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 262.3,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-11-21-06-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 315.0,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-11-21-07-jam1.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 1,
+   "date": "2025-11-21",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 240.0,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2025-11-22-01-jam1.mp3",
+   "song": "Feeling Twisted",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 465.0,
+   "slug": "feeling-twisted"
+  },
+  {
+   "file": "audio/2025-11-22-02-jam1.mp3",
+   "song": "Nughuffer",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 317.873,
+   "slug": "nughuffer"
+  },
+  {
+   "file": "audio/2025-11-22-03-jam1.mp3",
+   "song": "Cyclone",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 427.5,
+   "slug": "cyclone"
+  },
+  {
+   "file": "audio/2025-11-22-04-jam1.mp3",
+   "song": "Mr Don",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 262.5,
+   "slug": "mr-don"
+  },
+  {
+   "file": "audio/2025-11-22-04-jam2.mp3",
+   "song": "Mr Don",
+   "jam": 2,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 322.5,
+   "slug": "mr-don"
+  },
+  {
+   "file": "audio/2025-11-22-05-jam1.mp3",
+   "song": "Shadow",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 247.5,
+   "slug": "shadow"
+  },
+  {
+   "file": "audio/2025-11-22-06-jam1.mp3",
+   "song": "Mr Don",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 435.0,
+   "slug": "mr-don"
+  },
+  {
+   "file": "audio/2025-11-22-07-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 367.5,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2025-11-22-07-jam2.mp3",
+   "song": "Spraypaint",
+   "jam": 2,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 322.5,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2025-11-22-08-jam1.mp3",
+   "song": "Sound One",
+   "jam": 1,
+   "date": "2025-11-22",
+   "venue": "Town Ballroom",
+   "city": "Buffalo, NY",
+   "duration": 255.0,
+   "slug": "sound-one"
+  },
+  {
+   "file": "audio/2025-12-18-01-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 345.0,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2025-12-18-02-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 262.5,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2025-12-18-03-jam1.mp3",
+   "song": "One Chance To Save The World",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 307.5,
+   "slug": "a-chance-to-save-the-world"
+  },
+  {
+   "file": "audio/2025-12-18-04-jam1.mp3",
+   "song": "Risky Business",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 367.5,
+   "slug": "risky-business"
+  },
+  {
+   "file": "audio/2025-12-18-05-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 270.0,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2025-12-18-06-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 345.0,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-12-18-06-jam2.mp3",
+   "song": "Rivers",
+   "jam": 2,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 376.0,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-12-18-07-jam1.mp3",
+   "song": "Tourists Rocket Ship",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 255.0,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2025-12-18-07-jam2.mp3",
+   "song": "Tourists Rocket Ship",
+   "jam": 2,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 259.5,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2025-12-18-08-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 432.0,
+   "slug": "confrontation"
+  },
+  {
+   "file": "audio/2025-12-18-09-jam1.mp3",
+   "song": "Portal To An Empty Head",
+   "jam": 1,
+   "date": "2025-12-18",
+   "venue": "The Fillmore",
+   "city": "Minneapolis, MN",
+   "duration": 405.0,
+   "slug": "portal-to-an-empty-head"
+  },
+  {
+   "file": "audio/2025-12-19-03-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2025-12-19",
+   "venue": "Garcia's",
+   "city": "Chicago, IL",
+   "duration": 570.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2025-12-20-02-jam1.mp3",
+   "song": "The Overture",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 262.5,
+   "slug": "the-overture"
+  },
+  {
+   "file": "audio/2025-12-20-03-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 272.5,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2025-12-20-04-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 307.5,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2025-12-20-05-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 330.0,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2025-12-20-10-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 375.0,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-12-20-11-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2025-12-20",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 487.5,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2025-12-21-01-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2025-12-21",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 412.501,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2025-12-21-02-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2025-12-21",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 263.0,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2025-12-21-03-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2025-12-21",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 382.5,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-12-21-04-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2025-12-21",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 315.0,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2025-12-21-05-jam1.mp3",
+   "song": "Feeling Twisted",
+   "jam": 1,
+   "date": "2025-12-21",
+   "venue": "Thalia Hall",
+   "city": "Chicago, IL",
+   "duration": 330.0,
+   "slug": "feeling-twisted"
+  },
+  {
+   "file": "audio/2025-12-27-01-jam1.mp3",
+   "song": "Munchkin Invasion",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 1020.0,
+   "slug": "munchkin-invasion"
+  },
+  {
+   "file": "audio/2025-12-27-02-jam1.mp3",
+   "song": "Tourists Rocket Ship",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 360.0,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2025-12-27-02-jam2.mp3",
+   "song": "Tourists Rocket Ship",
+   "jam": 2,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 393.0,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2025-12-27-03-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 742.5,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2025-12-27-04-jam1.mp3",
+   "song": "Jigsaw Earth",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 277.5,
+   "slug": "jigsaw-earth"
+  },
+  {
+   "file": "audio/2025-12-27-04-jam2.mp3",
+   "song": "Jigsaw Earth",
+   "jam": 2,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 465.0,
+   "slug": "jigsaw-earth"
+  },
+  {
+   "file": "audio/2025-12-27-05-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 480.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2025-12-27-06-jam1.mp3",
+   "song": "Sound One",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 382.5,
+   "slug": "sound-one"
+  },
+  {
+   "file": "audio/2025-12-27-07-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 382.786,
+   "slug": "trap-door"
+  },
+  {
+   "file": "audio/2025-12-27-08-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 277.5,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2025-12-27-08-jam2.mp3",
+   "song": "Astronaut",
+   "jam": 2,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 420.0,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2025-12-27-09-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 277.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-12-27-09-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 277.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2025-12-27-10-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2025-12-27",
+   "venue": "College Street Music Hall",
+   "city": "New Haven, CT",
+   "duration": 285.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2025-12-28-01-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 300.0,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2025-12-28-02-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 577.5,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2025-12-28-03-jam1.mp3",
+   "song": "Postcard",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 397.5,
+   "slug": "postcard"
+  },
+  {
+   "file": "audio/2025-12-28-04-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 472.5,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2025-12-28-05-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 277.5,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2025-12-28-06-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 417.759,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2025-12-28-07-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 397.5,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2025-12-28-08-jam1.mp3",
+   "song": "One Chance To Save The World",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 240.0,
+   "slug": "a-chance-to-save-the-world"
+  },
+  {
+   "file": "audio/2025-12-28-08-jam2.mp3",
+   "song": "One Chance To Save The World",
+   "jam": 2,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 525.0,
+   "slug": "a-chance-to-save-the-world"
+  },
+  {
+   "file": "audio/2025-12-28-09-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 435.0,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2025-12-28-10-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2025-12-28",
+   "venue": "District Music Hall",
+   "city": "Norwalk, CT",
+   "duration": 300.0,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2025-12-30-01-jam1.mp3",
+   "song": "Mirrors",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 480.0,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2025-12-30-01-jam2.mp3",
+   "song": "Mirrors",
+   "jam": 2,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 427.5,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2025-12-30-02-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 270.0,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2025-12-30-03-jam1.mp3",
+   "song": "Mr Don",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 382.099,
+   "slug": "mr-don"
+  },
+  {
+   "file": "audio/2025-12-30-04-jam1.mp3",
+   "song": "Caves Of The East",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 480.0,
+   "slug": "caves-of-the-east"
+  },
+  {
+   "file": "audio/2025-12-30-05-jam1.mp3",
+   "song": "Story Of The World",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 270.0,
+   "slug": "story-of-the-world"
+  },
+  {
+   "file": "audio/2025-12-30-06-jam1.mp3",
+   "song": "Bombs",
+   "jam": 1,
+   "date": "2025-12-30",
+   "venue": "Royale",
+   "city": "Boston, MA",
+   "duration": 514.3,
+   "slug": "bombs"
+  },
+  {
+   "file": "audio/2025-12-31-01-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 345.0,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2025-12-31-01-jam2.mp3",
+   "song": "Mindless Dribble",
+   "jam": 2,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 375.0,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2025-12-31-02-jam1.mp3",
+   "song": "Voices Insane",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 502.5,
+   "slug": "voices-insane"
+  },
+  {
+   "file": "audio/2025-12-31-03-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 427.5,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-12-31-03-jam2.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 2,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 335.695,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2025-12-31-04-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 450.0,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-12-31-04-jam2.mp3",
+   "song": "Rivers",
+   "jam": 2,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 464.3,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2025-12-31-05-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 728.3,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2025-12-31-06-jam1.mp3",
+   "song": "Shadow",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 315.0,
+   "slug": "shadow"
+  },
+  {
+   "file": "audio/2025-12-31-07-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 371.651,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2025-12-31-08-jam1.mp3",
+   "song": "The Bells",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 255.0,
+   "slug": "the-bells"
+  },
+  {
+   "file": "audio/2025-12-31-09-jam1.mp3",
+   "song": "Better Off Alone",
+   "jam": 1,
+   "date": "2025-12-31",
+   "venue": "Roadrunner",
+   "city": "Boston, MA",
+   "duration": 288.8,
+   "slug": "better-off-alone"
+  },
+  {
+   "file": "audio/2026-02-06-02-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 360.0,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-02-06-02-jam2.mp3",
+   "song": "Save The Robots",
+   "jam": 2,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 480.0,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-02-06-02-jam3.mp3",
+   "song": "Save The Robots",
+   "jam": 3,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 315.0,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-02-06-03-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 285.0,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-02-06-05-jam1.mp3",
+   "song": "Tourists (Rocket Ship)",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 494.4,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2026-02-06-06-jam1.mp3",
+   "song": "Better in Doses",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 311.454,
+   "slug": "better-in-doses"
+  },
+  {
+   "file": "audio/2026-02-06-09-jam1.mp3",
+   "song": "Vassillios",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 599.596,
+   "slug": "vassillios"
+  },
+  {
+   "file": "audio/2026-02-06-10-jam1.mp3",
+   "song": "Munchkin Invasion",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 636.7,
+   "slug": "munchkin-invasion"
+  },
+  {
+   "file": "audio/2026-02-06-11-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 671.481,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-02-06-12-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 277.5,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2026-02-06-13-jam1.mp3",
+   "song": "Show Me Love",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 327.9,
+   "slug": "show-me-love"
+  },
+  {
+   "file": "audio/2026-02-06-14-jam1.mp3",
+   "song": "Munchkin Invasion",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 262.5,
+   "slug": "munchkin-invasion"
+  },
+  {
+   "file": "audio/2026-02-06-15-jam1.mp3",
+   "song": "One Day",
+   "jam": 1,
+   "date": "2026-02-06",
+   "venue": "Miami Beach Bandshell",
+   "city": "Miami Beach, FL",
+   "duration": 388.8,
+   "slug": "one-day"
+  },
+  {
+   "file": "audio/2026-02-07-02-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 465.0,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2026-02-07-03-jam1.mp3",
+   "song": "Magellan",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 405.0,
+   "slug": "magellan"
+  },
+  {
+   "file": "audio/2026-02-07-04-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 511.2,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2026-02-07-05-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 364.3,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2026-02-07-06-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 367.5,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2026-02-07-07-jam1.mp3",
+   "song": "Hymn",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 277.5,
+   "slug": "hymn"
+  },
+  {
+   "file": "audio/2026-02-07-07-jam2.mp3",
+   "song": "Hymn",
+   "jam": 2,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 277.1,
+   "slug": "hymn"
+  },
+  {
+   "file": "audio/2026-02-07-08-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 734.3,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2026-02-07-09-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2026-02-07",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 247.5,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2026-02-08-02-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 375.0,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2026-02-08-02-jam2.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 2,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 577.5,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2026-02-08-05-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 390.0,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2026-02-08-05-jam2.mp3",
+   "song": "Rivers",
+   "jam": 2,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 504.1,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2026-02-08-06-jam1.mp3",
+   "song": "Dino Baby",
+   "jam": 1,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 262.5,
+   "slug": "dino-baby"
+  },
+  {
+   "file": "audio/2026-02-08-07-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 255.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-02-08-07-jam2.mp3",
+   "song": "I-man",
+   "jam": 2,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 330.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-02-08-08-jam1.mp3",
+   "song": "Hot Air Balloon",
+   "jam": 1,
+   "date": "2026-02-08",
+   "venue": "Jam Cruise",
+   "city": "Miami, FL",
+   "duration": 420.0,
+   "slug": "hot-air-balloon"
+  },
+  {
+   "file": "audio/2026-03-19-02-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-03-19",
+   "venue": "Okeechobee Music & Arts Festival",
+   "city": "Okeechobee, FL",
+   "duration": 360.0,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2026-03-19-06-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2026-03-19",
+   "venue": "Okeechobee Music & Arts Festival",
+   "city": "Okeechobee, FL",
+   "duration": 270.0,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2026-04-11-01-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2026-04-11",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 359.363,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2026-04-11-02-jam1.mp3",
+   "song": "Photograph",
+   "jam": 1,
+   "date": "2026-04-11",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 262.5,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-04-11-02-jam2.mp3",
+   "song": "Photograph",
+   "jam": 2,
+   "date": "2026-04-11",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 337.5,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-04-11-02-jam3.mp3",
+   "song": "Photograph",
+   "jam": 3,
+   "date": "2026-04-11",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 268.1,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-04-11-03-jam1.mp3",
+   "song": "Sound One",
+   "jam": 1,
+   "date": "2026-04-11",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 252.8,
+   "slug": "sound-one"
+  },
+  {
+   "file": "audio/2026-04-12-02-jam1.mp3",
+   "song": "The Overture",
+   "jam": 1,
+   "date": "2026-04-12",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 352.5,
+   "slug": "the-overture"
+  },
+  {
+   "file": "audio/2026-04-12-04-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2026-04-12",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 330.0,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2026-04-12-05-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2026-04-12",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 307.5,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-04-12-05-jam2.mp3",
+   "song": "Abraxas",
+   "jam": 2,
+   "date": "2026-04-12",
+   "venue": "Gather Outdoors",
+   "city": "Stratton, VT",
+   "duration": 298.051,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-04-16-02-jam1.mp3",
+   "song": "Kitchen Mitts",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 651.9,
+   "slug": "kitchen-mitts"
+  },
+  {
+   "file": "audio/2026-04-16-03-jam1.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 637.5,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
+  },
+  {
+   "file": "audio/2026-04-16-04-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 309.5,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2026-04-16-05-jam1.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 328.952,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
+  },
+  {
+   "file": "audio/2026-04-16-09-jam1.mp3",
+   "song": "Hot Air Balloon",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 405.0,
+   "slug": "hot-air-balloon"
+  },
+  {
+   "file": "audio/2026-04-16-10-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 348.0,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-04-16-11-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 1005.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-04-16-12-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 459.0,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2026-04-16-13-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 240.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-04-16-13-jam2.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 2,
+   "date": "2026-04-16",
+   "venue": "The Observatory North Park",
+   "city": "San Diego, CA",
+   "duration": 487.5,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-04-18-02-jam1.mp3",
+   "song": "Mulberry's Dream",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 277.5,
+   "slug": "mulberry-s-dream"
+  },
+  {
+   "file": "audio/2026-04-18-03-jam1.mp3",
+   "song": "Space Train",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 345.0,
+   "slug": "space-train"
+  },
+  {
+   "file": "audio/2026-04-18-05-jam1.mp3",
+   "song": "Vassillios",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 654.9,
+   "slug": "vassillios"
+  },
+  {
+   "file": "audio/2026-04-18-06-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 330.0,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2026-04-18-06-jam2.mp3",
+   "song": "Astronaut",
+   "jam": 2,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 412.501,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2026-04-18-08-jam1.mp3",
+   "song": "The Overture",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 779.0,
+   "slug": "the-overture"
+  },
+  {
+   "file": "audio/2026-04-18-09-jam1.mp3",
+   "song": "Minions",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 693.268,
+   "slug": "minions"
+  },
+  {
+   "file": "audio/2026-04-18-10-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 457.5,
+   "slug": "trap-door"
+  },
+  {
+   "file": "audio/2026-04-18-10-jam2.mp3",
+   "song": "Trap Door",
+   "jam": 2,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 532.5,
+   "slug": "trap-door"
+  },
+  {
+   "file": "audio/2026-04-18-11-jam1.mp3",
+   "song": "Feeling Twisted",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 430.5,
+   "slug": "feeling-twisted"
+  },
+  {
+   "file": "audio/2026-04-18-12-jam1.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 330.0,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2026-04-18-12-jam2.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 2,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 442.5,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2026-04-18-13-jam1.mp3",
+   "song": "The Overture",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 255.0,
+   "slug": "the-overture"
+  },
+  {
+   "file": "audio/2026-04-18-14-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2026-04-18",
+   "venue": "The UC Theatre Taube Family Music Hall",
+   "city": "Berkeley, CA",
+   "duration": 382.5,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2026-04-19-01-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 457.5,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-04-19-02-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 480.0,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2026-04-19-03-jam1.mp3",
+   "song": "The Great Abyss",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 427.5,
+   "slug": "the-great-abyss"
+  },
+  {
+   "file": "audio/2026-04-19-03-jam2.mp3",
+   "song": "The Great Abyss",
+   "jam": 2,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 300.0,
+   "slug": "the-great-abyss"
+  },
+  {
+   "file": "audio/2026-04-19-04-jam1.mp3",
+   "song": "Shocked",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 375.0,
+   "slug": "shocked"
+  },
+  {
+   "file": "audio/2026-04-19-06-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 405.0,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2026-04-19-07-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 592.5,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-04-19-07-jam2.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 2,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 305.0,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-04-19-08-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 420.0,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2026-04-19-08-jam2.mp3",
+   "song": "Mindless Dribble",
+   "jam": 2,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 518.45,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2026-04-19-09-jam1.mp3",
+   "song": "Better in Doses",
+   "jam": 1,
+   "date": "2026-04-19",
+   "venue": "Crystal Bay Club Casino - Crown Room",
+   "city": "Crystal Bay, NV",
+   "duration": 515.7,
+   "slug": "better-in-doses"
+  },
+  {
+   "file": "audio/2026-04-24-01-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 824.3,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2026-04-24-02-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 825.189,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-04-24-03-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 1084.8,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2026-04-24-04-jam1.mp3",
+   "song": "Risky Business",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 652.3,
+   "slug": "risky-business"
+  },
+  {
+   "file": "audio/2026-04-24-05-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 391.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-04-24-07-jam1.mp3",
+   "song": "Rivers",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 1560.858,
+   "slug": "rivers"
+  },
+  {
+   "file": "audio/2026-04-24-08-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 735.0,
+   "slug": "rock-candy"
+  },
+  {
+   "file": "audio/2026-04-24-09-jam1.mp3",
+   "song": "Munchkin Invasion",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 361.4,
+   "slug": "munchkin-invasion"
+  },
+  {
+   "file": "audio/2026-04-24-10-jam1.mp3",
+   "song": "Tricycle",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 383.355,
+   "slug": "tricycle"
+  },
+  {
+   "file": "audio/2026-04-24-11-jam1.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 240.0,
+   "slug": "fire-will-exchange"
+  },
+  {
+   "file": "audio/2026-04-24-11-jam2.mp3",
+   "song": "Fire Will Exchange",
+   "jam": 2,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 467.1,
+   "slug": "fire-will-exchange"
+  },
+  {
+   "file": "audio/2026-04-24-13-jam1.mp3",
+   "song": "Story Of The World",
+   "jam": 1,
+   "date": "2026-04-24",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 585.0,
+   "slug": "story-of-the-world"
+  },
+  {
+   "file": "audio/2026-04-25-02-jam1.mp3",
+   "song": "Mirrors",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 690.0,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2026-04-25-03-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 165.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-04-25-03-jam2.mp3",
+   "song": "I-man",
+   "jam": 2,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 112.5,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-04-25-03-jam3.mp3",
+   "song": "I-man",
+   "jam": 3,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 172.5,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-04-25-03-jam4.mp3",
+   "song": "I-man",
+   "jam": 4,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 635.771,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-04-25-04-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 640.001,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2026-04-25-05-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 180.0,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2026-04-25-05-jam2.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 2,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 389.238,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2026-04-25-06-jam1.mp3",
+   "song": "Svenghali",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 142.5,
+   "slug": "svenghali"
+  },
+  {
+   "file": "audio/2026-04-25-06-jam2.mp3",
+   "song": "Svenghali",
+   "jam": 2,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 314.092,
+   "slug": "svenghali"
+  },
+  {
+   "file": "audio/2026-04-25-07-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 82.5,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2026-04-25-09-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 465.0,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2026-04-25-10-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 1020.0,
+   "slug": "m-e-m-p-h-i-s"
+  },
+  {
+   "file": "audio/2026-04-25-10-jam2.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 2,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 141.226,
+   "slug": "m-e-m-p-h-i-s"
+  },
+  {
+   "file": "audio/2026-04-25-11-jam1.mp3",
+   "song": "Shadow",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 105.0,
+   "slug": "shadow"
+  },
+  {
+   "file": "audio/2026-04-25-12-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2026-04-25",
+   "venue": "Brooklyn Bowl Las Vegas",
+   "city": "Las Vegas, NV",
+   "duration": 532.5,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2026-05-07-03-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 352.5,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2026-05-07-04-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 375.0,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2026-05-07-04-jam2.mp3",
+   "song": "Helicopters",
+   "jam": 2,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 607.5,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2026-05-07-05-jam1.mp3",
+   "song": "Hot Air Balloon",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 480.0,
+   "slug": "hot-air-balloon"
+  },
+  {
+   "file": "audio/2026-05-07-06-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 405.0,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2026-05-07-08-jam1.mp3",
+   "song": "Better Off Alone",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 277.5,
+   "slug": "better-off-alone"
+  },
+  {
+   "file": "audio/2026-05-07-10-jam1.mp3",
+   "song": "Tricycle x Like A Prayer",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 484.8,
+   "slug": "tricycle-x-like-a-prayer-2"
+  },
+  {
+   "file": "audio/2026-05-07-11-jam1.mp3",
+   "song": "Hymn",
+   "jam": 1,
+   "date": "2026-05-07",
+   "venue": "Viva El Gonzo",
+   "city": "San Jose Del Cabo, MX",
+   "duration": 318.995,
+   "slug": "hymn"
+  },
+  {
+   "file": "audio/2026-05-22-05-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-05-22",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 247.5,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-05-22-08-jam1.mp3",
+   "song": "Twisted in the Road",
+   "jam": 1,
+   "date": "2026-05-22",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 592.5,
+   "slug": "twisted-in-the-road"
+  },
+  {
+   "file": "audio/2026-05-23-02-jam1.mp3",
+   "song": "World Is Spinning",
+   "jam": 1,
+   "date": "2026-05-23",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 240.0,
+   "slug": "world-is-spinning"
+  },
+  {
+   "file": "audio/2026-05-23-02-jam2.mp3",
+   "song": "World Is Spinning",
+   "jam": 2,
+   "date": "2026-05-23",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 270.0,
+   "slug": "world-is-spinning"
+  },
+  {
+   "file": "audio/2026-05-23-10-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2026-05-23",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 283.175,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2026-05-23-11-jam1.mp3",
+   "song": "Bombs",
+   "jam": 1,
+   "date": "2026-05-23",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 532.5,
+   "slug": "bombs"
+  },
+  {
+   "file": "audio/2026-05-23-12-jam1.mp3",
+   "song": "Better in Doses",
+   "jam": 1,
+   "date": "2026-05-23",
+   "venue": "The Mishawaka",
+   "city": "Bellvue, CO",
+   "duration": 330.0,
+   "slug": "better-in-doses"
+  },
+  {
    "file": "audio/2026-05-24-01-jam1.mp3",
    "song": "Mishawaka Jam",
    "jam": 1,
@@ -181,6 +3301,1156 @@
    "city": "Westport, CT",
    "duration": 419.0,
    "slug": "astronaut"
+  },
+  {
+   "file": "audio/2026-06-13-02-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 480.0,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-06-13-02-jam2.mp3",
+   "song": "Run Like Hell",
+   "jam": 2,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 352.5,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-06-13-02-jam3.mp3",
+   "song": "Run Like Hell",
+   "jam": 3,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 555.0,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-06-13-03-jam1.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 622.451,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
+  },
+  {
+   "file": "audio/2026-06-13-04-jam1.mp3",
+   "song": "I-man",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 315.0,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-06-13-04-jam2.mp3",
+   "song": "I-man",
+   "jam": 2,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 304.9,
+   "slug": "i-man"
+  },
+  {
+   "file": "audio/2026-06-13-05-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 390.0,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-06-13-07-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 450.0,
+   "slug": "little-lai"
+  },
+  {
+   "file": "audio/2026-06-13-08-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 451.1,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2026-06-13-09-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 450.0,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-06-13-10-jam1.mp3",
+   "song": "Pimp Blue Rikki",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 342.9,
+   "slug": "pimp-blue-rikki"
+  },
+  {
+   "file": "audio/2026-06-13-11-jam1.mp3",
+   "song": "Cyclone",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 322.5,
+   "slug": "cyclone"
+  },
+  {
+   "file": "audio/2026-06-13-15-jam1.mp3",
+   "song": "Strobelights And Martinis",
+   "jam": 1,
+   "date": "2026-06-13",
+   "venue": "Levitt Pavilion",
+   "city": "Westport, CT",
+   "duration": 307.5,
+   "slug": "strobelights-and-martinis"
+  },
+  {
+   "file": "audio/2026-06-20-02-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 848.2,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-06-20-03-jam1.mp3",
+   "song": "Better in Doses",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 757.5,
+   "slug": "better-in-doses"
+  },
+  {
+   "file": "audio/2026-06-20-03-jam2.mp3",
+   "song": "Better in Doses",
+   "jam": 2,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 362.874,
+   "slug": "better-in-doses"
+  },
+  {
+   "file": "audio/2026-06-20-04-jam1.mp3",
+   "song": "Gangster",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 247.5,
+   "slug": "gangster"
+  },
+  {
+   "file": "audio/2026-06-20-04-jam2.mp3",
+   "song": "Gangster",
+   "jam": 2,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 270.0,
+   "slug": "gangster"
+  },
+  {
+   "file": "audio/2026-06-20-05-jam1.mp3",
+   "song": "Humuhumunukunukuapua'a",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 375.0,
+   "slug": "humuhumunukunukuapuaa"
+  },
+  {
+   "file": "audio/2026-06-20-07-jam1.mp3",
+   "song": "Above The Waves",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 307.5,
+   "slug": "above-the-waves"
+  },
+  {
+   "file": "audio/2026-06-20-10-jam1.mp3",
+   "song": "Photograph",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 397.5,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-06-20-10-jam2.mp3",
+   "song": "Photograph",
+   "jam": 2,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 262.5,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-06-20-11-jam1.mp3",
+   "song": "Falling",
+   "jam": 1,
+   "date": "2026-06-20",
+   "venue": "Lincoln Hill Farms",
+   "city": "Canandaigua, NY",
+   "duration": 247.5,
+   "slug": "falling"
+  },
+  {
+   "file": "audio/2026-06-21-02-jam1.mp3",
+   "song": "Digital Buddha",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 240.0,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2026-06-21-02-jam2.mp3",
+   "song": "Digital Buddha",
+   "jam": 2,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 255.0,
+   "slug": "digital-buddha"
+  },
+  {
+   "file": "audio/2026-06-21-03-jam1.mp3",
+   "song": "Vassillios",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 486.869,
+   "slug": "vassillios"
+  },
+  {
+   "file": "audio/2026-06-21-09-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 405.0,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2026-06-21-10-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 240.0,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-06-21-10-jam2.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 2,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 246.4,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-06-21-11-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 330.0,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2026-06-21-12-jam1.mp3",
+   "song": "Dino Baby",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 292.5,
+   "slug": "dino-baby"
+  },
+  {
+   "file": "audio/2026-06-21-15-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-06-21",
+   "venue": "Northlands Music & Arts Festival",
+   "city": "Swanzey, NH",
+   "duration": 540.0,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2026-07-04-02-jam1.mp3",
+   "song": "Mirrors",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 450.0,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2026-07-04-02-jam2.mp3",
+   "song": "Mirrors",
+   "jam": 2,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 255.0,
+   "slug": "mirrors"
+  },
+  {
+   "file": "audio/2026-07-04-04-jam1.mp3",
+   "song": "Ring The Doorbell Twice",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 390.0,
+   "slug": "ring-the-doorbell-twice"
+  },
+  {
+   "file": "audio/2026-07-04-08-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 247.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2026-07-04-08-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 487.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2026-07-04-10-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 339.754,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2026-07-04-11-jam1.mp3",
+   "song": "Times Square",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 629.0,
+   "slug": "times-square"
+  },
+  {
+   "file": "audio/2026-07-04-12-jam1.mp3",
+   "song": "Simulations",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 367.5,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2026-07-04-12-jam2.mp3",
+   "song": "Simulations",
+   "jam": 2,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 345.0,
+   "slug": "simulations"
+  },
+  {
+   "file": "audio/2026-07-04-13-jam1.mp3",
+   "song": "Caterpillar",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 382.5,
+   "slug": "caterpillar"
+  },
+  {
+   "file": "audio/2026-07-04-14-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-07-04",
+   "venue": "Borgata Event Center",
+   "city": "Atlantic City, NJ",
+   "duration": 255.0,
+   "slug": "little-lai"
+  },
+  {
+   "file": "audio/2026-07-10-02-jam1.mp3",
+   "song": "Mr. Don",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 660.0,
+   "slug": "mr-don"
+  },
+  {
+   "file": "audio/2026-07-10-04-jam1.mp3",
+   "song": "The Deal",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 337.5,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2026-07-10-04-jam2.mp3",
+   "song": "The Deal",
+   "jam": 2,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 307.5,
+   "slug": "the-deal"
+  },
+  {
+   "file": "audio/2026-07-10-05-jam1.mp3",
+   "song": "Abraxas",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 262.5,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-07-10-05-jam2.mp3",
+   "song": "Abraxas",
+   "jam": 2,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 255.0,
+   "slug": "abraxas"
+  },
+  {
+   "file": "audio/2026-07-10-06-jam1.mp3",
+   "song": "Astronaut",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 757.5,
+   "slug": "astronaut"
+  },
+  {
+   "file": "audio/2026-07-10-08-jam1.mp3",
+   "song": "Shelby Rose",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 667.5,
+   "slug": "shelby-rose"
+  },
+  {
+   "file": "audio/2026-07-10-10-jam1.mp3",
+   "song": "Hymn",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 247.5,
+   "slug": "hymn"
+  },
+  {
+   "file": "audio/2026-07-10-10-jam2.mp3",
+   "song": "Hymn",
+   "jam": 2,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 352.5,
+   "slug": "hymn"
+  },
+  {
+   "file": "audio/2026-07-10-11-jam1.mp3",
+   "song": "And The Ladies Were The Rest Of The Night",
+   "jam": 1,
+   "date": "2026-07-10",
+   "venue": "State Theatre",
+   "city": "Portland, ME",
+   "duration": 630.0,
+   "slug": "and-the-ladies-were-the-rest-of-the-night"
+  },
+  {
+   "file": "audio/2026-07-11-03-jam1.mp3",
+   "song": "Aceetobee",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 345.0,
+   "slug": "aceetobee"
+  },
+  {
+   "file": "audio/2026-07-11-04-jam1.mp3",
+   "song": "Run Like Hell",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 517.5,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-07-11-04-jam2.mp3",
+   "song": "Run Like Hell",
+   "jam": 2,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 240.0,
+   "slug": "run-like-hell"
+  },
+  {
+   "file": "audio/2026-07-11-05-jam1.mp3",
+   "song": "Country Royale",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 457.5,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2026-07-11-05-jam2.mp3",
+   "song": "Country Royale",
+   "jam": 2,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 362.5,
+   "slug": "country-royale"
+  },
+  {
+   "file": "audio/2026-07-11-09-jam1.mp3",
+   "song": "Hot Air Balloon",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 436.5,
+   "slug": "hot-air-balloon"
+  },
+  {
+   "file": "audio/2026-07-11-10-jam1.mp3",
+   "song": "Falling",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 270.0,
+   "slug": "falling"
+  },
+  {
+   "file": "audio/2026-07-11-10-jam2.mp3",
+   "song": "Falling",
+   "jam": 2,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 442.5,
+   "slug": "falling"
+  },
+  {
+   "file": "audio/2026-07-11-11-jam1.mp3",
+   "song": "Who's In Charge",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 240.0,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2026-07-11-11-jam2.mp3",
+   "song": "Who's In Charge",
+   "jam": 2,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 252.2,
+   "slug": "who-s-in-charge"
+  },
+  {
+   "file": "audio/2026-07-11-12-jam1.mp3",
+   "song": "Spaga's Last Stand",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 367.0,
+   "slug": "spaga-s-last-stand"
+  },
+  {
+   "file": "audio/2026-07-11-14-jam1.mp3",
+   "song": "Plan B",
+   "jam": 1,
+   "date": "2026-07-11",
+   "venue": "Jeezum Crow Festival",
+   "city": "Jay, VT",
+   "duration": 307.5,
+   "slug": "plan-b"
+  },
+  {
+   "file": "audio/2026-07-12-02-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 247.5,
+   "slug": "m-e-m-p-h-i-s"
+  },
+  {
+   "file": "audio/2026-07-12-02-jam2.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 2,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 493.0,
+   "slug": "m-e-m-p-h-i-s"
+  },
+  {
+   "file": "audio/2026-07-12-03-jam1.mp3",
+   "song": "Little Lai",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 545.8,
+   "slug": "little-lai"
+  },
+  {
+   "file": "audio/2026-07-12-04-jam1.mp3",
+   "song": "Trap Door",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 358.666,
+   "slug": "trap-door"
+  },
+  {
+   "file": "audio/2026-07-12-05-jam1.mp3",
+   "song": "Gangster",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 255.0,
+   "slug": "gangster"
+  },
+  {
+   "file": "audio/2026-07-12-06-jam1.mp3",
+   "song": "We Like To Party",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 247.5,
+   "slug": "we-like-to-party"
+  },
+  {
+   "file": "audio/2026-07-12-08-jam1.mp3",
+   "song": "Spectacle",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 255.0,
+   "slug": "spectacle"
+  },
+  {
+   "file": "audio/2026-07-12-10-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 427.5,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-07-12-13-jam1.mp3",
+   "song": "Spraypaint",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 300.0,
+   "slug": "spraypaint"
+  },
+  {
+   "file": "audio/2026-07-12-14-jam1.mp3",
+   "song": "Hope",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 262.5,
+   "slug": "hope"
+  },
+  {
+   "file": "audio/2026-07-12-15-jam1.mp3",
+   "song": "Save The Robots",
+   "jam": 1,
+   "date": "2026-07-12",
+   "venue": "Soundcheck Studios",
+   "city": "Pembroke, MA",
+   "duration": 285.0,
+   "slug": "save-the-robots"
+  },
+  {
+   "file": "audio/2026-07-24-03-jam1.mp3",
+   "song": "Let's Dance",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 396.097,
+   "slug": "let-s-dance"
+  },
+  {
+   "file": "audio/2026-07-24-04-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 387.657,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-07-24-05-jam1.mp3",
+   "song": "Dino Baby",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 502.5,
+   "slug": "dino-baby"
+  },
+  {
+   "file": "audio/2026-07-24-05-jam2.mp3",
+   "song": "Dino Baby",
+   "jam": 2,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 690.0,
+   "slug": "dino-baby"
+  },
+  {
+   "file": "audio/2026-07-24-06-jam1.mp3",
+   "song": "Risky Business",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 457.5,
+   "slug": "risky-business"
+  },
+  {
+   "file": "audio/2026-07-24-07-jam1.mp3",
+   "song": "Spacebirdmatingcall",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 277.5,
+   "slug": "spacebirdmatingcall"
+  },
+  {
+   "file": "audio/2026-07-24-09-jam1.mp3",
+   "song": "Confrontation",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 279.4,
+   "slug": "confrontation"
+  },
+  {
+   "file": "audio/2026-07-24-10-jam1.mp3",
+   "song": "Another Spin",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 300.0,
+   "slug": "another-spin"
+  },
+  {
+   "file": "audio/2026-07-24-10-jam2.mp3",
+   "song": "Another Spin",
+   "jam": 2,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 298.253,
+   "slug": "another-spin"
+  },
+  {
+   "file": "audio/2026-07-24-11-jam1.mp3",
+   "song": "Tourists (Rocket Ship)",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 255.0,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2026-07-24-11-jam2.mp3",
+   "song": "Tourists (Rocket Ship)",
+   "jam": 2,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 650.881,
+   "slug": "tourists-rocket-ship"
+  },
+  {
+   "file": "audio/2026-07-24-14-jam1.mp3",
+   "song": "Once The Fiddler Paid",
+   "jam": 1,
+   "date": "2026-07-24",
+   "venue": "Flood City Music Festival",
+   "city": "Johnstown, PA",
+   "duration": 307.5,
+   "slug": "once-the-fiddler-paid"
+  },
+  {
+   "file": "audio/2026-07-25-02-jam1.mp3",
+   "song": "Story Of The World",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 472.5,
+   "slug": "story-of-the-world"
+  },
+  {
+   "file": "audio/2026-07-25-03-jam1.mp3",
+   "song": "Big Wrecking Ball",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 364.0,
+   "slug": "big-wrecking-ball"
+  },
+  {
+   "file": "audio/2026-07-25-04-jam1.mp3",
+   "song": "Crickets",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 367.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2026-07-25-04-jam2.mp3",
+   "song": "Crickets",
+   "jam": 2,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 787.5,
+   "slug": "crickets"
+  },
+  {
+   "file": "audio/2026-07-25-05-jam1.mp3",
+   "song": "Bombs",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 371.8,
+   "slug": "bombs"
+  },
+  {
+   "file": "audio/2026-07-25-06-jam1.mp3",
+   "song": "To Be Continued",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 457.5,
+   "slug": "to-be-continued"
+  },
+  {
+   "file": "audio/2026-07-25-07-jam1.mp3",
+   "song": "Spectacle",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 300.0,
+   "slug": "spectacle"
+  },
+  {
+   "file": "audio/2026-07-25-08-jam1.mp3",
+   "song": "Mindless Dribble",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 420.0,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2026-07-25-08-jam2.mp3",
+   "song": "Mindless Dribble",
+   "jam": 2,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 460.856,
+   "slug": "mindless-dribble"
+  },
+  {
+   "file": "audio/2026-07-25-09-jam1.mp3",
+   "song": "No Recollection",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 427.5,
+   "slug": "no-recollection"
+  },
+  {
+   "file": "audio/2026-07-25-10-jam1.mp3",
+   "song": "Orch Theme",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 780.0,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2026-07-25-10-jam2.mp3",
+   "song": "Orch Theme",
+   "jam": 2,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 342.0,
+   "slug": "orch-theme"
+  },
+  {
+   "file": "audio/2026-07-25-13-jam1.mp3",
+   "song": "Helicopters",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 435.0,
+   "slug": "helicopters"
+  },
+  {
+   "file": "audio/2026-07-25-14-jam1.mp3",
+   "song": "M.E.M.P.H.I.S.",
+   "jam": 1,
+   "date": "2026-07-25",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 476.256,
+   "slug": "m-e-m-p-h-i-s"
+  },
+  {
+   "file": "audio/2026-07-26-02-jam1.mp3",
+   "song": "Neck Romancer",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 412.501,
+   "slug": "neck-romancer"
+  },
+  {
+   "file": "audio/2026-07-26-03-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 491.1,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2026-07-26-04-jam1.mp3",
+   "song": "Photograph",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 270.0,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-07-26-04-jam2.mp3",
+   "song": "Photograph",
+   "jam": 2,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 284.863,
+   "slug": "photograph"
+  },
+  {
+   "file": "audio/2026-07-26-05-jam1.mp3",
+   "song": "Rock Candy",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 288.0,
+   "slug": "rock-candy"
+  },
+  {
+   "file": "audio/2026-07-26-07-jam1.mp3",
+   "song": "Little Shimmy In A Conga Line",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 292.5,
+   "slug": "little-shimmy-in-a-conga-line"
+  },
+  {
+   "file": "audio/2026-07-26-09-jam1.mp3",
+   "song": "Morph Dusseldorf",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 592.5,
+   "slug": "morph-dusseldorf"
+  },
+  {
+   "file": "audio/2026-07-26-10-jam1.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 360.0,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2026-07-26-10-jam2.mp3",
+   "song": "House Dog Party Favor",
+   "jam": 2,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 412.501,
+   "slug": "house-dog-party-favor"
+  },
+  {
+   "file": "audio/2026-07-26-11-jam1.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 337.5,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2026-07-26-11-jam2.mp3",
+   "song": "Scars Of The Brave",
+   "jam": 2,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 579.5,
+   "slug": "scars-of-the-brave"
+  },
+  {
+   "file": "audio/2026-07-26-13-jam1.mp3",
+   "song": "Portal To An Empty Head",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 291.7,
+   "slug": "portal-to-an-empty-head"
+  },
+  {
+   "file": "audio/2026-07-26-15-jam1.mp3",
+   "song": "Home Again",
+   "jam": 1,
+   "date": "2026-07-26",
+   "venue": "Heuser Park",
+   "city": "King of Prussia, PA",
+   "duration": 420.0,
+   "slug": "home-again"
   },
   {
    "file": "audio/2026-08-07-02-jam1.mp3",

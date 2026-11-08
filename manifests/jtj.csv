@@ -1,0 +1,1003 @@
+target,kind,show_date,venue,song,track_no,orig_track,jam_no,start_sec,end_sec,duration_sec,kbps
+mixes/2009-01-01-mix-best-jams-fall-2009/01-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Astronaut,1,01,1,0.0,426.27,426.27,192
+mixes/2009-01-01-mix-best-jams-fall-2009/02-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Story Of The World,2,02,1,0.0,270.27,270.27,192
+mixes/2009-01-01-mix-best-jams-fall-2009/03-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Vassillios,3,03,1,0.0,310.71,310.71,192
+mixes/2009-01-01-mix-best-jams-fall-2009/04-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Humuhumunukunukuapua'a,4,04,1,0.0,302.48,302.48,192
+mixes/2009-01-01-mix-best-jams-fall-2009/05-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Orch Theme,5,05,1,0.0,182.18,182.18,192
+mixes/2009-01-01-mix-best-jams-fall-2009/06-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Shem-rah Boo,6,06,1,0.0,314.73,314.73,192
+mixes/2009-01-01-mix-best-jams-fall-2009/07-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Sound One,7,07,1,0.0,375.18,375.18,192
+mixes/2009-01-01-mix-best-jams-fall-2009/08-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Little Shimmy In A Conga Line,8,08,1,0.0,414.07,414.07,192
+mixes/2009-01-01-mix-best-jams-fall-2009/09-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,I-Man,9,09,1,0.0,382.44,382.44,192
+mixes/2009-01-01-mix-best-jams-fall-2009/10-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Bernstein and Chasnoff,10,10,1,0.0,320.84,320.84,192
+mixes/2009-01-01-mix-best-jams-fall-2009/11-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,House Dog Party Favor,11,11,1,0.0,315.15,315.15,192
+mixes/2009-01-01-mix-best-jams-fall-2009/12-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Orch Theme,12,12,1,0.0,298.3,298.3,192
+mixes/2009-01-01-mix-best-jams-fall-2009/13-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,42,13,13,1,0.0,332.81,332.81,192
+mixes/2009-01-01-mix-best-jams-fall-2009/14-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Cyclone,14,14,1,0.0,275.7,275.7,192
+mixes/2009-01-01-mix-best-jams-fall-2009/15-jam1.mp3,mix,2009-01-01,Mix Best Jams Fall 2009,Save The Robots,15,15,1,0.0,276.33,276.33,192
+mixes/2009-01-01-mix-jams-tourney-2009/01-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shem-Rah Boo > Hot Air Balloon (2009-09-18),1,01,1,0.0,314.73,314.73,192
+mixes/2009-01-01-mix-jams-tourney-2009/02-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,7-11 > Cyclone (2009-02-25),2,02,1,0.0,719.78,719.78,192
+mixes/2009-01-01-mix-jams-tourney-2009/03-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Floodlights (2009-10-03),3,03,1,0.0,542.67,542.67,192
+mixes/2009-01-01-mix-jams-tourney-2009/04-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Basis (2nd) (2009-09-19),4,04,1,0.0,632.63,632.63,192
+mixes/2009-01-01-mix-jams-tourney-2009/05-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Run Like Hell > Humu (2009-04-23),5,05,1,0.0,661.76,661.76,192
+mixes/2009-01-01-mix-jams-tourney-2009/06-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Hope > Digital Buddha (2009-06-25),6,06,1,0.0,878.68,878.68,192
+mixes/2009-01-01-mix-jams-tourney-2009/07-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Run Like Hell (2009-12-30),7,07,1,0.0,661.94,661.94,192
+mixes/2009-01-01-mix-jams-tourney-2009/08-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Rockafella > Caterpillar (2009-07-01),8,08,1,0.0,424.2,424.2,192
+mixes/2009-01-01-mix-jams-tourney-2009/09-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Basis (2nd) (2009-06-05),9,09,1,0.0,603.25,603.25,192
+mixes/2009-01-01-mix-jams-tourney-2009/10-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Gangster > Waves (2009-12-31),10,10,1,0.0,753.82,753.82,192
+mixes/2009-01-01-mix-jams-tourney-2009/11-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,OL > RLH (2009-07-04),11,11,1,0.0,1441.46,1441.46,192
+mixes/2009-01-01-mix-jams-tourney-2009/12-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shadow > Confrontation (2009-06-03),12,12,1,0.0,1234.44,1234.44,192
+mixes/2009-01-01-mix-jams-tourney-2009/13-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,HAB > Gangster (2009-06-05),13,13,1,0.0,660.58,660.58,192
+mixes/2009-01-01-mix-jams-tourney-2009/14-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shanker > Shimmy (2009-09-24),14,14,1,0.0,916.14,916.14,192
+mixes/2009-01-01-mix-jams-tourney-2009/15-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,42 > Spacebird (2009-02-15),15,15,1,0.0,600.79,600.79,192
+mixes/2009-01-01-mix-jams-tourney-2009/16-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Strobelights > HAB (2009-07-17),16,16,1,0.0,621.3,621.3,192
+mixes/2009-01-01-mix-jams-tourney-2009/17-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,The Great Abyss > Spacebirdmatingcall,17,17,1,0.0,652.93,652.93,192
+mixes/2009-01-01-mix-jams-tourney-2009/18-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Grass is Green > Minions (2009-12-26),18,18,1,0.0,481.65,481.65,192
+mixes/2009-01-01-mix-jams-tourney-2009/19-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,AC2B > Caterpillar (2009-07-01),19,19,1,0.0,481.23,481.23,192
+mixes/2009-01-01-mix-jams-tourney-2009/20-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Triumph > Basis (2009-01-16),20,20,1,0.0,877.11,877.11,192
+mixes/2009-01-01-mix-jams-tourney-2009/21-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Run Like Hell (2009-06-28),21,21,1,0.0,899.58,899.58,192
+mixes/2009-01-01-mix-jams-tourney-2009/22-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shem-Rah > Tricycle,22,22,1,0.0,404.17,404.17,192
+mixes/2009-01-01-mix-jams-tourney-2009/23-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Astronaut (2nd) (2009-09-26),23,23,1,0.0,825.76,825.76,192
+mixes/2009-01-01-mix-jams-tourney-2009/24-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Tempest > B&C (2009-11-20),24,24,1,0.0,704.08,704.08,192
+mixes/2009-01-01-mix-jams-tourney-2009/25-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shem-Rah  Lunar Pursuit (2009-02-13),25,25,1,0.0,769.54,769.54,192
+mixes/2009-01-01-mix-jams-tourney-2009/26-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Digital Buddha  The Great Abyss (2009-07-16),26,26,1,0.0,501.0,501.0,192
+mixes/2009-01-01-mix-jams-tourney-2009/27-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Crickets (2009-01-18),27,27,1,0.0,489.8,489.8,192
+mixes/2009-01-01-mix-jams-tourney-2009/28-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Robots  Konkrete (2009-12-27),28,28,1,0.0,685.35,685.35,192
+mixes/2009-01-01-mix-jams-tourney-2009/29-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Hope  Tamarin Alley (2009-07-01),29,29,1,0.0,738.17,738.17,192
+mixes/2009-01-01-mix-jams-tourney-2009/30-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Pygmy Twylyte  Abraxas (2009-01-31),30,30,1,0.0,995.76,995.76,192
+mixes/2009-01-01-mix-jams-tourney-2009/31-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Crickets (2Nd) (2009-12-30),31,31,1,0.0,843.94,843.94,192
+mixes/2009-01-01-mix-jams-tourney-2009/32-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Tvm  Orch Theme (2009-04-18),32,32,1,0.0,651.57,651.57,192
+mixes/2009-01-01-mix-jams-tourney-2009/33-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,I-Man  Ladies (2009-02-15),33,33,1,0.0,650.08,650.08,192
+mixes/2009-01-01-mix-jams-tourney-2009/34-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Reactor  Shelby (2009-10-02),34,34,1,0.0,535.3,535.3,192
+mixes/2009-01-01-mix-jams-tourney-2009/35-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Spacebird  Caterpillar (2009-06-06),35,35,1,0.0,264.78,264.78,192
+mixes/2009-01-01-mix-jams-tourney-2009/36-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Orch Theme (2009-09-13),36,36,1,0.0,347.98,347.98,192
+mixes/2009-01-01-mix-jams-tourney-2009/37-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Cyclone  Spraypaint (2009-04-17),37,37,1,0.0,652.2,652.2,192
+mixes/2009-01-01-mix-jams-tourney-2009/38-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Orch Theme  On Time (2009-11-28),38,38,1,0.0,482.12,482.12,192
+mixes/2009-01-01-mix-jams-tourney-2009/39-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Shem-Rah  Rock Candy (2009-12-26),39,39,1,0.0,645.8,645.8,192
+mixes/2009-01-01-mix-jams-tourney-2009/40-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,High Speed Racer  Ac2B (2009-04-23),40,40,1,0.0,675.63,675.63,192
+mixes/2009-01-01-mix-jams-tourney-2009/41-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Dribble > Shem-Rah (2009-04-17),41,41,1,0.0,994.59,994.59,192
+mixes/2009-01-01-mix-jams-tourney-2009/42-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Mirrors > Cyclone (2009-03-06),42,42,1,0.0,669.68,669.68,192
+mixes/2009-01-01-mix-jams-tourney-2009/43-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Buddha > Cyclone (2009-02-15),43,43,1,0.0,553.3,553.3,192
+mixes/2009-01-01-mix-jams-tourney-2009/44-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,GiG > Minions (2009-11-20),44,44,1,0.0,465.74,465.74,192
+mixes/2009-01-01-mix-jams-tourney-2009/45-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Caterpillar > Voices (2009-06-06),45,45,1,0.0,681.12,681.12,192
+mixes/2009-01-01-mix-jams-tourney-2009/46-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Tempest > Humu (2009-10-10),46,46,1,0.0,245.05,245.05,192
+mixes/2009-01-01-mix-jams-tourney-2009/47-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Astro > Helix (2009-06-27),47,47,1,0.0,776.96,776.96,192
+mixes/2009-01-01-mix-jams-tourney-2009/48-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Morph > Buddha (2009-07-16),48,48,1,0.0,784.14,784.14,192
+mixes/2009-01-01-mix-jams-tourney-2009/49-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Crickets (2009-04-20),49,49,1,0.0,682.55,682.55,192
+mixes/2009-01-01-mix-jams-tourney-2009/50-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Orch Theme > Buddha (2009-07-04),50,50,1,0.0,255.24,255.24,192
+mixes/2009-01-01-mix-jams-tourney-2009/51-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Uber Glue > Shem-Rah (2009-02-13),51,51,1,0.0,309.45,309.45,192
+mixes/2009-01-01-mix-jams-tourney-2009/52-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,M.E.M.P.H.I.S. > Rockafella (2009-06-24),52,52,1,0.0,534.23,534.23,192
+mixes/2009-01-01-mix-jams-tourney-2009/53-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,MEMPHIS > Rock Candy (2009-10-07),53,53,1,0.0,1009.03,1009.03,192
+mixes/2009-01-01-mix-jams-tourney-2009/54-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,B&C > Confrontation (2009-10-03),54,54,1,0.0,822.54,822.54,192
+mixes/2009-01-01-mix-jams-tourney-2009/55-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Mirrors > Basis (2009-09-19),55,55,1,0.0,924.42,924.42,192
+mixes/2009-01-01-mix-jams-tourney-2009/56-jam1.mp3,mix,2009-01-01,Mix Jams Tourney 2009,Strobelights > Shem-Rah (2009-12-26),56,56,1,0.0,663.69,663.69,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/01-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Astronaut (2017-12-28),1,01,1,0.0,1324.12,1324.12,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/02-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Air Song (2017-12-28),2,02,1,0.0,690.81,690.81,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/03-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,MEMPHIS (2017-12-29),3,03,1,0.0,1718.91,1718.91,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/04-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Gangster (2017-12-29),4,04,1,0.0,301.43,301.43,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/05-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Crickets (2017-12-29),5,05,1,0.0,1443.19,1443.19,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/06-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Papercut (2017-12-29),6,06,1,0.0,844.9,844.9,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/07-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Crickets (2017-12-29),7,07,1,0.0,215.14,215.14,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/08-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Story Of The World (2017-12-29),8,08,1,0.0,802.87,802.87,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/09-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Spacebirdmatingcall (2017-12-29),9,09,1,0.0,1005.32,1005.32,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/10-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Tricycle (2017-12-29),10,10,1,0.0,833.88,833.88,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/11-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Story Of The World (2017-12-29),11,11,1,0.0,453.72,453.72,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/12-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Shelby Rose (2017-12-30),12,12,1,0.0,1144.82,1144.82,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/13-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Crystal Ball (2017-12-30),13,13,1,0.0,1063.37,1063.37,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/14-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,In The Hall of the Mountain King (2017-12-30),14,14,1,0.0,362.53,362.53,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/15-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Spraypaint (2017-12-30),15,15,1,0.0,1041.48,1041.48,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/16-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Sound One (2017-12-30),16,16,1,0.0,1026.72,1026.72,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/17-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Munchkin Invasion (2017-12-30),17,17,1,0.0,284.66,284.66,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/18-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Super Mario Overworld Theme (2017-12-31),18,18,1,0.0,922.99,922.99,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/19-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Aceetobee (2017-12-31),19,19,1,0.0,493.49,493.49,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/20-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Basis For A Day (2017-12-31),20,20,1,0.0,682.54,682.54,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/21-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Tetris (2017-12-31),21,21,1,0.0,570.79,570.79,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/22-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Aquatic Ape (2017-12-31),22,22,1,0.0,903.02,903.02,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/23-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Aceetobee (2017-12-31),23,23,1,0.0,633.82,633.82,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/24-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Little Lai (2017-12-31),24,24,1,0.0,38.57,38.57,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/25-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Super Mario Underworld Theme (2017-12-31),25,25,1,0.0,56.71,56.71,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/26-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Little Lai (2017-12-31),26,26,1,0.0,45.31,45.31,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/27-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Super Mario Underworld Theme (2017-12-31),27,27,1,0.0,180.19,180.19,192
+mixes/2017-01-01-mix-best-jams-nye-run-2017/28-jam1.mp3,mix,2017-01-01,Mix Best Jams NYE Run 2017,Little Lai (2017-12-31),28,28,1,0.0,634.27,634.27,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-2-long-parts/01-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (2 long parts),Part 1,1,01,1,0.0,10062.73,10062.73,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-2-long-parts/02-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (2 long parts),Part 2,2,02,1,0.0,10537.04,10537.04,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/01-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),42 > abyss (2019-11-15),1,01,1,0.0,239.44,239.44,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/02-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),7-11 (2019-11-16),2,02,1,0.0,520.05,520.05,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/03-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),cater > hero (2019-11-16),3,03,1,0.0,345.23,345.23,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/04-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),hero > pillar (2019-11-16),4,04,1,0.0,390.74,390.74,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/05-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),ladies > cyclone (2019-11-21),5,05,1,0.0,861.73,861.73,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/06-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),tempest > ac2b (2019-11-21),6,06,1,0.0,607.19,607.19,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/07-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),housedog > gangster (2019-12-11),7,07,1,0.0,191.53,191.53,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/08-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),rock candy (2019-12-11),8,08,1,0.0,535.04,535.04,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/09-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),VeryMoonEnding (2019-12-12),9,09,1,0.0,465.14,465.14,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/10-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),air > rocket (2019-12-12),10,10,1,0.0,342.31,342.31,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/11-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),tempest (2019-12-12),11,11,1,0.0,265.14,265.14,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/12-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),crickets (2019-12-13),12,12,1,0.0,242.05,242.05,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/13-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),4thOfJuly (2019-12-14),13,13,1,0.0,293.85,293.85,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/14-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),resurrection > 4th (2019-12-14),14,14,1,0.0,400.3,400.3,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/15-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),runningbliss (2019-12-27),15,15,1,0.0,258.14,258.14,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/16-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),KOTW (2019-12-28),16,16,1,0.0,476.03,476.03,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/17-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),abyss > story (2019-12-28),17,17,1,0.0,563.93,563.93,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/18-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),munchkin (2019-12-28),18,18,1,0.0,425.93,425.93,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/19-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),spraybliss (2019-12-28),19,19,1,0.0,194.95,194.95,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/20-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),cyclone > lunar (2019-12-30),20,20,1,0.0,288.84,288.84,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/21-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),iman (2019-12-30),21,21,1,0.0,170.03,170.03,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/22-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),iman ending (2019-12-30),22,22,1,0.0,119.75,119.75,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/23-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),memphis > iman (2019-12-30),23,23,1,0.0,495.83,495.83,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/24-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),memphis (2019-12-30),24,24,1,0.0,437.03,437.03,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/25-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),rocket (2019-12-30),25,25,1,0.0,297.04,297.04,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/26-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),tbeam > ladies (2019-12-30),26,26,1,0.0,354.74,354.74,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/27-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),4th > spacebird (2019-12-31),27,27,1,0.0,193.54,193.54,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/28-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),WLTP (2019-12-31),28,28,1,0.0,446.04,446.04,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/29-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),basis (2019-12-31),29,29,1,0.0,703.95,703.95,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/30-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),dribble(part2) (2019-12-31),30,30,1,0.0,384.13,384.13,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/31-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),dribble (2019-12-31),31,31,1,0.0,414.93,414.93,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/32-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),pygmy > rock candy (2020-01-02),32,32,1,0.0,168.75,168.75,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/33-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),42 (2020-01-03),33,33,1,0.0,323.03,323.03,192
+mixes/2019-01-01-mix-best-of-2019-winter-jams-track-by-track/34-jam1.mp3,mix,2019-01-01,Mix Best of 2019 Winter Jams (track by track),anthem > waves (2020-01-04),34,34,1,0.0,227.74,227.74,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/01-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Munchkin > Tricycle (2016-02-04),1,01,1,0.0,256.42,256.42,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/02-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Munchkin (2019-12-28),2,02,1,0.0,425.93,425.93,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/03-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Magellan middle (2017-11-17),3,03,1,0.0,422.9,422.9,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/04-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Basis (2020-10-25),4,04,1,0.0,426.42,426.42,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/05-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Shem Rah (2016-06-03),5,05,1,0.0,497.03,497.03,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/06-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Boop > Crix (2016-02-06),6,06,1,0.0,513.07,513.07,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/07-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Tricycle > Munchkin (2016-02-04),7,07,1,0.0,470.2,470.2,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/08-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,AC2B > Don (2014-06-14),8,08,1,0.0,535.03,535.03,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/09-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Munchkin > Abraxas (2014-08-01),9,09,1,0.0,585.33,585.33,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/10-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Lets Dance > Humu (2017-02-03),10,10,1,0.0,849.14,849.14,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/11-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Crystal > Basis (2018-12-28),11,11,1,0.0,500.32,500.32,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/12-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Overture > Gangster (2014-06-14),12,12,1,0.0,1011.05,1011.05,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/13-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Buddha > Ladies (2016-06-02),13,13,1,0.0,952.97,952.97,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/14-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Waves > Don (2016-03-26),14,14,1,0.0,1371.02,1371.02,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/15-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Astro > Helix (2017-05-26),15,15,1,0.0,554.08,554.08,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/16-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Champs > Exodus (2017-07-15),16,16,1,0.0,327.07,327.07,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/17-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,HouseDog > Balloon#2 (2013-12-31),17,17,1,0.0,716.9,716.9,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/18-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Ladies > Cyclone (2019-11-21),18,18,1,0.0,861.73,861.73,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/19-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,42 (2020-01-03),19,19,1,0.0,323.03,323.03,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/20-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,DTTB (2018-12-30),20,20,1,0.0,488.02,488.02,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/21-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,DTTB > Astro (2015-12-05),21,21,1,0.0,962.04,962.04,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/22-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,B&C > Bombs (2013-09-26),22,22,1,0.0,666.44,666.44,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/23-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Tempest > AC2B (2019-11-21),23,23,1,0.0,607.19,607.19,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/24-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Tempest > Air (2019-12-12),24,24,1,0.0,265.14,265.14,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/25-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Jam > Cyclone (2012-01-27),25,25,1,0.0,404.06,404.06,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/26-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Boop > Buddha (2015-04-25),26,26,1,0.0,522.08,522.08,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/27-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Caterpiller > Boop (2013-12-28),27,27,1,0.0,526.05,526.05,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/28-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Therapy (2017-10-27),28,28,1,0.0,738.09,738.09,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/29-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Hero > Pillar (2019-11-16),29,29,1,0.0,390.74,390.74,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/30-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Rock Candy (2019-12-11),30,30,1,0.0,535.04,535.04,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/31-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Caterpillar > Tricycle (2020-10-17),31,31,1,0.0,899.29,899.29,192
+mixes/2020-01-01-mix-best-of-2011-2020-bracket/32-jam1.mp3,mix,2020-01-01,Mix Best of 2011-2020 Bracket,Astro > KOTW (2020-10-18),32,32,1,0.0,444.16,444.16,192
+mixes/2022-01-01-mix-best-jams-of-2022/01-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Minions (2022-03-03),1,001,1,0.0,1060.0,1060.0,192
+mixes/2022-01-01-mix-best-jams-of-2022/02-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Digital Buddha (2022-03-03),2,002,1,0.0,949.86,949.86,192
+mixes/2022-01-01-mix-best-jams-of-2022/03-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,42 (2022-03-03),3,003,1,0.0,1284.88,1284.88,192
+mixes/2022-01-01-mix-best-jams-of-2022/04-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Evolve (2022-03-03),4,004,1,0.0,1342.82,1342.82,192
+mixes/2022-01-01-mix-best-jams-of-2022/05-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Tricycle (2022-03-03),5,005,1,0.0,700.0,700.0,192
+mixes/2022-01-01-mix-best-jams-of-2022/06-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Naeba (2022-03-04),6,006,1,0.0,1301.29,1301.29,192
+mixes/2022-01-01-mix-best-jams-of-2022/07-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Gangster (2022-03-04),7,007,1,0.0,229.54,229.54,192
+mixes/2022-01-01-mix-best-jams-of-2022/08-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Abraxas (2022-03-04),8,008,1,0.0,1481.48,1481.48,192
+mixes/2022-01-01-mix-best-jams-of-2022/09-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lake Shore Drive (2022-03-04),9,009,1,0.0,717.45,717.45,192
+mixes/2022-01-01-mix-best-jams-of-2022/10-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Rock Candy (2022-03-04),10,010,1,0.0,708.02,708.02,192
+mixes/2022-01-01-mix-best-jams-of-2022/11-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Crickets (2022-03-10),11,011,1,0.0,1832.86,1832.86,192
+mixes/2022-01-01-mix-best-jams-of-2022/12-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Evolve (2022-03-10),12,012,1,0.0,1283.0,1283.0,192
+mixes/2022-01-01-mix-best-jams-of-2022/13-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spraypaint (2022-03-10),13,013,1,0.0,779.6,779.6,192
+mixes/2022-01-01-mix-best-jams-of-2022/14-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Bombs (2022-03-10),14,014,1,0.0,715.42,715.42,192
+mixes/2022-01-01-mix-best-jams-of-2022/15-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Caterpillar (2022-03-10),15,015,1,0.0,582.87,582.87,192
+mixes/2022-01-01-mix-best-jams-of-2022/16-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lunar Pursuit (2022-03-11),16,016,1,0.0,259.79,259.79,192
+mixes/2022-01-01-mix-best-jams-of-2022/17-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Mindless Dribble (2022-03-11),17,017,1,0.0,1114.33,1114.33,192
+mixes/2022-01-01-mix-best-jams-of-2022/18-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Confrontation (2022-03-11),18,018,1,0.0,699.74,699.74,192
+mixes/2022-01-01-mix-best-jams-of-2022/19-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Svenghali (2022-03-11),19,019,1,0.0,269.17,269.17,192
+mixes/2022-01-01-mix-best-jams-of-2022/20-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Running into the Night (2022-03-11),20,020,1,0.0,1369.73,1369.73,192
+mixes/2022-01-01-mix-best-jams-of-2022/21-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Sound One (2022-03-11),21,021,1,0.0,513.38,513.38,192
+mixes/2022-01-01-mix-best-jams-of-2022/22-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lake Shore Drive (2022-03-11),22,022,1,0.0,834.72,834.72,192
+mixes/2022-01-01-mix-best-jams-of-2022/23-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Neck Romancer (2022-03-11),23,023,1,0.0,811.23,811.23,192
+mixes/2022-01-01-mix-best-jams-of-2022/24-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,I Feel Love (2022-03-11),24,024,1,0.0,757.19,757.19,192
+mixes/2022-01-01-mix-best-jams-of-2022/25-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Sound One (2022-03-11),25,025,1,0.0,272.54,272.54,192
+mixes/2022-01-01-mix-best-jams-of-2022/26-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spectacle (2022-03-12),26,026,1,0.0,1645.32,1645.32,192
+mixes/2022-01-01-mix-best-jams-of-2022/27-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Feeling Twisted (2022-03-12),27,027,1,0.0,618.68,618.68,192
+mixes/2022-01-01-mix-best-jams-of-2022/28-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Rock Candy (2022-03-12),28,028,1,0.0,1157.62,1157.62,192
+mixes/2022-01-01-mix-best-jams-of-2022/29-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Above The Waves (2022-03-12),29,029,1,0.0,1006.5,1006.5,192
+mixes/2022-01-01-mix-best-jams-of-2022/30-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spectacle (2022-03-12),30,030,1,0.0,211.07,211.07,192
+mixes/2022-01-01-mix-best-jams-of-2022/31-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,House Dog Party Favor (2022-03-31),31,031,1,0.0,1243.74,1243.74,192
+mixes/2022-01-01-mix-best-jams-of-2022/32-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Story Of The World (2022-03-31),32,032,1,0.0,965.28,965.28,192
+mixes/2022-01-01-mix-best-jams-of-2022/33-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Munchkin Invasion (2022-03-31),33,033,1,0.0,695.14,695.14,192
+mixes/2022-01-01-mix-best-jams-of-2022/34-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Story Of The World (2022-03-31),34,034,1,0.0,219.25,219.25,192
+mixes/2022-01-01-mix-best-jams-of-2022/35-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Portal To An Empty Head (2022-03-31),35,035,1,0.0,1145.65,1145.65,192
+mixes/2022-01-01-mix-best-jams-of-2022/36-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,The Great Abyss (2022-03-31),36,036,1,0.0,753.48,753.48,192
+mixes/2022-01-01-mix-best-jams-of-2022/37-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Nughuffer (2022-04-01),37,037,1,0.0,1128.83,1128.83,192
+mixes/2022-01-01-mix-best-jams-of-2022/38-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spaga (2022-04-01),38,038,1,0.0,1267.7,1267.7,192
+mixes/2022-01-01-mix-best-jams-of-2022/39-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Running into the Night (2022-04-01),39,039,1,0.0,725.08,725.08,192
+mixes/2022-01-01-mix-best-jams-of-2022/40-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Aceetobee (2022-04-01),40,040,1,0.0,1072.35,1072.35,192
+mixes/2022-01-01-mix-best-jams-of-2022/41-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Rock Candy (2022-04-01),41,041,1,0.0,550.09,550.09,192
+mixes/2022-01-01-mix-best-jams-of-2022/42-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Vassillios (2022-04-02),42,042,1,0.0,934.53,934.53,192
+mixes/2022-01-01-mix-best-jams-of-2022/43-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Orch Theme (2022-04-02),43,043,1,0.0,570.02,570.02,192
+mixes/2022-01-01-mix-best-jams-of-2022/44-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Sweating Bullets (2022-04-02),44,044,1,0.0,1507.21,1507.21,192
+mixes/2022-01-01-mix-best-jams-of-2022/45-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Tempest (2022-04-02),45,045,1,0.0,344.27,344.27,192
+mixes/2022-01-01-mix-best-jams-of-2022/46-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Vassillios (2022-04-02),46,046,1,0.0,760.27,760.27,192
+mixes/2022-01-01-mix-best-jams-of-2022/47-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,I Remember When (2022-04-02),47,047,1,0.0,369.27,369.27,192
+mixes/2022-01-01-mix-best-jams-of-2022/48-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,711 (2022-04-08),48,048,1,0.0,996.73,996.73,192
+mixes/2022-01-01-mix-best-jams-of-2022/49-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Evolve (2022-04-08),49,049,1,0.0,601.89,601.89,192
+mixes/2022-01-01-mix-best-jams-of-2022/50-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,711 (2022-04-08),50,050,1,0.0,845.06,845.06,192
+mixes/2022-01-01-mix-best-jams-of-2022/51-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,42 (2022-04-08),51,051,1,0.0,222.75,222.75,192
+mixes/2022-01-01-mix-best-jams-of-2022/52-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Astronaut (2022-04-09),52,052,1,0.0,726.13,726.13,192
+mixes/2022-01-01-mix-best-jams-of-2022/53-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spacebirdmatingcall (2022-04-09),53,053,1,0.0,1148.97,1148.97,192
+mixes/2022-01-01-mix-best-jams-of-2022/54-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Digital Buddha (2022-04-09),54,054,1,0.0,139.62,139.62,192
+mixes/2022-01-01-mix-best-jams-of-2022/55-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Caterpillar (2022-04-09),55,055,1,0.0,861.75,861.75,192
+mixes/2022-01-01-mix-best-jams-of-2022/56-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,IMan (2022-04-09),56,056,1,0.0,966.22,966.22,192
+mixes/2022-01-01-mix-best-jams-of-2022/57-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,M1 (2022-04-09),57,057,1,0.0,720.74,720.74,192
+mixes/2022-01-01-mix-best-jams-of-2022/58-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Story Of The World (2022-05-07),58,058,1,0.0,1025.25,1025.25,192
+mixes/2022-01-01-mix-best-jams-of-2022/59-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Running into the Night (2022-05-07),59,059,1,0.0,774.48,774.48,192
+mixes/2022-01-01-mix-best-jams-of-2022/60-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Aquatic Ape (2022-05-07),60,060,1,0.0,1009.63,1009.63,192
+mixes/2022-01-01-mix-best-jams-of-2022/61-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,M1 (2022-05-07),61,061,1,0.0,715.89,715.89,192
+mixes/2022-01-01-mix-best-jams-of-2022/62-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-06-09),62,062,1,0.0,1362.31,1362.31,192
+mixes/2022-01-01-mix-best-jams-of-2022/63-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Evolve (2022-06-09),63,063,1,0.0,1648.9,1648.9,192
+mixes/2022-01-01-mix-best-jams-of-2022/64-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Miracles (2022-06-10),64,064,1,0.0,1514.0,1514.0,192
+mixes/2022-01-01-mix-best-jams-of-2022/65-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-06-10),65,065,1,0.0,751.78,751.78,192
+mixes/2022-01-01-mix-best-jams-of-2022/66-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Whos In Charge (2022-06-10),66,066,1,0.0,1539.29,1539.29,192
+mixes/2022-01-01-mix-best-jams-of-2022/67-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Orch Theme (2022-06-10),67,067,1,0.0,675.92,675.92,192
+mixes/2022-01-01-mix-best-jams-of-2022/68-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lake Shore Drive (2022-06-11),68,068,1,0.0,727.28,727.28,192
+mixes/2022-01-01-mix-best-jams-of-2022/69-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Space Train (2022-06-11),69,069,1,0.0,1042.21,1042.21,192
+mixes/2022-01-01-mix-best-jams-of-2022/70-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Caterpillar (2022-06-11),70,070,1,0.0,339.54,339.54,192
+mixes/2022-01-01-mix-best-jams-of-2022/71-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Munchkin Invasion (2022-06-12),71,071,1,0.0,852.38,852.38,192
+mixes/2022-01-01-mix-best-jams-of-2022/72-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Tourists Rocket Ship (2022-06-12),72,072,1,0.0,1369.05,1369.05,192
+mixes/2022-01-01-mix-best-jams-of-2022/73-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-06-12),73,073,1,0.0,915.15,915.15,192
+mixes/2022-01-01-mix-best-jams-of-2022/74-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spacebirdmatingcall (2022-06-18),74,074,1,0.0,904.49,904.49,192
+mixes/2022-01-01-mix-best-jams-of-2022/75-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-06-18),75,075,1,0.0,1267.59,1267.59,192
+mixes/2022-01-01-mix-best-jams-of-2022/76-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,LP Giobbi DJ switch (2022-06-19),76,076,1,0.0,515.6,515.6,192
+mixes/2022-01-01-mix-best-jams-of-2022/77-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lake Shore Drive (2022-06-19),77,077,1,0.0,1162.5,1162.5,192
+mixes/2022-01-01-mix-best-jams-of-2022/78-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,One Chance (2022-06-19),78,078,1,0.0,1193.72,1193.72,192
+mixes/2022-01-01-mix-best-jams-of-2022/79-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db220623d1 02 - Jam,79,079,1,0.0,360.31,360.31,192
+mixes/2022-01-01-mix-best-jams-of-2022/80-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Moshi Fameus (2022-07-01),80,080,1,0.0,1167.99,1167.99,192
+mixes/2022-01-01-mix-best-jams-of-2022/81-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-07-01),81,081,1,0.0,1686.86,1686.86,192
+mixes/2022-01-01-mix-best-jams-of-2022/82-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Twisted in the Road (2022-07-01),82,082,1,0.0,585.74,585.74,192
+mixes/2022-01-01-mix-best-jams-of-2022/83-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Evolve (2022-07-01),83,083,1,0.0,863.01,863.01,192
+mixes/2022-01-01-mix-best-jams-of-2022/84-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Caterpillar (2022-07-01),84,084,1,0.0,763.85,763.85,192
+mixes/2022-01-01-mix-best-jams-of-2022/85-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Helicopters (2022-08-18),85,085,1,0.0,1399.09,1399.09,192
+mixes/2022-01-01-mix-best-jams-of-2022/86-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spacebirdmatingcall (2022-08-18),86,086,1,0.0,1073.37,1073.37,192
+mixes/2022-01-01-mix-best-jams-of-2022/87-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Another Plan Of Attack (2022-08-18),87,087,1,0.0,1140.64,1140.64,192
+mixes/2022-01-01-mix-best-jams-of-2022/88-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Astronaut (2022-08-20),88,088,1,0.0,1176.95,1176.95,192
+mixes/2022-01-01-mix-best-jams-of-2022/89-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Orch Theme (2022-08-20),89,089,1,0.0,622.6,622.6,192
+mixes/2022-01-01-mix-best-jams-of-2022/90-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,And The Ladies Were The Rest Of The Night (2022-08-21),90,090,1,0.0,796.13,796.13,192
+mixes/2022-01-01-mix-best-jams-of-2022/91-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,The Wormhole (2022-08-21),91,091,1,0.0,1455.07,1455.07,192
+mixes/2022-01-01-mix-best-jams-of-2022/92-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Spraypaint (2022-08-21),92,092,1,0.0,713.4,713.4,192
+mixes/2022-01-01-mix-best-jams-of-2022/93-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221110 03. 4th Of July,93,093,1,0.0,1177.08,1177.08,192
+mixes/2022-01-01-mix-best-jams-of-2022/94-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221110 04. Another Plan Of Attack,94,094,1,0.0,1340.89,1340.89,192
+mixes/2022-01-01-mix-best-jams-of-2022/95-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221110 09. Who's In Charge,95,095,1,0.0,1490.02,1490.02,192
+mixes/2022-01-01-mix-best-jams-of-2022/96-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221110 10. Orch Theme,96,096,1,0.0,696.79,696.79,192
+mixes/2022-01-01-mix-best-jams-of-2022/97-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221110 11. Freeze,97,097,1,0.0,518.32,518.32,192
+mixes/2022-01-01-mix-best-jams-of-2022/98-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221111 02. Sound One,98,098,1,0.0,743.13,743.13,192
+mixes/2022-01-01-mix-best-jams-of-2022/99-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221111 03. Helicopters,99,099,1,0.0,1072.85,1072.85,192
+mixes/2022-01-01-mix-best-jams-of-2022/100-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,db221111 04. The Wormhole,100,100,1,0.0,1210.54,1210.54,192
+mixes/2022-01-01-mix-best-jams-of-2022/101-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,We Like To Party (2022-11-12),101,101,1,0.0,1235.46,1235.46,192
+mixes/2022-01-01-mix-best-jams-of-2022/102-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Crickets (2022-11-12),102,102,1,0.0,1203.93,1203.93,192
+mixes/2022-01-01-mix-best-jams-of-2022/103-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,To Be Continued Ending Only (2022-11-12),103,103,1,0.0,259.45,259.45,192
+mixes/2022-01-01-mix-best-jams-of-2022/104-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Twisted in the Road (2022-11-12),104,104,1,0.0,944.9,944.9,192
+mixes/2022-01-01-mix-best-jams-of-2022/105-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Portal To An Empty Head (2022-11-12),105,105,1,0.0,935.71,935.71,192
+mixes/2022-01-01-mix-best-jams-of-2022/106-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,M1 (2022-11-12),106,106,1,0.0,1232.3,1232.3,192
+mixes/2022-01-01-mix-best-jams-of-2022/107-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Basis For A Day (2022-11-12),107,107,1,0.0,1707.18,1707.18,192
+mixes/2022-01-01-mix-best-jams-of-2022/108-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Shocked (2022-11-13),108,108,1,0.0,1275.43,1275.43,192
+mixes/2022-01-01-mix-best-jams-of-2022/109-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,IMan (2022-11-13),109,109,1,0.0,937.12,937.12,192
+mixes/2022-01-01-mix-best-jams-of-2022/110-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Lake Shore Drive (2022-11-13),110,110,1,0.0,1457.92,1457.92,192
+mixes/2022-01-01-mix-best-jams-of-2022/111-jam1.mp3,mix,2022-01-01,Mix Best Jams of 2022,Space Train (2022-11-13),111,111,1,0.0,1206.2,1206.2,192
+mixes/2023-01-01-mix-summer-2023-jams/01-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Why We Dance Abraxas (2023-05-03),1,01,1,0.0,1304.71,1304.71,192
+mixes/2023-01-01-mix-summer-2023-jams/02-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Caterpillar Running APOA Svenghali (2023-05-03),2,02,1,0.0,1784.69,1784.69,192
+mixes/2023-01-01-mix-summer-2023-jams/03-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Above The Waves Tourists Munchin Cyclone TBC (2023-05-06),3,03,1,0.0,1887.35,1887.35,192
+mixes/2023-01-01-mix-summer-2023-jams/04-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Shocked Uber Falling (2023-06-07),4,04,1,0.0,1803.23,1803.23,192
+mixes/2023-01-01-mix-summer-2023-jams/05-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Run Like Hell Above The Waves (2023-06-07),5,05,1,0.0,1482.84,1482.84,192
+mixes/2023-01-01-mix-summer-2023-jams/06-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Freeze Miracles (2023-06-09),6,06,1,0.0,1257.95,1257.95,192
+mixes/2023-01-01-mix-summer-2023-jams/07-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,4th Of July Gangster (2023-07-06),7,07,1,0.0,796.9,796.9,192
+mixes/2023-01-01-mix-summer-2023-jams/08-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Nughuffer Photograph (2023-07-07),8,08,1,0.0,991.92,991.92,192
+mixes/2023-01-01-mix-summer-2023-jams/09-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,711 Crickets Reactor (2023-07-07),9,09,1,0.0,1644.15,1644.15,192
+mixes/2023-01-01-mix-summer-2023-jams/10-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230708 04 Times Square Twisted in the Road,10,10,1,0.0,856.29,856.29,192
+mixes/2023-01-01-mix-summer-2023-jams/11-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230708 09 Caterpillar Voices I Feel Love Freeze The Deal,11,11,1,0.0,3670.83,3670.83,192
+mixes/2023-01-01-mix-summer-2023-jams/12-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Jam Spacebirdmatingcall (2023-07-09),12,12,1,0.0,840.89,840.89,192
+mixes/2023-01-01-mix-summer-2023-jams/13-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,One Chance Ladies Basis (2023-07-09),13,13,1,0.0,2242.56,2242.56,192
+mixes/2023-01-01-mix-summer-2023-jams/14-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230711 06 Spaga Abraxas Run Like Hell,14,14,1,0.0,1224.78,1224.78,192
+mixes/2023-01-01-mix-summer-2023-jams/15-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230711 10 We Like To Party Munchin Falling,15,15,1,0.0,2845.96,2845.96,192
+mixes/2023-01-01-mix-summer-2023-jams/16-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230712 10 Bernstein and Chasnoff Space Train,16,16,1,0.0,1030.69,1030.69,192
+mixes/2023-01-01-mix-summer-2023-jams/17-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,db230713 11 Nughuffer The Deal Buy the Time,17,17,1,0.0,2219.57,2219.57,192
+mixes/2023-01-01-mix-summer-2023-jams/18-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,House Dog Party Favor Hot Air Balloon Iman (2023-07-14),18,18,1,0.0,2168.84,2168.84,192
+mixes/2023-01-01-mix-summer-2023-jams/19-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,TBC DTTB Shimmy Photograph (2023-07-15),19,19,1,0.0,1657.13,1657.13,192
+mixes/2023-01-01-mix-summer-2023-jams/20-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,The Overture Buy the Time (2023-07-18),20,20,1,0.0,1204.95,1204.95,192
+mixes/2023-01-01-mix-summer-2023-jams/21-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Confrontation Ladies Photograph Cyclone (2023-07-19),21,21,1,0.0,1780.61,1780.61,192
+mixes/2023-01-01-mix-summer-2023-jams/22-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Jam Spacebirdmatingcall (2023-07-20),22,22,1,0.0,1132.49,1132.49,192
+mixes/2023-01-01-mix-summer-2023-jams/23-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,ShemRah Boo The Wormhole (2023-07-21),23,23,1,0.0,1261.9,1261.9,192
+mixes/2023-01-01-mix-summer-2023-jams/24-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Voices Insane Tourists (2023-07-22),24,24,1,0.0,842.42,842.42,192
+mixes/2023-01-01-mix-summer-2023-jams/25-jam1.mp3,mix,2023-01-01,Mix Summer 2023 Jams,Photograph Abyss Crickets Iman (2023-07-22),25,25,1,0.0,1533.34,1533.34,192
+mixes/2024-01-01-mix-best-of-2023-jams/01-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Buy the Time-Digital Buddha (2023-10-28),1,01,1,0.0,1031.0,1031.0,192
+mixes/2024-01-01-mix-best-of-2023-jams/02-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Dribble-Confrontation (2023-10-07),2,02,1,0.0,1085.62,1085.62,192
+mixes/2024-01-01-mix-best-of-2023-jams/03-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Vassillios-Twisted in the Road (2023-09-24),3,03,1,0.0,1069.27,1069.27,192
+mixes/2024-01-01-mix-best-of-2023-jams/04-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Tribulations-Jigsaw (2023-12-30),4,04,1,0.0,758.96,758.96,192
+mixes/2024-01-01-mix-best-of-2023-jams/05-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Nughuffer-Shocked (2023-10-06),5,05,1,0.0,1243.04,1243.04,192
+mixes/2024-01-01-mix-best-of-2023-jams/06-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,HAB-Deal (2023-09-22),6,06,1,0.0,737.46,737.46,192
+mixes/2024-01-01-mix-best-of-2023-jams/07-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,To Be Continued-Tribulations (2023-12-30),7,07,1,0.0,646.35,646.35,192
+mixes/2024-01-01-mix-best-of-2023-jams/08-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Voices Insane-I Feel Love (2023-07-08),8,08,1,0.0,1075.46,1075.46,192
+mixes/2024-01-01-mix-best-of-2023-jams/09-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Shocked-The Deal (2023-12-31),9,09,1,0.0,1197.11,1197.11,192
+mixes/2024-01-01-mix-best-of-2023-jams/10-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Basis-Times Square (2023-08-13),10,10,1,0.0,871.37,871.37,192
+mixes/2024-01-01-mix-best-of-2023-jams/11-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Wormhole-Evolve (2023-08-10),11,11,1,0.0,1046.65,1046.65,192
+mixes/2024-01-01-mix-best-of-2023-jams/12-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,I-Man intro (2023-09-16),12,12,1,0.0,853.86,853.86,192
+mixes/2024-01-01-mix-best-of-2023-jams/13-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Caterpillar-Voices (2023-07-08),13,13,1,0.0,1034.89,1034.89,192
+mixes/2024-01-01-mix-best-of-2023-jams/14-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,HAB-I-Man (2023-07-14),14,14,1,0.0,697.47,697.47,192
+mixes/2024-01-01-mix-best-of-2023-jams/15-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Aceetobee (2023-12-01),15,15,1,0.0,583.13,583.13,192
+mixes/2024-01-01-mix-best-of-2023-jams/16-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Nughuffer (2023-07-13),16,16,1,0.0,510.72,510.72,192
+mixes/2024-01-01-mix-best-of-2023-jams/17-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Falling-Spacebird (2023-09-16),17,17,1,0.0,852.14,852.14,192
+mixes/2024-01-01-mix-best-of-2023-jams/18-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Shadow-Confrontation (2023-03-12),18,18,1,0.0,614.16,614.16,192
+mixes/2024-01-01-mix-best-of-2023-jams/19-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Voices-Tourists (2023-07-22),19,19,1,0.0,1075.77,1075.77,192
+mixes/2024-01-01-mix-best-of-2023-jams/20-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Deal-Spacebird (2023-06-10),20,20,1,0.0,540.03,540.03,192
+mixes/2024-01-01-mix-best-of-2023-jams/21-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Gangster-Spacebird (2023-03-23),21,21,1,0.0,388.73,388.73,192
+mixes/2024-01-01-mix-best-of-2023-jams/22-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Aceetobee 2nd Jam (2023-09-16),22,22,1,0.0,555.18,555.18,192
+mixes/2024-01-01-mix-best-of-2023-jams/23-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Buy the Time-Aceetobee (2023-12-01),23,23,1,0.0,763.17,763.17,192
+mixes/2024-01-01-mix-best-of-2023-jams/24-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Freeze-Miracles (2023-06-09),24,24,1,0.0,483.58,483.58,192
+mixes/2024-01-01-mix-best-of-2023-jams/25-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Vassillios-Voices (2023-03-30),25,25,1,0.0,518.97,518.97,192
+mixes/2024-01-01-mix-best-of-2023-jams/26-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Deal-One Chance (2023-10-28),26,26,1,0.0,809.59,809.59,192
+mixes/2024-01-01-mix-best-of-2023-jams/27-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Photograph-Abyss (2023-07-22),27,27,1,0.0,630.0,630.0,192
+mixes/2024-01-01-mix-best-of-2023-jams/28-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Shimmy-Evolve (2023-06-15),28,28,1,0.0,741.04,741.04,192
+mixes/2024-01-01-mix-best-of-2023-jams/29-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,WLTP-Munchkin (2023-07-11),29,29,1,0.0,1210.64,1210.64,192
+mixes/2024-01-01-mix-best-of-2023-jams/30-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Photograph-Cyclone (2023-07-19),30,30,1,0.0,465.45,465.45,192
+mixes/2024-01-01-mix-best-of-2023-jams/31-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,The Deal (2023-10-07),31,31,1,0.0,511.32,511.32,192
+mixes/2024-01-01-mix-best-of-2023-jams/32-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,To Be Continued-Cyclone (2023-09-15),32,32,1,0.0,682.14,682.14,192
+mixes/2024-01-01-mix-best-of-2023-jams/33-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Spacebird intro (2023-05-22),33,33,1,0.0,554.53,554.53,192
+mixes/2024-01-01-mix-best-of-2023-jams/34-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Freeze (2023-03-24),34,34,1,0.0,455.76,455.76,192
+mixes/2024-01-01-mix-best-of-2023-jams/35-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Park Ave-Ladies (2023-08-11),35,35,1,0.0,608.97,608.97,192
+mixes/2024-01-01-mix-best-of-2023-jams/36-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Times Square-Freeze (2023-08-13),36,36,1,0.0,823.9,823.9,192
+mixes/2024-01-01-mix-best-of-2023-jams/37-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Crickets-To Be Continued (2023-09-15),37,37,1,0.0,685.87,685.87,192
+mixes/2024-01-01-mix-best-of-2023-jams/38-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Tourists-Aquatic Ape (2023-10-25),38,38,1,0.0,669.99,669.99,192
+mixes/2024-01-01-mix-best-of-2023-jams/39-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Space Train-PBR (2023-01-21),39,39,1,0.0,766.75,766.75,192
+mixes/2024-01-01-mix-best-of-2023-jams/40-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Tourists-Orch Theme (2023-03-31),40,40,1,0.0,632.61,632.61,192
+mixes/2024-01-01-mix-best-of-2023-jams/41-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Freeze (2023-02-02),41,41,1,0.0,607.61,607.61,192
+mixes/2024-01-01-mix-best-of-2023-jams/42-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Voices-Abyss (2023-03-30),42,42,1,0.0,540.42,540.42,192
+mixes/2024-01-01-mix-best-of-2023-jams/43-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters-To Be Continued (2023-03-29),43,43,1,0.0,717.95,717.95,192
+mixes/2024-01-01-mix-best-of-2023-jams/44-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,KOTW-WLTP (2023-01-18),44,44,1,0.0,861.31,861.31,192
+mixes/2024-01-01-mix-best-of-2023-jams/45-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,HAB-Reactor (2023-05-22),45,45,1,0.0,435.83,435.83,192
+mixes/2024-01-01-mix-best-of-2023-jams/46-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,The Bridge-Home Again (2023-01-19),46,46,1,0.0,329.85,329.85,192
+mixes/2024-01-01-mix-best-of-2023-jams/47-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Tempest-Svenghali (2023-02-03),47,47,1,0.0,379.59,379.59,192
+mixes/2024-01-01-mix-best-of-2023-jams/48-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Waves-Shocked (2023-02-04),48,48,1,0.0,911.93,911.93,192
+mixes/2024-01-01-mix-best-of-2023-jams/49-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Mindless Dribble (2023-12-02),49,49,1,0.0,538.57,538.57,192
+mixes/2024-01-01-mix-best-of-2023-jams/50-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Spacebird-Cyclone (2023-03-23),50,50,1,0.0,585.17,585.17,192
+mixes/2024-01-01-mix-best-of-2023-jams/51-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,One Chance-Helicopters (2023-09-23),51,51,1,0.0,588.93,588.93,192
+mixes/2024-01-01-mix-best-of-2023-jams/52-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Abyss-Abraxas (2023-10-24),52,52,1,0.0,719.07,719.07,192
+mixes/2024-01-01-mix-best-of-2023-jams/53-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Basis-Photograph (2023-10-28),53,53,1,0.0,564.35,564.35,192
+mixes/2024-01-01-mix-best-of-2023-jams/54-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Ladies-Basis (2023-07-09),54,54,1,0.0,581.46,581.46,192
+mixes/2024-01-01-mix-best-of-2023-jams/55-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,To Be Continued-Down to the Bottom (2023-07-15),55,55,1,0.0,348.97,348.97,192
+mixes/2024-01-01-mix-best-of-2023-jams/56-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,7-11-Crickets (2023-07-07),56,56,1,0.0,520.18,520.18,192
+mixes/2024-01-01-mix-best-of-2023-jams/57-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Orch theme-Whos In Charge (2023-06-09),57,57,1,0.0,644.99,644.99,192
+mixes/2024-01-01-mix-best-of-2023-jams/58-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Waves-Attack (2023-07-20),58,58,1,0.0,337.87,337.87,192
+mixes/2024-01-01-mix-best-of-2023-jams/59-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Freeze-Cyclone (2023-12-30),59,59,1,0.0,1134.0,1134.0,192
+mixes/2024-01-01-mix-best-of-2023-jams/60-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Crickets-Photograph (2023-12-31),60,60,1,0.0,413.83,413.83,192
+mixes/2024-01-01-mix-best-of-2023-jams/61-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Fifth Element Jam (partial) (2023-03-11),61,61,1,0.0,984.89,984.89,192
+mixes/2024-01-01-mix-best-of-2023-jams/62-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Shelby-Reactor (2023-03-23),62,62,1,0.0,758.47,758.47,192
+mixes/2024-01-01-mix-best-of-2023-jams/63-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Waves-Falling (2023-12-28),63,63,1,0.0,629.21,629.21,192
+mixes/2024-01-01-mix-best-of-2023-jams/64-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Rainbow-Twisted (2023-03-24),64,64,1,0.0,338.16,338.16,192
+mixes/2024-01-01-mix-best-of-2023-jams/65-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters (2023-03-11),65,65,1,0.0,432.14,432.14,192
+mixes/2024-01-01-mix-best-of-2023-jams/66-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Attack-Space Train (2023-03-24),66,66,1,0.0,510.67,510.67,192
+mixes/2024-01-01-mix-best-of-2023-jams/67-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Abyss-Voices (2023-03-30),67,67,1,0.0,483.84,483.84,192
+mixes/2024-01-01-mix-best-of-2023-jams/68-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Space Train-Mr Don (2023-03-30),68,68,1,0.0,691.62,691.62,192
+mixes/2024-01-01-mix-best-of-2023-jams/69-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Abraxas-Spaga (2023-05-03),69,69,1,0.0,710.32,710.32,192
+mixes/2024-01-01-mix-best-of-2023-jams/70-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Caterpillar-Running (2023-05-03),70,70,1,0.0,694.54,694.54,192
+mixes/2024-01-01-mix-best-of-2023-jams/71-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Dribble-Caterpillar (2023-05-03),71,71,1,0.0,502.7,502.7,192
+mixes/2024-01-01-mix-best-of-2023-jams/72-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Running-Another Plan of Attack (2023-05-03),72,72,1,0.0,439.28,439.28,192
+mixes/2024-01-01-mix-best-of-2023-jams/73-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters-Times Square (2023-05-04),73,73,1,0.0,705.93,705.93,192
+mixes/2024-01-01-mix-best-of-2023-jams/74-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Uber Glue-Safety Dance (2023-05-04),74,74,1,0.0,538.51,538.51,192
+mixes/2024-01-01-mix-best-of-2023-jams/75-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Reactor-HAB (2023-05-22),75,75,1,0.0,608.99,608.99,192
+mixes/2024-01-01-mix-best-of-2023-jams/76-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Shocked-Buddha (2023-05-22),76,76,1,0.0,489.77,489.77,192
+mixes/2024-01-01-mix-best-of-2023-jams/77-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Tempest-RLH (2023-06-07),77,77,1,0.0,666.54,666.54,192
+mixes/2024-01-01-mix-best-of-2023-jams/78-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters-Trooper (2023-06-14),78,78,1,0.0,762.02,762.02,192
+mixes/2024-01-01-mix-best-of-2023-jams/79-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,PBR-Home Again (2023-06-15),79,79,1,0.0,561.35,561.35,192
+mixes/2024-01-01-mix-best-of-2023-jams/80-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Space Train-Strobelights (2023-06-17),80,80,1,0.0,454.03,454.03,192
+mixes/2024-01-01-mix-best-of-2023-jams/81-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Munchkin-Falling (2023-07-11),81,81,1,0.0,1042.6,1042.6,192
+mixes/2024-01-01-mix-best-of-2023-jams/82-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,M1-To Be Continued (2023-08-12),82,82,1,0.0,708.05,708.05,192
+mixes/2024-01-01-mix-best-of-2023-jams/83-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters-Ladies (2023-09-23),83,83,1,0.0,585.17,585.17,192
+mixes/2024-01-01-mix-best-of-2023-jams/84-jam1.mp3,mix,2024-01-01,Mix Best of 2023 Jams,Helicopters-IFL (2023-10-27),84,84,1,0.0,1052.24,1052.24,192
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/01-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Caterpillar → Fire Will Exchange (2024-03-14, New Haven, CT)",1,01,1,0.0,1511.0,1511.0,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/02-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Fire Will Exchange → Shem-Rah Boo (2024-11-22, Rome, NY)",2,02,1,0.0,873.59,873.59,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/03-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"House Dog Party Favor → Confrontation (2024-11-14, Norwalk, CT)",3,03,1,0.0,1305.78,1305.78,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/04-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Mindless Dribble → Spacebirdmatingcall (2024-03-10, Charlottesville, VA)",4,04,1,0.0,950.05,950.05,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/05-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Monster → 42 (2024-02-02, San Diego, CA)",5,05,1,0.0,1454.03,1454.03,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/06-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Mr. Don → Fire Will Exchange (2024-09-08, Bellvue, CO)",6,06,1,0.0,594.86,594.86,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/07-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Ring the Doorbell Twice → Reactor (2024-04-05, Houston, TX)",7,07,1,0.0,1201.74,1201.74,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/08-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Running Into The Night → Voices Insane (2024-11-07, Jim Thorpe, PA)",8,08,1,0.0,981.03,981.03,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/09-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Shocked → Ring the Doorbell Twice (2024-03-07, Silver Spring, MD)",9,09,1,0.0,1835.21,1835.21,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/10-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Sister Judy's Soul Shack → One Chance To Save The World (2024-03-15, Portland, ME)",10,10,1,0.0,923.04,923.04,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/11-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"The Wormhole → Confrontation (2024-02-05, Aspen, CO)",11,11,1,0.0,1167.93,1167.93,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/12-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"To Be Continued... → Little Shimmy in a Conga Line (2024-11-09, Brooklyn, NY)",12,12,1,0.0,987.77,987.77,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/13-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Why We Dance (2024-01-25, Crystal Bay, NV)",13,13,1,0.0,940.23,940.23,128
+mixes/2024-01-01-mix-jam-of-the-year-candidates-2024/14-jam1.mp3,mix,2024-01-01,Mix Jam of the Year Candidates 2024,"Why We Dance → Munchkin Invasion (2024-09-05, Fort Collins, CO)",14,14,1,0.0,1214.04,1214.04,128
+2025-10-31-02-jam1.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Rock Candy,2,02,1,232.5,607.5,375.0,192
+2025-10-31-03-jam1.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Country Royale,3,03,1,210.0,525.0,315.0,192
+2025-10-31-03-jam2.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Country Royale,3,03,2,615.0,1012.5,397.5,192
+2025-10-31-05-jam1.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Helicopters,5,05,1,105.0,352.5,247.5,192
+2025-10-31-07-jam1.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Orch Theme,7,07,1,0.0,517.5,517.5,192
+2025-10-31-10-jam1.mp3,show,2025-10-31,"Hulaween, Live Oak, FL",Caterpillar,10,10,1,240.0,675.0,435.0,192
+2025-11-02-02-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Above The Waves,2,02,1,142.5,547.5,405.0,192
+2025-11-02-03-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",To Be Continued,3,03,1,240.0,808.3,568.3,192
+2025-11-02-04-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Fire Will Exchange,4,04,1,262.5,772.5,510.0,192
+2025-11-02-05-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Confrontation,5,05,1,330.0,697.5,367.5,192
+2025-11-02-06-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Scars Of The Brave,6,06,1,397.5,785.7,388.2,192
+2025-11-02-09-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Catalyst,9,09,1,262.5,712.5,450.0,192
+2025-11-02-10-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",La Noche,10,10,1,52.5,330.0,277.5,192
+2025-11-02-10-jam2.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",La Noche,10,10,2,337.5,720.0,382.5,192
+2025-11-02-11-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Ring The Doorbell Twice,11,11,1,307.5,997.5,690.0,192
+2025-11-02-14-jam1.mp3,show,2025-11-02,"Brooklyn Bowl Nashville, Nashville, TN",Digital Buddha,14,14,1,495.0,780.0,285.0,192
+2025-11-05-02-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Svenghali,2,02,1,210.0,480.0,270.0,192
+2025-11-05-03-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Spraypaint,3,03,1,375.0,1005.0,630.0,192
+2025-11-05-04-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",I-man,4,04,1,277.5,667.5,390.0,192
+2025-11-05-05-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Twisted in the Road,5,05,1,0.0,390.0,390.0,192
+2025-11-05-05-jam2.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Twisted in the Road,5,05,2,712.5,1185.0,472.5,192
+2025-11-05-07-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Jigsaw Earth,7,07,1,292.5,937.5,645.0,192
+2025-11-05-08-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",We Like To Party,8,08,1,270.0,562.5,292.5,192
+2025-11-05-09-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Risky Business,9,09,1,0.0,292.5,292.5,192
+2025-11-05-09-jam2.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Risky Business,9,09,2,517.5,930.0,412.5,192
+2025-11-05-11-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",I-man,11,11,1,0.0,420.0,420.0,192
+2025-11-05-12-jam1.mp3,show,2025-11-05,"Jefferson Theater, Charlottesville, VA",Rivers,12,12,1,217.5,607.5,390.0,192
+2025-11-06-02-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Magellan,2,02,1,367.5,742.5,375.0,192
+2025-11-06-03-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Who's In Charge,3,03,1,7.5,697.5,690.0,192
+2025-11-06-03-jam2.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Who's In Charge,3,03,2,915.0,1515.0,600.0,192
+2025-11-06-04-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Spacebirdmatingcall,4,04,1,315.0,1020.0,705.0,192
+2025-11-06-05-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Shadow,5,05,1,337.5,645.0,307.5,192
+2025-11-06-08-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Little Shimmy In A Conga Line,8,08,1,322.5,712.5,390.0,192
+2025-11-06-08-jam2.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Little Shimmy In A Conga Line,8,08,2,712.5,1205.4,492.9,192
+2025-11-06-09-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Simulations,9,09,1,592.5,922.5,330.0,192
+2025-11-06-10-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Can't Decide,10,10,1,0.0,742.5,742.5,192
+2025-11-06-14-jam1.mp3,show,2025-11-06,"The NorVa, Norfolk, VA",Falling 303,14,14,1,0.0,427.5,427.5,192
+2025-11-07-02-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Caterpillar,2,02,1,232.5,525.0,292.5,192
+2025-11-07-02-jam2.mp3,show,2025-11-07,"The National, Richmond, VA",Caterpillar,2,02,2,525.0,810.0,285.0,192
+2025-11-07-03-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Confrontation,3,03,1,37.5,292.5,255.0,192
+2025-11-07-03-jam2.mp3,show,2025-11-07,"The National, Richmond, VA",Confrontation,3,03,2,450.0,1065.0,615.0,192
+2025-11-07-04-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Freeze,4,04,1,247.5,900.0,652.5,192
+2025-11-07-05-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",The Wormhole,5,05,1,577.5,892.5,315.0,192
+2025-11-07-09-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Pimp Blue Rikki,9,09,1,307.5,577.5,270.0,192
+2025-11-07-09-jam2.mp3,show,2025-11-07,"The National, Richmond, VA",Pimp Blue Rikki,9,09,2,630.0,930.0,300.0,192
+2025-11-07-10-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Cyclone,10,10,1,427.5,705.0,277.5,192
+2025-11-07-11-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Above The Waves,11,11,1,0.0,240.0,240.0,192
+2025-11-07-11-jam2.mp3,show,2025-11-07,"The National, Richmond, VA",Above The Waves,11,11,2,870.0,1140.0,270.0,192
+2025-11-07-12-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Scars Of The Brave,12,12,1,240.0,735.0,495.0,192
+2025-11-07-14-jam1.mp3,show,2025-11-07,"The National, Richmond, VA",Rock Candy,14,14,1,345.0,585.0,240.0,192
+2025-11-08-02-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Digital Buddha,2,02,1,757.5,1020.0,262.5,192
+2025-11-08-03-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Dream Journal,3,03,1,247.5,607.5,360.0,192
+2025-11-08-04-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Portal To An Empty Head,4,04,1,405.0,915.1,510.1,192
+2025-11-08-05-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Country Royale,5,05,1,442.5,727.5,285.0,192
+2025-11-08-09-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",La Noche,9,09,1,67.5,605.2,537.7,192
+2025-11-08-10-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Ring The Doorbell Twice,10,10,1,0.0,307.5,307.5,192
+2025-11-08-11-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Svenghali,11,11,1,472.5,830.5,358.0,192
+2025-11-08-13-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Ring The Doorbell Twice,13,13,1,0.0,352.5,352.5,192
+2025-11-08-14-jam1.mp3,show,2025-11-08,"9_30 Club, Washington, DC",Neck Romancer,14,14,1,202.5,495.0,292.5,192
+2025-11-14-02-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Spraypaint,2,02,1,465.0,750.0,285.0,192
+2025-11-14-03-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",I-man,3,03,1,562.5,892.5,330.0,192
+2025-11-14-03-jam2.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",I-man,3,03,2,990.0,1335.0,345.0,192
+2025-11-14-04-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",The Deal,4,04,1,487.5,735.0,247.5,192
+2025-11-14-04-jam2.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",The Deal,4,04,2,787.5,1063.6,276.1,192
+2025-11-14-05-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Abraxas,5,05,1,225.0,487.5,262.5,192
+2025-11-14-08-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Reactor,8,08,1,202.5,600.0,397.5,192
+2025-11-14-09-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",To Be Continued,9,09,1,217.5,885.0,667.5,192
+2025-11-14-10-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Bombs,10,10,1,202.5,847.1,644.6,192
+2025-11-14-11-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Freeze,11,11,1,240.0,697.5,457.5,192
+2025-11-14-11-jam2.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Freeze,11,11,2,727.5,1155.3,427.8,192
+2025-11-14-13-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Little Shimmy In A Conga Line,13,13,1,337.5,630.0,292.5,192
+2025-11-14-13-jam2.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",Little Shimmy In A Conga Line,13,13,2,705.0,945.0,240.0,192
+2025-11-14-14-jam1.mp3,show,2025-11-14,"Brooklyn Steel, Brooklyn, NY",We Like To Party,14,14,1,210.0,555.0,345.0,192
+2025-11-15-02-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Mirrors,2,02,1,367.5,765.0,397.5,192
+2025-11-15-02-jam2.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Mirrors,2,02,2,765.0,1117.5,352.5,192
+2025-11-15-03-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Spacebirdmatingcall,3,03,1,330.0,765.0,435.0,192
+2025-11-15-04-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Fire Will Exchange,4,04,1,0.0,352.5,352.5,192
+2025-11-15-04-jam2.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Fire Will Exchange,4,04,2,667.5,1005.0,337.5,192
+2025-11-15-06-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Crickets,6,06,1,195.0,570.0,375.0,192
+2025-11-15-06-jam2.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Crickets,6,06,2,600.0,900.0,300.0,192
+2025-11-15-10-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Twisted in the Road,10,10,1,540.0,915.0,375.0,192
+2025-11-15-10-jam2.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",Twisted in the Road,10,10,2,915.0,1215.0,300.0,192
+2025-11-15-12-jam1.mp3,show,2025-11-15,"Brooklyn Steel, Brooklyn, NY",In The End We Have Forever,12,12,1,442.5,771.7,329.2,192
+2025-11-16-03-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",Rock Candy,3,03,1,225.0,585.0,360.0,192
+2025-11-16-04-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",The Wormhole,4,04,1,577.5,952.5,375.0,192
+2025-11-16-05-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",Simulations,5,05,1,270.0,517.5,247.5,192
+2025-11-16-06-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",Minions,6,06,1,0.0,270.0,270.0,192
+2025-11-16-09-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",Mindless Dribble,9,09,1,907.5,1399.1,491.6,192
+2025-11-16-14-jam1.mp3,show,2025-11-16,"Sherman Theater, Stroudsburg, PA",Neck Romancer,14,14,1,187.5,510.0,322.5,192
+2025-11-19-02-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Rivers,2,02,1,405.0,727.5,322.5,192
+2025-11-19-04-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Shadow,4,04,1,487.5,937.5,450.0,192
+2025-11-19-06-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Shocked,6,06,1,345.0,615.0,270.0,192
+2025-11-19-09-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Aceetobee,9,09,1,562.5,855.0,292.5,192
+2025-11-19-10-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Munchkin Invasion,10,10,1,247.5,502.5,255.0,192
+2025-11-19-11-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Dream Journal,11,11,1,262.5,630.0,367.5,192
+2025-11-19-11-jam2.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Dream Journal,11,11,2,697.5,1080.0,382.5,192
+2025-11-19-13-jam1.mp3,show,2025-11-19,"Higher Ground, South Burlington, VT",Who's In Charge,13,13,1,195.0,652.5,457.5,192
+2025-11-20-02-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Caves Of The East,2,02,1,0.0,592.5,592.5,192
+2025-11-20-03-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Home Again,3,03,1,285.0,615.0,330.0,192
+2025-11-20-04-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",The Great Abyss,4,04,1,120.0,652.5,532.5,192
+2025-11-20-05-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Abraxas,5,05,1,270.0,584.8,314.8,192
+2025-11-20-06-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Orch Theme,6,06,1,0.0,240.0,240.0,192
+2025-11-20-06-jam2.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Orch Theme,6,06,2,247.5,735.0,487.5,192
+2025-11-20-10-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Helicopters,10,10,1,367.5,614.3,246.8,192
+2025-11-20-11-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Falling 303 x On Time,11,11,1,0.0,502.5,502.5,192
+2025-11-20-12-jam1.mp3,show,2025-11-20,"Higher Ground, South Burlington, VT",Lunar Pursuit,12,12,1,495.0,750.0,255.0,192
+2025-11-21-01-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",42,1,d1_02,1,360.0,918.6,558.6,192
+2025-11-21-02-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Crickets,2,d1_03,1,195.0,585.0,390.0,192
+2025-11-21-02-jam2.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Crickets,2,d1_03,2,772.5,1353.2,580.7,192
+2025-11-21-03-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",No Recollection,3,d1_04,1,412.5,787.5,375.0,192
+2025-11-21-03-jam2.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",No Recollection,3,d1_04,2,847.5,1102.1,254.6,192
+2025-11-21-04-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Shelby Rose,4,d1_06,1,255.0,615.0,360.0,192
+2025-11-21-05-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Little Shimmy In A Conga Line,5,d2_02,1,465.0,825.0,360.0,192
+2025-11-21-05-jam2.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Little Shimmy In A Conga Line,5,d2_02,2,1095.0,1357.3,262.3,192
+2025-11-21-06-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Scars Of The Brave,6,d2_04,1,667.5,982.5,315.0,192
+2025-11-21-07-jam1.mp3,show,2025-11-21,"Town Ballroom, Buffalo, NY",Pimp Blue Rikki,7,d2_05,1,232.5,472.5,240.0,192
+2025-11-22-01-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Feeling Twisted,1,d1_02,1,135.0,600.0,465.0,192
+2025-11-22-02-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Nughuffer,2,d1_03,1,592.5,910.4,317.9,192
+2025-11-22-03-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Cyclone,3,d1_04,1,232.5,660.0,427.5,192
+2025-11-22-04-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Mr Don,4,d1_05,1,0.0,262.5,262.5,192
+2025-11-22-04-jam2.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Mr Don,4,d1_05,2,735.0,1057.5,322.5,192
+2025-11-22-05-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Shadow,5,d1_06,1,202.5,450.0,247.5,192
+2025-11-22-06-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Mr Don,6,d1_07,1,165.0,600.0,435.0,192
+2025-11-22-07-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Spraypaint,7,d2_07,1,367.5,735.0,367.5,192
+2025-11-22-07-jam2.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Spraypaint,7,d2_07,2,832.5,1155.0,322.5,192
+2025-11-22-08-jam1.mp3,show,2025-11-22,"Town Ballroom, Buffalo, NY",Sound One,8,d3_01,1,52.5,307.5,255.0,192
+2025-12-18-01-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Helicopters,1,d1_03,1,97.5,442.5,345.0,192
+2025-12-18-02-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Simulations,2,d1_04,1,435.0,697.5,262.5,192
+2025-12-18-03-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",One Chance To Save The World,3,d1_05,1,0.0,307.5,307.5,192
+2025-12-18-04-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Risky Business,4,d1_06,1,0.0,367.5,367.5,192
+2025-12-18-05-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Helicopters,5,d1_07,1,0.0,270.0,270.0,192
+2025-12-18-06-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Rivers,6,d2_02,1,270.0,615.0,345.0,192
+2025-12-18-06-jam2.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Rivers,6,d2_02,2,630.0,1006.0,376.0,192
+2025-12-18-07-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Tourists Rocket Ship,7,d2_03,1,60.0,315.0,255.0,192
+2025-12-18-07-jam2.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Tourists Rocket Ship,7,d2_03,2,637.5,897.0,259.5,192
+2025-12-18-08-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Confrontation,8,d2_04,1,307.5,739.5,432.0,192
+2025-12-18-09-jam1.mp3,show,2025-12-18,"The Fillmore, Minneapolis, MN",Portal To An Empty Head,9,d2_05,1,465.0,870.0,405.0,192
+2025-12-19-03-jam1.mp3,show,2025-12-19,"Garcia's, Chicago, IL",I-man,3,03,1,517.5,1087.5,570.0,192
+2025-12-20-02-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",The Overture,2,02,1,187.5,450.0,262.5,192
+2025-12-20-03-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",Digital Buddha,3,03,1,420.0,692.5,272.5,192
+2025-12-20-04-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",To Be Continued,4,04,1,427.5,735.0,307.5,192
+2025-12-20-05-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",Country Royale,5,05,1,450.0,780.0,330.0,192
+2025-12-20-10-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",Scars Of The Brave,10,10,1,292.5,667.5,375.0,192
+2025-12-20-11-jam1.mp3,show,2025-12-20,"Thalia Hall, Chicago, IL",Ring The Doorbell Twice,11,11,1,375.0,862.5,487.5,192
+2025-12-21-01-jam1.mp3,show,2025-12-21,"Thalia Hall, Chicago, IL",Astronaut,1,d1_03,1,630.0,1042.5,412.5,192
+2025-12-21-02-jam1.mp3,show,2025-12-21,"Thalia Hall, Chicago, IL",Little Shimmy In A Conga Line,2,d1_04,1,570.0,833.0,263.0,192
+2025-12-21-03-jam1.mp3,show,2025-12-21,"Thalia Hall, Chicago, IL",Twisted in the Road,3,d1_05,1,457.5,840.0,382.5,192
+2025-12-21-04-jam1.mp3,show,2025-12-21,"Thalia Hall, Chicago, IL",House Dog Party Favor,4,d3_01,1,570.0,885.0,315.0,192
+2025-12-21-05-jam1.mp3,show,2025-12-21,"Thalia Hall, Chicago, IL",Feeling Twisted,5,d3_02,1,247.5,577.5,330.0,192
+2025-12-27-01-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Munchkin Invasion,1,d1_02,1,202.5,1222.5,1020.0,192
+2025-12-27-02-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Tourists Rocket Ship,2,d1_03,1,0.0,360.0,360.0,192
+2025-12-27-02-jam2.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Tourists Rocket Ship,2,d1_03,2,1020.0,1413.0,393.0,192
+2025-12-27-03-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Orch Theme,3,d1_04,1,90.0,832.5,742.5,192
+2025-12-27-04-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Jigsaw Earth,4,d2_02,1,255.0,532.5,277.5,192
+2025-12-27-04-jam2.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Jigsaw Earth,4,d2_02,2,547.5,1012.5,465.0,192
+2025-12-27-05-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Spacebirdmatingcall,5,d2_03,1,52.5,532.5,480.0,192
+2025-12-27-06-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Sound One,6,d2_04,1,180.0,562.5,382.5,192
+2025-12-27-07-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Trap Door,7,d2_05,1,465.0,847.8,382.8,192
+2025-12-27-08-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Astronaut,8,d2_06,1,315.0,592.5,277.5,192
+2025-12-27-08-jam2.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Astronaut,8,d2_06,2,607.5,1027.5,420.0,192
+2025-12-27-09-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Crickets,9,d3_01,1,0.0,277.5,277.5,192
+2025-12-27-09-jam2.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Crickets,9,d3_01,2,285.0,562.5,277.5,192
+2025-12-27-10-jam1.mp3,show,2025-12-27,"College Street Music Hall, New Haven, CT",Spacebirdmatingcall,10,d3_02,1,0.0,285.0,285.0,192
+2025-12-28-01-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",House Dog Party Favor,1,d1_02,1,187.5,487.5,300.0,192
+2025-12-28-02-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",Above The Waves,2,d1_03,1,135.0,712.5,577.5,192
+2025-12-28-03-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",Postcard,3,d1_04,1,405.0,802.5,397.5,192
+2025-12-28-04-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",Twisted in the Road,4,d1_05,1,525.0,997.5,472.5,192
+2025-12-28-05-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",Digital Buddha,5,d1_06,1,420.0,697.5,277.5,192
+2025-12-28-06-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",Caterpillar,6,d2_02,1,795.0,1212.8,417.8,192
+2025-12-28-07-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",The Deal,7,d2_03,1,570.0,967.5,397.5,192
+2025-12-28-08-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",One Chance To Save The World,8,d2_04,1,465.0,705.0,240.0,192
+2025-12-28-08-jam2.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",One Chance To Save The World,8,d2_04,2,750.0,1275.0,525.0,192
+2025-12-28-09-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",To Be Continued,9,d3_01,1,367.5,802.5,435.0,192
+2025-12-28-10-jam1.mp3,show,2025-12-28,"District Music Hall, Norwalk, CT",No Recollection,10,d3_03,1,187.5,487.5,300.0,192
+2025-12-30-01-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Mirrors,1,d1_02,1,375.0,855.0,480.0,192
+2025-12-30-01-jam2.mp3,show,2025-12-30,"Royale, Boston, MA",Mirrors,1,d1_02,2,1012.5,1440.0,427.5,192
+2025-12-30-02-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Abraxas,2,d1_03,1,225.0,495.0,270.0,192
+2025-12-30-03-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Mr Don,3,d1_05,1,532.5,914.6,382.1,192
+2025-12-30-04-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Caves Of The East,4,d2_03,1,0.0,480.0,480.0,192
+2025-12-30-05-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Story Of The World,5,d2_04,1,517.5,787.5,270.0,192
+2025-12-30-06-jam1.mp3,show,2025-12-30,"Royale, Boston, MA",Bombs,6,d2_06,1,367.5,881.8,514.3,192
+2025-12-31-01-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Mindless Dribble,1,d1_02,1,315.0,660.0,345.0,192
+2025-12-31-01-jam2.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Mindless Dribble,1,d1_02,2,847.5,1222.5,375.0,192
+2025-12-31-02-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Voices Insane,2,d1_03,1,382.5,885.0,502.5,192
+2025-12-31-03-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Scars Of The Brave,3,d1_04,1,315.0,742.5,427.5,192
+2025-12-31-03-jam2.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Scars Of The Brave,3,d1_04,2,750.0,1085.7,335.7,192
+2025-12-31-04-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Rivers,4,d2_02,1,217.5,667.5,450.0,192
+2025-12-31-04-jam2.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Rivers,4,d2_02,2,697.5,1161.8,464.3,192
+2025-12-31-05-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",We Like To Party,5,d2_03,1,210.0,938.3,728.3,192
+2025-12-31-06-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Shadow,6,d2_04,1,442.5,757.5,315.0,192
+2025-12-31-07-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Helicopters,7,d3_04,1,82.5,454.2,371.7,192
+2025-12-31-08-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",The Bells,8,d3_05,1,22.5,277.5,255.0,192
+2025-12-31-09-jam1.mp3,show,2025-12-31,"Roadrunner, Boston, MA",Better Off Alone,9,d3_06,1,397.5,686.3,288.8,192
+2026-02-06-02-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Save The Robots,2,02,1,7.5,367.5,360.0,192
+2026-02-06-02-jam2.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Save The Robots,2,02,2,622.5,1102.5,480.0,192
+2026-02-06-02-jam3.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Save The Robots,2,02,3,1215.0,1530.0,315.0,192
+2026-02-06-03-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Humuhumunukunukuapua'a,3,03,1,367.5,652.5,285.0,192
+2026-02-06-05-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Tourists (Rocket Ship),5,05,1,487.5,981.9,494.4,192
+2026-02-06-06-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Better in Doses,6,06,1,217.5,529.0,311.5,192
+2026-02-06-09-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Vassillios,9,09,1,337.5,937.1,599.6,192
+2026-02-06-10-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Munchkin Invasion,10,10,1,165.0,801.7,636.7,192
+2026-02-06-11-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Spacebirdmatingcall,11,11,1,217.5,889.0,671.5,192
+2026-02-06-12-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",The Deal,12,12,1,517.5,795.0,277.5,192
+2026-02-06-13-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Show Me Love,13,13,1,315.0,642.9,327.9,192
+2026-02-06-14-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",Munchkin Invasion,14,14,1,0.0,262.5,262.5,192
+2026-02-06-15-jam1.mp3,show,2026-02-06,"Miami Beach Bandshell, Miami Beach, FL",One Day,15,15,1,277.5,666.3,388.8,192
+2026-02-07-02-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Above The Waves,2,02,1,127.5,592.5,465.0,192
+2026-02-07-03-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Magellan,3,03,1,315.0,720.0,405.0,192
+2026-02-07-04-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Shelby Rose,4,04,1,180.0,691.2,511.2,192
+2026-02-07-05-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",No Recollection,5,05,1,322.5,686.8,364.3,192
+2026-02-07-06-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",To Be Continued,6,06,1,322.5,690.0,367.5,192
+2026-02-07-07-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Hymn,7,07,1,480.0,757.5,277.5,192
+2026-02-07-07-jam2.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Hymn,7,07,2,765.0,1042.1,277.1,192
+2026-02-07-08-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Scars Of The Brave,8,08,1,225.0,959.3,734.3,192
+2026-02-07-09-jam1.mp3,show,2026-02-07,"Jam Cruise, Miami, FL",Shelby Rose,9,09,1,0.0,247.5,247.5,192
+2026-02-08-02-jam1.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",House Dog Party Favor,2,02,1,292.5,667.5,375.0,192
+2026-02-08-02-jam2.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",House Dog Party Favor,2,02,2,862.5,1440.0,577.5,192
+2026-02-08-05-jam1.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",Rivers,5,05,1,0.0,390.0,390.0,192
+2026-02-08-05-jam2.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",Rivers,5,05,2,397.5,901.6,504.1,192
+2026-02-08-06-jam1.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",Dino Baby,6,06,1,0.0,262.5,262.5,192
+2026-02-08-07-jam1.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",I-man,7,07,1,0.0,255.0,255.0,192
+2026-02-08-07-jam2.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",I-man,7,07,2,480.0,810.0,330.0,192
+2026-02-08-08-jam1.mp3,show,2026-02-08,"Jam Cruise, Miami, FL",Hot Air Balloon,8,08,1,307.5,727.5,420.0,192
+2026-03-19-02-jam1.mp3,show,2026-03-19,"Okeechobee Music & Arts Festival, Okeechobee, FL",We Like To Party,2,02,1,210.0,570.0,360.0,192
+2026-03-19-06-jam1.mp3,show,2026-03-19,"Okeechobee Music & Arts Festival, Okeechobee, FL",Simulations,6,06,1,225.0,495.0,270.0,192
+2026-04-11-01-jam1.mp3,show,2026-04-11,"Gather Outdoors, Stratton, VT",Spraypaint,1,01,1,135.0,494.4,359.4,192
+2026-04-11-02-jam1.mp3,show,2026-04-11,"Gather Outdoors, Stratton, VT",Photograph,2,02,1,187.5,450.0,262.5,192
+2026-04-11-02-jam2.mp3,show,2026-04-11,"Gather Outdoors, Stratton, VT",Photograph,2,02,2,510.0,847.5,337.5,192
+2026-04-11-02-jam3.mp3,show,2026-04-11,"Gather Outdoors, Stratton, VT",Photograph,2,02,3,997.5,1265.6,268.1,192
+2026-04-11-03-jam1.mp3,show,2026-04-11,"Gather Outdoors, Stratton, VT",Sound One,3,03,1,225.0,477.8,252.8,192
+2026-04-12-02-jam1.mp3,show,2026-04-12,"Gather Outdoors, Stratton, VT",The Overture,2,02,1,202.5,555.0,352.5,192
+2026-04-12-04-jam1.mp3,show,2026-04-12,"Gather Outdoors, Stratton, VT",Shelby Rose,4,04,1,247.5,577.5,330.0,192
+2026-04-12-05-jam1.mp3,show,2026-04-12,"Gather Outdoors, Stratton, VT",Abraxas,5,05,1,165.0,472.5,307.5,192
+2026-04-12-05-jam2.mp3,show,2026-04-12,"Gather Outdoors, Stratton, VT",Abraxas,5,05,2,472.5,770.6,298.1,192
+2026-04-16-02-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Kitchen Mitts,2,02,1,480.0,1131.9,651.9,192
+2026-04-16-03-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",And The Ladies Were The Rest Of The Night,3,03,1,127.5,765.0,637.5,192
+2026-04-16-04-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",No Recollection,4,04,1,172.5,482.0,309.5,192
+2026-04-16-05-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",And The Ladies Were The Rest Of The Night,5,05,1,0.0,329.0,329.0,192
+2026-04-16-09-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Hot Air Balloon,9,09,1,330.0,735.0,405.0,192
+2026-04-16-10-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Abraxas,10,10,1,187.5,535.5,348.0,192
+2026-04-16-11-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Spacebirdmatingcall,11,11,1,0.0,1005.0,1005.0,192
+2026-04-16-12-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Who's In Charge,12,12,1,450.0,909.0,459.0,192
+2026-04-16-13-jam1.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Spacebirdmatingcall,13,13,1,0.0,240.0,240.0,192
+2026-04-16-13-jam2.mp3,show,2026-04-16,"The Observatory North Park, San Diego, CA",Spacebirdmatingcall,13,13,2,532.5,1020.0,487.5,192
+2026-04-18-02-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Mulberry's Dream,2,02,1,487.5,765.0,277.5,192
+2026-04-18-03-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Space Train,3,03,1,277.5,622.5,345.0,192
+2026-04-18-05-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Vassillios,5,05,1,367.5,1022.4,654.9,192
+2026-04-18-06-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Astronaut,6,06,1,412.5,742.5,330.0,192
+2026-04-18-06-jam2.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Astronaut,6,06,2,742.5,1155.0,412.5,192
+2026-04-18-08-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",The Overture,8,08,1,0.0,779.0,779.0,192
+2026-04-18-09-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Minions,9,09,1,240.0,933.3,693.3,192
+2026-04-18-10-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Trap Door,10,10,1,352.5,810.0,457.5,192
+2026-04-18-10-jam2.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Trap Door,10,10,2,825.0,1357.5,532.5,192
+2026-04-18-11-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Feeling Twisted,11,11,1,127.5,558.0,430.5,192
+2026-04-18-12-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Pimp Blue Rikki,12,12,1,15.0,345.0,330.0,192
+2026-04-18-12-jam2.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Pimp Blue Rikki,12,12,2,525.0,967.5,442.5,192
+2026-04-18-13-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",The Overture,13,13,1,0.0,255.0,255.0,192
+2026-04-18-14-jam1.mp3,show,2026-04-18,"The UC Theatre Taube Family Music Hall, Berkeley, CA",Helicopters,14,14,1,322.5,705.0,382.5,192
+2026-04-19-01-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Save The Robots,1,01,1,585.0,1042.5,457.5,192
+2026-04-19-02-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Scars Of The Brave,2,02,1,277.5,757.5,480.0,192
+2026-04-19-03-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",The Great Abyss,3,03,1,0.0,427.5,427.5,192
+2026-04-19-03-jam2.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",The Great Abyss,3,03,2,547.5,847.5,300.0,192
+2026-04-19-04-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Shocked,4,04,1,135.0,510.0,375.0,192
+2026-04-19-06-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",No Recollection,6,06,1,82.5,487.5,405.0,192
+2026-04-19-07-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Humuhumunukunukuapua'a,7,07,1,225.0,817.5,592.5,192
+2026-04-19-07-jam2.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Humuhumunukunukuapua'a,7,07,2,900.0,1205.0,305.0,192
+2026-04-19-08-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Mindless Dribble,8,08,1,157.5,577.5,420.0,192
+2026-04-19-08-jam2.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Mindless Dribble,8,08,2,975.0,1493.5,518.5,192
+2026-04-19-09-jam1.mp3,show,2026-04-19,"Crystal Bay Club Casino - Crown Room, Crystal Bay, NV",Better in Doses,9,09,1,322.5,838.2,515.7,192
+2026-04-24-01-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Shelby Rose,1,01,1,172.5,996.8,824.3,192
+2026-04-24-02-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Spacebirdmatingcall,2,02,1,0.0,825.2,825.2,192
+2026-04-24-03-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",To Be Continued,3,03,1,150.0,1234.8,1084.8,192
+2026-04-24-04-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Risky Business,4,04,1,0.0,652.3,652.3,192
+2026-04-24-05-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Spacebirdmatingcall,5,05,1,165.0,556.0,391.0,192
+2026-04-24-07-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Rivers,7,07,1,15.0,1575.9,1560.9,192
+2026-04-24-08-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Rock Candy,8,08,1,0.0,735.0,735.0,192
+2026-04-24-09-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Munchkin Invasion,9,09,1,202.5,563.9,361.4,192
+2026-04-24-10-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Tricycle,10,10,1,0.0,383.4,383.4,192
+2026-04-24-11-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Fire Will Exchange,11,11,1,262.5,502.5,240.0,192
+2026-04-24-11-jam2.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Fire Will Exchange,11,11,2,525.0,992.1,467.1,192
+2026-04-24-13-jam1.mp3,show,2026-04-24,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Story Of The World,13,13,1,82.5,667.5,585.0,192
+2026-04-25-02-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Mirrors,2,02,1,90.0,780.0,690.0,192
+2026-04-25-03-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",I-man,3,03,1,0.0,165.0,165.0,192
+2026-04-25-03-jam2.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",I-man,3,03,2,172.5,285.0,112.5,192
+2026-04-25-03-jam3.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",I-man,3,03,3,322.5,495.0,172.5,192
+2026-04-25-03-jam4.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",I-man,3,03,4,540.0,1175.771,635.771,192
+2026-04-25-04-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",We Like To Party,4,04,1,0.0,640.0,640.0,192
+2026-04-25-05-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Ring The Doorbell Twice,5,05,1,0.0,180.0,180.0,192
+2026-04-25-05-jam2.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Ring The Doorbell Twice,5,05,2,540.0,929.238,389.238,192
+2026-04-25-06-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Svenghali,6,06,1,0.0,142.5,142.5,192
+2026-04-25-06-jam2.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Svenghali,6,06,2,360.0,674.092,314.092,192
+2026-04-25-07-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",We Like To Party,7,07,1,45.0,127.5,82.5,192
+2026-04-25-09-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",House Dog Party Favor,9,09,1,622.5,1087.5,465.0,192
+2026-04-25-10-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",M.E.M.P.H.I.S.,10,10,1,0.0,1020.0,1020.0,192
+2026-04-25-10-jam2.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",M.E.M.P.H.I.S.,10,10,2,1035.0,1176.226,141.226,192
+2026-04-25-11-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Shadow,11,11,1,180.0,285.0,105.0,192
+2026-04-25-12-jam1.mp3,show,2026-04-25,"Brooklyn Bowl Las Vegas, Las Vegas, NV",Country Royale,12,12,1,180.0,712.5,532.5,192
+2026-05-07-03-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Little Shimmy In A Conga Line,3,03,1,465.0,817.5,352.5,192
+2026-05-07-04-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Helicopters,4,04,1,112.5,487.5,375.0,192
+2026-05-07-04-jam2.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Helicopters,4,04,2,525.0,1132.5,607.5,192
+2026-05-07-05-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Hot Air Balloon,5,05,1,375.0,855.0,480.0,192
+2026-05-07-06-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Scars Of The Brave,6,06,1,247.5,652.5,405.0,192
+2026-05-07-08-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Better Off Alone,8,08,1,262.5,540.0,277.5,192
+2026-05-07-10-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Tricycle x Like A Prayer,10,10,1,82.5,567.3,484.8,192
+2026-05-07-11-jam1.mp3,show,2026-05-07,"Viva El Gonzo, San Jose Del Cabo, MX",Hymn,11,11,1,240.0,559.0,319.0,192
+2026-05-22-05-jam1.mp3,show,2026-05-22,"The Mishawaka, Bellvue, CO",Humuhumunukunukuapua'a,5,05,1,510.0,757.5,247.5,192
+2026-05-22-08-jam1.mp3,show,2026-05-22,"The Mishawaka, Bellvue, CO",Twisted in the Road,8,08,1,930.0,1522.5,592.5,192
+2026-05-23-02-jam1.mp3,show,2026-05-23,"The Mishawaka, Bellvue, CO",World Is Spinning,2,02,1,472.5,712.5,240.0,192
+2026-05-23-02-jam2.mp3,show,2026-05-23,"The Mishawaka, Bellvue, CO",World Is Spinning,2,02,2,825.0,1095.0,270.0,192
+2026-05-23-10-jam1.mp3,show,2026-05-23,"The Mishawaka, Bellvue, CO",Mindless Dribble,10,10,1,675.0,958.2,283.2,192
+2026-05-23-11-jam1.mp3,show,2026-05-23,"The Mishawaka, Bellvue, CO",Bombs,11,11,1,840.0,1372.5,532.5,192
+2026-05-23-12-jam1.mp3,show,2026-05-23,"The Mishawaka, Bellvue, CO",Better in Doses,12,12,1,465.0,795.0,330.0,192
+2026-06-11-02-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Caves Of The East,2,02,1,412.5,995.9,583.4,192
+2026-06-11-03-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Minions,3,03,1,660.0,1305.0,645.0,192
+2026-06-11-04-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Orch Theme,4,04,1,211.0,825.0,614.0,192
+2026-06-11-05-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Tempest,5,05,1,292.5,666.0,373.5,192
+2026-06-11-08-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Basis For A Day,8,08,1,690.0,1147.5,457.5,192
+2026-06-11-09-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",I-man,9,09,1,308.5,531.5,223.0,192
+2026-06-11-12-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Aceetobee,12,12,1,682.5,1057.5,375.0,192
+2026-06-11-13-jam1.mp3,show,2026-06-11,"The Paramount, Huntington, NY",Neck Romancer,13,13,1,195.0,374.0,179.0,192
+2026-06-12-02-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Three Wishes,2,02,1,15.0,224.0,209.0,192
+2026-06-12-04-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Voices Insane,4,04,1,531.0,1148.8,617.8,192
+2026-06-12-05-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Freeze,5,05,1,231.0,464.0,233.0,192
+2026-06-12-09-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Save The Robots,9,09,1,240.0,524.0,284.0,192
+2026-06-12-09-jam2.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Save The Robots,9,09,2,892.5,1350.1,457.6,192
+2026-06-12-10-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",We Like To Party,10,10,1,350.5,996.5,646.0,192
+2026-06-12-11-jam1.mp3,show,2026-06-12,"Levitt Pavilion, Westport, CT",Astronaut,11,11,1,607.5,1026.5,419.0,192
+2026-06-13-02-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Run Like Hell,2,02,1,187.5,667.5,480.0,192
+2026-06-13-02-jam2.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Run Like Hell,2,02,2,795.0,1147.5,352.5,192
+2026-06-13-02-jam3.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Run Like Hell,2,02,3,1200.0,1755.0,555.0,192
+2026-06-13-03-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",And The Ladies Were The Rest Of The Night,3,03,1,375.0,997.5,622.5,192
+2026-06-13-04-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",I-man,4,04,1,240.0,555.0,315.0,192
+2026-06-13-04-jam2.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",I-man,4,04,2,697.5,1002.4,304.9,192
+2026-06-13-05-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Run Like Hell,5,05,1,0.0,390.0,390.0,192
+2026-06-13-07-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Little Lai,7,07,1,247.5,697.5,450.0,192
+2026-06-13-08-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Spraypaint,8,08,1,472.5,923.6,451.1,192
+2026-06-13-09-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Abraxas,9,09,1,247.5,697.5,450.0,192
+2026-06-13-10-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Pimp Blue Rikki,10,10,1,750.0,1092.9,342.9,192
+2026-06-13-11-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Cyclone,11,11,1,217.5,540.0,322.5,192
+2026-06-13-15-jam1.mp3,show,2026-06-13,"Levitt Pavilion, Westport, CT",Strobelights And Martinis,15,15,1,0.0,307.5,307.5,192
+2026-06-20-02-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Humuhumunukunukuapua'a,2,02,1,187.5,1035.7,848.2,192
+2026-06-20-03-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Better in Doses,3,03,1,217.5,975.0,757.5,192
+2026-06-20-03-jam2.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Better in Doses,3,03,2,975.0,1337.9,362.9,192
+2026-06-20-04-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Gangster,4,04,1,0.0,247.5,247.5,192
+2026-06-20-04-jam2.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Gangster,4,04,2,255.0,525.0,270.0,192
+2026-06-20-05-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Humuhumunukunukuapua'a,5,05,1,0.0,375.0,375.0,192
+2026-06-20-07-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Above The Waves,7,07,1,142.5,450.0,307.5,192
+2026-06-20-10-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Photograph,10,10,1,240.0,637.5,397.5,192
+2026-06-20-10-jam2.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Photograph,10,10,2,637.5,900.0,262.5,192
+2026-06-20-11-jam1.mp3,show,2026-06-20,"Lincoln Hill Farms, Canandaigua, NY",Falling,11,11,1,0.0,247.5,247.5,192
+2026-06-21-02-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Digital Buddha,2,02,1,210.0,450.0,240.0,192
+2026-06-21-02-jam2.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Digital Buddha,2,02,2,450.0,705.0,255.0,192
+2026-06-21-03-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Vassillios,3,03,1,352.5,839.4,486.9,192
+2026-06-21-09-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Little Shimmy In A Conga Line,9,09,1,502.5,907.5,405.0,192
+2026-06-21-10-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Spacebirdmatingcall,10,10,1,0.0,240.0,240.0,192
+2026-06-21-10-jam2.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Spacebirdmatingcall,10,10,2,525.0,771.4,246.4,192
+2026-06-21-11-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Country Royale,11,11,1,502.5,832.5,330.0,192
+2026-06-21-12-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",Dino Baby,12,12,1,577.5,870.0,292.5,192
+2026-06-21-15-jam1.mp3,show,2026-06-21,"Northlands Music & Arts Festival, Swanzey, NH",No Recollection,15,15,1,247.5,787.5,540.0,192
+2026-07-04-02-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Mirrors,2,02,1,172.5,622.5,450.0,192
+2026-07-04-02-jam2.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Mirrors,2,02,2,622.5,877.5,255.0,192
+2026-07-04-04-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Ring The Doorbell Twice,4,04,1,0.0,390.0,390.0,192
+2026-07-04-08-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Crickets,8,08,1,352.5,600.0,247.5,192
+2026-07-04-08-jam2.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Crickets,8,08,2,900.0,1387.5,487.5,192
+2026-07-04-10-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Caterpillar,10,10,1,375.0,714.8,339.8,192
+2026-07-04-11-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Times Square,11,11,1,187.5,816.5,629.0,192
+2026-07-04-12-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Simulations,12,12,1,195.0,562.5,367.5,192
+2026-07-04-12-jam2.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Simulations,12,12,2,600.0,945.0,345.0,192
+2026-07-04-13-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Caterpillar,13,13,1,0.0,382.5,382.5,192
+2026-07-04-14-jam1.mp3,show,2026-07-04,"Borgata Event Center, Atlantic City, NJ",Little Lai,14,14,1,180.0,435.0,255.0,192
+2026-07-10-02-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",Mr. Don,2,02,1,495.0,1155.0,660.0,192
+2026-07-10-04-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",The Deal,4,04,1,0.0,337.5,337.5,192
+2026-07-10-04-jam2.mp3,show,2026-07-10,"State Theatre, Portland, ME",The Deal,4,04,2,712.5,1020.0,307.5,192
+2026-07-10-05-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",Abraxas,5,05,1,0.0,262.5,262.5,192
+2026-07-10-05-jam2.mp3,show,2026-07-10,"State Theatre, Portland, ME",Abraxas,5,05,2,480.0,735.0,255.0,192
+2026-07-10-06-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",Astronaut,6,06,1,0.0,757.5,757.5,192
+2026-07-10-08-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",Shelby Rose,8,08,1,210.0,877.5,667.5,192
+2026-07-10-10-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",Hymn,10,10,1,0.0,247.5,247.5,192
+2026-07-10-10-jam2.mp3,show,2026-07-10,"State Theatre, Portland, ME",Hymn,10,10,2,262.5,615.0,352.5,192
+2026-07-10-11-jam1.mp3,show,2026-07-10,"State Theatre, Portland, ME",And The Ladies Were The Rest Of The Night,11,11,1,300.0,930.0,630.0,192
+2026-07-11-03-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Aceetobee,3,03,1,787.5,1132.5,345.0,192
+2026-07-11-04-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Run Like Hell,4,04,1,37.5,555.0,517.5,192
+2026-07-11-04-jam2.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Run Like Hell,4,04,2,735.0,975.0,240.0,192
+2026-07-11-05-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Country Royale,5,05,1,412.5,870.0,457.5,192
+2026-07-11-05-jam2.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Country Royale,5,05,2,930.0,1292.5,362.5,192
+2026-07-11-09-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Hot Air Balloon,9,09,1,337.5,774.0,436.5,192
+2026-07-11-10-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Falling,10,10,1,300.0,570.0,270.0,192
+2026-07-11-10-jam2.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Falling,10,10,2,607.5,1050.0,442.5,192
+2026-07-11-11-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Who's In Charge,11,11,1,0.0,240.0,240.0,192
+2026-07-11-11-jam2.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Who's In Charge,11,11,2,427.5,679.7,252.2,192
+2026-07-11-12-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Spaga's Last Stand,12,12,1,240.0,607.0,367.0,192
+2026-07-11-14-jam1.mp3,show,2026-07-11,"Jeezum Crow Festival, Jay, VT",Plan B,14,14,1,217.5,525.0,307.5,192
+2026-07-12-02-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",M.E.M.P.H.I.S.,2,02,1,142.5,390.0,247.5,192
+2026-07-12-02-jam2.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",M.E.M.P.H.I.S.,2,02,2,660.0,1153.0,493.0,192
+2026-07-12-03-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Little Lai,3,03,1,450.0,995.8,545.8,192
+2026-07-12-04-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Trap Door,4,04,1,682.5,1041.2,358.7,192
+2026-07-12-05-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Gangster,5,05,1,0.0,255.0,255.0,192
+2026-07-12-06-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",We Like To Party,6,06,1,405.0,652.5,247.5,192
+2026-07-12-08-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Spectacle,8,08,1,90.0,345.0,255.0,192
+2026-07-12-10-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Save The Robots,10,10,1,247.5,675.0,427.5,192
+2026-07-12-13-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Spraypaint,13,13,1,525.0,825.0,300.0,192
+2026-07-12-14-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Hope,14,14,1,255.0,517.5,262.5,192
+2026-07-12-15-jam1.mp3,show,2026-07-12,"Soundcheck Studios, Pembroke, MA",Save The Robots,15,15,1,300.0,585.0,285.0,192
+2026-07-24-03-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Let's Dance,3,03,1,622.5,1018.6,396.1,192
+2026-07-24-04-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Spacebirdmatingcall,4,04,1,157.5,545.2,387.7,192
+2026-07-24-05-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Dino Baby,5,05,1,0.0,502.5,502.5,192
+2026-07-24-05-jam2.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Dino Baby,5,05,2,645.0,1335.0,690.0,192
+2026-07-24-06-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Risky Business,6,06,1,337.5,795.0,457.5,192
+2026-07-24-07-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Spacebirdmatingcall,7,07,1,0.0,277.5,277.5,192
+2026-07-24-09-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Confrontation,9,09,1,300.0,579.4,279.4,192
+2026-07-24-10-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Another Spin,10,10,1,420.0,720.0,300.0,192
+2026-07-24-10-jam2.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Another Spin,10,10,2,750.0,1048.3,298.3,192
+2026-07-24-11-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Tourists (Rocket Ship),11,11,1,0.0,255.0,255.0,192
+2026-07-24-11-jam2.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Tourists (Rocket Ship),11,11,2,570.0,1220.9,650.9,192
+2026-07-24-14-jam1.mp3,show,2026-07-24,"Flood City Music Festival, Johnstown, PA",Once The Fiddler Paid,14,14,1,450.0,757.5,307.5,192
+2026-07-25-02-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Story Of The World,2,02,1,180.0,652.5,472.5,192
+2026-07-25-03-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Big Wrecking Ball,3,03,1,270.0,634.0,364.0,192
+2026-07-25-04-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Crickets,4,04,1,0.0,367.5,367.5,192
+2026-07-25-04-jam2.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Crickets,4,04,2,390.0,1177.5,787.5,192
+2026-07-25-05-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Bombs,5,05,1,450.0,821.8,371.8,192
+2026-07-25-06-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",To Be Continued,6,06,1,472.5,930.0,457.5,192
+2026-07-25-07-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Spectacle,7,07,1,60.0,360.0,300.0,192
+2026-07-25-08-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Mindless Dribble,8,08,1,0.0,420.0,420.0,192
+2026-07-25-08-jam2.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Mindless Dribble,8,08,2,600.0,1060.9,460.9,192
+2026-07-25-09-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",No Recollection,9,09,1,180.0,607.5,427.5,192
+2026-07-25-10-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Orch Theme,10,10,1,0.0,780.0,780.0,192
+2026-07-25-10-jam2.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Orch Theme,10,10,2,870.0,1212.0,342.0,192
+2026-07-25-13-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",Helicopters,13,13,1,82.5,517.5,435.0,192
+2026-07-25-14-jam1.mp3,show,2026-07-25,"Heuser Park, King of Prussia, PA",M.E.M.P.H.I.S.,14,14,1,127.5,603.8,476.3,192
+2026-07-26-02-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Neck Romancer,2,02,1,270.0,682.5,412.5,192
+2026-07-26-03-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Little Shimmy In A Conga Line,3,03,1,337.5,828.6,491.1,192
+2026-07-26-04-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Photograph,4,04,1,547.5,817.5,270.0,192
+2026-07-26-04-jam2.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Photograph,4,04,2,870.0,1154.9,284.9,192
+2026-07-26-05-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Rock Candy,5,05,1,262.5,550.5,288.0,192
+2026-07-26-07-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Little Shimmy In A Conga Line,7,07,1,0.0,292.5,292.5,192
+2026-07-26-09-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Morph Dusseldorf,9,09,1,67.5,660.0,592.5,192
+2026-07-26-10-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",House Dog Party Favor,10,10,1,142.5,502.5,360.0,192
+2026-07-26-10-jam2.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",House Dog Party Favor,10,10,2,585.0,997.5,412.5,192
+2026-07-26-11-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Scars Of The Brave,11,11,1,0.0,337.5,337.5,192
+2026-07-26-11-jam2.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Scars Of The Brave,11,11,2,637.5,1217.0,579.5,192
+2026-07-26-13-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Portal To An Empty Head,13,13,1,360.0,651.7,291.7,192
+2026-07-26-15-jam1.mp3,show,2026-07-26,"Heuser Park, King of Prussia, PA",Home Again,15,15,1,142.5,562.5,420.0,192
+2026-08-07-02-jam1.mp3,show,2026-08-07,"Telluride Jazz Festival, Telluride, CO",The Overture,2,02,1,315.0,584.0,269.0,192
+2026-08-07-03-jam1.mp3,show,2026-08-07,"Telluride Jazz Festival, Telluride, CO",Minions,3,03,1,322.5,585.0,262.5,192
+2026-08-07-04-jam1.mp3,show,2026-08-07,"Telluride Jazz Festival, Telluride, CO",Running into the Night,4,04,1,442.5,705.0,262.5,192
+2026-08-29-02-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",M.E.M.P.H.I.S.,2,02,1,255.0,494.0,239.0,192
+2026-08-29-02-jam2.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",M.E.M.P.H.I.S.,2,02,2,706.0,904.8,198.8,192
+2026-08-29-03-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Minions,3,03,1,735.0,975.1,240.1,192
+2026-08-29-04-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",The Deal,4,04,1,0.0,239.0,239.0,192
+2026-08-29-05-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Another Spin,5,05,1,351.0,509.0,158.0,192
+2026-08-29-08-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Crickets,8,08,1,126.0,349.0,223.0,192
+2026-08-29-09-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Little Lai,9,09,1,307.5,426.5,119.0,192
+2026-08-29-11-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Trap Door,11,11,1,441.0,882.0,441.0,192
+2026-08-29-12-jam1.mp3,show,2026-08-29,"Variety Playhouse, Atlanta, GA",Pimp Blue Rikki,12,12,1,285.0,645.0,360.0,192
+2026-08-30-02-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",More U Know,2,02,1,172.5,712.5,540.0,192
+2026-08-30-04-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Caterpillar,4,04,1,240.0,637.0,397.0,192
+2026-08-30-05-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Simulations,5,05,1,247.5,625.7,378.2,192
+2026-08-30-09-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Little Shimmy In A Conga Line,9,09,1,442.5,1086.8,644.3,192
+2026-08-30-10-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Freeze,10,10,1,253.5,870.0,616.5,192
+2026-08-30-10-jam2.mp3,show,2026-08-30,"Third Room, Asheville, NC",Freeze,10,10,2,915.0,1228.2,313.2,192
+2026-08-30-11-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Photograph,11,11,1,343.5,682.5,339.0,192
+2026-08-30-11-jam2.mp3,show,2026-08-30,"Third Room, Asheville, NC",Photograph,11,11,2,735.0,1162.5,427.5,192
+2026-08-30-12-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Little Shimmy In A Conga Line,12,12,1,0.0,89.0,89.0,192
+2026-08-30-14-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Morph Dusseldorf,14,14,1,278.5,675.0,396.5,192
+2026-08-30-15-jam1.mp3,show,2026-08-30,"Third Room, Asheville, NC",Neck Romancer,15,15,1,286.0,577.5,291.5,192
+2026-08-31-02-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Who's In Charge,2,02,1,0.0,637.5,637.5,192
+2026-08-31-02-jam2.mp3,show,2026-08-31,"Third Room, Asheville, NC",Who's In Charge,2,02,2,780.0,1350.3,570.3,192
+2026-08-31-03-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Orch Theme,3,03,1,151.0,1460.2,1309.2,192
+2026-08-31-04-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Tempest,4,04,1,301.0,525.0,224.0,192
+2026-08-31-05-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Digital Buddha,5,05,1,412.5,651.5,239.0,192
+2026-08-31-07-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Better in Doses,7,07,1,0.0,360.0,360.0,192
+2026-08-31-07-jam2.mp3,show,2026-08-31,"Third Room, Asheville, NC",Better in Doses,7,07,2,525.0,1020.0,495.0,192
+2026-08-31-07-jam3.mp3,show,2026-08-31,"Third Room, Asheville, NC",Better in Doses,7,07,3,1072.5,1573.5,501.0,192
+2026-08-31-08-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Run Like Hell,8,08,1,0.0,562.5,562.5,192
+2026-08-31-08-jam2.mp3,show,2026-08-31,"Third Room, Asheville, NC",Run Like Hell,8,08,2,592.5,1357.5,765.0,192
+2026-08-31-09-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",Mindless Dribble,9,09,1,603.0,1132.5,529.5,192
+2026-08-31-09-jam2.mp3,show,2026-08-31,"Third Room, Asheville, NC",Mindless Dribble,9,09,2,1327.5,1642.5,315.0,192
+2026-08-31-10-jam1.mp3,show,2026-08-31,"Third Room, Asheville, NC",To Be Continued,10,10,1,211.0,262.5,51.5,192
+2026-08-31-10-jam2.mp3,show,2026-08-31,"Third Room, Asheville, NC",To Be Continued,10,10,2,420.0,840.0,420.0,192
+2026-09-01-02-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",The Safety Dance,2,02,1,321.0,719.6,398.6,192
+2026-09-01-03-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Spacebirdmatingcall,3,03,1,263.5,726.6,463.1,192
+2026-09-01-04-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Above The Waves,4,04,1,723.5,1560.8,837.3,192
+2026-09-01-05-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Country Royale,5,05,1,262.5,652.5,390.0,192
+2026-09-01-05-jam2.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Country Royale,5,05,2,735.0,1150.0,415.0,192
+2026-09-01-08-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Spaga's Last Stand,8,08,1,371.0,800.5,429.5,192
+2026-09-01-09-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Save The Robots,9,09,1,256.0,630.0,374.0,192
+2026-09-01-09-jam2.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Save The Robots,9,09,2,772.5,1326.1,553.6,192
+2026-09-01-10-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",No Recollection,10,10,1,271.0,841.7,570.7,192
+2026-09-01-11-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",Humuhumunukunukuapua'a,11,11,1,278.5,1041.6,763.1,192
+2026-09-01-13-jam1.mp3,show,2026-09-01,"The Charleston Pour House, Charleston, SC",The Champions,13,13,1,336.0,780.0,444.0,192
+2026-09-02-02-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Loose Change,2,02,1,262.5,589.9,327.4,192
+2026-09-02-03-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Space Train,3,03,1,0.0,562.5,562.5,192
+2026-09-02-03-jam2.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Space Train,3,03,2,712.5,1335.0,622.5,192
+2026-09-02-04-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",We Like To Party,4,04,1,286.0,683.5,397.5,192
+2026-09-02-05-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Helicopters,5,05,1,311.0,647.6,336.6,192
+2026-09-02-06-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",In The End We Have Forever,6,06,1,638.5,907.7,269.2,192
+2026-09-02-09-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Hope,9,09,1,353.5,1087.5,734.0,192
+2026-09-02-11-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Confrontation,11,11,1,468.5,1115.8,647.3,192
+2026-09-02-12-jam1.mp3,show,2026-09-02,"The Charleston Pour House, Charleston, SC",Cyclone,12,12,1,196.0,779.6,583.6,192
+2026-09-23-02-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Big Wrecking Ball,2,02,1,258.0,374.0,116.0,192
+2026-09-23-03-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Photograph,3,03,1,532.5,671.5,139.0,192
+2026-09-23-03-jam2.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Photograph,3,03,2,1148.5,1372.5,224.0,192
+2026-09-23-04-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Simulations,4,04,1,240.0,329.0,89.0,192
+2026-09-23-05-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Spectacle,5,05,1,846.0,975.0,129.0,192
+2026-09-23-06-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Abraxas,6,06,1,376.0,574.0,198.0,192
+2026-09-23-09-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Rock Candy,9,09,1,266.0,625.3,359.3,192
+2026-09-23-10-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Scars Of The Brave,10,10,1,533.5,899.2,365.7,192
+2026-09-23-11-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Spacebirdmatingcall,11,11,1,217.5,261.5,44.0,192
+2026-09-23-12-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Astronaut,12,12,1,382.5,696.5,314.0,192
+2026-09-23-12-jam2.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Astronaut,12,12,2,817.5,1203.2,385.7,192
+2026-09-23-13-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Spacebirdmatingcall,13,13,1,390.0,630.0,240.0,192
+2026-09-23-14-jam1.mp3,show,2026-09-23,"Saint Andrew's Hall, Detroit, MI",Risky Business,14,14,1,412.5,835.0,422.5,192
+2026-09-24-02-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",The Champions,2,02,1,258.5,456.5,198.0,192
+2026-09-24-03-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",To Be Continued,3,03,1,251.0,659.0,408.0,192
+2026-09-24-04-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Gangster,4,04,1,0.0,374.0,374.0,192
+2026-09-24-06-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Save The Robots,6,06,1,275.5,561.5,286.0,192
+2026-09-24-06-jam2.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Save The Robots,6,06,2,690.0,869.0,179.0,192
+2026-09-24-08-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Country Royale,8,08,1,403.5,641.5,238.0,192
+2026-09-24-09-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Trap Door,9,09,1,358.5,849.5,491.0,192
+2026-09-24-13-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Mirrors,13,13,1,408.0,802.8,394.8,192
+2026-09-24-15-jam1.mp3,show,2026-09-24,"Bogart's, Cincinnati, OH",Feeling Twisted,15,15,1,210.0,765.0,555.0,192
+2026-09-25-02-jam1.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",M.E.M.P.H.I.S.,2,02,1,147.5,494.0,346.5,192
+2026-09-25-02-jam2.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",M.E.M.P.H.I.S.,2,02,2,570.0,660.0,90.0,192
+2026-09-25-03-jam1.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",Minions,3,03,1,413.5,916.5,503.0,192
+2026-09-25-04-jam1.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",Tempest,4,04,1,300.0,868.0,568.0,192
+2026-09-25-04-jam2.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",Tempest,4,04,2,868.0,1090.4,222.4,192
+2026-09-25-05-jam1.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",No Recollection,5,05,1,397.5,583.1,185.6,192
+2026-09-25-06-jam1.mp3,show,2026-09-25,"Nocturnal Valley Music & Arts Festival, French Village, MO",Orch Theme,6,06,1,225.0,974.09,749.09,192
+2026-09-26-01-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Dream Journal,1,01,1,322.5,847.5,525.0,192
+2026-09-26-02-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Helicopters,2,02,1,97.5,664.7,567.2,192
+2026-09-26-03-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Svenghali,3,03,1,405.0,727.5,322.5,192
+2026-09-26-04-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Rivers,4,04,1,0.0,292.5,292.5,192
+2026-09-26-04-jam2.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Rivers,4,04,2,388.5,922.5,534.0,192
+2026-09-26-04-jam3.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Rivers,4,04,3,952.5,1492.5,540.0,192
+2026-09-26-07-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",42,7,07,1,501.0,682.5,181.5,192
+2026-09-26-08-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Ring The Doorbell Twice,8,08,1,0.0,254.0,254.0,192
+2026-09-26-08-jam2.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Ring The Doorbell Twice,8,08,2,478.5,1177.5,699.0,192
+2026-09-26-09-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Run Like Hell,9,09,1,532.5,825.0,292.5,192
+2026-09-26-09-jam2.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Run Like Hell,9,09,2,840.0,1154.9,314.9,192
+2026-09-26-12-jam1.mp3,show,2026-09-26,"The Sylvee, Madison, WI",Morph Dusseldorf,12,12,1,165.0,585.0,420.0,192
+2026-10-02-02-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Story Of The World,2,02,1,233.5,817.5,584.0,192
+2026-10-02-03-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Twisted in the Road,3,03,1,698.5,1240.0,541.5,192
+2026-10-02-05-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Caves Of The East,5,05,1,323.5,748.9,425.4,192
+2026-10-02-06-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Freeze,6,06,1,213.5,722.0,508.5,192
+2026-10-02-09-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Space Train,9,09,1,523.5,1198.1,674.6,192
+2026-10-02-10-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",I-man,10,10,1,667.5,970.5,303.0,192
+2026-10-02-12-jam1.mp3,show,2026-10-02,"Tropicana Showroom, Atlantic City, NJ",Dino Baby,12,12,1,0.0,299.0,299.0,192
+2026-10-03-02-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",The Deal,2,02,1,518.5,844.9,326.4,192
+2026-10-03-03-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Crickets,3,03,1,343.5,645.0,301.5,192
+2026-10-03-03-jam2.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Crickets,3,03,2,832.5,1087.5,255.0,192
+2026-10-03-04-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",M.E.M.P.H.I.S.,4,04,1,121.0,414.0,293.0,192
+2026-10-03-04-jam2.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",M.E.M.P.H.I.S.,4,04,2,593.5,1158.9,565.4,192
+2026-10-03-05-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",The Wormhole,5,05,1,563.5,810.8,247.3,192
+2026-10-03-06-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Confrontation,6,06,1,251.0,644.0,393.0,192
+2026-10-03-08-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Big Wrecking Ball,8,08,1,238.5,726.3,487.8,192
+2026-10-03-09-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Trap Door,9,09,1,435.0,1027.5,592.5,192
+2026-10-03-10-jam1.mp3,show,2026-10-03,"Tropicana Showroom, Atlantic City, NJ",Morph Dusseldorf,10,10,1,333.5,756.5,423.0,192
+2026-10-08-03-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Loose Change,3,03,1,283.5,881.8,598.3,192
+2026-10-08-04-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",No Recollection,4,04,1,255.0,554.0,299.0,192
+2026-10-08-04-jam2.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",No Recollection,4,04,2,825.0,1372.5,547.5,192
+2026-10-08-05-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",To Be Continued,5,05,1,263.5,441.5,178.0,192
+2026-10-08-06-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",House Dog Party Favor,6,06,1,638.5,876.5,238.0,192
+2026-10-08-08-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Resurrection,8,08,1,758.5,1258.5,500.0,192
+2026-10-08-09-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Tourists (Rocket Ship),9,09,1,510.0,1019.0,509.0,192
+2026-10-08-10-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Sound One,10,10,1,228.0,497.3,269.3,192
+2026-10-08-11-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Ring The Doorbell Twice,11,11,1,0.0,420.0,420.0,192
+2026-10-08-11-jam2.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Ring The Doorbell Twice,11,11,2,731.0,1094.0,363.0,192
+2026-10-08-12-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Astronaut,12,12,1,571.0,824.0,253.0,192
+2026-10-08-13-jam1.mp3,show,2026-10-08,"Paramount Theatre, Rutland, VT",Little Lai,13,13,1,188.5,426.5,238.0,192
+2026-10-09-03-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Dream Journal,3,03,1,248.0,609.0,361.0,192
+2026-10-09-03-jam2.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Dream Journal,3,03,2,780.0,1244.2,464.2,192
+2026-10-09-04-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Spacebirdmatingcall,4,04,1,540.0,1317.4,777.4,192
+2026-10-09-05-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Tricycle,5,05,1,292.5,742.5,450.0,192
+2026-10-09-06-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Who's In Charge,6,06,1,0.0,315.0,315.0,192
+2026-10-09-10-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Scars Of The Brave,10,10,1,0.0,300.0,300.0,192
+2026-10-09-10-jam2.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Scars Of The Brave,10,10,2,765.0,1080.0,315.0,192
+2026-10-09-11-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Jigsaw Earth,11,11,1,0.0,209.0,209.0,192
+2026-10-09-11-jam2.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Jigsaw Earth,11,11,2,712.5,901.5,189.0,192
+2026-10-09-13-jam1.mp3,show,2026-10-09,"Town Ballroom, Buffalo, NY",Hot Air Balloon,13,13,1,420.0,594.0,174.0,192
+2026-10-10-03-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Simulations,3,03,1,292.5,716.5,424.0,192
+2026-10-10-03-jam2.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Simulations,3,03,2,868.5,1687.5,819.0,192
+2026-10-10-04-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Another Spin,4,04,1,261.0,399.0,138.0,192
+2026-10-10-04-jam2.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Another Spin,4,04,2,705.0,1087.5,382.5,192
+2026-10-10-10-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",And The Ladies Were The Rest Of The Night,10,10,1,397.5,690.0,292.5,192
+2026-10-10-10-jam2.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",And The Ladies Were The Rest Of The Night,10,10,2,735.0,1042.5,307.5,192
+2026-10-10-11-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Running into the Night,11,11,1,328.5,665.5,337.0,192
+2026-10-10-11-jam2.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Running into the Night,11,11,2,926.0,1298.2,372.2,192
+2026-10-10-12-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Run Like Hell,12,12,1,0.0,219.0,219.0,192
+2026-10-10-13-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Basis For A Day,13,13,1,630.0,1199.0,569.0,192
+2026-10-10-14-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Cyclone,14,14,1,103.5,441.5,338.0,192
+2026-10-10-16-jam1.mp3,show,2026-10-10,"Town Ballroom, Buffalo, NY",Big Wrecking Ball,16,16,1,258.5,533.0,274.5,192
+2026-10-11-01-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",We Like To Party,1,01,1,351.5,1162.5,811.0,192
+2026-10-11-02-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Fire Will Exchange,2,02,1,607.5,877.5,270.0,192
+2026-10-11-03-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Digital Buddha,3,03,1,547.5,876.5,329.0,192
+2026-10-11-04-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Aceetobee,4,04,1,438.5,637.5,199.0,192
+2026-10-11-09-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",One Chance To Save The World,9,09,1,780.0,1164.8,384.8,192
+2026-10-11-10-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Mindless Dribble,10,10,1,405.0,974.0,569.0,192
+2026-10-11-10-jam2.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Mindless Dribble,10,10,2,1251.0,1700.1,449.1,192
+2026-10-11-11-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Dino Baby,11,11,1,346.0,645.0,299.0,192
+2026-10-11-12-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Hymn,12,12,1,330.5,667.5,337.0,192
+2026-10-11-14-jam1.mp3,show,2026-10-11,"Westcott Theater, Syracuse, NY",Story Of The World,14,14,1,183.5,481.5,298.0,192

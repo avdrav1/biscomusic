@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Build the station from the show folders next to radio/.
+"""Build the station from the show folders next to radio/, and the jams listed in manifests/ (see manifest_tracks).
 
-Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), then writes:
+Converts any FLAC (or incoming/ MP3) without an MP3 in audio/ yet (192k, loudness-normalized to -14 LUFS), then writes:
   schedule.json       local paths (audio/...), used by server.py; each track carries its song's BIP slug
   site/schedule.json  R2 URLs (?v=<content hash>, so re-encoded files bypass caches),
                       deployed to Cloudflare Pages with the pages and site/static/
@@ -13,7 +13,7 @@ Converts any FLAC without an MP3 yet (192k, loudness-normalized to -14 LUFS), th
 One Pages deploy serves three sites by host name (functions/_middleware.js): the jam radio at jams.biscomusic.com,
 the show radio at shows.biscomusic.com, and the picker at biscomusic.com.
 """
-import base64, hashlib, json, math, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
+import base64, csv, hashlib, json, math, os, re, shutil, subprocess, sys, urllib.parse, urllib.request
 from array import array
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -23,6 +23,8 @@ import archive, bip, shows
 HERE = os.path.dirname(os.path.abspath(__file__))
 SHOWS = os.path.dirname(HERE)
 AUDIO = os.path.join(HERE, 'audio')
+MANIFESTS = os.path.join(HERE, 'manifests')
+INCOMING = os.path.join(HERE, 'incoming')
 SITE = os.path.join(HERE, 'site')
 R2_URL = 'https://audio.biscomusic.com/'
 JAMS_URL = 'https://jams.biscomusic.com'
@@ -63,8 +65,33 @@ def duration(path):
     return round(float(run('ffprobe', '-v', 'error', '-show_entries', 'format=duration',
                            '-of', 'csv=p=0', path)), 3)
 
+def split_place(place):
+    """"Venue, City, ST" -> (venue, "City, ST"); a venue may hold commas of its own."""
+    parts = [p.strip() for p in place.split(',')]
+    return ', '.join(parts[:-2]) or parts[0], ', '.join(parts[-2:])
+
+def manifest_tracks():
+    """Jams that came already cut, as MP3s, with a manifest: manifests/<name>.csv lists them
+    (target = the audio/ key, kind, show_date, venue, song, track_no, jam_no, ...) and the files
+    themselves wait in incoming/<name>/ until converted. Mix rows (kind "mix") aren't on the station yet."""
+    if not os.path.isdir(MANIFESTS):
+        return
+    for name in sorted(os.listdir(MANIFESTS)):
+        if not name.endswith('.csv'):
+            continue
+        with open(os.path.join(MANIFESTS, name), newline='') as f:
+            for r in csv.DictReader(f):
+                if r['kind'] != 'show':
+                    continue
+                num, jam = int(r['track_no']), int(r['jam_no']) if r['jam_no'] else None
+                venue, city = split_place(r['venue'])
+                yield r['target'], (os.path.join(INCOMING, name[:-4], r['target']),
+                                    {'_order': (r['show_date'], num, jam or 0), 'song': r['song'], 'jam': jam,
+                                     'date': r['show_date'], 'venue': venue, 'city': city})
+
 def convert(flac, mp3):
-    """Two-pass loudnorm: measure, then apply one linear gain (keeps the jam's dynamics)."""
+    """Two-pass loudnorm: measure, then apply one linear gain (keeps the jam's dynamics).
+    Takes a FLAC, or an MP3 from incoming/ (re-encoded so every jam sits at the same loudness)."""
     print(f'  converting {os.path.basename(flac)}')
     out = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', flac, '-af',
                           f'loudnorm={LOUDNORM}:print_format=json', '-f', 'null', '-'],
@@ -221,6 +248,17 @@ def clips(catalog):
             found['top'] = [version(v, s) for v in top[s['slug']]]
         if found:
             out[s['slug']] = found
+    # A lookup that failed this build (archive.org or BIP rate-limiting, say) leaves a song or field out:
+    # keep what the last build found for it rather than dropping it from the site
+    try:
+        with open(os.path.join(SITE, 'clips.json')) as f:
+            last = json.load(f)['clips']
+    except (FileNotFoundError, ValueError, KeyError):
+        last = {}
+    known = {s['slug'] for s in songs}
+    for slug, prev in last.items():
+        if slug in known:
+            out[slug] = {**prev, **out.get(slug, {})}
     with open(os.path.join(SITE, 'clips.json'), 'w') as f:
         json.dump({'built': datetime.now(timezone.utc).isoformat(timespec='seconds'), 'clips': out}, f, separators=(',', ':'))
     print(f'  archive.org: {len(debut)} of {len(songs)} songs have a debut clip, {len(latest)} a newer latest one')
@@ -237,32 +275,43 @@ def main():
     except FileNotFoundError:
         meta = {'station': 'Biscuits Jam Radio', 'epoch': '2026-01-01T00:00:00Z'}
 
-    tracks = []
+    found = {}   # key -> (source, track); a show folder's FLAC wins over a manifest row for the same key
     for show in sorted(os.listdir(SHOWS)):
         m = SHOW_RE.match(show)
         if not m or not os.path.isdir(os.path.join(SHOWS, show)):
             continue
         date, place = m.groups()
-        parts = [p.strip() for p in place.split(',')]
-        venue, city = ', '.join(parts[:-2]) or parts[0], ', '.join(parts[-2:])
+        venue, city = split_place(place)
         for name in os.listdir(os.path.join(SHOWS, show)):
             t = TRACK_RE.match(name)
             if not t:
                 continue
             num, song, jam = int(t[1]), t[2], int(t[3]) if t[3] else None
             key = f'{date}-{num:02d}' + (f'-jam{jam}' if jam else '') + '.mp3'
-            mp3 = os.path.join(AUDIO, key)
-            file = 'audio/' + key
-            if not os.path.exists(mp3):
-                convert(os.path.join(SHOWS, show, name), mp3)
-                old.pop(file, None)   # new encode: measure its duration again
-            tracks.append({'_order': (date, num, jam or 0), 'file': file, 'song': song, 'jam': jam, 'date': date,
-                           'venue': venue, 'city': city,
-                           'duration': old.get(file) or duration(mp3)})
+            found[key] = (os.path.join(SHOWS, show, name),
+                          {'_order': (date, num, jam or 0), 'song': song, 'jam': jam, 'date': date, 'venue': venue, 'city': city})
+    for key, track in manifest_tracks():
+        found.setdefault(key, track)
+
+    tracks, todo = [], []
+    for key, (src, t) in found.items():
+        mp3 = os.path.join(AUDIO, key)
+        t = {'_order': t.pop('_order'), 'file': 'audio/' + key, **t}
+        if not os.path.exists(mp3):
+            if not os.path.exists(src):
+                print(f'  skipping {key}: no MP3 yet and its source is missing ({src})')
+                continue
+            todo.append((src, mp3))
+            old.pop(t['file'], None)   # new encode: measure its duration again
+        tracks.append(t)
+    with ThreadPoolExecutor(os.cpu_count() or 4) as pool:
+        list(pool.map(lambda job: convert(*job), todo))
+    for t in tracks:
+        t['duration'] = old.get(t['file']) or duration(os.path.join(HERE, t['file']))
 
     tracks.sort(key=lambda t: t.pop('_order'))
     if not tracks:
-        sys.exit('No FLAC tracks found next to radio/')
+        sys.exit('No tracks found: no FLACs next to radio/ and nothing in manifests/')
 
     try:
         catalog = bip_catalog()
