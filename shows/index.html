@@ -53,11 +53,21 @@
     <div class="controls">
       <button id="tune" aria-label="Tune in" aria-keyshortcuts="Space" disabled><svg class="i" aria-hidden="true"><use href="/static/icons.svg#play"/></svg><span>Tune in</span></button>
       <label class="label vol">Vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
-      <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#flame"/></svg></button>
+      <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#flame"/></svg><b class="fcount" id="fcount"></b></button>
       <button class="ghost" id="cbtn" hidden aria-label="Comment on this moment"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#message-circle"/></svg><span class="wide">Comment</span></button>
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
+    <div class="tags" id="tags" role="group" aria-label="Quick comments" hidden>
+      <button class="chipbtn" data-tag="Peak!">Peak!</button>
+      <button class="chipbtn" data-tag="Segue!">Segue!</button>
+      <button class="chipbtn" data-tag="Bliss">Bliss</button>
+      <button class="chipbtn" data-tag="Dark">Dark</button>
+      <button class="chipbtn" data-tag="Dance party">Dance party</button>
+    </div>
+    <div id="tts"></div>
+    <div class="nudge" id="nudge" hidden><span id="ntext"></span><button class="ghost" id="nbtn"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#message-circle"/></svg><span>Say what happened</span></button><button class="ghost iconbtn" id="nx" aria-label="Not now"><svg class="i" aria-hidden="true"><use href="/static/icons.svg#x"/></svg></button></div>
     <div class="pops" id="pops" aria-live="polite"></div>
+    <p class="sr" id="flive" aria-live="polite"></p>
     <p class="status" id="status" role="status" hidden>archive.org isn’t sending this tape right now. Trying again…</p>
     <p class="about" id="about" hidden><span id="source"></span> <span class="links"><a id="bip" href="https://discobiscuits.net" target="_blank" rel="noopener"></a><a id="tape" href="https://archive.org/details/DiscoBiscuits" target="_blank" rel="noopener">Tape on archive.org <svg class="i" aria-hidden="true"><use href="/static/icons.svg#external-link"/></svg></a></span></p>
   </section>
@@ -78,6 +88,11 @@
   <section id="talk" aria-labelledby="ktitle" hidden>
     <h2 id="ktitle">Moments in this track</h2>
     <ol class="cl" id="clist"></ol>
+  </section>
+
+  <section class="lately" id="lately" aria-labelledby="ltitle" hidden>
+    <h2 id="ltitle">Lately on the station</h2>
+    <ol class="cl withvote" id="llist"></ol>
   </section>
 
   <!-- Up next: with voting, the next slot's contenders (vote rows) and then the schedule; without, the clock's next shows -->

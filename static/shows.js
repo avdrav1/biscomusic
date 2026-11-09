@@ -134,7 +134,7 @@ function render() {
   $('rem').textContent = '-' + fmt(t.duration - at);
   $('where').textContent = `Track ${t.n + 1} of ${s.tracks.length} · ${fmt(into)} / ${fmt(s.length)}`;
   renderVoteClock();
-  if (C.on) renderTalk(t, at);
+  if (C.on) { renderTalk(t, at); if (LATELY.length) tickLately(); }
   if (listening && navigator.mediaSession?.setPositionState) {
     try { navigator.mediaSession.setPositionState({ duration: t.duration, position: Math.min(at, t.duration), playbackRate: 1 }); } catch (e) {}
   }
@@ -163,7 +163,7 @@ function renderShow(si) {
 
 const KIND = { sbd: 'Soundboard', matrix: 'Matrix', aud: 'Audience' };
 const nextRow = (s, when) => `<li${when ? '' : ' class="later"'}>${when ? `<span class="t">${clockAt(when)}</span>` : ''}` +
-  `<span class="s">${esc(showLabel(s))}<small>${esc(s.place)} · ${s.tracks.length} tracks</small></span><span class="d">${span(s.length)}</span></li>`;
+  `<span class="s">${esc(showLabel(s))}${badgeHtml(s.show)}<small>${esc(s.place)} · ${s.tracks.length} tracks</small></span><span class="d">${span(s.length)}</span></li>`;
 
 // Up next. Without voting: the clock's next shows and when each starts. With voting, the next slot's contenders
 // are the vote rows above this list (renderVote), and this is the schedule after them, with no times: votes decide.
@@ -201,7 +201,7 @@ const rated = s => s.rating ? ` · ★ ${s.rating.toFixed(1)}` : '';
 function voteRow(s) {
   const li = el('li'); li.dataset.track = s.show;
   const name = el('span', 's');
-  name.append(el('span', '', showLabel(s)), el('small', '', `${s.place} · ${s.tracks.length} tracks · ${span(s.length)}${rated(s)}${s.vault ? ` · ${KIND[s.kind]} tape` : ''}`));
+  name.append(el('span', '', showLabel(s)), el('span', 'bdgs'), el('small', '', `${s.place} · ${s.tracks.length} tracks · ${span(s.length)}${rated(s)}${s.vault ? ` · ${KIND[s.kind]} tape` : ''}`));
   const meter = el('span', 'meter');
   meter.append(el('i'), el('b'));
   const btn = el('button', 'ghost vbtn');
@@ -217,6 +217,8 @@ function updateVoteRow(li, counts, max, mine) {
   li.classList.toggle('blocked', !!why);
   li.querySelector('.meter i').style.width = max ? (100 * n / max) + '%' : '0';
   li.querySelector('.meter b').textContent = n ? n : '';
+  const b = li.querySelector('.bdgs'), bk = badgeText(id);
+  if (b.dataset.k !== bk) { b.dataset.k = bk; b.innerHTML = badgeHtml(id); }
   const btn = li.querySelector('.vbtn');
   btn.disabled = !!why;
   btn.replaceChildren(...(why ? [why] : mine === id ? [icon('check'), 'Voted'] : ['Vote']));
@@ -391,20 +393,27 @@ async function loadBest() {
 }
 
 // When each moment's show is on: on air (counting down to the moment), locked in next, or a vote.
+// When a moment's show is on: on air (counting down to the moment), locked in next, or a vote. Best moments and
+// Lately on the station both show it.
+function momentStatus(show, n, pos) {
+  const { i, offset } = live(), si = showIndex(show), s = P.shows[si];
+  let text = '', canVote = false, onAir = false;
+  if (si === T[i].si) {
+    const into = T[i].start - s.start + offset, at = T[s.first + n].start - s.start + pos;
+    onAir = true; text = into < at ? `on air · in ${fmt(at - into)}` : into < at + 15 ? 'on air now' : 'on air';
+  } else if (!ST) text = s.vault ? 'by request' : '';
+  else if (ST.next?.track === show) { onAir = true; text = 'up next!'; }
+  else if (ShowStation.myVote(ST.round) === show) text = 'you voted';
+  else { const why = ShowStation.blocked(ST, show); if (why) text = why.toLowerCase(); else canVote = true; }
+  return { text, canVote, onAir };
+}
+
 function tickBest() {
   if (!BEST.moments?.length) return;
-  const { i, offset } = live(), onShow = T[i].si;
   for (const li of $('blist').children) {
-    const m = BEST.moments[li.dataset.k], si = showIndex(m.show), s = P.shows[si];
+    const m = BEST.moments[li.dataset.k];
     const status = li.querySelector('.said'), btn = li.querySelector('.vbtn');
-    let text = '', canVote = false, onAir = false;
-    if (si === onShow) {
-      const into = T[i].start - s.start + offset, at = T[s.first + m.n].start - s.start + m.pos;
-      onAir = true; text = into < at ? `on air · in ${fmt(at - into)}` : into < at + 15 ? 'on air now' : 'on air';
-    } else if (!ST) text = s.vault ? 'by request' : '';
-    else if (ST.next?.track === m.show) { onAir = true; text = 'up next!'; }
-    else if (ShowStation.myVote(ST.round) === m.show) text = 'you voted';
-    else { const why = ShowStation.blocked(ST, m.show); if (why) text = why.toLowerCase(); else canVote = true; }
+    const { text, canVote, onAir } = momentStatus(m.show, m.n, m.pos);
     li.querySelector('.when').classList.toggle('now', onAir);
     // A Vote button that hides while focused hands focus to the close button, so keyboard users aren't dropped (WCAG 2.4.3)
     const refocus = !canVote && document.activeElement === btn;
@@ -473,7 +482,8 @@ addEventListener('popstate', () => { if (!history.state?.away) closeAway(); });
 // can light up where people loved it, and this track's own timeline gets its flames and comment faces.
 // Only with the comments API (/api/config); server.py has none, so locally this stays off.
 const C = { on: false, siteKey: '', show: null, list: [], heat: new Map(), bucket: 5, mine: new Set(), shown: '',
-            draft: null, widget: null, token: null, waiting: null };   // list: the show's comments; heat: track index -> Map(slice -> flames)
+            draft: null, seen: new Map(), seenFor: null,   // list: the show's comments; heat: track index -> Map(slice -> flames)
+            trackKey: null, flamed: new Map(), said: new Set(), after: null, quiet: new Set() };   // seen: the most flames seen per slice, yours included; flamed: track -> positions you lit
 const POP_SECONDS = 20;
 const keyOf = t => `${P.shows[t.si].show}/${t.n}`;
 const store = { get: k => { try { return localStorage.getItem(k) || ''; } catch (e) { return ''; } },
@@ -482,21 +492,70 @@ const store = { get: k => { try { return localStorage.getItem(k) || ''; } catch 
 async function loadMoments(show) {
   const m = await fetch('/api/shows/moments?show=' + encodeURIComponent(show)).then(r => r.ok ? r.json() : null).catch(() => null);
   if (!m || show !== C.show) return;
-  C.list = m.comments; C.bucket = m.bucket; C.heat = new Map(); C.shown = '';
-  for (const [n, b, cnt] of m.counts) { if (!C.heat.has(n)) C.heat.set(n, new Map()); C.heat.get(n).set(b, cnt); }
+  C.list = m.comments; C.bucket = m.bucket; C.shown = '';
+  // Flames only ever add up, so anything past the most this page has seen in a slice (its own included) is someone
+  // else's, lit since the last poll. The show's first load just takes the counts.
+  const fresh = C.seenFor === show, theirs = [];
+  for (const [n, b, cnt] of m.counts) {
+    if (!C.seen.has(n)) C.seen.set(n, new Map());
+    const seen = C.seen.get(n).get(b) || 0;
+    if (fresh && cnt > seen) theirs.push({ n, b, d: cnt - seen });
+    if (cnt > seen) C.seen.get(n).set(b, cnt);
+  }
+  C.seenFor = show;
+  C.heat = new Map([...C.seen].map(([n, m]) => [n, new Map(m)]));
+  if (theirs.length) othersFlamed(show, theirs);
+}
+
+// Another listener lit up this show: their flames rise from that spot on this track's timeline, or from their
+// track's segment of the show bar, and it's announced.
+function othersFlamed(show, theirs) {
+  const si = showIndex(show), { i } = heard();
+  if (si < 0 || document.visibilityState !== 'visible') return;
+  const s = P.shows[si], cur = T[i];
+  theirs.forEach(({ n, b, d }, k) => {
+    let x, y;
+    if (cur.si === si && cur.n === n && !$('timeline').hidden) {
+      const box = $('timeline').getBoundingClientRect();
+      x = box.left + box.width * Math.min(1, (b + 0.5) * C.bucket / cur.duration); y = box.top + 4;
+    } else {
+      const seg = $('bar').children[n]?.getBoundingClientRect();
+      if (!seg) return;
+      x = seg.left + seg.width / 2; y = seg.top - 10;
+    }
+    for (let j = 0; j < Math.min(d, 5); j++) setTimeout(() => riseFlame(x - 11, y), (k * 3 + j) * 180);
+  });
+  const total = theirs.reduce((a, x) => a + x.d, 0), last = theirs[theirs.length - 1];
+  const where = `${titleOf({ ...s.tracks[last.n], n: last.n })} at ${fmt((last.b + 0.5) * C.bucket)}`;
+  $('flive').textContent = total === 1 ? `Another listener lit up ${where}` : `${total} flames from other listeners, latest in ${where}`;
+}
+function riseFlame(x, y) {
+  const f = el('span', 'flame');
+  f.append(icon('flame'));
+  f.style.left = x + 'px'; f.style.top = y + 'px';
+  f.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+  document.body.append(f); setTimeout(() => f.remove(), 1200);
 }
 
 function renderTalk(t, at) {
   const s = P.shows[t.si];
-  if (s.show !== C.show) { C.show = s.show; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(s.show); }
+  if (s.show !== C.show) { C.show = s.show; C.list = []; C.heat = new Map(); C.seen = new Map(); C.seenFor = null; C.shown = ''; loadMoments(s.show); }
+  const key = keyOf(t);
+  if (key !== C.trackKey) {   // a track you lit up just ended: the nudge asks about it for a minute
+    const mine = C.flamed.get(C.trackKey) || [];
+    if (C.trackKey && listening && mine.length) C.after = { track: C.trackKey, pos: mine[mine.length - 1], until: Date.now() + AFTER_MS };
+    C.trackKey = key;
+  }
+  renderFire(t, at);
+  renderNudge();
   const list = C.list.filter(c => c.n === t.n);
   drawHeat(t, at);
   renderMarkers(t, at, list);
   renderShowHeat(s);
 
-  const key = keyOf(t) + '|' + Math.floor(at) + '|' + C.list.length;
-  if (key === C.shown) return;
-  C.shown = key;
+  const shownKey = key + '|' + Math.floor(at) + '|' + C.list.length;
+  if (shownKey === C.shown) return;
+  C.shown = shownKey;
   const pops = list.filter(c => c.pos <= at && at - c.pos < POP_SECONDS).slice(-3);
   const popKey = pops.map(c => c.id).join();
   if ($('pops').dataset.k !== popKey) {
@@ -549,7 +608,12 @@ function renderShowHeat(s) {
 function heatPerBar(t, n) {
   const out = new Float32Array(n), heat = C.heat.get(t.n);
   if (!heat || P.shows[t.si].show !== C.show) return out;
-  for (const [b, cnt] of heat) out[Math.min(n - 1, Math.floor(((b + 0.5) * C.bucket / t.duration) * n))] += cnt;
+  // A slice raises every bar it covers, and half as high on the bar each side, so one flame is a patch you can see
+  const bar = sec => Math.min(n - 1, Math.floor(sec / t.duration * n));
+  for (const [b, cnt] of heat) {
+    const a = bar(b * C.bucket), z = bar((b + 1) * C.bucket);
+    for (let j = Math.max(0, a - 1); j <= Math.min(n - 1, z + 1); j++) out[j] += j < a || j > z ? cnt / 2 : cnt;
+  }
   return out;
 }
 
@@ -586,11 +650,12 @@ const initials = name => name ? name.trim().split(/\s+/).slice(0, 2).map(w => [.
 const face = name => { const f = el('span', 'face', initials(name)); f.style.setProperty('--c', avColor(name)); return f; };
 const commentsAround = list => list.length === 1 ? `${list[0].nickname || 'anonymous'} at ${fmt(list[0].pos)}: ${list[0].body}` : `${list.length} comments around ${fmt(list[0].pos)}`;
 
-// Peaks in the track's flame slices: at least 2 flames and half the track's best; 15 s apart; at most 6.
+// Peaks in the track's flame slices: at least half the track's best (so a lone flame shows on a track that has only
+// those); 15 s apart; at most 6.
 function flamePeaks(t) {
-  const heat = C.heat.get(t.n) || new Map(), top = Math.max(0, ...heat.values()), picked = [];
-  for (const [b, cnt] of [...heat].sort((a, b) => b[1] - a[1])) {
-    if (cnt < 2 || cnt < top / 2 || picked.length >= 6) break;
+  const heat = (P.shows[t.si].show === C.show && C.heat.get(t.n)) || new Map(), top = Math.max(0, ...heat.values()), picked = [];
+  for (const [b, cnt] of [...heat].sort((a, b) => b[1] - a[1] || a[0] - b[0])) {
+    if (cnt < top / 2 || picked.length >= 6) break;
     if (picked.some(p => Math.abs(p.b - b) * C.bucket < 15)) continue;
     picked.push({ b, cnt });
   }
@@ -607,8 +672,8 @@ function renderMarkers(t, at, list) {
     $('flames').replaceChildren(...peaks.map(({ b, cnt }) => {
       const pos = (b + 0.5) * C.bucket, m = el('button', 'fmark');
       m.style.left = (100 * pos / dur) + '%'; m.dataset.pos = pos;
-      m.append(icon('flame'), el('b', '', cnt));
-      m.setAttribute('aria-label', `${cnt} flames at ${fmt(pos)}`);
+      m.append(icon('flame'), el('b', '', cnt > 1 ? cnt : ''));
+      m.setAttribute('aria-label', `${cnt} flame${cnt === 1 ? '' : 's'} at ${fmt(pos)}`);
       m._card = () => cardFlames(cnt, pos);
       return m;
     }));
@@ -676,20 +741,31 @@ new ResizeObserver(() => { if (P && C.on) render(); }).observe($('timeline'));
 
 function react() {
   const { i, offset: at } = heard(), t = T[i], key = keyOf(t), b = Math.floor(at / C.bucket);
-  const r = $('fire').getBoundingClientRect(), f = el('span', 'flame');
-  f.append(icon('flame'));
-  f.style.left = (r.left + r.width / 2 - 11) + 'px'; f.style.top = (r.top - 6) + 'px';
-  f.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
-  document.body.append(f); setTimeout(() => f.remove(), 1200);
+  const r = $('fire').getBoundingClientRect();
+  riseFlame(r.left + r.width / 2 - 11, r.top - 6);
   if (C.mine.has(key + '|' + b)) return;   // one per listener per slice; the server enforces it too
   C.mine.add(key + '|' + b);
+  C.flamed.set(key, [...(C.flamed.get(key) || []), at]);
   if (P.shows[t.si].show === C.show) {
-    if (!C.heat.has(t.n)) C.heat.set(t.n, new Map());
-    C.heat.get(t.n).set(b, (C.heat.get(t.n).get(b) || 0) + 1);
-    render();
+    for (const m of [C.seen, C.heat]) { if (!m.has(t.n)) m.set(t.n, new Map()); }
+    C.seen.get(t.n).set(b, (C.seen.get(t.n).get(b) || 0) + 1);
+    C.heat.get(t.n).set(b, C.seen.get(t.n).get(b));
   }
+  render();
   fetch('/api/shows/reactions', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ track: key, pos: Math.round(at * 10) / 10 }) }).catch(() => {});
+}
+
+// The fire button: how many flames this track has, and lit while you're in a slice you've lit.
+function renderFire(t, at) {
+  const heat = P.shows[t.si].show === C.show ? C.heat.get(t.n) : null;
+  const n = heat ? [...heat.values()].reduce((a, b) => a + b, 0) : 0;
+  const lit = C.mine.has(keyOf(t) + '|' + Math.floor(at / C.bucket)), key = n + '|' + lit;
+  if ($('fire').dataset.k === key) return;
+  $('fire').dataset.k = key;
+  $('fcount').textContent = n || '';
+  $('fire').classList.toggle('lit', lit);
+  $('fire').setAttribute('aria-label', `React with fire${n ? ` (${n} flame${n === 1 ? '' : 's'} on this track)` : ''}`);
 }
 
 function loadTurnstile() {
@@ -698,32 +774,42 @@ function loadTurnstile() {
   s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstile';
   document.head.append(s);
 }
-window.onTurnstile = () => { if (!$('cform').hidden) renderTurnstile(); };
-function renderTurnstile() {
-  if (!window.turnstile || C.widget !== null) return;
-  C.widget = turnstile.render('#ts', {
+// Two widgets, each where its challenge would show if Cloudflare asks for one: the comment form's, and the quick tags'.
+const TS = { form: { el: '#ts', widget: null, token: null, waiting: null, want: false }, tags: { el: '#tts', widget: null, token: null, waiting: null, want: false } };
+window.onTurnstile = () => { for (const w of Object.values(TS)) if (w.want) renderTurnstile(w); };
+function renderTurnstile(w) {
+  w.want = true;
+  if (!window.turnstile || w.widget !== null) return;
+  w.widget = turnstile.render(w.el, {
     sitekey: C.siteKey, appearance: 'interaction-only', theme: 'dark',
-    callback: tok => { C.token = tok; if (C.waiting) { C.waiting(); C.waiting = null; } },
-    'expired-callback': () => { C.token = null; },
+    callback: tok => { w.token = tok; if (w.waiting) { w.waiting(); w.waiting = null; } },
+    'expired-callback': () => { w.token = null; },
   });
 }
-const tokenReady = () => C.token ? Promise.resolve() : new Promise(r => { C.waiting = r; });
+const tokenReady = w => w.token ? Promise.resolve() : new Promise(r => { w.waiting = r; });
+const spendToken = w => { w.token = null; if (window.turnstile && w.widget !== null) turnstile.reset(w.widget); };
+// A track from its key ("<show>/<n>"), and a moment's draft for the comments API.
+const trackOf = key => { const k = key.lastIndexOf('/'), s = P.shows[showIndex(key.slice(0, k))]; return s ? T[s.first + Number(key.slice(k + 1))] : null; };
+const draftOf = (t, pos) => ({ track: keyOf(t), show: P.shows[t.si].show, n: t.n, pos: Math.round(pos * 10) / 10 });
 
-function openComment() {
-  const { i, offset: at } = heard(), t = T[i];
-  C.draft = { track: keyOf(t), show: P.shows[t.si].show, n: t.n, pos: Math.round(at * 10) / 10 };
+// A comment at a moment: by default the one you're hearing; the nudge passes the moment you lit up.
+function openComment(m) {
+  const { i, offset } = heard(), t = (m && trackOf(m.track)) || T[i], at = m ? m.pos : offset;
+  C.draft = draftOf(t, at);
   $('cat').textContent = `Comment at ${fmt(at)} in ${titleOf(t)}`;
   $('cnick').value = store.get('nickname');
   $('cmsg').textContent = '';
   $('cform').hidden = false;
   $('cbody').focus();
-  loadTurnstile(); renderTurnstile();
+  loadTurnstile(); renderTurnstile(TS.form);
+  renderNudge();
 }
 // Focus goes back to the Comment button if it was in the form, so keyboard users aren't dropped (WCAG 2.4.3)
 function closeComment() {
   const hadFocus = $('cform').contains(document.activeElement);
   $('cform').hidden = true; $('cbody').value = ''; $('ccount').textContent = '0/280'; C.draft = null;
   if (hadFocus) $('cbtn').focus();
+  renderNudge();
 }
 
 async function postComment(e) {
@@ -733,20 +819,136 @@ async function postComment(e) {
   const nickname = $('cnick').value.trim(), { track, show, n, pos } = C.draft;
   store.set('nickname', nickname);
   // aria-disabled, not disabled: a disabled Post button would drop keyboard focus to the page (WCAG 2.4.3)
-  $('cpost').setAttribute('aria-disabled', 'true'); $('cmsg').textContent = C.token ? '' : 'Checking…';
+  $('cpost').setAttribute('aria-disabled', 'true'); $('cmsg').textContent = TS.form.token ? '' : 'Checking…';
   try {
-    await tokenReady();
+    await tokenReady(TS.form);
     const r = await fetch('/api/shows/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ track, pos, nickname, body, token: C.token }) });
+      body: JSON.stringify({ track, pos, nickname, body, token: TS.form.token }) });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) { $('cmsg').textContent = data.error || 'Couldn\'t post. Try again.'; return; }
-    if (show === C.show) { C.list = [...C.list, { ...data.comment, n }].sort((a, b) => a.pos - b.pos); C.shown = ''; }
+    posted({ track, show, n }, data.comment);
     closeComment();
   } catch (err) {
     $('cmsg').textContent = 'Couldn\'t post. Try again.';
   } finally {
     $('cpost').removeAttribute('aria-disabled');
-    C.token = null; if (window.turnstile && C.widget !== null) turnstile.reset(C.widget);
+    spendToken(TS.form);
+  }
+}
+
+// A comment of yours is in: on the timeline now if its show is on, and no more nudges for that track.
+function posted({ track, show, n }, comment) {
+  if (show === C.show) { C.list = [...C.list, { ...comment, n }].sort((a, b) => a.pos - b.pos); C.shown = ''; }
+  C.said.add(track);
+  if (C.after?.track === track) C.after = null;
+  renderNudge();
+}
+
+// Quick tags: one tap posts a short comment at the moment you're hearing, with your nickname if you've set one.
+let tagBusy = false;
+async function postTag(tag) {
+  if (tagBusy || !C.on) return;
+  const { i, offset } = heard(), t = T[i], draft = draftOf(t, offset);
+  tagBusy = true; $('tags').setAttribute('aria-busy', 'true');
+  loadTurnstile(); renderTurnstile(TS.tags);
+  try {
+    await tokenReady(TS.tags);
+    const r = await fetch('/api/shows/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ track: draft.track, pos: draft.pos, nickname: store.get('nickname'), body: tag, token: TS.tags.token }) });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) return toast(data.error || 'Couldn\'t post. Try again.', 'x');
+    posted(draft, data.comment);
+    toast(`“${tag}” at ${fmt(draft.pos)} in ${titleOf(t)}`, 'check');
+  } catch (e) {
+    toast('Couldn\'t post. Try again.', 'x');
+  } finally {
+    spendToken(TS.tags);
+    setTimeout(() => { tagBusy = false; $('tags').removeAttribute('aria-busy'); }, 1500);
+  }
+}
+
+// The nudge asks only listeners who are already reacting: after you light up a track twice ("Say what happened
+// at 7:32?"), and for a minute after a track you lit up ends, if you haven't commented on it. "Not now" quiets it
+// for that track.
+const NUDGE_FLAMES = 2, AFTER_MS = 60_000;
+function nudgeFor() {
+  if (!C.on || !$('cform').hidden) return null;
+  const a = C.after;
+  if (a && Date.now() < a.until && !C.said.has(a.track) && !C.quiet.has(a.track)) return { ...a, after: true };
+  const mine = C.flamed.get(C.trackKey) || [];
+  if (mine.length >= NUDGE_FLAMES && !C.said.has(C.trackKey) && !C.quiet.has(C.trackKey)) return { track: C.trackKey, pos: mine[mine.length - 1] };
+  return null;
+}
+function renderNudge() {
+  const n = nudgeFor(), key = n ? `${n.track}@${n.pos}${n.after ? '!' : ''}` : '';
+  if ($('nudge').dataset.k === key) return;
+  $('nudge').dataset.k = key;
+  const t = n && trackOf(n.track);
+  $('nudge').hidden = !t;
+  if (!t) return;
+  $('ntext').textContent = n.after ? `That was ${titleOf(t)}, and you lit it up.` : `You lit up ${fmt(n.pos)}.`;
+  $('nbtn').lastChild.textContent = `Say what happened at ${fmt(n.pos)}?`;
+  $('nbtn').onclick = () => openComment(n);
+}
+$('nx').onclick = () => { const n = nudgeFor(); if (n) C.quiet.add(n.track); renderNudge(); };
+$('tags').onclick = e => { const b = e.target.closest('[data-tag]'); if (b) postTag(b.dataset.tag); };
+
+// ---- Lately on the station, and each show's flames and comments in Up next and the request sheet ----
+let STATS = { flames: {}, talk: {}, latest: [] }, statsAt = 0;
+async function loadStats() {
+  if (Date.now() - statsAt < 60_000) return;
+  statsAt = Date.now();
+  try {
+    const r = await fetch('/api/shows/stats');
+    if (!r.ok) return;
+    STATS = { ...STATS, ...await r.json() };
+    renderLately(); renderVote(); if ($('sheet').open) updateSheetRows();
+    shownIdx = -1; render();   // Up next's rows carry the counts
+  } catch (e) {}
+}
+function badgeText(id) {
+  const f = STATS.flames[id] || 0, c = STATS.talk[id] || 0;
+  return [f && `${f} flame${f === 1 ? '' : 's'}`, c && `${c} comment${c === 1 ? '' : 's'}`].filter(Boolean).join(', ');
+}
+function badgeHtml(id) {
+  const f = STATS.flames[id] || 0, c = STATS.talk[id] || 0;
+  if (!f && !c) return '';
+  return `<span class="bdg" title="${badgeText(id)}"><span class="sr">, ${badgeText(id)}</span>${f ? `<span aria-hidden="true">${iconHtml('flame')}${f}</span>` : ''}${c ? `<span aria-hidden="true">${iconHtml('message-circle')}${c}</span>` : ''}</span>`;
+}
+
+// The newest comments and flamed moments on any show, each with when its show is on, or a vote to play it next.
+const ago = ms => { const m = Math.round((Date.now() - ms) / 60000);
+  return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
+let LATELY = [];
+function renderLately() {
+  // One row per moment: flames a few seconds apart on a track (one listener's run of taps) are the same moment
+  LATELY = STATS.latest.filter(x => P.shows[showIndex(x.show)]?.tracks[x.n])
+    .filter((x, k, all) => x.kind !== 'flame' || !all.slice(0, k).some(y => y.show === x.show && y.n === x.n && Math.abs(y.pos - x.pos) < 15)).slice(0, 3);
+  $('lately').hidden = !LATELY.length;
+  $('llist').replaceChildren(...LATELY.map((x, k) => {
+    const s = P.shows[showIndex(x.show)], title = titleOf({ ...s.tracks[x.n], n: x.n });
+    const li = el('li'); li.dataset.k = k;
+    const row = el('div', 'lrow'), what = el('span', 's');
+    if (x.kind === 'comment') what.append(el('b', '', x.nickname || 'anonymous'), ': ' + x.body);
+    else what.append(`${x.count} listener${x.count === 1 ? '' : 's'} lit this up`);
+    what.append(el('small', '', `${title} @ ${fmt(x.pos)} · ${showLabel(s)} · ${ago(x.at)}`));
+    row.append(icon(x.kind === 'comment' ? 'message-circle' : 'flame', 'i is-' + x.kind), what);
+    const w = el('span', 'when'), btn = el('button', 'ghost vbtn', 'Vote'); btn.hidden = true;
+    btn.onclick = () => castVote(x.show);
+    btn.setAttribute('aria-label', `Vote for ${showLabel(s)} to play next`);
+    w.append(el('span', 'said'), btn);
+    li.append(row, w);
+    return li;
+  }));
+  tickLately();
+}
+function tickLately() {
+  for (const li of $('llist').children) {
+    const x = LATELY[li.dataset.k], st = momentStatus(x.show, x.n, x.pos), btn = li.querySelector('.vbtn');
+    li.querySelector('.when').classList.toggle('now', st.onAir);
+    const refocus = !st.canVote && document.activeElement === btn;
+    li.querySelector('.said').textContent = st.text; li.querySelector('.said').hidden = st.canVote; btn.hidden = !st.canVote;
+    if (refocus) $('vreq').focus();
   }
 }
 
@@ -909,9 +1111,12 @@ fetch('/shows.json').then(r => { if (!r.ok) throw new Error(r.status); return r.
   fetch('/api/config').then(r => r.ok ? r.json() : null).then(cfg => {
     if (!cfg || !cfg.comments) return;
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
-    $('fire').hidden = $('cbtn').hidden = $('timeline').hidden = false;
+    $('fire').hidden = $('cbtn').hidden = $('timeline').hidden = $('tags').hidden = false;
     render();
-    setInterval(() => { if (C.show && visible()) loadMoments(C.show); }, 20000);
+    // Every 10 s while you're tuned in, so others' flames show up close to when they're lit; 20 s otherwise.
+    let tick = 0;
+    setInterval(() => { tick++; if (C.show && visible() && (listening || tick % 2 === 0)) loadMoments(C.show); }, 10000);
+    loadStats(); setInterval(() => visible() && loadStats(), 60000);
     // Back on screen: catch up now instead of waiting for the next poll.
     document.addEventListener('visibilitychange', () => { if (visible() && C.show) loadMoments(C.show); });
   }).catch(() => {});

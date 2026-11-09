@@ -1102,7 +1102,9 @@ function badgeHtml(id) {
 const ago = ms => { const m = Math.round((Date.now() - ms) / 60000);
   return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
 function renderLately() {
-  const items = catalogStats.latest.filter(x => { const t = S.tracks[indexOfTrack(x.track)]; return t && x.pos <= t.duration; }).slice(0, 3);
+  // One row per moment: flames a few seconds apart on a track (one listener's run of taps) are the same moment
+  const items = catalogStats.latest.filter(x => { const t = S.tracks[indexOfTrack(x.track)]; return t && x.pos <= t.duration; })
+    .filter((x, k, all) => x.kind !== 'flame' || !all.slice(0, k).some(y => y.track === x.track && Math.abs(y.pos - x.pos) < 15)).slice(0, 3);
   $('lately').hidden = !items.length;
   $('llist').replaceChildren(...items.map(x => {
     const t = S.tracks[indexOfTrack(x.track)], li = document.createElement('li');
