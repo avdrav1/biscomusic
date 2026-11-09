@@ -369,6 +369,8 @@ function setShowLine(el, t) {
 // else the rotation); with no API (server.py) it's the old clock loop over schedule.json.
 let ST = null, stationTimers = [], lastFetch = 0;
 const indexOfTrack = id => S.tracks.findIndex(t => trackId(t) === id);
+// A track's time on the clock: vault tracks (hours long) play only when voted for, so the clock passes over them.
+const span = t => t.vault ? 0 : t.duration;
 
 function live() {
   if (ST && ST.i >= 0) {
@@ -382,7 +384,7 @@ function live() {
     return { i, offset };
   }
   const pos = ((Date.now() - Date.parse(S.epoch)) / 1000) % total;
-  let i = starts.findIndex((s, k) => pos < s + S.tracks[k].duration);
+  let i = starts.findIndex((s, k) => pos < s + span(S.tracks[k]));
   if (i < 0) i = 0;
   return { i, offset: pos - starts[i], pos };
 }
@@ -457,8 +459,10 @@ function renderNext(i, offset) {
   if (!ST) {
     const cur = S.tracks[i];
     let at = Date.now() + (cur.duration - offset) * 1000;
-    for (let k = 1; k <= 8; k++) {
+    for (let k = 1, n = 0; n < 8 && k < S.tracks.length; k++) {
       const t = S.tracks[(i + k) % S.tracks.length];
+      if (t.vault) continue;
+      n++;
       rows.push(nextRow(t, clockAt(at)));
       at += t.duration * 1000;
     }
@@ -521,7 +525,8 @@ async function tune() {
 }
 
 // Track ended: start the cued spare right away; fall back to a normal tune if it isn't ready.
-const nextIndex = () => !ST ? (curIdx + 1) % S.tracks.length : curIdx === ST.i ? ST.nextI : -1;
+const clockAfter = i => { for (let k = 1; k < S.tracks.length; k++) { const n = (i + k) % S.tracks.length; if (!S.tracks[n].vault) return n; } return i; };
+const nextIndex = () => !ST ? clockAfter(curIdx) : curIdx === ST.i ? ST.nextI : -1;
 
 async function handoff() {
   const n = nextIndex(), next = spare();
@@ -1036,7 +1041,8 @@ const songOf = id => SONGS && SONGS.bySlug.get(SHEET.byId.get(id)?.slug);
 
 // Track ids ordered for a shortcut (search is applied on top).
 function rankBy(filter) {
-  const all = S.tracks.map((t, i) => ({ t, i, id: trackId(t) }));
+  // i: the tracks' order by show (their ids sort so), not the rotation's shuffle
+  const all = S.tracks.map(t => ({ t, id: trackId(t) })).sort((a, b) => (a.id > b.id) - (a.id < b.id)).map((x, i) => ({ ...x, i }));
   const hot = id => catalogStats.hot[id] || 0, last = id => catalogStats.last_played[id] || 0;
   let out;
   if (filter === 'hot') out = all.filter(x => hot(x.id) > 0).sort((a, b) => hot(b.id) - hot(a.id) || a.i - b.i);
@@ -1331,7 +1337,7 @@ $('share').onclick = () => { const { i, el } = heard(); shareMoment(S.tracks[i],
 
 const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
   S = data;
-  S.tracks.forEach(t => { starts.push(total); total += t.duration; });
+  S.tracks.forEach(t => { starts.push(total); total += span(t); });
   initMoment();
   render(); setInterval(render, 1000);
   songsReady.then(() => {

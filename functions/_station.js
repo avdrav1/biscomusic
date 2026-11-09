@@ -13,8 +13,9 @@ import { TRACK_RE, SHOW_RE, trackIdOf, json, ipHash } from './_shared.js';
 export const LOCK_MS = 45_000;     // voting closes this long before the end (the player preloads then)
 export const RECENT = 5;           // the current track and the N before it can't be voted for or rotated back in
 
-// Catalog in rotation order: [{ id, duration }] (seconds), from schedule.json.
-export const catalogOf = schedule => schedule.tracks.map(t => ({ id: trackIdOf(t), duration: t.duration }));
+// Catalog in rotation order: [{ id, duration }] (seconds), from schedule.json. Its `vault` tracks (hours long) play
+// only when voted for, as Show Radio's vault does.
+export const catalogOf = schedule => schedule.tracks.map(t => ({ id: trackIdOf(t), duration: t.duration, ...(t.vault && { vault: true }) }));
 // The show radio's catalog: every show of shows.json, oldest first, as long as its tracks together. Vault shows
 // (matrix and audience tapes, shows.py) play only when voted for: the rotation and the clock skip them.
 export const showCatalogOf = program => program.shows.map(s => ({ id: s.show, duration: s.tracks.reduce((n, t) => n + t.duration, 0), ...(s.vault && { vault: true }) }));

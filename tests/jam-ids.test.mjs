@@ -41,3 +41,16 @@ test('malformed ids are refused', () => {
   for (const id of ['', 'mix-', 'mix-a', 'mix-Best-01', 'mix-a/01', '2026-09-26', '2026-09-26-4', '../2026-09-26-04'])
     assert.ok(!TRACK_RE.test(id), id);
 });
+
+test("the rotation is shuffled: a show's or a mix's tracks don't play back to back", () => {
+  const rot = schedule.tracks.filter(t => !t.vault), group = t => t.show || t.mix || t.date;
+  const repeats = rot.slice(1).filter((t, k) => group(t) === group(rot[k])).length;
+  assert.ok(repeats < rot.length * 0.02, `${repeats} back-to-back tracks from one show or mix`);
+  const inOrder = rot.slice(1).filter((t, k) => trackIdOf(t) > trackIdOf(rot[k])).length;
+  assert.ok(inOrder < rot.length * 0.7, 'not in date order');
+});
+
+test('tracks of hours play only by request: the vault', () => {
+  for (const t of schedule.tracks) assert.equal(!!t.vault, t.duration > 90 * 60, `${trackIdOf(t)} (${Math.round(t.duration / 60)} min)`);
+  assert.equal(schedule.tracks.filter(t => t.vault).length, 2, "the 2019 mix's two long parts");
+});

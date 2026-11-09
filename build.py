@@ -360,6 +360,11 @@ def main():
         t['duration'] = old.get(t['file']) or duration(os.path.join(HERE, t['file']))
 
     tracks.sort(key=lambda t: t.pop('_order'))
+    for t in tracks:
+        if t['duration'] > VAULT_SECS:
+            t['vault'] = True   # the 2019 mix's long parts (~3 hours each): by request only, or no vote counts for hours
+        else:
+            t.pop('vault', None)
     if not tracks:
         sys.exit('No tracks found: no FLACs next to radio/ and nothing in manifests/')
 
@@ -380,6 +385,7 @@ def main():
                 if last.get(k):
                     t[k] = last[k]
 
+    tracks = rotation(tracks)
     local = {'station': meta['station'], 'epoch': meta['epoch'], 'tracks': tracks}
     with open(os.path.join(HERE, 'schedule.json'), 'w') as f:
         json.dump(local, f, indent=1)
@@ -417,6 +423,24 @@ def main():
     service_worker(versioned)
     other_sites(versioned)
     print(f'  {len(tracks)} tracks, {sum(t["duration"] for t in tracks) / 3600:.1f} hours')
+
+VAULT_SECS = 90 * 60
+SPREAD = 4   # tracks before the rotation returns to a show, a mix or a song
+
+def rotation(tracks):
+    """The rotation's order, as schedule.json lists it: a fixed shuffle (by a hash of each track id, so a deploy only
+    moves what it adds), dealt so a show, a mix or a song doesn't come back within SPREAD tracks when it can be helped.
+    The station and the player keep their place by track id, so a new order doesn't make the radio jump."""
+    tid = lambda t: os.path.basename(t['file'])[:-4]
+    deck = sorted(tracks, key=lambda t: hashlib.sha1(tid(t).encode()).hexdigest())
+    tags = lambda t: {('show', t.get('show') or t['date']), ('mix', t.get('mix')), ('song', t.get('slug') or t['song'])} - {('mix', None)}
+    out, recent = [], []
+    while deck:
+        busy = set().union(*recent[-SPREAD:])
+        k = next((k for k, t in enumerate(deck) if not tags(t) & busy), 0)
+        out.append(deck.pop(k))
+        recent.append(tags(out[-1]))
+    return out
 
 def stamp(html, versioned):
     """Point a page at the versioned static files: "static/x" and "static/icons.svg#name"."""
