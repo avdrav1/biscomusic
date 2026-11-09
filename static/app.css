@@ -562,3 +562,19 @@ button.fire.lit{border-color:rgba(255,157,58,.7);background:rgba(255,140,40,.14)
 .lrow .i.is-flame{color:#ff9d3a;filter:drop-shadow(0 0 6px rgba(255,140,40,.55))}
 .lrow .i.is-comment{color:var(--accent2)}
 .lrow .s{font-weight:400;overflow-wrap:anywhere}
+
+/* Quick tags: one tap posts a short comment at this moment */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags .chipbtn{min-height:36px;padding:6px 12px;background:rgba(226,104,255,.06);border-color:rgba(226,104,255,.3)}
+.tags .chipbtn:hover{border-color:var(--accent2)}
+.tags[aria-busy=true] .chipbtn{opacity:.5;pointer-events:none}
+#tts:empty{display:none}
+#tts{margin-top:10px}
+
+/* The nudge: "You lit up 7:32. Say what happened?" for listeners already reacting */
+.nudge{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px;padding:10px 12px;border-radius:14px;
+  background:linear-gradient(90deg,rgba(255,140,40,.12),rgba(226,104,255,.08));border:1px solid rgba(255,157,58,.35);font-size:14px;animation:popin .35s ease-out}
+.nudge #ntext{flex:1;min-width:12em}
+.nudge #nbtn{padding:8px 14px;font-size:13px}
+.nudge #nbtn .i{color:var(--accent2)}
+.nudge #nx{padding:8px;min-width:36px}

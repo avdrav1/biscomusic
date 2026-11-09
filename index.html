@@ -74,6 +74,15 @@
       <button class="ghost" id="share" hidden title="Share this moment" aria-label="Share this moment"><svg class="i" aria-hidden="true"><use href="static/icons.svg#link-2"/></svg></button>
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
     </div>
+    <div class="tags" id="tags" role="group" aria-label="Quick comments" hidden>
+      <button class="chipbtn" data-tag="Peak!">Peak!</button>
+      <button class="chipbtn" data-tag="Segue!">Segue!</button>
+      <button class="chipbtn" data-tag="Bliss">Bliss</button>
+      <button class="chipbtn" data-tag="Dark">Dark</button>
+      <button class="chipbtn" data-tag="Dance party">Dance party</button>
+    </div>
+    <div id="tts"></div>
+    <div class="nudge" id="nudge" hidden><span id="ntext"></span><button class="ghost" id="nbtn"><svg class="i" aria-hidden="true"><use href="static/icons.svg#message-circle"/></svg><span>Say what happened</span></button><button class="ghost iconbtn" id="nx" aria-label="Not now"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button></div>
     <div class="pops" id="pops" aria-live="polite"></div>
     <p class="about" id="facts" hidden><span id="fsum"></span> <a id="fhist" href="/first-played">Song history <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></p>
     <div class="kclip" id="kclip" role="region" aria-labelledby="kkind" hidden>
@@ -610,7 +619,8 @@ setInterval(() => {
 // Comments: pinned to a moment in a track, so they come back every time that moment airs.
 // Only on the live site; server.py has no /api, so locally this stays off.
 const C = { on: false, siteKey: '', track: null, list: [], shown: '', draft: null, widget: null, token: null, waiting: null,
-            heat: new Map(), bucket: 5, mine: new Set() };   // heat: 5-second slice -> reaction count
+            heat: new Map(), bucket: 5, mine: new Set(),   // heat: 5-second slice -> reaction count
+            flamed: new Map(), said: new Set(), after: null, quiet: new Set() };   // flamed: track -> positions you lit; said: tracks you commented on
 const POP_SECONDS = 20;
 
 // Listener count: tuned-in tabs check in every minute with a random per-tab id (no IP).
@@ -832,6 +842,7 @@ function react() {
   const key = track + '|' + b;
   if (C.mine.has(key)) return;   // one per listener per slice; the server enforces it too
   C.mine.add(key);
+  C.flamed.set(track, [...(C.flamed.get(track) || []), el]);
   if (track === C.track) C.heat.set(b, (C.heat.get(b) || 0) + 1);
   render();
   fetch('/api/reactions', { method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -860,8 +871,13 @@ function commentNode(tag, c, cls) {
 
 function renderComments(i, el) {
   const t = S.tracks[i], id = trackId(t);
-  if (id !== C.track) { C.track = id; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(id); }
+  if (id !== C.track) {
+    const prev = C.track, mine = C.flamed.get(prev) || [];
+    if (prev && listening && mine.length) C.after = { track: prev, pos: mine[mine.length - 1], until: Date.now() + AFTER_MS };
+    C.track = id; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(id);
+  }
   renderFire(id, el);
+  renderNudge();
 
   const pops = C.list.filter(c => c.pos <= el && el - c.pos < POP_SECONDS).slice(-3);
   const key = id + '|' + Math.floor(el) + '|' + C.list.length;
@@ -899,32 +915,40 @@ function loadTurnstile() {
   s.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstile';
   document.head.append(s);
 }
-window.onTurnstile = () => { if (!$('cform').hidden) renderTurnstile(); };
-function renderTurnstile() {
-  if (!window.turnstile || C.widget !== null) return;
-  C.widget = turnstile.render('#ts', {
+// Two widgets, each where its challenge would show if Cloudflare asks for one: the comment form's, and the quick tags'.
+const TS = { form: { el: '#ts', widget: null, token: null, waiting: null, want: false }, tags: { el: '#tts', widget: null, token: null, waiting: null, want: false } };
+window.onTurnstile = () => { for (const w of Object.values(TS)) if (w.want) renderTurnstile(w); };
+function renderTurnstile(w) {
+  w.want = true;
+  if (!window.turnstile || w.widget !== null) return;
+  w.widget = turnstile.render(w.el, {
     sitekey: C.siteKey, appearance: 'interaction-only', theme: 'dark',
-    callback: tok => { C.token = tok; if (C.waiting) { C.waiting(); C.waiting = null; } },
-    'expired-callback': () => { C.token = null; },
+    callback: tok => { w.token = tok; if (w.waiting) { w.waiting(); w.waiting = null; } },
+    'expired-callback': () => { w.token = null; },
   });
 }
-const tokenReady = () => C.token ? Promise.resolve() : new Promise(r => { C.waiting = r; });
+const tokenReady = w => w.token ? Promise.resolve() : new Promise(r => { w.waiting = r; });
+const spendToken = w => { w.token = null; if (window.turnstile && w.widget !== null) turnstile.reset(w.widget); };
+const moment = (t, pos) => `${fmt(pos)} in ${t.song}${t.jam ? ` (jam ${t.jam})` : ''}`;
 
-function openComment() {
-  const { i, el } = heard(), t = S.tracks[i];
-  C.draft = { track: trackId(t), pos: Math.round(el * 10) / 10 };
-  $('cat').textContent = `Comment at ${fmt(el)} in ${t.song}${t.jam ? ` (jam ${t.jam})` : ''}`;
+// A comment at a moment: by default the one you're hearing; the nudge passes the moment you lit up.
+function openComment(at) {
+  const { i, el } = heard(), t = at ? S.tracks[indexOfTrack(at.track)] : S.tracks[i], pos = at ? at.pos : el;
+  C.draft = { track: trackId(t), pos: Math.round(pos * 10) / 10 };
+  $('cat').textContent = `Comment at ${moment(t, pos)}`;
   $('cnick').value = store.get('nickname');
   $('cmsg').textContent = '';
   $('cform').hidden = false;
   $('cbody').focus();
-  loadTurnstile(); renderTurnstile();
+  loadTurnstile(); renderTurnstile(TS.form);
+  renderNudge();
 }
 // Focus goes back to the Comment button if it was in the form, so keyboard users aren't dropped (WCAG 2.4.3)
 function closeComment() {
   const hadFocus = $('cform').contains(document.activeElement);
   $('cform').hidden = true; $('cbody').value = ''; $('ccount').textContent = '0/280'; C.draft = null;
   if (hadFocus) $('cbtn').focus();
+  renderNudge();
 }
 
 async function postComment(e) {
@@ -934,22 +958,80 @@ async function postComment(e) {
   const nickname = $('cnick').value.trim();
   store.set('nickname', nickname);
   // aria-disabled, not disabled: a disabled Post button would drop keyboard focus to the page (WCAG 2.4.3)
-  $('cpost').setAttribute('aria-disabled', 'true'); $('cmsg').textContent = C.token ? '' : 'Checking…';
+  $('cpost').setAttribute('aria-disabled', 'true'); $('cmsg').textContent = TS.form.token ? '' : 'Checking…';
   try {
-    await tokenReady();
+    await tokenReady(TS.form);
     const r = await fetch('/api/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...C.draft, nickname, body, token: C.token }) });
+      body: JSON.stringify({ ...C.draft, nickname, body, token: TS.form.token }) });
     const data = await r.json().catch(() => ({}));
     if (!r.ok) { $('cmsg').textContent = data.error || 'Couldn\'t post. Try again.'; return; }
-    if (C.draft.track === C.track) { C.list = [...C.list, data.comment].sort((a, b) => a.pos - b.pos); C.shown = ''; }
+    posted(C.draft.track, data.comment);
     closeComment();
   } catch (err) {
     $('cmsg').textContent = 'Couldn\'t post. Try again.';
   } finally {
     $('cpost').removeAttribute('aria-disabled');
-    C.token = null; if (window.turnstile && C.widget !== null) turnstile.reset(C.widget);
+    spendToken(TS.form);
   }
 }
+
+// A comment of yours is in: on the timeline now if its track is playing, and no more nudges for that track.
+function posted(track, comment) {
+  if (track === C.track) { C.list = [...C.list, comment].sort((a, b) => a.pos - b.pos); C.shown = ''; }
+  C.said.add(track);
+  if (C.after?.track === track) C.after = null;
+  renderNudge();
+}
+
+// Quick tags: one tap posts a short comment at the moment you're hearing, with your nickname if you've set one.
+let tagBusy = false;
+async function postTag(tag) {
+  if (tagBusy || !C.on) return;
+  const { i, el } = heard(), t = S.tracks[i], draft = { track: trackId(t), pos: Math.round(el * 10) / 10 };
+  tagBusy = true; $('tags').setAttribute('aria-busy', 'true');
+  loadTurnstile(); renderTurnstile(TS.tags);
+  try {
+    await tokenReady(TS.tags);
+    const r = await fetch('/api/comments', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...draft, nickname: store.get('nickname'), body: tag, token: TS.tags.token }) });
+    const data = await r.json().catch(() => ({}));
+    if (!r.ok) return toast(data.error || 'Couldn\'t post. Try again.', 'x');
+    posted(draft.track, data.comment);
+    toast(`“${tag}” at ${moment(t, draft.pos)}`, 'check');
+  } catch (e) {
+    toast('Couldn\'t post. Try again.', 'x');
+  } finally {
+    spendToken(TS.tags);
+    setTimeout(() => { tagBusy = false; $('tags').removeAttribute('aria-busy'); }, 1500);
+  }
+}
+
+// The nudge asks only listeners who are already reacting: after you light up a track twice ("Say what happened
+// at 7:32?"), and for a minute after a track you lit up ends, if you haven't commented on it. "Not now" quiets it
+// for that track.
+const NUDGE_FLAMES = 2, AFTER_MS = 60_000;
+function nudgeFor() {
+  if (!C.on || !$('cform').hidden) return null;
+  const a = C.after;
+  if (a && Date.now() < a.until && !C.said.has(a.track) && !C.quiet.has(a.track)) return { ...a, after: true };
+  const mine = C.flamed.get(C.track) || [];
+  if (mine.length >= NUDGE_FLAMES && !C.said.has(C.track) && !C.quiet.has(C.track)) return { track: C.track, pos: mine[mine.length - 1] };
+  return null;
+}
+function renderNudge() {
+  const n = nudgeFor(), key = n ? `${n.track}@${n.pos}${n.after ? '!' : ''}` : '';
+  if ($('nudge').dataset.k === key) return;
+  $('nudge').dataset.k = key;
+  $('nudge').hidden = !n;
+  if (!n) return;
+  const t = S.tracks[indexOfTrack(n.track)];
+  if (!t) { $('nudge').hidden = true; return; }
+  $('ntext').textContent = n.after ? `That was ${trackLabel(t)}, and you lit it up.` : `You lit up ${fmt(n.pos)}.`;
+  $('nbtn').lastChild.textContent = `Say what happened at ${fmt(n.pos)}?`;
+  $('nbtn').onclick = () => openComment(n);
+}
+$('nx').onclick = () => { const n = nudgeFor(); if (n) C.quiet.add(n.track); renderNudge(); };
+$('tags').onclick = e => { const b = e.target.closest('[data-tag]'); if (b) postTag(b.dataset.tag); };
 
 $('fire').onclick = react;
 $('cbtn').onclick = () => $('cform').hidden ? openComment() : closeComment();
@@ -1422,7 +1504,7 @@ const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
   fetch('/api/config').then(r => r.ok ? r.json() : null).then(cfg => {
     if (!cfg || !cfg.comments) return;
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
-    $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false;
+    $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false; $('tags').hidden = false;
     render();
     setInterval(() => { if (C.track && visible()) loadMoments(C.track); }, 20000);
     pollListeners(); setInterval(pollListeners, 60000);
