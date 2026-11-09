@@ -84,6 +84,7 @@
     <div id="tts"></div>
     <div class="nudge" id="nudge" hidden><span id="ntext"></span><button class="ghost" id="nbtn"><svg class="i" aria-hidden="true"><use href="static/icons.svg#message-circle"/></svg><span>Say what happened</span></button><button class="ghost iconbtn" id="nx" aria-label="Not now"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button></div>
     <div class="pops" id="pops" aria-live="polite"></div>
+    <p class="sr" id="flive" aria-live="polite"></p>
     <p class="about" id="facts" hidden><span id="fsum"></span> <a id="fhist" href="/first-played">Song history <svg class="i" aria-hidden="true"><use href="static/icons.svg#arrow-right"/></svg></a></p>
     <div class="kclip" id="kclip" role="region" aria-labelledby="kkind" hidden>
       <div class="fhead"><span class="label" id="kkind">The debut</span><button class="ghost iconbtn" id="kx" aria-label="Close the player"><svg class="i" aria-hidden="true"><use href="static/icons.svg#x"/></svg></button></div>
@@ -620,7 +621,8 @@ setInterval(() => {
 // Only on the live site; server.py has no /api, so locally this stays off.
 const C = { on: false, siteKey: '', track: null, list: [], shown: '', draft: null, widget: null, token: null, waiting: null,
             heat: new Map(), bucket: 5, mine: new Set(),   // heat: 5-second slice -> reaction count
-            flamed: new Map(), said: new Set(), after: null, quiet: new Set() };   // flamed: track -> positions you lit; said: tracks you commented on
+            flamed: new Map(), said: new Set(), after: null, quiet: new Set(),
+            seen: new Map(), seenFor: null };   // seen: the most flames seen per slice of this track, yours included   // flamed: track -> positions you lit; said: tracks you commented on
 const POP_SECONDS = 20;
 
 // Listener count: tuned-in tabs check in every minute with a random per-tab id (no IP).
@@ -662,7 +664,38 @@ async function loadMoments(track) {
   const m = await fetch('/api/moments?track=' + encodeURIComponent(track)).then(res => res.ok ? res.json() : null).catch(() => null);
   if (!m || track !== C.track) return;
   C.list = m.comments; C.shown = '';
-  C.bucket = m.bucket; C.heat = new Map(m.counts);
+  C.bucket = m.bucket;
+  // Flames only ever add up, so anything past the most this page has seen in a slice (its own included) is
+  // someone else's, lit since the last poll. The first load of a track just takes the counts.
+  const fresh = C.seenFor === track, theirs = [];
+  for (const [b, n] of m.counts) {
+    const seen = C.seen.get(b) || 0;
+    if (fresh && n > seen) theirs.push({ b, n: n - seen });
+    if (n > seen) C.seen.set(b, n);
+  }
+  C.seenFor = track;
+  C.heat = new Map(C.seen);
+  if (theirs.length) othersFlamed(track, theirs);
+}
+
+// Another listener lit up this track: their flames rise from that spot on the waveform, and it's announced.
+function othersFlamed(track, theirs) {
+  const t = S.tracks[indexOfTrack(track)];
+  if (!t || document.visibilityState !== 'visible') return;
+  const box = $('timeline').getBoundingClientRect();
+  theirs.forEach(({ b, n }, k) => {
+    const x = box.left + box.width * Math.min(1, (b + 0.5) * C.bucket / t.duration);
+    for (let j = 0; j < Math.min(n, 5); j++) setTimeout(() => riseFlame(x - 11, box.top + 10), (k * 3 + j) * 180);
+  });
+  const total = theirs.reduce((a, x) => a + x.n, 0), at = fmt((theirs[theirs.length - 1].b + 0.5) * C.bucket);
+  $('flive').textContent = total === 1 ? `Another listener lit up ${at}` : `${total} flames from other listeners, latest at ${at}`;
+}
+function riseFlame(x, y) {
+  const f = document.createElement('span');
+  f.className = 'flame'; f.append(icon('flame'));
+  f.style.left = x + 'px'; f.style.top = y + 'px';
+  f.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
+  document.body.append(f); setTimeout(() => f.remove(), 1200);
 }
 
 // ---- Timeline: the track's waveform, with flames and comments on it (SoundCloud-style) ----
@@ -834,16 +867,13 @@ new ResizeObserver(() => { if (S) render(); }).observe($('timeline'));
 
 function react() {
   const { i, el } = heard(), track = trackId(S.tracks[i]), b = Math.floor(el / C.bucket);
-  const r = $('fire').getBoundingClientRect(), f = document.createElement('span');
-  f.className = 'flame'; f.append(icon('flame'));
-  f.style.left = (r.left + r.width / 2 - 11) + 'px'; f.style.top = (r.top - 6) + 'px';
-  f.style.setProperty('--dx', (Math.random() * 40 - 20) + 'px');
-  document.body.append(f); setTimeout(() => f.remove(), 1200);
+  const r = $('fire').getBoundingClientRect();
+  riseFlame(r.left + r.width / 2 - 11, r.top - 6);
   const key = track + '|' + b;
   if (C.mine.has(key)) return;   // one per listener per slice; the server enforces it too
   C.mine.add(key);
   C.flamed.set(track, [...(C.flamed.get(track) || []), el]);
-  if (track === C.track) C.heat.set(b, (C.heat.get(b) || 0) + 1);
+  if (track === C.track) { C.seen.set(b, (C.seen.get(b) || 0) + 1); C.heat.set(b, C.seen.get(b)); }
   render();
   fetch('/api/reactions', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ track, pos: Math.round(el * 10) / 10 }) }).catch(() => {});
@@ -874,7 +904,7 @@ function renderComments(i, el) {
   if (id !== C.track) {
     const prev = C.track, mine = C.flamed.get(prev) || [];
     if (prev && listening && mine.length) C.after = { track: prev, pos: mine[mine.length - 1], until: Date.now() + AFTER_MS };
-    C.track = id; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(id);
+    C.track = id; C.list = []; C.heat = new Map(); C.seen = new Map(); C.seenFor = null; C.shown = ''; loadMoments(id);
   }
   renderFire(id, el);
   renderNudge();
@@ -1506,7 +1536,9 @@ const scheduleReady = fetch('schedule.json').then(r => r.json()).then(data => {
     C.on = true; C.siteKey = cfg.turnstileSiteKey;
     $('cbtn').hidden = false; $('fire').hidden = false; $('share').hidden = false; $('tags').hidden = false;
     render();
-    setInterval(() => { if (C.track && visible()) loadMoments(C.track); }, 20000);
+    // Every 10 s while you're tuned in, so others' flames show up close to when they're lit; 20 s otherwise.
+    let tick = 0;
+    setInterval(() => { tick++; if (C.track && visible() && (listening || tick % 2 === 0)) loadMoments(C.track); }, 10000);
     pollListeners(); setInterval(pollListeners, 60000);
   }).catch(() => {});
   // Back on screen after a while: catch up now instead of waiting for the next poll.
