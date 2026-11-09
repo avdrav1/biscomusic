@@ -69,7 +69,7 @@
     <div class="controls">
       <button id="tune" aria-label="Tune in" aria-keyshortcuts="Space"><svg class="i" aria-hidden="true"><use href="static/icons.svg#play"/></svg><span>Tune in</span></button>
       <label class="label vol">Vol <input type="range" id="vol" min="0" max="1" step="0.01" value="0.9"></label>
-      <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire"><svg class="i" aria-hidden="true"><use href="static/icons.svg#flame"/></svg></button>
+      <button class="ghost fire" id="fire" hidden title="This part rules" aria-label="React with fire"><svg class="i" aria-hidden="true"><use href="static/icons.svg#flame"/></svg><b class="fcount" id="fcount"></b></button>
       <button class="ghost" id="cbtn" hidden aria-label="Comment on this moment"><svg class="i" aria-hidden="true"><use href="static/icons.svg#message-circle"/></svg><span class="wide">Comment</span></button>
       <button class="ghost" id="share" hidden title="Share this moment" aria-label="Share this moment"><svg class="i" aria-hidden="true"><use href="static/icons.svg#link-2"/></svg></button>
       <div class="eq" id="eq"><b></b><b></b><b></b><b></b></div>
@@ -140,6 +140,11 @@
   <section id="talk" hidden>
     <h2>Moments in this track</h2>
     <ol class="cl" id="clist"></ol>
+  </section>
+
+  <section class="lately" id="lately" aria-labelledby="ltitle" hidden>
+    <h2 id="ltitle">Lately on the station</h2>
+    <ol class="cl" id="llist"></ol>
   </section>
 
   <!-- Up next: with voting, the next slot's contenders (vote rows) and then the rotation; without, the clock's next tracks -->
@@ -447,7 +452,7 @@ const clockAt = ms => new Date(ms).toLocaleTimeString([], { hour: 'numeric', min
 // contenders are the vote rows above this list (renderVote), and this is the rotation after them: no times,
 // since votes decide what plays when. A show's date and venue are shown once above its run of tracks, and
 // read with each row.
-const songHtml = t => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}<span class="sr">, ${showLine(t)}</span>`;
+const songHtml = t => `${t.song}${t.jam ? ` <span class="jam">· jam ${t.jam}</span>` : ''}${badgeHtml(trackId(t))}<span class="sr">, ${showLine(t)}</span>`;
 const nextRow = (t, when) => ({ show: showLine(t), html: `<li${when ? '' : ' class="later"'}>${when ? `<span class="t">${when}</span>` : ''}<span class="s">${songHtml(t)}</span><span class="d">${fmt(t.duration)}</span></li>` });
 // The next slot's contenders: what's locked in, else the leaders, else the rotation's pick.
 const ballotTracks = () => ST.next ? [ST.next.track] : ST.tally.length ? ST.tally.slice(0, 3).map(([id]) => id) : ST.rotation.slice(0, 1);
@@ -662,11 +667,16 @@ function loadWave(t) {
     .catch(() => waves.set(id, null));
 }
 
-// Flames per waveform bar (C.heat holds 5-second buckets for the current track).
+// Flames per waveform bar (C.heat holds 5-second buckets for the current track): a slice warms every bar it covers,
+// and glows half as warm on the bar each side, so one listener's flame is a patch you can see, not a 3-pixel line.
 function heatPerBar(t, n) {
   const out = new Float32Array(n);
   if (!C.heat.size || trackId(t) !== C.track) return out;
-  for (const [b, cnt] of C.heat) out[Math.min(n - 1, Math.floor(((b + 0.5) * C.bucket / t.duration) * n))] += cnt;
+  const bar = sec => Math.min(n - 1, Math.floor(sec / t.duration * n));
+  for (const [b, cnt] of C.heat) {
+    const a = bar(b * C.bucket), z = bar((b + 1) * C.bucket);
+    for (let j = Math.max(0, a - 1); j <= Math.min(n - 1, z + 1); j++) out[j] += j < a || j > z ? cnt / 2 : cnt;
+  }
   return out;
 }
 
@@ -713,11 +723,12 @@ const avColor = name => { let h = 0; for (const ch of name || '?') h = (h * 31 +
 const initials = name => name ? name.trim().split(/\s+/).slice(0, 2).map(w => [...w][0]).join('').toUpperCase() : '?';
 const commentsAround = list => list.length === 1 ? `${list[0].nickname || 'anonymous'} at ${fmt(list[0].pos)}: ${list[0].body}` : `${list.length} comments around ${fmt(list[0].pos)}`;
 
-// Peaks in the flame buckets: at least 2 flames and half the track's best; 15 s apart; at most 6.
+// Peaks in the flame buckets: at least half the track's best (so a lone flame shows on a track that has only those);
+// 15 s apart; at most 6.
 function flamePeaks() {
   const top = Math.max(0, ...C.heat.values()), picked = [];
-  for (const [b, cnt] of [...C.heat].sort((a, b) => b[1] - a[1])) {
-    if (cnt < 2 || cnt < top / 2 || picked.length >= 6) break;
+  for (const [b, cnt] of [...C.heat].sort((a, b) => b[1] - a[1] || a[0] - b[0])) {
+    if (cnt < top / 2 || picked.length >= 6) break;
     if (picked.some(p => Math.abs(p.b - b) * C.bucket < 15)) continue;
     picked.push({ b, cnt });
   }
@@ -736,8 +747,8 @@ function renderMarkers(t, el, W) {
     $('flames').replaceChildren(...(trackId(t) === C.track ? flamePeaks() : []).map(({ b, cnt }) => {
       const pos = (b + 0.5) * C.bucket, m = document.createElement('button');
       m.className = 'fmark'; m.style.left = (100 * pos / dur) + '%'; m.dataset.pos = pos;
-      m.append(icon('flame'), Object.assign(document.createElement('b'), { textContent: cnt }));
-      m.setAttribute('aria-label', `${cnt} flames at ${fmt(pos)}`);
+      m.append(icon('flame'), Object.assign(document.createElement('b'), { textContent: cnt > 1 ? cnt : '' }));
+      m.setAttribute('aria-label', `${cnt} flame${cnt === 1 ? '' : 's'} at ${fmt(pos)}`);
       m._card = () => cardFlames(cnt, pos);
       return m;
     }));
@@ -821,9 +832,21 @@ function react() {
   const key = track + '|' + b;
   if (C.mine.has(key)) return;   // one per listener per slice; the server enforces it too
   C.mine.add(key);
-  if (track === C.track) { C.heat.set(b, (C.heat.get(b) || 0) + 1); render(); }
+  if (track === C.track) C.heat.set(b, (C.heat.get(b) || 0) + 1);
+  render();
   fetch('/api/reactions', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ track, pos: Math.round(el * 10) / 10 }) }).catch(() => {});
+}
+
+// The fire button: how many flames the track has, and lit while you're in a slice you've lit.
+function renderFire(id, el) {
+  const n = id === C.track ? [...C.heat.values()].reduce((a, b) => a + b, 0) : 0;
+  const lit = C.mine.has(id + '|' + Math.floor(el / C.bucket)), key = n + '|' + lit;
+  if ($('fire').dataset.k === key) return;
+  $('fire').dataset.k = key;
+  $('fcount').textContent = n || '';
+  $('fire').classList.toggle('lit', lit);
+  $('fire').setAttribute('aria-label', `React with fire${n ? ` (${n} flame${n === 1 ? '' : 's'} on this track)` : ''}`);
 }
 
 function commentNode(tag, c, cls) {
@@ -838,6 +861,7 @@ function commentNode(tag, c, cls) {
 function renderComments(i, el) {
   const t = S.tracks[i], id = trackId(t);
   if (id !== C.track) { C.track = id; C.list = []; C.heat = new Map(); C.shown = ''; loadMoments(id); }
+  renderFire(id, el);
 
   const pops = C.list.filter(c => c.pos <= el && el - c.pos < POP_SECONDS).slice(-3);
   const key = id + '|' + Math.floor(el) + '|' + C.list.length;
@@ -939,20 +963,56 @@ $('cbody').oninput = e => $('ccount').textContent = `${e.target.value.length}/28
 // library grows. Rows are built once and updated in place so a tap is never lost to a redraw.
 const trackLabel = t => `${t.song}${t.jam ? ` (jam ${t.jam})` : ''}`;
 const shortDate = t => new Date(t.date + 'T12:00:00').toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
-let catalogStats = { hot: {}, last_played: {} }, statsAt = 0;
+let catalogStats = { hot: {}, flames: {}, talk: {}, last_played: {}, latest: [] }, statsAt = 0;
 
 async function loadStats() {
   if (Date.now() - statsAt < 60_000) return;
   statsAt = Date.now();
-  try { const r = await fetch('/api/catalog-stats'); if (r.ok) { catalogStats = await r.json(); renderVote(); } } catch (e) {}
+  try {
+    const r = await fetch('/api/catalog-stats');
+    if (r.ok) { catalogStats = { ...catalogStats, ...await r.json() }; renderVote(); renderLately(); nextKey = ''; render(); }
+  } catch (e) {}
+}
+
+// A track's flames and comments, for its row in Up next and the request sheet: worth a vote.
+function badgeText(id) {
+  const f = catalogStats.flames[id] || 0, c = catalogStats.talk[id] || 0;
+  return [f && `${f} flame${f === 1 ? '' : 's'}`, c && `${c} comment${c === 1 ? '' : 's'}`].filter(Boolean).join(', ');
+}
+function badgeHtml(id) {
+  const f = catalogStats.flames[id] || 0, c = catalogStats.talk[id] || 0;
+  if (!f && !c) return '';
+  return `<span class="bdg" title="${badgeText(id)}"><span class="sr">, ${badgeText(id)}</span>${f ? `<span aria-hidden="true">${iconHtml('flame')}${f}</span>` : ''}${c ? `<span aria-hidden="true">${iconHtml('message-circle')}${c}</span>` : ''}</span>`;
+}
+
+// Lately on the station: the newest comments and flamed moments on any track, each opening its moment
+// (when it airs, or a vote to play it next). Most tracks have none, so this is where listeners see each other.
+const ago = ms => { const m = Math.round((Date.now() - ms) / 60000);
+  return m < 1 ? 'just now' : m < 60 ? `${m} min ago` : m < 1440 ? `${Math.round(m / 60)} h ago` : `${Math.round(m / 1440)} d ago`; };
+function renderLately() {
+  const items = catalogStats.latest.filter(x => { const t = S.tracks[indexOfTrack(x.track)]; return t && x.pos <= t.duration; }).slice(0, 3);
+  $('lately').hidden = !items.length;
+  $('llist').replaceChildren(...items.map(x => {
+    const t = S.tracks[indexOfTrack(x.track)], li = document.createElement('li');
+    const a = document.createElement('a'); a.className = 'lrow';
+    a.href = `/?m=${x.track}@${Math.floor(x.pos)}` + (x.kind === 'comment' ? `&c=${x.id}` : '');
+    const what = document.createElement('span'); what.className = 's';
+    if (x.kind === 'comment') what.append(Object.assign(document.createElement('b'), { textContent: x.nickname || 'anonymous' }), ': ' + x.body);
+    else what.append(`${x.n} listener${x.n === 1 ? '' : 's'} lit this up`);
+    what.append(Object.assign(document.createElement('small'), { textContent: `${trackLabel(t)} @ ${fmt(x.pos)} · ${showLine(t)} · ${ago(x.at)}` }));
+    a.append(icon(x.kind === 'comment' ? 'message-circle' : 'flame', 'i is-' + x.kind), what);
+    li.append(a); return li;
+  }));
 }
 
 function voteRow(t) {
   const li = document.createElement('li'); li.dataset.track = trackId(t);
   const s = document.createElement('span'); s.className = 's';
   const name = document.createElement('span'); name.textContent = trackLabel(t);
+  const bdg = document.createElement('span'); bdg.className = 'bdgs';
+  s.append(name, bdg);
   const sub = document.createElement('small'); sub.textContent = `${t.mix && !t.show ? `Mix · ${t.mix}` : `${shortDate(t)} · ${t.venue}`} · ${fmt(t.duration)}`;
-  s.append(name, sub);
+  s.append(sub);
   const meter = document.createElement('span'); meter.className = 'meter';
   meter.append(document.createElement('i'), document.createElement('b'));
   const btn = document.createElement('button'); btn.className = 'ghost vbtn';
@@ -968,6 +1028,8 @@ function updateVoteRow(li, counts, max, mine) {
   li.classList.toggle('blocked', !!why);
   li.querySelector('.meter i').style.width = max ? (100 * n / max) + '%' : '0';
   li.querySelector('.meter b').textContent = n ? n : '';
+  const b = li.querySelector('.bdgs'), bk = badgeText(id);
+  if (b.dataset.k !== bk) { b.dataset.k = bk; b.innerHTML = badgeHtml(id); }
   const btn = li.querySelector('.vbtn');
   btn.disabled = !!why;
   btn.replaceChildren(...(why ? [why] : mine === id ? [icon('check'), 'Voted'] : ['Vote']));

@@ -539,3 +539,26 @@ html.embed dialog.panel::backdrop{background:none;backdrop-filter:none}
   .fp .eras li{grid-template-columns:1fr auto;grid-template-areas:"s d" "t t";row-gap:4px}
   .fp .eras .s{grid-area:s}.fp .eras .t{grid-area:t}.fp .eras .d{grid-area:d}
 }
+
+/* Fire: the track's flame count on the button, lit while you're in a slice you lit */
+button.fire .fcount{font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;margin-left:6px;color:#ffb46b}
+button.fire .fcount:empty{display:none}
+button.fire.lit{border-color:rgba(255,157,58,.7);background:rgba(255,140,40,.14);box-shadow:0 0 14px rgba(255,140,40,.35)}
+.fmark b:empty{display:none}
+
+/* A track's flames and comments, next to its name in Up next and the request sheet */
+.bdgs{display:inline}
+.bdg{display:inline-flex;gap:8px;margin-left:8px;font-size:12px;font-weight:500;color:var(--dim);font-variant-numeric:tabular-nums;vertical-align:1px}
+.bdg>span{display:inline-flex;align-items:center;gap:3px}
+.bdg .i{width:12px;height:12px}
+.bdg>span:first-of-type .i{color:#ff9d3a}
+
+/* Lately on the station: the newest comments and flames on any track */
+.lately li{display:block;padding:0}
+.lrow{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:baseline;padding:11px 14px;color:var(--text);text-decoration:none}
+.lrow:hover{background:rgba(226,104,255,.06)}
+.lrow:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.lrow .i{width:16px;height:16px;align-self:center}
+.lrow .i.is-flame{color:#ff9d3a;filter:drop-shadow(0 0 6px rgba(255,140,40,.55))}
+.lrow .i.is-comment{color:var(--accent2)}
+.lrow .s{font-weight:400;overflow-wrap:anywhere}
