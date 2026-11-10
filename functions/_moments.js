@@ -15,6 +15,19 @@ export const MOMENTS = {
 
 export const BUCKET = 5;   // seconds per flame slice: one flame per listener per slice, so counts mean "people"
 
+// The newest comments and flamed slices of one station (station: an SQL test on track), for Lately. Both walk the
+// *_by_time indexes from the newest row, so they read the last few rows rather than the whole table: a flamed slice
+// is picked from the newest RECENT_FLAMES flames, then counted in full through the primary key.
+const RECENT_FLAMES = 60;
+export const latestComments = (env, station, limit) => env.DB.prepare(
+  `SELECT id, track, pos, nickname, body, created_at AS at FROM comments WHERE hidden = 0 AND ${station}
+   ORDER BY created_at DESC LIMIT ?`).bind(limit);
+export const latestFlames = (env, station, limit) => env.DB.prepare(
+  `SELECT r.track, r.bucket, COUNT(*) AS n, MAX(r.created_at) AS at
+   FROM (SELECT DISTINCT track, bucket FROM (SELECT track, bucket FROM reactions WHERE ${station} ORDER BY created_at DESC LIMIT ${RECENT_FLAMES})) k
+   JOIN reactions r ON r.track = k.track AND r.bucket = k.bucket
+   GROUP BY r.track, r.bucket ORDER BY at DESC LIMIT ?`).bind(limit);
+
 const MAX_BODY = 280;
 const MAX_NICK = 24;
 const COMMENTS_PER_MINUTE = 5;

@@ -110239,8 +110239,8 @@
    "source": "MBHO KA500HN (DIN)/MBP603A's > Oade Concert Mod Edirol R-44",
    "kind": "aud",
    "vault": true,
-   "rating": 4.12,
-   "ratings": 13,
+   "rating": 4.11,
+   "ratings": 14,
    "setlist": [
     [
      "Set 1",
@@ -124200,25 +124200,25 @@
     {
      "title": "Crowd",
      "file": "DB2024_03_15_Set101.mp3",
-     "duration": 113.0,
+     "duration": 112.896,
      "segue": false
     },
     {
      "title": "Sister Judy's Soul Shack",
      "file": "DB2024_03_15_Set102.mp3",
-     "duration": 1253.0,
+     "duration": 1252.896,
      "segue": true
     },
     {
      "title": "One Chance To Save The World",
      "file": "DB2024_03_15_Set103.mp3",
-     "duration": 1356.0,
+     "duration": 1356.144,
      "segue": true
     },
     {
      "title": "42",
      "file": "DB2024_03_15_Set104.mp3",
-     "duration": 1090.0,
+     "duration": 1090.272,
      "segue": true
     },
     {
@@ -124230,31 +124230,31 @@
     {
      "title": "Sister Judy's Soul Shack",
      "file": "DB2024_03_15_Set106.mp3",
-     "duration": 513.0,
+     "duration": 512.688,
      "segue": false
     },
     {
      "title": "Crowd",
      "file": "DB2024_03_15_Set201.mp3",
-     "duration": 40.0,
+     "duration": 40.152,
      "segue": false
     },
     {
      "title": "Basis For A Day",
      "file": "DB2024_03_15_Set202.mp3",
-     "duration": 1677.0,
+     "duration": 1676.736,
      "segue": true
     },
     {
      "title": "The Wormhole",
      "file": "DB2024_03_15_Set203.mp3",
-     "duration": 1150.0,
+     "duration": 1149.888,
      "segue": true
     },
     {
      "title": "Times Square",
      "file": "DB2024_03_15_Set204.mp3",
-     "duration": 1047.0,
+     "duration": 1047.096,
      "segue": true
     },
     {
@@ -124272,7 +124272,7 @@
     {
      "title": "Story of the World",
      "file": "DB2024_03_15_Set207.mp3",
-     "duration": 884.0,
+     "duration": 884.376,
      "segue": false
     }
    ]
@@ -129908,25 +129908,25 @@
     {
      "title": "Crowd",
      "file": "db2025-06-19s1t01.mp3",
-     "duration": 21.0,
+     "duration": 21.6,
      "segue": false
     },
     {
      "title": "Jam",
      "file": "db2025-06-19s1t02.mp3",
-     "duration": 1276.0,
+     "duration": 1276.368,
      "segue": false
     },
     {
      "title": "Jam",
      "file": "db2025-06-19s1t03.mp3",
-     "duration": 906.0,
+     "duration": 906.024,
      "segue": false
     },
     {
      "title": "Jam",
      "file": "db2025-06-19s1t04.mp3",
-     "duration": 1258.0,
+     "duration": 1258.152,
      "segue": false
     },
     {
@@ -129938,61 +129938,61 @@
     {
      "title": "Caterpillar",
      "file": "db2025-06-19s2t02.mp3",
-     "duration": 883.0,
+     "duration": 883.344,
      "segue": true
     },
     {
      "title": "No Recollection",
      "file": "db2025-06-19s2t03.mp3",
-     "duration": 1166.0,
+     "duration": 1165.944,
      "segue": true
     },
     {
      "title": "The Wormhole",
      "file": "db2025-06-19s2t04.mp3",
-     "duration": 594.0,
+     "duration": 593.736,
      "segue": true
     },
     {
      "title": "Under Ur Spell",
      "file": "db2025-06-19s2t05.mp3",
-     "duration": 1429.0,
+     "duration": 1429.152,
      "segue": true
     },
     {
      "title": "Astronaut",
      "file": "db2025-06-19s2t06.mp3",
-     "duration": 91.0,
+     "duration": 91.128,
      "segue": false
     },
     {
      "title": "Crowd",
      "file": "db2025-06-19s3t01.mp3",
-     "duration": 61.0,
+     "duration": 60.744,
      "segue": false
     },
     {
      "title": "House Dog Party Favor",
      "file": "db2025-06-19s3t02.mp3",
-     "duration": 1284.0,
+     "duration": 1284.264,
      "segue": true
     },
     {
      "title": "Who's in Charge",
      "file": "db2025-06-19s3t03.mp3",
-     "duration": 1028.0,
+     "duration": 1028.04,
      "segue": true
     },
     {
      "title": "Astronaut",
      "file": "db2025-06-19s3t04.mp3",
-     "duration": 895.0,
+     "duration": 894.504,
      "segue": true
     },
     {
      "title": "Ring the Doorbell Twice",
      "file": "db2025-06-19s3t05.mp3",
-     "duration": 895.0,
+     "duration": 894.672,
      "segue": true
     },
     {
@@ -130010,13 +130010,13 @@
     {
      "title": "Scars of the Brave",
      "file": "db2025-06-19s3t08.mp3",
-     "duration": 1000.0,
+     "duration": 999.6,
      "segue": true
     },
     {
      "title": "Caterpillar",
      "file": "db2025-06-19s3t09.mp3",
-     "duration": 466.0,
+     "duration": 465.816,
      "segue": false
     }
    ]
@@ -135252,7 +135252,7 @@
    "source": "DPA 4011A > Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 3.27,
+   "rating": 3.23,
    "ratings": 15,
    "setlist": [
     [
@@ -136320,8 +136320,8 @@
    "source": "Telefunken elam260.tk62(dina,@sbd) > sx-r4+(24/96)",
    "kind": "matrix",
    "vault": true,
-   "rating": 3.23,
-   "ratings": 11,
+   "rating": 3.21,
+   "ratings": 12,
    "setlist": [
     [
      "Set 1",
@@ -136444,8 +136444,8 @@
    "source": "Telefunken m62 (hypers @sbd) > MixPre6 II > WAV (32/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 3.65,
-   "ratings": 10,
+   "rating": 3.77,
+   "ratings": 11,
    "setlist": [
     [
      "Set 1",
@@ -136562,8 +136562,8 @@
    "source": "Telefunken m62 (hypers @sbd) > MixPre6 II > WAV (32/48)",
    "kind": "aud",
    "vault": true,
-   "rating": 4.19,
-   "ratings": 13,
+   "rating": 4.18,
+   "ratings": 14,
    "setlist": [
     [
      "Set 1",
@@ -136674,8 +136674,8 @@
    "source": "DPA 4011A > Zoom F3",
    "kind": "aud",
    "vault": true,
-   "rating": 4.56,
-   "ratings": 16,
+   "rating": 4.53,
+   "ratings": 17,
    "setlist": [
     [
      "Set 1",

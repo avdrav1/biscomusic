@@ -13,6 +13,18 @@ export const json = (data, status = 200) =>
     headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
   });
 
+// make()'s data, cached at the edge for `seconds` under `path` (a made-up address on this host).
+export async function edgeCached(request, waitUntil, path, seconds, make) {
+  const key = new Request(new URL(path, request.url).toString());
+  const hit = await caches.default.match(key);
+  if (hit) return hit.json();
+  const data = await make();
+  const res = json(data);
+  res.headers.set('Cache-Control', `public, max-age=${seconds}`);
+  waitUntil(caches.default.put(key, res));
+  return data;
+}
+
 // The edge-cache key for /api/moments of a track (comments.js and reactions.js clear it on a post).
 export const momentsKey = (request, track) =>
   new Request(new URL('/api/moments?track=' + encodeURIComponent(track), request.url).toString());
